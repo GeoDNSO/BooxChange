@@ -25,7 +25,7 @@ class appBooxChange{
     {
         $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
 
-
+        
         $bdBooxChange->closeBD();//Cerrar base de datos
     }
 
