@@ -5,7 +5,7 @@ class TUsuario{
     private $idUsuario;
     private $nombreUsuario;
     private $correo;
-    private $contraseña;
+    private $password;
     private $fotoPerfil;
     private $fechaNacimiento;
     private $rol;
@@ -13,11 +13,11 @@ class TUsuario{
     private $direccion;
     private $fechaDeCreacion;
 
-    function __construct($idUsuario, $nombreUsuario, $correo, $contraseña, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
+    function __construct($idUsuario, $nombreUsuario, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
         $this->idUsuario = $idUsuario;
         $this->nombreUsuario = $nombreUsuario;
         $this->correo = $correo;
-        $this->contraseña = $contraseña;
+        $this->password = $password;
         $this->fotoPerfil = $fotoPerfil;
         $this->fechaNacimiento = $fechaNacimiento;
         $this->rol = $rol;
@@ -89,21 +89,21 @@ class TUsuario{
     }
 
     /**
-     * Get the value of contraseña
+     * Get the value of password
      */ 
-    public function getContraseña()
+    public function getPassword()
     {
-        return $this->contraseña;
+        return $this->password;
     }
 
     /**
-     * Set the value of contraseña
+     * Set the value of password
      *
      * @return  self
      */ 
-    public function setContraseña($contraseña)
+    public function setPassword($password)
     {
-        $this->contraseña = $contraseña;
+        $this->password = $password;
 
         return $this;
     }
@@ -228,5 +228,3 @@ class TUsuario{
         return $this;
     }
 }
-
-?>
