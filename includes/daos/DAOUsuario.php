@@ -25,7 +25,7 @@ class DAOUsuario extends DAO{
 
     }
 
-    function registrarUsuario($idUsuario, $nombreUsuario, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
+    function registrarUsuario($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
        
     }
 

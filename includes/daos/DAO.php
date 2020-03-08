@@ -6,8 +6,8 @@ class DAO{
 
     function __construct(){
         if(!$this->bdBooxChange){
-            $this->bdBooxChange = new mysqli("localhost", "bdBooxChange", "booxchange", "booxchangepass");
-            //$this->bdBooxChange = mysqli("localhost", "bdBooxChange", "root", "");
+            //$this->bdBooxChange = new mysqli("localhost", "bdbooxchange", "booxchange", "booxchangepass");
+            $this->bdBooxChange = new mysqli("localhost", "bdbooxchange", "root", "");
         }
     }
 

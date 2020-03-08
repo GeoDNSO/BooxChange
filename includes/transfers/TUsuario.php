@@ -4,6 +4,7 @@ class TUsuario{
 
     private $idUsuario;
     private $nombreUsuario;
+    private $nombreReal;
     private $correo;
     private $password;
     private $fotoPerfil;
@@ -13,9 +14,10 @@ class TUsuario{
     private $direccion;
     private $fechaDeCreacion;
 
-    function __construct($idUsuario, $nombreUsuario, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
+    function __construct($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
         $this->idUsuario = $idUsuario;
         $this->nombreUsuario = $nombreUsuario;
+        $this->nombreReal = $nombreReal;
         $this->correo = $correo;
         $this->password = $password;
         $this->fotoPerfil = $fotoPerfil;
@@ -224,6 +226,26 @@ class TUsuario{
     public function setFechaDeCreacion($fechaDeCreacion)
     {
         $this->fechaDeCreacion = $fechaDeCreacion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombreReal
+     */ 
+    public function getNombreReal()
+    {
+        return $this->nombreReal;
+    }
+
+    /**
+     * Set the value of nombreReal
+     *
+     * @return  self
+     */ 
+    public function setNombreReal($nombreReal)
+    {
+        $this->nombreReal = $nombreReal;
 
         return $this;
     }
