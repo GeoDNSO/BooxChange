@@ -31,6 +31,10 @@ define("REG_FECHA_NAC", "fechaNac");
 define("REG_CIUDAD", "ciudad");
 define("REG_DIRECCION", "direccion");
 
+define("REG_DATA_NO_SET", "REG_DATA_NO_SET");
+define("REG_PASS_EQ", "REG_PASS_EQ");
+define("REG_HASH_ALGO", "sha256");
+
 //Constantes para el formulario de login
 define("LOG_USERNAME", "username");
 define("LOG_PASSWORD", "password");
