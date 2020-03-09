@@ -11,6 +11,16 @@
         include("includes/comun/cabecera.php")
     ?>
 
+    <div id="login">
+    <form method = "post" action="includes/procesos/procesarLogin.php">
+        Nombre de usuario:
+        <input type="text" name="username"/>
+        <br>
+        Contraseña:
+        <input type="password" name="password"/>
+        <br>
+        <input type="submit" value="Iniciar sesión"/>
+    </div>
 
 
 </html>
