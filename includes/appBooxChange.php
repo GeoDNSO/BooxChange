@@ -1,6 +1,6 @@
 <?php
 
-include_once("./daos/DAOUsuario.php");
+include_once("../daos/DAOUsuario.php");
 
 class appBooxChange{
 
@@ -29,7 +29,18 @@ class appBooxChange{
         $bdBooxChange->closeBD();//Cerrar base de datos
     }
 
+    public function logInUsuario($nombreUsuario, $password){
+        $bdBooxChange = DAOUsuario::getInstance();
 
+        if ($bdBooxChange->verificarInicioSesion($nombreUsuario, $password)){
+            echo "Hola " . $nombreUsuario;
+        }
+        else{
+            echo "Fallo en el inicio de sesión";
+        }
+
+        $bdBooxChange->closeBD();
+    }
 
 
 }

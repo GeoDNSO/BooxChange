@@ -5,6 +5,7 @@
 INICIALES SEGÚN EL PROCESO O PARTE DEL PROYECTO
     BD --> BASE DE DATOS
     REG --> REGISTRO (FORMULARIO)
+    LOG --> LOGIN (FORMULARIO)
 
 */
 
@@ -30,6 +31,8 @@ define("REG_FECHA_NAC", "fechaNac");
 define("REG_CIUDAD", "ciudad");
 define("REG_DIRECCION", "direccion");
 
-
+//Constantes para el formulario de login
+define("LOG_USERNAME", "username");
+define("LOG_PASSWORD", "password");
 
 ?>

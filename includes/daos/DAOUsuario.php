@@ -2,11 +2,11 @@
 <?php
 
 include_once("../transfers/TUsuario.php");
-include_once("./DAO.php");
+include_once("DAO.php");
 
 class DAOUsuario extends DAO{
 
-    private $instance;
+    private static $instance;
 
     function __construct(){
         parent::__construct();
@@ -22,7 +22,16 @@ class DAOUsuario extends DAO{
   
 
     function verificarInicioSesion($usuario, $password){
+        
+        $sql = "SELECT * FROM usuario WHERE Nombre='$usuario' AND Contraseña='$password'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
+        if(mysqli_num_rows($consulta) == 1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
 
     function registrarUsuario($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
