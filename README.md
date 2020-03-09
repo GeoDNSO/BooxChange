@@ -7,6 +7,11 @@ Importante --> Los cambios a Development y se valida el html generado por php --
 
 ### (Los últimos cambios arriba)
 
+### 09/03/2020
+* Procesar registro, funciona pero falta conectarlo a la BD
+* Se han añadido constantes
+* Se han arreglado cosas en DAO y DAOUsuario 
+
 ### 08/03/2020
 
 * Se ha añadido un fichero de constantes de php, que habría que incluir en todos los scripts
