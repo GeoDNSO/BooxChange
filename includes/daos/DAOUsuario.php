@@ -23,16 +23,20 @@ class DAOUsuario extends DAO{
 
     function verificarInicioSesion($usuario, $password){
         
-        $sql = "SELECT * FROM usuario WHERE Nombre='$usuario' AND Contraseña='$password'";
+        $sql = "SELECT rol FROM usuario WHERE Nombre='$usuario' AND Contraseña='$password'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if(mysqli_num_rows($consulta) == 1){
-            return 1;
+            $fila = $consulta->fetch_array();
+
+            return $fila["rol"];
         }
         else{
-            return 0;
+            return -1;
         }
     }
+
+    
 
     function registrarUsuario($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion){
        

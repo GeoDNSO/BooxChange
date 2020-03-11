@@ -11,5 +11,8 @@ $app = appBooxChange::getInstance();
 $nombreUsuario = $_POST[LOG_USERNAME];
 $password = $_POST[LOG_PASSWORD];
 
+
 $app->logInUsuario($nombreUsuario, $password);
+header("Location: ../../index.php");
+
 ?>

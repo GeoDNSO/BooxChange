@@ -39,4 +39,13 @@ define("REG_HASH_ALGO", "sha256");
 define("LOG_USERNAME", "username");
 define("LOG_PASSWORD", "password");
 
+//Varibles de Session
+
+/*
+'login' = true/false
+'nombre' = nombre de usuario
+'rol' = {0 = admin, 1 = usuario registrado, 2 = ?????} DEFINIR!
+
+*/
+
 ?>

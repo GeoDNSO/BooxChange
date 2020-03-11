@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include_once("../daos/DAOUsuario.php");
 
 class appBooxChange{
@@ -29,17 +31,20 @@ class appBooxChange{
         $bdBooxChange->closeBD();//Cerrar base de datos
     }
 
+    //Los cambios se verán reflejados en $_SESSION
     public function logInUsuario($nombreUsuario, $password){
         $bdBooxChange = DAOUsuario::getInstance();
 
-        if ($bdBooxChange->verificarInicioSesion($nombreUsuario, $password)){
-            echo "Hola " . $nombreUsuario;
-        }
-        else{
-            echo "Fallo en el inicio de sesión";
-        }
-
+        
+        $rol = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
+        //Cerramos la base de datos antes de irnos.
         $bdBooxChange->closeBD();
+
+        if ($rol != -1){
+            $_SESSION['login'] = true;
+            $_SESSION['nombre'] =  $nombreUsuario;
+            $_SESSION['rol'] = $rol;
+        }
     }
 
 
