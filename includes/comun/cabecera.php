@@ -2,7 +2,8 @@
 <?php
     session_start();
     if(isset($_SESSION['login']) && $_SESSION['login']){
-        echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
+        //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
+        echo "<a href='usuario.php'>".$_SESSION['nombre']."</a>";
     }
 
 ?>

@@ -5,7 +5,6 @@ include_once("../transfers/TUsuario.php");
 include_once("DAO.php");
 
 class DAOUsuario extends DAO{
-
     private static $instance;
 
     function __construct(){
@@ -19,21 +18,22 @@ class DAOUsuario extends DAO{
         }
         return self::$instance;
     }
-  
 
+    //Si se puede iniciar sesión, se guarda un objeto usuario con sus datos
     function verificarInicioSesion($usuario, $password){
         
-        $sql = "SELECT rol FROM usuario WHERE Nombre='$usuario' AND Contraseña='$password'";
+        $sql = "SELECT * FROM usuario WHERE Nombre='$usuario' AND Contraseña='$password'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if(mysqli_num_rows($consulta) == 1){
             $fila = $consulta->fetch_array();
-
-            return $fila["rol"];
+            
+            $TUsuario = new TUsuario($fila["Id_Usuario"], $fila["Nombre"], $fila["NombreReal"], $fila["Correo"], 
+                                     $fila["Contraseña"],$fila["Foto"],$fila["Nacimiento"],$fila["Rol"],
+                                     $fila["Ciudad"],$fila["Direccion"],$fila["FechaDeCreacion"]);
+            return $TUsuario;
         }
-        else{
-            return -1;
-        }
+        return null;
     }
 
     
@@ -79,11 +79,11 @@ class DAOUsuario extends DAO{
 
     }
     
-    function actualizarCiudad(){
+    function actualizarCiudad($nuevaCiudad){
 
     }
 
-    function actualizarDireccion(){
+    function actualizarDireccion($nuevaDireccion){
 
     }
 

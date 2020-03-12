@@ -5,5 +5,4 @@
     $_SESSION['rol'] = -1;
     session_destroy();
     header("Location: index.php");
-
 ?>

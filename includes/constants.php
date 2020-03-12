@@ -45,6 +45,7 @@ define("LOG_PASSWORD", "password");
 'login' = true/false
 'nombre' = nombre de usuario
 'rol' = {0 = admin, 1 = usuario registrado, 2 = ?????} DEFINIR!
+'usuario' = $TUsuario solo lo utilizaremos en usuario.php
 
 */
 

@@ -34,17 +34,26 @@ class appBooxChange{
     //Los cambios se verán reflejados en $_SESSION
     public function logInUsuario($nombreUsuario, $password){
         $bdBooxChange = DAOUsuario::getInstance();
+        $TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
-        
-        $rol = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
+        if ($TUsuario!= NULL){
+
+            $_SESSION['login'] = true;
+            $_SESSION['nombre'] =  $TUsuario->getNombreUsuario();
+            $_SESSION['nombreReal'] = $TUsuario->getNombreReal();
+            $_SESSION['correo'] = $TUsuario->getCorreo();
+            $_SESSION['fotoPerfil'] = $TUsuario->getFotoPerfil();
+            $_SESSION['ciudad'] = $TUsuario->getCiudad();
+            $_SESSION['direccion'] = $TUsuario->getDireccion();
+            $_SESSION['fechaDeCreacion'] = $TUsuario->getFechaDeCreacion();
+            $_SESSION['rol'] = $TUsuario->getRol();
+
+            $_SESSION['usuario'] = serialize($TUsuario);
+
+
+        }
         //Cerramos la base de datos antes de irnos.
         $bdBooxChange->closeBD();
-
-        if ($rol != -1){
-            $_SESSION['login'] = true;
-            $_SESSION['nombre'] =  $nombreUsuario;
-            $_SESSION['rol'] = $rol;
-        }
     }
 
 
