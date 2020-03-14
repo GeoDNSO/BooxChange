@@ -11,40 +11,43 @@
         include("includes/comun/cabecera.php");
     ?>
     
-    <!-- Pasar a php con constantes para name e id ?????
+    <!-- Pasar a php con constantes para name e id 
     <form action="includes/procesos/procesarRegistro.php" method="post">--->
     <form action="registro.php" method="post">
 
         <?php
-            //Esto es códigop repetido, pero es q si pongo guarda_valor() me peta
             //Lo que hacemos aquí es que si se ha escrito una variable en en un formulario anterior, lo guardamos para mostrarlo de nuevo
             //Y no tener que volver a escribirlo todo
-            $nombreUsuario = $nombreReal = $correo = $password =  $passwordR = $fechaNacimiento = $ciudad = $direccion = "";
-
+            //Lo guardo en Sesdsion, para poder pasarlo a procesarRegistro, estas variables serán destruidas al comletarse el registro
+            $nombreUsuario = $nombreReal = $correo = $foto = $password =  $passwordR = $fechaNacimiento = $ciudad = $direccion = "";
+            
             if(isset($_POST['username'])){
-                $nombreUsuario = $_POST['username'];
+                $_SESSION['nombreUsuario_reg'] = $nombreUsuario = $_POST['username'];
             }
-            if(isset($_POST['userRealName'])){
-                $nombreReal = $_POST['userRealName'];
+            if (isset($_POST['userRealName'])){
+                $_SESSION['nombreReal_reg'] = $nombreReal = $_POST['userRealName'];
             }
             if(isset($_POST['email'])){
-                $correo = $_POST['email'];
+                $_SESSION['correo_reg'] = $correo = $_POST['email'];
             }
             if(isset($_POST['passwd'])){
-                $password = $_POST['passwd'];
+                $_SESSION['password_reg'] = $password = $_POST['passwd'];
             }
             if(isset($_POST['passwdR'])){
                 $passwordR = $_POST['passwdR'];
             }
             if(isset($_POST['fechaNac'])){
-                $fechaNacimiento = $_POST['fechaNac'];
+                $_SESSION['fechaNacimiento_reg'] = $fechaNacimiento = $_POST['fechaNac'];
             }
             if(isset($_POST['ciudad'])){
-                $ciudad = $_POST['ciudad'];
+                $_SESSION['ciudad_reg'] = $ciudad = $_POST['ciudad'];
             }
             if(isset($_POST['direccion'])){
-                $direccion = $_POST['direccion'];
-    }
+                $_SESSION['direccion_reg'] = $direccion = $_POST['direccion'];
+            }
+            if(isset($_POST['foto'])){
+                $_SESSION['foto_reg'] = $foto = $_POST['foto'];
+            }
         ?>
 
         <fieldset>
@@ -86,8 +89,13 @@
 
     <?php
         if(verifica_entrada()){
-            //Entrada correcta, procedemos a insertarlo a la base de datos
-            //llevaría a procesar registro donde podría mostrar un error
+            if($password != $passwordR){
+                echo "Asegúrese que ambas contraseñas son iguales";
+            }
+            else{
+                echo "We are in bois: ";
+                header("Location: /BooxChange/includes/procesos/procesarRegistro.php");
+            }
         }
     ?>
     
@@ -106,66 +114,40 @@
 */
 
 function verifica_entrada(){
-
+    $correcto = true;
     if(!isset($_POST['username'])|| empty( $_POST['username'])){
         echo " -Nombre de usuario/nick <br>";
+        $correcto = false;
     }
     if (!isset($_POST['userRealName'])|| empty( $_POST['userRealName'])){
         echo " -Nombre real <br>";
+        $correcto = false;
     }
     if(!isset($_POST['email'])|| empty( $_POST['email'])){
         echo " -Correo <br>";
+        $correcto = false;
     }
     if(!isset($_POST['passwd'])|| empty( $_POST['passwd'])){
         echo " -Contraseña <br>";
+        $correcto = false;
     }
     if(!isset($_POST['passwdR'])|| empty( $_POST['passwdR'])){
         echo " -Repita la contraseña <br>";
-    }
-    if(isset($passwordR) && isset($password) && $password != $passwordR){
-        echo " -Las contraseñas no coinciden <br>";
+        $correcto = false;
     }
     if(!isset($_POST['fechaNac'])|| empty( $_POST['fechaNac'])){
         echo " -Fecha de nacimiento <br>";
+        $correcto = false;
     }
     if(!isset($_POST['ciudad'])|| empty( $_POST['ciudad'])){
         echo " -Ciudad <br>";
+        $correcto = false;
     }
     if(!isset($_POST['direccion'])|| empty( $_POST['direccion'])){
         echo " -Dirección <br>";
+        $correcto = false;
     }
-
-function guarda_valor(){
-
-    $nombreUsuario = $nombreReal = $correo = $password =  $passwordR = $fechaNacimiento = $ciudad = $direccion = "";
-
-    if(isset($_POST['username'])){
-        $nombreUsuario = $_POST['username'];
-    }
-    if (isset($_POST['userRealName'])){
-        $nombreReal = $_POST['userRealName'];
-    }
-    if(isset($_POST['email'])){
-        $correo = $_POST['email'];
-    }
-    if(isset($_POST['passwd'])){
-        $password = $_POST['passwd'];
-    }
-    if(isset($_POST['passwdR'])){
-        $passwordR = $_POST['passwdR'];
-    }
-    if(isset($_POST['fechaNac'])){
-        $fechaNacimiento = $_POST['fechaNac'];
-    }
-    if(isset($_POST['ciudad'])){
-        $ciudad = $_POST['ciudad'];
-    }
-    if(isset($_POST['direccion'])){
-        $direccion = $_POST['direccion'];
-    }
+    return $correcto;
 }
-
-
-} 
 
 ?>

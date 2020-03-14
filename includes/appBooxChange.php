@@ -26,9 +26,8 @@ class appBooxChange{
     public function registrarUsuario($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion)
     {
         $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
-
+        return $bdBooxChange->registrarUsuario($idUsuario, $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion);
         
-        $bdBooxChange->closeBD();//Cerrar base de datos
     }
 
     //Los cambios se verán reflejados en $_SESSION
