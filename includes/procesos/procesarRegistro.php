@@ -8,9 +8,6 @@ $app = appBooxChange::getInstance();
 $_SESSION[REG_PASS_EQ] = true;
 $_SESSION[REG_DATA_NO_SET] = false;
 
-
-echo "Hola a procesar <br>";
-
 //Id se puede dejar nulo
 
 //Obtener y limpiar los datos 
@@ -24,7 +21,6 @@ $ciudad = $_SESSION['ciudad_reg'];
 $direccion= $_SESSION['direccion_reg'];
 $rol = BD_TYPE_NORMAL_USER; //Usuario normal por defecto
 
-
 date_default_timezone_set("Europe/Madrid");
 $fechaDeCreacion = date_default_timezone_get(); //REVIsAR FORMATO PARA LA BASE DE DATOS??
 
@@ -34,9 +30,11 @@ if(!$_SESSION[REG_DATA_NO_SET] && $_SESSION[REG_PASS_EQ]){
     $password = password_hash($password, PASSWORD_BCRYPT);
     //El id se ignorará, se asignara automáticamente
   
-    if( $app->registrarUsuario("", $nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil,
+    if( $app->registrarUsuario($nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil,
      $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion)){
-        echo "Ha sido registrado correctamente";
+        //echo "Ha sido registrado correctamente";
+
+        //Cuando se crea una cuenta, te loguea automáticamente
         $app->logInUsuario($nombreUsuario, $password);
         header("Location: ../../index.php");
     }

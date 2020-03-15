@@ -47,8 +47,8 @@ class DAOUsuario extends DAO{
 
         //No existe el usuario, por lo cual lo introduzco en la BD
         if(mysqli_num_rows($consulta) == 0){
-            $sql = "INSERT INTO usuario (Id_Usuario, Nombre, NombreReal, Contraseña, Correo, Foto, Direccion, Nacimiento, Ciudad, FechaDeCreacion, Rol) VALUES 
-                                        (NULL, '$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', '$fechaDeCreacion', $rol);"; 
+            $sql = "INSERT INTO usuario (Nombre, NombreReal, Contraseña, Correo, Foto, Direccion, Nacimiento, Ciudad, FechaDeCreacion, Rol) VALUES 
+                                        ('$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', '$fechaDeCreacion', 0);"; 
 
             mysqli_query(self::$instance->bdBooxChange, $sql);
 
