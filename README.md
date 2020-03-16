@@ -15,6 +15,7 @@ Proyecto Final para AW
 ### 16/03/2020
 * Tienda implementada (se puede añadir más información por pantalla, mostrando más atributos del Libro, sencillo)
 * Login y Registro completamente implementados con verificación de hash
+* Se ha introducido una nueva tabla en la Base de Datos para almacenar las __COMPRAS__
 * Solucionado problemas con los includes en gran parte del proyecto, aunque aun queda por revisarlo entero y corregirlo si hiciese falta
 
 ### 09/03/2020
