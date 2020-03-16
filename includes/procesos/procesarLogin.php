@@ -1,7 +1,7 @@
 <?php
-    
-include_once("../appBooxChange.php");
-include_once("../constants.php");
+$parentDir = dirname(__DIR__, 1);
+include_once($parentDir."/appBooxChange.php");
+include_once($parentDir."../constants.php");
 
 $app = appBooxChange::getInstance();
 

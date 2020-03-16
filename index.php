@@ -8,8 +8,10 @@
 
 
     <?php
-        include("includes/comun/cabecera.php")
+        include("includes/comun/cabecera.php");
     ?>
+
+
 
 
 

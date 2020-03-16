@@ -1,9 +1,9 @@
 
 <?php
-
-include_once("../transfers/TUsuario.php");
-include_once("../constants.php");
-include_once("DAO.php");
+$parentDir = dirname(__DIR__, 1);
+include_once($parentDir."/transfers/TUsuario.php");
+include_once($parentDir."/constants.php");
+include_once(__DIR__."/DAO.php");
 
 class DAOUsuario extends DAO{
     private static $instance;
@@ -29,9 +29,9 @@ class DAOUsuario extends DAO{
         if(mysqli_num_rows($consulta) == 1){
             $fila = $consulta->fetch_array();
             
-            $TUsuario = new TUsuario($fila["Id_Usuario"], $fila["Nombre"], $fila["NombreReal"], $fila["Correo"], 
-                                     $fila["Contraseña"],$fila["Foto"],$fila["Nacimiento"],$fila["Rol"],
-                                     $fila["Ciudad"],$fila["Direccion"],$fila["FechaDeCreacion"]);
+            $TUsuario = new TUsuario($fila[BD_USER_ID_USUARIO], $fila[BD_USER_NOMBRE], $fila[BD_USER_NOMBRE_REAL], $fila[BD_USER_CORREO], 
+                                     $fila[BD_USER_PASSWORD],$fila[BD_USER_FOTO],$fila[BD_USER_NACIMIENTO],$fila[BD_USER_ROL],
+                                     $fila[BD_USER_CIUDAD],$fila[BD_USER_DIRECCION],$fila[BD_USER_FECHA_CREACION]);
             return $TUsuario;
         }
         return null;

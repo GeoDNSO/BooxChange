@@ -1,8 +1,14 @@
 <?php
 
-session_start();
+include_once(__DIR__."/daos/DAOUsuario.php");
+include_once(__DIR__."/daos/DAOLibro.php");
+include_once(__DIR__."/constants.php");
 
-include_once("../daos/DAOUsuario.php");
+$has_session = (session_status() == PHP_SESSION_ACTIVE);
+if(!$has_session){
+    session_start();
+}
+
 
 class appBooxChange{
 
@@ -35,6 +41,13 @@ class appBooxChange{
         $bdBooxChange = DAOUsuario::getInstance();
         $TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
+        $this->guardarDatosUsuarioSesion($TUsuario);
+        
+        //Cerramos la base de datos antes de irnos.
+        $bdBooxChange->closeBD();
+    }
+
+    private function guardarDatosUsuarioSesion($TUsuario){
         if ($TUsuario!= NULL){
 
             $_SESSION['login'] = true;
@@ -49,10 +62,16 @@ class appBooxChange{
 
             $_SESSION['usuario'] = serialize($TUsuario);
 
-
+            return true;
         }
-        //Cerramos la base de datos antes de irnos.
+        return false;
+    }
+
+    public function librosTienda(){
+        $bdBooxChange = DAOLibro::getInstance();
+        $librosTienda = $bdBooxChange->librosTienda();        
         $bdBooxChange->closeBD();
+        return $librosTienda;
     }
 
 
