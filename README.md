@@ -3,9 +3,19 @@ Proyecto Final para AW
 
 ## Pasos a Seguir Antes de Tocar Código y Registro de Estado del Proyecto
 
-Importante --> Los cambios a Development y se valida el html generado por php --> https://validator.w3.org/ 
+### Cosas pendientes por hacer
+ - Controlar la inyección de SQL
+ - Documentar las funciones
+ - Crear la memoria de la entrega
+### Importante, antes de empezar
+- Los cambios a Development y se valida el html generado por php --> https://validator.w3.org/ 
+- A partir de ahora deben usarse en los includes las macros de \_\_DIR_\_ con la función dirname(), el por qué y su uso lo podéis leer en este enlace https://stackoverflow.com/questions/9628443/why-would-i-use-dirname-file-in-an-include-or-include-once-statement
+- Los últimos cambios arriba
 
-### (Los últimos cambios arriba)
+### 16/03/2020
+* Tienda implementada (se puede añadir más información por pantalla, mostrando más atributos del Libro, sencillo)
+* Login y Registro completamente implementados con verificación de hash
+* Solucionado problemas con los includes en gran parte del proyecto, aunque aun queda por revisarlo entero y corregirlo si hiciese falta
 
 ### 09/03/2020
 * Procesar registro, funciona pero falta conectarlo a la BD
