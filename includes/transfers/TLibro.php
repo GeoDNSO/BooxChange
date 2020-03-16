@@ -16,8 +16,9 @@ class TLibro{
     private $idioma;
     private $editorial;
     private $descuento;
+    private $unidades;
 
-    function __construct($idLibro, $titulo, $autor, $precio, $valoracion, $ranking, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento){
+    function __construct($idLibro, $titulo, $autor, $precio, $valoracion, $ranking, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
         $this->idLibro = $idLibro;
         $this->titulo = $titulo;
         $this->autor = $autor;
@@ -32,6 +33,7 @@ class TLibro{
         $this->idioma = $idioma;
         $this->editorial = $editorial;
         $this->descuento = $descuento;
+        $this->unidades = $unidades;
     }
 
     /**
@@ -310,6 +312,26 @@ class TLibro{
     public function setDescuento($descuento)
     {
         $this->descuento = $descuento;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of unidades
+     */ 
+    public function getUnidades()
+    {
+        return $this->unidades;
+    }
+
+    /**
+     * Set the value of unidades
+     *
+     * @return  self
+     */ 
+    public function setUnidades($unidades)
+    {
+        $this->unidades = $unidades;
 
         return $this;
     }

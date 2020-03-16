@@ -2,7 +2,9 @@
 
 include_once(__DIR__."/daos/DAOUsuario.php");
 include_once(__DIR__."/daos/DAOLibro.php");
+include_once(__DIR__."/daos/DAOCompras.php");
 include_once(__DIR__."/constants.php");
+include_once(__DIR__."/transfers/TLibro.php");
 
 $has_session = (session_status() == PHP_SESSION_ACTIVE);
 if(!$has_session){
@@ -39,6 +41,11 @@ class appBooxChange{
     //Los cambios se verán reflejados en $_SESSION
     public function logInUsuario($nombreUsuario, $password){
         $bdBooxChange = DAOUsuario::getInstance();
+
+       // $password = password_verify($password, password_hash($password, PASSWORD_BCRYPT));
+       echo "$password";
+        //$TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
+
         $TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
         $this->guardarDatosUsuarioSesion($TUsuario);
@@ -73,6 +80,40 @@ class appBooxChange{
         $bdBooxChange->closeBD();
         return $librosTienda;
     }
+
+    public function getLibroById($id){
+        $bdBooxChange = DAOLibro::getInstance();
+        $libro = $bdBooxChange->getLibroById($id);        
+        $bdBooxChange->closeBD();
+        return $libro;
+    }
+
+    public function procesarCompra($idUsuario, $libro, $ud, $numTarjeta){
+
+        //Procesar la compra en libros
+        $bdBooxChange = DAOLibro::getInstance();
+        $bdBooxChange->procesarCompra($libro, $ud);  
+        $bdBooxChange->closeBD();
+        
+        $idLibro = $libro->getIdLibro();
+        $coste = $libro->getPrecio()*$ud;
+
+        $bdBooxChange = DAOCompras::getInstance();
+        $bdBooxChange->registrarCompra($idLibro, $idUsuario, $ud, $numTarjeta ,$coste);
+        $bdBooxChange->closeBD();
+
+        return $libro;
+    }
+
+    /*
+
+    public function getUdLibro($id){
+        $bdBooxChange = DAOLibro::getInstance();
+        $libro = $bdBooxChange->getLibroById($id);        
+        $bdBooxChange->closeBD();
+        return $libro;
+    }
+    */
 
 
 }
