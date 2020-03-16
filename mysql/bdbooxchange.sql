@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2020 a las 15:49:56
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 16-03-2020 a las 23:20:07
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -81,15 +81,18 @@ CREATE TABLE `compras` (
   `idUsuario` int(11) NOT NULL,
   `idLibro` int(11) NOT NULL,
   `unidades` int(11) NOT NULL,
-  `numTarjeta` int(11) NOT NULL
+  `numTarjeta` int(11) NOT NULL,
+  `coste` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `compras`
 --
 
-INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`) VALUES
-(1, 2, 4, 3, 10342);
+INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `coste`) VALUES
+(1, 2, 4, 3, 10342, 0),
+(2, 4, 4, 1, 1, 10),
+(3, 5, 1, 4, 123456, 50);
 
 -- --------------------------------------------------------
 
@@ -211,7 +214,7 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 12.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 10),
+(1, 'Harry Potter', 'J.K. Rowling', 12.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 4),
 (2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10),
 (3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10),
 (4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0),
@@ -315,12 +318,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Correo`, `Foto`, `Direccion`, `Nacimiento`, `Ciudad`, `FechaDeCreacion`, `Rol`) VALUES
-(1, 'admin', 'Jin', 'adminpass', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-07 13:31:39', 0),
-(2, 'xAlex', 'Alex', 'asdasd', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-07 11:27:29', 1),
-(3, 'Javier ', 'User3', 'pass3', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-08 10:41:35', 1),
-(4, 'Sergiox', 'Sergio García', 'pass4', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-09 10:40:08', 2),
-(5, 'Daniel96', 'Daniel Rodriguez', 'pass3', 'dani@gmail.com', '/fotos/fotos/img5.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-07 10:39:03', 1),
-(6, 'LuiSHer', 'Luis Hernández', 'pass6', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-08 11:03:35', 2);
+(1, 'admin', 'Jin', '$2y$10$jXlPNRuqn9dEXwJkYbaSh.ALvfWtYEHRuFHEGXGY0WqcJ0sfm6w2S', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 19:07:18', 0),
+(2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 19:08:20', 1),
+(3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 19:08:42', 1),
+(4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 19:09:37', 2),
+(5, 'Geo', 'Daniel ', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', '/fotos/fotos/img5.jpg', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-16 21:54:50', 1),
+(6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 19:10:04', 2);
 
 -- --------------------------------------------------------
 
@@ -473,7 +476,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `discusion`
@@ -509,7 +512,7 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
