@@ -3,7 +3,7 @@
     session_start();
     if(isset($_SESSION['login']) && $_SESSION['login']){
         //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
-        echo "<a href='usuario.php'>".$_SESSION['nombre']."</a>";
+        echo "<a href='usuario.php'>".$_SESSION['nombreReal']."</a>";
     }
 
 ?>
@@ -26,6 +26,9 @@
 
             if(isset($_SESSION['login']) && $_SESSION['login']){
                 echo "<li><a href='logout.php'>Logout</a></li>";
+                if($_SESSION['rol'] == 1){
+                    echo "<li><a href=''>Poderes de Admin</a></li>";
+                }
             }
             else{
                 echo "<li> <a href='registro.php'>Registrarse</a> </li>";
