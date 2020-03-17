@@ -85,6 +85,28 @@ class DAOUsuario extends DAO
 
     public function getAllUsers()
     {
+        $array = array();
+        $sql = "SELECT * FROM usuario";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        while( $fila = $consulta->fetch_array()){
+            $TUsuario = new TUsuario(
+                $fila[BD_USER_ID_USUARIO],
+                $fila[BD_USER_NOMBRE],
+                $fila[BD_USER_NOMBRE_REAL],
+                $fila[BD_USER_CORREO],
+                $fila[BD_USER_PASSWORD],
+                $fila[BD_USER_FOTO],
+                $fila[BD_USER_NACIMIENTO],
+                $fila[BD_USER_ROL],
+                $fila[BD_USER_CIUDAD],
+                $fila[BD_USER_DIRECCION],
+                $fila[BD_USER_FECHA_CREACION]
+            );
+            $array[] = $TUsuario;
+        }
+                
+        return $array;
     }
 
     function buscarUsuarioPorId($idUsuario)
