@@ -55,8 +55,12 @@
 
     $unidades = $libro->getUnidades();
     echo "<h3> Unidades: $unidades </h3>";
-
-    echo "<a href='paginaCompra.php?id=$id'> Comprar </a>";
+    if($unidades > 0){
+        echo "<a href='paginaCompra.php?id=$id'> Comprar </a>";
+    }
+    else{
+        echo "Exsistencias Agotadass";
+    }
     }
 
 ?>

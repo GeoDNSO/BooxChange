@@ -26,14 +26,19 @@
             $titulo = $libro->getTitulo();
             $id = $libro->getIdLibro();
             $precio = $libro->getPrecio();
-
-            if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a> </li>";            
+            $unidades = $libro->getUnidades();
+            if($unidades > 0){
+                if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                
+                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a> </li>"; 
+                }
+                else{
+                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='login.php'> Comprar </a>(Tienes que logearte para poder comprar) </li>";            
+                }
             }
             else{
-                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='login.php'> Comprar </a>(Tienes que logearte para poder comprar) </li>";            
-            }
-            
+                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Exsistencias Agotadas </li>"; 
+            }  
         }
 
         echo "</ul>";
