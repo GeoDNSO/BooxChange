@@ -14,7 +14,7 @@
 
     <body>
         <!--falta la direccion y que luego cambie en la base de datos-->
-        <form action="accion.php" method="post">
+        <form action="usuario.php" method="post">
         <p> Nombre Real: <input type="text" name="nombreReal" value="<?php echo $_SESSION['nombreReal']; ?>"/></p>
         <p> Correo: <input type="text" name="correo" value="<?php echo $_SESSION['correo']; ?>"/></p>
         <p> Foto: <input type="text" name="foto" value="<?php echo $_SESSION['fotoPerfil']; ?>"/></p>
