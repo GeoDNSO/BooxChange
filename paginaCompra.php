@@ -30,14 +30,13 @@
             
             $titulo = $libro->getTitulo();
             echo "<h1> Compra del Libro $titulo </h1>";
-            $unidades = $libro->getUnidades();
         }
     ?>
 
     <form method="post" action="includes/procesos/procesarCompra.php">
 
     <label for="unidades"><b>Unidades</b></label><br>
-    <input type="number" name="unidades" id="unidades" min="1" max="<?php echo $unidades; ?>" value="1" /><br><br>
+    <input type="number" name="unidades" id="unidades" /><br><br>
 
     <label for="numtarjeta"><b>Número de Tarjeta</b></label><br>
     <input type="text" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>
