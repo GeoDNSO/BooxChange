@@ -22,7 +22,7 @@
         <p> Direccion: <input type="text" name="direccion" value="<?php echo $_SESSION['direccion']; ?>"/></p>
 
         <p><input type="submit" name="accept" value="Cambiar" /></p>
-        <p><input type="button" name="cancel" value="Cancelar" onClick="window.location.href='usuario.php';" /></p>
+        <p><input type="submit" name="cancel" value="Cancelar" /></p>
         </form>
     </body>
 
