@@ -23,6 +23,7 @@
             echo "Fecha : ".$_SESSION['fechaDeCreacion']."<br>";
             echo "Rol : ".$_SESSION['rol']."<br>";
             
+            echo "<a href=modificarUsuario.php> Modificar Perfil </a>";
             //Lo mismo pero con un objeto, pero lo mismo es ilegal
             //$aux = unserialize($_SESSION['usuario']);
             //echo $pene->getNombreUsuario();

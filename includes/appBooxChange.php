@@ -38,6 +38,13 @@ class appBooxChange{
         
     }
 
+    public function actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)
+    {
+        $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
+        return $bdBooxChange->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion);
+        
+    }
+
     //Los cambios se verán reflejados en $_SESSION
     public function logInUsuario($nombreUsuario, $password){
         $bdBooxChange = DAOUsuario::getInstance();
@@ -58,8 +65,10 @@ class appBooxChange{
         if ($TUsuario!= NULL){
 
             $_SESSION['login'] = true;
+            $_SESSION['id_Usuario'] = $TUsuario->getIdUsuario();
             $_SESSION['nombre'] =  $TUsuario->getNombreUsuario();
             $_SESSION['nombreReal'] = $TUsuario->getNombreReal();
+            $_SESSION['password'] = $TUsuario->getPassword();
             $_SESSION['correo'] = $TUsuario->getCorreo();
             $_SESSION['fotoPerfil'] = $TUsuario->getFotoPerfil();
             $_SESSION['ciudad'] = $TUsuario->getCiudad();
