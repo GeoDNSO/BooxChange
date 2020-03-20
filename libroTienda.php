@@ -1,3 +1,7 @@
+<?php
+    require_once(__DIR__."/includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -9,9 +13,14 @@
 <?php
 
     include_once(__DIR__."/includes/comun/cabecera.php");
-    include_once(__DIR__."./includes/constants.php");
-    include_once(__DIR__."/includes/appBooxChange.php");
-    include_once(__DIR__."/includes/transfers/TLibro.php");
+    //include_once(__DIR__."./includes/constants.php");
+    //include_once(__DIR__."/includes/appBooxChange.php");
+    //include_once(__DIR__."/includes/transfers/TLibro.php");
+
+    
+
+    use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+
     if(!isset($_GET['id'])){
         exit("No se ha proporcionado el id del producto");
     }
@@ -59,7 +68,7 @@
         echo "<a href='paginaCompra.php?id=$id'> Comprar </a>";
     }
     else{
-        echo "Exsistencias Agotadass";
+        echo "Existencias Agotadass";
     }
     }
 

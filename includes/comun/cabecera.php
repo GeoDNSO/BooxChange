@@ -1,11 +1,9 @@
 
 <?php
-    session_start();
-    if(isset($_SESSION['login']) && $_SESSION['login']){
-        //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
-        echo "<a href='usuario.php'>".$_SESSION['nombreReal']."</a>";
-    }
-
+if(isset($_SESSION['login']) && $_SESSION['login']){
+    //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
+    echo "<a href='usuario.php'>".$_SESSION['nombreReal']."</a>";
+}
 ?>
 
 <header>
@@ -26,7 +24,7 @@
 
             if(isset($_SESSION['login']) && $_SESSION['login']){
                 echo "<li><a href='logout.php'>Logout</a></li>";
-                if($_SESSION['rol'] == 1){
+                if($_SESSION['rol'] == BD_TYPE_ADMIN){
                     echo "<li><a href=''>Poderes de Admin</a></li>";
                 }
             }

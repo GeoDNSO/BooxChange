@@ -1,5 +1,12 @@
 <?php
 
+namespace fdi\ucm\aw\booxchange\daos;
+
+use \mysqli as mysqli;
+
+$parentDir = dirname(__DIR__, 1);
+require_once($parentDir."/config.php");
+
 class DAO{
 
     protected $bdBooxChange;

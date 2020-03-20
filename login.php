@@ -1,3 +1,7 @@
+<?php
+require_once(__DIR__ . "/includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +13,7 @@
 
 
 <?php
-include("includes/comun/cabecera.php")
+include("includes/comun/cabecera.php");
 ?>
 
 <div id="login">

@@ -1,9 +1,17 @@
 <?php
+namespace fdi\ucm\aw\booxchange\daos;
 
+//$parentDir = dirname(__DIR__, 1);
+//include_once($parentDir . "/transfers/TLibro.php");
+//include_once($parentDir . "/constants.php");
+//include_once(__DIR__ . "/DAO.php");
+
+//use fdi\ucm\aw\booxchange\TLibro as TLibro;
+//use fdi\ucm\aw\booxchange\DAO as DAO;
 $parentDir = dirname(__DIR__, 1);
-include_once($parentDir . "/transfers/TLibro.php");
-include_once($parentDir . "/constants.php");
-include_once(__DIR__ . "/DAO.php");
+require_once($parentDir."/config.php");
+
+use fdi\ucm\aw\booxchange\transfers\TLibro as TLibro;
 
 class DAOLibro extends DAO
 {

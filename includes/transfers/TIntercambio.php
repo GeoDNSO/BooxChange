@@ -1,5 +1,7 @@
 <?php
 
+namespace fdi\ucm\aw\booxchange\transfers;
+
 class TIntercambio{
     private $idLibro1;
     private $idLibro2;

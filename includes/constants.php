@@ -17,7 +17,9 @@ define("BD_USER", "root");
 define("BD_PASS", "");
 
 //Valores para la base de datos
-define("BD_TYPE_NORMAL_USER", "usuario");
+define("BD_TYPE_ADMIN", 0);
+define("BD_TYPE_NORMAL_USER", 1);
+define("BD_TYPE_NORMAL_MODERATOR", 2);
 
 
 //Claves para la tabla de Usuarios de la Base de Datos

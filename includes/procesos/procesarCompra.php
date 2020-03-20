@@ -1,6 +1,11 @@
 <?php
 
-session_start();
+$parentDir = dirname(__DIR__, 1);
+require_once($parentDir."/config.php");
+
+use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+
+//session_start();
 
 if(!isset($_SESSION['nombre'])){
     exit("No se encuentra el nombre en la sesion");

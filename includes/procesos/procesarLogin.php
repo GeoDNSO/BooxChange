@@ -1,7 +1,11 @@
 <?php
+
 $parentDir = dirname(__DIR__, 1);
-include_once($parentDir."/appBooxChange.php");
-include_once($parentDir."../constants.php");
+require_once($parentDir."/config.php");
+
+use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+//include_once($parentDir."/appBooxChange.php");
+//include_once($parentDir."../constants.php");
 
 $app = appBooxChange::getInstance();
 

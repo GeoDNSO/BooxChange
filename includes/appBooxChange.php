@@ -1,10 +1,31 @@
 <?php
 
-include_once(__DIR__."/daos/DAOUsuario.php");
-include_once(__DIR__."/daos/DAOLibro.php");
-include_once(__DIR__."/daos/DAOCompras.php");
-include_once(__DIR__."/constants.php");
-include_once(__DIR__."/transfers/TLibro.php");
+namespace fdi\ucm\aw\booxchange;
+
+//include_once(__DIR__."/daos/DAOUsuario.php");
+//include_once(__DIR__."/daos/DAOLibro.php");
+//include_once(__DIR__."/daos/DAOCompras.php");
+//include_once(__DIR__."/constants.php");
+//include_once(__DIR__."/transfers/TLibro.php");
+
+//use fdi\ucm\aw\booxchange\DAOLibro as DAOLibro;
+
+require_once(__DIR__."/config.php");
+
+use fdi\ucm\aw\booxchange\daos\DAO as DAO;
+use fdi\ucm\aw\booxchange\daos\DAOChat as DAOChat;
+use fdi\ucm\aw\booxchange\daos\DAOComentarios as DAOComentarios;
+use fdi\ucm\aw\booxchange\daos\DAOCompras as DAOCompras;
+use fdi\ucm\aw\booxchange\daos\DAODiscusion as DAODiscusion;
+use fdi\ucm\aw\booxchange\daos\DAOFavoritos as DAOFavoritos;
+use fdi\ucm\aw\booxchange\daos\DAOGenero as DAOGenero;
+use fdi\ucm\aw\booxchange\daos\DAOIntercambio as DAOIntercambio;
+use fdi\ucm\aw\booxchange\daos\DAOLibro as DAOLibro;
+use fdi\ucm\aw\booxchange\daos\DAOLibroIntercambio as DAOLibroIntercambio;
+use fdi\ucm\aw\booxchange\daos\DAOMensajeChat as DAOMensajeChat;
+use fdi\ucm\aw\booxchange\daos\DAOTema as DAOTema;
+use fdi\ucm\aw\booxchange\daos\DAOUsuario as DAOUsuario;
+use fdi\ucm\aw\booxchange\daos\DAOValoracionLibro as DAOValoracionLibro;
 
 $has_session = (session_status() == PHP_SESSION_ACTIVE);
 if(!$has_session){

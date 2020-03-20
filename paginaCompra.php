@@ -1,3 +1,7 @@
+<?php
+require_once(__DIR__ . "/includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -11,11 +15,13 @@
 
         include_once(__DIR__."/includes/comun/cabecera.php");
 
-        include_once(__DIR__."./includes/constants.php");
-        include_once(__DIR__."/includes/appBooxChange.php");
-        include_once(__DIR__."/includes/transfers/TLibro.php");
+        use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
         if(!isset($_GET['id'])){
+            echo $_SESSION["llega"];
+            echo $_SESSION["llega2"];
+            echo $_SESSION["llega3"];
+            echo $_SESSION["llega4"];
             exit("No se ha proporcionado el id del producto");
         }
         else if(!isset($_SESSION['login']) || $_SESSION['login'] == false){
@@ -48,6 +54,22 @@
     <input type="submit">
 
     </form>
+
+
+    <?php
+
+        use \fdi\ucm\aw\booxchange\formularios\FormularioCompraLibro;
+
+        echo "NUEVO FORM\n";
+
+        
+
+        //$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
+        $form = new FormularioCompraLibro("formCompra", array("action"=>null));
+
+        $form->gestiona();
+
+    ?>
 
 
 </html>

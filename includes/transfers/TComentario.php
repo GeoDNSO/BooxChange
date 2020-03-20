@@ -1,5 +1,7 @@
 <?php
 
+namespace fdi\ucm\aw\booxchange\transfers;
+
 class TComentario{
 
     private $idComentario;

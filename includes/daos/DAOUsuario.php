@@ -1,9 +1,16 @@
-
 <?php
+
+namespace fdi\ucm\aw\booxchange\daos;
+
 $parentDir = dirname(__DIR__, 1);
-include_once($parentDir . "/transfers/TUsuario.php");
-include_once($parentDir . "/constants.php");
-include_once(__DIR__ . "/DAO.php");
+require_once($parentDir."/config.php");
+
+$parentDir = dirname(__DIR__, 1);
+//include_once($parentDir . "/transfers/TUsuario.php");
+//include_once($parentDir . "/constants.php");
+//include_once(__DIR__ . "/DAO.php");
+
+use fdi\ucm\aw\booxchange\transfers\TUsuario as TUsuario;
 
 class DAOUsuario extends DAO
 {
@@ -66,8 +73,9 @@ class DAOUsuario extends DAO
 
         //No existe el usuario, por lo cual lo introduzco en la BD
         if (mysqli_num_rows($consulta) == 0) {
+            $rol = BD_TYPE_NORMAL_USER;
             $sql = "INSERT INTO usuario (Nombre, NombreReal, Contraseña, Correo, Foto, Direccion, Nacimiento, Ciudad, FechaDeCreacion, Rol) VALUES 
-                                        ('$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', '$fechaDeCreacion', 0);";
+                                        ('$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', '$fechaDeCreacion', $rol);";
 
             mysqli_query(self::$instance->bdBooxChange, $sql);
 
