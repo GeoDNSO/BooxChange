@@ -174,13 +174,4 @@ abstract class Form
         return $html;
     }
 
-    /**
-     * Get opciones que influyan en los atributos del formulario al generar sus campos
-     *
-     * @return  array
-     */ 
-    public function getFormOptions()
-    {
-        return $this->formOptions;
-    }
 }

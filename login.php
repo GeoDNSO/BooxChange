@@ -27,6 +27,18 @@ include("includes/comun/cabecera.php");
 
         <input type="submit" value="Iniciar sesión" />
     </form>
+
+    <?php
+        
+        use fdi\ucm\aw\booxchange\formularios\FormularioLogin;
+
+        echo "NUEVO FORM";
+
+        $form = new FormularioLogin("loginForm", array("action"=>null));
+
+        $form->gestiona();
+    ?>
+
 </div>
 
 

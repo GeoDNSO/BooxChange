@@ -4,7 +4,7 @@
 namespace fdi\ucm\aw\booxchange\formularios;
 
 $parentDir = dirname(__DIR__, 1);
-require_once($parentDir."/config.php");
+require_once($parentDir . "/config.php");
 
 use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
@@ -27,14 +27,14 @@ class FormularioCompraLibro extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        
+
         //$opciones = $this->getFormOptions();
         $opciones = $this->formOptions;
-       
+
         $ud = $opciones["unidades"];
 
         $html = '<label for="unidades"><b>Unidades</b></label><br>';
-        $html .= '<input type="number" name="unidades" id="unidades" min="1" max="'.$ud.'" value="1" /><br><br>';
+        $html .= '<input type="number" name="unidades" id="unidades" min="1" max="' . $ud . '" value="1" /><br><br>';
 
         $html .= '<label for="numtarjeta"><b>Número de Tarjeta</b></label><br>';
         $html .= '<input type="text" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>';
@@ -57,11 +57,12 @@ class FormularioCompraLibro extends Form
      */
     protected function procesaFormulario($datos)
     {
-        $_SESSION["llega3"] = "llega3";
+        echo '<script type="text/JavaScript">  prompt("primero"); </script>';
         if(!isset($_SESSION['nombre'])){
-            $_SESSION["llega4"] = "llega4";
             exit("No se encuentra el nombre en la sesion");
         }
+        
+        echo '<script type="text/JavaScript">  prompt("LLEGAMOS"); </script>';
 
         $libro = unserialize($_SESSION["libroCompra"]);
         $titulo = $libro->getTitulo();
@@ -69,26 +70,27 @@ class FormularioCompraLibro extends Form
         $udAComprar = $datos["unidades"];
         $numTarjeta = $datos["numtarjeta"];
 
-        $udA = 0;
-        $ud = 0;
-
         $app = appBooxChange::getInstance();
 
         $usuario = unserialize($_SESSION["usuario"]);
         $idUsuario = $usuario->getIdUsuario();
-        echo "El id del usuario es $idUsuario";
-        $_SESSION["llega"] = "llega";
-        if(true){
-            $app->procesarCompra($idUsuario, $libro, $udAComprar, $numTarjeta);
-            $_SESSION["llega2"] = "llega2";
-            //header("Location: ../../index.php");
-            $parentDir = dirname(__DIR__, 2);
-            $path = $parentDir."/index.php";
-            return  $path;
-        }
-        $errores = "vacio";
-        return $errores;
-
+        //$_GET['id'] = 
+        //$_SESSION['idtemp'] = $libro->getIdLibro();
         
+        echo "<script type='text/JavaScript'>  prompt('El id es $idUsuario'); </script>";
+
+        $app->procesarCompra($idUsuario, $libro, $udAComprar, $numTarjeta);
+        
+
+        //header("Location: ../../index.php");
+        $parentDir = dirname(__DIR__, 2);
+        $path = $parentDir . "/index.php";
+        //return  $path;
+        return "./tienda.php";
+
+        //$errores = "vacio";
+        // return $errores;
+
+
     }
 }

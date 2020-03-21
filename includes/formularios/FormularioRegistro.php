@@ -3,14 +3,14 @@
 namespace fdi\ucm\aw\booxchange\formularios;
 
 $parentDir = dirname(__DIR__, 1);
-require_once($parentDir."/config.php");
+require_once($parentDir . "/config.php");
 
-
+use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
 class FormularioRegistro extends Form
 {
 
-    
+
     public function __construct($formId, $opciones = array())
     {
         parent::__construct($formId, $opciones);
@@ -25,22 +25,40 @@ class FormularioRegistro extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        if(empty($datosIniciales)){
-            $datosIniciales["nombreUsuario"] = "";
-        }
-
-        //$html = '<form action="procesarLogin.php" method="POST">';
         $html = '<fieldset>';
-        $html .= '    <legend>Usuario y contraseña</legend>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Nombre de usuario:</label> <input type="text" name="nombreUsuario" value="'.$datosIniciales["nombreUsuario"].'" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Password:</label> <input type="password" name="password" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control"><button type="submit" name="login">Entrar</button></div>';
-        $html .= '</fieldset>';
+        $html .= '<legend>Login</legend>';
+        $html .= '<form>';
+        $html .= '<label for="userRealName"><b>Nombre y Apellidos</b></label><br>';
+        $html .= '<input type="text" placeholder="" name="userRealName" id="userRealName" value="<?php echo $nombreReal; ?>" /><br><br>';
+
+        $html .= '<label for="username"><b>Nombre de Usuario</b></label><br>';
+        $html .= '<input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="<?php echo $nombreUsuario; ?>" /><br><br>';
+
+        $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
+        $html .= '<input type="text" placeholder="Foto, por ahora no funcional" name="foto"  id="foto" /><br><br>';
+
+        $html .= '<label for="email"><b>Correo Electrónico</b></label><br>';
+        $html .= '<input type="text" placeholder="user@mail.com" name="email" id="email"  value="<?php echo $correo; ?>" /><br><br>';
+
+        $html .= '<label for="passwd"><b>Contraseña</b></label><br>';
+        $html .= '<input type="password" placeholder="Escribe una contraseña..." name="passwd"  id="passwd" /><br><br>';
+
+        $html .= '<label for="passwdR"><b>Repite Contraseña</b></label><br>';
+        $html .= '<input type="password" placeholder="Repite la contraseña..." name="passwdR" id="passwdR" /><br><br>';
+
+        $html .= '<label for="fechaNac"><b>Fecha de Nacimiento</b></label><br>';
+        $html .= '<input type="date" name="fechaNac" id="fechaNac" value="<?php echo $fechaNacimiento; ?>"/><br><br>';
+
+        $html .= '<label for="ciudad"><b>Ciudad</b></label><br>';
+        $html .= '<input type="text" placeholder="Ciudad en la que resides" name="ciudad" id="ciudad" value="<?php echo $ciudad; ?>" /><br><br>';
+
+        $html .= '<label for="direccion"><b>Dirección</b></label><br>';
+        $html .= '<input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="<?php echo $direccion; ?>" /><br><br>';
+
+        $html .= '<button type="submit">Registrarse</button>';
         $html .= '</form>';
+        $html .= '</fieldset>';
+
 
         return $html;
     }
@@ -56,42 +74,93 @@ class FormularioRegistro extends Form
     protected function procesaFormulario($datos)
     {
 
-        if (!isset($datos['login'])) {
-            header('Location: login.php');
-            exit();
+
+        $correcto = true;
+        if (!isset($datos['username']) || empty($datos['username'])) {
+            echo " -Nombre de usuario/nick <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['userRealName']) || empty($datos['userRealName'])) {
+            echo " -Nombre real <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['email']) || empty($datos['email'])) {
+            echo " -Correo <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['passwd']) || empty($datos['passwd'])) {
+            echo " -Contraseña <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['passwdR']) || empty($datos['passwdR'])) {
+            echo " -Repita la contraseña <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['fechaNac']) || empty($datos['fechaNac'])) {
+            echo " -Fecha de nacimiento <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['ciudad']) || empty($datos['ciudad'])) {
+            echo " -Ciudad <br>";
+            $correcto = false;
+        }
+        if (!isset($datos['direccion']) || empty($datos['direccion'])) {
+            echo " -Dirección <br>";
+            $correcto = false;
+        }
+        if ($correcto == false) {
+            return array("error1" => "por hacer");
         }
 
-        $erroresFormulario = array();
 
-        $nombreUsuario = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
+        ///////////////////////////////////
+        $app = appBooxChange::getInstance();
 
-        if (empty($nombreUsuario)) {
-            $erroresFormulario[] = "El nombre de usuario no puede estar vacío";
-        }
+        $_SESSION[REG_PASS_EQ] = true;
+        $_SESSION[REG_DATA_NO_SET] = false;
 
-        $password = isset($datos['password']) ? $datos['password'] : null;
-        if (empty($password)) {
-            $erroresFormulario[] = "El password no puede estar vacío.";
-        }
+        //Id se puede dejar nulo
 
-        if (count($erroresFormulario) === 0) {
-            $usuario = Usuario::buscaUsuario($nombreUsuario);
+        //Obtener y limpiar los datos 
+        $nombreUsuario = $_SESSION['nombreUsuario_reg'];
+        $nombreReal =  $_SESSION['nombreReal_reg'];
+        $correo = $_SESSION['correo_reg'];
+        $password = $_SESSION['password_reg'];
+        $fotoPerfil = $_SESSION['foto_reg'];
+        $fechaNacimiento = $_SESSION['fechaNacimiento_reg'];
+        $ciudad = $_SESSION['ciudad_reg'];
+        $direccion = $_SESSION['direccion_reg'];
+        $rol = BD_TYPE_NORMAL_USER; //Usuario normal por defecto
 
-            if (!$usuario) {
-                $erroresFormulario[] = "El usuario o el password no coinciden";
+        date_default_timezone_set("Europe/Madrid");
+        $fechaDeCreacion = date_default_timezone_get(); //REVIsAR FORMATO PARA LA BASE DE DATOS??
+
+
+        if (!$_SESSION[REG_DATA_NO_SET] && $_SESSION[REG_PASS_EQ]) {
+
+            $password = password_hash($password, PASSWORD_BCRYPT);
+            //El id se ignorará, se asignara automáticamente
+
+            if ($app->registrarUsuario(
+                $nombreUsuario,
+                $nombreReal,
+                $correo,
+                $password,
+                $fotoPerfil,
+                $fechaNacimiento,
+                $rol,
+                $ciudad,
+                $direccion,
+                $fechaDeCreacion
+            )) {
+                //echo "Ha sido registrado correctamente";
+
+                //Cuando se crea una cuenta, te loguea automáticamente
+                $app->logInUsuario($nombreUsuario, $password);
+                return "./index.php";
             } else {
-                if ($usuario->compruebaPassword($password)) {
-                    $_SESSION['login'] = true;
-                    $_SESSION['nombre'] = $nombreUsuario;
-                    $_SESSION['esAdmin'] = strcmp($usuario->rol(), 'admin') == 0 ? true : false;
-                    //header('Location: index.php');
-                    return "index.php";
-                    //exit();
-                } else {
-                    $erroresFormulario[] = "El usuario o el password no coinciden";
-                }
+                return "./registro.php";
             }
         }
-        return $erroresFormulario;
     }
 }

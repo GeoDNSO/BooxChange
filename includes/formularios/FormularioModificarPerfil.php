@@ -3,13 +3,15 @@
 namespace fdi\ucm\aw\booxchange\formularios;
 
 $parentDir = dirname(__DIR__, 1);
-require_once($parentDir."/config.php");
+require_once($parentDir . "/config.php");
+
+use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
 
 class FormularioModificarPerfil extends Form
 {
 
-    
+
     public function __construct($formId, $opciones = array())
     {
         parent::__construct($formId, $opciones);
@@ -24,22 +26,15 @@ class FormularioModificarPerfil extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        if(empty($datosIniciales)){
-            $datosIniciales["nombreUsuario"] = "";
-        }
 
-        //$html = '<form action="procesarLogin.php" method="POST">';
-        $html = '<fieldset>';
-        $html .= '    <legend>Usuario y contraseña</legend>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Nombre de usuario:</label> <input type="text" name="nombreUsuario" value="'.$datosIniciales["nombreUsuario"].'" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Password:</label> <input type="password" name="password" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control"><button type="submit" name="login">Entrar</button></div>';
-        $html .= '</fieldset>';
-        $html .= '</form>';
+        $html = '<p> Nombre Real: <input type="text" name="userRealName" id= "userRealName" value="<?php echo $nombreReal; ?>"/></p>';
+        $html .= '<p> Contraseña: <input type="text" name="passwd" id= "passwd" value="<?php echo $password; ?>"/></p>';
+        $html .= '<p> Repite contraseña: <input type="text" name="passwdR" id= "passwdR" value="<?php echo $passwordR; ?>"/></p>';
+        $html .= '<p> Correo: <input type="text" name="email" id= "email" value="<?php echo $correo; ?>"/></p>';
+        $html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="<?php echo $foto; ?>"/></p>';
+        $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="<?php echo $ciudad; ?>"/></p>';
+        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="<?php echo $direccion; ?>"/></p>';
+        $html .= '<p><input type="submit" name="accept" value="Cambiar" /></p>';
 
         return $html;
     }
@@ -55,42 +50,58 @@ class FormularioModificarPerfil extends Form
     protected function procesaFormulario($datos)
     {
 
-        if (!isset($datos['login'])) {
-            header('Location: login.php');
-            exit();
+        $correcto = true;
+        if ($datos['passwdR'] != $datos['passwd']) {
+            echo "Asegúrese que ambas contraseñas son iguales";
+            $correcto = false;
+        }
+        if (!isset($datos['userRealName']) || empty($datos['userRealName'])) {
+            $correcto = false;
+        }
+        if (!isset($datos['email']) || empty($datos['email'])) {
+            $correcto = false;
+        }
+        if (!isset($datos['passwd']) || empty($datos['passwd'])) {
+            $correcto = false;
+        }
+        if (!isset($datos['passwdR']) || empty($datos['passwdR'])) {
+            $correcto = false;
+        }
+        if (!isset($datos['ciudad']) || empty($datos['ciudad'])) {
+            $correcto = false;
+        }
+        if (!isset($datos['direccion']) || empty($datos['direccion'])) {
+            $correcto = false;
         }
 
-        $erroresFormulario = array();
-
-        $nombreUsuario = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
-
-        if (empty($nombreUsuario)) {
-            $erroresFormulario[] = "El nombre de usuario no puede estar vacío";
+        if ($correcto == false) {
+            return array(0 => "vacio");
         }
 
-        $password = isset($datos['password']) ? $datos['password'] : null;
-        if (empty($password)) {
-            $erroresFormulario[] = "El password no puede estar vacío.";
-        }
 
-        if (count($erroresFormulario) === 0) {
-            $usuario = Usuario::buscaUsuario($nombreUsuario);
 
-            if (!$usuario) {
-                $erroresFormulario[] = "El usuario o el password no coinciden";
-            } else {
-                if ($usuario->compruebaPassword($password)) {
-                    $_SESSION['login'] = true;
-                    $_SESSION['nombre'] = $nombreUsuario;
-                    $_SESSION['esAdmin'] = strcmp($usuario->rol(), 'admin') == 0 ? true : false;
-                    //header('Location: index.php');
-                    return "index.php";
-                    //exit();
-                } else {
-                    $erroresFormulario[] = "El usuario o el password no coinciden";
-                }
-            }
+
+        $app = appBooxChange::getInstance();
+
+        //Obtener y limpiar los datos 
+        $idUsuario = $_SESSION['id_Usuario'];
+        $nombreUsuario = $_SESSION['nombre'];
+        $nombreReal =  $_SESSION['nombreReal_reg'];
+        $correo = $_SESSION['correo_reg'];
+        $password = $_SESSION['password_reg'];
+        $fotoPerfil = $_SESSION['foto_reg'];
+        $ciudad = $_SESSION['ciudad_reg'];
+        $direccion = $_SESSION['direccion_reg'];
+
+
+        $password = password_hash($password, PASSWORD_BCRYPT);
+
+        if ($app->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)) {
+
+            return "./index.php";
         }
-        return $erroresFormulario;
+        else{
+            return "./index.php";
+        }
     }
 }

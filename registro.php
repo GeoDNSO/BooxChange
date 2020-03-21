@@ -93,12 +93,21 @@ require_once(__DIR__ . "/includes/config.php");
     </form>
 
     <?php
+        use fdi\ucm\aw\booxchange\formularios\FormularioRegistro;
+
+        echo "NUEVO FORM";
+
+        $form = new FormularioRegistro("registroForm", array("action"=>null));
+
+        $form->gestiona();
+    ?>
+
+    <?php
         if(verifica_entrada()){
             if($password != $passwordR){
                 echo "Asegúrese que ambas contraseñas son iguales";
             }
             else{
-                echo "We are in bois: ";
                 header("Location: /BooxChange/includes/procesos/procesarRegistro.php");
             }
         }

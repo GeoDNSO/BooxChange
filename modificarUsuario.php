@@ -60,6 +60,19 @@ require_once(__DIR__ . "/includes/config.php");
     </body>
 
     <?php
+        use \fdi\ucm\aw\booxchange\formularios\FormularioModificarPerfil;
+
+        echo "NUEVO FORM\n";
+
+        //$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
+        $form = new FormularioModificarPerfil("formModPerfil", array("action"=>null));
+
+        $form->gestiona();
+
+    ?>
+
+
+    <?php
     if(verifica_entrada()){
         if($password != $passwordR){
             echo "Asegúrese que ambas contraseñas son iguales";

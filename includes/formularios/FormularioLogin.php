@@ -3,15 +3,15 @@
 namespace fdi\ucm\aw\booxchange\formularios;
 
 $parentDir = dirname(__DIR__, 1);
-require_once($parentDir."/config.php");
+require_once($parentDir . "/config.php");
 
 
-
+use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
 class FormularioLogin extends Form
 {
 
-    
+
     public function __construct($formId, $opciones = array())
     {
         parent::__construct($formId, $opciones);
@@ -26,22 +26,15 @@ class FormularioLogin extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        if(empty($datosIniciales)){
-            $datosIniciales["nombreUsuario"] = "";
-        }
-
-        //$html = '<form action="procesarLogin.php" method="POST">';
-        $html = '<fieldset>';
-        $html .= '    <legend>Usuario y contraseña</legend>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Nombre de usuario:</label> <input type="text" name="nombreUsuario" value="'.$datosIniciales["nombreUsuario"].'" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control">';
-        $html .= '        <label>Password:</label> <input type="password" name="password" />';
-        $html .= '    </div>';
-        $html .= '    <div class="grupo-control"><button type="submit" name="login">Entrar</button></div>';
-        $html .= '</fieldset>';
+        $html = '<div id="login">';
+        $html .= '<form method="post" action="includes/procesos/procesarLogin.php">';
+        $html .= '    <label for="userRealName"><b>Nombre de usuario:</b></label><br>';
+        $html .= '    <input type="text" placeholder="" name="username" id="username" /><br><br>';
+        $html .= '    <label for="password"><b>Contraseña:</b></label><br>';
+        $html .= '    <input type="password" placeholder="" name="password" id="password" /><br><br>';
+        $html .= '    <input type="submit" value="Iniciar sesión" />';
         $html .= '</form>';
+        $html .= '</div>';
 
         return $html;
     }
@@ -57,42 +50,24 @@ class FormularioLogin extends Form
     protected function procesaFormulario($datos)
     {
 
-        if (!isset($datos['login'])) {
-            header('Location: login.php');
-            exit();
-        }
 
-        $erroresFormulario = array();
+        //include_once($parentDir."/appBooxChange.php");
+        //include_once($parentDir."../constants.php");
 
-        $nombreUsuario = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
+        $app = appBooxChange::getInstance();
 
-        if (empty($nombreUsuario)) {
-            $erroresFormulario[] = "El nombre de usuario no puede estar vacío";
-        }
 
-        $password = isset($datos['password']) ? $datos['password'] : null;
-        if (empty($password)) {
-            $erroresFormulario[] = "El password no puede estar vacío.";
-        }
+        //Id se puede dejar nulo
 
-        if (count($erroresFormulario) === 0) {
-            $usuario = Usuario::buscaUsuario($nombreUsuario);
+        $nombreUsuario = $datos[LOG_USERNAME];
+        $password = $datos[LOG_PASSWORD];
 
-            if (!$usuario) {
-                $erroresFormulario[] = "El usuario o el password no coinciden";
-            } else {
-                if ($usuario->compruebaPassword($password)) {
-                    $_SESSION['login'] = true;
-                    $_SESSION['nombre'] = $nombreUsuario;
-                    $_SESSION['esAdmin'] = strcmp($usuario->rol(), 'admin') == 0 ? true : false;
-                    //header('Location: index.php');
-                    return "index.php";
-                    //exit();
-                } else {
-                    $erroresFormulario[] = "El usuario o el password no coinciden";
-                }
-            }
-        }
-        return $erroresFormulario;
+
+        $app->logInUsuario($nombreUsuario, $password);
+        header("Location: ../../index.php");
+        $parentDir = dirname(__DIR__, 2);
+        $path = $parentDir."/index.php";
+        //return $path;
+        return "./index.php";
     }
 }
