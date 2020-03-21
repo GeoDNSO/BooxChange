@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2020 a las 23:20:07
+-- Tiempo de generación: 21-03-2020 a las 16:14:08
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -56,7 +56,7 @@ CREATE TABLE `comentarios` (
   `Id_Comentario` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Texto` varchar(2000) DEFAULT NULL,
-  `Fecha` date NOT NULL,
+  `Fecha` datetime NOT NULL,
   `Id_Discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -65,10 +65,10 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`Id_Comentario`, `Id_Usuario`, `Texto`, `Fecha`, `Id_Discusion`) VALUES
-(1, 5, 'Comentario Dummy jeje', '2020-03-08', 1),
-(2, 4, 'Otro mas', '2020-03-06', 1),
-(3, 2, 'Pues muy bien redactao el reglamento, si señor!.', '2020-03-08', 1),
-(4, 1, 'Las devoluciones se harán efectivas en menos de 5 días hábiles', '2020-03-08', 2);
+(1, 5, 'Comentario Dummy jeje', '2020-03-08 00:00:00', 1),
+(2, 4, 'Otro mas', '2020-03-06 00:00:00', 1),
+(3, 2, 'Pues muy bien redactao el reglamento, si señor!.', '2020-03-08 00:00:00', 1),
+(4, 1, 'Las devoluciones se harán efectivas en menos de 5 días hábiles', '2020-03-08 00:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -82,17 +82,32 @@ CREATE TABLE `compras` (
   `idLibro` int(11) NOT NULL,
   `unidades` int(11) NOT NULL,
   `numTarjeta` int(11) NOT NULL,
-  `coste` float NOT NULL
+  `coste` float NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `compras`
 --
 
-INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `coste`) VALUES
-(1, 2, 4, 3, 10342, 0),
-(2, 4, 4, 1, 1, 10),
-(3, 5, 1, 4, 123456, 50);
+INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `coste`, `fecha`) VALUES
+(1, 2, 4, 3, 10342, 0, '0000-00-00 00:00:00'),
+(2, 4, 4, 1, 1, 10, '0000-00-00 00:00:00'),
+(3, 5, 1, 4, 123456, 50, '0000-00-00 00:00:00'),
+(4, 10, 1, 1, 123123, 12.5, '0000-00-00 00:00:00'),
+(5, 10, 1, 1, 121, 12.5, '0000-00-00 00:00:00'),
+(6, 10, 1, 1, 123123, 12.5, '0000-00-00 00:00:00'),
+(7, 10, 1, 1, 234234, 12.5, '0000-00-00 00:00:00'),
+(8, 10, 1, 1, 2423, 12.5, '0000-00-00 00:00:00'),
+(9, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
+(10, 10, 1, 1, 12321, 12.5, '0000-00-00 00:00:00'),
+(11, 10, 1, 3, 232, 37.5, '0000-00-00 00:00:00'),
+(12, 10, 1, 1, 42, 12.5, '0000-00-00 00:00:00'),
+(13, 10, 1, 1, 12, 12.5, '0000-00-00 00:00:00'),
+(14, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
+(15, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
+(16, 10, 1, 1, 323232, 12.5, '0000-00-00 00:00:00'),
+(17, 10, 1, 1, 34, 12.5, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -103,7 +118,7 @@ INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `
 CREATE TABLE `discusion` (
   `Id_Discusion` int(11) NOT NULL,
   `Id_Usuario_Creador` int(11) NOT NULL,
-  `Fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp(),
   `Tema` varchar(30) NOT NULL,
   `Titulo` varchar(50) NOT NULL,
   `NumComentarios` int(11) NOT NULL,
@@ -115,8 +130,8 @@ CREATE TABLE `discusion` (
 --
 
 INSERT INTO `discusion` (`Id_Discusion`, `Id_Usuario_Creador`, `Fecha`, `Tema`, `Titulo`, `NumComentarios`, `NumVisitas`) VALUES
-(1, 1, '2020-03-08 11:39:07', 'Reglamento', 'Cuidado de los libros', 5, 10),
-(2, 1, '2020-03-08 11:53:07', 'FAQ\'s', 'Contacto', 20, 57);
+(1, 1, '2020-03-08 12:39:07', 'Reglamento', 'Cuidado de los libros', 5, 10),
+(2, 1, '2020-03-08 12:53:07', 'FAQ\'s', 'Contacto', 20, 57);
 
 -- --------------------------------------------------------
 
@@ -174,7 +189,7 @@ CREATE TABLE `intercambios` (
   `Id_Libro_Inter2` int(11) NOT NULL,
   `EsMisterioso` tinyint(1) NOT NULL,
   `Id_Intercambio` int(11) NOT NULL,
-  `Fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -182,8 +197,8 @@ CREATE TABLE `intercambios` (
 --
 
 INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
-(1, 2, 1, 1, '2020-03-08 11:01:52'),
-(4, 3, 0, 2, '2020-03-06 10:01:52');
+(1, 2, 1, 1, '2020-03-08 12:01:52'),
+(4, 3, 0, 2, '2020-03-06 11:01:52');
 
 -- --------------------------------------------------------
 
@@ -235,7 +250,7 @@ CREATE TABLE `librointercambio` (
   `Id_Usuario` int(11) NOT NULL,
   `Titulo` varchar(30) NOT NULL,
   `Intercambiado` tinyint(1) NOT NULL,
-  `Fecha` date NOT NULL
+  `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -243,8 +258,8 @@ CREATE TABLE `librointercambio` (
 --
 
 INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `Fecha`) VALUES
-(2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, '2020-03-08'),
-(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 1, '2020-03-05');
+(2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, '2020-03-08 00:00:00'),
+(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 1, '2020-03-05 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -257,7 +272,7 @@ CREATE TABLE `mensajechat` (
   `Id_Mensaje_Chat` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Texto` varchar(1000) NOT NULL,
-  `Fecha` date NOT NULL
+  `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -265,11 +280,11 @@ CREATE TABLE `mensajechat` (
 --
 
 INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, `Fecha`) VALUES
-(1, 1, 2, 'Hola!', '2020-03-08'),
-(1, 2, 2, 'Estaba interesado en uno', '2020-03-08'),
-(1, 3, 2, 'De tus libros para intercambiar', '2020-03-08'),
-(1, 4, 5, 'Cual de todos?', '2020-03-08'),
-(1, 5, 2, 'El de harry potter', '2020-03-08');
+(1, 1, 2, 'Hola!', '2020-03-08 00:00:00'),
+(1, 2, 2, 'Estaba interesado en uno', '2020-03-08 00:00:00'),
+(1, 3, 2, 'De tus libros para intercambiar', '2020-03-08 00:00:00'),
+(1, 4, 5, 'Cual de todos?', '2020-03-08 00:00:00'),
+(1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -309,7 +324,7 @@ CREATE TABLE `usuario` (
   `Direccion` varchar(30) NOT NULL,
   `Nacimiento` date NOT NULL,
   `Ciudad` varchar(15) NOT NULL,
-  `FechaDeCreacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `FechaDeCreacion` datetime NOT NULL DEFAULT current_timestamp(),
   `Rol` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -318,12 +333,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Correo`, `Foto`, `Direccion`, `Nacimiento`, `Ciudad`, `FechaDeCreacion`, `Rol`) VALUES
-(1, 'admin', 'Jin', '$2y$10$jXlPNRuqn9dEXwJkYbaSh.ALvfWtYEHRuFHEGXGY0WqcJ0sfm6w2S', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 19:07:18', 0),
-(2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 19:08:20', 1),
-(3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 19:08:42', 1),
-(4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 19:09:37', 2),
-(5, 'Geo', 'Daniel ', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', '/fotos/fotos/img5.jpg', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-16 21:54:50', 1),
-(6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 19:10:04', 2);
+(1, 'admin', 'Jin', '$2y$10$jXlPNRuqn9dEXwJkYbaSh.ALvfWtYEHRuFHEGXGY0WqcJ0sfm6w2S', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
+(2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
+(3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
+(4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
+(5, 'Geo', 'Daniel ', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', '/fotos/fotos/img5.jpg', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
+(6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
+(10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'hola', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -476,7 +492,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `discusion`
@@ -512,7 +528,7 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
