@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2020 a las 17:54:36
+-- Tiempo de generación: 22-03-2020 a las 18:05:49
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -197,7 +197,8 @@ CREATE TABLE `intercambios` (
 --
 
 INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
-(3, 2, 1, 3, '2020-03-22 01:28:28');
+(3, 2, 1, 3, '2020-03-22 01:28:28'),
+(47, 48, 1, 23, '2020-03-22 18:01:00');
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,9 @@ CREATE TABLE `librointercambio` (
 INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) VALUES
 (1, 'autor', 'a', 'a', 'Romántico', 5, 'Libro Intercambio', 0, 0, '0000-00-00 00:00:00'),
 (2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, 0, '2020-03-08 00:00:00'),
-(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 0, 0, '2020-03-05 00:00:00');
+(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 0, 0, '2020-03-05 00:00:00'),
+(47, 'DROSS', 'nada', 'Libro Misterioso', 'Ciencia Ficción', 5, 'No es un libro', 1, 0, '2020-03-22 18:00:27'),
+(48, 'Autor', 'NO HAY', 'Libro Misterioso', 'Ciencia Ficción', 10, 'MI LIBRO', 1, 0, '2020-03-22 18:01:00');
 
 -- --------------------------------------------------------
 
@@ -307,7 +310,8 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES
-(1, 5, 'Notificación de prueba', 1, '2020-03-22 14:24:22');
+(1, 5, 'Notificación de prueba', 1, '2020-03-22 14:24:22'),
+(8, 5, 'Ya se ha completado su intercambio misterioso con el usuario user5, ha recibido el libro MI LIBRO a cambio de su libro No es un libro. Que suerte!!!', 0, '2020-03-22 18:01:00');
 
 -- --------------------------------------------------------
 
@@ -562,7 +566,7 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
@@ -574,7 +578,7 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
@@ -586,7 +590,7 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
