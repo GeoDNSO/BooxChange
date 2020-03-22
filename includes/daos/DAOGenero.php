@@ -28,9 +28,20 @@ class DAOGenero extends DAO{
     
     //Buscar generos
 
-    public function getAllGerns(){
-        
+    public function getAllGeneros(){
+        $array = array();
+        $sql = "SELECT * FROM genero";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        while( $fila = $consulta->fetch_array()){
+            $TGenero = new TGenero($fila[BD_GENERO_GENERO]);
+            $array[] = $TGenero;
+        }
+        return $array;
     }
+
+
+    
 
     function buscarGenerosporNombreGenero($idGenero){
 

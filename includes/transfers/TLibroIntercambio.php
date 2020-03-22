@@ -12,15 +12,21 @@ class TLibroIntercambio{
     private $descripcion;
     private $genero;
     private $intercambiado;
+    private $ofertado;
     private $fecha;
 
 
-    function __construct($idLibroInter, $idUsuario, $titulo, $imagen, $autor, $descripcion, $genero, $intercambiado, $fecha){
+    function __construct($idLibroInter, $idUsuario, $titulo, $imagen, $autor, $descripcion, $genero, $intercambiado, $ofertado, $fecha){
         $this->idLibroInter = $idLibroInter;
         $this->idUsuario = $idUsuario;
         $this->titulo = $titulo;
         $this->imagen = $imagen;
         $this->autor = $autor;
+        $this->descripcion = $descripcion;
+        $this->genero = $genero;
+        $this->intercambiado = $intercambiado;
+        $this->ofertado = $ofertado;
+        $this->fecha = $fecha;
     }
 
 
@@ -200,6 +206,26 @@ class TLibroIntercambio{
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ofertado
+     */ 
+    public function getOfertado()
+    {
+        return $this->ofertado;
+    }
+
+    /**
+     * Set the value of ofertado
+     *
+     * @return  self
+     */ 
+    public function setOfertado($ofertado)
+    {
+        $this->ofertado = $ofertado;
 
         return $this;
     }

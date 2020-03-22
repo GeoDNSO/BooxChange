@@ -49,14 +49,15 @@ use fdi\ucm\aw\booxchange\daos\DAOCompras as DAOCompras;
 use fdi\ucm\aw\booxchange\daos\DAODiscusion as DAODiscusion;
 use fdi\ucm\aw\booxchange\daos\DAOFavoritos as DAOFavoritos;
 use fdi\ucm\aw\booxchange\daos\DAOGenero as DAOGenero;
-use fdi\ucm\aw\booxchange\daos\DAOIntercambio as DAOIntercambio;
+use fdi\ucm\aw\booxchange\daos\DAOIntercambios as DAOIntercambios;
 use fdi\ucm\aw\booxchange\daos\DAOLibro as DAOLibro;
 use fdi\ucm\aw\booxchange\daos\DAOLibroIntercambio as DAOLibroIntercambio;
 use fdi\ucm\aw\booxchange\daos\DAOMensajeChat as DAOMensajeChat;
 use fdi\ucm\aw\booxchange\daos\DAOTema as DAOTema;
 use fdi\ucm\aw\booxchange\daos\DAOUsuario as DAOUsuario;
 use fdi\ucm\aw\booxchange\daos\DAOValoracionLibro as DAOValoracionLibro;
-
+use fdi\ucm\aw\booxchange\daos\DAOOfertasIntercambio as DAOOfertasIntercambio;
+use fdi\ucm\aw\booxchange\daos\DAONotificacion as DAONotificacion;
 
 use fdi\ucm\aw\booxchange\transfers\TChat as TChat;
 use fdi\ucm\aw\booxchange\transfers\TComentarios as TComentarios;
@@ -71,13 +72,16 @@ use fdi\ucm\aw\booxchange\transfers\TMensajeChat as TMensajeChat;
 use fdi\ucm\aw\booxchange\transfers\TTema as TTema;
 use fdi\ucm\aw\booxchange\transfers\TUsuario as TUsuario;
 use fdi\ucm\aw\booxchange\transfers\TValoracionLibro as TValoracionLibro;
-
+use fdi\ucm\aw\booxchange\transfers\TOfertasIntercambio as TOfertasIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TNotificacion as TNotificacion;
 
 use fdi\ucm\aw\booxchange\formularios\Form as Form;
 use fdi\ucm\aw\booxchange\formularios\FormularioLogin as FormularioLogin;
 use fdi\ucm\aw\booxchange\formularios\FormularioRegistro as FormularioRegistro;
 use fdi\ucm\aw\booxchange\formularios\FormularioCompraLibro as FormularioCompraLibro;
 use fdi\ucm\aw\booxchange\formularios\FormularioModificarPerfil as FormularioModificarPerfil;
+use fdi\ucm\aw\booxchange\formularios\FormularioIntercambio as FormularioIntercambio;
+use fdi\ucm\aw\booxchange\formularios\FormularioIntercambioMisterioso as FormularioIntercambioMisterioso;
 
 
 

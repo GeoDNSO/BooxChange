@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2020 a las 16:14:08
+-- Tiempo de generación: 21-03-2020 a las 20:41:22
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -186,10 +186,10 @@ INSERT INTO `genero` (`Genero`) VALUES
 
 CREATE TABLE `intercambios` (
   `Id_Libro_Inter1` int(11) NOT NULL,
-  `Id_Libro_Inter2` int(11) NOT NULL,
+  `Id_Libro_Inter2` int(11) DEFAULT NULL,
   `EsMisterioso` tinyint(1) NOT NULL,
   `Id_Intercambio` int(11) NOT NULL,
-  `Fecha` datetime NOT NULL DEFAULT current_timestamp()
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -250,6 +250,7 @@ CREATE TABLE `librointercambio` (
   `Id_Usuario` int(11) NOT NULL,
   `Titulo` varchar(30) NOT NULL,
   `Intercambiado` tinyint(1) NOT NULL,
+  `esOferta` tinyint(4) NOT NULL,
   `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -257,9 +258,9 @@ CREATE TABLE `librointercambio` (
 -- Volcado de datos para la tabla `librointercambio`
 --
 
-INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `Fecha`) VALUES
-(2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, '2020-03-08 00:00:00'),
-(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 1, '2020-03-05 00:00:00');
+INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) VALUES
+(2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, 0, '2020-03-08 00:00:00'),
+(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 1, 0, '2020-03-05 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -285,6 +286,32 @@ INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, 
 (1, 3, 2, 'De tus libros para intercambiar', '2020-03-08 00:00:00'),
 (1, 4, 5, 'Cual de todos?', '2020-03-08 00:00:00'),
 (1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notificaciones`
+--
+
+CREATE TABLE `notificaciones` (
+  `id` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `mensaje` text NOT NULL,
+  `leido` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ofertasintercambio`
+--
+
+CREATE TABLE `ofertasintercambio` (
+  `id` int(11) NOT NULL,
+  `idLibroIntercambio` int(11) NOT NULL,
+  `idLibroOferta` int(11) NOT NULL,
+  `ofertaAceptada` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -452,6 +479,21 @@ ALTER TABLE `mensajechat`
   ADD KEY `Id_Usuario` (`Id_Usuario`);
 
 --
+-- Indices de la tabla `notificaciones`
+--
+ALTER TABLE `notificaciones`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
+-- Indices de la tabla `ofertasintercambio`
+--
+ALTER TABLE `ofertasintercambio`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idLibroIntercambio` (`idLibroIntercambio`),
+  ADD KEY `idLibroOferta` (`idLibroOferta`);
+
+--
 -- Indices de la tabla `tema`
 --
 ALTER TABLE `tema`
@@ -523,6 +565,18 @@ ALTER TABLE `libro`
 --
 ALTER TABLE `mensajechat`
   MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `notificaciones`
+--
+ALTER TABLE `notificaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ofertasintercambio`
+--
+ALTER TABLE `ofertasintercambio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -603,6 +657,13 @@ ALTER TABLE `librointercambio`
 ALTER TABLE `mensajechat`
   ADD CONSTRAINT `mensajechat_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `mensajechat_ibfk_2` FOREIGN KEY (`Id_Chat`) REFERENCES `chat` (`Id_Chat`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `ofertasintercambio`
+--
+ALTER TABLE `ofertasintercambio`
+  ADD CONSTRAINT `ofertasintercambio_ibfk_1` FOREIGN KEY (`idLibroIntercambio`) REFERENCES `librointercambio` (`Id_Libro_Inter`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ofertasintercambio_ibfk_2` FOREIGN KEY (`idLibroOferta`) REFERENCES `librointercambio` (`Id_Libro_Inter`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `valoracionlibro`

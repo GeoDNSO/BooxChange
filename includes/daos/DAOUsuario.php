@@ -119,6 +119,28 @@ class DAOUsuario extends DAO
 
     function buscarUsuarioPorId($idUsuario)
     {
+        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$idUsuario'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $fila = $consulta->fetch_array();
+            $TUsuario = new TUsuario(
+                $fila[BD_USER_ID_USUARIO],
+                $fila[BD_USER_NOMBRE],
+                $fila[BD_USER_NOMBRE_REAL],
+                $fila[BD_USER_CORREO],
+                $fila[BD_USER_PASSWORD],
+                $fila[BD_USER_FOTO],
+                $fila[BD_USER_NACIMIENTO],
+                $fila[BD_USER_ROL],
+                $fila[BD_USER_CIUDAD],
+                $fila[BD_USER_DIRECCION],
+                $fila[BD_USER_FECHA_CREACION]
+            );
+           
+            return $TUsuario;
+        }
+        return null;
     }
 
     function buscarUsuarioPorNombre($nombreUsuario)

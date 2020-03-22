@@ -34,3 +34,6 @@ class DAOCompras extends DAO
         return $consulta;
     }
 }
+
+
+?>

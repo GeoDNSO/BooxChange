@@ -1,13 +1,7 @@
 <?php
 namespace fdi\ucm\aw\booxchange\daos;
 
-//$parentDir = dirname(__DIR__, 1);
-//include_once($parentDir . "/transfers/TLibro.php");
-//include_once($parentDir . "/constants.php");
-//include_once(__DIR__ . "/DAO.php");
 
-//use fdi\ucm\aw\booxchange\TLibro as TLibro;
-//use fdi\ucm\aw\booxchange\DAO as DAO;
 $parentDir = dirname(__DIR__, 1);
 require_once($parentDir."/config.php");
 
@@ -54,7 +48,8 @@ class DAOLibro extends DAO
                 $fila[BD_LIBRO_IDIOMA],
                 $fila[BD_LIBRO_EDITORIAL],
                 $fila[BD_LIBRO_DESCUENTO],
-                $fila[BD_LIBRO_UNIDADES]
+                $fila[BD_LIBRO_UNIDADES],
+                $fila[BD_LIBRO_FECHA_PUBLICACION]
             );
         }
         return $librosTienda;
@@ -82,7 +77,8 @@ class DAOLibro extends DAO
                 $fila[BD_LIBRO_IDIOMA],
                 $fila[BD_LIBRO_EDITORIAL],
                 $fila[BD_LIBRO_DESCUENTO],
-                $fila[BD_LIBRO_UNIDADES]
+                $fila[BD_LIBRO_UNIDADES],
+                $fila[BD_LIBRO_FECHA_PUBLICACION]
             );
             return $libro;
         }
@@ -97,3 +93,5 @@ class DAOLibro extends DAO
         return $consulta;
     }
 }
+
+?>
