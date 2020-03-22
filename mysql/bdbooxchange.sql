@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2020 a las 20:41:22
+-- Tiempo de generación: 22-03-2020 a las 17:54:36
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -56,7 +56,7 @@ CREATE TABLE `comentarios` (
   `Id_Comentario` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Texto` varchar(2000) DEFAULT NULL,
-  `Fecha` datetime NOT NULL,
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp(),
   `Id_Discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -197,8 +197,7 @@ CREATE TABLE `intercambios` (
 --
 
 INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
-(1, 2, 1, 1, '2020-03-08 12:01:52'),
-(4, 3, 0, 2, '2020-03-06 11:01:52');
+(3, 2, 1, 3, '2020-03-22 01:28:28');
 
 -- --------------------------------------------------------
 
@@ -221,19 +220,20 @@ CREATE TABLE `libro` (
   `Idioma` varchar(20) NOT NULL,
   `Editorial` varchar(20) NOT NULL,
   `Descuento` float DEFAULT NULL,
-  `unidades` int(11) NOT NULL
+  `unidades` int(11) NOT NULL,
+  `FechaPublicacion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `libro`
 --
 
-INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 12.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 4),
-(2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10),
-(3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10),
-(4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0),
-(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imgportada/img5.jpg', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0);
+INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
+(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 4, '0000-00-00'),
+(2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
+(3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
+(4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
+(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imgportada/img5.jpg', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -251,7 +251,7 @@ CREATE TABLE `librointercambio` (
   `Titulo` varchar(30) NOT NULL,
   `Intercambiado` tinyint(1) NOT NULL,
   `esOferta` tinyint(4) NOT NULL,
-  `Fecha` datetime NOT NULL
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -259,8 +259,9 @@ CREATE TABLE `librointercambio` (
 --
 
 INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) VALUES
+(1, 'autor', 'a', 'a', 'Romántico', 5, 'Libro Intercambio', 0, 0, '0000-00-00 00:00:00'),
 (2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, 0, '2020-03-08 00:00:00'),
-(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 1, 0, '2020-03-05 00:00:00');
+(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 0, 0, '2020-03-05 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -297,8 +298,16 @@ CREATE TABLE `notificaciones` (
   `id` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `mensaje` text NOT NULL,
-  `leido` tinyint(1) NOT NULL
+  `leido` tinyint(1) NOT NULL,
+  `fecha` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `notificaciones`
+--
+
+INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES
+(1, 5, 'Notificación de prueba', 1, '2020-03-22 14:24:22');
 
 -- --------------------------------------------------------
 
@@ -450,7 +459,8 @@ ALTER TABLE `genero`
 ALTER TABLE `intercambios`
   ADD PRIMARY KEY (`Id_Intercambio`) USING BTREE,
   ADD KEY `Id_Libro_Inter2` (`Id_Libro_Inter2`),
-  ADD KEY `Id_Libro_Inter1` (`Id_Libro_Inter1`);
+  ADD KEY `Id_Libro_Inter1` (`Id_Libro_Inter1`),
+  ADD KEY `Id_Libro_Inter1_2` (`Id_Libro_Inter1`);
 
 --
 -- Indices de la tabla `libro`
@@ -552,13 +562,19 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
   MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `librointercambio`
+--
+ALTER TABLE `librointercambio`
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
@@ -570,7 +586,7 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
@@ -633,8 +649,8 @@ ALTER TABLE `favoritos`
 -- Filtros para la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  ADD CONSTRAINT `intercambios_ibfk_1` FOREIGN KEY (`Id_Libro_Inter1`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `intercambios_ibfk_2` FOREIGN KEY (`Id_Libro_Inter2`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `intercambios_ibfk_1` FOREIGN KEY (`Id_Libro_Inter2`) REFERENCES `librointercambio` (`Id_Libro_Inter`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `intercambios_ibfk_2` FOREIGN KEY (`Id_Libro_Inter1`) REFERENCES `librointercambio` (`Id_Libro_Inter`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `libro`
@@ -646,10 +662,8 @@ ALTER TABLE `libro`
 -- Filtros para la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  ADD CONSTRAINT `librointercambio_ibfk_1` FOREIGN KEY (`Id_Libro_Inter`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `librointercambio_ibfk_2` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `librointercambio_ibfk_3` FOREIGN KEY (`Genero`) REFERENCES `genero` (`Genero`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `librointercambio_ibfk_4` FOREIGN KEY (`AutorLibInter`) REFERENCES `libro` (`Autor`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `librointercambio_ibfk_3` FOREIGN KEY (`Genero`) REFERENCES `genero` (`Genero`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mensajechat`
@@ -657,6 +671,12 @@ ALTER TABLE `librointercambio`
 ALTER TABLE `mensajechat`
   ADD CONSTRAINT `mensajechat_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `mensajechat_ibfk_2` FOREIGN KEY (`Id_Chat`) REFERENCES `chat` (`Id_Chat`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `notificaciones`
+--
+ALTER TABLE `notificaciones`
+  ADD CONSTRAINT `notificaciones_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `ofertasintercambio`
