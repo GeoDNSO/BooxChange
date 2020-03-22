@@ -117,6 +117,31 @@ class DAOUsuario extends DAO
         return $array;
     }
 
+    public function getUserById($idUsuario){
+        $sql = "SELECT * FROM usuario WHERE usuario.Id_Usuario = '$idUsuario'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $fila = $consulta->fetch_array();
+            $usuario = new TUsuario(
+                $fila[BD_USER_ID_USUARIO],
+                $fila[BD_USER_NOMBRE],
+                $fila[BD_USER_NOMBRE_REAL],
+                $fila[BD_USER_CORREO],
+                $fila[BD_USER_PASSWORD],
+                $fila[BD_USER_FOTO],
+                $fila[BD_USER_NACIMIENTO],
+                $fila[BD_USER_ROL],
+                $fila[BD_USER_CIUDAD],
+                $fila[BD_USER_DIRECCION],
+                $fila[BD_USER_FECHA_CREACION]
+            );
+            return $usuario;
+        }
+                
+        return null;
+    }
+
     function buscarUsuarioPorId($idUsuario)
     {
     }
@@ -132,8 +157,18 @@ class DAOUsuario extends DAO
 
     //Actualizar Datos
 
-    function eliminarUsuario($idUsuario, $nombreUsuario)
-    {
+    public function borrarUsuario($idUsuario) {
+        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$idUsuario'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $sql = "DELETE FROM Usuario
+            WHERE Id_Usuario= $idUsuario";
+            mysqli_query(self::$instance->bdBooxChange, $sql);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)
@@ -144,6 +179,22 @@ class DAOUsuario extends DAO
         if (mysqli_num_rows($consulta) == 1) {
             $sql = "UPDATE usuario
             SET NombreReal = '$nombreReal' , Contraseña = '$password', Correo = '$correo', Foto = '$fotoPerfil', Ciudad = '$ciudad', Direccion = '$direccion'
+            WHERE Id_Usuario = $idUsuario"; 
+            mysqli_query(self::$instance->bdBooxChange, $sql);
+            return true;
+        }
+        else{ 
+            return false;
+        }
+    }
+
+    function actualizarRol($idUsuario, $rol){
+        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$idUsuario'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $sql = "UPDATE usuario
+            SET Rol= '$rol'
             WHERE Id_Usuario = $idUsuario"; 
             mysqli_query(self::$instance->bdBooxChange, $sql);
             return true;

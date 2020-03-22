@@ -111,11 +111,57 @@ class appBooxChange{
         return $librosTienda;
     }
 
+    public function getBooks(){
+        $bdBooxChange = DAOLibro::getInstance();
+        $libros = $bdBooxChange->getAllBooks();        
+        $bdBooxChange->closeBD();
+        return $libros;
+    }
+
+    public function getUsers(){
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuarios = $bdBooxChange->getAllUsers();        
+        $bdBooxChange->closeBD();
+        return $usuarios;
+    }
+
+    public function getUserById($id){
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuario = $bdBooxChange->getUserById($id);        
+        $bdBooxChange->closeBD();
+        return $usuario;
+    }
+
     public function getLibroById($id){
         $bdBooxChange = DAOLibro::getInstance();
         $libro = $bdBooxChange->getLibroById($id);        
         $bdBooxChange->closeBD();
         return $libro;
+    }
+
+    public function procesarCambiarRol($idUsuario, $rol){
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->actualizarRol($idUsuario, $rol);
+    }
+
+    public function procesarSubirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades);
+    }
+
+    public function procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades){
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades);
+    }
+
+    public function procesarBorrarLibro($idLibro) {
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->borrarLibro($idLibro);
+    }
+
+    public function procesarBorrarUsuario($idUsuario) {
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->borrarUsuario($idUsuario);
     }
 
     public function procesarCompra($idUsuario, $libro, $ud, $numTarjeta){

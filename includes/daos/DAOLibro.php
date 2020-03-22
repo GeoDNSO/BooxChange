@@ -60,6 +60,34 @@ class DAOLibro extends DAO
         return $librosTienda;
     }
 
+    public function getAllBooks(){
+        $sql = "SELECT * FROM libro";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        $librosTienda = array();
+
+        while ($fila = mysqli_fetch_array($consulta)) {
+            $librosTienda[] = new TLibro(
+                $fila[BD_LIBRO_ID_LIBRO],
+                $fila[BD_LIBRO_TITULO],
+                $fila[BD_LIBRO_AUTOR],
+                $fila[BD_LIBRO_PRECIO],
+                $fila[BD_LIBRO_VALORACION],
+                $fila[BD_LIBRO_RANKING],
+                $fila[BD_LIBRO_IMAGEN],
+                $fila[BD_LIBRO_DESCRIPCIÓN],
+                $fila[BD_LIBRO_GENERO],
+                $fila[BD_LIBRO_EN_TIENDA],
+                $fila[BD_LIBRO_FECHA],
+                $fila[BD_LIBRO_IDIOMA],
+                $fila[BD_LIBRO_EDITORIAL],
+                $fila[BD_LIBRO_DESCUENTO],
+                $fila[BD_LIBRO_UNIDADES]
+            );
+        }
+        return $librosTienda;
+    }
+
     public function getLibroById($id)
     {
         $sql = "SELECT * FROM libro WHERE libro.Id_Libro = $id";
@@ -96,4 +124,52 @@ class DAOLibro extends DAO
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         return $consulta;
     }
+
+    public function subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
+        $sql = "SELECT * FROM libro WHERE Titulo='$titulolibro'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 0) {
+            $sql = "INSERT INTO libro (Titulo, Autor, Precio, Imagen, Descripcion, Genero, EnTienda, Fecha, Idioma, Editorial, Descuento, Unidades) VALUES 
+                                        ('$titulolibro', '$autor', '$precio', '$imagen',  '$descripcion', '$genero', '$enTienda', '$fecha', '$idioma', '$editorial', '$descuento', '$unidades')";
+
+            mysqli_query(self::$instance->bdBooxChange, $sql);
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades) {
+        $sql = "SELECT * FROM libro WHERE Id_Libro='$idLibro'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $sql = "UPDATE libro
+            SET Titulo = '$titulolibro', Autor = '$autor', Precio = '$precio', Imagen = '$imagen', Descripcion = '$descripcion',
+            Genero = '$genero', EnTienda = '$enTienda', Idioma = '$idioma', Editorial = '$editorial',
+            Descuento = '$descuento', Unidades = '$unidades'
+            WHERE Id_Libro = $idLibro";
+            mysqli_query(self::$instance->bdBooxChange, $sql);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function borrarLibro($idLibro) {
+        $sql = "SELECT * FROM libro WHERE Id_Libro='$idLibro'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $sql = "DELETE FROM libro
+            WHERE Id_Libro = $idLibro";
+            mysqli_query(self::$instance->bdBooxChange, $sql);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
