@@ -77,7 +77,8 @@ class DAOLibro extends DAO
                 $fila[BD_LIBRO_IDIOMA],
                 $fila[BD_LIBRO_EDITORIAL],
                 $fila[BD_LIBRO_DESCUENTO],
-                $fila[BD_LIBRO_UNIDADES]
+                $fila[BD_LIBRO_UNIDADES],
+                $fila[BD_LIBRO_FECHA_PUBLICACION]
             );
         }
         return $librosTienda;
