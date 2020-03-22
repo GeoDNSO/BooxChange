@@ -7,6 +7,9 @@ Proyecto Final para AW
  - Controlar la inyección de SQL
  - Documentar las funciones
  - Crear la memoria de la entrega
+ - Hacer que los usuarios puedan valorar libros
+ - Revisar faltas de ortografía
+
 ### Importante, antes de empezar
 - Los cambios a Development y se valida el html generado por php --> https://validator.w3.org/ 
 - A partir de ahora deben usarse en los includes las macros de \_\_DIR_\_ con la función dirname(), el por qué y su uso lo podéis leer en este enlace https://stackoverflow.com/questions/9628443/why-would-i-use-dirname-file-in-an-include-or-include-once-statement
