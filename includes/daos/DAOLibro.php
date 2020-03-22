@@ -122,13 +122,13 @@ class DAOLibro extends DAO
         return $consulta;
     }
 
-    public function subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
+    public function subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
         $sql = "SELECT * FROM libro WHERE Titulo='$titulolibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) == 0) {
-            $sql = "INSERT INTO libro (Titulo, Autor, Precio, Imagen, Descripcion, Genero, EnTienda, Fecha, Idioma, Editorial, Descuento, Unidades) VALUES 
-                                        ('$titulolibro', '$autor', '$precio', '$imagen',  '$descripcion', '$genero', '$enTienda', '$fecha', '$idioma', '$editorial', '$descuento', '$unidades')";
+            $sql = "INSERT INTO libro (Titulo, Autor, Precio, Imagen, Descripcion, Genero, EnTienda, Fecha, Idioma, Editorial, Descuento, Unidades, FechaPublicacion) VALUES 
+                                        ('$titulolibro', '$autor', '$precio', '$imagen',  '$descripcion', '$genero', '$enTienda', current_timestamp(), '$idioma', '$editorial', '$descuento', '$unidades', '$fechaDePublicacion')";
 
             mysqli_query(self::$instance->bdBooxChange, $sql);
 
@@ -138,7 +138,7 @@ class DAOLibro extends DAO
         }
     }
 
-    public function modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades) {
+    public function modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion) {
         $sql = "SELECT * FROM libro WHERE Id_Libro='$idLibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
@@ -146,7 +146,7 @@ class DAOLibro extends DAO
             $sql = "UPDATE libro
             SET Titulo = '$titulolibro', Autor = '$autor', Precio = '$precio', Imagen = '$imagen', Descripcion = '$descripcion',
             Genero = '$genero', EnTienda = '$enTienda', Idioma = '$idioma', Editorial = '$editorial',
-            Descuento = '$descuento', Unidades = '$unidades'
+            Descuento = '$descuento', Unidades = '$unidades', FechaPublicacion = '$fechaDePublicacion'
             WHERE Id_Libro = $idLibro";
             mysqli_query(self::$instance->bdBooxChange, $sql);
             return true;

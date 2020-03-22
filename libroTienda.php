@@ -53,8 +53,8 @@
     $genero = $libro->getGenero();
     echo "<h3> Genero: $genero </h3>";
 
-    $fecha = $libro->getFecha();
-    echo "<h3> Fecha: $fecha </h3>";
+    $fechaPublicacion = $libro->getFechaPublicacion();
+    echo "<h3> Fecha de publicacion: $fechaPublicacion </h3>";
 
     $idioma = $libro->getIdioma();
     echo "<h3> Idioma: $idioma </h3>";

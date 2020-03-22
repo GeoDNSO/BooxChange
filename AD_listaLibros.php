@@ -35,6 +35,7 @@
             $editorial = $libro -> getEditorial();
             $descuento = $libro -> getDescuento();
             $unidades = $libro -> getUnidades();
+            $fechaDePublicacion = $libro -> getFechaPublicacion();
             echo "<li><ul>
             <li>Titulo del Libro: $titulo</li>
             <li> Autor: $autor </li>
@@ -44,6 +45,7 @@
             <li> Genero: $genero </li>
             <li> En Tienda: $enTienda </li>
             <li> Fecha de subida de libro: $fecha </li>
+            <li> Fecha de publicacion del libro: $fechaDePublicacion </li>
             <li> Idioma: $idioma </li>
             <li> Editorial: $editorial </li>
             <li> Descuento: $descuento </li>

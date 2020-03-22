@@ -154,14 +154,14 @@ class appBooxChange{
         return $bdBooxChange->actualizarRol($idUsuario, $rol);
     }
 
-    public function procesarSubirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
+    public function procesarSubirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
         $bdBooxChange = DAOLibro::getInstance();
-        return $bdBooxChange->subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades);
+        return $bdBooxChange->subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
     }
 
-    public function procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades){
+    public function procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
         $bdBooxChange = DAOLibro::getInstance();
-        return $bdBooxChange->modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades);
+        return $bdBooxChange->modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
     }
 
     public function procesarBorrarLibro($idLibro) {

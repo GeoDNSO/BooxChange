@@ -38,6 +38,7 @@
         $editorial = $libro -> getEditorial();
         $descuento = $libro -> getDescuento();
         $unidades = $libro -> getUnidades();
+        $fechaPublicacion = $libro -> getFechaPublicacion();
     }
 ?>
     
@@ -111,6 +112,9 @@
 
         <label for="unidades"><b>Unidades</b></label><br>
         <input type="number" name="unidades" id="unidades" min="0" value="<?php echo $unidades; ?>" /><br><br>
+
+        <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
+        <input type="date" name="fechaPublicacion" id="fechaPublicacion" value="<?php echo $fechaPublicacion; ?>"/><br><br>
     
         <input type="submit">
     

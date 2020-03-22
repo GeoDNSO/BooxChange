@@ -81,6 +81,9 @@
 
         <label for="unidades"><b>Unidades</b></label><br>
         <input type="number" name="unidades" id="unidades" min="0" value="0" /><br><br>
+
+        <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
+        <input type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
     
         <input type="submit">
 
