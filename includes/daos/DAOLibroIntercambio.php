@@ -28,9 +28,9 @@ class DAOLibroIntercambio extends DAO
     /**
      * @param TLibroIntercambio
      * Se almacena el libro en la base de datos
-     * @return TLibroIntercambio o nulo si hubo algun problema con la consulta
+     * @return int o nulo si hubo algun problema con la consulta
      */
-    public function subirLibroMisterioso($libroMisterioso)
+    public function subirLibro($libroMisterioso)
     {
         $autor = $libroMisterioso->getAutor();
         $idUser = $libroMisterioso->getIdUsuario();
@@ -48,23 +48,34 @@ class DAOLibroIntercambio extends DAO
         if (mysqli_query(self::$instance->bdBooxChange, $sql) == true) {
             $id = self::$instance->bdBooxChange->insert_id;
             return $this->getLibro($id);
-            /*
-            $sql = "SELECT * FROM librointercambio WHERE librointercambio.Id_Libro_Inter = $id";
-            $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-
-            if (mysqli_num_rows($consulta) == 1) {
-                $fila = $consulta->fetch_array();
-                $libro = new TLibroIntercambio($fila[BD_LIBRO_INTER_ID], $fila[BD_LIBRO_INTER_ID_USER], $fila[BD_LIBRO_INTER_TITULO], $fila[BD_LIBRO_INTER_IMG], $fila[BD_LIBRO_INTER_AUTOR], $fila[BD_LIBRO_INTER_DESCRIPCION], $fila[BD_LIBRO_INTER_GENERO], $fila[BD_LIBRO_INTER_INTERCAMBIADO], $fila[BD_LIBRO_INTER_ES_OFERTA], $fila[BD_LIBRO_INTER_FECHA]);
-                return $libro;
-            } else {
-                return null;
-            }
-            */
         }
-
         return null;
     }
 
+
+    /*
+    public function subirLibroParaIntercambio($libro)
+    {
+        $autor = $libro->getAutor();
+        $idUser = $libro->getIdUsuario();
+        $imagen = $libro->getImagen();
+        $titulo = $libro->getTitulo();
+        $desc = $libro->getDescripcion();
+        $genero = $libro->getGenero();
+        $intercambiado = $libro->getIntercambiado();
+        $esOferta = $libro->getOfertado();
+
+        //id y fecha tiene valores por defecto y automaticos
+        $sql = "INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
+                VALUES ('', '$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";
+
+        if (mysqli_query(self::$instance->bdBooxChange, $sql) == true) {
+            $id = self::$instance->bdBooxChange->insert_id;
+            return $this->getLibro($id);
+        }
+        return null;
+    }
+    */
     public function getLibro($id)
     {
         $sql = "SELECT * FROM librointercambio WHERE librointercambio.Id_Libro_Inter = $id";
@@ -92,5 +103,33 @@ class DAOLibroIntercambio extends DAO
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         return $consulta;
     }
+
+    
+     /**
+     * @param TLibroIntercambio
+     * Se actualiza el libro como intercambiado en la base de datos
+     * @return bool 
+     */
+    public function actualizarLibroRechazado($libro){
+
+        $idLibro = $libro->getIdLibroInter();
+        $vRechazado = LIBRO_RECHAZADO;
+        $sql = "UPDATE `librointercambio` SET `Intercambiado` = '$vRechazado' WHERE `librointercambio`.`Id_Libro_Inter` = $idLibro;";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        return $consulta;
+    }
+
+    public function getLibrosIntercambiosDisponibles(){
+        $sql = "SELECT * FROM librointercambio JOIN intercambios ON librointercambio.Id_Libro_Inter=intercambios.Id_Libro_Inter1 WHERE intercambios.EsMisterioso=0 AND Intercambiado=0 AND librointercambio.esOferta=0";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        $array = array();
+        while ($fila = $consulta->fetch_array()) {
+            $libro = new TLibroIntercambio($fila[BD_LIBRO_INTER_ID], $fila[BD_LIBRO_INTER_ID_USER], $fila[BD_LIBRO_INTER_TITULO], $fila[BD_LIBRO_INTER_IMG], $fila[BD_LIBRO_INTER_AUTOR], $fila[BD_LIBRO_INTER_DESCRIPCION], $fila[BD_LIBRO_INTER_GENERO], $fila[BD_LIBRO_INTER_INTERCAMBIADO], $fila[BD_LIBRO_INTER_ES_OFERTA], $fila[BD_LIBRO_INTER_FECHA]);
+            $array[] = $libro;
+        }
+        return $array;
+    }
+
+    
 }
 ?>

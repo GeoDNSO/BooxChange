@@ -37,14 +37,14 @@ class FormularioIntercambioMisterioso extends Form
         $html .= '    <input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
         $html .= '    <label for="autor"><b>Autor</b></label><br>';
         $html .= '    <input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
-        $html .= '    <label for="genero"><b>Genero</b></label><br>';
+        $html .= '    <label for="genero"><b>Género</b></label><br>';
 
         //Seleccion de Generos
         $html .= '    <select id="genero" name="genero"><br><br>';
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
-        $html .= '    <button type="submit">Registrarse</button>';
+        $html .= '    <button type="submit">Subir Libro</button>';
         $html .= '</fieldset>';
 
         return $html;

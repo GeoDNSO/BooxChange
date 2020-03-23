@@ -51,9 +51,43 @@ class DAONotificacion extends DAO
 
         return  $consulta;
     }
+
+    public function notificarUsuarioDeIntercambioRealizado($intercambio, $libroQuerido, $libroOfertado, $usuario1, $usuario2)
+    {
+        $idUsuario1 = $usuario1->getIdUsuario();
+        $nombreUsuario = $usuario2->getNombreUsuario();
+        $titulo1 = $libroQuerido->getTitulo();
+        $titulo2 = $libroOfertado->getTitulo();
+
+        $mensaje = "Ya se ha completado el intercambio entre usted y $nombreUsuario, se han intercambiado los libros $titulo2 y $titulo1";
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario1', '$mensaje', '0', current_timestamp());";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        return  $consulta;
+    }
+
+
+
+    public function notificarOferta($libroQuerido, $libroOfertado, $usuarioLO)
+    {
+        $idUsuario = $usuarioLO->getIdUsuario();
+        $idLibroQuerido = $libroQuerido->getIdLibroInter();
+        $nombreUsuario = $usuarioLO->getNombreUsuario();
+        $tituloQuerido = $libroQuerido->getTitulo();
+        $tituloOfertado = $libroOfertado->getTitulo();
+
+        $mensaje = "El usuario $nombreUsuario te ha ofrecido el libro $tituloOfertado por tu libro $tituloQuerido, puedes ver esta oferta ;y otras más, en detalle <a href='ofertasIntercambio.php?id=$idLibroQuerido'>aquí</a>.";
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', '$mensaje', '0', current_timestamp());";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        return  $consulta;
+    }
+
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'asd', '1', current_timestamp());
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'errwerw', '0', current_timestamp());
-    public function getNumNotificacionesNoLeidas($id){
+    
+    public function getNumNotificacionesNoLeidas($id)
+    {
         $sql = "SELECT COUNT(notificaciones.idUsuario) FROM notificaciones WHERE notificaciones.leido=0 AND idUsuario=$id";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         if (mysqli_num_rows($consulta) == 1) {
@@ -62,8 +96,23 @@ class DAONotificacion extends DAO
         } else {
             return null;
         }
-
     }
-}
 
-?>
+    public function getNotificaciones($id)
+    {
+        $sql = "SELECT * FROM notificaciones WHERE notificaciones.idUsuario=$id ORDER BY fecha DESC";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        $array = array();
+        while ($fila = $consulta->fetch_array()) {
+            $tNotificacion = new TNotificacion($fila[BD_NOTIFICACION_ID], $fila[BD_NOTIFICACION_ID_USUARIO], $fila[BD_NOTIFICACION_MENSAJE], $fila[BD_NOTIFICACION_LEIDO], $fila[BD_NOTIFICACION_FECHA]);
+            $array[] = $tNotificacion;
+        }
+        return $array;
+    }
+
+    public function actualizarNotificacionesALeido($id){
+        $sql = "UPDATE notificaciones SET notificaciones.leido=1 WHERE notificaciones.idUsuario=$id AND notificaciones.leido=0";
+        return mysqli_query(self::$instance->bdBooxChange, $sql);
+    }
+    
+}

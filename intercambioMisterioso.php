@@ -32,7 +32,7 @@ include("includes/comun/cabecera.php");
 
 if(!isset($_SESSION["login"])){
     echo '<p>';
-    echo '    No puedes realizar intercambios sin no estas logeado. Si no tienes una cuenta puedes registrarte <a href="registro.php">aquí</a> ,';
+    echo '    No puedes realizar intercambios si no estas logeado. Si no tienes una cuenta puedes registrarte <a href="registro.php">aquí</a> ,';
     echo '    si ya estás registrado <a href="login.php">inicia sesión</a> .';
     echo '</p>';
 }

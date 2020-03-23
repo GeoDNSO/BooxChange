@@ -74,7 +74,6 @@ if (!isset($_GET['id'])) {
     //$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
 
     $form->gestiona();
-    echo '<script type="text/JavaScript">  prompt("afdsd"); </script>';
 ?>
 
 

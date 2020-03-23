@@ -63,6 +63,20 @@ class DAOIntercambios extends DAO
         return $consulta;
     }
 
+
+    
+    /**
+     * @param TLibroIntercambio $libro libro sobre el que se va a crear el intercambio
+     */
+    public function crearIntercambioNormal($libro)
+    {
+        $idLibro = $libro->getIdLibroInter();
+        $sql = "INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) 
+                VALUES ('$idLibro', NULL, '0', NULL, current_timestamp());";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        return $consulta;
+    }
+
     /**
      * 
       SELECT * FROM intercambios 
@@ -76,14 +90,14 @@ class DAOIntercambios extends DAO
      * los valores actualizados
      * 
      * @param TIntercambio $intercambioEncontrado
-     * @param TLibroIntercambio $libroMisterioso 
+     * @param TLibroIntercambio $libro2
      * 
      * @return TIntercambio
      */
-    public function completarIntercambio($intercambioEncontrado, $libroMisterioso)
+    public function completarIntercambio($intercambioEncontrado, $libro2)
     {
         $idInter = $intercambioEncontrado->getIdIntercambio();
-        $idLibro = $libroMisterioso->getIdLibroInter();
+        $idLibro = $libro2->getIdLibroInter();
         $sql = "UPDATE `intercambios` SET `Id_Libro_Inter2` = '$idLibro' WHERE `intercambios`.`Id_Intercambio` = $idInter;";
 
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
@@ -97,6 +111,21 @@ class DAOIntercambios extends DAO
     public function buscarIntercambio($id)
     {
         $sql = "SELECT * FROM intercambios WHERE intercambios.Id_Intercambio = $id";
+
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 1) {
+            $fila = $consulta->fetch_array();
+            $intercambio = new TIntercambio($fila[BD_INTERCAMBIOS_ID_LIBRO1], $fila[BD_INTERCAMBIOS_ID_LIBRO2], $fila[BD_INTERCAMBIOS_ES_MISTERIOSO], $fila[BD_INTERCAMBIOS_ID], $fila[BD_INTERCAMBIOS_FECHA]);
+            return $intercambio;
+        } else {
+            return null;
+        }
+    }
+
+    public function buscarIntercambioPorLibro($idLibro)
+    {
+        $sql = "SELECT * FROM intercambios WHERE intercambios.Id_Libro_Inter1=$idLibro";
 
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
