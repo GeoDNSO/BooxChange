@@ -10,6 +10,7 @@ Proyecto Final para AW
  - Crear la memoria de la entrega
  - Hacer que los usuarios puedan valorar libros
  - Revisar faltas de ortografía
+ - Limitar intercambios
 
 ### Importante, antes de empezar
 - Los cambios a Development y se valida el html generado por php --> https://validator.w3.org/ 
