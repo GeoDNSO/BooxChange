@@ -20,7 +20,7 @@ use \fdi\ucm\aw\booxchange\transfers\TNotificacion;
 include("includes/comun/cabecera.php");
 ?>
 
-<h1>Tus notifiaciones</h1>
+<h1>Tus notificaciones</h1>
 
 <?php
 

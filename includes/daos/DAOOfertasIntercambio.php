@@ -53,7 +53,7 @@ class DAOOfertasIntercambio extends DAO
     {
         $sql = "SELECT DISTINCT id, idLibroIntercambio FROM ofertasintercambio 
                 JOIN librointercambio ON ofertasintercambio.idLibroIntercambio=librointercambio.Id_Libro_Inter 
-                WHERE librointercambio.Id_Usuario=$idUsuario;";
+                WHERE librointercambio.Id_Usuario=$idUsuario AND librointercambio.Intercambiado!=1;";
         
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         $array = array();
@@ -63,7 +63,6 @@ class DAOOfertasIntercambio extends DAO
         }
                 
         return $array;
-
     }
 
     public function getOfertasLibro($id)

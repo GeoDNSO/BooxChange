@@ -49,7 +49,7 @@ if (isset($_SESSION["login"]) || $_SESSION["login"] == false) {
         echo "<div> <p>";
         $str_oferta= ($numOfertas == 1) ? "oferta" : "ofertas";
         echo "Tu libro $titulo, tiene $numOfertas $str_oferta<br>";
-        echo "<a href='ofertasIntercambio.php?id=$idLibro1'> </<>Ver Ofertas <br>";
+        echo "<a href='ofertasIntercambio.php?id=$idLibro1'>Ver Ofertas </a> <br>";
         echo "</div> </p>";
     }
 } else {
