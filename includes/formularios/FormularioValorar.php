@@ -49,7 +49,6 @@ class FormularioValorar extends Form
      */
     protected function procesaFormulario($datos)
     {
-        echo "hola";
         $valoración = $datos["valoracion"];
 
         $app = appBooxChange::getInstance();
