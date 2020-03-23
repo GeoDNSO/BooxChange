@@ -5,6 +5,7 @@ Proyecto Final para AW
 
 ### Cosas pendientes por hacer
  - Controlar la inyección de SQL
+ - Controlar accesoso a enlaces con GET
  - Documentar las funciones
  - Crear la memoria de la entrega
  - Hacer que los usuarios puedan valorar libros
