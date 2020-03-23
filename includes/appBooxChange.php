@@ -66,14 +66,24 @@ class appBooxChange{
     {
         $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
         return $bdBooxChange->registrarUsuario($nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion);
+
         
     }
 
     public function actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)
     {
         $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
-        return $bdBooxChange->actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion);
+         
+        $aux = $bdBooxChange->actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion);
+
+        $_SESSION['nombreReal'] = $nombreReal;
+        $_SESSION['correo'] = $correo;
+        $_SESSION['fotoPerfil'] = $fotoPerfil;
+        $_SESSION['ciudad'] = $ciudad;
+        $_SESSION['direccion'] = $direccion;
+
         
+        return $aux;
     }
 
     //Los cambios se verán reflejados en $_SESSION

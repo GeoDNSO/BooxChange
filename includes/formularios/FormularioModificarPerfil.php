@@ -39,7 +39,7 @@ class FormularioModificarPerfil extends Form
         $html .= '<p> Correo: <input type="text" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
         $html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="'.$datosIniciales["foto"].'"/></p>';
         $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
-        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="'.$datosIniciales["ciudad"].'"/></p>';
+        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
         $html .= '<p><input type="submit" name="accept" value="Cambiar" /></p>';
 
         return $html;
@@ -67,6 +67,9 @@ class FormularioModificarPerfil extends Form
         if (empty($correo) || mb_strlen($correo) < 8) {
             $erroresFormulario[] = "El correo ha de ocupar al menos 8 caracteres.";
         }
+        //foto
+        $fotoPerfil = isset($datos['foto']) ? $datos['foto'] : null;
+        
         //Ciudad
         $ciudad = isset($datos['ciudad']) ? $datos['ciudad'] : null;
         if (empty($ciudad) || mb_strlen($ciudad) < 3) {
@@ -85,7 +88,7 @@ class FormularioModificarPerfil extends Form
 
         if (count($erroresFormulario) === 0) {
 
-            if ($app->actualizarPerfil($idUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)) {
+            if ($app->actualizarPerfil($_SESSION['nombre'], $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)) {
 
                 return "./index.php";
             }
