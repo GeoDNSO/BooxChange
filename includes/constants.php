@@ -111,6 +111,13 @@ define("BD_NOTIFICACION_MENSAJE", "mensaje");
 define("BD_NOTIFICACION_LEIDO", "leido");
 define("BD_NOTIFICACION_FECHA", "fecha");
 
+//Clavos para la tabla de ValoracionLibro de la Base de Datos
+define("BD_VALORACIONLIBRO_ID", "id_valoracion");
+define("BD_VALORACIONLIBRO_IDLIBRO", "id_libro");
+define("BD_VALORACIONLIBRO_IDUSUARIO", "id_usuario");
+define("BD_VALORACIONLIBRO_VALORACION", "valoracion");
+define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
+
 
 //Constantes para el formulario de Registro
 define("REG_REALNAME", "userRealName");

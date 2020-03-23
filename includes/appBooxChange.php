@@ -69,20 +69,26 @@ class appBooxChange
         return $bdBooxChange->registrarUsuario($nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion);
     }
 
-    public function actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)
+    public function actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)
     {
-        $bdBooxChange = DAOUsuario::getInstance(); //Abrir/Inicializar base de datos
-        return $bdBooxChange->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion);
+        $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
+         
+        $aux = $bdBooxChange->actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion);
+
+        $_SESSION['nombreReal'] = $nombreReal;
+        $_SESSION['correo'] = $correo;
+        $_SESSION['fotoPerfil'] = $fotoPerfil;
+        $_SESSION['ciudad'] = $ciudad;
+        $_SESSION['direccion'] = $direccion;
+
+        
+        return $aux;
     }
 
     //Los cambios se verán reflejados en $_SESSION
     public function logInUsuario($nombreUsuario, $password)
     {
         $bdBooxChange = DAOUsuario::getInstance();
-
-        // $password = password_verify($password, password_hash($password, PASSWORD_BCRYPT));
-        echo "$password";
-        //$TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
         $TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
@@ -423,4 +429,17 @@ class appBooxChange
         $bdBooxChange = DAOOfertasIntercambio::getInstance();
         $bdBooxChange->actualizarOferta($ofertaAceptada, $idOferta);
     }
+    public function valorarLibro($titulo, $valoracion, $idUsuario){
+        $bdBooxChange = DAOValoracionLibro::getInstance();
+        $bdBooxChange->valorarLibro($titulo, $valoracion, $idUsuario);
+        $bdBooxChange->closeBD();
+    }
+
+    public function librosValoracion(){
+        $bdBooxChange = DAOLibro::getInstance();
+        $librosValoracion = $bdBooxChange->librosValoracion();        
+        $bdBooxChange->closeBD();
+        return $librosValoracion;
+    }
+    
 }

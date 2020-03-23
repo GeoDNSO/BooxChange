@@ -50,24 +50,33 @@ class FormularioLogin extends Form
     protected function procesaFormulario($datos)
     {
 
+        $erroresFormulario = array();
 
-        //include_once($parentDir."/appBooxChange.php");
-        //include_once($parentDir."../constants.php");
+        $username = isset($datos['username']) ? $datos['username'] : null;
+
+        if (empty($username) || mb_strlen($username) < 5) {
+            $erroresFormulario[] = "Nombre de usuario ha de tener por lo menos 5 caracteres";
+        }
+
+        $password = isset($datos['password']) ? $datos['password'] : null;
+        if (empty($password) || mb_strlen($password) < 5) {
+            $erroresFormulario[] = "El password tiene que tener una longitud de al menos 5 caracteres.";
+        }
 
         $app = appBooxChange::getInstance();
 
 
-        //Id se puede dejar nulo
 
-        $nombreUsuario = $datos[LOG_USERNAME];
-        $password = $datos[LOG_PASSWORD];
+        $app->logInUsuario($username, $password);
 
+        if(isset( $_SESSION['login']) &&  $_SESSION['login']){
+            return "./index.php";
+        }
+        else{
+            $erroresFormulario[] = "No se pudo iniciar sesión, usuario o contraseña incorrecta";
+        }
+        echo "<h2>Error:</h2>";
+        return $erroresFormulario;
 
-        $app->logInUsuario($nombreUsuario, $password);
-        header("Location: ../../index.php");
-        $parentDir = dirname(__DIR__, 2);
-        $path = $parentDir."/index.php";
-        //return $path;
-        return "./index.php";
     }
 }

@@ -29,6 +29,9 @@ if(isset($_SESSION['login']) && $_SESSION['login']){
             <li>
                 <a href="intercambio.php">Intercambios</a>
             </li>
+            <li>
+                <a href="rankingLibros.php">Ranking</a>
+            </li>
 
             <?php
 

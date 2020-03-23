@@ -22,6 +22,7 @@ require_once(__DIR__ . "/includes/config.php");
 
         use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
         use fdi\ucm\aw\booxchange\TLibro as TLibro;
+        use fdi\ucm\aw\booxchange\formularios\FormularioValorar;
 
         $app = appBooxChange::getInstance();
         $librosTienda = $app->librosTienda();
@@ -33,18 +34,21 @@ require_once(__DIR__ . "/includes/config.php");
             $id = $libro->getIdLibro();
             $precio = $libro->getPrecio();
             $unidades = $libro->getUnidades();
-            if($unidades > 0){
-                if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-                
-                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a> </li>"; 
+
+            if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                if($unidades > 0){
+                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a>";
                 }
                 else{
-                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='login.php'> Comprar </a>(Tienes que logearte para poder comprar) </li>";            
+                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas </li>"; 
                 }
+                $form = new FormularioValorar("valorarForm", array("action"=>null, "libro"=>$titulo));
+                $form->gestiona();
+                echo "</li>"; 
             }
             else{
-                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas </li>"; 
-            }  
+                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='login.php'> Comprar </a>(Tienes que logearte para poder comprar) </li>";
+            }
         }
 
         echo "</ul>";

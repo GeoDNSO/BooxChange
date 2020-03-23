@@ -193,15 +193,15 @@ class DAOUsuario extends DAO
         }
     }
 
-    function actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)
+    function actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)
     {
-        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$idUsuario'";
+        $sql = "SELECT * FROM usuario WHERE Nombre='$nombreUsuario'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) == 1) {
             $sql = "UPDATE usuario
-            SET NombreReal = '$nombreReal' , Contraseña = '$password', Correo = '$correo', Foto = '$fotoPerfil', Ciudad = '$ciudad', Direccion = '$direccion'
-            WHERE Id_Usuario = $idUsuario"; 
+            SET NombreReal = '$nombreReal' , Correo = '$correo', Foto = '$fotoPerfil', Ciudad = '$ciudad', Direccion = '$direccion'
+            WHERE Nombre = '$nombreUsuario'"; 
             mysqli_query(self::$instance->bdBooxChange, $sql);
             return true;
         }
