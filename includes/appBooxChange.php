@@ -59,10 +59,10 @@ class appBooxChange{
         
     }
 
-    public function actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)
+    public function actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)
     {
         $bdBooxChange = DAOUsuario::getInstance();//Abrir/Inicializar base de datos
-        return $bdBooxChange->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion);
+        return $bdBooxChange->actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion);
         
     }
 
@@ -70,8 +70,7 @@ class appBooxChange{
     public function logInUsuario($nombreUsuario, $password){
         $bdBooxChange = DAOUsuario::getInstance();
 
-       // $password = password_verify($password, password_hash($password, PASSWORD_BCRYPT));
-       echo "$password";
+        // $password = password_verify($password, password_hash($password, PASSWORD_BCRYPT));
         //$TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);
 
         $TUsuario = $bdBooxChange->verificarInicioSesion($nombreUsuario, $password);

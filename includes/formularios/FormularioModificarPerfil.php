@@ -26,14 +26,20 @@ class FormularioModificarPerfil extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
+        if(empty($datosIniciales)){
+            $datosIniciales = array(
+                                    "userRealName"=>$_SESSION['nombreReal'],
+                                    "email"=>$_SESSION['correo'],
+                                    "foto"=>$_SESSION['fotoPerfil'],
+                                    "ciudad"=>$_SESSION['ciudad'],
+                                    "direccion"=>$_SESSION['direccion']);
+        }
 
-        $html = '<p> Nombre Real: <input type="text" name="userRealName" id= "userRealName" value="<?php echo $nombreReal; ?>"/></p>';
-        $html .= '<p> Contraseña: <input type="text" name="passwd" id= "passwd" value="<?php echo $password; ?>"/></p>';
-        $html .= '<p> Repite contraseña: <input type="text" name="passwdR" id= "passwdR" value="<?php echo $passwordR; ?>"/></p>';
-        $html .= '<p> Correo: <input type="text" name="email" id= "email" value="<?php echo $correo; ?>"/></p>';
-        $html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="<?php echo $foto; ?>"/></p>';
-        $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="<?php echo $ciudad; ?>"/></p>';
-        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="<?php echo $direccion; ?>"/></p>';
+        $html = '<p> Nombre Real: <input type="text" name="userRealName" id= "userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
+        $html .= '<p> Correo: <input type="text" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
+        $html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="'.$datosIniciales["foto"].'"/></p>';
+        $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
+        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="'.$datosIniciales["ciudad"].'"/></p>';
         $html .= '<p><input type="submit" name="accept" value="Cambiar" /></p>';
 
         return $html;
@@ -49,59 +55,45 @@ class FormularioModificarPerfil extends Form
      */
     protected function procesaFormulario($datos)
     {
+        $erroresFormulario = array();
 
-        $correcto = true;
-        if ($datos['passwdR'] != $datos['passwd']) {
-            echo "Asegúrese que ambas contraseñas son iguales";
-            $correcto = false;
+        //Nombre real
+        $nombreReal = isset($datos['userRealName']) ? $datos['userRealName'] : null;
+        if (empty($nombreReal) || mb_strlen($nombreReal) < 5) {
+            $erroresFormulario[] = "El nombre tiene que tener una longitud de al menos 5 caracteres.";
         }
-        if (!isset($datos['userRealName']) || empty($datos['userRealName'])) {
-            $correcto = false;
+        //email
+        $correo = isset($datos['email']) ? $datos['email'] : null;
+        if (empty($correo) || mb_strlen($correo) < 8) {
+            $erroresFormulario[] = "El correo ha de ocupar al menos 8 caracteres.";
         }
-        if (!isset($datos['email']) || empty($datos['email'])) {
-            $correcto = false;
+        //Ciudad
+        $ciudad = isset($datos['ciudad']) ? $datos['ciudad'] : null;
+        if (empty($ciudad) || mb_strlen($ciudad) < 3) {
+            $erroresFormulario[] = "Introduzca una Ciudad válida.";
         }
-        if (!isset($datos['passwd']) || empty($datos['passwd'])) {
-            $correcto = false;
+        //Direccion
+        $direccion = isset($datos['direccion']) ? $datos['direccion'] : null;
+        if (empty($direccion) || mb_strlen($direccion) < 5) {
+            $erroresFormulario[] = "Introduzca una direccion válida";
         }
-        if (!isset($datos['passwdR']) || empty($datos['passwdR'])) {
-            $correcto = false;
-        }
-        if (!isset($datos['ciudad']) || empty($datos['ciudad'])) {
-            $correcto = false;
-        }
-        if (!isset($datos['direccion']) || empty($datos['direccion'])) {
-            $correcto = false;
-        }
-
-        if ($correcto == false) {
-            return array(0 => "vacio");
-        }
-
-
-
 
         $app = appBooxChange::getInstance();
 
-        //Obtener y limpiar los datos 
-        $idUsuario = $_SESSION['id_Usuario'];
-        $nombreUsuario = $_SESSION['nombre'];
-        $nombreReal =  $_SESSION['nombreReal_reg'];
-        $correo = $_SESSION['correo_reg'];
-        $password = $_SESSION['password_reg'];
-        $fotoPerfil = $_SESSION['foto_reg'];
-        $ciudad = $_SESSION['ciudad_reg'];
-        $direccion = $_SESSION['direccion_reg'];
+        $_SESSION[REG_PASS_EQ] = true;
+        $_SESSION[REG_DATA_NO_SET] = false;
 
+        if (count($erroresFormulario) === 0) {
 
-        $password = password_hash($password, PASSWORD_BCRYPT);
+            if ($app->actualizarPerfil($idUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)) {
 
-        if ($app->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerfil, $ciudad, $direccion)) {
-
-            return "./index.php";
+                return "./index.php";
+            }
+            else{
+                return "./index.php";
+            }
         }
-        else{
-            return "./index.php";
-        }
+        return $erroresFormulario;
+
     }
 }
