@@ -36,7 +36,7 @@ define("BD_USER_DIRECCION", "Direccion");
 define("BD_USER_FECHA_CREACION", "FechaDeCreacion");
 
 
-//Claves para la tabla de Libros de la Base de DatoS
+//Claves para la tabla de Libros de la Base de Datos
 define("BD_LIBRO_ID_LIBRO", "Id_Libro");
 define("BD_LIBRO_TITULO", "Titulo");
 define("BD_LIBRO_AUTOR", "Autor");
@@ -52,6 +52,62 @@ define("BD_LIBRO_IDIOMA", "Idioma");
 define("BD_LIBRO_EDITORIAL", "Editorial");
 define("BD_LIBRO_DESCUENTO", "Descuento");
 define("BD_LIBRO_UNIDADES", "unidades");
+define("BD_LIBRO_FECHA_PUBLICACION", "FechaPublicacion");
+
+
+
+//Claves para la tabla de Libros Intercambios de la Base de Datos
+define("BD_LIBRO_INTER_ID", "Id_Libro_Inter");
+define("BD_LIBRO_INTER_AUTOR", "AutorLibInter");
+define("BD_LIBRO_INTER_IMG", "Imagen");
+define("BD_LIBRO_INTER_DESCRIPCION", "Descripcion");
+define("BD_LIBRO_INTER_GENERO", "Genero");
+define("BD_LIBRO_INTER_ID_USER", "Id_Usuario");
+define("BD_LIBRO_INTER_TITULO", "Titulo");
+define("BD_LIBRO_INTER_INTERCAMBIADO", "Intercambiado");
+define("BD_LIBRO_INTER_ES_OFERTA", "esOferta");
+define("BD_LIBRO_INTER_FECHA", "Fecha");
+
+define("ES_OFERTA", 1);
+define("NO_ES_OFERTA", 0);
+
+define("INTERCAMBIADO", 1);
+define("NO_INTERCAMBIADO", 0);
+
+//Claves para la tabla de Ofertas de Intercambios de la Base de Datos
+define("BD_OFERTA_INTER_ID", "id");
+define("BD_OFERTA_INTER_ID_LIBRO_INTER", "idLibroIntercambio");
+define("BD_OFERTA_INTER_ID_LIBRO_OFERTA", "idLibroOferta");
+define("BD_OFERTA_INTER_OFERTA_ACEPTADA", "ofertaAceptada");
+
+define("OFERTA_ACEPTADA", 1);
+define("OFERTA_RECHAZADA", 0);
+
+
+//Claves para la tabla de Intercambios de la Base de Datos
+define("BD_INTERCAMBIOS_ID", "Id_Intercambio");
+define("BD_INTERCAMBIOS_ID_LIBRO1", "Id_Libro_Inter1");
+define("BD_INTERCAMBIOS_ID_LIBRO2", "Id_Libro_Inter2");
+define("BD_INTERCAMBIOS_ES_MISTERIOSO", "EsMisterioso");
+define("BD_INTERCAMBIOS_FECHA", "Fecha");
+
+define("MISTERIOSO", 1);
+define("NO_MISTERIOSO", 0);
+
+define("ERROR", -1);
+define("INTERCAMBIO_NO_ENCONTRADO", 0);
+define("INTERCAMBIO_ENCONTRADO", 1);
+
+
+define("BD_GENERO_GENERO","Genero");
+
+
+//Clavos para la tabla de ValoracionLibro de la Base de Datos
+define("BD_VALORACIONLIBRO_ID", "id_valoracion");
+define("BD_VALORACIONLIBRO_IDLIBRO", "id_libro");
+define("BD_VALORACIONLIBRO_IDUSUARIO", "id_usuario");
+define("BD_VALORACIONLIBRO_VALORACION", "valoracion");
+define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
 
 
 //Constantes para el formulario de Registro

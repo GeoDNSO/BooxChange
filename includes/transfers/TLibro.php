@@ -19,8 +19,9 @@ class TLibro{
     private $editorial;
     private $descuento;
     private $unidades;
+    private $fechaPublicacion;
 
-    function __construct($idLibro, $titulo, $autor, $precio, $valoracion, $ranking, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades){
+    function __construct($idLibro, $titulo, $autor, $precio, $valoracion, $ranking, $imagen, $descripcion, $genero, $enTienda, $fecha, $idioma, $editorial, $descuento, $unidades, $fechaPublicacion){
         $this->idLibro = $idLibro;
         $this->titulo = $titulo;
         $this->autor = $autor;
@@ -36,6 +37,7 @@ class TLibro{
         $this->editorial = $editorial;
         $this->descuento = $descuento;
         $this->unidades = $unidades;
+        $this->fechaPublicacion = $fechaPublicacion;
     }
 
     /**
@@ -334,6 +336,26 @@ class TLibro{
     public function setUnidades($unidades)
     {
         $this->unidades = $unidades;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fechaPublicacion
+     */ 
+    public function getFechaPublicacion()
+    {
+        return $this->fechaPublicacion;
+    }
+
+    /**
+     * Set the value of fechaPublicacion
+     *
+     * @return  self
+     */ 
+    public function setFechaPublicacion($fechaPublicacion)
+    {
+        $this->fechaPublicacion = $fechaPublicacion;
 
         return $this;
     }

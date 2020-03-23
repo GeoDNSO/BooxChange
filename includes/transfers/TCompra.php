@@ -9,13 +9,15 @@ class TCompra{
     private $idLibro;
     private $unidades;
     private $coste;
+    private $fecha;
 
-    function __construct($idCompra, $idUsuario, $idLibro, $unidades, $coste){
+    function __construct($idCompra, $idUsuario, $idLibro, $unidades, $coste, $fecha){
         $this->idCompra = $idCompra;
         $this->idUsuario = $idUsuario;
         $this->idLibro = $idLibro;
         $this->unidades = $unidades;
         $this->coste = $coste;
+        $this->fecha = $fecha;
     }
     
     /**
@@ -114,6 +116,26 @@ class TCompra{
     public function setCoste($coste)
     {
         $this->coste = $coste;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fecha
+     */ 
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * Set the value of fecha
+     *
+     * @return  self
+     */ 
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
 
         return $this;
     }

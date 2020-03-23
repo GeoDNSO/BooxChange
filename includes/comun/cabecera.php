@@ -1,8 +1,15 @@
 
 <?php
+use \fdi\ucm\aw\booxchange\appBooxChange;
+
 if(isset($_SESSION['login']) && $_SESSION['login']){
     //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
     echo "<a href='usuario.php'>".$_SESSION['nombreReal']."</a>";
+    echo "<br>";
+    $app = appBooxChange::getInstance();
+    $numNotificaciones = $app->notificacionesUsuario($_SESSION["id_Usuario"]);
+    $notificacionesCab = ($numNotificaciones == 0) ? "" : " ($numNotificaciones)";
+    echo "<a href='notificaciones.php'>Notificaciones$notificacionesCab</a>";
 }
 ?>
 
@@ -19,13 +26,19 @@ if(isset($_SESSION['login']) && $_SESSION['login']){
             <li>
                 <a href="tienda.php">Tienda</a>
             </li>
+            <li>
+                <a href="intercambio.php">Intercambios</a>
+            </li>
+            <li>
+                <a href="rankingLibros.php">Ranking</a>
+            </li>
 
             <?php
 
             if(isset($_SESSION['login']) && $_SESSION['login']){
                 echo "<li><a href='logout.php'>Logout</a></li>";
                 if($_SESSION['rol'] == BD_TYPE_ADMIN){
-                    echo "<li><a href=''>Poderes de Admin</a></li>";
+                    echo "<li><a href='admin.php'>Poderes de Admin</a></li>";
                 }
             }
             else{

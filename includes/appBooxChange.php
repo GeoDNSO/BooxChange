@@ -20,12 +20,22 @@ use fdi\ucm\aw\booxchange\daos\DAODiscusion as DAODiscusion;
 use fdi\ucm\aw\booxchange\daos\DAOFavoritos as DAOFavoritos;
 use fdi\ucm\aw\booxchange\daos\DAOGenero as DAOGenero;
 use fdi\ucm\aw\booxchange\daos\DAOIntercambio as DAOIntercambio;
+use fdi\ucm\aw\booxchange\daos\DAOIntercambios;
 use fdi\ucm\aw\booxchange\daos\DAOLibro as DAOLibro;
 use fdi\ucm\aw\booxchange\daos\DAOLibroIntercambio as DAOLibroIntercambio;
 use fdi\ucm\aw\booxchange\daos\DAOMensajeChat as DAOMensajeChat;
+use fdi\ucm\aw\booxchange\daos\DAONotificacion;
 use fdi\ucm\aw\booxchange\daos\DAOTema as DAOTema;
 use fdi\ucm\aw\booxchange\daos\DAOUsuario as DAOUsuario;
 use fdi\ucm\aw\booxchange\daos\DAOValoracionLibro as DAOValoracionLibro;
+use fdi\ucm\aw\booxchange\daos\DAOOfertasIntercambio as DAOOfertasIntercambio;
+
+
+use fdi\ucm\aw\booxchange\transfers\TLibroIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TNotificacion;
+use fdi\ucm\aw\booxchange\transfers\TOfertasIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TUsuario;
 
 $has_session = (session_status() == PHP_SESSION_ACTIVE);
 if(!$has_session){
@@ -110,11 +120,57 @@ class appBooxChange{
         return $librosTienda;
     }
 
+    public function getBooks(){
+        $bdBooxChange = DAOLibro::getInstance();
+        $libros = $bdBooxChange->getAllBooks();        
+        $bdBooxChange->closeBD();
+        return $libros;
+    }
+
+    public function getUsers(){
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuarios = $bdBooxChange->getAllUsers();        
+        $bdBooxChange->closeBD();
+        return $usuarios;
+    }
+
+    public function getUserById($id){
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuario = $bdBooxChange->getUserById($id);        
+        $bdBooxChange->closeBD();
+        return $usuario;
+    }
+
     public function getLibroById($id){
         $bdBooxChange = DAOLibro::getInstance();
         $libro = $bdBooxChange->getLibroById($id);        
         $bdBooxChange->closeBD();
         return $libro;
+    }
+
+    public function procesarCambiarRol($idUsuario, $rol){
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->actualizarRol($idUsuario, $rol);
+    }
+
+    public function procesarSubirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
+    }
+
+    public function procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
+    }
+
+    public function procesarBorrarLibro($idLibro) {
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->borrarLibro($idLibro);
+    }
+
+    public function procesarBorrarUsuario($idUsuario) {
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->borrarUsuario($idUsuario);
     }
 
     public function procesarCompra($idUsuario, $libro, $ud, $numTarjeta){
@@ -134,17 +190,127 @@ class appBooxChange{
         return $libro;
     }
 
-    /*
+    /**
+     * 
+     * @param TLibroIntercambio $libroMisterioso libro con información incompleta
+     * que se va a guardar en la base de datos para intercambiar
+     * 
+     * @return int devuelve un entero según se haya producido la subida del libro que viene acompañada con intercambio
+     * si el valor devuelto es -1 que es que hubo un error durante la ejecución de la consulta, si es 0 es que no se ha podido 
+     * encontrar un libro para intercambiar y si es 1 es que se ha encontrado y se ha intercambiado el libro
+     */
+    public function subirLibroMisterioso($libroMisterioso){
 
-    public function getUdLibro($id){
-        $bdBooxChange = DAOLibro::getInstance();
-        $libro = $bdBooxChange->getLibroById($id);        
-        $bdBooxChange->closeBD();
-        return $libro;
+        //Subir libro misterioso
+        $bdBooxChange = DAOLibroIntercambio::getInstance();
+        $libroMisterioso = $bdBooxChange->subirLibroMisterioso($libroMisterioso);  
+        
+
+        if($libroMisterioso == null){
+            return ERROR;
+        }
+
+        //Buscar si hay un libro disponible para intercambiar 
+        $bdBooxChange = DAOIntercambios::getInstance();
+
+        $idTargetUser = $libroMisterioso->getIdUsuario(); //Id del Usuario que quiere intercambiar un libro
+        $intercambioEncontrado = $bdBooxChange->buscarIntercambioMisterioso($idTargetUser);  
+        
+
+        //Segun el objeto intercambio que devuelva se hace una cosa u otra
+
+        //Registrarlo en intercambios dependiendo de si se ha encontrado o no
+        if($intercambioEncontrado != null){
+            $bdBooxChange = DAOIntercambios::getInstance();
+            $intercambioEncontrado = $bdBooxChange->completarIntercambio($intercambioEncontrado, $libroMisterioso);
+            
+            //Si hay intercambio, se notifica al "primer" usuario
+
+            //Conseguir id del primer usuario a partir del intercambio
+            $usuario1 = "";
+            $libro1 = "";
+            $id = $this->getUserIdFromTrade($intercambioEncontrado, $libro1, $usuario1);
+
+            //Notificamos al usuario que inicio el intercambio misterioso
+            $bdBooxChange = DAOUsuario::getInstance();
+            $usuario2 = $bdBooxChange->buscarUsuarioPorId($_SESSION["id_Usuario"]);    
+            
+
+            $bdBooxChange = DAONotificacion::getInstance();
+            $notBien = $bdBooxChange->notificarUsuarioDeIntercambioMisterioso($intercambioEncontrado, $libro1, $libroMisterioso, $usuario1, $usuario2);
+            
+            
+            if($notBien == false){
+                exit("Algo ha salido mal en las notficaciones");
+            }
+
+            //Actualizar el valor de intercambiado de los libros intercambiados
+            $bdBooxChange = DAOLibroIntercambio::getInstance();
+            $bdBooxChange->actualizarLibroIntercambiado($libro1);
+            $bdBooxChange->actualizarLibroIntercambiado($libroMisterioso);
+            
+
+            return INTERCAMBIO_ENCONTRADO;
+        }
+        else{
+            $bdBooxChange = DAOIntercambios::getInstance();
+            $bdBooxChange->crearIntercambioMisterioso($libroMisterioso); 
+            
+            return INTERCAMBIO_NO_ENCONTRADO;
+        }
     }
-    */
 
+    /**
+     * @param TIntercambio $intercambio intercambio del que se busca el libro y el usuario inicial
+     * @param TLibroIntercambio $libro1 libro del usuario que inició el intercambio
+     * @param TUsuario $usuario1 usuario que inició el intercambio
+     * @return int id del usuario1
+     */
+    private function getUserIdFromTrade($intercambio, &$libro1, &$usuario1)
+    {
 
+        $bdBooxChange = DAOLibroIntercambio::getInstance();
+        $libro1 = $bdBooxChange->getLibro($intercambio->getIdLibro1());
+        
+
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuario1 = $bdBooxChange->buscarUsuarioPorId($libro1->getIdUsuario());
+        
+
+        return $usuario1->getIdUsuario();
+    }
+
+    public function construirSeleccionDeCategorias(){
+        $bdBooxChange = DAOGenero::getInstance();
+        
+        $generos = $bdBooxChange->getAllGeneros();
+    
+        $selectGeneros = "";
+        foreach($generos as $genero){
+            $generoTexto = $genero->getGenero();
+            $selectGeneros .= "<option value='$generoTexto'>$generoTexto</option>\n";
+        }
+        $bdBooxChange->closeBD();
+        return $selectGeneros;
+    }
+
+    public function notificacionesUsuario($idUsuario){
+        $bdBooxChange = DAONotificacion::getInstance();
+        $num = $bdBooxChange->getNumNotificacionesNoLeidas($idUsuario);
+        //$bdBooxChange->closeBD();
+        return $num;
+    }
+
+    public function valorarLibro($titulo, $valoracion, $idUsuario){
+        $bdBooxChange = DAOValoracionLibro::getInstance();
+        $bdBooxChange->valorarLibro($titulo, $valoracion, $idUsuario);
+        $bdBooxChange->closeBD();
+    }
+
+    public function librosValoracion(){
+        $bdBooxChange = DAOLibro::getInstance();
+        $librosValoracion = $bdBooxChange->librosValoracion();        
+        $bdBooxChange->closeBD();
+        return $librosValoracion;
+    }
 }
-
-?>

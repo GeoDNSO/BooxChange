@@ -1,0 +1,69 @@
+<?php
+
+namespace fdi\ucm\aw\booxchange\daos;
+
+$parentDir = dirname(__DIR__, 1);
+require_once($parentDir . "/config.php");
+
+use fdi\ucm\aw\booxchange\transfers\TIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TLibroIntercambio;
+use fdi\ucm\aw\booxchange\transfers\TNotificacion as TNotificacion;
+use fdi\ucm\aw\booxchange\transfers\TUsuario;
+
+class DAONotificacion extends DAO
+{
+    private static $instance;
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new DAONotificacion();
+        }
+        return self::$instance;
+    }
+
+    /**
+     * @param TIntercambio $intercambioEncontrado intercambio realizado
+     * @param TLibroIntercambio $libro1 libro que ha intercambiado el usuario
+     * @param TLibroIntercambio $libro2 libro que va a recibir el usuario1
+     * @param TUsuario $usuario1 usuario que recibe la notificación tras realizar el intercambio
+     * @param TUsuario $usuario2 usuario con el que se ha realizado el intercambio
+     * 
+     * @return bool 
+     */
+    public function notificarUsuarioDeIntercambioMisterioso($intercambioEncontrado, $libro1, $libro2, $usuario1, $usuario2)
+    {
+        //self::$instance = new DAONotificacion();
+
+        $idUsuario1 = $usuario1->getIdUsuario();
+        $nombreUsuario = $usuario2->getNombreUsuario();
+        $titulo1 = $libro1->getTitulo();
+        $titulo2 = $libro2->getTitulo();
+
+        $mensaje = "Ya se ha completado su intercambio misterioso con el usuario $nombreUsuario, ha recibido el libro $titulo2 a cambio de su libro $titulo1. Que suerte!!!";
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario1', '$mensaje', '0', current_timestamp());";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        return  $consulta;
+    }
+    //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'asd', '1', current_timestamp());
+    //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'errwerw', '0', current_timestamp());
+    public function getNumNotificacionesNoLeidas($id){
+        $sql = "SELECT COUNT(notificaciones.idUsuario) FROM notificaciones WHERE notificaciones.leido=0 AND idUsuario=$id";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        if (mysqli_num_rows($consulta) == 1) {
+            $fila = $consulta->fetch_array();
+            return $fila[0];
+        } else {
+            return null;
+        }
+
+    }
+}
+
+?>
