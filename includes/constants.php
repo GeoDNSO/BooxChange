@@ -102,6 +102,14 @@ define("INTERCAMBIO_ENCONTRADO", 1);
 define("BD_GENERO_GENERO","Genero");
 
 
+//Clavos para la tabla de ValoracionLibro de la Base de Datos
+define("BD_VALORACIONLIBRO_ID", "id_valoracion");
+define("BD_VALORACIONLIBRO_IDLIBRO", "id_libro");
+define("BD_VALORACIONLIBRO_IDUSUARIO", "id_usuario");
+define("BD_VALORACIONLIBRO_VALORACION", "valoracion");
+define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
+
+
 //Constantes para el formulario de Registro
 define("REG_REALNAME", "userRealName");
 define("REG_USERNAME", "username");
