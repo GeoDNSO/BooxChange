@@ -73,7 +73,6 @@ define("NO_ES_OFERTA", 0);
 
 define("INTERCAMBIADO", 1);
 define("NO_INTERCAMBIADO", 0);
-define("LIBRO_RECHAZADO", 2);
 
 //Claves para la tabla de Ofertas de Intercambios de la Base de Datos
 define("BD_OFERTA_INTER_ID", "id");
@@ -83,7 +82,6 @@ define("BD_OFERTA_INTER_OFERTA_ACEPTADA", "ofertaAceptada");
 
 define("OFERTA_ACEPTADA", 1);
 define("OFERTA_RECHAZADA", 0);
-define("OFERTA_DISPONIBLE", 2);
 
 
 //Claves para la tabla de Intercambios de la Base de Datos
@@ -100,16 +98,9 @@ define("ERROR", -1);
 define("INTERCAMBIO_NO_ENCONTRADO", 0);
 define("INTERCAMBIO_ENCONTRADO", 1);
 
-//Claves para la tabla de Genero de la Base de Datos
+
 define("BD_GENERO_GENERO","Genero");
 
-
-//Claves para la tabla de Notificaciones de la Base de Datos
-define("BD_NOTIFICACION_ID", "id");
-define("BD_NOTIFICACION_ID_USUARIO", "idUsuario");
-define("BD_NOTIFICACION_MENSAJE", "mensaje");
-define("BD_NOTIFICACION_LEIDO", "leido");
-define("BD_NOTIFICACION_FECHA", "fecha");
 
 //Clavos para la tabla de ValoracionLibro de la Base de Datos
 define("BD_VALORACIONLIBRO_ID", "id_valoracion");
@@ -117,8 +108,22 @@ define("BD_VALORACIONLIBRO_IDLIBRO", "id_libro");
 define("BD_VALORACIONLIBRO_IDUSUARIO", "id_usuario");
 define("BD_VALORACIONLIBRO_VALORACION", "valoracion");
 define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
-
-
+//Constantes para la tabla de Temas
+define("BD_TEMA", "Tema");
+//Constantes para la tabla de Discusiones
+define("BD_DISCUSION_ID", "Id_Discusion");
+define("BD_DISCUSION_USUARIO_CREADOR", "Id_Usuario_Creador");
+define("BD_DISCUSION_FECHA", "Fecha");
+define("BD_DISCUSION_TEMA", "Tema");
+define("BD_DISCUSION_TITULO", "Titulo");
+define("BD_DISCUSION_NUMCOMENTARIOS", "NumComentarios");
+define("BD_DISCUSION_NUMVISITAS", "NumVisitas");
+//Constantes para la tabla de Comentarios
+define("BD_COMENTARIOS_ID", "Id_Comentario");
+define("BD_COMENTARIOS_ID_USUARIO", "Id_Usuario");
+define("BD_COMENTARIOS_TEXTO", "Texto");
+define("BD_COMENTARIOS_FECHA", "Fecha");
+define("BD_COMENTARIOS_ID_DISCUSION", "Id_Discusion");
 //Constantes para el formulario de Registro
 define("REG_REALNAME", "userRealName");
 define("REG_USERNAME", "username");

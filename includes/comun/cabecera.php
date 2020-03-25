@@ -32,6 +32,9 @@ if(isset($_SESSION['login']) && $_SESSION['login']){
             <li>
                 <a href="rankingLibros.php">Ranking</a>
             </li>
+            <li>
+                <a href="foro.php">Foro</a>
+            </li>
 
             <?php
 

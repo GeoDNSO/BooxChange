@@ -7,7 +7,6 @@ require_once($parentDir . "/config.php");
 
 
 use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
-use fdi\ucm\aw\booxchange\transfers\TLibroIntercambio;
 
 class FormularioIntercambio extends Form
 {
@@ -27,8 +26,6 @@ class FormularioIntercambio extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        $app = appBooxChange::getInstance();
-
         $html = '<fieldset>';
         $html .= '<legend>Libro para Intercambio</legend>';
         $html .= '<label for="titulo"><b>Titulo</b></label><br>';
@@ -37,16 +34,11 @@ class FormularioIntercambio extends Form
         $html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
         $html .= '<label for="autor"><b>Autor</b></label><br>';
         $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
-
-        $html .= '    <label for="genero"><b>Género</b></label><br>';
-        //Seleccion de Generos
-        $html .= '    <select id="genero" name="genero"><br><br>';
-        $html .= $app->construirSeleccionDeCategorias();
-        $html .= '    </select><br><br>';
-
+        $html .= '<label for="genero"><b>Genero</b></label><br>';
+        $html .= '<input type="text" placeholder="Foto, por ahora no funcional" name="genero"  id="genero" /><br><br>';
         $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-        $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
-        $html .= '<button type="submit">Subir Libro</button>';
+        $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios..."></textarea> <br>';
+        $html .= '<button type="submit">Registrarse</button>';
         $html .= '</fieldset>';
 
         return $html;
@@ -64,27 +56,23 @@ class FormularioIntercambio extends Form
     {
 
 
-        //Id se puede dejar nulo
-
-        $titulo = $datos["titulo"];
-        $fotoLibro = $datos["fotoLibro"];
-        $autor = $datos["autor"];
-        $genero = $datos["genero"];
-        $desc = $datos["descripcion"];
+        //include_once($parentDir."/appBooxChange.php");
+        //include_once($parentDir."../constants.php");
 
         $app = appBooxChange::getInstance();
-        
-        //Damos valores "Nulos" a id y fecha después se omitirán
-        $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
-        
-        $result = $app->subirLibroIntercambio($libro);
 
-        if($result == true){
-            return "intercambiosNormales.php";
-        }else{
-            exit("Error inesperado, no se ha podido subir el libro a la BD");
-        }
 
-        
+        //Id se puede dejar nulo
+
+        $nombreUsuario = $datos[LOG_USERNAME];
+        $password = $datos[LOG_PASSWORD];
+
+
+        $app->logInUsuario($nombreUsuario, $password);
+        header("Location: ../../index.php");
+        $parentDir = dirname(__DIR__, 2);
+        $path = $parentDir."/index.php";
+        //return $path;
+        return "./index.php";
     }
 }

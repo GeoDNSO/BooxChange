@@ -21,10 +21,10 @@ class TDiscusion{
         $this->numComentarios = $numComentarios;
         $this->numVisitas = $numVisitas;
     }
-    
+
     /**
      * Get the value of idDiscusion
-     */ 
+     */
     public function getIdDiscusion()
     {
         return $this->idDiscusion;
@@ -34,7 +34,7 @@ class TDiscusion{
      * Set the value of idDiscusion
      *
      * @return  self
-     */ 
+     */
     public function setIdDiscusion($idDiscusion)
     {
         $this->idDiscusion = $idDiscusion;
@@ -44,7 +44,7 @@ class TDiscusion{
 
     /**
      * Get the value of idUsuarioCreador
-     */ 
+     */
     public function getIdUsuarioCreador()
     {
         return $this->idUsuarioCreador;
@@ -54,7 +54,7 @@ class TDiscusion{
      * Set the value of idUsuarioCreador
      *
      * @return  self
-     */ 
+     */
     public function setIdUsuarioCreador($idUsuarioCreador)
     {
         $this->idUsuarioCreador = $idUsuarioCreador;
@@ -64,7 +64,7 @@ class TDiscusion{
 
     /**
      * Get the value of fecha
-     */ 
+     */
     public function getFecha()
     {
         return $this->fecha;
@@ -74,7 +74,7 @@ class TDiscusion{
      * Set the value of fecha
      *
      * @return  self
-     */ 
+     */
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
@@ -84,7 +84,7 @@ class TDiscusion{
 
     /**
      * Get the value of idTema
-     */ 
+     */
     public function getIdTema()
     {
         return $this->idTema;
@@ -94,7 +94,7 @@ class TDiscusion{
      * Set the value of idTema
      *
      * @return  self
-     */ 
+     */
     public function setIdTema($idTema)
     {
         $this->idTema = $idTema;
@@ -104,7 +104,7 @@ class TDiscusion{
 
     /**
      * Get the value of titulo
-     */ 
+     */
     public function getTitulo()
     {
         return $this->titulo;
@@ -114,7 +114,7 @@ class TDiscusion{
      * Set the value of titulo
      *
      * @return  self
-     */ 
+     */
     public function setTitulo($titulo)
     {
         $this->titulo = $titulo;
@@ -124,7 +124,7 @@ class TDiscusion{
 
     /**
      * Get the value of numComentarios
-     */ 
+     */
     public function getNumComentarios()
     {
         return $this->numComentarios;
@@ -134,7 +134,7 @@ class TDiscusion{
      * Set the value of numComentarios
      *
      * @return  self
-     */ 
+     */
     public function setNumComentarios($numComentarios)
     {
         $this->numComentarios = $numComentarios;
@@ -144,7 +144,7 @@ class TDiscusion{
 
     /**
      * Get the value of numVisitas
-     */ 
+     */
     public function getNumVisitas()
     {
         return $this->numVisitas;
@@ -154,7 +154,7 @@ class TDiscusion{
      * Set the value of numVisitas
      *
      * @return  self
-     */ 
+     */
     public function setNumVisitas($numVisitas)
     {
         $this->numVisitas = $numVisitas;
