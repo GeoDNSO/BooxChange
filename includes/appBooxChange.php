@@ -481,17 +481,5 @@ class appBooxChange
         $bdBooxChange = DAOOfertasIntercambio::getInstance();
         $bdBooxChange->actualizarOferta($ofertaAceptada, $idOferta);
     }
-    public function valorarLibro($titulo, $valoracion, $idUsuario){
-        $bdBooxChange = DAOValoracionLibro::getInstance();
-        $bdBooxChange->valorarLibro($titulo, $valoracion, $idUsuario);
-        $bdBooxChange->closeBD();
-    }
-
-    public function librosValoracion(){
-        $bdBooxChange = DAOLibro::getInstance();
-        $librosValoracion = $bdBooxChange->librosValoracion();        
-        $bdBooxChange->closeBD();
-        return $librosValoracion;
-    }
     
 }
