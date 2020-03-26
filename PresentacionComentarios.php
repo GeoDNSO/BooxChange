@@ -21,19 +21,33 @@ $idDiscusion = ($_GET["Discusion"]);
 
   $app = appBooxChange::getInstance();
   $listaComentariosDiscusion = $app->comentariosDiscusion($idDiscusion);
-  foreach($listaComentariosDiscusion as $comentario){
-      $comentarioIdUsuario = $comentario->getIdUsuario();
-      $comentarioTexto = $comentario->getTexto();
-      $comentarioFecha = $comentario->getFecha();
-      $comentarioDiscusionId = $comentario->getIdDiscusion();
 
-      $usuario = $app->getUserById($comentarioIdUsuario);
-      $nombreUsuario = $usuario->getNombreUsuario();
-      echo "$comentarioTexto -$nombreUsuario $comentarioFecha<br>";
+  $discusion = $app->getDiscusionById($idDiscusion);
+  $tituloDiscusion = $discusion->getTitulo();
+  echo "<br><b>Comentarios de $tituloDiscusion:</b><br>";
+
+  if ($listaComentariosDiscusion == NULL){
+    echo "Vaya, parece que esta discusión no tiene comentarios. Prueba a añadir uno.<br>";
+  }
+
+  else{
+      echo '<ul>';
+      foreach($listaComentariosDiscusion as $comentario){
+          $comentarioIdUsuario = $comentario->getIdUsuario();
+          $comentarioTexto = $comentario->getTexto();
+          $comentarioFecha = $comentario->getFecha();
+          $comentarioDiscusionId = $comentario->getIdDiscusion();
+
+          $usuario = $app->getUserById($comentarioIdUsuario);
+          $nombreUsuario = $usuario->getNombreUsuario();
+          echo "<li>$comentarioTexto -$nombreUsuario $comentarioFecha<br></li>";
+      }
+
+      echo '</ul>';
 }
 
-
   if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
+      //echo '<br>';
       echo '<fieldset>';
       echo '<legend>Añadir comentario:</legend>';
 
@@ -48,7 +62,7 @@ $idDiscusion = ($_GET["Discusion"]);
       echo '</fieldset>';
   }
   else {
-    echo 'Debes registrarte si deseas añadir un comentario';
+    echo 'Añadir comentario: debes haber iniciado sesión para añadir un comentario';
   }
 ?>
 

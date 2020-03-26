@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-$idTema = ($_GET["Tema"]);
+$tema = ($_GET["Tema"]); //Titulo del tema, su tabla nada más olo tiene una columna
 ?>
 
 
@@ -20,15 +20,43 @@ $idTema = ($_GET["Tema"]);
 
 
   $app = appBooxChange::getInstance();
-  $listaDiscusionesTema = $app->discusionesTema($idTema);
-  foreach($listaDiscusionesTema as $discusion){
-      $discusionTema = $discusion->getIdTema();
-      $discusionId = $discusion->getIdDiscusion();
-      $discusionIdusuario = $discusion->getIdUsuarioCreador();
-      $discusionFecha = $discusion->getFecha();
-      $discusionTitulo = $discusion->getTitulo();
+  $listaDiscusionesTema = $app->discusionesTema($tema);
 
+  echo "<b>Lista de discusiones de $tema:</b><br>";
 
-      echo "<a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br>";
-}
+  if ($listaDiscusionesTema == NULL){
+  	echo "Vaya, parece que este tema no tiene discusiones. Prueba a añadir una.<br>";
+  }
+
+  else{
+		echo '<ul>';
+  		foreach($listaDiscusionesTema as $discusion){
+      			$discusionTema = $discusion->getIdTema();
+			    $discusionId = $discusion->getIdDiscusion();
+			    $discusionIdusuario = $discusion->getIdUsuarioCreador();
+			    $discusionFecha = $discusion->getFecha();
+			    $discusionTitulo = $discusion->getTitulo();
+				echo "<li><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br></li>";
+		}
+		echo '</ul>';
+ }
+
+	 if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
+	// echo '<br>';
+      echo '<fieldset>';
+      echo '<legend>Crear discusion:</legend>';
+
+      echo '<form method="post" action="includes/procesos/procesarDiscusion.php?tema='. $tema. '">';
+
+      echo '<label for="tituloDiscusion"><b>Discusion</b></label><br>';
+      echo '<textarea id="tituloDiscusion" name="tituloDiscusion" rows="5" cols="50" placeholder="Escribe aquí el título de la discusión..."></textarea> <br>';
+
+      echo '<button type="submit">Crear discusión</button>';
+
+      echo '</form>';
+      echo '</fieldset>';
+  }
+  else {
+    echo 'Crear discusión: debes haber iniciado sesión para crear una discusión';
+  }
 ?>

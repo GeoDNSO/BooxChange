@@ -22,6 +22,13 @@ class DAOTema extends DAO{
         return self::$instance;
     }
 
+    function anadirTema($tema)
+    {
+          $sql = "INSERT INTO tema (Tema) VALUES ('$tema')";
+          $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+          return $consulta;
+    }
+
     //Buscar generos
 
     public function getAllTemas(){

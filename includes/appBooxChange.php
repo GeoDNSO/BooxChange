@@ -341,9 +341,17 @@ class appBooxChange
         return $listaDiscusionesTema;
     }
 
+     public function anadirTema($tema) {
+        $bdBooxChange = DAOTema::getInstance();
+        $result = $bdBooxChange->anadirTema($tema);
+        return $result;
+        //return $bdBooxChange->anadirComentario($id_Usuario, $texto, $idDiscusion);
+      }
+
     public function anadirDiscusion($id_Usuario_Creador, $tema, $titulo) {
         $bdBooxChange = DAODiscusion::getInstance();
-        return $bdBooxChange->anadirDiscusion($id_Usuario_Creador, $tema, $titulo);
+        $result = $bdBooxChange->anadirDiscusion($id_Usuario_Creador, $tema, $titulo);
+        return $result;
       }
     public function eliminarDiscusion($id_Discusion){
         $bdBooxChange = DAODiscusion::getInstance();
@@ -357,6 +365,12 @@ class appBooxChange
         return $listaComentariosDiscusion;
     }
 
+    public function getDiscusionById($id)
+    {
+        $bdBooxChange = DAODiscusion::getInstance();
+        $Discusion = $bdBooxChange->getDiscusionById($id);
+        return $Discusion;
+    }
 
     public function anadirComentario($id_Usuario, $texto, $idDiscusion) {
         $bdBooxChange = DAOComentarios::getInstance();
