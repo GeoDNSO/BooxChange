@@ -24,21 +24,14 @@ class DAOComentarios extends DAO
         return self::$instance;
     }
 
-    function anadirComentario($id_Usuario, $texto, $tituloDiscusion)
+    function anadirComentario($id_Usuario, $texto, $idDiscusion)
     {
+          $sql = "INSERT INTO Comentarios (Id_usuario, Texto, Fecha, Id_Discusion)
+                  VALUES ($id_Usuario, '$texto', current_timestamp(), $idDiscusion)";
+          $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+          return $consulta;
+    }
 
-      $sql = "SELECT Id_Discusion FROM Discusion WHERE titulo = $tituloDiscusion";
-      $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-
-      if (mysqli_num_rows($consulta) == 1) {
-          $fila = $consulta->fetch_array();
-          $id = $fila['BD_DISCUSION_ID'];
-
-          $sql2 = "INSERT INTO Comentarios (Id_usuario, Texto, Fecha, Id_Discusion)
-                  VALUES ($id_Usuario, $texto, current_timestamp(), $id)";
-                  mysqli_query(self::$instance->bdBooxChange, $sql2);
-      }
-}
     function eliminarComentario($id_Comentario, $id_usuario){
     $sql = "DELETE FROM Comentarios WHERE Id_Comentario = $id_Comentario AND  Id_Usuario = $id_usuario;";
     }

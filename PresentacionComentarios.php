@@ -22,13 +22,34 @@ $idDiscusion = ($_GET["Discusion"]);
   $app = appBooxChange::getInstance();
   $listaComentariosDiscusion = $app->comentariosDiscusion($idDiscusion);
   foreach($listaComentariosDiscusion as $comentario){
-      $comentarioId = $comentario->getIdUsuario();
+      $comentarioIdUsuario = $comentario->getIdUsuario();
       $comentarioTexto = $comentario->getTexto();
       $comentarioFecha = $comentario->getFecha();
       $comentarioDiscusionId = $comentario->getIdDiscusion();
 
-
-
-      echo "$comentarioTexto "."$comentarioFecha<br>";
+      $usuario = $app->getUserById($comentarioIdUsuario);
+      $nombreUsuario = $usuario->getNombreUsuario();
+      echo "$comentarioTexto -$nombreUsuario $comentarioFecha<br>";
 }
+
+
+  if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
+      echo '<fieldset>';
+      echo '<legend>Añadir comentario:</legend>';
+
+      echo '<form method="post" action="includes/procesos/procesarComentario.php?id='. $idDiscusion. '">';
+
+      echo '<label for="textoComentario"><b>Comentario</b></label><br>';
+      echo '<textarea id="textoComentario" name="textoComentario" rows="5" cols="50" placeholder="Escribe aquí tu comentario..."></textarea> <br>';
+
+      echo '<button type="submit">Subir comentario</button>';
+
+      echo '</form>';
+      echo '</fieldset>';
+  }
+  else {
+    echo 'Debes registrarte si deseas añadir un comentario';
+  }
 ?>
+
+
