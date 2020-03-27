@@ -22,7 +22,6 @@ require_once(__DIR__ . "/includes/config.php");
 
         use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
         use fdi\ucm\aw\booxchange\TLibro as TLibro;
-        use fdi\ucm\aw\booxchange\formularios\FormularioValorar;
 
         $app = appBooxChange::getInstance();
         $librosTienda = $app->librosTienda();
@@ -42,8 +41,7 @@ require_once(__DIR__ . "/includes/config.php");
                 else{
                     echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas </li>"; 
                 }
-                $form = new FormularioValorar("valorarForm", array("action"=>null, "libro"=>$titulo));
-                $form->gestiona();
+
                 echo "</li>"; 
             }
             else{

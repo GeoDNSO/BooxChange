@@ -11,12 +11,9 @@ use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 class FormularioValorar extends Form
 {
 
-    private $libro;
-
     public function __construct($formId, $opciones = array())
     {
         parent::__construct($formId, $opciones);
-        $this->libro = $opciones['libro'];
     }
 
     /**
@@ -28,12 +25,24 @@ class FormularioValorar extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
+        $app = appBooxChange::getInstance();
+        $libros = $app->librosTienda();
+
         $html = '    <label for="valoracion"><b>Valoración:</b></label>';
+
+        $html .= '    <select id="libro" name="libro">';
+        foreach ($libros as $libro){
+            $html .= '      <option>' . $libro->getTitulo() . '</option>';
+        }
+        $html .= '      </select>';
+
         $html .= '    <select id="valoracion" name="valoracion">';
         for ($i=1; $i <=10; $i++){
             $html .= '      <option>' . $i . '</option>';
         }
         $html .= '      </select>';
+        
+        $html .= '    <textarea name="comentario">Comentario</textarea>';
         $html .= '    <input type="submit" value="Valorar" />';
 
         return $html;
@@ -49,11 +58,13 @@ class FormularioValorar extends Form
      */
     protected function procesaFormulario($datos)
     {
-        $valoración = $datos["valoracion"];
-
+        $libro = $datos['libro'];
+        $valoracion = $datos['valoracion'];
+        $comentario = $datos['comentario'];
+        
         $app = appBooxChange::getInstance();
 
-        $app->valorarLibro($this->libro, $valoración, $_SESSION['id_Usuario']);
+        $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
 
         
     }

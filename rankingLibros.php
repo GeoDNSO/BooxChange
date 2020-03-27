@@ -15,6 +15,7 @@
 <?php
     include("includes/comun/cabecera.php");
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+    use fdi\ucm\aw\booxchange\formularios\FormularioValorar;
 
     $app = appBooxChange::getInstance();
     $librosValoracion = $app->librosValoracion();
@@ -29,8 +30,10 @@
         echo "<tr><td>" . $titulo . "</td><td>" . $autor . "</td><td>" . $valoracion . "</td></tr>";
     }
 
-        echo "</table>";
+    echo "</table>";
 
+    $form = new FormularioValorar("valorarForm", array("action"=>null));
+    $form->gestiona();
 ?>
 
 

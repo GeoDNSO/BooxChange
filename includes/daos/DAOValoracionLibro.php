@@ -25,17 +25,17 @@ class DAOValoracionLibro extends DAO
         return self::$instance;
     }
 
-    public function valorarLibro($titulo, $valoracion, $idUsuario){
+    public function valorarLibro($titulo, $valoracion, $idUsuario, $comentario){
 
-        $sql = "SELECT id_libro FROM libro WHERE titulo = $titulo";
+
+        $sql = "SELECT id_libro FROM libro WHERE titulo = '$titulo'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) == 1) {
             $fila = $consulta->fetch_array();
             $id = $fila['id_libro'];
 
-            $sql2 = "INSERT INTO valoracionlibro ('id_libro', 'id_usuario', 'valoracion')
-                    VALUES ('$id', '$idUsuario', '$valoracion')";
+            $sql2 = "INSERT INTO valoracionlibro (id_libro, id_usuario, valoracion, comentario) VALUES ($id, $idUsuario, $valoracion, '$comentario') ";
             mysqli_query(self::$instance->bdBooxChange, $sql2);
         }
 
