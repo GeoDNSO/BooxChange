@@ -27,7 +27,7 @@
         $valoracion = $libro->getValoracion();
         $autor = $libro->getAutor();
 
-        echo "<tr><td>" . $titulo . "</td><td>" . $autor . "</td><td>" . $valoracion . "</td></tr>";
+        echo "<tr><td>" . $titulo . "</td><td>" . $autor . "</td><td>" . $valoracion . "/10". "</td></tr>";
     }
 
     echo "</table>";

@@ -28,7 +28,7 @@ class FormularioValorar extends Form
         $app = appBooxChange::getInstance();
         $libros = $app->librosTienda();
 
-        $html = '    <label for="valoracion"><b>Valoración:</b></label>';
+        $html = '  <br>  <label for="valoracion"><b>Valoración:</b></label>';
 
         $html .= '    <select id="libro" name="libro">';
         foreach ($libros as $libro){
@@ -42,7 +42,9 @@ class FormularioValorar extends Form
         }
         $html .= '      </select>';
         
-        $html .= '    <textarea name="comentario">Comentario</textarea>';
+        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
+        
+
         $html .= '    <input type="submit" value="Valorar" />';
 
         return $html;
@@ -58,14 +60,24 @@ class FormularioValorar extends Form
      */
     protected function procesaFormulario($datos)
     {
+
+        $erroresFormulario = array();
+
+        //Libro y valoración tienen un valor por defecto
         $libro = $datos['libro'];
         $valoracion = $datos['valoracion'];
-        $comentario = $datos['comentario'];
-        
-        $app = appBooxChange::getInstance();
 
-        $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
-
-        
+        $comentario = isset($datos['comentario']) ? $datos['comentario'] : null;
+        if (empty($comentario) || mb_strlen($comentario) < 1) {
+            $erroresFormulario[] = "ERROR: Introduzca un comentario";
+        }
+        if (count($erroresFormulario) === 0){
+            $app = appBooxChange::getInstance();
+            $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
+        }
+        else{
+            return $erroresFormulario;
+        }
+   
     }
 }

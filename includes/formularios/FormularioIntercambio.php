@@ -63,28 +63,57 @@ class FormularioIntercambio extends Form
     protected function procesaFormulario($datos)
     {
 
+        $erroresFormulario = array();
 
-        //Id se puede dejar nulo
-
-        $titulo = $datos["titulo"];
-        $fotoLibro = $datos["fotoLibro"];
-        $autor = $datos["autor"];
-        $genero = $datos["genero"];
-        $desc = $datos["descripcion"];
-
-        $app = appBooxChange::getInstance();
-        
-        //Damos valores "Nulos" a id y fecha después se omitirán
-        $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
-        
-        $result = $app->subirLibroIntercambio($libro);
-
-        if($result == true){
-            return "intercambiosNormales.php";
-        }else{
-            exit("Error inesperado, no se ha podido subir el libro a la BD");
+        $titulo = isset($datos['titulo']) ? $datos['titulo'] : null;
+        if (empty($titulo) || mb_strlen($titulo) < 2) {
+            $erroresFormulario[] = "El título ha de tener una longitud de al menos 3 caracteres";
         }
 
+        $fotoLibro = $datos["fotoLibro"];
+        /* 
+        No es obligatorio poner la foto de un libro pues no está implementado aún
+        $fotoLibro = isset($datos['fotoLibro']) ? $datos['fotoLibro'] : null;
+        if (empty($fotoLibro) || mb_strlen($fotoLibro) < 5) {
+            $erroresFormulario[] = "Ha de introducir una foto (No implementado)";
+        }
+        */
+        $autor = isset($datos['autor']) ? $datos['autor'] : null;
+        if (empty($autor) || mb_strlen($autor) < 4) {
+            $erroresFormulario[] = "Introduzca el nombre del autor, 4 caracteres mínimo";
+        }
+
+        $genero = $datos["genero"];
+        /* 
+        Siempre hay un género por defecto
+        $genero = isset($datos['genero']) ? $datos['genero'] : null;
+        if (empty($genero) || mb_strlen($genero) < 2) {
+            $erroresFormulario[] = "Especifique un género";
+        }
+        */
+        
+        $desc = isset($datos['descripcion']) ? $datos['descripcion'] : null;
+        if (empty($desc) || mb_strlen($desc) < 10) {
+            $erroresFormulario[] = "Especifique la descripción u argumento del libro, mínimo 10 caracteres";
+        }
+
+        if (count($erroresFormulario) === 0) {
+            $app = appBooxChange::getInstance();
+            
+            //Damos valores "Nulos" a id y fecha después se omitirán
+            $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
+            
+            $result = $app->subirLibroIntercambio($libro);
+
+            if($result == true){
+                return "intercambiosNormales.php";
+            }else{
+                exit("Error inesperado, no se ha podido subir el libro a la BD");
+            }
+        }
+        else{
+            return $erroresFormulario;
+        }
         
     }
 }
