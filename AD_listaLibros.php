@@ -12,12 +12,31 @@
 </head>
 
 
+
 <?php
     include("includes/comun/cabecera.php");
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     $app = appBooxChange::getInstance();
-    $libros = $app->getBooks();
+
+    $html = '<div id="buscaLibro">';
+    $html .= '<form method="post">';
+    $html .= '    <label for="titulo"><b>Buscar Libro por título:</b></label><br>';
+    $html .= '    <input type="text" placeholder="" name="titulo" id="titulo" /><br><br>';
+    $html .= '    <input type="submit" value="Buscar" />';
+    $html .= '</form>';
+    $html .= '</div>';
+
+    echo $html;
+    
+    //echo $_POST["titulo"];
+    $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
+    if (!empty($titulo)) {
+        $libros = $app->buscarPorTitulo($titulo);
+    }
+    else{
+        $libros = $app->getBooks();
+    }
     
     echo "<ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){

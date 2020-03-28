@@ -135,6 +135,12 @@ class appBooxChange
         return $libros;
     }
 
+    public function buscarPorTitulo($titulo){  
+        $bdBooxChange = DAOLibro::getInstance();
+        $libros = $bdBooxChange->findBookTitulo($titulo);
+        return $libros;
+    }
+
     public function getUsers()
     {
         $bdBooxChange = DAOUsuario::getInstance();
