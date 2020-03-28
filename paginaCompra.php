@@ -70,8 +70,8 @@ if (!isset($_GET['id'])) {
 
     echo "NUEVO FORM";
     $id = $_GET["id"];
-    $form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>"paginaCompra.php?id=$id"));
-    //$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
+    ///$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>"paginaCompra.php?id=$id"));
+    $form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
 
     $form->gestiona();
 ?>

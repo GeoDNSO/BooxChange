@@ -9,6 +9,11 @@ INICIALES SEGÚN EL PROCESO O PARTE DEL PROYECTO
 
 */
 
+$parentDir = dirname(__DIR__, 1);
+$imgDirectory = "imagenes/";
+
+//Fichero donde se guardan las imagenes
+define("IMG_DIRECTORY", "$imgDirectory");
 
 //Información de la base de datos
 define("BD_HOST", "localhost");

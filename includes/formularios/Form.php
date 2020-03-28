@@ -72,9 +72,16 @@ abstract class Form
         
         if ( !$this->action ) {
             $this->action = htmlentities($_SERVER['PHP_SELF']);
+            //$this->action = htmlentities($_SERVER['REQUEST_URI']);
         }
     }
   
+
+/*
+S SERVER URI
+
+*/
+
     /**
      * Se encarga de orquestar todo el proceso de gestión de un formulario.
      */
@@ -145,7 +152,7 @@ abstract class Form
 
         $html= $this->generaListaErrores($errores);
 
-        $html .= '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" >';
+        $html .= '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" enctype="multipart/form-data" >';
         $html .= '<input type="hidden" name="action" value="'.$this->formId.'" />';
 
         $html .= $this->generaCamposFormulario($datos);

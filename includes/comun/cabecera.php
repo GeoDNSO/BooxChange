@@ -4,6 +4,8 @@ use \fdi\ucm\aw\booxchange\appBooxChange;
 
 if(isset($_SESSION['login']) && $_SESSION['login']){
     //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
+
+    echo '<img src="'.$_SESSION['fotoPerfil'] .'" alt="Imagen de Perfil" height="100" width="100">  <br>';
     echo "<a href='usuario.php'>".$_SESSION['nombreReal']."</a>";
     echo "<br>";
     $app = appBooxChange::getInstance();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-03-2020 a las 21:01:42
+-- Tiempo de generación: 27-03-2020 a las 13:34:14
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -68,7 +68,10 @@ INSERT INTO `comentarios` (`Id_Comentario`, `Id_Usuario`, `Texto`, `Fecha`, `Id_
 (1, 5, 'Comentario Dummy jeje', '2020-03-08 00:00:00', 1),
 (2, 4, 'Otro mas', '2020-03-06 00:00:00', 1),
 (3, 2, 'Pues muy bien redactao el reglamento, si señor!.', '2020-03-08 00:00:00', 1),
-(4, 1, 'Las devoluciones se harán efectivas en menos de 5 días hábiles', '2020-03-08 00:00:00', 2);
+(4, 1, 'Las devoluciones se harán efectivas en menos de 5 días hábiles', '2020-03-08 00:00:00', 2),
+(5, 5, 'Funciona\r\n', '2020-03-26 23:18:13', 3),
+(6, 10, 'oaidosakda\r\n', '2020-03-27 12:16:52', 3),
+(7, 10, 'sfsadhfsudifhas', '2020-03-27 12:16:56', 3);
 
 -- --------------------------------------------------------
 
@@ -107,7 +110,10 @@ INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `
 (14, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
 (15, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
 (16, 10, 1, 1, 323232, 12.5, '0000-00-00 00:00:00'),
-(17, 10, 1, 1, 34, 12.5, '0000-00-00 00:00:00');
+(17, 10, 1, 1, 34, 12.5, '0000-00-00 00:00:00'),
+(18, 5, 1, 1, 52353245, 13.5, '2020-03-27 12:14:24'),
+(19, 10, 2, 3, 4532452, 60, '2020-03-27 12:28:30'),
+(20, 10, 2, 3, 456456, 60, '2020-03-27 12:29:29');
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,8 @@ CREATE TABLE `discusion` (
 
 INSERT INTO `discusion` (`Id_Discusion`, `Id_Usuario_Creador`, `Fecha`, `Tema`, `Titulo`, `NumComentarios`, `NumVisitas`) VALUES
 (1, 1, '2020-03-08 12:39:07', 'Reglamento', 'Cuidado de los libros', 5, 10),
-(2, 1, '2020-03-08 12:53:07', 'FAQs', 'Contacto', 20, 57);
+(2, 1, '2020-03-08 12:53:07', 'FAQs', 'Contacto', 20, 57),
+(3, 5, '2020-03-26 23:17:59', 'General', 'Funciona', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -200,7 +207,7 @@ INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`
 (3, 2, 1, 3, '2020-03-22 01:28:28'),
 (47, 48, 1, 23, '2020-03-22 18:01:00'),
 (52, 55, 0, 25, '2020-03-23 21:57:34'),
-(53, NULL, 0, 26, '2020-03-23 15:43:23'),
+(53, 60, 0, 26, '2020-03-27 12:16:25'),
 (56, 57, 0, 27, '2020-03-23 22:52:17'),
 (58, NULL, 0, 28, '2020-03-24 14:01:25');
 
@@ -234,7 +241,7 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 4, '0000-00-00'),
+(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '0000-00-00'),
 (2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
 (3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
 (4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
@@ -270,12 +277,13 @@ INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `De
 (47, 'DROSS', 'nada', 'Libro Misterioso', 'Ciencia Ficción', 5, 'No es un libro', 1, 0, '2020-03-22 18:00:27'),
 (48, 'Autor', 'NO HAY', 'Libro Misterioso', 'Ciencia Ficción', 10, 'MI LIBRO', 1, 0, '2020-03-22 18:01:00'),
 (52, 'Sanderson', 'No', 'Muy bien', 'Ciencia Ficción', 5, 'Archivo de las Tormentas', 1, 0, '2020-03-23 00:07:31'),
-(53, 'Sanderson', 'nada', 'Increíble libro de Sanderson', 'Ciencia Ficción', 10, 'El Camino De Los Reyes', 0, 0, '2020-03-23 15:43:23'),
+(53, 'Sanderson', 'nada', 'Increíble libro de Sanderson', 'Ciencia Ficción', 10, 'El Camino De Los Reyes', 1, 0, '2020-03-23 15:43:23'),
 (55, 'fdsafasdf', 'asdfdsfas', 'asdfasdfsafdsa', 'Ciencia Ficción', 10, 'fdsfsadf', 1, 0, '2020-03-23 21:27:59'),
 (56, 'Sanderson', 'nada', 'Es muy difícil de leer quiero un libro infantil', 'Ciencia Ficción', 5, 'El Imperio Final', 1, 0, '2020-03-23 22:50:10'),
 (57, 'Jerry Pinkney', 'nada', 'Toma libro, este seguro que lo entiendes, pls dame ese libro', 'Infantil', 10, 'Caperucita Roja', 1, 0, '2020-03-23 22:51:23'),
 (58, 'Desc', 'asda', 'Cambiamelo por lo que sea anda', 'Ciencia Ficción', 5, 'CSS para dummies', 0, 0, '2020-03-24 14:01:25'),
-(59, 'sdasda', 'asdasda', 'Pedazo de libro', 'Ciencia Ficción', 10, 'sdasd', 0, 0, '2020-03-24 14:02:14');
+(59, 'sdasda', 'asdasda', 'Pedazo de libro', 'Ciencia Ficción', 10, 'sdasd', 0, 0, '2020-03-24 14:02:14'),
+(60, 'Desconocido', 'no hay', 'Igual te encanta este libro, cambiamelo', 'Infantil', 5, 'Caperutcita Roja', 1, 0, '2020-03-27 12:15:55');
 
 -- --------------------------------------------------------
 
@@ -326,7 +334,9 @@ INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VA
 (9, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros fdsfsadf y Archivo de las Tormentas', 1, '2020-03-23 21:59:04'),
 (10, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros Archivo de las Tormentas y fdsfsadf', 1, '2020-03-23 21:59:04'),
 (11, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros Caperucita Roja y El Imperio Final', 1, '2020-03-23 22:52:17'),
-(12, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros El Imperio Final y Caperucita Roja', 1, '2020-03-23 22:52:17');
+(12, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros El Imperio Final y Caperucita Roja', 1, '2020-03-23 22:52:17'),
+(13, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros Caperutcita Roja y El Camino De Los Reyes', 1, '2020-03-27 12:16:25'),
+(14, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros El Camino De Los Reyes y Caperutcita Roja', 0, '2020-03-27 12:16:25');
 
 -- --------------------------------------------------------
 
@@ -349,7 +359,8 @@ INSERT INTO `ofertasintercambio` (`id`, `idLibroIntercambio`, `idLibroOferta`, `
 (2, 3, 48, 1),
 (4, 52, 55, 1),
 (5, 56, 57, 1),
-(6, 58, 59, 2);
+(6, 58, 59, 2),
+(7, 53, 60, 1);
 
 -- --------------------------------------------------------
 
@@ -431,6 +442,16 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 (5, 3, 5, 'No me esperaba que fuera así, lectura recomendada! Fascinante!', 4),
 (4, 2, 2, 'Buen libro para pasar las horas en el metro.', 5),
 (2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6);
+
+--
+-- Disparadores `valoracionlibro`
+--
+DELIMITER $$
+CREATE TRIGGER `mediaValoracion` AFTER INSERT ON `valoracionlibro` FOR EACH ROW UPDATE libro
+    SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
+                      WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
+$$
+DELIMITER ;
 
 --
 -- Índices para tablas volcadas
@@ -567,19 +588,19 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
@@ -603,7 +624,7 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
@@ -615,13 +636,13 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
 --
 ALTER TABLE `ofertasintercambio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

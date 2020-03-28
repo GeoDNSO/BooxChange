@@ -37,7 +37,8 @@ class FormularioModificarPerfil extends Form
 
         $html = '<p> Nombre Real: <input type="text" name="userRealName" id= "userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
         $html .= '<p> Correo: <input type="text" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
-        $html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="'.$datosIniciales["foto"].'"/></p>';
+        $html .= '<p> Foto: <input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/> </p>';
+        //$html .= '<p> Foto: <input type="text" name="foto" id= "foto" value="'.$datosIniciales["foto"].'"/></p>';
         $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
         $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
         $html .= '<p><input type="submit" name="accept" value="Cambiar" /></p>';
@@ -72,7 +73,24 @@ class FormularioModificarPerfil extends Form
         //foto
         $fotoPerfil = isset($datos['foto']) ? $datos['foto'] : null;
         $fotoPerfil = make_safe($fotoPerfil);
-        
+
+
+        $fotoBD =  (IMG_DIRECTORY . $_FILES["foto"]["name"]);
+        $fotoBD = str_replace("\\", "/", $fotoBD);
+
+        move_uploaded_file( $_FILES["foto"]['tmp_name']  , $fotoBD);
+
+
+        //echo "FINAL: ". IMG_DIRECTORY . $_FILES["foto"]["name"] ." <br>";
+       // var_dump($_FILES);
+       // echo "Directorio : ". IMG_DIRECTORY;
+        //echo "foto: ".$_FILES["foto"]["name"] . ".<br>";
+        //echo "nombre : $fotoPerfil";
+        //echo "foto temp: ".$_FILES["foto"]['tmp_name'] . ".<br>";
+       // echo "foto: ".$fotoPerfil . ".<br>";
+        //exit();
+
+
         //Ciudad
         $ciudad = isset($datos['ciudad']) ? $datos['ciudad'] : null;
         $ciudad = make_safe($ciudad);
@@ -93,7 +111,7 @@ class FormularioModificarPerfil extends Form
 
         if (count($erroresFormulario) === 0) {
 
-            if ($app->actualizarPerfil($_SESSION['nombre'], $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)) {
+            if ($app->actualizarPerfil($_SESSION['nombre'], $nombreReal, $correo, $fotoBD, $ciudad, $direccion)) {
 
                 return "./index.php";
             }
