@@ -13,7 +13,9 @@ $parentDir = dirname(__DIR__, 1);
 $imgDirectory = "imagenes/";
 
 //Fichero donde se guardan las imagenes
-define("IMG_DIRECTORY", "$imgDirectory");
+define("IMG_DIRECTORY_USER", "$imgDirectory"."usuarios/");
+define("IMG_DIRECTORY_LIBROS", "$imgDirectory"."libros/");
+define("IMG_DIRECTORY_LIBROS_INTERCAMBIO", "$imgDirectory"."librosIntercambio/");
 
 //Información de la base de datos
 define("BD_HOST", "localhost");

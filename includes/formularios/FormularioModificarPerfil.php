@@ -75,7 +75,7 @@ class FormularioModificarPerfil extends Form
         $fotoPerfil = make_safe($fotoPerfil);
 
 
-        $fotoBD =  (IMG_DIRECTORY . $_FILES["foto"]["name"]);
+        $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["foto"]["name"]);
         $fotoBD = str_replace("\\", "/", $fotoBD);
 
         move_uploaded_file( $_FILES["foto"]['tmp_name']  , $fotoBD);
