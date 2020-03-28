@@ -59,24 +59,29 @@ class FormularioModificarPerfil extends Form
 
         //Nombre real
         $nombreReal = isset($datos['userRealName']) ? $datos['userRealName'] : null;
+        $nombreReal = make_safe($nombreReal);
         if (empty($nombreReal) || mb_strlen($nombreReal) < 5) {
             $erroresFormulario[] = "El nombre tiene que tener una longitud de al menos 5 caracteres.";
         }
         //email
         $correo = isset($datos['email']) ? $datos['email'] : null;
+        $correo = make_safe($correo);
         if (empty($correo) || mb_strlen($correo) < 8) {
             $erroresFormulario[] = "El correo ha de ocupar al menos 8 caracteres.";
         }
         //foto
         $fotoPerfil = isset($datos['foto']) ? $datos['foto'] : null;
+        $fotoPerfil = make_safe($fotoPerfil);
         
         //Ciudad
         $ciudad = isset($datos['ciudad']) ? $datos['ciudad'] : null;
+        $ciudad = make_safe($ciudad);
         if (empty($ciudad) || mb_strlen($ciudad) < 3) {
             $erroresFormulario[] = "Introduzca una Ciudad válida.";
         }
         //Direccion
         $direccion = isset($datos['direccion']) ? $datos['direccion'] : null;
+        $direccion = make_safe($direccion);
         if (empty($direccion) || mb_strlen($direccion) < 5) {
             $erroresFormulario[] = "Introduzca una direccion válida";
         }

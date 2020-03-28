@@ -64,28 +64,25 @@ class FormularioIntercambioMisterioso extends Form
         $erroresFormulario = array();
 
         $titulo = isset($datos['titulo']) ? $datos['titulo'] : null;
+        $titulo = make_safe($titulo);
         if (empty($titulo) || mb_strlen($titulo) < 2) {
             $erroresFormulario[] = "El título ha de tener una longitud de al menos 3 caracteres";
         }
 
         $fotoLibro = $datos["fotoLibro"];
+        $fotoLibro = make_safe($fotoLibro);
 
         $autor = isset($datos['autor']) ? $datos['autor'] : null;
+        $autor = make_safe($autor);
         if (empty($autor) || mb_strlen($autor) < 4) {
             $erroresFormulario[] = "Introduzca el nombre del autor, 4 caracteres mínimo";
         }
 
         $genero = $datos["genero"];
+
         
         $desc = "Libro Misterioso";
 
-
-
-
-        $titulo = isset($datos['titulo']) ? $datos['titulo'] : null;
-        if (empty($titulo) || mb_strlen($titulo) < 2) {
-            $erroresFormulario[] = "El título ha de tener una longitud de al menos 3 caracteres";
-        }
 
         if (count($erroresFormulario) === 0) {
             $app = appBooxChange::getInstance();

@@ -84,6 +84,10 @@ use fdi\ucm\aw\booxchange\formularios\FormularioIntercambio as FormularioInterca
 use fdi\ucm\aw\booxchange\formularios\FormularioIntercambioMisterioso as FormularioIntercambioMisterioso;
 
 
-
+function make_safe($variable) 
+{
+   $variable = htmlspecialchars(trim(strip_tags($variable)));;
+   return $variable; 
+}
 
 ?>

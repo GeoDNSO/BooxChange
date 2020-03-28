@@ -65,9 +65,11 @@ class FormularioValorar extends Form
 
         //Libro y valoración tienen un valor por defecto
         $libro = $datos['libro'];
+
         $valoracion = $datos['valoracion'];
 
         $comentario = isset($datos['comentario']) ? $datos['comentario'] : null;
+        $comentario = make_safe($comentario);
         if (empty($comentario) || mb_strlen($comentario) < 1) {
             $erroresFormulario[] = "ERROR: Introduzca un comentario";
         }

@@ -53,12 +53,14 @@ class FormularioLogin extends Form
         $erroresFormulario = array();
 
         $username = isset($datos['username']) ? $datos['username'] : null;
+        $username = make_safe($username);
 
         if (empty($username) || mb_strlen($username) < 5) {
             $erroresFormulario[] = "Nombre de usuario ha de tener por lo menos 5 caracteres";
         }
 
         $password = isset($datos['password']) ? $datos['password'] : null;
+        $password = make_safe($password);
         if (empty($password) || mb_strlen($password) < 5) {
             $erroresFormulario[] = "El password tiene que tener una longitud de al menos 5 caracteres.";
         }
