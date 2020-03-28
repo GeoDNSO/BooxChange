@@ -37,7 +37,7 @@
         <input type="text" name="imagen" id="imagen" value="" /><br><br>
 
         <label for="descripcion"><b>Descripcion</b></label><br>
-        <input type="text" name="descripcion" id="descripcion" size="200" value="" /><br><br>
+        <textarea name="descripcion" rows="4" cols="50" id="descripcion" value="" > </textarea><br><br>
 
         <label for="genero"><b>Genero</b></label><br>
         <select name="genero">
@@ -49,20 +49,6 @@
         <option value="Romántico">Romántico</option>
         <option value="Youtubers">Youtubers</option>
         </select> <br><br>
-        <!--<input type="checkbox" name="genero" id="genero" value="Ciencia Ficción"/>
-        <label for="Ciencia Ficción"> Ciencia Ficcion</label> 
-        <input type="checkbox" name="genero" id="genero" value="Comedia"/>
-        <label for="Comedia"> Comedia</label> 
-        <input type="checkbox" name="genero" id="genero" value="Drama"/>
-        <label for="Drama"> Drama</label> 
-        <input type="checkbox" name="genero" id="genero" value="Histórico"/>
-        <label for="Histórico"> Historico</label>
-        <input type="checkbox" name="genero" id="genero" value="Infantil"/>
-        <label for="Infantil"> Infantil</label>
-        <input type="checkbox" name="genero" id="genero" value="Romántico"/>
-        <label for="Romántico"> Romantico</label>
-        <input type="checkbox" name="genero" id="genero" value="Youtubers"/>
-        <label for="Youtubers"> Youtubers</label><br><br>-->
     
         <label for="enTienda"><b>En Tienda</b></label><br>
         <input type="radio" id="si" name="enTienda" value="1">
