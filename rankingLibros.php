@@ -26,8 +26,9 @@
         $titulo = $libro->getTitulo();
         $valoracion = $libro->getValoracion();
         $autor = $libro->getAutor();
+        $idLibro = $libro->getIdLibro();
 
-        echo "<tr><td>" . $titulo . "</td><td>" . $autor . "</td><td>" . $valoracion . "/10". "</td></tr>";
+        echo "<tr><td><a href='libroTienda.php?id=$idLibro'> $titulo</a> </td><td> $autor </td><td> $valoracion/10</td></tr>";
     }
 
     echo "</table>";

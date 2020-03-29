@@ -20,10 +20,10 @@ require_once(__DIR__ . "/includes/config.php");
 
     <div id="contenido">
         <?php
+            echo 'Foto : <img src="'.$_SESSION['fotoPerfil'] .'" alt="Imagen de Perfil" height="100" width="100">  <br>';
             echo "Nombre: ".$_SESSION['nombre']."<br>";
             echo "Nombre Real: ". $_SESSION['nombreReal']."<br>";
             echo "Correo: ".$_SESSION['correo']."<br>";
-            echo "Foto? : ".$_SESSION['fotoPerfil']."<br>";
             echo "Ciudad: ". $_SESSION['ciudad']."<br>";
             echo "Direccion: ".$_SESSION['direccion']."<br>";
             echo "Fecha : ".$_SESSION['fechaDeCreacion']."<br>";

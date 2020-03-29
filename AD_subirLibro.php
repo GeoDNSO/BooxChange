@@ -34,23 +34,23 @@
         <input type="number" name="precio" id="precio" min="0" value="0" /><br><br>
 
         <label for="imagen"><b>Imagen</b></label><br>
-        <input type="text" name="imagen" id="imagen" value="" /><br><br>
+        <input type="file" name="imagen" id="imagen" accept="image/*" /><br><br>
 
         <label for="descripcion"><b>Descripcion</b></label><br>
         <textarea name="descripcion" rows="4" cols="50" id="descripcion" value="" > </textarea><br><br>
 
         <label for="genero"><b>Genero</b></label><br>
         <select name="genero">
-        <option value="Ciencia Ficción">Ciencia Ficción</option>
-        <option value="Comedia">Comedia</option>
-        <option value="Drama">Drama</option>
-        <option value="Histórico">Histórico</option>
-        <option value="Infantil">Infantil</option>
-        <option value="Romántico">Romántico</option>
-        <option value="Youtubers">Youtubers</option>
+
+        <?php 
+        use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+        $app = appBooxChange::getInstance();
+        echo $app->construirSeleccionDeCategorias();
+        ?>
+
         </select> <br><br>
     
-        <label for="enTienda"><b>En Tienda</b></label><br>
+        <label for="enTienda"><b>Disponible en la Tienda</b></label><br>
         <input type="radio" id="si" name="enTienda" value="1">
         <label for="1">Si</label>
         <input type="radio" id="no" name="enTienda" value="0" checked>
@@ -71,7 +71,7 @@
         <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
         <input type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
     
-        <input type="submit">
+        <input type="submit" value = "Subir Libro">
 
     </form>
     <a href="admin.php"> Cancelar </a>

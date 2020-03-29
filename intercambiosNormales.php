@@ -58,7 +58,7 @@ if (count($librosIntercambio) == 0) {
 
         echo "<div>";
         echo "<p>";
-
+        echo "<img src='$imagen' alt='Imagen de Libro' height='100' width='100'>  <br>";
         echo "Fecha: $fecha <br>";
         echo "Lo ofrece: $nombreUsuario <br>";
         echo "$titulo <br>";

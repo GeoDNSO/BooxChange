@@ -76,6 +76,8 @@ class FormularioValorar extends Form
         if (count($erroresFormulario) === 0){
             $app = appBooxChange::getInstance();
             $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
+
+            return "rankingLibros.php";
         }
         else{
             return $erroresFormulario;

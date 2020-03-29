@@ -322,12 +322,9 @@ class appBooxChange
         return $num;
     }
     public function valorarLibro($titulo, $valoracion, $idUsuario, $comentario){
-        /*echo $titulo . $valoracion . $idUsuario;
-        exit();
-*/
         $bdBooxChange = DAOValoracionLibro::getInstance();
         $bdBooxChange->valorarLibro($titulo, $valoracion, $idUsuario, $comentario);
-//        $bdBooxChange->closeBD();
+
     }
 
     public function librosValoracion(){

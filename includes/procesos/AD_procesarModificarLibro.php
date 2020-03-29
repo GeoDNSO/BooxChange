@@ -26,6 +26,21 @@ $descuento = $_POST["descuento"];
 $unidades = $_POST["unidades"];
 $fechaDePublicacion = $_POST["fechaPublicacion"];
 $idLibro = unserialize($_SESSION['idLibro']);
+
+
+
+//Subir imagen al servidor
+if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
+    $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
+    $fotoBD = str_replace("\\", "/", $fotoBD);
+
+    move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $fotoBD);
+
+}else{
+    $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);
+}
+
+
 $app = appBooxChange::getInstance();
 
 if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){

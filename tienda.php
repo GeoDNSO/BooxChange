@@ -33,13 +33,16 @@ require_once(__DIR__ . "/includes/config.php");
             $id = $libro->getIdLibro();
             $precio = $libro->getPrecio();
             $unidades = $libro->getUnidades();
+            $imagen = $libro->getImagen();
 
             if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                echo "<li>";
+                echo "<img src='$imagen' alt='Imagen del Libro' height='100' width='100'>  <br>";
                 if($unidades > 0){
-                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a>";
+                    echo "$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a>";
                 }
                 else{
-                    echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas </li>"; 
+                    echo "$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas"; 
                 }
 
                 echo "</li>"; 

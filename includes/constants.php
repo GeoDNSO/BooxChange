@@ -17,6 +17,10 @@ define("IMG_DIRECTORY_USER", "$imgDirectory"."usuarios/");
 define("IMG_DIRECTORY_LIBROS", "$imgDirectory"."libros/");
 define("IMG_DIRECTORY_LIBROS_INTERCAMBIO", "$imgDirectory"."librosIntercambio/");
 
+//Es el mismo nombre para los libros
+define("IMG_DEFAULT_LIBRO", "default.jpg");
+define("IMG_DEFAULT_USER", "default.png");
+
 //Información de la base de datos
 define("BD_HOST", "localhost");
 define("BD_NAME", "bdbooxchange");

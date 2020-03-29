@@ -54,7 +54,7 @@
         <input type="text" name="precio" id="precio" value="<?php echo $precio; ?>" /><br><br>
 
         <label for="imagen"><b>Imagen</b></label><br>
-        <input type="text" name="imagen" id="imagen" value="<?php echo $imagen; ?>" /><br><br>
+        <input type="file" name="imagen" id="imagen" accept="image/*" /><br><br>
 
         <label for="descripcion"><b>Descripcion</b></label><br>
         <textarea rows="4" cols="50" name="descripcion" id="descripcion"> <?php echo $descripcion; ?>  </textarea><br><br>
@@ -102,7 +102,7 @@
         <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
         <input type="date" name="fechaPublicacion" id="fechaPublicacion" value="<?php echo $fechaPublicacion; ?>"/><br><br>
     
-        <input type="submit">
+        <input type="submit" value="Modificar Libro">
     
     </form>
 

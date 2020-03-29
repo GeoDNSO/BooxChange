@@ -34,7 +34,8 @@ class FormularioIntercambioMisterioso extends Form
         $html .= '    <label for="titulo"><b>Titulo</b></label><br>';
         $html .= '    <input type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
         $html .= '    <label for="fotoLibro"><b>Foto del Libro</b></label><br>';
-        $html .= '    <input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
+        //$html .= '    <input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
+        $html .= '    <input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
         $html .= '    <label for="autor"><b>Autor</b></label><br>';
         $html .= '    <input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
         $html .= '    <label for="genero"><b>Género</b></label><br>';
@@ -72,6 +73,16 @@ class FormularioIntercambioMisterioso extends Form
         $fotoLibro = $datos["fotoLibro"];
         $fotoLibro = make_safe($fotoLibro);
 
+        //Subir imagen al servidor
+        $fotoBD = "";
+        if(isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != ""){
+            $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["fotoLibro"]["name"]);
+            $fotoBD = str_replace("\\", "/", $fotoBD);
+            move_uploaded_file( $_FILES["fotoLibro"]['tmp_name']  , $fotoBD);
+        }else{
+            $fotoBD = (IMG_DIRECTORY_LIBROS_INTERCAMBIO . IMG_DEFAULT_USER);
+        }
+
         $autor = isset($datos['autor']) ? $datos['autor'] : null;
         $autor = make_safe($autor);
         if (empty($autor) || mb_strlen($autor) < 4) {
@@ -88,7 +99,7 @@ class FormularioIntercambioMisterioso extends Form
             $app = appBooxChange::getInstance();
             
             //Damos valores "Nulos" a id y fecha después se omitirán
-            $libroMisterioso = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
+            $libroMisterioso = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
             $result = $app->subirLibroMisterioso($libroMisterioso);
 
             if($result != -1){

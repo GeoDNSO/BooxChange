@@ -12,6 +12,9 @@ if(isset($_SESSION['login']) && $_SESSION['login']){
     $numNotificaciones = $app->notificacionesUsuario($_SESSION["id_Usuario"]);
     $notificacionesCab = ($numNotificaciones == 0) ? "" : " ($numNotificaciones)";
     echo "<a href='notificaciones.php'>Notificaciones$notificacionesCab</a>";
+    if(isset($_SESSION['login']) && $_SESSION['login']){
+        echo "<br> <a href='logout.php'>Logout</a>";
+    }
 }
 ?>
 
@@ -41,7 +44,6 @@ if(isset($_SESSION['login']) && $_SESSION['login']){
             <?php
 
             if(isset($_SESSION['login']) && $_SESSION['login']){
-                echo "<li><a href='logout.php'>Logout</a></li>";
                 if($_SESSION['rol'] == BD_TYPE_ADMIN){
                     echo "<li><a href='admin.php'>Poderes de Admin</a></li>";
                 }

@@ -34,7 +34,8 @@ class FormularioIntercambio extends Form
         $html .= '<label for="titulo"><b>Titulo</b></label><br>';
         $html .= '<input type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
         $html .= '<label for="fotoLibro"><b>Foto del Libro</b></label><br>';
-        $html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
+        //$html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
+        $html .= '<input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
         $html .= '<label for="autor"><b>Autor</b></label><br>';
         $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
 
@@ -71,8 +72,8 @@ class FormularioIntercambio extends Form
             $erroresFormulario[] = "El título ha de tener una longitud de al menos 3 caracteres";
         }
 
-        $fotoLibro = $datos["fotoLibro"];
-        $fotoLibro = make_safe($fotoLibro);
+        //$fotoLibro = $datos["fotoLibro"];
+        //$fotoLibro = make_safe($fotoLibro);
         /* 
         No es obligatorio poner la foto de un libro pues no está implementado aún
         $fotoLibro = isset($datos['fotoLibro']) ? $datos['fotoLibro'] : null;
@@ -80,6 +81,17 @@ class FormularioIntercambio extends Form
             $erroresFormulario[] = "Ha de introducir una foto (No implementado)";
         }
         */
+        //Subir imagen al servidor
+        $fotoBD = "";
+        if (isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != "") {
+            $fotoBD =  (IMG_DIRECTORY_LIBROS_INTERCAMBIO . $_FILES["fotoLibro"]["name"]);
+            $fotoBD = str_replace("\\", "/", $fotoBD);
+            move_uploaded_file($_FILES["fotoLibro"]['tmp_name'], $fotoBD);
+        } else {
+            $fotoBD = (IMG_DIRECTORY_LIBROS_INTERCAMBIO . IMG_DEFAULT_LIBRO);
+        }
+
+
         $autor = isset($datos['autor']) ? $datos['autor'] : null;
         $autor = make_safe($autor);
         if (empty($autor) || mb_strlen($autor) < 4) {
@@ -95,7 +107,7 @@ class FormularioIntercambio extends Form
             $erroresFormulario[] = "Especifique un género";
         }
         */
-        
+
         $desc = isset($datos['descripcion']) ? $datos['descripcion'] : null;
         $desc = make_safe($desc);
         if (empty($desc) || mb_strlen($desc) < 10) {
@@ -104,21 +116,19 @@ class FormularioIntercambio extends Form
 
         if (count($erroresFormulario) === 0) {
             $app = appBooxChange::getInstance();
-            
+
             //Damos valores "Nulos" a id y fecha después se omitirán
-            $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
-            
+            $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
+
             $result = $app->subirLibroIntercambio($libro);
 
-            if($result == true){
+            if ($result == true) {
                 return "intercambiosNormales.php";
-            }else{
+            } else {
                 exit("Error inesperado, no se ha podido subir el libro a la BD");
             }
-        }
-        else{
+        } else {
             return $erroresFormulario;
         }
-        
     }
 }

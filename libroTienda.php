@@ -45,7 +45,8 @@
     echo "<h3> Ranking: $ranking </h3>";
 
     $imagen = $libro->getImagen();
-    echo "<h3> Imagen: $imagen </h3>";
+    echo "<h3> Imagen </h3>";
+    echo "<img src='$imagen' alt='Imagen del Libro' height='100' width='100'>  <br>";
 
     $descripcion = $libro->getDescripcion();
     echo "<h3> Descripcion: $descripcion </h3>";
