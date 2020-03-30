@@ -43,7 +43,7 @@ if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
 
 $app = appBooxChange::getInstance();
 
-if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
+if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
     header("Location: ../../admin.php");
 }
 else{
