@@ -22,6 +22,7 @@
     echo "<ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){
         foreach($usuario as $us){
+            $foto = $us -> getFotoPerfil();
             $id = $us -> getIdUsuario();
             $nombreReal = $us -> getNombreReal();
             $correo = $us -> getCorreo();
@@ -32,6 +33,7 @@
             $rol = $us -> getRol();
             
             echo "<li><ul>
+            <li>Foto : <img src='$foto' alt='Imagen de Perfil' height='100' width='100'>  </li>
             <li>Nombre: $nombreReal </li>
             <li>Correo: $correo </li>
             <li>Direccion: $direccion </li>
