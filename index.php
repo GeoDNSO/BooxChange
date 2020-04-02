@@ -17,7 +17,9 @@
 include("includes/comun/cabecera.php");
 ?>
 
+<h1>De que trata Booxchange</h1>
 
+<p>BooxChange es una web centrada en el intercambio y compraventa de libros, para así promover y divertirse con lectura ya sea intercambiando títulos con otras personas en las mismas condiciones, debatiendo en el foro o descubriendo nuevos libros.</p>
 
 
 

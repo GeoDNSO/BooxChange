@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/header.css" />
 </head>
 
-
-
 <?php
     include("includes/comun/cabecera.php");
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
@@ -56,10 +54,10 @@
             $unidades = $libro -> getUnidades();
             $fechaDePublicacion = $libro -> getFechaPublicacion();
             echo "<li><ul>
+            <img src='$imagen' alt='Portada del Libro'  height='100' width='100'>
             <li>Titulo del Libro: $titulo</li>
             <li> Autor: $autor </li>
             <li> Precio: $precio </li>
-            <li> Imagen: $imagen </li>
             <li> Descripcion: $descripcion </li>
             <li> Genero: $genero </li>
             <li> En Tienda: $enTienda </li>

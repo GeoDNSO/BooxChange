@@ -46,7 +46,7 @@ class FormularioRegistro extends Form
         $html .= '<input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="'.$datosIniciales["username"].'" /><br><br>';
 
         $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
-        $html .= '<input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/> <br><br>';
+        $html .= '<input type="file" name="foto" id="foto" accept="image/*" /> <br><br>';
 
         $html .= '<label for="email"><b>Correo Electrónico</b></label><br>';
         $html .= '<input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /><br><br>';

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2020 a las 12:37:46
+-- Tiempo de generación: 02-04-2020 a las 18:53:03
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.1
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -209,7 +209,8 @@ INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`
 (52, 55, 0, 25, '2020-03-23 21:57:34'),
 (53, 60, 0, 26, '2020-03-27 12:16:25'),
 (56, 57, 0, 27, '2020-03-23 22:52:17'),
-(58, NULL, 0, 28, '2020-03-24 14:01:25');
+(58, NULL, 0, 28, '2020-03-24 14:01:25'),
+(61, NULL, 0, 29, '2020-04-02 16:21:40');
 
 -- --------------------------------------------------------
 
@@ -241,11 +242,12 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 13.5, 2, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '0000-00-00'),
-(2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
-(3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
-(4, 'A corazón abierto', 'Elvira Lindo', 17.99, 2, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
-(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 5, NULL, 'imgportada/img5.jpg', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00');
+(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, 'imagenes/libros/default.jpg\r\n', '       Libro de magia mu chulo              ', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '2020-04-16'),
+(2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imagenes/libros/default.jpg\r\n', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
+(3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
+(4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
+(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imagenes/libros/default.jpg\r\n', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00'),
+(6, 'Prueba', 'Autor', 345, NULL, NULL, 'imagenes/libros/default.jpg', ' ewrwer', 'Ciencia Ficción', 1, '2020-04-02', 'werw', 'werwre', 3, 6, '2020-04-01');
 
 -- --------------------------------------------------------
 
@@ -283,7 +285,8 @@ INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `De
 (57, 'Jerry Pinkney', 'nada', 'Toma libro, este seguro que lo entiendes, pls dame ese libro', 'Infantil', 10, 'Caperucita Roja', 1, 0, '2020-03-23 22:51:23'),
 (58, 'Desc', 'asda', 'Cambiamelo por lo que sea anda', 'Ciencia Ficción', 5, 'CSS para dummies', 0, 0, '2020-03-24 14:01:25'),
 (59, 'sdasda', 'asdasda', 'Pedazo de libro', 'Ciencia Ficción', 10, 'sdasd', 0, 0, '2020-03-24 14:02:14'),
-(60, 'Desconocido', 'no hay', 'Igual te encanta este libro, cambiamelo', 'Infantil', 5, 'Caperutcita Roja', 1, 0, '2020-03-27 12:15:55');
+(60, 'Desconocido', 'no hay', 'Igual te encanta este libro, cambiamelo', 'Infantil', 5, 'Caperutcita Roja', 1, 0, '2020-03-27 12:15:55'),
+(61, 'asdasdasdad', 'imagenes/libros/default.jpg\r\n', 'asdasdasdas', 'Ciencia Ficción', 5, 'sadasdasd', 0, 0, '2020-04-02 16:21:40');
 
 -- --------------------------------------------------------
 
@@ -336,7 +339,7 @@ INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VA
 (11, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros Caperucita Roja y El Imperio Final', 1, '2020-03-23 22:52:17'),
 (12, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros El Imperio Final y Caperucita Roja', 1, '2020-03-23 22:52:17'),
 (13, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros Caperutcita Roja y El Camino De Los Reyes', 1, '2020-03-27 12:16:25'),
-(14, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros El Camino De Los Reyes y Caperutcita Roja', 0, '2020-03-27 12:16:25');
+(14, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros El Camino De Los Reyes y Caperutcita Roja', 1, '2020-03-27 12:16:25');
 
 -- --------------------------------------------------------
 
@@ -409,13 +412,17 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Correo`, `Foto`, `Direccion`, `Nacimiento`, `Ciudad`, `FechaDeCreacion`, `Rol`) VALUES
-(1, 'admin', 'Jin', '$2y$10$jXlPNRuqn9dEXwJkYbaSh.ALvfWtYEHRuFHEGXGY0WqcJ0sfm6w2S', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
+(1, 'admin', 'Administrador', '$2y$12$IgSk5wgr4BPD0PiSzHqGdeQau3iwvAAlSuFSA3eJNM28zKTzTlbSi', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
 (2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
 (3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
 (4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
-(5, 'Geo', 'Daniel ', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', '/fotos/fotos/img5.jpg', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
+(5, 'Geo', 'Daniel', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', 'imagenes/usuarios/ascensox2.png', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
 (6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
-(10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'hola', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1);
+(10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'hola', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1),
+(11, 'dani12', 'dfsdfs', '$2y$10$.HltE6BcGJWI2etJUl5PFOkkZh60tNvvtpnZIcoOEKdmxtW0VTZu.', 'asdaxdasdas', 'imagenes/usuarios/', 'asdad', '2020-04-30', 'sda', '2020-04-02 16:12:50', 1),
+(12, 'dani13', '43342', '$2y$10$RiSL6Uv3Ji5dOntxmsG3geu83lBVH8GVqqacYqs4K6kycOeOXD5yu', 'aaaaaaaaaaaaaa', 'imagenes/usuarios/librosinter.PNG', 'asdasdsadas', '2020-04-01', 'adsasdasd', '2020-04-02 16:17:32', 1),
+(13, 'user', 'Usuario', '$2y$12$ALf/uwh6wYQubFn3761HWOnzWyR6fZ6p.yEwCRCKYxK2x4exBYRNe', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 1),
+(14, 'mod', 'Moderador', '$2y$12$5UGSb62o/BgY/bto0aXMqO4pt4obvflUx8Ss3eDfw6X3RJyTCipWq', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 2);
 
 -- --------------------------------------------------------
 
@@ -441,20 +448,13 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 (2, 4, 3, 'No hay derecho a que tenga que pagar ese dinero por este libro, si se puede llamar asi. Nos salen lo', 3),
 (5, 3, 5, 'No me esperaba que fuera así, lectura recomendada! Fascinante!', 4),
 (4, 2, 2, 'Buen libro para pasar las horas en el metro.', 5),
-(2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6),
-(1, 1, 1, 'ewqweqweqweqweqwe', 7);
+(2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6);
 
 --
 -- Disparadores `valoracionlibro`
 --
 DELIMITER $$
 CREATE TRIGGER `mediaValoracion` AFTER INSERT ON `valoracionlibro` FOR EACH ROW UPDATE libro
-    SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
-                      WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `mediaValoracion2` AFTER UPDATE ON `valoracionlibro` FOR EACH ROW UPDATE libro
     SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
                       WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
 $$
@@ -619,19 +619,19 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
@@ -655,13 +655,13 @@ ALTER TABLE `ofertasintercambio`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
 --
 ALTER TABLE `valoracionlibro`
-  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
