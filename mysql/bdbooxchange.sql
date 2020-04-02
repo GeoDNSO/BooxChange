@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2020 a las 13:34:14
+-- Tiempo de generación: 30-03-2020 a las 12:37:46
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -241,11 +241,11 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '0000-00-00'),
+(1, 'Harry Potter', 'J.K. Rowling', 13.5, 2, NULL, '/fotosportadas/img.jpg', 'Libro de magia mu chulo', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '0000-00-00'),
 (2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imgprotada/img2.jpg', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
 (3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'fotosportada/img3.jpg', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
-(4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
-(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imgportada/img5.jpg', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00');
+(4, 'A corazón abierto', 'Elvira Lindo', 17.99, 2, NULL, 'imgportada/img4.jpg', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
+(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 5, NULL, 'imgportada/img5.jpg', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -441,13 +441,20 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 (2, 4, 3, 'No hay derecho a que tenga que pagar ese dinero por este libro, si se puede llamar asi. Nos salen lo', 3),
 (5, 3, 5, 'No me esperaba que fuera así, lectura recomendada! Fascinante!', 4),
 (4, 2, 2, 'Buen libro para pasar las horas en el metro.', 5),
-(2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6);
+(2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6),
+(1, 1, 1, 'ewqweqweqweqweqwe', 7);
 
 --
 -- Disparadores `valoracionlibro`
 --
 DELIMITER $$
 CREATE TRIGGER `mediaValoracion` AFTER INSERT ON `valoracionlibro` FOR EACH ROW UPDATE libro
+    SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
+                      WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `mediaValoracion2` AFTER UPDATE ON `valoracionlibro` FOR EACH ROW UPDATE libro
     SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
                       WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
 $$
@@ -654,7 +661,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
 --
 ALTER TABLE `valoracionlibro`
-  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
