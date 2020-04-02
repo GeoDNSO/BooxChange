@@ -75,7 +75,7 @@ class DAOUsuario extends DAO
         if (mysqli_num_rows($consulta) == 0) {
             $rol = BD_TYPE_NORMAL_USER;
             $sql = "INSERT INTO usuario (Nombre, NombreReal, Contraseña, Correo, Foto, Direccion, Nacimiento, Ciudad, FechaDeCreacion, Rol) VALUES 
-                                        ('$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', '$fechaDeCreacion', $rol);";
+                                        ('$nombreUsuario', '$nombreReal', '$password', '$correo', '$fotoPerfil', '$direccion',  '$fechaNacimiento', '$ciudad', current_timestamp(), $rol);";
 
             mysqli_query(self::$instance->bdBooxChange, $sql);
 

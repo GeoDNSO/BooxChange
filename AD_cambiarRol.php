@@ -34,7 +34,7 @@
     echo "<h3>Nombre Real: $nombreReal</h3>";
 ?>
 
-    <form method="post" action="includes/procesos/AD_procesarCambiarRol.php">
+    <form method="post" action="includes/procesos/AD_procesarCambiarRol.php" enctype="multipart/form-data">
 
         <label for="rol"><b>Rol</b></label><br>
         <?php

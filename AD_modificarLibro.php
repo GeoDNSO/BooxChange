@@ -42,7 +42,7 @@
     }
 ?>
     
-    <form method="post" action="includes/procesos/AD_procesarModificarLibro.php">
+    <form method="post" action="includes/procesos/AD_procesarModificarLibro.php" enctype="multipart/form-data">
     
         <label for="titulolibro"><b>Titulo del Libro</b></label><br>
         <input type="text" name="titulolibro" id="titulolibro" value="<?php echo $titulo; ?>" /><br><br>

@@ -30,12 +30,16 @@ $fechaDePublicacion = $_POST["fechaPublicacion"];
 
 $fotoBD = "";
 
+
 //Subir imagen al servidor
 if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
+
     $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
     $fotoBD = str_replace("\\", "/", $fotoBD);
 
-    move_uploaded_file( $_FILES["foto"]['tmp_name']  , $fotoBD);
+    $archivoSubida = (SERVER_DIR . $fotoBD);
+
+    move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $archivoSubida);
 
 }else{
     $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);

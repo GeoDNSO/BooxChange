@@ -86,7 +86,10 @@ class FormularioIntercambio extends Form
         if (isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != "") {
             $fotoBD =  (IMG_DIRECTORY_LIBROS_INTERCAMBIO . $_FILES["fotoLibro"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
-            move_uploaded_file($_FILES["fotoLibro"]['tmp_name'], $fotoBD);
+
+            $archivoSubida = (SERVER_DIR . $fotoBD);
+
+            move_uploaded_file($_FILES["fotoLibro"]['tmp_name'], $archivoSubida);
         } else {
             $fotoBD = (IMG_DIRECTORY_LIBROS_INTERCAMBIO . IMG_DEFAULT_LIBRO);
         }

@@ -79,7 +79,10 @@ class FormularioModificarPerfil extends Form
         if(isset($_FILES["foto"])){
             $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["foto"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
-            move_uploaded_file( $_FILES["foto"]['tmp_name']  , $fotoBD);
+
+            $archivoSubida = (SERVER_DIR . $fotoBD);
+
+            move_uploaded_file( $_FILES["foto"]['tmp_name']  , $archivoSubida);
 
         }else{
             $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_USER);

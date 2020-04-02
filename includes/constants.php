@@ -9,8 +9,17 @@ INICIALES SEGÚN EL PROCESO O PARTE DEL PROYECTO
 
 */
 
+//Información de la base de datos
+define("BD_HOST", "localhost");
+define("BD_NAME", "bdbooxchange");
+define("BD_USER", "root");
+define("BD_PASS", "");
+
 $parentDir = dirname(__DIR__, 1);
 $imgDirectory = "imagenes/";
+
+//echo $_SERVER["DOCUMENT_ROOT"];
+define("SERVER_DIR", $_SERVER["DOCUMENT_ROOT"] . "/Booxchange/");
 
 //Fichero donde se guardan las imagenes
 define("IMG_DIRECTORY_USER", "$imgDirectory"."usuarios/");
@@ -20,12 +29,6 @@ define("IMG_DIRECTORY_LIBROS_INTERCAMBIO", "$imgDirectory"."librosIntercambio/")
 //Es el mismo nombre para los libros
 define("IMG_DEFAULT_LIBRO", "default.jpg");
 define("IMG_DEFAULT_USER", "default.png");
-
-//Información de la base de datos
-define("BD_HOST", "localhost");
-define("BD_NAME", "bdbooxchange");
-define("BD_USER", "root");
-define("BD_PASS", "");
 
 //Valores para la base de datos
 define("BD_TYPE_ADMIN", 0);

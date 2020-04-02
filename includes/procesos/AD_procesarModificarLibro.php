@@ -34,8 +34,9 @@ if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
     $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
     $fotoBD = str_replace("\\", "/", $fotoBD);
 
-    move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $fotoBD);
+    $archivoSubida = (SERVER_DIR . $fotoBD);
 
+    move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $archivoSubida);
 }else{
     $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);
 }
@@ -43,7 +44,7 @@ if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
 
 $app = appBooxChange::getInstance();
 
-if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
+if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
     header("Location: ../../admin.php");
 }
 else{
