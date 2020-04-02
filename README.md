@@ -17,6 +17,12 @@ Proyecto Final para AW
 - A partir de ahora deben usarse en los includes las macros de \_\_DIR_\_ con la función dirname(), el por qué y su uso lo podéis leer en este enlace https://stackoverflow.com/questions/9628443/why-would-i-use-dirname-file-in-an-include-or-include-once-statement
 - Los últimos cambios arriba
 
+### Errores para el futuro nosotros:
+
+ -Eliminar un usuario y que desaparezca de todos los sitios
+ -
+
+
 ### 22/03/2020
 * Se han añadido nuevas tablas en la base de datos para poder realizar intercambios
 * Intercambio Misterioso funcional
