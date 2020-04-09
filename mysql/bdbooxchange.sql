@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 18:53:03
+-- Tiempo de generación: 09-04-2020 a las 20:48:34
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -188,6 +188,26 @@ INSERT INTO `genero` (`Genero`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `generolibros`
+--
+
+CREATE TABLE `generolibros` (
+  `id` int(11) NOT NULL,
+  `idLibro` int(11) NOT NULL,
+  `genero` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `generolibros`
+--
+
+INSERT INTO `generolibros` (`id`, `idLibro`, `genero`) VALUES
+(1, 4, 'Drama'),
+(2, 4, 'Romántico');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `intercambios`
 --
 
@@ -247,7 +267,8 @@ INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ran
 (3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
 (4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
 (5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imagenes/libros/default.jpg\r\n', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00'),
-(6, 'Prueba', 'Autor', 345, NULL, NULL, 'imagenes/libros/default.jpg', ' ewrwer', 'Ciencia Ficción', 1, '2020-04-02', 'werw', 'werwre', 3, 6, '2020-04-01');
+(6, 'Prueba', 'Autor', 345, NULL, NULL, 'imagenes/libros/default.jpg', ' ewrwer', 'Ciencia Ficción', 1, '2020-04-02', 'werw', 'werwre', 3, 6, '2020-04-01'),
+(11, 'Alicia en el Pais', 'No se', 3, NULL, NULL, 'imagenes/libros/default.jpg', ' hola que tal', 'Ciencia Ficción', 1, '2020-04-09', 'Español', 'No', 1, 5, '2020-04-10');
 
 -- --------------------------------------------------------
 
@@ -372,20 +393,22 @@ INSERT INTO `ofertasintercambio` (`id`, `idLibroIntercambio`, `idLibroOferta`, `
 --
 
 CREATE TABLE `tema` (
-  `Tema` varchar(30) NOT NULL
+  `Tema` varchar(30) NOT NULL,
+  `Descripcion` varchar(350) NOT NULL,
+  `Imagen` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tema`
 --
 
-INSERT INTO `tema` (`Tema`) VALUES
-('Club de Lectura'),
-('Críticas'),
-('Devoluciones'),
-('FAQs'),
-('General'),
-('Reglamento');
+INSERT INTO `tema` (`Tema`, `Descripcion`, `Imagen`) VALUES
+('Club de Lectura', '', ''),
+('Críticas', '', ''),
+('Devoluciones', '', ''),
+('FAQs', '', ''),
+('General', '', ''),
+('Reglamento', '', '');
 
 -- --------------------------------------------------------
 
@@ -511,6 +534,14 @@ ALTER TABLE `genero`
   ADD PRIMARY KEY (`Genero`);
 
 --
+-- Indices de la tabla `generolibros`
+--
+ALTER TABLE `generolibros`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idLibro` (`idLibro`),
+  ADD KEY `idGenero` (`genero`);
+
+--
 -- Indices de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
@@ -616,6 +647,12 @@ ALTER TABLE `favoritos`
   MODIFY `Id_Favorito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `generolibros`
+--
+ALTER TABLE `generolibros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
@@ -625,7 +662,7 @@ ALTER TABLE `intercambios`
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `librointercambio`
@@ -701,6 +738,13 @@ ALTER TABLE `discusion`
 ALTER TABLE `favoritos`
   ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`Id_Libro`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `generolibros`
+--
+ALTER TABLE `generolibros`
+  ADD CONSTRAINT `generolibros_ibfk_1` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `generolibros_ibfk_2` FOREIGN KEY (`genero`) REFERENCES `genero` (`Genero`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `intercambios`

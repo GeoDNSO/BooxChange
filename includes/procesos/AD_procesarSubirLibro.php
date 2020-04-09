@@ -15,7 +15,7 @@ $autor = $_POST["autor"];
 $precio = $_POST["precio"];
 $imagen = $_POST["imagen"];
 $descripcion = $_POST["descripcion"];
-$genero = $_POST['genero'];
+$genero = $_POST['generos'];
 
 if(empty($genero)){
     exit("No se ha seleccionado ningun genero");

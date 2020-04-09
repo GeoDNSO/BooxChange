@@ -231,6 +231,11 @@ class DAOLibro extends DAO
         }
         return $librosValoracion;
     }
+
+    public function lastInsertedId(){
+        return $this->bdBooxChange->insert_id;
+    }
+
 }
 
 ?>

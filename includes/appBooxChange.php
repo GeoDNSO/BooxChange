@@ -19,6 +19,7 @@ use fdi\ucm\aw\booxchange\daos\DAOCompras as DAOCompras;
 use fdi\ucm\aw\booxchange\daos\DAODiscusion as DAODiscusion;
 use fdi\ucm\aw\booxchange\daos\DAOFavoritos as DAOFavoritos;
 use fdi\ucm\aw\booxchange\daos\DAOGenero as DAOGenero;
+use fdi\ucm\aw\booxchange\daos\DAOGeneroLibro;
 use fdi\ucm\aw\booxchange\daos\DAOIntercambio as DAOIntercambio;
 use fdi\ucm\aw\booxchange\daos\DAOIntercambios;
 use fdi\ucm\aw\booxchange\daos\DAOLibro as DAOLibro;
@@ -169,10 +170,19 @@ class appBooxChange
         return $bdBooxChange->actualizarRol($idUsuario, $rol);
     }
 
-    public function procesarSubirLibro($titulolibro, $autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)
+    public function procesarSubirLibro($titulolibro, $autor, $precio, $imagen, $descripcion, $generos, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)
     {
         $bdBooxChange = DAOLibro::getInstance();
-        return $bdBooxChange->subirLibro($titulolibro, $autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
+        $rst = $bdBooxChange->subirLibro($titulolibro, $autor, $precio, $imagen, $descripcion, $generos[0], $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion);
+        $idLibro = $bdBooxChange->lastInsertedId();
+
+        $bdBooxChange = DAOGeneroLibro::getInstance();
+
+        foreach($generos as $genero){
+            $bdBooxChange->subirGeneroLibro($idLibro, $genero);
+        }
+
+        return $rst;
     }
 
     public function procesarModificarLibro($idLibro, $titulolibro, $autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)
@@ -312,6 +322,26 @@ class appBooxChange
         }
         $bdBooxChange->closeBD();
         return $selectGeneros;
+    }
+
+
+    public function construirCheckBoxCategoria()
+    {
+        $bdBooxChange = DAOGenero::getInstance();
+
+        $generos = $bdBooxChange->getAllGeneros();
+
+        $checkBoxesGenero = "<div class='listaCategorias'>";
+        foreach ($generos as $genero) {
+            $generoTexto = $genero->getGenero();
+            $checkBoxesGenero .= "<label class='checkBoxContainer'>$generoTexto";
+            $checkBoxesGenero .= "<input type='checkbox' name='generos[]' value='$generoTexto'>";
+            $checkBoxesGenero .= "<span class='checkmark'></span>";
+            $checkBoxesGenero .= "</label>";
+        }
+        $checkBoxesGenero .= "</div>";
+
+        return $checkBoxesGenero;
     }
 
     public function notificacionesUsuario($idUsuario)

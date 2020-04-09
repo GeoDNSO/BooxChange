@@ -153,6 +153,12 @@ define("BD_COMENTARIOS_ID_USUARIO", "Id_Usuario");
 define("BD_COMENTARIOS_TEXTO", "Texto");
 define("BD_COMENTARIOS_FECHA", "Fecha");
 define("BD_COMENTARIOS_ID_DISCUSION", "Id_Discusion");
+
+//Constantes para la tabla de Generos de Libros
+define("BD_GENERO_LIBRO_ID", "id");
+define("BD_GENERO_LIBRO_ID_LIBRO", "idLibro");
+define("BD_GENERO_LIBRO_GENERO", "genero");
+
 //Constantes para el formulario de Registro
 define("REG_REALNAME", "userRealName");
 define("REG_USERNAME", "username");
