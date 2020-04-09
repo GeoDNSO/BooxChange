@@ -1,28 +1,32 @@
 <?php
 $parentDir = dirname(__DIR__, 1);
-//$idDiscusion = ($_GET["id"]);
+
 require_once($parentDir."/config.php");
 
 
 use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
-//include_once($parentDir."/appBooxChange.php");
-//include_once($parentDir."../constants.php");
 
 $app = appBooxChange::getInstance();
 
 
-//Id se puede dejar nulo
-
 $tema = $_POST["tema"];
+$desc = $_POST["desc"];
 
-//echo $tema;
-//exit();
-/*
-echo $idDiscusion;
-exit();
-*/
 
-$app->anadirTema($tema);
+//Subir imagen al servidor
+$fotoBD = "";
+if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
+    $fotoBD =  (IMG_DIRECTORY_TEMAS . $_FILES["foto"]["name"]);
+    $fotoBD = str_replace("\\", "/", $fotoBD);
+
+    $archivoSubida = (SERVER_DIR . $fotoBD);
+
+    move_uploaded_file( $_FILES["foto"]['tmp_name']  , $archivoSubida);
+}else{
+    $fotoBD = (IMG_DIRECTORY_TEMAS . IMG_DEFAULT_USER);
+}
+
+$app->anadirTema($tema, $desc, $fotoBD);
 header("Location: ../../foro.php");
 
 ?>

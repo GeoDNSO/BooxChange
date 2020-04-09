@@ -22,9 +22,9 @@ class DAOTema extends DAO{
         return self::$instance;
     }
 
-    function anadirTema($tema)
+    function anadirTema($tema, $desc, $imagen)
     {
-          $sql = "INSERT INTO tema (Tema) VALUES ('$tema')";
+          $sql = "INSERT INTO tema (Tema, Descripcion, Imagen) VALUES ('$tema', '$desc', '$imagen')";
           $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
           return $consulta;
     }
@@ -37,7 +37,7 @@ class DAOTema extends DAO{
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         while( $fila = $consulta->fetch_array()){
-            $TTema = new TTema($fila[BD_TEMA]);
+            $TTema = new TTema($fila[BD_TEMA], $fila[BD_TEMA_DESC], $fila[BD_TEMA_IMAGEN]);
             $array[] = $TTema;
         }
         return $array;

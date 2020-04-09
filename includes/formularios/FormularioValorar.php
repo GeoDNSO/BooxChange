@@ -42,7 +42,7 @@ class FormularioValorar extends Form
         }
         $html .= '      </select>';
         
-        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
+        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"> cols="20" rows="20" </textarea> <br>';
         
 
         $html .= '    <input type="submit" value="Valorar" />';

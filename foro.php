@@ -42,11 +42,18 @@ require_once(__DIR__ . "/includes/config.php");
         echo '<fieldset>';
         echo '<legend>Añadir tema:</legend>';
 
-        echo '<form method="post" action="includes/procesos/procesarTema.php">';
+        echo '<form method="post" action="includes/procesos/procesarTema.php" enctype="multipart/form-data"> ';
+
+        echo '<label for="foto"><b>Icono del Tema</b></label><br>';
+        echo '<input type="file" name="foto" id="foto" accept="image/*" /> <br><br>';
 
         echo '<label for="tema"><b>Tema</b></label><br>';
-        echo '<textarea id="tema" name="tema" rows="5" cols="50" placeholder="Escribe aquí el tema que quieras añadir..."></textarea> <br>';
+        echo '<input type="text" id="tema" name="tema"  placeholder="Nombre del tema a añadir..." /> <br>';
 
+        echo '<label for="desc"><b>Descripcion</b></label><br>';
+        echo '<textarea id="desc" name="desc" rows="5" cols="50" placeholder="Escribe aquí sobre que va a tratar el tema..."></textarea> <br>';
+        
+        
         echo '<button type="submit">Añadir tema</button>';
 
         echo '</form>';

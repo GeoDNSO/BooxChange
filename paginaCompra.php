@@ -20,16 +20,7 @@ use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 use fdi\ucm\aw\booxchange\formularios\FormularioCompraLibro as FormularioCompraLibro;
 use \fdi\ucm\aw\booxchange\transfers\TLibro as TLibro;
 
-echo "<script type='text/JavaScript'>  prompt('PRINCIPIO'); </script>";
 
-/*
-if(isset($_SESSION['idtemp'])){
-    $idUsuario = $_SESSION['idtemp'];
-    echo "<script type='text/JavaScript'>  prompt('El id en carga $idUsuario'); </script>";
-    $_GET['id'] = $_SESSION['idtemp'];
-    //$_GET['id'] = 1;
-}
-*/
 
 if (!isset($_GET['id'])) {
     exit("No se ha proporcionado el id del producto");
@@ -63,18 +54,6 @@ if (!isset($_GET['id'])) {
 
 </form>
 
-
-<?php
-
-    
-
-    echo "NUEVO FORM";
-    $id = $_GET["id"];
-    ///$form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>"paginaCompra.php?id=$id"));
-    $form = new FormularioCompraLibro("formCompra", array("unidades"=>$unidades, "action"=>null));
-
-    $form->gestiona();
-?>
 
 
 </html>

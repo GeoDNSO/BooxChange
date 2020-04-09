@@ -38,7 +38,6 @@ class FormularioRegistro extends Form
 
         $html = '<fieldset>';
         $html .= '<legend>Login</legend>';
-        $html .= '<form>';
         $html .= '<label for="userRealName"><b>Nombre y Apellidos</b></label><br>';
         $html .= '<input type="text" placeholder="" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'" /><br><br>';
 
@@ -67,7 +66,6 @@ class FormularioRegistro extends Form
         $html .= '<input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="'.$datosIniciales["direccion"].'" /><br><br>';
 
         $html .= '<button type="submit">Registrarse</button>';
-        $html .= '</form>';
         $html .= '</fieldset>';
 
 
@@ -150,7 +148,7 @@ class FormularioRegistro extends Form
 
         //Subir imagen al servidor
         $fotoBD = "";
-        if(isset($_FILES["foto"])){
+        if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
             $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["foto"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
 

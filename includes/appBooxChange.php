@@ -347,11 +347,10 @@ class appBooxChange
         return $listaDiscusionesTema;
     }
 
-     public function anadirTema($tema) {
+     public function anadirTema($tema, $desc, $img) {
         $bdBooxChange = DAOTema::getInstance();
-        $result = $bdBooxChange->anadirTema($tema);
+        $result = $bdBooxChange->anadirTema($tema, $desc, $img);
         return $result;
-        //return $bdBooxChange->anadirComentario($id_Usuario, $texto, $idDiscusion);
       }
 
     public function anadirDiscusion($id_Usuario_Creador, $tema, $titulo) {

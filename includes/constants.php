@@ -24,11 +24,13 @@ define("SERVER_DIR", $_SERVER["DOCUMENT_ROOT"] . "/Booxchange/");
 //Fichero donde se guardan las imagenes
 define("IMG_DIRECTORY_USER", "$imgDirectory"."usuarios/");
 define("IMG_DIRECTORY_LIBROS", "$imgDirectory"."libros/");
+define("IMG_DIRECTORY_TEMAS", "$imgDirectory"."tema/");
 define("IMG_DIRECTORY_LIBROS_INTERCAMBIO", "$imgDirectory"."librosIntercambio/");
 
 //Es el mismo nombre para los libros
 define("IMG_DEFAULT_LIBRO", "default.jpg");
 define("IMG_DEFAULT_USER", "default.png");
+define("IMG_DEFAULT_TEMA", "default.jpg");
 
 //Valores para la base de datos
 define("BD_TYPE_ADMIN", 0);
@@ -134,6 +136,9 @@ define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
 
 //Constantes para la tabla de Temas
 define("BD_TEMA", "Tema");
+define("BD_TEMA_DESC", "Descripcion");
+define("BD_TEMA_IMAGEN", "Imagen");
+
 //Constantes para la tabla de Discusiones
 define("BD_DISCUSION_ID", "Id_Discusion");
 define("BD_DISCUSION_USUARIO_CREADOR", "Id_Usuario_Creador");
