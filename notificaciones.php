@@ -12,7 +12,7 @@ use \fdi\ucm\aw\booxchange\transfers\TNotificacion;
 <head>
     <title>Notificaciones</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 
 

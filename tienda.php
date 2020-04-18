@@ -8,7 +8,7 @@ require_once(__DIR__ . "/includes/config.php");
     <head>
         <title>BooxChange Tienda</title>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" type="text/css" href="css/header.css" />
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     </head>
 
 
@@ -16,9 +16,6 @@ require_once(__DIR__ . "/includes/config.php");
 
         include_once(__DIR__."/includes/comun/cabecera.php");
 
-        //include_once(__DIR__."./includes/constants.php");
-        //include_once(__DIR__."/includes/appBooxChange.php");
-        //include_once(__DIR__."/includes/transfers/TLibro.php");
 
         use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
         use fdi\ucm\aw\booxchange\TLibro as TLibro;

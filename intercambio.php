@@ -8,7 +8,7 @@
 <head>
     <title>Intercambios</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 
 

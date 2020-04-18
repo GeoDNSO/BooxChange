@@ -2,13 +2,6 @@
 
 namespace fdi\ucm\aw\booxchange;
 
-//include_once(__DIR__."/daos/DAOUsuario.php");
-//include_once(__DIR__."/daos/DAOLibro.php");
-//include_once(__DIR__."/daos/DAOCompras.php");
-//include_once(__DIR__."/constants.php");
-//include_once(__DIR__."/transfers/TLibro.php");
-
-//use fdi\ucm\aw\booxchange\DAOLibro as DAOLibro;
 
 require_once(__DIR__ . "/config.php");
 
@@ -38,6 +31,7 @@ use fdi\ucm\aw\booxchange\transfers\TNotificacion;
 use fdi\ucm\aw\booxchange\transfers\TOfertasIntercambio;
 use fdi\ucm\aw\booxchange\transfers\TUsuario;
 use fdi\ucm\aw\booxchange\transfers\TComentario;
+
 $has_session = (session_status() == PHP_SESSION_ACTIVE);
 if (!$has_session) {
     session_start();

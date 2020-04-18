@@ -8,7 +8,7 @@ require_once(__DIR__ . "/includes/config.php");
     <head>
         <title>BooxChange Foro</title>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" type="text/css" href="css/header.css" />
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     </head>
 
 <?php
