@@ -14,6 +14,9 @@
 
 <?php
     include("includes/comun/cabecera.php");
+
+    include("./includes/comun/funcionesAdmin.php");
+    
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     $app = appBooxChange::getInstance();

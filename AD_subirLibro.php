@@ -15,6 +15,8 @@ require_once(__DIR__ . "/includes/config.php");
 <?php
 include("includes/comun/cabecera.php");
 
+include("./includes/comun/funcionesAdmin.php");
+
 if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     exit("Usuario no logeado, no se puede subir el libro");
 } else if ($_SESSION['rol'] != BD_TYPE_ADMIN) {

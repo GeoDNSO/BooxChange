@@ -82,5 +82,6 @@ header nav ul li a:hover{
 
 /*Parte de la Info de Usuario*/
 .userInfo{
+    margin: 0.25rem;
     
 }
