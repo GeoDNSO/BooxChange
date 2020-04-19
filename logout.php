@@ -4,6 +4,7 @@
     $_SESSION['login'] = false;
     $_SESSION['nombre'] = "";
     $_SESSION['rol'] = -1;
+    session_unset();
     session_destroy();
     header("Location: index.php");
 ?>
