@@ -1,9 +1,58 @@
 /*CSS BooxChange*/
 
 @import url("header.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+
+:root{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    --text-primaty: #000000;
+    --text-secondary: #000000;
+    --bg1: #000000;
+    --bg2:#000000;
+    --bgScroll1:#000000;
+    --bgScroll2:#4bc09d;
+
+}
+
+*::selection{
+    background: var(--bgScroll2);
+    color: white;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+body{
+    color: black;
+    background-color: white;
+}
+
+/*SCROLL BAR Personalizado*/
+body::-webkit-scrollbar{
+    width: 0.35rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: var(--bgScroll1);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--bgScroll2);
+}
+
+
+
+header{
+    
+}
 
 /*CHECKBOX CATEGORIA*/
-
 
 .listaCategorias{
     columns: 3;
