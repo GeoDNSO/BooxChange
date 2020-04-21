@@ -28,11 +28,11 @@ header nav{
 } 
  
 header nav ul{
-    display: inline;
+    display: inline-block;
 }
 
 header nav ul li{
-    display: inline;
+    display: inline-block;
 
     /*border: 0.05rem solid rgb(0, 0, 0);*/
     background-color: white;
