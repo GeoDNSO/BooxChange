@@ -37,6 +37,7 @@ include("includes/comun/cabecera.php");
                     <h2>Libro 1 de Autor Apellidos </h2>
                     
                 </div>
+                
             </div>
 
             <div class="libroPresentacion2">
