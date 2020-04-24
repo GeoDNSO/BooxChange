@@ -1,19 +1,10 @@
 /*CSS BooxChange*/
 
+@import url("root.css");
 @import url("header.css");
 @import url("funcionesAdmin.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-:root {
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    --text-primaty: #000000;
-    --text-secondary: #000000;
-    --bg1: #000000;
-    --bg2: #000000;
-    --bgScroll1: #000000;
-    --bgScroll2: #4bc09d;
-}
 
 *::selection {
     background: var(--bgScroll2);

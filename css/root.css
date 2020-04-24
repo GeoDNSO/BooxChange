@@ -1,0 +1,15 @@
+:root {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    --text-primaty: #000000;
+    --text-secondary: #000000;
+    --bg1: #000000;
+    --bg2: #000000;
+    --bgScroll1: #000000;
+    --bgScroll2: #4bc09d;
+
+    --colorNav: #000000;
+    --colorNavHover: #2ead54;
+    --colorTextNav: #000000;
+    --colorTextNavHover: #46cfad; /*46cfad*/
+}
