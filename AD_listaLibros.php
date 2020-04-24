@@ -39,7 +39,7 @@
         $libros = $app->getBooks();
     }
     
-    echo "<ol>";
+    echo "<div class='listaTotalAdmin'><ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){
         foreach($libros as $libro){
             $id = $libro -> getIdLibro();
@@ -56,8 +56,9 @@
             $descuento = $libro -> getDescuento();
             $unidades = $libro -> getUnidades();
             $fechaDePublicacion = $libro -> getFechaPublicacion();
+            echo "<div class='listaAdminlista'>";
+            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro'  height='100' width='100'></div>";
             echo "<li><ul>
-            <img src='$imagen' alt='Portada del Libro'  height='100' width='100'>
             <li>Titulo del Libro: $titulo</li>
             <li> Autor: $autor </li>
             <li> Precio: $precio </li>
@@ -69,15 +70,17 @@
             <li> Idioma: $idioma </li>
             <li> Editorial: $editorial </li>
             <li> Descuento: $descuento </li>
-            <li> Unidades: $unidades </li></ul>
-            <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
-            <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a> </li>"; 
+            <li> Unidades: $unidades </li></ul>";
+            echo "</li>";
+            echo "<div class='adminboton listaAdminlistacenter'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
+            <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a></div>"; 
+            echo "</div>";
         }
     }
     else{
         echo "No tienes permisos para ver lo que hay aqui";
     }
-    echo "</ol>";
+    echo "</ol></div>";
 ?>
 
 

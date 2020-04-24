@@ -21,8 +21,8 @@
 
     $app = appBooxChange::getInstance();
     $usuario = $app->getUsers();
-    
-    echo "<ol>";
+
+    echo "<div class='listaTotalAdmin'><ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){
         foreach($usuario as $us){
             $foto = $us -> getFotoPerfil();
@@ -34,9 +34,9 @@
             $ciudad = $us -> getCiudad();
             $fechaDeCreacion = $us -> getFechaDeCreacion();
             $rol = $us -> getRol();
-            
-            echo "<li><ul>
-            <li>Foto : <img src='$foto' alt='Imagen de Perfil' height='100' width='100'>  </li>
+            echo "<div class='listaAdminlista'>";
+            echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' height='100' width='100'></div>";
+            echo "<div><li><ul>
             <li>Nombre: $nombreReal </li>
             <li>Correo: $correo </li>
             <li>Direccion: $direccion </li>
@@ -45,15 +45,16 @@
             <li>Fecha de Creacion: $fechaDeCreacion </li>
             <li>Rol: $rol </li>
             </ul>
-            <a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>       
-            <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a> 
-            </li>"; 
+            </li></div>"; 
+            echo "<div class='adminboton listaAdminlistacenter'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
+            <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a></div>";    
+            echo "</div>";
         }
     }
     else{
         echo "No tienes permisos para ver lo que hay aqui";
     }
-    echo "</ol>";
+    echo "</ol></div>";
 ?>
 
 

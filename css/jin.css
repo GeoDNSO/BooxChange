@@ -1,0 +1,60 @@
+@import url("root.css");
+
+.listaAdminlista {
+    background-color: rgba(0, 0, 0, 0.068);
+    margin: 10px;
+    padding:10px;
+    box-sizing: border-box;
+    border-style: solid;
+    border: solid transparent;
+    overflow-wrap: break-word;
+    width: 30%;
+    border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 0.75s ease-in-out;
+
+}
+
+.listaAdminlista:hover {
+    border-color: rgb(96, 255, 144);
+}
+
+.listaAdminlista li{
+    position: relative;
+    display: block;
+}
+
+.listaTotalAdmin{
+    margin:2rem;
+    padding:10px;
+    display: flex;
+    text-align: left;
+}
+
+.listaTotalAdmin ol{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: row;
+}
+
+.listaAdminlistacenter{
+    text-align: center;
+}
+  
+.adminboton a:link, .adminboton a:visited {
+    background-color: #6fa9ff;
+    color: white;
+    margin-top:20px;
+    padding: 10px 20px; /*tamaño de el recuadro*/
+    text-align: center; 
+    text-decoration: none; /*quitar la raya del href*/
+    display: inline-block;
+}
+  
+.adminboton a:hover {
+    color: rgb(96, 255, 144);
+}
+
