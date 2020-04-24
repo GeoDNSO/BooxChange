@@ -10,11 +10,17 @@
     overflow-wrap: break-word;
     width: 30%;
     border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
+
+    /*Transiciones*/
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 0.75s ease-in-out;
 
+    /*Sombras*/
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.6);
+    box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.6);
 }
 
 .listaAdminlista:hover {
