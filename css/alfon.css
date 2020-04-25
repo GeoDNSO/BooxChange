@@ -1,12 +1,23 @@
 .border {
-    width:40%;
+    width:30%;
     height: auto;
-    padding: 55px 35px 35px 35px;
+    padding: 20px 35px 35px 35px;
     border-radius: 40px;
     background: #ecf0f3;
     box-shadow: 13px 13px 20px #cbced1,
                 -13px -13px 20px #ffffff;
     margin:auto;
+}
+
+.border-bigform {
+  width:80%;
+  height: auto;
+  padding: 20px 35px 35px 35px;
+  border-radius: 40px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1,
+              -13px -13px 20px #ffffff;
+  margin:auto;
 }
 
 .title {
@@ -23,7 +34,7 @@
 
 .fields {
     width: 100%;
-    padding: 75px 5px 5px 5px;
+    padding: 20px 5px 5px 5px;
 }
 .fields input {
     border: none;
@@ -35,7 +46,7 @@
 }
 
 .text, .password {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 25px;
     box-shadow: inset 8px 8px 8px #cbced1,
                 inset -8px -8px 8px #ffffff;
@@ -62,4 +73,21 @@
 }
 .send-button:active {
   background:#367bfc;
+}
+
+/*Otro tipo de imput text*/
+input {
+  margin: 40px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: darken(#1abc9c, 20%);
+  
 }

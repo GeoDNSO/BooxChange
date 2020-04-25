@@ -20,11 +20,15 @@
 
     $app = appBooxChange::getInstance();
 
-    $html = '<div id="buscaLibro">';
+    $html = '<div id="buscaLibro" class = "border">';
     $html .= '<form method="post">';
+    $html .= '<div class="fields">';
     $html .= '    <label for="titulo"><b>Buscar Libro por título:</b></label><br>';
-    $html .= '    <input type="text" placeholder="" name="titulo" id="titulo" /><br><br>';
-    $html .= '    <input type="submit" value="Buscar" />';
+    $html .= '     <div class="text"> 
+                        <input type="text" placeholder="" name="titulo" id="titulo" /></div><br><br>';
+    //$html .= '    <input type="submit" value="Buscar" />';
+    $html .= '    <button class="send-button">Buscar</button>';
+    $html .= '</div>';
     $html .= '</form>';
     $html .= '</div>';
 
