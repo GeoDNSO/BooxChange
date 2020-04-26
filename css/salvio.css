@@ -1,0 +1,67 @@
+.box{
+width: 65%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.libro{
+padding: 25px 35px 30px 35px;
+width:38%;
+height: auto;
+margin:2%;
+background-color:  #ecf0f3;
+box-shadow: 3px 3px 8px #808080,
+            -3px -3px 8px #ffffff;
+border-radius: 15px;
+}
+
+.botones{
+width: 100%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.enlace{
+	padding: 16px 20px 20px 20px;
+width:33%;
+height: auto;
+margin:2%;
+background-color:  #3385ff;
+border-radius: 15px;
+}
+.blanco{
+	color: #ffffff !important;
+}
+.gris{
+	color: #d9d9d9;
+}
+.titulo{
+	margin-top:2%;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.precio{
+	margin-top:2%;
+	margin-bottom:4.5%;
+	font-size: 17px;
+}
+.centrado{
+	text-align: center;
+}
+
+.aviso{
+	margin: 0 auto;
+	margin-top: 1% !important;
+	padding: 18px 20px 20px 38px;
+	width:59%;
+	height: auto;
+	background-color:  #3385ff;
+	box-shadow: 3px 3px 8px #808080,
+	            -3px -3px 8px #ffffff;
+	border-radius: 15px;
+}

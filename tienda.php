@@ -9,6 +9,7 @@ require_once(__DIR__ . "/includes/config.php");
         <title>BooxChange Tienda</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+        <link rel="stylesheet" type="text/css" href="css/salvio.css" />
     </head>
 
 
@@ -23,8 +24,8 @@ require_once(__DIR__ . "/includes/config.php");
         $app = appBooxChange::getInstance();
         $librosTienda = $app->librosTienda();
 
-        echo "<ul>";
-
+        //echo "<ul>";
+        echo "<div class=box>";
         foreach($librosTienda as $libro){
             $titulo = $libro->getTitulo();
             $id = $libro->getIdLibro();
@@ -33,23 +34,68 @@ require_once(__DIR__ . "/includes/config.php");
             $imagen = $libro->getImagen();
 
             if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-                echo "<li>";
-                echo "<img src='$imagen' alt='Imagen del Libro' height='100' width='100'>  <br>";
-                if($unidades > 0){
-                    echo "$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='paginaCompra.php?id=$id'> Comprar </a>";
+                
+               	//echo "<li>";
+               	echo "<div class=libro>";
+
+               	//**************
+               	//ARREGLAR el TAMAÑO cuando la imagen sea visible
+               	echo "<img src='$imagen' alt='Imagen del Libro' height='100' width='100'><br>";
+               
+               	echo "<p class=titulo> $titulo </p>";
+               	echo "<p class=precio>Precio: $precio</p>";
+
+               	echo "<div class=botones>";
+               	echo "<div class=enlace>";
+               	echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Ver Libro</a></p>";
+               	echo "</div>";
+              	echo "<div class=enlace>";
+               
+
+             	
+            	if($unidades > 0){
+                	echo "<p class='blanco centrado'><a class=blanco href='paginaCompra.php?id=$id'>Comprar</a>";
+
                 }
                 else{
-                    echo "$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> Existencias Agotadas"; 
+                    echo "<p class='gris centrado'>Existencias Agotadas"; 
                 }
-
-                echo "</li>"; 
+				echo "</p>";
+               	echo "</div>";
+               	echo "</div>";
+               	echo "</div>";
+                //echo "</li>";
+                //echo "</div>"; 
             }
             else{
-                echo "<li>$titulo   Precio: $precio   <a href='libroTienda.php?id=$id'>Ver Libro </a> <a href='login.php'> Comprar </a>(Tienes que logearte para poder comprar) </li>";
+
+                //echo "<li>";
+                echo "<div class=libro>";
+                echo "<p class=titulo> $titulo </p>";
+                echo "<p class=precio>Precio: $precio</p>";
+                //echo "<br>";
+                echo "<div class=botones>";
+                echo "<div class=enlace>";
+                echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Ver Libro</a></p>";
+                echo "</div>";
+                echo "<div class=enlace>";
+                echo "<p class='blanco centrado'><a class=blanco href='login.php'>Comprar</a>*</p>";
+                echo "</div>";
+                echo "</div>";
+               echo "</div>";
             }
         }
+        echo "</div>";
 
-        echo "</ul>";
+        if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
+        	//echo "<br>";
+        	echo "<div class=aviso>";
+        	echo "<p class=blanco>*Debes haber iniciado sesión para comprar.</p>";
+        	echo "</div>";
+		}
+
+        //echo "</ul>";
+       // echo "</div>";
 
 
     ?>
