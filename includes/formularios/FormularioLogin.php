@@ -28,11 +28,18 @@ class FormularioLogin extends Form
     {
         $html = '<div id="login">';
         $html .= '<form method="post" action="includes/procesos/procesarLogin.php">';
-        $html .= '    <label for="userRealName"><b>Nombre de usuario:</b></label><br>';
-        $html .= '    <input type="text" placeholder="" name="username" id="username" /><br><br>';
-        $html .= '    <label for="password"><b>Contraseña:</b></label><br>';
-        $html .= '    <input type="password" placeholder="" name="password" id="password" /><br><br>';
-        $html .= '    <input type="submit" value="Iniciar sesión" />';
+        $html .= '<div class="fields">';
+
+        $html .= '      <label for="userRealName"><b>Nombre de usuario:</b></label><br>
+                        <div class="text">';
+        $html .= '          <input type="text" placeholder="" name="username" id="username" />
+                        </div><br><br>';
+
+        $html .= '    <label for="password"><b>Contraseña:</b></label><br><div class="password">';
+        $html .= '    <input type="password" placeholder="" name="password" id="password" /><br></div>';
+
+        $html .= '    <button class="send-button">Iniciar sesión</button>';
+        $html .= '</div>';
         $html .= '</form>';
         $html .= '</div>';
 

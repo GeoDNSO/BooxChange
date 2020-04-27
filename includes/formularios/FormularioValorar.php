@@ -42,7 +42,7 @@ class FormularioValorar extends Form
         }
         $html .= '      </select>';
         
-        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"> cols="20" rows="20" </textarea> <br>';
+        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
         
 
         $html .= '    <input type="submit" value="Valorar" />';
@@ -70,18 +70,13 @@ class FormularioValorar extends Form
 
         $comentario = isset($datos['comentario']) ? $datos['comentario'] : null;
         $comentario = make_safe($comentario);
-        if (empty($comentario) || mb_strlen($comentario) < 1) {
-            $erroresFormulario[] = "ERROR: Introduzca un comentario";
-        }
-        if (count($erroresFormulario) === 0){
-            $app = appBooxChange::getInstance();
-            $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
 
-            return "rankingLibros.php";
-        }
-        else{
-            return $erroresFormulario;
-        }
+
+        $app = appBooxChange::getInstance();
+        $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
+
+        return "rankingLibros.php";
+
    
     }
 }

@@ -36,38 +36,39 @@ class FormularioRegistro extends Form
             //Lo repito para cada variable
         }
 
-        $html = '<fieldset>';
-        $html .= '<legend>Login</legend>';
-        $html .= '<label for="userRealName"><b>Nombre y Apellidos</b></label><br>';
-        $html .= '<input type="text" placeholder="" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'" /><br><br>';
+        $html = '<div id="reg">';
+        $html .= '<div class="fields">';
+        $html .= '<label for="userRealName"><b>Nombre y Apellidos</b></label><br>
+                    <div class="text">';
+        $html .= '      <input type="text" placeholder="" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'" />
+                    </div><br>';
 
-        $html .= '<label for="username"><b>Nombre de Usuario</b></label><br>';
-        $html .= '<input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="'.$datosIniciales["username"].'" /><br><br>';
+        $html .= '<label for="username"><b>Nombre de Usuario</b></label><br><div class="text">';
+        $html .= '<input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="'.$datosIniciales["username"].'" /></div>';
 
         $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
-        $html .= '<input type="file" name="foto" id="foto" accept="image/*" /> <br><br>';
+        $html .= '<input type="file" name="foto" id="foto" accept="image/*" /> ';
 
-        $html .= '<label for="email"><b>Correo Electrónico</b></label><br>';
-        $html .= '<input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /><br><br>';
+        $html .= '<label for="email"><b>Correo Electrónico</b></label><br><div class="text">';
+        $html .= '<input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /></div>';
 
-        $html .= '<label for="passwd"><b>Contraseña</b></label><br>';
-        $html .= '<input type="password" placeholder="Escribe una contraseña..." name="passwd"  id="passwd" /><br><br>';
+        $html .= '<label for="passwd"><b>Contraseña</b></label><br><div class="password">';
+        $html .= '<input type="password" placeholder="Escribe una contraseña..." name="passwd"  id="passwd" /></div>';
 
-        $html .= '<label for="passwdR"><b>Repite Contraseña</b></label><br>';
-        $html .= '<input type="password" placeholder="Repite la contraseña..." name="passwdR" id="passwdR" /><br><br>';
+        $html .= '<label for="passwdR"><b>Repite Contraseña</b></label><br><div class="password">';
+        $html .= '<input type="password" placeholder="Repite la contraseña..." name="passwdR" id="passwdR" /></div>';
 
         $html .= '<label for="fechaNac"><b>Fecha de Nacimiento</b></label><br>';
-        $html .= '<input type="date" name="fechaNac" id="fechaNac" value="'.$datosIniciales["fechaNac"].'"/><br><br>';
+        $html .= '<input type="date" name="fechaNac" id="fechaNac" value="'.$datosIniciales["fechaNac"].'"/><br>';
 
-        $html .= '<label for="ciudad"><b>Ciudad</b></label><br>';
-        $html .= '<input type="text" placeholder="Ciudad en la que resides" name="ciudad" id="ciudad" value="'.$datosIniciales["ciudad"].'" /><br><br>';
+        $html .= '<label for="ciudad"><b>Ciudad</b></label><br><div class="text">';
+        $html .= '<input type="text" placeholder="Ciudad en la que resides" name="ciudad" id="ciudad" value="'.$datosIniciales["ciudad"].'" /></div>';
 
-        $html .= '<label for="direccion"><b>Dirección</b></label><br>';
-        $html .= '<input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="'.$datosIniciales["direccion"].'" /><br><br>';
+        $html .= '<label for="direccion"><b>Dirección</b></label><br><div class="password">';
+        $html .= '<input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="'.$datosIniciales["direccion"].'" /></div>';
 
-        $html .= '<button type="submit">Registrarse</button>';
-        $html .= '</fieldset>';
-
+        $html .= '<button class="send-button">Registrarse</button>';
+        $html .='</div></div>';
 
         return $html;
     }

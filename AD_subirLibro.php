@@ -24,8 +24,10 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     exit("No tienes permisos de admin");
 }
 ?>
-
+<div class="border-bigform">
 <form method="post" action="includes/procesos/AD_procesarSubirLibro.php" enctype="multipart/form-data">
+
+<input placeholder="Password" type="text" required="">
 
     <label for="titulolibro"><b>Titulo del Libro</b></label><br>
     <input type="text" name="titulolibro" id="titulolibro" value="" /><br><br>
@@ -58,10 +60,6 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     
     ?>
 
-  
-
-
-
     <br><br>
 
     <label for="enTienda"><b>Disponible en la Tienda</b></label><br>
@@ -93,6 +91,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <input type="submit" value="Subir Libro">
 
 </form>
+</div>
 <a href="admin.php"> Cancelar </a>
 
 </html>

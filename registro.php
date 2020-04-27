@@ -14,7 +14,9 @@ require_once(__DIR__ . "/includes/config.php");
     <?php
         include("includes/comun/cabecera.php");
     ?>
-
+<div id="reg" class="border">
+    <div class="title">Registro</div>
+    <div class="sub-title">Aquí comienza tu aventura en Booxchange</div> <br>
     <?php
         use fdi\ucm\aw\booxchange\formularios\FormularioRegistro;
 
@@ -22,6 +24,6 @@ require_once(__DIR__ . "/includes/config.php");
 
         $form->gestiona();
     ?>
-    
+</div>    
 
 </html>
