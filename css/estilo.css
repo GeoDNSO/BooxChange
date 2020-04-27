@@ -4,8 +4,11 @@
 @import url("header.css");
 @import url("funcionesAdmin.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("intercambio.css");
+@import url("intercambiosNormales.css");
 @import url("alfon.css");
 @import url("jin.css");
+@import url("sergio.css");
 
 *::selection {
     background: var(--bgScroll2);
@@ -20,6 +23,8 @@
 body {
     color: black;
     background-color: white;
+    /*top: 6rem;*/
+    margin-top: 6rem;
 }
 
 /*SCROLL BAR Personalizado*/
@@ -199,6 +204,8 @@ body {
     /*Para que ocupen el mismo espacio*/
     flex-grow: 1;
     flex-basis: 0;
+
+    justify-content: flex-end;
 }
 
 .descLibroPresentacion{
@@ -226,6 +233,16 @@ body {
 
 }
 
+.libroPresentacion2 .imgPresentacion{
+    margin-left: auto;
+}
+
+.libroPresentacion2 .descLibroPresentacion{
+    margin-left: auto;
+    text-align: right;
+    /*margin-left: 12rem*/;
+}
+
 .imgPresentacion{
     display: flex;
     -webkit-box-align: center;
@@ -237,6 +254,13 @@ body {
     
 }
 
+/*Parte explicativa de Booxchange**/
+
 .presentacion{
-    margin-top: 4rem;
+
+    margin-top: 3rem;
+    padding: 1.4rem;
+    
+    background-color: lightcoral;
+    
 }
