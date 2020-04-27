@@ -527,5 +527,11 @@ class appBooxChange
         $bdBooxChange = DAOOfertasIntercambio::getInstance();
         $bdBooxChange->actualizarOferta($ofertaAceptada, $idOferta);
     }
+
+
+    public function getTwoBooks() {
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->getTwoBooks();
+    }
     
 }

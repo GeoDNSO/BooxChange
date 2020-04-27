@@ -80,7 +80,7 @@ require_once(__DIR__ . "/includes/config.php");
               
                	//echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Ver Libro</a></p>";
                	
-                echo "<p class='euros blanco centrado'>$precio"; 
+                echo "<p class='euros centrado'>$precio"; 
                 echo "€</p>";
 
                 echo "</div>";
@@ -108,15 +108,46 @@ require_once(__DIR__ . "/includes/config.php");
             else{
 
                 //echo "<li>";
-                echo "<div class=libro>";
-                echo "<p class=titulo> $titulo </p>";
-                echo "<p class=precio>Precio: $precio</p>";
-                //echo "<br>";
-                echo "<div class=botones>";
-                echo "<div class=enlace>";
-                echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Ver Libro</a></p>";
+                               	echo "<div class=libro>";
+                echo "<div class=fila>";
+               	//**************
+               	//ARREGLAR el TAMAÑO cuando la imagen sea visible
+                echo "<div class=imagen>";
+               	echo "<img src='imagenes\libros\default.jpg' alt='Imagen del Libro' height=100% width=100%>";
                 echo "</div>";
-                echo "<div class=enlace>";
+
+                echo "<div class=atributos>";
+               	echo "<p class=titulo> $titulo </p>";
+                echo "<p class='autor gris'>$autor</p>";
+                //$valoracion;
+
+                if (strlen ($descripcion) < 100){
+                  echo $descripcion;
+                }
+
+                else{
+                  $i = 0;
+                  while ($i<100){
+                    echo $descripcion[$i];
+                    $i++;
+                  }
+                  
+                  echo "... ";
+                  echo "<a class=gris href='libroTienda.php?id=$id'>Leer más</a>";
+
+                }
+
+
+                //echo "<p>$desc100</p>";
+               	//echo "<p class=precio>Precio: $precio</p>";
+                echo "</div>"; //fila
+                echo "</div>";
+
+                echo "<div class=nologin>";
+                echo "<div class=info>";
+                echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Más información</a></p>";
+                echo "</div>";
+                echo "<div class=compra>";
                 echo "<p class='blanco centrado'><a class=blanco href='login.php'>Comprar</a>*</p>";
                 echo "</div>";
                 echo "</div>";
