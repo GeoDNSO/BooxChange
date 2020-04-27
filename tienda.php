@@ -45,7 +45,7 @@ require_once(__DIR__ . "/includes/config.php");
                	//**************
                	//ARREGLAR el TAMAÑO cuando la imagen sea visible
                 echo "<div class=imagen>";
-               	echo "<img src='imagenes\libros\default.jpg' alt='Imagen del Libro' height=100% width=100%>";
+               	echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
                 echo "</div>";
 
                 echo "<div class=atributos>";
@@ -113,7 +113,7 @@ require_once(__DIR__ . "/includes/config.php");
                	//**************
                	//ARREGLAR el TAMAÑO cuando la imagen sea visible
                 echo "<div class=imagen>";
-               	echo "<img src='imagenes\libros\default.jpg' alt='Imagen del Libro' height=100% width=100%>";
+               	echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
                 echo "</div>";
 
                 echo "<div class=atributos>";

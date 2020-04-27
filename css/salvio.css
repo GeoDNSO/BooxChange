@@ -1,9 +1,12 @@
+
+/*Tienda*/
+
 .box{
 width: 80%;
 margin: 0 auto;
+margin-left:10%;
 display: flex;
 flex-wrap: wrap;
-align-items: center;
 }
 
 .libro{
@@ -155,4 +158,74 @@ margin:2%;
 .autor{
 	margin-top: 1%;
 	margin-bottom: 2%;
+}
+
+/*Usuario*/
+
+.datos{
+	padding: 25px 35px 30px 35px;
+	width:50%;
+	margin: 0 auto;
+	margin-top: 3% !important;
+	height: auto;
+	background-color:  #e6e6e6;
+	border-radius: 15px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.fondo{
+	background-color: black;
+	background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/77/25/U8ETq4.jpg) !important;
+	height: 600px;
+	padding: 25px 35px 30px 35px;
+	margin: 0 auto;
+}
+
+.infoUsuario{
+padding: 0px 15px 15px 40px;
+height: auto;
+margin:2%;
+margin-left: 17% !important;
+margin-top: 3.5% !important;
+}
+
+.fotoUsuario{
+	padding: 5px 10px 5px 10px;
+width:20%;
+height: auto;
+margin:2%;
+margin-top: 3.5% !important;
+margin-left: 7% !important;
+}
+
+.marginLeft{
+	margin-left:13% !important;
+	font-size: 18px;
+}
+
+.marginBottom{
+	margin-bottom:1%;
+	margin-top: 1%;
+	font-size: 20px;
+}
+
+.textGrande{
+	font-size: 18px;
+}
+
+.arriba{
+	margin-bottom:1%;
+	margin-top: 2% !important;
+	font-size: 20px;
+}
+.modButt{
+padding: 16px 20px 20px 20px;
+width:25%;
+height: auto;
+margin:0 auto;
+margin-top: 4%;
+margin-bottom: 3%;
+background-color:  #3385ff;
+border-radius: 27px;
 }
