@@ -20,7 +20,9 @@
     $app = appBooxChange::getInstance();
     $librosValoracion = $app->librosValoracion();
 
-    echo "<table><tr><th>Libro</th><th>Autor</th><th>Valoracion</th></tr>";
+    echo "<div class='leaderboard'>";
+
+    echo "<h1>Libros mejor valorados</h1><ol>";
 
     foreach($librosValoracion as $libro){
         $titulo = $libro->getTitulo();
@@ -28,10 +30,10 @@
         $autor = $libro->getAutor();
         $idLibro = $libro->getIdLibro();
 
-        echo "<tr><td><a href='libroTienda.php?id=$idLibro'> $titulo</a> </td><td> $autor </td><td> $valoracion/10</td></tr>";
+        echo "<li><mark><a href='libroTienda.php?id=$idLibro'> $titulo</a></mark><small>$autor</small><small>$valoracion/10</small></li>";
     }
 
-    echo "</table>";
+    echo "</ol></div>";
 
     $form = new FormularioValorar("valorarForm", array("action"=>null));
     $form->gestiona();

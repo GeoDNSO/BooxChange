@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("alfon.css");
 @import url("jin.css");
+@import url("sergio.css");
 
 *::selection {
     background: var(--bgScroll2);
