@@ -11,7 +11,7 @@ padding: 25px 35px 30px 35px;
 width:38%;
 height: auto;
 margin:2%;
-background-color:  #ecf0f3;
+background-color:  #e6e6e6;
 box-shadow: 3px 3px 8px #808080,
             -3px -3px 8px #ffffff;
 border-radius: 15px;
@@ -42,7 +42,35 @@ margin:2%;
 margin-left: 15px !important;
 background-color:  #3385ff;
 border-radius: 27px;
+}
 
+.nologin{
+width: 100%;
+padding: 5px 0px 0px 0px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.info{
+	padding: 16px 20px 20px 20px;
+width:38%;
+height: auto;
+margin:1%;
+margin-left: 15px !important;
+background-color:  #4d94ff;
+border-radius: 27px;
+}
+
+.compra{
+	padding: 16px 20px 20px 20px;
+width:30%;
+height: auto;
+margin:1%;
+margin-left: 15px !important;
+background-color:  #4d94ff;
+border-radius: 27px;
 }
 
 .euros{	
@@ -82,13 +110,15 @@ margin:2%;
 }
 
 .precio{
-	padding: 16px 20px 20px 20px;
+	padding: 11.5px 17px 15.5px 17px;
 	width:70px;
-	height: auto;
 	margin:2%;
 	margin-left:0px !important;
-	background-color:  #3385ff;
+	background-color:  #ebe4e0;
 	border-radius: 150px;
+	border-style: solid;
+	border-color: #fbb750;
+ 	border-width: 5.5px;
 }
 
 .centrado{
@@ -98,6 +128,7 @@ margin:2%;
 .aviso{
 	margin: 0 auto;
 	margin-top: 1% !important;
+	margin-bottom: 2.5% !important;
 	padding: 18px 20px 20px 38px;
 	width:59%;
 	height: auto;
