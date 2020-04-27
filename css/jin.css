@@ -30,7 +30,6 @@
 }
 
 .listaAdminlista li{
-    position: relative;
     display: block;
 }
 
@@ -41,7 +40,6 @@
 }
 
 .listaTotalAdmin ol{
-    position: relative;
     display: flex;
     flex-wrap: wrap;    
     flex-direction: column;
