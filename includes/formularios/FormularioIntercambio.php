@@ -29,15 +29,16 @@ class FormularioIntercambio extends Form
     {
         $app = appBooxChange::getInstance();
 
-        $html = '<fieldset>';
-        $html .= '<legend>Libro para Intercambio</legend>';
-        $html .= '<label for="titulo"><b>Titulo</b></label><br>';
-        $html .= '<input type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
-        $html .= '<label for="fotoLibro"><b>Foto del Libro</b></label><br>';
-        //$html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
-        $html .= '<input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
-        $html .= '<label for="autor"><b>Autor</b></label><br>';
-        $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
+        $html = '<div class="fields">';
+        $html .= '<label for="titulo"><b>Titulo</b></label><div class="text">';
+        $html .= '<input type="text" placeholder="Titulo a intercambiar" name="titulo" id="titulo" value="" /></div><br>';
+
+        $html .= '<label for="autor"><b>Autor</b></label><div class="text">';
+        $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /></div>';
+
+        $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
+        $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
+        
 
         $html .= '    <label for="genero"><b>Género</b></label><br>';
         //Seleccion de Generos
@@ -45,10 +46,16 @@ class FormularioIntercambio extends Form
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
-        $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-        $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
-        $html .= '<button type="submit">Subir Libro</button>';
-        $html .= '</fieldset>';
+        $html .= '<label for="fotoLibro"><b>Foto del Libro</b></label><br>';
+        //$html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
+        $html .= '<input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
+
+
+       
+        $html .= '    <button class="send-button">Intercambiar</button>';
+
+
+
 
         return $html;
     }

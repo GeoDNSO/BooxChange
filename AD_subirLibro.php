@@ -26,7 +26,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 <div class="border-bigform">
 <form method="post" action="includes/procesos/AD_procesarSubirLibro.php" enctype="multipart/form-data">
 
-<input placeholder="Password" type="text" required="">
+
 
     <label for="titulolibro"><b>Titulo del Libro</b></label><br>
     <input type="text" name="titulolibro" id="titulolibro" value="" /><br><br>
