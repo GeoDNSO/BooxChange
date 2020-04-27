@@ -41,9 +41,6 @@ body::-webkit-scrollbar-thumb {
     background: var(--bgScroll2);
 }
 
-header {
-}
-
 /*CHECKBOX CATEGORIA*/
 
 .listaCategorias {
@@ -122,14 +119,7 @@ header {
 
 /*INICIO*/
 
-body {
-    
 
-    
-    
-
-    
-}
 
 .main{
     width: 90%;
@@ -258,10 +248,8 @@ body {
 /*Parte explicativa de Booxchange**/
 
 .presentacion{
-
     margin-top: 3rem;
     padding: 1.4rem;
     
     background-color: lightcoral;
-    
 }

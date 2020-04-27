@@ -68,7 +68,7 @@ if ($libro->getIdUsuario() != $_SESSION["id_Usuario"]) {
         $fecha2 = $libro2->getFecha();
 
         $usuario = $app->getUserById($idUsuario);
-        $nombreUsuario = $usuario->getNombreUsuario();
+        $nombreUsuario = $usuario->getNombreReal();
 
         echo "<div> <p>";
         echo "Fecha: $fecha2 <br>";

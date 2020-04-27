@@ -8,12 +8,16 @@ class TChat{
     private $idUsuario1;
     private $idUsuario2;
     private $numMensajes;
+    private $numMensajesSinLeer;
+    private $numMensajesSinLeer2;
 
-    function __construct($idChat, $idUsuario1, $idUsuario2, $numMensajes){
+    function __construct($idChat, $idUsuario1, $idUsuario2, $numMensajes, $numMensajesSinLeer, $numMensajesSinLeer2){
         $this->idChat = $idChat;
         $this->idUsuario1 = $idUsuario1;
         $this->idUsuario2 = $idUsuario2;
         $this->numMensajes = $numMensajes;
+        $this->numMensajesSinLeer = $numMensajesSinLeer;
+        $this->numMensajesSinLeer2 = $numMensajesSinLeer2;
     }
     
     /**
@@ -92,6 +96,26 @@ class TChat{
     public function setNumMensajes($numMensajes)
     {
         $this->numMensajes = $numMensajes;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of numMensajesSinLeer
+     */ 
+    public function getNumMensajesSinLeer()
+    {
+        return $this->numMensajesSinLeer;
+    }
+
+    /**
+     * Set the value of numMensajesSinLeer
+     *
+     * @return  self
+     */ 
+    public function setNumMensajesSinLeer($numMensajesSinLeer)
+    {
+        $this->numMensajesSinLeer = $numMensajesSinLeer;
 
         return $this;
     }

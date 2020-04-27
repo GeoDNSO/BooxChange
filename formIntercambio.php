@@ -42,7 +42,5 @@ require_once(__DIR__."/includes/config.php");
     }
 ?>
 
-</div></div>
-
 
 </html>

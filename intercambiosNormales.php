@@ -25,7 +25,7 @@ function printBooks()
             $fecha = $libro->getFecha();
 
             $usuario = $app->getUserById($idUsuario);
-            $nombreUsuario = $usuario->getNombreUsuario();
+            $nombreUsuario = $usuario->getNombreReal();
 
             echo "<div class='libroInter'>";
 
@@ -68,7 +68,7 @@ function printBooks()
                 //Boton Chat
                 echo "<div class='botonChat interButton' >";
                
-                echo "<a  href='#chat'>Chat</a>";
+                echo "<a  href='chat.php?idchat=$idUsuario'>Chat</a>";
                 //echo "<span class='tooltiptext'> Inicia un chat con el usuario para negociar la transacción</span>";
                 echo "</div>";
             }
