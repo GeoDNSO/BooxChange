@@ -12,4 +12,25 @@
     --colorNavHover: #2ead54;
     --colorTextNav: #000000;
     --colorTextNavHover: #46cfad; /*46cfad*/
+
+    /*Scroll Bar para Mozilla*/
+    scrollbar-color: var(--bgScroll2) var(--bgScroll1) !important;
+    scrollbar-width: thin !important;
 }
+
+/*Fuente para mozilla*/
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFWJ0bbck.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+  @-moz-document url-prefix() {
+    *{
+        font-family: "Gill Sans Extrabold", Helvetica, sans-serif
+      }
+  }
+ 

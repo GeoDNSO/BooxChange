@@ -1,3 +1,5 @@
+/* Leaderboard de los libros */
+
 .leaderboard {
     position: absolute;
     top: 50%;
@@ -57,6 +59,23 @@
     color: #fff;
 }
 
+.leaderboard ol li mark a:link{
+    color: #fff;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:active{
+    color: #000000;
+    text-decoration: none;
+}
+
 .leaderboard ol li mark::before, mark::after {
     content: "";
     position: relative;
@@ -81,6 +100,7 @@
     z-index: 2;
     display: block;
     text-align: right;
+    color: #fff;
 }
 
 .leaderboard ol li::after {
@@ -98,10 +118,10 @@
 }
 
 .leaderboard ol li:nth-child(odd){
-    background: #860000;
+    background: #060061;
 }
 .leaderboard ol li:nth-child(even){
-    background: #00ff00;
+    background: #0058a0;
 }
 .leaderboard ol li:nth-child(1){
     background: #b99e00;
@@ -112,3 +132,5 @@
 .leaderboard ol li:nth-child(3){
     background: #866300;
 }
+
+/* Formulario de valoración */

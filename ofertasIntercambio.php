@@ -10,6 +10,7 @@ use fdi\ucm\aw\booxchange\appBooxChange;
 <head>
     <title>Ofertas Intercambio</title>
     <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 
