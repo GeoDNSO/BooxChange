@@ -30,19 +30,19 @@ class FormularioIntercambio extends Form
         $app = appBooxChange::getInstance();
 
         $html = '<div class="fields">';
-        $html .= '<label for="titulo"><b>Titulo</b></label><div class="text">';
-        $html .= '<input type="text" placeholder="Titulo a intercambiar" name="titulo" id="titulo" value="" /></div><br>';
+        $html .= '<label for="titulo"><b>Titulo</b></label><br>';
+        $html .= '<input class="line" type="text" placeholder="Titulo a intercambiar" name="titulo" id="titulo" value="" /><br>';
 
-        $html .= '<label for="autor"><b>Autor</b></label><div class="text">';
-        $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /></div>';
+        $html .= '<label for="autor"><b>Autor</b></label>';
+        $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br>';
 
         $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-        $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
+        $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
         
 
         $html .= '    <label for="genero"><b>Género</b></label><br>';
         //Seleccion de Generos
-        $html .= '    <select id="genero" name="genero"><br><br>';
+        $html .= '    <select class id="genero" name="genero"><br><br>';
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
