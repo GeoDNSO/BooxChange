@@ -84,6 +84,35 @@ class DAOLibro extends DAO
         return $librosTienda;
     }
 
+    public function getTwoBooks(){
+        $sql = "SELECT * FROM libro ORDER BY libro.valoracion";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        $librosTienda = array();
+        $count = 0;
+        while ($fila = mysqli_fetch_array($consulta) && $count < 2) {
+            $librosTienda[] = new TLibro(
+                $fila[BD_LIBRO_ID_LIBRO],
+                $fila[BD_LIBRO_TITULO],
+                $fila[BD_LIBRO_AUTOR],
+                $fila[BD_LIBRO_PRECIO],
+                $fila[BD_LIBRO_VALORACION],
+                $fila[BD_LIBRO_RANKING],
+                $fila[BD_LIBRO_IMAGEN],
+                $fila[BD_LIBRO_DESCRIPCIÓN],
+                $fila[BD_LIBRO_GENERO],
+                $fila[BD_LIBRO_EN_TIENDA],
+                $fila[BD_LIBRO_FECHA],
+                $fila[BD_LIBRO_IDIOMA],
+                $fila[BD_LIBRO_EDITORIAL],
+                $fila[BD_LIBRO_DESCUENTO],
+                $fila[BD_LIBRO_UNIDADES],
+                $fila[BD_LIBRO_FECHA_PUBLICACION]
+            );
+        }
+        return $librosTienda;
+    }
+
 
     public function findBookTitulo($libro){
         $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%')";
