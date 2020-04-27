@@ -21,7 +21,7 @@ use \fdi\ucm\aw\booxchange\transfers\TNotificacion;
 include("includes/comun/cabecera.php");
 ?>
 
-<h1>Tus notificaciones</h1>
+<h1 class="notificacionesTitulo">Tus notificaciones</h1>
 
 <?php
 
@@ -34,13 +34,11 @@ foreach($notificaciones as $notificacion){
     $fecha = $notificacion->getFecha();
     $mensaje = $notificacion->getMensaje();
 
-    echo "<div>";
-    echo "<p>";
+    echo "<div class='notificacionesTotal'>";
 
-    echo "Hora: $fecha <br>";
-    echo "Mensaje: $mensaje <br>";
+    echo "<p class='notificacionesCenter notificacionesCenterHora'> $fecha </p><br>";
 
-    echo "</p>";
+    echo "<p class='notificacionesCenter'> $mensaje <br></p>";
     echo "</div>";
 }
 
