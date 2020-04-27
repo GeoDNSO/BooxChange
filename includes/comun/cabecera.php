@@ -4,18 +4,55 @@ use \fdi\ucm\aw\booxchange\appBooxChange;
 
 function perfilUsuario()
 {
+
+    if(basename($_SERVER['PHP_SELF']) == "intercambiosNormales.php"){
+        echo "<a  class='hButton' href='formIntercambio.php'> Subir Libro </a>";
+    }
+
     if (isset($_SESSION['login']) && $_SESSION['login']) {
         //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
-        echo '<img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil" height="100" width="100">  <br>';
-        echo "<a href='usuario.php'>" . $_SESSION['nombreReal'] . "</a>";
-        echo "<br>";
+
+        echo "<a class='hButton' href='ofertas.php'>Ver Ofertas</a>";
+
+
+        echo '<img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  <br>';
+
+        echo "<ul>";
+        
+
+        echo "<li>";
+
         $app = appBooxChange::getInstance();
         $numNotificaciones = $app->notificacionesUsuario($_SESSION["id_Usuario"]);
         $notificacionesCab = ($numNotificaciones == 0) ? "" : " ($numNotificaciones)";
-        echo "<a href='notificaciones.php'>Notificaciones$notificacionesCab</a>";
-        if (isset($_SESSION['login']) && $_SESSION['login']) {
-            echo "<br> <a href='logout.php'>Logout</a>";
+        echo $_SESSION['nombreReal'];
+        echo '<svg class="arrowUser" width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#0BC4E2" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>';
+
+        echo "<ul>";
+
+        echo "<li> <a href='usuario.php'>" . "Perfil" . "</a> </li>";
+        echo "<li> <a href='ofertas.php'> Tus Ofertas</a> </li>";
+        echo "<li><a href='notificaciones.php'>Notificaciones$notificacionesCab</a></li>";
+
+        if ($_SESSION['rol'] == BD_TYPE_ADMIN) {
+            echo '<li>';
+            echo '<a href="admin.php">Administración</a>';
+            echo '</li>';
         }
+
+       
+        echo "<li> <a href='logout.php'>Logout</a> </li>";
+        
+
+        echo "</ul>";
+
+        echo "</li>";
+
+        echo "</ul>";
+    }
+    else{
+        echo "<a class='hButton' href='registro.php'> Únete </a>  ";
+        echo "<a class='hButton' href='login.php'> Iniciar Sesión </a>";
     }
 }
 
@@ -54,21 +91,6 @@ function perfilUsuario()
             <li>
                 <a href="foro.php">Foro</a>
             </li>
-
-
-            <?php
-
-            if (isset($_SESSION['login']) && $_SESSION['login']) {
-                if ($_SESSION['rol'] == BD_TYPE_ADMIN) {
-                    echo '<li>';
-                    echo '<a href="admin.php">Administración</a>';
-                    echo '</li>';
-                }
-            } else {
-                echo "<li> <a href='registro.php'>Registrarse</a> </li>";
-                echo "<li> <a href='login.php'>LogIn</a> </li>";
-            }
-            ?>
 
 
         </ul>

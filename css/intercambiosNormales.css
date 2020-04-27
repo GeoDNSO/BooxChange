@@ -1,0 +1,63 @@
+
+/*CONTENIDO PRINCIPAL*/
+
+.interNormMain{
+    
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    text-align: center;
+}
+
+.interNormMain h1{
+
+}
+
+/*TIENDA LIBROS INTERCAMBIO BASE*/
+.tiendaLibrosInter{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+
+}
+
+.libroInter{
+
+    width: 100%;
+    /*height: 11rem;*/
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    margin: 0.6rem;
+    padding: 0.5rem;
+
+    background-color: rgb(157, 222, 248);
+    border-radius: 1rem;
+}
+
+
+.imagenLibroInter{
+    margin-right: auto;
+    margin-left: 2rem;
+}
+
+.libroInter img{
+
+    width: 10rem;
+    height: 10rem;
+}
+
