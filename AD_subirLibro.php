@@ -27,13 +27,13 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 <div class="border-bigform">
 <form method="post" action="includes/procesos/AD_procesarSubirLibro.php" enctype="multipart/form-data">
 
-<input placeholder="Password" type="text" required="">
+
 
     <label for="titulolibro"><b>Titulo del Libro</b></label><br>
-    <input type="text" name="titulolibro" id="titulolibro" value="" /><br><br>
+    <input class="line" type="text" name="titulolibro" id="titulolibro" value="" /><br><br>
 
     <label for="autor"><b>Autor</b></label><br>
-    <input type="text" name="autor" id="autor" value="" /><br><br>
+    <input class="line" type="text" name="autor" id="autor" value="" /><br><br>
 
     <label for="precio"><b>Precio</b></label><br>
     <input type="number" name="precio" id="precio" min="0" value="0" /><br><br>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <input type="file" name="imagen" id="imagen" accept="image/*" /><br><br>
 
     <label for="descripcion"><b>Descripcion</b></label><br>
-    <textarea name="descripcion" rows="4" cols="50" id="descripcion" value=""> </textarea><br><br>
+    <textarea class="line" name="descripcion" rows="4" cols="50" id="descripcion" value=""> </textarea><br><br>
 
     <label for="genero"><b>Géneros del Libro</b></label><br>
 
@@ -74,10 +74,10 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <br><br>
 
     <label for="idioma"><b>Idioma</b></label><br>
-    <input type="text" name="idioma" id="idioma" value="" /><br><br>
+    <input class="line" type="text" name="idioma" id="idioma" value="" /><br><br>
 
     <label for="editorial"><b>Editorial</b></label><br>
-    <input type="text" name="editorial" id="editorial" value="" /><br><br>
+    <input class="line" type="text" name="editorial" id="editorial" value="" /><br><br>
 
     <label for="descuento"><b>Descuento</b></label><br>
     <input type="number" name="descuento" id="descuento" min="0" max="100" value="0" /><br><br>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <input type="number" name="unidades" id="unidades" min="0" value="0" /><br><br>
 
     <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
-    <input type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
+    <input class="line" type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
 
     <input type="submit" value="Subir Libro">
 
