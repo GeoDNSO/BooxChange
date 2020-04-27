@@ -182,6 +182,14 @@ header nav ul li a:hover {
 }
 
 
+.botonesLibroInter{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+}
+
 /*BOTONES HEADER*/
 .hButton {
     /*display: block;*/

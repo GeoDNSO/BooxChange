@@ -31,21 +31,54 @@ function printBooks()
 
             echo "<div class='imagenLibroInter'> <img src='$imagen' alt='Imagen de Libro'> </div>";
 
+            echo "<div class='descLibroInter'>";
             echo "<p>";
-            
+
             echo "Fecha: $fecha <br>";
             echo "Lo ofrece: $nombreUsuario <br>";
             echo "$titulo <br>";
             echo "Autor: $autor <br>";
             echo "Genero: $genero <br>";
             echo "$desc <br>";
-            if (isset($_SESSION["id_Usuario"]) && $_SESSION["id_Usuario"] == $idUsuario) {
-                echo "Este libro lo has ofrecido tú, <a href='ofertasIntercambio.php?id=$idLibro'> ver ofertas disponibles <a>";
-            } else {
-                echo "<a href='formOfrecerLibro.php?id=$idLibro'> Ofrecer Libro <a>";
-            }
 
             echo "</p>";
+            echo "</div>";
+
+            //Zona de Botones 
+            echo "<div class='botonesLibroInter'>";
+
+            //Boton Envio/Ver Ofertas
+            echo "<div class='botonEnvio interButton'>";
+
+            if (isset($_SESSION["id_Usuario"]) && $_SESSION["id_Usuario"] == $idUsuario) {
+ 
+                echo "<a  href='ofertasIntercambio.php?id=$idLibro'> Ver Ofertas"; //Este libro lo has ofrecido tú
+                //echo "<span class='tooltiptext'>Este libro lo has subido tú, puedes ver sus ofertas disponibles pulsando en el botón</span>";
+        
+            } else {
+                echo "<a  href='formOfrecerLibro.php?id=$idLibro'> Ofrecer Libro";
+                //echo "<span class='tooltiptext'>¿Te interesa la oferta? Pulsa sobre el botón para ofrecer un libro</span>";
+            }
+
+            echo "</a>";
+            echo "</div>";
+
+
+            if ($_SESSION["id_Usuario"] != $idUsuario) {
+                //Boton Chat
+                echo "<div class='botonChat interButton' >";
+               
+                echo "<a  href='#chat'>Chat</a>";
+                //echo "<span class='tooltiptext'> Inicia un chat con el usuario para negociar la transacción</span>";
+                echo "</div>";
+            }
+
+
+
+            echo "</div>";
+            //Fin Zona de Botones 
+
+
 
             echo "</div>";
         }

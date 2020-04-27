@@ -23,9 +23,10 @@ include("includes/comun/cabecera.php");
 
 <?php
 
+$app = appBooxChange::getInstance();
+
 $idLibro1 = intval($_GET['id']);
 $libro = $app->getLibroIntercambio($idLibro1);
-
 
 $idLibro = $libro->getIdLibroInter();
 $titulo = $libro->getTitulo();
@@ -42,7 +43,7 @@ if ($libro->getIdUsuario() != $_SESSION["id_Usuario"]) {
     header("Location: intercambiosNormales.php");
 } else if (isset($_SESSION["login"]) || $_SESSION["login"] == false) {
 
-    $app = appBooxChange::getInstance();
+   
     $ofertas = $app->ofertasLibro($idLibro1);
 
     foreach ($ofertas as $oferta) {

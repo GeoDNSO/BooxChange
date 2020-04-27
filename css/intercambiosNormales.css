@@ -19,7 +19,7 @@
 
 /*TIENDA LIBROS INTERCAMBIO BASE*/
 .tiendaLibrosInter{
-    width: 50%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@
 
 .libroInter{
 
-    width: 100%;
+    width: 70%;
     /*height: 11rem;*/
     height: auto;
 
@@ -61,3 +61,110 @@
     height: 10rem;
 }
 
+/*BOTONES*/
+
+.botonesLibroInter{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    height: 5rem;
+    width: 30%;
+
+
+    margin-left: 1rem;
+
+}
+
+.botonesLibroInter .descLibroInter{
+    width: 100%;
+}
+
+/*BOTONES INTERCAMBIO*/
+
+.botonEnvio img{
+    height: 4rem;
+    width: 4rem;
+    filter: grayscale(0%);
+    transition: all 0.3s ease 0s;
+    margin-bottom: 2rem;
+}
+
+.botonEnvio img:hover{
+    filter: grayscale(0%);
+}
+
+
+.interButton {
+    /*display: block;*/
+    align-self: center;
+    text-decoration: none;
+
+    width: auto;
+    height: auto;
+
+    background: #4E9CAF;
+
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+
+    text-align: center;
+    
+    color: white;
+    font-weight: bold;
+
+    transition: all 0.3s ease 0s;
+}
+
+.interButton:hover {
+    background-color: rgb(106, 218, 124);
+    color: white;
+}
+
+.interButton:active{
+    background-color: rgb(40, 165, 61);
+}
+
+
+.interButton a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1rem;
+}
+
+
+/*TOOL TIP**/
+
+
+.botonChat .tooltiptext, .botonEnvio .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .botonChat:hover .tooltiptext,   .botonEnvio:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .botonChat .tooltiptext::after, .botonEnvio .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(161, 161, 161, 0.363) transparent transparent;
+  }
