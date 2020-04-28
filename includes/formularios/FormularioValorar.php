@@ -25,9 +25,9 @@ class FormularioValorar extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        $libroId = $datosIniciales['libroId'];
+        $libroId = $this->formOptions['libroId'];
 
-        $html = '<input type="hidden" name="libro" value=$libroId>';
+        $html = "<input type='hidden' name='libro' value=$libroId>";
         $html .= '<p class="estrellas">';
         $html .= '<input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">★</label>
         <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">★</label>
@@ -58,7 +58,7 @@ class FormularioValorar extends Form
         $erroresFormulario = array();
 
         //Libro y valoración tienen un valor por defecto
-        $libro = $datos['libro'];
+        $idLibro = $datos['libro'];
 
         $valoracion = $datos['valoracion'];
 
@@ -67,7 +67,7 @@ class FormularioValorar extends Form
 
 
         $app = appBooxChange::getInstance();
-        $app->valorarLibro($libro, $valoracion, $_SESSION['id_Usuario'], $comentario);
+        $app->valorarLibro($idLibro, $valoracion, $_SESSION['id_Usuario'], $comentario);
 
         return "rankingLibros.php";
 

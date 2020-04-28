@@ -241,4 +241,18 @@ margin-top: 4%;
 margin-bottom: 3%;
 background-color:  #3385ff;
 border-radius: 27px;
+transition: all 0.3s ease 0s;
+}
+
+.modButt:hover{
+    background-color:  #33ff81;    
+}
+
+.modButt:active{
+    background-color:  #36b165;    
+}
+
+
+.modButt a{
+    text-decoration: none;
 }

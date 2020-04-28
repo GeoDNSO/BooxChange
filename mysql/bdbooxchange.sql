@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2020 a las 20:48:34
+-- Tiempo de generación: 28-04-2020 a las 13:28:09
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdbooxchange`
 --
+CREATE DATABASE IF NOT EXISTS `bdbooxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bdbooxchange`;
 
 -- --------------------------------------------------------
 
@@ -32,19 +34,22 @@ CREATE TABLE `chat` (
   `Id_Chat` int(11) NOT NULL,
   `Id_Usuario1` int(11) NOT NULL,
   `Id_Usuario2` int(11) NOT NULL,
-  `NumMensajes` int(11) NOT NULL
+  `NumMensajes` int(11) NOT NULL,
+  `mensajesSinLeer` int(11) NOT NULL,
+  `mensajesSinLeer2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `chat`
 --
 
-INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`) VALUES
-(1, 2, 3, 7),
-(2, 2, 5, 32),
-(3, 5, 4, 21),
-(4, 3, 6, 13),
-(5, 5, 1, 42);
+INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`) VALUES
+(1, 2, 3, 7, 0, 0),
+(2, 2, 5, 32, 0, 0),
+(3, 5, 4, 21, 0, 0),
+(4, 3, 6, 13, 0, 0),
+(5, 5, 1, 42, 0, 0),
+(6, 5, 4, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -230,7 +235,8 @@ INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`
 (53, 60, 0, 26, '2020-03-27 12:16:25'),
 (56, 57, 0, 27, '2020-03-23 22:52:17'),
 (58, NULL, 0, 28, '2020-03-24 14:01:25'),
-(61, NULL, 0, 29, '2020-04-02 16:21:40');
+(61, NULL, 0, 29, '2020-04-02 16:21:40'),
+(62, NULL, 0, 30, '2020-04-27 18:27:05');
 
 -- --------------------------------------------------------
 
@@ -307,7 +313,8 @@ INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `De
 (58, 'Desc', 'asda', 'Cambiamelo por lo que sea anda', 'Ciencia Ficción', 5, 'CSS para dummies', 0, 0, '2020-03-24 14:01:25'),
 (59, 'sdasda', 'asdasda', 'Pedazo de libro', 'Ciencia Ficción', 10, 'sdasd', 0, 0, '2020-03-24 14:02:14'),
 (60, 'Desconocido', 'no hay', 'Igual te encanta este libro, cambiamelo', 'Infantil', 5, 'Caperutcita Roja', 1, 0, '2020-03-27 12:15:55'),
-(61, 'asdasdasdad', 'imagenes/libros/default.jpg\r\n', 'asdasdasdas', 'Ciencia Ficción', 5, 'sadasdasd', 0, 0, '2020-04-02 16:21:40');
+(61, 'asdasdasdad', 'imagenes/libros/default.jpg\r\n', 'asdasdasdas', 'Ciencia Ficción', 5, 'sadasdasd', 0, 0, '2020-04-02 16:21:40'),
+(62, 'asdadasdas', 'imagenes/librosIntercambio/default.jpg', 'asdasdasdasdasdasda', 'Ciencia Ficción', 1, 'asdasdasdasd', 0, 0, '2020-04-27 18:27:05');
 
 -- --------------------------------------------------------
 
@@ -320,7 +327,7 @@ CREATE TABLE `mensajechat` (
   `Id_Mensaje_Chat` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Texto` varchar(1000) NOT NULL,
-  `Fecha` datetime NOT NULL
+  `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -332,7 +339,8 @@ INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, 
 (1, 2, 2, 'Estaba interesado en uno', '2020-03-08 00:00:00'),
 (1, 3, 2, 'De tus libros para intercambiar', '2020-03-08 00:00:00'),
 (1, 4, 5, 'Cual de todos?', '2020-03-08 00:00:00'),
-(1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00');
+(1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00'),
+(6, 6, 5, 'Hola', '2020-04-27 19:48:41');
 
 -- --------------------------------------------------------
 
@@ -439,7 +447,7 @@ INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Cor
 (2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
 (3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
 (4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
-(5, 'Geo', 'Daniel', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', 'imagenes/usuarios/ascensox2.png', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
+(5, 'Geo', 'Daniel', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', 'imagenes/usuarios/xion.gif', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
 (6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
 (10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'hola', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1),
 (11, 'dani12', 'dfsdfs', '$2y$10$.HltE6BcGJWI2etJUl5PFOkkZh60tNvvtpnZIcoOEKdmxtW0VTZu.', 'asdaxdasdas', 'imagenes/usuarios/', 'asdad', '2020-04-30', 'sda', '2020-04-02 16:12:50', 1),
@@ -467,7 +475,7 @@ CREATE TABLE `valoracionlibro` (
 
 INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentario`, `Id_Valoracion`) VALUES
 (1, 2, 5, 'Muy buen libro, 100% recomendado', 1),
-(1, 5, 0, 'Me ha gustado tan poco que ni lo he terminado', 2),
+(1, 5, 1, '', 2),
 (2, 4, 3, 'No hay derecho a que tenga que pagar ese dinero por este libro, si se puede llamar asi. Nos salen lo', 3),
 (5, 3, 5, 'No me esperaba que fuera así, lectura recomendada! Fascinante!', 4),
 (4, 2, 2, 'Buen libro para pasar las horas en el metro.', 5),
@@ -620,7 +628,7 @@ ALTER TABLE `valoracionlibro`
 -- AUTO_INCREMENT de la tabla `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
@@ -656,7 +664,7 @@ ALTER TABLE `generolibros`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
@@ -668,13 +676,13 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
 --
 ALTER TABLE `mensajechat`
-  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`

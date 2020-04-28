@@ -3,7 +3,7 @@
 namespace fdi\ucm\aw\booxchange\daos;
 
 $parentDir = dirname(__DIR__, 1);
-require_once($parentDir."/config.php");
+require_once($parentDir . "/config.php");
 
 use fdi\ucm\aw\booxchange\transfers\TChat as TChat;
 
@@ -43,14 +43,48 @@ class DAOChat extends DAO
         if (mysqli_num_rows($consulta) == 0) { //Hay que revisar también al reves, ya que depende de que usuario haya iniciado el chat
             $sql = "SELECT * FROM chat WHERE Id_Usuario1=$idUser2 AND Id_Usuario2=$idUser1";
             $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-            return $consulta;
+            if (mysqli_num_rows($consulta) == 0) { //No hay chats para el usuario
+                return false;
+            }
         }
 
-        return $consulta;
+        $array = array();
+        while ($fila = $consulta->fetch_array()) {
+            $TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
+            $array[] = $TChat;
+        }
+        return $array;
     }
-    
+
+
+    public function getChatsFromUser($idUser)
+    {
+        $sql = "SELECT * FROM chat WHERE chat.Id_Usuario1=$idUser OR chat.Id_Usuario2=$idUser ORDER BY chat.fechaActividad DESC;";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        $array = array();
+        if (mysqli_num_rows($consulta) != 0) {
+            while ($fila = $consulta->fetch_array()) {
+                $TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
+                $array[] = $TChat;
+            }
+        }
+
+        return $array;
+    }
+
+
+    public function isChatOfUser($idChat)
+    {
+
+        $sql = "SELECT * FROM chat WHERE chat.Id_Chat=$idChat";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) != 0) {
+            //$fila = $consulta->fetch_array();
+            //$TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
+           return false;
+        }
+        return true;
+    }
 }
-
-
-
-?>

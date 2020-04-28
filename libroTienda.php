@@ -44,7 +44,7 @@
     echo "<h3> Valoracion: $valoracion </h3>";
 
     
-    $form = new FormularioValorar("valorarForm", array("action" => null, "libroId" => $libro));
+    $form = new FormularioValorar("valorarForm", array("action" => null, "libroId" => $id));
     $form->gestiona();
     
 

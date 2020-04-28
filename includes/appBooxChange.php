@@ -533,5 +533,11 @@ class appBooxChange
         $bdBooxChange = DAOLibro::getInstance();
         return $bdBooxChange->getTwoBooks();
     }
+
+    public function getChatsFromUser($idUser)
+    {
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->getChatsFromUser($idUser);
+    }
     
 }
