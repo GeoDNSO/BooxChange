@@ -22,36 +22,24 @@ $tema = ($_GET["Tema"]); //Titulo del tema, su tabla nada más olo tiene una col
 
   $app = appBooxChange::getInstance();
   $listaDiscusionesTema = $app->discusionesTema($tema);
-  echo "<table class='discusiones'";
-  echo "<tbody class= table_header_disc>";
-  echo "<tr>";
-  echo "<td colspan='3'>";
-  echo "<div class='discusiones'>";
-  echo "<h1>Lista de discusiones de $tema:</h1><br>";
-  echo "</div></td></tr></tbody>";
-  echo "<tbody class= 'content'>";
 
+  echo "<b>Lista de discusiones de $tema:</b><br>";
 
-
-  if ($listaDiscusionesTema != NULL){
-    echo '<tr>';
-      foreach($listaDiscusionesTema as $discusion){
-            $discusionTema = $discusion->getIdTema();
-          $discusionId = $discusion->getIdDiscusion();
-          $discusionIdusuario = $discusion->getIdUsuarioCreador();
-          $discusionFecha = $discusion->getFecha();
-          $discusionTitulo = $discusion->getTitulo();
-          echo "<td class=tituloDiscusion><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br> <small>Discusion creada por usuario";
-          echo "<td class=respuestas>'numero de respuestas'</td>";
-          echo "<td class=creacion >Fecha de creación<br> <small>$discusionFecha</small></td>";
-          echo '</tr>';
-    }
-
+  if ($listaDiscusionesTema == NULL){
+  	echo "Vaya, parece que este tema no tiene discusiones. Prueba a añadir una.<br>";
   }
 
   else{
-
-    echo "<p>Vaya, parece que este tema no tiene discusiones. Prueba a añadir una.</p><br>";
+		echo '<ul>';
+  		foreach($listaDiscusionesTema as $discusion){
+      			$discusionTema = $discusion->getIdTema();
+			    $discusionId = $discusion->getIdDiscusion();
+			    $discusionIdusuario = $discusion->getIdUsuarioCreador();
+			    $discusionFecha = $discusion->getFecha();
+			    $discusionTitulo = $discusion->getTitulo();
+				echo "<li><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br></li>";
+		}
+		echo '</ul>';
  }
 
 	 if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
@@ -70,6 +58,6 @@ $tema = ($_GET["Tema"]); //Titulo del tema, su tabla nada más olo tiene una col
       echo '</fieldset>';
   }
   else {
-      echo '<p>Crear discusión: debes haber iniciado sesión para crear una discusión</p>';
+    echo 'Crear discusión: debes haber iniciado sesión para crear una discusión';
   }
 ?>

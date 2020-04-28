@@ -25,8 +25,7 @@ $idDiscusion = ($_GET["Discusion"]);
 
   $discusion = $app->getDiscusionById($idDiscusion);
   $tituloDiscusion = $discusion->getTitulo();
-  echo "<div class=comentarios>";
-  echo "<h1>Comentarios de $tituloDiscusion:</h1>";
+  echo "<br><b>Comentarios de $tituloDiscusion:</b><br>";
 
   if ($listaComentariosDiscusion == NULL){
     echo "Vaya, parece que esta discusión no tiene comentarios. Prueba a añadir uno.<br>";
@@ -45,7 +44,7 @@ $idDiscusion = ($_GET["Discusion"]);
           echo "<li>$comentarioTexto -$nombreUsuario $comentarioFecha<br></li>";
       }
 
-      echo '</ul></div>';
+      echo '</ul>';
 }
 
   if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
@@ -64,6 +63,8 @@ $idDiscusion = ($_GET["Discusion"]);
       echo '</fieldset>';
   }
   else {
-    echo '<p>Añadir comentario: debes haber iniciado sesión para añadir un comentario</p>';
+    echo 'Añadir comentario: debes haber iniciado sesión para añadir un comentario';
   }
 ?>
+
+
