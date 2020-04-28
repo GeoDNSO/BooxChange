@@ -64,11 +64,15 @@ include("includes/comun/cabecera.php");
                     </div>
                     <div class="team-content">
                         <h3 class="title">Salvio</h3>
-                        <span class="post">El Neko-hikikomori</span>
+                        <span class="post">猫が好き</span>
                     </div>
                     <p class="description">
-                        Le gustan los gatros y no salir de casa. Si no te contesta probablemente esté viendo Anime, mejorando la web o destruyendo el GitHub. 
-                    </p>
+                    	Segundo encargado de diseño y especialista en tablas.
+                    <br>
+                   	Amante de los gatos y de la cultura Hip-Hop.
+                    <br>
+                    Gran aficcionado del Shōnen.</p>
+                    
                 </div>
                 <div class="our-team">
                     <div class="pic">
