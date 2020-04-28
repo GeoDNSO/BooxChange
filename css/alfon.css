@@ -20,6 +20,17 @@
   margin:auto;
 }
 
+.big-border {
+  width:70%;
+  height: auto;
+  padding: 20px 35px 35px 35px;
+  border-radius: 40px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1,
+              -13px -13px 20px #ffffff;
+  margin:auto;
+}
+
 .title {
     text-align: center;
     font-size: 28px;
@@ -112,4 +123,77 @@ textarea.line{
   background-size: 200px 100%;
   background-repeat: no-repeat;
   color: darken(#1abc9c, 20%);
+}
+
+
+.thing {
+  padding: 1rem;
+  width: 90%;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  
+  border-left: 0 solid #00ff99;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.thing:hover {
+  padding-left: 0.5rem;
+  border-left: 0.5rem solid #00ff99;
+}
+
+
+.our-team{
+    text-align: center;
+}
+.our-team .pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid #3da5b3;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.our-team img{
+    width: 100%;
+    height: auto;
+}
+
+.our-team .team-content{
+    padding: 15px 15px 20px;
+    background: #3da5b3;
+    border-radius: 40px 10px;
+    margin-top: -20px;
+    color: #fff;
+}
+.our-team .title{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+.our-team .post{
+    display: block;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.our-team .description{
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 990px){
+  .our-team{ margin-bottom: 30px; }
+}
+@media only screen and (max-width: 359px){
+  .our-team .pic{
+      width: 150px;
+      height: 150px;
+  }
+  .our-team .social{ top: 20px; }
 }

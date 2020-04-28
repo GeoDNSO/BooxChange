@@ -91,6 +91,9 @@ function perfilUsuario()
             <li>
                 <a href="foro.php">Foro</a>
             </li>
+            <li>
+                <a href="quienesSomos.php">Equipo Booxchange</a>
+            </li>
 
 
         </ul>

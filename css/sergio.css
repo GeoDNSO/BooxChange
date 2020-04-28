@@ -1,9 +1,9 @@
 /* Leaderboard de los libros */
 
 .leaderboard {
-    width: 20%;
-    margin-left: 40%;
-    margin-right: 40%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     position: flex;
 
     background: linear-gradient(to bottom, #3a404d, #181c26);
@@ -41,7 +41,7 @@
     width: 20px;
     height: 20px;
     line-height: 20px;
-    color: #c24448;
+    color: #000000;
     background: #fff;
     border-radius: 20px;
     text-align: center;
