@@ -31,7 +31,7 @@ include("includes/comun/cabecera.php");
     <br>
 
     <div class="container">
-        <div class="row">
+        <div class="contenedor">
            
                 <div class="our-team">
                     <div class="pic">
