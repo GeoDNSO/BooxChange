@@ -1,0 +1,87 @@
+footer{
+    margin-top: 2rem;
+    width:100%;
+}
+.footerTitle{
+    margin: auto;
+    padding: 1rem;
+    text-align: center; 
+    box-sizing: border-box;
+    background-color: rgb(104, 104, 190);
+}
+
+.footerA{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    box-sizing: border-box;
+    border-style: solid;
+    border: 1px;
+    border-style: none none solid none;
+    border-color: rgb(194, 194, 194);
+}
+.footerBox{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    padding: 10px 20px; /*tamaño de el recuadro*/
+    width: 75%;
+    text-align: center; 
+}
+.footerBox:first-of-type{
+    margin-left: auto;
+}
+.footerBox:last-of-type{
+    margin-right: auto;
+}
+.footerBox a:link, .footerBox a:visited{
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+}
+.footerBox a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.footerTotal{
+    background-color: black;
+}
+
+.footerImagen {
+    text-align: center; 
+    padding: 1rem;
+}
+.footerImagen img{
+    width:5%;
+    height:auto;
+}
+
+.footerSvg{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.footerSvgSvg {
+    padding: 0.5rem;
+    width:2%;
+    height:auto;
+}
+
+.footerSvgSvg:first-of-type {
+    margin-left: auto;
+}
+
+.footerSvgSvg:last-of-type {
+    margin-right: auto;
+}
+
+svg:hover path{
+    fill: rgb(113, 175, 255);
+}
+
+.footerCopyright{
+    padding: 1rem;
+    color: rgb(194, 194, 194);
+    text-align: center; 
+}
