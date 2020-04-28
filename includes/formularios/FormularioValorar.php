@@ -25,23 +25,17 @@ class FormularioValorar extends Form
      */
     protected function generaCamposFormulario($datosIniciales)
     {
-        $app = appBooxChange::getInstance();
-        $libros = $app->librosTienda();
+        $libroId = $datosIniciales['libroId'];
 
-        $html = '  <br>  <label for="valoracion"><b>Valoración:</b></label>';
+        $html = '<input type="hidden" name="libro" value=$libroId>';
+        $html .= '<p class="estrellas">';
+        $html .= '<input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">★</label>
+        <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">★</label>
+        <input id="radio3" type="radio" name="estrellas" value="3"><label for="radio3">★</label>
+        <input id="radio4" type="radio" name="estrellas" value="2"><label for="radio4">★</label>
+        <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">★</label>';
+        $html .= '</p>';
 
-        $html .= '    <select id="libro" name="libro">';
-        foreach ($libros as $libro){
-            $html .= '      <option>' . $libro->getTitulo() . '</option>';
-        }
-        $html .= '      </select>';
-
-        $html .= '    <select id="valoracion" name="valoracion">';
-        for ($i=1; $i <=10; $i++){
-            $html .= '      <option>' . $i . '</option>';
-        }
-        $html .= '      </select>';
-        
         $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
         
 

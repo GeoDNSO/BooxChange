@@ -1,11 +1,11 @@
 /* Leaderboard de los libros */
 
 .leaderboard {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    position: flex;
+
     background: linear-gradient(to bottom, #3a404d, #181c26);
     border-radius: 10px;
     box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
@@ -133,4 +133,37 @@
     background: #866300;
 }
 
-/* Formulario de valoración */
+/* Estrellas de valoración */
+#valorarForm {
+/*
+    width: 250px;
+    margin: auto;
+    height: 50px;
+*/
+}
+
+#valorarForm p {
+    text-align: left;
+}
+
+#valorarForm label {
+    font-size: 20px;
+    color: gray;
+}
+
+#valorarForm input[type="radio"]{
+    display: none;
+}
+
+.estrellas {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+#valorarForm label:hover, #valorarForm label:hover ~ label{
+    color: orange;
+}
+
+#valorarForm input[type="radio"]:checked ~ label {
+    color: orange;
+}
