@@ -33,6 +33,7 @@ function perfilUsuario()
         echo "<li> <a href='usuario.php'>" . "Perfil" . "</a> </li>";
         echo "<li> <a href='ofertas.php'> Tus Ofertas</a> </li>";
         echo "<li><a href='notificaciones.php'>Notificaciones$notificacionesCab</a></li>";
+        echo "<li> <a href='chat.php'> Chatear </a> </li>";
 
         if ($_SESSION['rol'] == BD_TYPE_ADMIN) {
             echo '<li>';

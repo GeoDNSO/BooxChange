@@ -30,8 +30,24 @@ class DAOMensajeChat extends DAO
 
     public function subirMensajeChat($idChat, $idUsuario, $texto){
         $sql = "INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, `Fecha`) VALUES ('$idChat', NULL, '$idUsuario', '$texto', current_timestamp());";
+
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         return $consulta;
+    }
+
+    
+    public function getChatTexto($idChat){
+
+        $sql = "SELECT * FROM mensajechat WHERE Id_Chat=$idChat";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        $array = array();
+        while ($fila = $consulta->fetch_array()) {
+            $TChat = new TMensajeChat($fila[BD_MENSAJE_CHAT_ID_MENSAJE_CHAT], $fila[BD_MENSAJE_CHAT_ID_CHAT], $fila[BD_MENSAJE_CHAT_ID_USER], $fila[BD_MENSAJE_CHAT_TEXTO], $fila[BD_MENSAJE_CHAT_FECHA]);
+            $array[] = $TChat;
+        }
+
+        return $array;
     }
 
     
