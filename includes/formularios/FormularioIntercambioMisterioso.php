@@ -29,15 +29,14 @@ class FormularioIntercambioMisterioso extends Form
     {
         $app = appBooxChange::getInstance();
 
-        $html = '<fieldset>';
-        $html .= '    <legend>Libro para Intercambio Misterioso</legend>';
-        $html .= '    <label for="titulo"><b>Titulo</b></label><br>';
-        $html .= '    <input type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
+
+        $html = '    <label for="titulo"><b>Titulo</b></label><br>';
+        $html .= '    <input class="line" type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
         $html .= '    <label for="fotoLibro"><b>Foto del Libro</b></label><br>';
         //$html .= '    <input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
-        $html .= '    <input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
+        $html .= '    <input  type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
         $html .= '    <label for="autor"><b>Autor</b></label><br>';
-        $html .= '    <input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
+        $html .= '    <input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
         $html .= '    <label for="genero"><b>Género</b></label><br>';
 
         //Seleccion de Generos
@@ -45,7 +44,7 @@ class FormularioIntercambioMisterioso extends Form
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
-        $html .= '    <button type="submit">Subir Libro</button>';
+        $html .= '    <button class="send-button" type="submit">Subir Libro</button>';
         $html .= '</fieldset>';
 
         return $html;
