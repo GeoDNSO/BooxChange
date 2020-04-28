@@ -30,7 +30,10 @@ class DAOChat extends DAO
     {
         $sql = "INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`) VALUES (NULL, '$idUser1', '$idUser2', '0', '0');";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-        return $consulta;
+        if ($consulta == false) {
+            return $consulta;
+        }
+        return self::$instance->bdBooxChange->insert_id;
     }
 
 
@@ -74,17 +77,78 @@ class DAOChat extends DAO
     }
 
 
-    public function isChatOfUser($idChat)
+    public function getChatById($idChat)
     {
-
-        $sql = "SELECT * FROM chat WHERE chat.Id_Chat=$idChat";
+        $sql = "SELECT * FROM chat WHERE chat.Id_Chat=$idChat;";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) != 0) {
-            //$fila = $consulta->fetch_array();
-            //$TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
-           return false;
+            $fila = $consulta->fetch_array();
+            $TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
+            return $TChat;
+        }
+
+        return false;
+    }
+
+    public function isChatOfUser($idChat, $idUser)
+    {
+
+        $sql = "SELECT * FROM chat WHERE chat.Id_Chat=$idChat AND (chat.Id_Usuario1=$idUser OR chat.Id_Usuario2=$idUser);";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 0) {
+            return false;
         }
         return true;
     }
+
+
+    public function existeChatWithUsers($idUser1, $idUser2)
+    {
+
+        $sql = "SELECT * FROM chat WHERE (chat.Id_Usuario1=$idUser1 AND chat.Id_Usuario2=$idUser2) OR (chat.Id_Usuario2=$idUser1 AND chat.Id_Usuario1=$idUser2);";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) == 0) {
+            return false;
+        }
+        $fila = $consulta->fetch_array();
+        $TChat = new TChat($fila[BD_CHAT_ID_CHAT], $fila[BD_CHAT_ID_USER1], $fila[BD_CHAT_ID_USER2], $fila[BD_CHAT_NUM_MENSAJES], $fila[BD_CHAT_MENSAJES_SIN_LEER_1], $fila[BD_CHAT_MENSAJES_SIN_LEER_2], $fila[BD_CHAT_FECHA_ACT]);
+        return $TChat;
+    }
+
+    //idUser es el que envia el mensaje
+    public function aumentarMensajesSinLeer($idChat, $idUSer)
+    {
+
+        $tchat = $this->getChatById($idChat);
+
+        $sql = "";
+        if($tchat->getIdUsuario1() == $idUSer){
+            $sql = "UPDATE chat SET mensajesSinLeer2 = mensajesSinLeer2+1 WHERE Id_Chat=$idChat;";
+
+        }else{
+            $sql = "UPDATE chat SET mensajesSinLeer = mensajesSinLeer+1 WHERE Id_Chat=$idChat;";
+        }
+
+        return mysqli_query(self::$instance->bdBooxChange, $sql);
+    }
+
+    //idUser es el que lee el mensaje
+    public function disminuirMensajesSinLeer($idChat, $idUSer)
+    {
+        $tchat = $this->getChatById($idChat);
+
+        $sql = "";
+        if($tchat->getIdUsuario1() == $idUSer){
+            $sql = "UPDATE chat SET mensajesSinLeer = 0 WHERE Id_Chat=$idChat;";
+
+        }else{
+            $sql = "UPDATE chat SET mensajesSinLeer2 = 0 WHERE Id_Chat=$idChat;";
+        }
+
+        return mysqli_query(self::$instance->bdBooxChange, $sql);
+    }
+    
 }

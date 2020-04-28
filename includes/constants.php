@@ -168,7 +168,7 @@ define("BD_CHAT_ID_USER2", "Id_Usuario2");
 define("BD_CHAT_NUM_MENSAJES", "NumMensajes");
 define("BD_CHAT_MENSAJES_SIN_LEER_1", "mensajesSinLeer");
 define("BD_CHAT_MENSAJES_SIN_LEER_2", "mensajesSinLeer2");
-define("BD_CHAT_BD_CHAT_FECHA_ACT", "fechaActividad");
+define("BD_CHAT_FECHA_ACT", "fechaActividad");
 
 
 //Constantes para la tabla de Mensaje Chat
@@ -176,7 +176,7 @@ define("BD_MENSAJE_CHAT_ID_MENSAJE_CHAT", "Id_Mensaje_Chat");
 define("BD_MENSAJE_CHAT_ID_CHAT", "Id_Chat");
 define("BD_MENSAJE_CHAT_ID_USER", "Id_Usuario");
 define("BD_MENSAJE_CHAT_TEXTO", "Texto");
-define("BD_CHAT_FECHA_ACT", "fechaActividad");
+define("BD_MENSAJE_CHAT_FECHA", "Fecha");
 
 //Constantes para el formulario de Registro
 define("REG_REALNAME", "userRealName");

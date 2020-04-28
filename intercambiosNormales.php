@@ -68,7 +68,7 @@ function printBooks()
                 //Boton Chat
                 echo "<div class='botonChat interButton' >";
                
-                echo "<a  href='chat.php?idchat=$idUsuario'>Chat</a>";
+                echo "<a  href='includes/procesos/crearChat.php?idUserChat=$idUsuario'>Chat</a>";
                 //echo "<span class='tooltiptext'> Inicia un chat con el usuario para negociar la transacción</span>";
                 echo "</div>";
             }

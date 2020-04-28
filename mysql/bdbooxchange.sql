@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2020 a las 13:28:09
+-- Tiempo de generación: 28-04-2020 a las 20:58:17
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -36,20 +36,21 @@ CREATE TABLE `chat` (
   `Id_Usuario2` int(11) NOT NULL,
   `NumMensajes` int(11) NOT NULL,
   `mensajesSinLeer` int(11) NOT NULL,
-  `mensajesSinLeer2` int(11) NOT NULL
+  `mensajesSinLeer2` int(11) NOT NULL,
+  `fechaActividad` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `chat`
 --
 
-INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`) VALUES
-(1, 2, 3, 7, 0, 0),
-(2, 2, 5, 32, 0, 0),
-(3, 5, 4, 21, 0, 0),
-(4, 3, 6, 13, 0, 0),
-(5, 5, 1, 42, 0, 0),
-(6, 5, 4, 0, 0, 0);
+INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`, `fechaActividad`) VALUES
+(1, 2, 5, 9, 1, 0, '2020-04-28 14:04:00'),
+(2, 2, 5, 34, 0, 0, '2020-04-28 14:04:00'),
+(3, 5, 4, 23, 0, 0, '2020-04-28 14:04:00'),
+(4, 3, 6, 15, 0, 0, '2020-04-28 14:04:00'),
+(6, 5, 4, 2, 0, 0, '2020-04-28 14:04:00'),
+(9, 5, 1, 2, 0, 4, '2020-04-28 19:46:23');
 
 -- --------------------------------------------------------
 
@@ -340,7 +341,34 @@ INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, 
 (1, 3, 2, 'De tus libros para intercambiar', '2020-03-08 00:00:00'),
 (1, 4, 5, 'Cual de todos?', '2020-03-08 00:00:00'),
 (1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00'),
-(6, 6, 5, 'Hola', '2020-04-27 19:48:41');
+(6, 6, 5, 'Hola', '2020-04-27 19:48:41'),
+(1, 10, 5, 'hola que tal', '2020-04-28 19:35:00'),
+(3, 11, 5, 'asdasda', '2020-04-28 19:38:26'),
+(3, 12, 5, 'asdasdasda', '2020-04-28 19:38:28'),
+(6, 13, 5, 'adasdad', '2020-04-28 19:40:03'),
+(6, 14, 5, 'asdadasd', '2020-04-28 19:40:05'),
+(2, 15, 5, 'dasdasdasd', '2020-04-28 19:40:08'),
+(9, 16, 5, 'asdasd', '2020-04-28 19:47:11'),
+(9, 17, 5, 'asdasd', '2020-04-28 19:47:13'),
+(9, 18, 5, 'asdfdsfasfa', '2020-04-28 19:47:48'),
+(9, 19, 5, 'hola\r\n', '2020-04-28 19:47:51'),
+(2, 20, 5, 'hola que tal', '2020-04-28 19:47:56'),
+(6, 21, 5, 'hola', '2020-04-28 19:48:02'),
+(6, 22, 5, 'hollllllllllllllllllllllllllll', '2020-04-28 19:48:08'),
+(6, 23, 5, 'holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2020-04-28 19:48:14'),
+(2, 24, 5, 'jajajajaja', '2020-04-28 19:48:22'),
+(9, 27, 5, 'asdasda', '2020-04-28 20:57:33'),
+(9, 28, 5, 'sdfsdfsfd', '2020-04-28 20:57:43');
+
+--
+-- Disparadores `mensajechat`
+--
+DELIMITER $$
+CREATE TRIGGER `aumentoMensajesChat` AFTER INSERT ON `mensajechat` FOR EACH ROW UPDATE chat
+	SET chat.NumMensajes = chat.NumMensajes+1
+    WHERE chat.Id_Chat=Id_Chat
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -628,7 +656,7 @@ ALTER TABLE `valoracionlibro`
 -- AUTO_INCREMENT de la tabla `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
@@ -682,7 +710,7 @@ ALTER TABLE `librointercambio`
 -- AUTO_INCREMENT de la tabla `mensajechat`
 --
 ALTER TABLE `mensajechat`
-  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`

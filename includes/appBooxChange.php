@@ -539,5 +539,44 @@ class appBooxChange
         $bdBooxChange = DAOChat::getInstance();
         return $bdBooxChange->getChatsFromUser($idUser);
     }
+
+    public function isChatOfUser($idChat, $idUser)
+    {
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->isChatOfUser($idChat, $idUser);
+    }
+
+    public function subirMensajeChat($idChat, $idUsuario, $texto){
+        $bdBooxChange = DAOMensajeChat::getInstance();
+        return $bdBooxChange->subirMensajeChat($idChat, $idUsuario, $texto);
+    }
+
+    public function aumentarMensajesSinLeer($idChat, $idUsuario){
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->aumentarMensajesSinLeer($idChat, $idUsuario);
+    }
+
+    public function disminuirMensajesSinLeer($idChat, $idUsuario){
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->disminuirMensajesSinLeer($idChat, $idUsuario);
+    }
+
+    public function crearChat($idUser1, $idUser2)
+    {
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->crearChat($idUser1, $idUser2);
+    }
+
+    public function existeChatWithUsers($idUser1, $idUser2)
+    {
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->existeChatWithUsers($idUser1, $idUser2);
+    }
+
+    public function getChatTexto($idChat)
+    {
+        $bdBooxChange = DAOMensajeChat::getInstance();
+        return $bdBooxChange->getChatTexto($idChat);
+    }
     
 }
