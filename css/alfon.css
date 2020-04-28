@@ -91,6 +91,7 @@ input.login{
 
   width: 95%;
   display: block;
+  text-align: center;
 
 }
 
@@ -123,6 +124,7 @@ textarea.line{
   background-size: 200px 100%;
   background-repeat: no-repeat;
   color: darken(#1abc9c, 20%);
+  text-align: center;
 }
 
 
@@ -143,9 +145,16 @@ textarea.line{
   border-left: 0.5rem solid #00ff99;
 }
 
+/*Quienes somos*/
+
 
 .our-team{
-    text-align: center;
+  width: 100%;
+  display: flexbox;
+  
+  flex-wrap: wrap;
+  flex-direction: row;
+
 }
 .our-team .pic{
     width: 200px;
@@ -163,13 +172,14 @@ textarea.line{
 .our-team .team-content{
     padding: 15px 15px 20px;
     background: #3da5b3;
-    border-radius: 40px 10px;
+
     margin-top: -20px;
     color: #fff;
 }
 .our-team .title{
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
     margin: 10px 0 5px 0;
 }
 .our-team .post{
@@ -177,6 +187,7 @@ textarea.line{
     font-size: 14px;
     font-weight: 900;
     text-transform: uppercase;
+    text-align: center;
 }
 .our-team .description{
     padding: 20px;
@@ -186,14 +197,7 @@ textarea.line{
     color: #666;
     line-height: 30px;
     margin-bottom: 0;
+    text-align: center;
 }
-@media only screen and (max-width: 990px){
-  .our-team{ margin-bottom: 30px; }
-}
-@media only screen and (max-width: 359px){
-  .our-team .pic{
-      width: 150px;
-      height: 150px;
-  }
-  .our-team .social{ top: 20px; }
-}
+
+

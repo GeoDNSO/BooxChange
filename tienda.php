@@ -45,7 +45,10 @@ require_once(__DIR__ . "/includes/config.php");
                	//**************
                	//ARREGLAR el TAMAÑO cuando la imagen sea visible
                 echo "<div class=imagen>";
+                echo "<a href='libroTienda.php?id=$id'>";
                	echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
+               	//cho "<img src='imagenes/usuarios/gon.jpg' alt='Imagen del Libro' height=100% width=100%>";
+               	echo "</a>";
                 echo "</div>";
 
                 echo "<div class=atributos>";
@@ -114,7 +117,9 @@ require_once(__DIR__ . "/includes/config.php");
                	//**************
                	//ARREGLAR el TAMAÑO cuando la imagen sea visible
                 echo "<div class=imagen>";
+ 				echo "<a href='libroTienda.php?id=$id'>";
                	echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
+               		echo "</a>";
                 echo "</div>";
 
                 echo "<div class=atributos>";
@@ -160,7 +165,7 @@ require_once(__DIR__ . "/includes/config.php");
         if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
         	//echo "<br>";
         	echo "<div class=aviso>";
-        	echo "<p class=blanco>*Debes haber iniciado sesión para comprar.</p>";
+        	echo "<p class=blanco>*Debes haber <a class=blanco href='login.php'>iniciado sesión</a> para comprar.</p>";
         	echo "</div>";
 		}
 

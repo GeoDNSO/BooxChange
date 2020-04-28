@@ -16,9 +16,7 @@ require_once(__DIR__ . "/includes/config.php");
 <body>
    
     <?php
-        
         include("includes/comun/cabecera.php"); 
-
         //include("includes/transfers/TUsuario.php");
     ?>
 
@@ -28,6 +26,7 @@ require_once(__DIR__ . "/includes/config.php");
             //echo 'Foto : <img src="'.$_SESSION['fotoPerfil'] .'" alt="Imagen de Perfil" height="100" width="100">  <br>';
         	echo "<div class=fotoUsuario>";
        		echo '<img src="' . $_SESSION['fotoPerfil'] . '"alt="Imagen de Perfil" height="170" width="170">';
+       		//echo '<img src="imagenes/usuarios/gon.jpg"alt="Imagen de Perfil" height="170" width="170">';
        		echo "</div>";
        		echo "<div class= infoUsuario>";
        		echo "<p class=marginBottom>Información de la cuenta</p>";

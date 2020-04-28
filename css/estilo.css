@@ -10,6 +10,7 @@
 @import url("jin.css");
 @import url("notificaciones.css");
 @import url("sergio.css");
+@import url("footer.css");
 
 *::selection {
     background: var(--bgScroll2);
