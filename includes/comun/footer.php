@@ -6,17 +6,6 @@
 <h2 class="footerTitle"> Llevate BooxChange a todas partes </h2>
 
 <div class="footerTotal">
-    <div class="footerA">
-        <div class="footerBox">
-            <a href="acercaDe.php"> Acerca de booxchange </a>
-        </div>
-        <div class="footerBox">
-            <a href="ayudanosAMejorar.php"> Ayudanos a mejorar </a>
-        </div>
-        <div class="footerBox">
-            <a href="asistencia.php"> Asistencia </a>
-        </div>
-    </div>
 
     <div class="footerImagen">
         <img src='imagenes/IconoInterNormal.png' alt=''>
@@ -57,6 +46,10 @@
 
         <div class="footerBox">
             <a href="politicaDeCookies.php"> Política de cookies </a>
+        </div>
+
+        <div class="footerBox">
+            <a href="quienesSomos.php"> Quienes Somos </a>
         </div>
 
     </div>
