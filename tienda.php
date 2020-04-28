@@ -84,16 +84,17 @@ require_once(__DIR__ . "/includes/config.php");
                 echo "€</p>";
 
                 echo "</div>";
-              	echo "<div class=enlace>";
                
 
              	
             	  if($unidades > 0){
+                  echo "<div class=enlace>";
                 	echo "<p class='blanco centrado'><a class=blanco href='paginaCompra.php?id=$id'>Comprar</a>";
 
                 }
 
                 else{
+                   echo "<div class=agotado>";
                     echo "<p class='grisClaro centrado'>Existencias Agotadas"; 
                 }
 
