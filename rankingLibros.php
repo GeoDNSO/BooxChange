@@ -24,9 +24,6 @@ function ranking()
     }
 
     echo "</ol></div>";
-
-    $form = new FormularioValorar("valorarForm", array("action" => null));
-    $form->gestiona();
 }
 
 ?>

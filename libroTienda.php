@@ -21,6 +21,7 @@
     
 
     use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+    use fdi\ucm\aw\booxchange\formularios\FormularioValorar;
 
     if(!isset($_GET['id'])){
         exit("No se ha proporcionado el id del producto");
@@ -41,6 +42,11 @@
 
     $valoracion = $libro->getValoracion();
     echo "<h3> Valoracion: $valoracion </h3>";
+
+    
+    $form = new FormularioValorar("valorarForm", array("action" => null, "libroId" => $libro));
+    $form->gestiona();
+    
 
     $ranking = $libro->getRanking();
     echo "<h3> Ranking: $ranking </h3>";
