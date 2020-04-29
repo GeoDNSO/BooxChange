@@ -69,4 +69,7 @@
     </form>
     <a href="AD_listaUsuarios.php"> Cancelar </a>
 
+<?php 
+include("./includes/comun/footer.php");
+?>
 </html>

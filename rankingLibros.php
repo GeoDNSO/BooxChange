@@ -45,7 +45,8 @@ include("includes/comun/cabecera.php");
 <body>
 
     <?php
-    ranking()
+    ranking();
+    include("./includes/comun/footer.php");
     ?>
 
 </body>

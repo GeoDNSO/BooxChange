@@ -72,4 +72,7 @@ $tema = ($_GET["Tema"]); //Titulo del tema, su tabla nada más olo tiene una col
   else {
       echo '<p>Crear discusión: debes haber iniciado sesión para crear una discusión</p>';
   }
+
+  include_once(__DIR__."/includes/comun/footer.php");
+
 ?>

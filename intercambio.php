@@ -65,6 +65,8 @@ include("includes/comun/cabecera.php");
 
 
 
-
+<?php
+  include("./includes/comun/footer.php");
+?>
 
 </html>

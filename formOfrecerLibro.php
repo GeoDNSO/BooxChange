@@ -101,6 +101,8 @@ else if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
     echo "<p> No puede realizar ofertas si no está logeado </p>";
 }
 
+  include("./includes/comun/footer.php");
+
 ?>
 
 </html>

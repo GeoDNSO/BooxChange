@@ -56,5 +56,7 @@ if (!isset($_GET['id'])) {
 </form>
 
 
-
+<?php
+  include("./includes/comun/footer.php");
+?>
 </html>

@@ -40,6 +40,9 @@ require_once(__DIR__."/includes/config.php");
 
         $form->gestiona();   
     }
+
+  include("./includes/comun/footer.php");
+
 ?>
 
 

@@ -74,5 +74,7 @@ include("includes/comun/cabecera.php");
 
 </div>
 
-
+<?php
+include("./includes/comun/footer.php");
+?>
 </html>

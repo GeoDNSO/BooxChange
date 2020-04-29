@@ -17,8 +17,8 @@
 <?php
     include("./includes/comun/cabecera.php");
     include("./includes/comun/funcionesAdmin.php");
+    include("./includes/comun/footer.php");
 ?>
-
 
 
 </html>

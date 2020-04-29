@@ -44,10 +44,9 @@ foreach($notificaciones as $notificacion){
 
 $app->notificacionesLeidas($_SESSION["id_Usuario"]);
 
+include("./includes/comun/footer.php");
+
 ?>
-
-
-
 
 
 </html>

@@ -80,6 +80,8 @@
     }
     }
 
+    include("./includes/comun/footer.php");
+
 ?>
 
 </html>
