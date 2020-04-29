@@ -1,13 +1,14 @@
 footer{
     margin-top: 2rem;
     width:100%;
+    color: white;
 }
 .footerTitle{
     margin: auto;
     padding: 1rem;
     text-align: center; 
     box-sizing: border-box;
-    background-color: rgb(104, 104, 190);
+    background-color: rgb(40, 40, 51);
 }
 
 .footerA{

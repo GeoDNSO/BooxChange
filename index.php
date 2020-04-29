@@ -1,5 +1,37 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
+
+
+use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
+
+function mejoresLibros()
+{
+    $app = appBooxChange::getInstance();
+    $libros = $app->getTwoBooks();
+
+    $i = 1;
+    foreach ($libros as $libro) {
+        $titulo = $libro->getTitulo();
+        $id = $libro->getIdLibro();
+        $precio = $libro->getPrecio();
+        $unidades = $libro->getUnidades();
+        $imagen = $libro->getImagen();
+        $autor = $libro->getAutor();
+        $valoracion = $libro->getValoracion();
+        $descripcion = $libro->getDescripcion();
+
+        echo "<div class='libroPresentacion" . $i . "'>";
+        echo "        <div class='imgPresentacion'>";
+        echo "            <img src='$imagen' alt='adas'>";
+        echo "        </div>";
+        echo "        <div class='descLibroPresentacion'>";
+        echo "            <h2>$titulo de $autor </h2>";
+        echo "        </div>";
+        echo "    </div>";
+        $i+=1;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -14,42 +46,22 @@ require_once(__DIR__ . "/includes/config.php");
 
 <body>
 
-<?php
+
+    <?php
     include("includes/comun/cabecera.php");
-?>
+    ?>
 
     <div class="main">
 
-        
+
 
         <div class="mejoresLibros">
 
-            <div class="libroPresentacion1">
 
-                <div class="imgPresentacion">
-                    <img src="./imagenes/libros/default.jpg" alt="adas">
-                </div>
+            <?php
+                mejoresLibros();
 
-                <div class="descLibroPresentacion">
-                    <h2>Libro 1 de Autor Apellidos </h2>
-                    
-                </div>
-                
-            </div>
-
-            <div class="libroPresentacion2">
-
-                <div class="descLibroPresentacion">
-                    <h2>Libro 2 de Autor Apellidos</h2>
-                </div>
-
-                <div class="imgPresentacion">
-                    <img src="./imagenes/libros/default.jpg" alt="adas">
-                </div>
-
-
-            </div>
-
+            ?>
         </div>
 
         <div class="presentacion">
@@ -59,9 +71,9 @@ require_once(__DIR__ . "/includes/config.php");
     </div>
 
 
-<?php
+    <?php
     include("./includes/comun/footer.php");
-?>
+    ?>
 
 </body>
 

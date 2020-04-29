@@ -85,12 +85,12 @@ class DAOLibro extends DAO
     }
 
     public function getTwoBooks(){
-        $sql = "SELECT * FROM libro ORDER BY libro.valoracion";
+        $sql = "SELECT * FROM libro ORDER BY libro.valoracion DESC LIMIT 2";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         $librosTienda = array();
-        $count = 0;
-        while ($fila = mysqli_fetch_array($consulta) && $count < 2) {
+        
+        while ($fila = mysqli_fetch_array($consulta)) {
             $librosTienda[] = new TLibro(
                 $fila[BD_LIBRO_ID_LIBRO],
                 $fila[BD_LIBRO_TITULO],
