@@ -77,8 +77,16 @@ footer{
     margin-right: auto;
 }
 
-svg:hover path{
-    fill: rgb(113, 175, 255);
+.footersvgAzul:hover path{
+    fill: rgb(0, 80, 185);
+}
+
+.footersvgAzulClaro:hover path{
+    fill: rgb(55, 132, 231);
+}
+
+.footersvgRojo:hover path{
+    fill: rgb(255, 28, 28);
 }
 
 .footerCopyright{
