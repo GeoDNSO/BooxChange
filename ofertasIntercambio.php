@@ -86,5 +86,7 @@ if ($libro->getIdUsuario() != $_SESSION["id_Usuario"]) {
 }
 
 ?>
-
+<?php
+include("./includes/comun/footer.php");
+?>
 </html>

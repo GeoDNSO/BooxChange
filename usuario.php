@@ -75,7 +75,11 @@ require_once(__DIR__ . "/includes/config.php");
     </div>
     
 
-    </div>
+	</div>
+	
+<?php
+  include("./includes/comun/footer.php");
+?>
 </body>
 </html>
 

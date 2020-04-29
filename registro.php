@@ -26,4 +26,7 @@ require_once(__DIR__ . "/includes/config.php");
     ?>
 </div>    
 
+<?php
+  include("./includes/comun/footer.php");
+?>
 </html>

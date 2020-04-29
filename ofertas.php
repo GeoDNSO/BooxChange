@@ -56,6 +56,7 @@ if (isset($_SESSION["login"]) || $_SESSION["login"] == false) {
 } else {
     echo "<p> No puede realizar ofertas si no está logeado </p>";
 }
+include("./includes/comun/footer.php");
 
 ?>
 

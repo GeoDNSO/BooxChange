@@ -34,6 +34,8 @@ if ($rst == 0) {
     echo '<p>Intercambio con exito</p>';
 }
 
+include("./includes/comun/footer.php");
+
 ?>
 
 

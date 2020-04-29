@@ -245,5 +245,7 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
 
 </body>
 
-
+<?php
+    include("./includes/comun/footer.php");
+?>
 </html>

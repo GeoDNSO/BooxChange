@@ -66,4 +66,8 @@ $idDiscusion = ($_GET["Discusion"]);
   else {
     echo '<p>Añadir comentario: debes haber iniciado sesión para añadir un comentario</p>';
   }
+
+  include_once(__DIR__."/includes/comun/footer.php");
 ?>
+
+

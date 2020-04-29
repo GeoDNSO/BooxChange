@@ -162,9 +162,10 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 
 //echo "</ul>";
 // echo "</div>";
-
+include("./includes/comun/footer.php");
 
 ?>
+
 
 
 

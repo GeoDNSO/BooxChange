@@ -111,4 +111,8 @@
 
     <a href="AD_listaLibros.php"> Cancelar </a>
 
+<?php
+    include("./includes/comun/footer.php");
+?>
+
 </html>

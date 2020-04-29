@@ -88,5 +88,7 @@
     echo "</ol></div>";
 ?>
 
-
+<?php
+    include("./includes/comun/footer.php");
+?>
 </html>

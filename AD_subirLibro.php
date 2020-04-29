@@ -94,4 +94,8 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 </div>
 <a href="admin.php"> Cancelar </a>
 
+<?php
+    include("./includes/comun/footer.php");
+?>
+
 </html>
