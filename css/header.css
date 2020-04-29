@@ -5,8 +5,11 @@ header {
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 3%;
+}
 
-    
+.logo a{
+    text-decoration: none;
+    color: white;
 }
 
 /*NAV BAR*/
@@ -110,12 +113,12 @@ header nav ul li a:hover {
 
 .userInfo img,
 .userImg {
-    height: 4.2rem;
-    width: 6rem;
+    height: 4rem;
+    width: 5rem;
     border-radius: 50%;
     overflow: hidden;
     margin-left: 1rem;
-    margin-right: -1rem;
+    /*margin-right: -1.5rem;*/
     align-self: center;
 }
 

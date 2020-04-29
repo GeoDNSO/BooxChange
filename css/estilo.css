@@ -14,6 +14,7 @@
 @import url("comentarios.css");
 @import url("discusiones.css");
 @import url("footer.css");
+@import url("chat.css");
 
 *::selection {
     background: var(--bgScroll2);

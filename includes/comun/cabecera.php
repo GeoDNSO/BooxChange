@@ -15,7 +15,7 @@ function perfilUsuario()
 
        
 
-        echo '<img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  <br>';
+        echo '<a href="usuario.php" ><img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  </a>';
 
         echo "<ul>";
         
@@ -64,7 +64,7 @@ function perfilUsuario()
     <div class="headerMain">
 
         <div class="logo">
-            <h4>BooxChange</h4>
+            <h4> <a href="index.php">BooxChange</a> </h4>
         </div>
 
         <div class="userInfo">

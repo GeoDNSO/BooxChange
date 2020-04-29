@@ -34,7 +34,16 @@ function chatsDelUsuario()
         }
 
         $nombreUser2 = $user2->getNombreReal();
-        echo "<a href='chat.php?idchat=$idChat'> Chat $idChat con user $nombreUser2  </a>, numMens = $numMensajes, mensajesSinLeer = $mensajesSinLeer <br> ";
+        $imagenUser2 = $user2->getFotoPerfil();
+        $event = "window.location='chat.php?idchat=$idChat';";
+        echo "<div class='otherUserChat' onclick=$event>"; //Necesario js para que sea semanticamente correcto
+        //echo "<a href='chat.php?idchat=$idChat'>";
+
+        // Chat $idChat con user $nombreUser2  </a>, numMens = $numMensajes, mensajesSinLeer = $mensajesSinLeer <br> ";
+        echo "<div class='otherUserChatImg' > <img src='$imagenUser2' alt='Imagen de $nombreUser2'/> </div>";
+        echo "<div class='otherUserChatName'> $nombreUser2 </div>";
+        //echo "</a>";
+        echo "</div>";
     }
 }
 
@@ -43,9 +52,9 @@ function chatsDelUsuario()
 function textoEnvioChat()
 {
     if (isset($_GET["idchat"])) {
-        echo '<form method="post" action="includes/procesos/procesarMensajeChat.php?idchat=' . $_GET["idchat"] . '">';
+        echo '<form class="textoChat"  method="post" action="includes/procesos/procesarMensajeChat.php?idchat=' . $_GET["idchat"] . '">';
 
-        echo '<textarea name="mensajeChatTexto" id="" cols="40" rows="5"></textarea>';
+        echo '<textarea placeholder="Escribe un mensaje aquí..." name="mensajeChatTexto" id="" cols="40" rows="5"></textarea>';
 
         echo '<input type="submit" value="Enviar">';
 
@@ -77,32 +86,84 @@ function mensajesChat()
 
         $app = appBooxChange::getInstance();
 
+        //Mostrar Mensajes
+
         $app->disminuirMensajesSinLeer($idChat, $idUserSes);
 
         $mensajes = $app->getChatTexto($idChat);
 
 
-        foreach($mensajes as $mensaje){
+        foreach ($mensajes as $mensaje) {
             $idUserMensaje = $mensaje->getIdUsuario();
             $textoMensaje = $mensaje->getTexto();
             $fechaMensaje = $mensaje->getFecha();
 
-            if($idUserMensaje == $_SESSION["id_Usuario"]){
-                echo "$textoMensaje   from $idUserMensaje   y $fechaMensaje <br>";
+            
+
+            if ($idUserMensaje == $_SESSION["id_Usuario"]) {
+                echo "<div class='currentUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div>";
+            } else {
+                echo "<div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div>";
             }
-            else{
-                echo "$textoMensaje   from $idUserMensaje   y $fechaMensaje <br>";
-            }   
         }
 
-        if(empty($mensajes)){
-            echo " Aun no hay mensajes, empieza a chatear <br>";
+        if (empty($mensajes)) {
+            echo "<div class='chatNoHayMensajes'> Aun no hay mensajes, empieza a chatear </div>";
         }
-       
+    } else {
+        echo "<div class='mainChatEmpty'> VACIO(Añadir fondo...) </div>";
     }
-    else{
-        echo "Pipipipipip";
+}
+
+
+function userProfile()
+{
+    //$app = appBooxChange::getInstance();
+    //$user = $app->getUserById($_SESSION["id_Usuario"]);
+
+    $userImg = $_SESSION['fotoPerfil'];
+    $userName = $_SESSION['nombreReal'];
+
+    echo "<div class='userProfile'>";
+
+    echo "<div class='userProfileImg' > <img src='$userImg' alt='Imagen de $userName'/> </div>";
+    echo "<div class='userProfileName'> $userName </div>";
+
+    echo "</div>";
+}
+
+
+function otherCurrentUser(){
+
+    if (isset($_GET["idchat"])) {
+
+        $idUserSes = $_SESSION["id_Usuario"];
+        $idChat = intval($_GET["idchat"]);
+
+        $app = appBooxChange::getInstance();
+
+        $chat = $app->getChatById($_GET["idchat"]);
+
+        $otherUser = "";
+        if($chat->getIdUsuario1() != $idUserSes){
+            $otherUser = $app->getUserById($chat->getIdUsuario1());
+        }else{
+            $otherUser = $app->getUserById($chat->getIdUsuario2());
+        }
+
+        $nombreUser2 = $otherUser->getNombreReal();
+        $imagenUser2 = $otherUser->getFotoPerfil();
+
+        echo "<div class='otherUserProfile'>";
+
+        echo "<div class='otherUserProfileImg' > <img src='$imagenUser2' alt='Imagen de $nombreUser2'/> </div>";
+        echo "<div class='otherUserProfileName'> $nombreUser2 </div>";
+    
+        echo "</div>";
+
     }
+
+
 }
 
 
@@ -130,31 +191,57 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
 
 <body>
 
-    <h1>Chat</h1>
+    <div class="mainChatContent">
 
-    <div class="chats">
-        <?php
-        chatsDelUsuario();
-        ?>
+        <div class="mainUserChats">
+
+            <?php
+            userProfile();
+            ?>
+
+            <div class="otherChatsMain">
+                <?php
+                chatsDelUsuario();
+                ?>
+            </div>
+        </div>
+
+
+        <div class="mainUserCurrentChat">
+
+
+            <div class="otherCurrentUser">
+                <?php
+                otherCurrentUser();
+                ?>
+            </div>
+
+            <div class="chatActual">
+                <?php
+                mensajesChat();
+                ?>
+            </div>
+
+            <div class="textoChat">
+
+                <?php
+                textoEnvioChat();
+                ?>
+
+            </div>
+
+        </div>
+
+
+
+
+
     </div>
 
-    <br>
-    <p>-----------------------------------</p>
-    <br>
 
-    <div class="chatActual">
-        <?php
-        mensajesChat()
-        ?>
-    </div>
 
-    <div class="textoChat">
 
-        <?php
-        textoEnvioChat();
-        ?>
 
-    </div>
 
 </body>
 

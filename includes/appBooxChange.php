@@ -75,7 +75,6 @@ class appBooxChange
         $_SESSION['fotoPerfil'] = $fotoPerfil;
         $_SESSION['ciudad'] = $ciudad;
         $_SESSION['direccion'] = $direccion;
-
         
         return $aux;
     }
@@ -577,6 +576,12 @@ class appBooxChange
     {
         $bdBooxChange = DAOMensajeChat::getInstance();
         return $bdBooxChange->getChatTexto($idChat);
+    }
+
+    public function getChatById($id)
+    {
+        $bdBooxChange = DAOChat::getInstance();
+        return $bdBooxChange->getChatById($id);
     }
     
 }
