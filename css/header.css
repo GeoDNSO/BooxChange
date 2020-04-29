@@ -14,8 +14,8 @@ header {
 
 /*NAV BAR*/
 
-header nav {
-    width: 99.15%;
+.headerMainBottom {
+    width: 100%;
     display: flex;
 
     flex-direction: row;
@@ -25,18 +25,17 @@ header nav {
 
     list-style: none;
 
-    padding: 0.4rem;
     margin-top: -1rem;
 
 
     background-color: cadetblue;
 }
 
-header nav ul {
+.headerMainBottom ul {
     display: inline-block;
 }
 
-header nav ul li {
+.headerMainBottom ul li {
     display: inline-block;
 
     /*border: 0.05rem solid rgb(0, 0, 0);*/
@@ -46,11 +45,11 @@ header nav ul li {
     margin: 0.5rem;
 }
 
-header nav ul li:hover {
+.headerMainBottom ul li:hover {
     background-color: var(--colorTextNavHover);
 }
 
-header nav ul li a {
+.headerMainBottom ul li a {
     text-decoration: none;
     font-weight: bold;
 
@@ -59,7 +58,7 @@ header nav ul li a {
     transition: all 0.3s ease 0s;
 }
 
-header nav ul li a:hover {
+.headerMainBottom ul li a:hover {
     color: white;
 }
 

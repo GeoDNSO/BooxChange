@@ -75,6 +75,7 @@ function perfilUsuario()
 
     </div>
 
+    <div class="headerMainBottom">
     <nav>
         <ul class="nav_links">
             <li>
@@ -96,5 +97,6 @@ function perfilUsuario()
 
         </ul>
     </nav>
+    </div>
 
 </header>

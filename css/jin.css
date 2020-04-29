@@ -53,7 +53,7 @@
     background-color: #6fa9ff;
     color: white;
     margin-top:20px;
-    padding: 10px 20px; /*tamaño de el recuadro*/
+    padding: 2% 4%; /*tamaño de el recuadro*/
     text-align: center; 
     text-decoration: none; /*quitar la raya del href*/
     display: inline-block;

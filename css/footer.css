@@ -15,16 +15,11 @@ footer{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    box-sizing: border-box;
-    border-style: solid;
-    border: 1px;
-    border-style: none none solid none;
-    border-color: rgb(194, 194, 194);
 }
 .footerBox{
     margin-top:1rem;
     margin-bottom:1rem;
-    padding: 10px 20px; /*tamaño de el recuadro*/
+    padding: 0.5% 1%; /*tamaño de el recuadro*/
     width: 75%;
     text-align: center; 
 }
