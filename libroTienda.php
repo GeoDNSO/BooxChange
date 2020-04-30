@@ -43,11 +43,6 @@
     $valoracion = $libro->getValoracion();
     echo "<h3> Valoracion: $valoracion </h3>";
 
-    
-    $form = new FormularioValorar("valorarForm", array("action" => null, "libroId" => $id));
-    $form->gestiona();
-    
-
     $ranking = $libro->getRanking();
     echo "<h3> Ranking: $ranking </h3>";
 
@@ -78,6 +73,14 @@
     else{
         echo "Existencias Agotadass";
     }
+
+    echo "<div id=formValorar>";
+    $form = new FormularioValorar("valorarForm", array("action" => null, "libroId" => $id));
+    $form->gestiona();
+    echo "</div>";
+    echo "<div id=comentarios>";
+    echo "<h1>Comentarios</h1>";
+    echo "</div>";
     }
 
     include("./includes/comun/footer.php");

@@ -25,32 +25,22 @@ class DAOValoracionLibro extends DAO
         return self::$instance;
     }
 
-    public function valorarLibro($titulo, $valoracion, $idUsuario, $comentario){
+    public function valorarLibro($id, $valoracion, $idUsuario, $comentario){
 
-
-        $sql = "SELECT id_libro FROM libro WHERE titulo = '$titulo'";
+        $sql = "SELECT * FROM valoracionlibro WHERE Id_Libro = $id AND Id_Usuario = $idUsuario";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
+        $sql2 = "";
+        //El usuario ya ha valorado el libro
         if (mysqli_num_rows($consulta) == 1) {
-            $fila = $consulta->fetch_array();
-            $id = $fila['id_libro'];
-
-            $sql = "SELECT * FROM valoracionlibro WHERE Id_Libro = $id AND Id_Usuario = $idUsuario";
-            $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-
-            $sql2 = "";
-            //El usuario ya ha valorado el libro
-            if (mysqli_num_rows($consulta) == 1) {
-                $sql2 = "UPDATE `valoracionlibro` SET `Valoracion` = '$valoracion', `Comentario` = '$comentario' WHERE `valoracionlibro`.`Id_Libro` = $id AND `valoracionlibro`.`Id_Usuario` = $idUsuario;";
-            }else{//El usuario no lo ha valorado
-                $sql2 = "INSERT INTO valoracionlibro (id_libro, id_usuario, valoracion, comentario) VALUES ($id, $idUsuario, $valoracion, '$comentario') ";
-            }
-
-            
-            return mysqli_query(self::$instance->bdBooxChange, $sql2);
+            $sql2 = "UPDATE `valoracionlibro` SET `Valoracion` = '$valoracion', `Comentario` = '$comentario' WHERE `valoracionlibro`.`Id_Libro` = $id AND `valoracionlibro`.`Id_Usuario` = $idUsuario;";
+        }else{//El usuario no lo ha valorado
+            $sql2 = "INSERT INTO valoracionlibro (id_libro, id_usuario, valoracion, comentario) VALUES ($id, $idUsuario, $valoracion, '$comentario') ";
         }
+  
+        return mysqli_query(self::$instance->bdBooxChange, $sql2);
 
-        }
+    }
 
 }
 ?>

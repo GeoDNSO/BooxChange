@@ -27,7 +27,7 @@ class FormularioValorar extends Form
     {
         $libroId = $this->formOptions['libroId'];
 
-        $html = "<input type='hidden' name='libro' value=$libroId>";
+        $html = "<input type='hidden' name='libro' value='$libroId'>";
         $html .= '<p class="estrellas">';
         $html .= '<input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">★</label>
         <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">★</label>
@@ -54,15 +54,17 @@ class FormularioValorar extends Form
      */
     protected function procesaFormulario($datos)
     {
-
-        $erroresFormulario = array();
+        // No se mete aquí AYUDA
+        // No se mete aquí AYUDA
+        // No se mete aquí AYUDA
 
         //Libro y valoración tienen un valor por defecto
         $idLibro = $datos['libro'];
 
-        $valoracion = $datos['valoracion'];
+        $valoracion = $datos['estrellas'];
 
         $comentario = isset($datos['comentario']) ? $datos['comentario'] : null;
+        $comentario = $datos['comentario'];
         $comentario = make_safe($comentario);
 
 

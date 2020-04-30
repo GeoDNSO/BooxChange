@@ -344,9 +344,10 @@ class appBooxChange
         //$bdBooxChange->closeBD();
         return $num;
     }
-    public function valorarLibro($titulo, $valoracion, $idUsuario, $comentario){
+
+    public function valorarLibro($id, $valoracion, $idUsuario, $comentario){
         $bdBooxChange = DAOValoracionLibro::getInstance();
-        $bdBooxChange->valorarLibro($titulo, $valoracion, $idUsuario, $comentario);
+        $bdBooxChange->valorarLibro($id, $valoracion, $idUsuario, $comentario);
 
     }
 
