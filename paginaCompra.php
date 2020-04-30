@@ -35,7 +35,8 @@ if (!isset($_GET['id'])) {
     //file_put_contents('libroCompra', $sLibro);
 
     $titulo = $libro->getTitulo();
-    echo "<h1> Compra del Libro $titulo </h1>";
+    echo '<div class="border-bigform">';
+    echo "<h1> Comprar: $titulo </h1>";
     $unidades = $libro->getUnidades();
 }
 ?>
@@ -46,14 +47,16 @@ if (!isset($_GET['id'])) {
     <input type="number" name="unidades" id="unidades" min="1" max="<?php echo $unidades; ?>" value="1" /><br><br>
 
     <label for="numtarjeta"><b>Número de Tarjeta</b></label><br>
-    <input type="text" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>
+    <input  class="line" type="number" maxlength="12" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>
 
     <label for="clave"><b>Clave</b></label><br>
-    <input type="password" placeholder="" name="clave" id="clave" /><br><br>
+    <input class="pin-input" type="password" maxlength="4" placeholder="" name="clave" id="clave" /><br><br>
 
-    <input type="submit">
+    <button class="send-button">Comprar</button>
 
 </form>
+
+</div>
 
 
 <?php

@@ -40,7 +40,7 @@ require_once(__DIR__."/includes/config.php");
 
         $form->gestiona();   
     }
-
+    echo '</div></div>';
   include("./includes/comun/footer.php");
 
 ?>

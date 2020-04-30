@@ -31,6 +31,27 @@
   margin:auto;
 }
 
+.intercambioAlfa{
+  width:45%;
+  height: auto;
+  padding: 20px 35px 35px 35px;
+
+  background: #3ce2a3;
+
+  margin:auto;
+}
+
+.intercambiOmega{
+  width:45%;
+  height: auto;
+  padding: 20px 35px 35px 35px;
+
+  background: #6fc7fa7e;
+  box-shadow: 13px 13px 20px #9db7d1;
+
+  margin:auto;
+}
+
 .title {
     text-align: center;
     font-size: 28px;
@@ -202,3 +223,16 @@ textarea.line{
 }
 
 
+.pin-input {
+  display: block;
+  border: none;
+  align-items: center;
+  width: 150px;
+  background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 10ch 2px no-repeat;
+  font: 5ch droid sans mono, consolas, monospace;
+  letter-spacing: 0.5ch;
+}
+.pin-input:focus {
+  outline: none;
+  color: rgb(0, 0, 0);
+}

@@ -25,19 +25,20 @@ function mostrarDatosLibroQuerido(){
     $usuario = $app->getUserById($idUsuario);
     $nombreUsuario = $usuario->getNombreUsuario();
     
-    echo "<h1> Oferta para el libro $titulo de $nombreUsuario</h1>";
-    
-    echo "<div>";
-    echo "<p>";
-    
-    echo "Fecha: $fecha <br>";
-    echo "Lo ofrece: $nombreUsuario <br>";
-    echo "$titulo <br>";
-    echo "Autor: $autor <br>";
-    echo "Genero: $genero <br>";
-    echo "$desc <br>";
-    echo "</p>";
-    echo "</div>";
+
+    echo '<div class="intercambioAlfa"><div class="title">';
+    echo $titulo;
+    echo '</div><div class="sub-title">';
+    echo    "Ofrecido por $nombreUsuario </div><br>
+
+        <p>
+            Autor: $autor <br>
+            Genero: $genero <br><br>
+            $desc <br>
+        </p>
+
+    </div>";
+
 
 }
 
@@ -46,14 +47,23 @@ function formulario(){
     global $app, $idLibroIntercambio;
 
     $html = "<form method='post' action='includes/procesos/procesarSubidaOferta.php?libroQuerido=$idLibroIntercambio'>";
-    $html .= '<fieldset>';
-    $html .= '<legend>Libro Que Ofreces para el Intercambio</legend>';
+
+
+
+    $html .= '<div class="intercambiOmega"><div class="fields">';
+
+    $html .= ' <div class="title">Propuesta de intercambio</div>
+    <div class="sub-title">Describe el libro que quieres dar a cambio</div><br>';
+
     $html .= '<label for="titulo"><b>Titulo</b></label><br>';
-    $html .= '<input type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
+    $html .= '<input class="line" type="text" placeholder="Título que propones" name="titulo" id="titulo" value="" /><br><br>';
+    
+    
+    $html .= '<label for="autor"><b>Autor</b></label>';
+    $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br>';
+
     $html .= '<label for="fotoLibro"><b>Foto del Libro</b></label><br>';
-    $html .= '<input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
-    $html .= '<label for="autor"><b>Autor</b></label><br>';
-    $html .= '<input type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
+    $html .= '<input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
 
     $html .= '    <label for="genero"><b>Género</b></label><br>';
     //Seleccion de Generos
@@ -62,9 +72,10 @@ function formulario(){
     $html .= '    </select><br><br>';
 
     $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-    $html .= '<textarea id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo para el usuario al que se lo ofreces..."></textarea> <br>';
-    $html .= '<button type="submit">Subir Libro</button>';
-    $html .= '</fieldset>';
+    $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo para el usuario al que se lo ofreces..."></textarea> <br>';
+    $html .= '    <button class="send-button">Proponer intercambio</button>';
+
+    $html .= '</div></div>';
     $html .= "</form>";
 
     return $html;
