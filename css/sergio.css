@@ -134,14 +134,6 @@
 }
 
 /* Sección de comentarios */
-.valoracion {
-    color: gray;
-}
-
-.coloreada {
-    color: orange;
-}
-
 #valoraciones {
     display: flex;
     width: 80%;
@@ -149,7 +141,42 @@
 }
 
 #comentarios {
-    width: 80%;
+    width: 75%;
+    margin-right: 5%;
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+}
+
+#comentarios h1 {
+    height: 4rem;
+    text-align: center;
+    color: #e1e1e1;
+}
+#comentarios ul li {
+    height: 5em;
+    color: #fff;
+    list-style-type: none;
+}
+
+#comentarios ul li span.todaValoracion {
+    margin-left: 5%;
+    width: auto;
+}  
+
+#comentarios ul li:nth-child(odd){
+    background: #060061;
+}
+#comentarios ul li:nth-child(even){
+    background: #0058a0;
+}
+
+.valoracion {
+    color: gray;
+}
+
+.coloreada {
+    color: orange;
 }
 
 #valorarForm {

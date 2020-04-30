@@ -82,7 +82,7 @@
         $valoracionesLibro = $app->valoracionesLibro($id);
         $numValoraciones = count($valoracionesLibro);
 
-        echo "<h1>Comentarios [$numValoraciones]</h1>";
+        echo "<h1>Comentarios [$numValoraciones]</h1><ul>";
 
         foreach ($valoracionesLibro as $valoracionLibro) {
             $puntuacion = $valoracionLibro->getValoracion();
@@ -91,7 +91,7 @@
             $usuario = $app->getUserById($idUsuario);
             $nombreUsuario = $usuario->getNombreUsuario();
 
-            echo $nombreUsuario . " - ";
+            echo "<li><span class='todaValoracion'>" . $nombreUsuario . " - ";
 
             $i=0;
             for ($i = 0; $i < $puntuacion; $i++){
@@ -104,8 +104,9 @@
             if ($comentario != null){
                 echo " - " . $comentario . "<br>";
             }
+            echo "</span></li>";
         }
-        echo "</div>";
+        echo "</ul></div>";
 
 
         $form = new FormularioValorar("valorarForm", array("action" =>"./includes/procesos/procesarValorar.php", "libroId" => $id));
