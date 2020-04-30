@@ -128,11 +128,11 @@ define("BD_NOTIFICACION_LEIDO", "leido");
 define("BD_NOTIFICACION_FECHA", "fecha");
 
 //Clavos para la tabla de ValoracionLibro de la Base de Datos
-define("BD_VALORACIONLIBRO_ID", "id_valoracion");
-define("BD_VALORACIONLIBRO_IDLIBRO", "id_libro");
-define("BD_VALORACIONLIBRO_IDUSUARIO", "id_usuario");
-define("BD_VALORACIONLIBRO_VALORACION", "valoracion");
-define("BD_VALORACIONLIBRO_COMENTARIO", "comentario");
+define("BD_VALORACIONLIBRO_ID", "Id_Valoracion");
+define("BD_VALORACIONLIBRO_IDLIBRO", "Id_Libro");
+define("BD_VALORACIONLIBRO_IDUSUARIO", "Id_Usuario");
+define("BD_VALORACIONLIBRO_VALORACION", "Valoracion");
+define("BD_VALORACIONLIBRO_COMENTARIO", "Comentario");
 
 //Constantes para la tabla de Temas
 define("BD_TEMA", "Tema");

@@ -54,17 +54,13 @@ class FormularioValorar extends Form
      */
     protected function procesaFormulario($datos)
     {
-        // No se mete aquí AYUDA
-        // No se mete aquí AYUDA
-        // No se mete aquí AYUDA
-
+        
         //Libro y valoración tienen un valor por defecto
         $idLibro = $datos['libro'];
 
         $valoracion = $datos['estrellas'];
 
         $comentario = isset($datos['comentario']) ? $datos['comentario'] : null;
-        $comentario = $datos['comentario'];
         $comentario = make_safe($comentario);
 
 

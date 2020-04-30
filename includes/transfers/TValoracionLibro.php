@@ -16,6 +16,7 @@ class TValoracionLibro{
         $this->idLibro = $idLibro;
         $this->idUsuario = $idUsuario;
         $this->valoracion = $valoracion;
+        $this->comentario = $comentario;
     }
 
 

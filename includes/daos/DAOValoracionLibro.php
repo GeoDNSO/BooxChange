@@ -42,5 +42,22 @@ class DAOValoracionLibro extends DAO
 
     }
 
+    public function valoracionesLibro($idLibro){
+        $sql = "SELECT * FROM valoracionlibro WHERE Id_Libro=$idLibro";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        $valoracionesLibro = array();
+
+        while ($fila = mysqli_fetch_array($consulta)){
+            $valoracionesLibro[] = new TValoracionLibro(
+                $fila[BD_VALORACIONLIBRO_ID],
+                $fila[BD_VALORACIONLIBRO_IDLIBRO],
+                $fila[BD_VALORACIONLIBRO_IDUSUARIO],
+                $fila[BD_VALORACIONLIBRO_VALORACION],
+                $fila[BD_VALORACIONLIBRO_COMENTARIO]
+            );
+        }
+        return $valoracionesLibro;
+    }
 }
 ?>

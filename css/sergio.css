@@ -133,19 +133,34 @@
     background: #866300;
 }
 
-/* Estrellas de valoración */
+/* Sección de comentarios */
+.valoracion {
+    color: gray;
+}
+
+.coloreada {
+    color: orange;
+}
+
+#valoraciones {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#comentarios {
+    width: 80%;
+}
+
 #valorarForm {
-/*
-    width: 250px;
-    margin: auto;
-    height: 50px;
-*/
+    width: 20%
 }
 
 #valorarForm p {
     text-align: left;
 }
 
+/* Estrellas de valoración */
 #valorarForm label {
     font-size: 20px;
     color: gray;
@@ -166,4 +181,8 @@
 
 #valorarForm input[type="radio"]:checked ~ label {
     color: orange;
+}
+
+#valorarForm textarea {
+    width: 100%;
 }
