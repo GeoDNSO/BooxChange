@@ -34,7 +34,7 @@ include("includes/comun/cabecera.php");
                 o por otro lado puedes buscar que libros quiere la gente e igual te apetece realizar un intercambio
             </p>
 
-            <div class="imagen">
+            <div class="imagenIcono">
                 <a href="intercambiosNormales.php">
                     <img src="imagenes/IconoInterNormal.png" alt="">
                 </a>
@@ -49,7 +49,7 @@ include("includes/comun/cabecera.php");
                 Tienes algún libro cogiendo polvo y te da igual lo que le ocurra, prueba a intercambiarlo por algun libro desconocido de otro usuario
             </p>
 
-            <div class="imagen">
+            <div class="imagenIcono">
                 <a href="intercambioMisterioso.php">
                     <img src="imagenes/IconoInterMist.png" alt="">
                 </a>
