@@ -138,47 +138,51 @@
     display: flex;
     width: 80%;
     margin-left: 10%;
+    margin-top: 5rem;
+    height: auto;
+    border-top: solid;
+    border-width: 1px;
 }
 
 #comentarios {
     width: 75%;
     margin-right: 5%;
-    background: linear-gradient(to bottom, #3a404d, #181c26);
-    border-radius: 10px;
-    box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+    height: auto;
 }
 
 #comentarios h1 {
     height: 4rem;
+    margin-top: 2%;
     text-align: center;
-    color: #e1e1e1;
 }
 #comentarios ul li {
-    height: 5em;
-    color: #fff;
+    height: auto;
     list-style-type: none;
 }
 
-#comentarios ul li span.todaValoracion {
-    margin-left: 5%;
-    width: auto;
-}  
-
-#comentarios ul li:nth-child(odd){
-    background: #060061;
-}
-#comentarios ul li:nth-child(even){
-    background: #0058a0;
+#comentarios ul li div.todaValoracion {
+    border-top: double;
+    padding-top: 1%;
 }
 
-.valoracion {
+#comentarios ul li div.todaValoracion h2 {
+    padding-bottom: 1rem;
+}
+#comentarios ul li div.todaValoracion span.valoracion {
     color: gray;
+    padding-bottom: 1rem;
+    font-size: 2rem;
 }
 
-.coloreada {
+#comentarios ul li div.todaValoracion span.coloreada {
     color: orange;
 }
 
+#comentarios ul li div.todaValoracion p.comentarioValoracion{
+    height: auto;
+}
+
+/* Formulario valorar */
 #valorarForm {
     width: 20%
 }
@@ -189,7 +193,7 @@
 
 /* Estrellas de valoración */
 #valorarForm label {
-    font-size: 20px;
+    font-size: 2rem;
     color: gray;
 }
 
@@ -200,6 +204,8 @@
 .estrellas {
     direction: rtl;
     unicode-bidi: bidi-override;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 #valorarForm label:hover, #valorarForm label:hover ~ label{
@@ -212,4 +218,5 @@
 
 #valorarForm textarea {
     width: 100%;
+    
 }

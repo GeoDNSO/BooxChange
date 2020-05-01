@@ -91,7 +91,8 @@
             $usuario = $app->getUserById($idUsuario);
             $nombreUsuario = $usuario->getNombreUsuario();
 
-            echo "<li><span class='todaValoracion'>" . $nombreUsuario . " - ";
+            echo "<li><div class='todaValoracion'>";
+            echo "<h2 class='nombreUsuario'>" . $nombreUsuario . "</h2>";
 
             $i=0;
             for ($i = 0; $i < $puntuacion; $i++){
@@ -102,9 +103,9 @@
                 $i++;
             }
             if ($comentario != null){
-                echo " - " . $comentario . "<br>";
+                echo "<p class='comentarioValoracion'>" . $comentario . "<br>";
             }
-            echo "</span></li>";
+            echo "</div></li>";
         }
         echo "</ul></div>";
 

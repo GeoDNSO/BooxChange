@@ -36,7 +36,7 @@ class FormularioValorar extends Form
         <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">★</label>';
         $html .= '</p>';
 
-        $html .= '  <br>  <textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
+        $html .= '<textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
         
 
         $html .= '    <input type="submit" value="Valorar" />';
