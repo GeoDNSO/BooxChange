@@ -64,7 +64,7 @@ function printBooks()
             echo "</div>";
 
 
-            if ($_SESSION["id_Usuario"] != $idUsuario) {
+            if (isset($_SESSION["id_Usuario"]) && $_SESSION["id_Usuario"] != $idUsuario) {
                 //Boton Chat
                 echo "<div class='botonChat interButton' >";
                

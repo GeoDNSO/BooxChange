@@ -7,7 +7,11 @@ function perfilUsuario()
 
     if(basename($_SERVER['PHP_SELF']) == "intercambiosNormales.php"){
         echo "<a  class='hButton' href='formIntercambio.php'> Subir Libro </a>";
-        echo "<a class='hButton' href='ofertas.php'>Ver Ofertas</a>";
+
+        if (isset($_SESSION['login']) && $_SESSION['login']){
+            echo "<a class='hButton' href='ofertas.php'>Ver Ofertas</a>";
+        }
+        
     }
 
     if (isset($_SESSION['login']) && $_SESSION['login']) {
@@ -15,7 +19,7 @@ function perfilUsuario()
 
        
 
-        echo '<a href="usuario.php" ><img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  </a>';
+        echo '<div class="imagenPerfilHeader"><a href="usuario.php" ><img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  </a> </div>';
 
         echo "<ul>";
         

@@ -18,7 +18,7 @@ require_once(__DIR__ . "/includes/config.php");
   use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
   use fdi\ucm\aw\booxchange\transfers\TTema as TTema;
 
-
+  
   $app = appBooxChange::getInstance();
   $temasForo = $app->temasForo();
   echo '<div id=boardindex_table>';
@@ -75,6 +75,15 @@ require_once(__DIR__ . "/includes/config.php");
       }
 
   }
-  include_once(__DIR__."/includes/comun/footer.php");
+ 
+
+  
+
+?>
+
+
+<?php
+
+include_once(__DIR__."/includes/comun/footer.php");
 
 ?>

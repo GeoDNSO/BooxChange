@@ -30,7 +30,7 @@
 
 .libroInter{
 
-    width: 70%;
+    width: 90%;
     /*height: 11rem;*/
     height: auto;
 
@@ -166,3 +166,17 @@
     border-style: solid;
     border-color: transparent rgba(161, 161, 161, 0.363) transparent transparent;
   }
+
+
+
+  @media only screen and (max-width: 800px) {
+  
+    .libroInter{
+        width: 110%;
+    }
+
+    .libroInter img{ 
+        height: 12rem;
+    }
+    
+}

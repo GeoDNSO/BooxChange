@@ -7,7 +7,7 @@ header {
     margin-bottom: 3%;
 }
 
-.logo a{
+.logo a {
     text-decoration: none;
     color: white;
 }
@@ -26,7 +26,6 @@ header {
     list-style: none;
 
     margin-top: -1rem;
-
 
     background-color: cadetblue;
 }
@@ -76,14 +75,13 @@ header {
 
     background-color: black;
     color: white;
-    
+
     /*overflow: hidden;*/
     position: fixed;
     top: 0;
     width: 100%;
     height: 5rem;
-    
-
+    z-index: 100;
 }
 
 .headerMain div:last-child {
@@ -110,6 +108,10 @@ header {
     margin-right: 1.2rem;
 }
 
+.imagenPerfilHeader{
+    align-self: center;
+}
+
 .userInfo img,
 .userImg {
     height: 4rem;
@@ -119,6 +121,7 @@ header {
     margin-left: 1rem;
     /*margin-right: -1.5rem;*/
     align-self: center;
+    /*margin-top: 0.5rem;*/
 }
 
 .userInfo img:hover {
@@ -127,19 +130,19 @@ header {
 
 /*DROP DOWN MENU*/
 
-.arrowUser{
+.arrowUser {
     margin-left: 1rem;
     transform: rotate(0deg);
 
-    fill: white;/*Color de la flecha*/
+    fill: white; /*Color de la flecha*/
     transition: all 0.3s ease 0s;
 }
 
-.userInfo ul li:hover .arrowUser{
+.userInfo ul li:hover .arrowUser {
     transform: rotate(-180deg);
 }
 
-.arrowUser:hover{
+.arrowUser:hover {
     transform: rotate(-180deg);
 }
 
@@ -189,8 +192,7 @@ header {
     display: block;
 }
 
-
-.botonesLibroInter{
+.botonesLibroInter {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -202,20 +204,21 @@ header {
 .hButton {
     /*display: block;*/
     align-self: center;
+    text-align: center;
     text-decoration: none;
     width: 30%;
     height: 30%;
 
     width: auto;
 
-    background: #4E9CAF;
+    background: #4e9caf;
 
     padding: 0.8rem;
     border-radius: 0.7rem;
     margin: 0.5rem;
 
     text-align: center;
-    
+
     color: white;
     font-weight: bold;
 
@@ -226,9 +229,43 @@ header {
     background-color: rgb(106, 218, 124);
 }
 
-.hButton:active{
+.hButton:active {
     background-color: rgb(40, 165, 61);
 }
+
+@media only screen and (max-width: 800px) {
+    .userInfo img,
+    .userImg {
+        height: 3.5rem;
+        width: 3.5rem;
+        margin-right: -1.3rem;  
+    }
+
+    .hButton {
+        font-size: 0.7rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+    .userInfo img,
+    .userImg {
+       display: none;
+    }
+
+    .hButton {
+        font-size: 0.7rem;
+        width: 4.3rem;
+
+    }
+
+    .hButton:last-of-type {
+        margin-right: -1rem;
+    }
+
+}
+
 /*
 
 .hButton:last-of-type{

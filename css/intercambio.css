@@ -53,14 +53,15 @@
     background-color: var(--cInterMist);
 }
 
-.imagen {
+.imagenIcono {
     margin: 1rem;
     padding: 0.5rem;
 
     margin-top: auto;
+    z-index: 0;
 }
 
-.mainIntercambio .imagen img {
+.mainIntercambio .imagenIcono img {
     /*
     width: 20rem;
     height: 20rem;
@@ -77,10 +78,18 @@
     transition: all 0.3s ease 0s;
 }
 
-.mainIntercambio .imagen img:hover{
+.mainIntercambio .imagenIcono img:hover{
 
     box-shadow: 0rem 0rem 0.5rem rgb(223, 215, 215), 0rem 0rem 3rem rgb(152, 228, 211);
     opacity: 1;
     transition: all 0.3s ease 0.01s;
     filter: grayscale(0%);
+}
+
+@media only screen and (max-width: 800px) {
+  
+    .opcionesIntercambio {
+        flex-direction: column;
+    }
+
 }
