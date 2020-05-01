@@ -129,9 +129,9 @@ class appBooxChange
         return $libros;
     }
 
-    public function buscarPorTitulo($titulo){  
+    public function buscarPorTitulo($titulo, $genero){  
         $bdBooxChange = DAOLibro::getInstance();
-        $libros = $bdBooxChange->findBookTitulo($titulo);
+        $libros = $bdBooxChange->findBookTitulo($titulo, $genero);
         return $libros;
     }
 
@@ -308,7 +308,7 @@ class appBooxChange
 
         $generos = $bdBooxChange->getAllGeneros();
 
-        $selectGeneros = "";
+        $selectGeneros = "<option value=''>---</option>\n";
         foreach ($generos as $genero) {
             $generoTexto = $genero->getGenero();
             $selectGeneros .= "<option value='$generoTexto'>$generoTexto</option>\n";

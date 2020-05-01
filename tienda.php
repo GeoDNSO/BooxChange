@@ -15,9 +15,11 @@ require_once(__DIR__ . "/includes/config.php");
 </head>
 
 
+
 <?php
 
 include_once(__DIR__ . "/includes/comun/cabecera.php");
+
 
 
 use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
@@ -25,6 +27,32 @@ use fdi\ucm\aw\booxchange\TLibro as TLibro;
 
 $app = appBooxChange::getInstance();
 $librosTienda = $app->librosTienda();
+
+$html = '<div id="buscaLibro" class = "border">';
+$html .= '<form method="post">';
+$html .= '<div class="fields">';
+$html .= '    <label for="titulo"><b>Buscar Libro por título:</b></label><br>';
+$html .= '     <div class="text"> <input type="text" placeholder="" name="titulo" id="titulo" /></div><br><br>';
+
+$html .= '    <select id="genero" name="genero"><br><br>';
+$html .=      $app->construirSeleccionDeCategorias();
+$html .= '    </select><br><br>';
+
+$html .= '    <button class="send-button">Buscar</button>';
+$html .= '</div>';
+$html .= '</form>';
+$html .= '</div>';
+
+echo $html;
+
+$titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
+$genero = isset($_POST["genero"]) ? $_POST["genero"] : null;
+if (!empty($titulo) || !empty($genero)) {
+    $librosTienda = $app->buscarPorTitulo($titulo, $genero);
+}
+else{
+    $librosTienda = $app->librosTienda();
+}
 
 //echo "<ul>";
 echo "<div class=box>";

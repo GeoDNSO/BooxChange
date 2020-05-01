@@ -20,33 +20,38 @@
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     $app = appBooxChange::getInstance();
-
     $html = '<div id="buscaLibro" class = "border">';
     $html .= '<form method="post">';
     $html .= '<div class="fields">';
     $html .= '    <label for="titulo"><b>Buscar Libro por título:</b></label><br>';
-    $html .= '     <div class="text"> 
-                        <input type="text" placeholder="" name="titulo" id="titulo" /></div><br><br>';
-    //$html .= '    <input type="submit" value="Buscar" />';
+    $html .= '     <div class="text"> <input type="text" placeholder="" name="titulo" id="titulo" /></div><br><br>';
+    
+    $html .= '    <select id="genero" name="genero"><br><br>';
+    $html .=      $app->construirSeleccionDeCategorias();
+    $html .= '    </select><br><br>';
+    
     $html .= '    <button class="send-button">Buscar</button>';
     $html .= '</div>';
     $html .= '</form>';
     $html .= '</div>';
-
+    
     echo $html;
     
-    //echo $_POST["titulo"];
+
+
     $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
-    if (!empty($titulo)) {
-        $libros = $app->buscarPorTitulo($titulo);
+    $genero = isset($_POST["genero"]) ? $_POST["genero"] : null;
+
+    if (!empty($titulo) || !empty($genero)) {
+        $librosTienda = $app->buscarPorTitulo($titulo, $genero);
     }
     else{
-        $libros = $app->getBooks();
+        $librosTienda = $app->librosTienda();
     }
     
     echo "<div class='listaTotalAdmin'><ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){
-        foreach($libros as $libro){
+        foreach($librosTienda as $libro){
             $id = $libro -> getIdLibro();
             $titulo = $libro -> getTitulo();
             $autor = $libro -> getAutor();

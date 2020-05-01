@@ -114,8 +114,18 @@ class DAOLibro extends DAO
     }
 
 
-    public function findBookTitulo($libro){
-        $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%')";
+    public function findBookTitulo($libro, $genero){
+
+        $sql = "";
+
+        if($genero == ""){
+            $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%')";
+        }
+        else{
+            $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%') AND libro.Genero='$genero'";
+        }
+
+        
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         $librosTienda = array();
