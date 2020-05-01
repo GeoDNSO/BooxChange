@@ -165,21 +165,13 @@
     padding-top: 1%;
 }
 
-#comentarios ul li div.todaValoracion h2 {
-    padding-bottom: 1rem;
-}
 #comentarios ul li div.todaValoracion span.valoracion {
     color: gray;
-    padding-bottom: 1rem;
     font-size: 2rem;
 }
 
 #comentarios ul li div.todaValoracion span.coloreada {
     color: orange;
-}
-
-#comentarios ul li div.todaValoracion p.comentarioValoracion{
-    height: auto;
 }
 
 /* Formulario valorar */
@@ -218,5 +210,46 @@
 
 #valorarForm textarea {
     width: 100%;
-    
+}
+
+/* Libro en la tienda */
+#libro {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#libro {
+    width: 100%;
+    height: auto;
+}
+
+#libro h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1%;
+    color: #000000;
+}
+
+#libro h3 span{
+    font-size: 1rem;
+    color: #5f5f5f;
+}
+
+#libro #datos {
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+#libro #datos h3 span.valoracion {
+    color: grey;
+    font-size: 1.5rem;
+}
+#libro #datos h3 span.coloreada {
+    color: orange;
+}
+
+#libro #datos h2#titulo {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }

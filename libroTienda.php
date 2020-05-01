@@ -32,42 +32,14 @@
         $app = appBooxChange::getInstance();
         $libro = $app->getLibroById($id);
 
-        $titulo = $libro->getTitulo();
-        echo "<h2> Libro: $titulo </h2>";
-
-        $autor = $libro->getAutor();
-        echo "<h3> Autor: $autor </h3>";
+        echo "<div id='portadaCompra'>";
+        $imagen = $libro->getImagen();
+        echo "<img src='$imagen' alt='Imagen del Libro' height='450' width='300'>  <br>";
 
         $precio = $libro->getPrecio();
-        echo "<h3> Precio: $precio </h3>";
-
-        $valoracion = $libro->getValoracion();
-        echo "<h3> Valoracion: $valoracion </h3>";
-
-        $ranking = $libro->getRanking();
-        echo "<h3> Ranking: $ranking </h3>";
-
-        $imagen = $libro->getImagen();
-        echo "<h3> Imagen </h3>";
-        echo "<img src='$imagen' alt='Imagen del Libro' height='100' width='100'>  <br>";
-
-        $descripcion = $libro->getDescripcion();
-        echo "<h3> Descripcion: $descripcion </h3>";
-
-        $genero = $libro->getGenero();
-        echo "<h3> Genero: $genero </h3>";
-
-        $fechaPublicacion = $libro->getFechaPublicacion();
-        echo "<h3> Fecha de publicacion: $fechaPublicacion </h3>";
-
-        $idioma = $libro->getIdioma();
-        echo "<h3> Idioma: $idioma </h3>";
-
-        $editorial = $libro->getEditorial();
-        echo "<h3> Editorial: $editorial </h3>";
-
+        echo "<h3> Precio: <span>$precio </span></h3>";
         $unidades = $libro->getUnidades();
-        echo "<h3> Unidades: $unidades </h3>";
+        echo "<h3> Unidades: <span>$unidades disponibles</span></h3>";
         if($unidades > 0){
             echo "<a href='paginaCompra.php?id=$id'> Comprar </a>";
         }
@@ -75,6 +47,50 @@
             echo "Existencias Agotadass";
         }
         echo "</div>";
+        echo "<div id='datos'>";
+        $titulo = $libro->getTitulo();
+        echo "<h2 id='titulo'>$titulo </h2>";
+
+        $autor = $libro->getAutor();
+        echo "<h3>Autor/a:<span> $autor </span></h3>";
+
+        $valoracion = $libro->getValoracion();
+        $valoracion = round($valoracion, 2);
+        $valoracionEstrellas = round($valoracion);
+        echo "<h3> Valoracion: ";
+        for ($i = 0; $i < $valoracionEstrellas; $i++){
+            echo "<span class='valoracion coloreada'>★</span>";
+        }
+        while ($i < 5){
+            echo "<span class='valoracion'>★</span>";
+            $i++;
+        }
+        echo "<span> $valoracion de 5</span>";
+
+        
+        echo "</h3>";
+
+        /*
+        $ranking = $libro->getRanking();
+        echo "<h3> Ranking: $ranking </h3>";
+*/
+        
+        $genero = $libro->getGenero();
+        echo "<h3> Genero: <span>$genero </span></h3>";
+
+        $fechaPublicacion = $libro->getFechaPublicacion();
+        echo "<h3> Fecha de publicacion: <span>$fechaPublicacion </span></h3>";
+
+        $idioma = $libro->getIdioma();
+        echo "<h3> Idioma: <span>$idioma </span></h3>";
+
+        $editorial = $libro->getEditorial();
+        echo "<h3> Editorial: <span>$editorial </span></h3>";
+
+        $descripcion = $libro->getDescripcion();
+        echo "<h3> Descripcion: <span>$descripcion</span> </h3>";
+        
+        echo "</div></div>";
 
         echo "<div id='valoraciones'>";
         echo "<div id='comentarios'>";
