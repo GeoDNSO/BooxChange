@@ -1,32 +1,40 @@
-.comentarios {
-    background-color: #8BF39B;
-    margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding:10px;
-    box-sizing: border-box;
-    border-style: solid;
-    border: solid transparent;
-    overflow-wrap: break-word;
-    width: 90%;
-    border-radius: 20px 20px 20px 20px;
-
+.generalCom{
+  width: 80%;
+  margin: 0 auto;
+  margin-left:12%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.comentarios h1{
-  font-size: 40px;
-  color: #3C090A;
-}
+.titCom{
+  font-size: 35px;
 
-.comentarios ul {
-    list-style: none;
 }
+.comentarioCom{
+  padding: 5px 5px 5px 5px;
+  width:80%;
+  height: auto;
+  margin:2%;
+  background-color:  #8BF39B;
+  box-shadow: 3px 3px 8px #808080,
+              -3px -3px 8px #ffffff;
+  border-radius: 15px;
+}
+.fechaCom{
+  padding-left: 35px;
+  width:80%;
 
-.comentarios ul li {
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid #1E5F02;
-  border-radius: 10px 10px 10px 10px;
-  margin:10px;
-  padding: 0 5px;
+}
+.usuCom{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.usuComVert{
+  padding: 0px 0px 15px 40px;
+  width: 28.5%;
+  height: auto;
+
 }
