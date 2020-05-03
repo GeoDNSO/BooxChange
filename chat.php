@@ -91,20 +91,25 @@ function mensajesChat()
         $app->disminuirMensajesSinLeer($idChat, $idUserSes);
 
         $mensajes = $app->getChatTexto($idChat);
+        $mensajeAnterior = "";
 
         echo "<ol class='messages'>";
         foreach ($mensajes as $mensaje) {
             $idUserMensaje = $mensaje->getIdUsuario();
             $textoMensaje = $mensaje->getTexto();
             $fechaMensaje = $mensaje->getFecha();
+            $dt = DateTime::createFromFormat("Y-m-d H:i:s", $fechaMensaje);
+            $horaDelMensaje = $dt->format('H:i');
+            $fechaDelMensaje = $dt->format('Y-m-d');
+            if($mensajeAnterior !== $fechaDelMensaje)
+                echo "<li class='chatCenter'><span class='textspanChat'>$fechaDelMensaje</span></li>";
 
-            
-            
+            $mensajeAnterior = $fechaDelMensaje;
             if ($idUserMensaje == $_SESSION["id_Usuario"]) {
-                echo "<li class='currentUserMessage mine'> <span> $textoMensaje   from $idUserMensaje   y $fechaMensaje </span> </li>";
+                echo "<li class='currentUserMessage mine'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
                 // echo "<li> <div class='currentUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             } else {
-                echo "<li  class='otherUserMessage'> <span> $textoMensaje   from $idUserMensaje   y $fechaMensaje </span> </li>";
+                echo "<li  class='otherUserMessage'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
                 //echo "<li> <div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             }
             
@@ -115,7 +120,7 @@ function mensajesChat()
         }
        
     } else {
-        echo "<div class='mainChatEmpty'> VACIO(Añadir fondo...) </div>";
+        echo "<div class='mainChatEmpty'> <img src='./imagenes/IconoChat.png' alt='adas' class='chatFoto'> </div>";
     }
 }
 
