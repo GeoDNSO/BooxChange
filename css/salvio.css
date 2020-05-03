@@ -10,8 +10,9 @@ flex-wrap: wrap;
 }
 
 .libro{
-padding: 25px 35px 30px 35px;
+padding: 15px 10px 20px 10px;
 width:38%;
+min-width:350px;
 height: auto;
 margin:2%;
 background-color:  #e6e6e6;
@@ -21,20 +22,20 @@ border-radius: 15px;
 }
 
 .botones{
-width: 100%;
-padding: 0px 12px 0px 12px;
-margin-left: 6%;
-margin-top: 2%;
-margin-bottom: 1%;
+width: auto;
 display: flex;
-flex-wrap: wrap;
 align-items: center;
+margin: 0 auto;
+margin-top: 2.5% !important;
+
+/*
+flex-direction: row;
+align-content: center;
+*/
 }
 
-
-
 .fila{
-width: 100%;
+width: auto;
 margin: 0 auto;
 display: flex;
 flex-wrap: wrap;
@@ -44,11 +45,10 @@ flex-wrap: wrap;
 .enlace{
 padding: 16px 20px 20px 20px;
 width:30%;
-height: auto;
-margin:2%;
-margin-left: 15px !important;
 background-color:  #3385ff;
 border-radius: 27px;
+	margin: 0 auto;
+	margin-left: 3% !important;
 }
 
 .enlace a{
@@ -65,12 +65,11 @@ border-radius: 27px;
 
 .agotado{
 	padding: 16px 20px 20px 20px;
-	width:170px;
-	height: auto;
-	margin:2%;
-	margin-left: 15px !important;
 	background-color:  rgb(114, 157, 236);
 	border-radius: 27px;
+	width:30%;
+	margin: 0 auto;
+	margin-left: 3% ! important;
 }
 
 .nologin{
@@ -84,20 +83,13 @@ align-items: center;
 
 .info{
 	padding: 16px 20px 20px 20px;
-width:38%;
-height: auto;
-margin:1%;
-margin-left: 15px !important;
+width:auto;
 background-color:  #4d94ff;
 border-radius: 27px;
 }
 
 .compra{
-	padding: 16px 20px 20px 20px;
-width:30%;
-height: auto;
-margin:1%;
-margin-left: 15px !important;
+width:auto;
 background-color:  #4d94ff;
 border-radius: 27px;
 }
@@ -109,14 +101,12 @@ border-radius: 27px;
 .imagen{
 padding: 5px 10px 5px 10px;
 width:25%;
-height: auto;
 margin:2%;
 }
 
 .atributos{
 padding: 10px 15px 15px 15px;
 width:51%;
-height: auto;
 margin:2%;
 }
 
@@ -145,14 +135,16 @@ margin:2%;
 
 .precio{
 	padding: 11.5px 17px 15.5px 17px;
-	width:15%;
-	margin:2%;
-	margin-left:0% !important;
+	width:30%;
+	margin: 0 auto;
+	margin-right: 3% !important;
 	background-color:  #ebe4e0;
 	border-radius: 150px;
 	border-style: solid;
 	border-color: #fbb750;
  	border-width: 5.5px;
+
+
 }
 
 .centrado{
@@ -262,6 +254,7 @@ transition: all 0.3s ease 0s;
     text-decoration: none;
 }
 
+/*USUARIO*/
 @media only screen and (max-width: 650px){
 	.datos{
 		width:auto;
@@ -272,28 +265,6 @@ transition: all 0.3s ease 0s;
 }
 
 @media only screen and (max-width: 1000px) {
-
-	/*TIENDA*/
-	.enlace{
-		width:auto;
-	}
-	.libro{
-		width:auto;
-	}
-	.info{
-		width:auto;
-	}
-	.compra{
-		width:auto;
-	}
-	.precio{
-		width:auto;
-	}
-	.imagen{
-		width:auto;
-	}
-
-	/*USUARIO*/
 	.modButt{
 		width:auto;
 	}
@@ -306,5 +277,111 @@ transition: all 0.3s ease 0s;
 	.fotoUsuario{
 		width:auto;
 	}
-
 }
+
+/*TIENDA*/
+@media only screen and (max-width: 1000px) {
+	.atributos{
+		margin: 0 auto;
+	}
+	.fila{
+		width:auto;
+		padding: 0;
+	}
+	.libro{
+		width:auto;
+		margin: 0 auto;
+		margin-top: 5% !important;
+		max-width: 530px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 15px;
+	}
+	.botones{
+		margin: 0 auto;
+		margin-top: 2% !important;
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+		margin: 0 auto;
+	}
+	/*
+	.precio{
+		width:30%;
+		margin: 0 auto;
+		margin-right:3% !important;
+	}
+	.enlace{
+		width:30%;
+		margin: 0 auto;
+		margin-left: 3% ! important;
+	}
+	.agotado{
+		width:30%;
+		margin: 0 auto;
+		margin-left: 3% ! important;
+	}
+	*/
+	.imagen{
+		min-width: 120px;
+		margin: 0 auto;
+	}
+}
+/*
+@media only screen and (max-width: 500px) {
+
+	.box{
+		
+	}
+	.enlace{
+		width:auto;
+		margin: 0 auto;
+	}
+	.atributos{
+		margin: 0 auto;
+	}
+	.fila{
+		width:auto;
+		padding: 0;
+	}
+	.libro{
+		min-width:220px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 15px;
+		margin-top: 6%;
+
+	}
+	.botones{
+		margin: 0 auto;
+		margin-top: 2% !important;
+		padding: 0;
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+		margin: 0 auto !important;
+	}
+	.precio{
+		width:auto;
+		margin: 0 auto !important;
+	}
+	.agotado{
+		margin: 0 auto !important;
+		margin-top: 3.5% !important;
+	}
+	.imagen{
+		min-width: 120px;
+		margin: 0 auto;
+	}
+}
+*/
