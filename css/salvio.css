@@ -103,7 +103,7 @@ border-radius: 27px;
 }
 
 .euros{	
-	font-size: 20px;
+	font-size: 100%;
 }
 
 .imagen{
@@ -138,11 +138,16 @@ margin:2%;
 	font-weight: bold;
 }
 
+.genero{
+	margin-top: 1.25%;
+	margin-bottom: 1.25%;
+}
+
 .precio{
 	padding: 11.5px 17px 15.5px 17px;
 	width:15%;
 	margin:2%;
-	margin-left:0px !important;
+	margin-left:0% !important;
 	background-color:  #ebe4e0;
 	border-radius: 150px;
 	border-style: solid;
@@ -169,7 +174,7 @@ margin:2%;
 
 .autor{
 	margin-top: 1%;
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 }
 
 /*Usuario*/
@@ -195,7 +200,7 @@ margin:2%;
 }
 
 .infoUsuario{
-padding: 0px 15px 15px 40px;
+padding: 0px 15px 15px 15px;
 width: 40%;
 height: auto;
 margin:2%;
@@ -205,11 +210,11 @@ margin-top: 3.5% !important;
 
 .fotoUsuario{
 	padding: 5px 10px 5px 10px;
-width:20%;
-height: auto;
-margin:2%;
-margin-top: 3.5% !important;
-margin-left: 7% !important;
+	width:20%;
+	height: auto;
+	margin:2%;
+	margin-top: 3.5% !important;
+	margin-left: 7% !important;
 }
 
 .marginLeft{
@@ -234,7 +239,7 @@ margin-left: 7% !important;
 }
 .modButt{
 padding: 16px 20px 20px 20px;
-width:25%;
+width:30%;
 height: auto;
 margin:0 auto;
 margin-top: 4%;
@@ -255,4 +260,51 @@ transition: all 0.3s ease 0s;
 
 .modButt a{
     text-decoration: none;
+}
+
+@media only screen and (max-width: 650px){
+	.datos{
+		width:auto;
+	}
+	.fotoUsuario{
+	margin: 0 auto !important;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+
+	/*TIENDA*/
+	.enlace{
+		width:auto;
+	}
+	.libro{
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+	}
+	.precio{
+		width:auto;
+	}
+	.imagen{
+		width:auto;
+	}
+
+	/*USUARIO*/
+	.modButt{
+		width:auto;
+	}
+
+	.infoUsuario{
+		width:auto;
+		margin-left: auto;
+	}
+
+	.fotoUsuario{
+		width:auto;
+	}
+
 }

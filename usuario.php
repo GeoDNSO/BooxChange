@@ -21,12 +21,13 @@ require_once(__DIR__ . "/includes/config.php");
     ?>
 
     <div class=fondo>
-    <div id=contenido class='datos' >
+    <div class=datos>
         <?php
             //echo 'Foto : <img src="'.$_SESSION['fotoPerfil'] .'" alt="Imagen de Perfil" height="100" width="100">  <br>';
         	echo "<div class=fotoUsuario>";
+
        		echo '<img src="' . $_SESSION['fotoPerfil'] . '"alt="Imagen de Perfil" height="170" width="170">';
-       		//echo '<img src="imagenes/usuarios/gon.jpg"alt="Imagen de Perfil" height="170" width="170">';
+       		//echo '<img src="imagenes/usuarios/salvio.jpg"alt="Imagen de Perfil" height="170" width="170">';
        		echo "</div>";
        		echo "<div class= infoUsuario>";
        		echo "<p class=marginBottom>Información de la cuenta</p>";
@@ -61,20 +62,19 @@ require_once(__DIR__ . "/includes/config.php");
        		}
             echo "</li></ul>";
        		
-			echo "<p class=arriba>Información personal</p>";
+			    echo "<p class=arriba>Información personal</p>";
        		echo "<ul>";
        		echo "<li class=marginLeft>Nombre real: " . $_SESSION['nombre'] . "</li>";
-            echo "<li class=marginLeft>Domicilio: " . $_SESSION['direccion'] . " (" . $_SESSION['ciudad'] . ")</li>";
-            echo "</ul>";
-            echo "</div>";
+          echo "<li class=marginLeft>Domicilio: " . $_SESSION['direccion'] . " (" . $_SESSION['ciudad'] . ")</li>";
+          echo "</ul>";
+          echo "</div>";
         ?>
         <div class=modButt>
-        <p class='centrado textGrande'><a class=blanco href=modificarUsuario.php> Modificar Perfil </a>
-    	</p>
-    </div>
+          <p class='centrado textGrande'><a class=blanco href=modificarUsuario.php> Modificar Perfil </a>
+      	  </p>
+        </div>
     </div>
     
-
 	</div>
 	
 <?php

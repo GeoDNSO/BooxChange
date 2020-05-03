@@ -65,6 +65,7 @@ foreach ($librosTienda as $libro) {
     $autor = $libro->getAutor();
     $valoracion = $libro->getValoracion();
     $descripcion = $libro->getDescripcion();
+    $genero = $libro->getGenero();
 
     if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
@@ -83,6 +84,14 @@ foreach ($librosTienda as $libro) {
         echo "<div class=atributos>";
         echo "<p class=titulo> $titulo </p>";
         echo "<p class='autor gris'>$autor</p>";
+        if ($valoracion == null){
+        	 echo "<p>Valoracion: libro no valorado aún.</p>";
+        }
+        else{
+        	echo "<p>Valoracion: $valoracion/10</p>";
+        }
+        echo "<p class=genero>Género: $genero</p>";
+      	echo "<p> Descripcion: ";
         //$valoracion;
 
         if (strlen($descripcion) < 100) {
@@ -97,7 +106,7 @@ foreach ($librosTienda as $libro) {
             echo "... ";
             echo "<a class=gris href='libroTienda.php?id=$id'>Leer más</a>";
         }
-
+        echo "</p>";
 
         //echo "<p>$desc100</p>";
         //echo "<p class=precio>Precio: $precio</p>";
@@ -147,6 +156,14 @@ foreach ($librosTienda as $libro) {
         echo "<div class=atributos>";
         echo "<p class=titulo> $titulo </p>";
         echo "<p class='autor gris'>$autor</p>";
+        if ($valoracion == null){
+        	 echo "<p>Valoracion: libro no valorado aún.</p>";
+        }
+        else{
+        	echo "<p>Valoracion: $valoracion/10</p>";
+        }
+        echo "<p class=genero>Género: $genero</p>";
+      	echo "<p> Descripcion: ";
         //$valoracion;
 
         if (strlen($descripcion) < 100) {
