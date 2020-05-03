@@ -32,6 +32,35 @@ function mejoresLibros()
     }
 }
 
+function cicloMisterio($genero){
+    $app = appBooxChange::getInstance();
+    $librosTienda = $app->librosTienda();
+
+
+    if (!empty($titulo) || !empty($genero)) {
+        $librosTienda = $app->buscarPorTitulo("",$genero);
+    }
+    else{
+        $librosTienda = $app->librosTienda();
+    }
+
+    //echo "<ul>";
+    $i = 0;
+    $MAX = 3; // El máximo de lobros que vamos a enseñar
+    foreach ($librosTienda as $libro) {
+
+        if($i == 3){
+            return;
+        }
+        $titulo = $libro->getTitulo();
+        $id = $libro->getIdLibro();
+
+        echo "<a class=gris href='libroTienda.php?id=$id'>$titulo</a><br>";
+        $i++;
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -67,15 +96,44 @@ function mejoresLibros()
         <div class="presentacion">
             <h1>De que trata Booxchange</h1>
             <p>BooxChange es una web centrada en el intercambio y compraventa de libros, para así promover y divertirse con lectura ya sea intercambiando títulos con otras personas en las mismas condiciones, debatiendo en el foro o descubriendo nuevos libros.</p>
+        
+
         </div>
+
+        <div class="showcase">
+        
+            <div class="thing">
+                <h1>Ciclo de Ciencia Ficción</h1>
+                <p>Los libros de Ciencia ficción para viajar a otras realidades</p>
+
+                <?php
+                    cicloMisterio("Ciencia Ficción");
+                ?>
+
+
+            </div>
+
+            <div class="thing">
+                <h1>Oye el BOOM de mi corazón</h1>
+                <p>Para los que se vuelven locos por leer y no tenerte</p>
+
+                <?php
+                    cicloMisterio("Romántico");
+                ?>
+
+
+            </div>
+        </div>
+
+
     </div>
 
+    
 
-    <?php
-    include("./includes/comun/footer.php");
-    ?>
 
 </body>
-
+    <?php
+        include("./includes/comun/footer.php");
+    ?>
 
 </html>
