@@ -1,313 +1,310 @@
+
 /*Tienda*/
 
-.box {
-    width: 80%;
-    margin: 0 auto;
-    margin-left: 12%;
-    display: flex;
-    flex-wrap: wrap;
+.box{
+width: 80%;
+margin: 0 auto;
+margin-left:12%;
+display: flex;
+flex-wrap: wrap;
 }
 
-.libro {
-    padding: 25px 35px 30px 35px;
-    width: 38%;
-    height: auto;
-    margin: 2%;
-    background-color: #e6e6e6;
-    box-shadow: 3px 3px 8px #808080, -3px -3px 8px #ffffff;
-    border-radius: 15px;
+.libro{
+padding: 25px 35px 30px 35px;
+width:38%;
+height: auto;
+margin:2%;
+background-color:  #e6e6e6;
+box-shadow: 3px 3px 8px #808080,
+            -3px -3px 8px #ffffff;
+border-radius: 15px;
 }
 
-.botones {
-    width: 100%;
-    padding: 0px 12px 0px 12px;
-    margin-left: 6%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.botones{
+width: 100%;
+padding: 0px 12px 0px 12px;
+margin-left: 6%;
+margin-top: 2%;
+margin-bottom: 1%;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
 }
 
-.fila {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+
+
+.fila{
+width: 100%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
 }
 
-.enlace {
-    padding: 16px 20px 20px 20px;
-    width: 30%;
-    height: auto;
-    margin: 2%;
-    margin-left: 15px !important;
-    background-color: #3385ff;
-    border-radius: 27px;
+
+.enlace{
+padding: 16px 20px 20px 20px;
+width:30%;
+height: auto;
+margin:2%;
+margin-left: 15px !important;
+background-color:  #3385ff;
+border-radius: 27px;
 }
 
-.enlace a {
+.enlace a{
     text-decoration: none;
 }
 
-.enlace:hover {
+.enlace:hover{
     background-color: rgb(114, 157, 236);
 }
 
-.enlace:active {
+.enlace:active{
     background-color: rgb(82, 119, 185);
 }
 
-.agotado {
-    padding: 16px 20px 20px 20px;
-    width: 170px;
-    height: auto;
-    margin: 2%;
-    margin-left: 15px !important;
-    background-color: rgb(114, 157, 236);
-    border-radius: 27px;
+.agotado{
+	padding: 16px 20px 20px 20px;
+	width:170px;
+	height: auto;
+	margin:2%;
+	margin-left: 15px !important;
+	background-color:  rgb(114, 157, 236);
+	border-radius: 27px;
 }
 
-.nologin {
-    width: 100%;
-    padding: 5px 0px 0px 0px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.nologin{
+width: 100%;
+padding: 5px 0px 0px 0px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
 }
 
-.info {
-    padding: 16px 20px 20px 20px;
-    width: 38%;
-    height: auto;
-    margin: 1%;
-    margin-left: 15px !important;
-    background-color: #4d94ff;
-    border-radius: 27px;
+.info{
+	padding: 16px 20px 20px 20px;
+width:38%;
+height: auto;
+margin:1%;
+margin-left: 15px !important;
+background-color:  #4d94ff;
+border-radius: 27px;
 }
 
-.compra {
-    padding: 16px 20px 20px 20px;
-    width: 30%;
-    height: auto;
-    margin: 1%;
-    margin-left: 15px !important;
-    background-color: #4d94ff;
-    border-radius: 27px;
+.compra{
+	padding: 16px 20px 20px 20px;
+width:30%;
+height: auto;
+margin:1%;
+margin-left: 15px !important;
+background-color:  #4d94ff;
+border-radius: 27px;
 }
 
-.euros {
-    font-size: 20px;
+.euros{	
+	font-size: 100%;
 }
 
-.imagen {
-    padding: 5px 10px 5px 10px;
-    width: 25%;
-    height: auto;
-    margin: 2%;
+.imagen{
+padding: 5px 10px 5px 10px;
+width:25%;
+height: auto;
+margin:2%;
 }
 
-.atributos {
-    padding: 10px 15px 15px 15px;
-    width: 51%;
-    height: auto;
-    margin: 2%;
+.atributos{
+padding: 10px 15px 15px 15px;
+width:51%;
+height: auto;
+margin:2%;
 }
 
-.blanco {
-    color: #ffffff !important;
+.blanco{
+	color: #ffffff !important;
 }
 
-.grisClaro {
-    color: #d9d9d9 !important;
+.grisClaro{
+	color: #d9d9d9 !important;
 }
 
-.gris {
-    color: #1a1a1a !important;
+.gris{
+	color: #1a1a1a !important;
 }
 
-.titulo {
-    margin-top: 2%;
-    font-size: 18px;
-    font-weight: bold;
+.titulo{
+	margin-top:2%;
+	font-size: 18px;
+	font-weight: bold;
 }
 
-.precio {
-    padding: 11.5px 17px 15.5px 17px;
-    width: 15%;
-    margin: 2%;
-    margin-left: 0px !important;
-    background-color: #ebe4e0;
-    border-radius: 150px;
-    border-style: solid;
-    border-color: #fbb750;
-    border-width: 5.5px;
+.genero{
+	margin-top: 1.25%;
+	margin-bottom: 1.25%;
 }
 
-.centrado {
-    text-align: center;
+.precio{
+	padding: 11.5px 17px 15.5px 17px;
+	width:15%;
+	margin:2%;
+	margin-left:0% !important;
+	background-color:  #ebe4e0;
+	border-radius: 150px;
+	border-style: solid;
+	border-color: #fbb750;
+ 	border-width: 5.5px;
 }
 
-.aviso {
-    margin: 0 auto;
-    margin-top: 1% !important;
-    margin-bottom: 2.5% !important;
-    padding: 18px 20px 20px 38px;
-    width: 69%;
-    height: auto;
-    background-color: #3385ff;
-    box-shadow: 3px 3px 8px #808080, -3px -3px 8px #ffffff;
-    border-radius: 15px;
+.centrado{
+	text-align: center;
 }
 
-.autor {
-    margin-top: 1%;
-    margin-bottom: 2%;
+.aviso{
+	margin: 0 auto;
+	margin-top: 1% !important;
+	margin-bottom: 2.5% !important;
+	padding: 18px 20px 20px 38px;
+	width:69%;
+	height: auto;
+	background-color:  #3385ff;
+	box-shadow: 3px 3px 8px #808080,
+	            -3px -3px 8px #ffffff;
+	border-radius: 15px;
+}
+
+.autor{
+	margin-top: 1%;
+	margin-bottom: 3%;
 }
 
 /*Usuario*/
 
-.datos {
-    padding: 20px 20px 30px 25px;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 3% !important;
-    height: auto;
-    background-color: #e6e6e6;
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 4% !important;
+.datos{
+	padding: 20px 20px 30px 25px;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 3% !important;
+	height: auto;
+	background-color:  #e6e6e6;
+	border-radius: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 4% !important;
 }
 
-.fondo {
-    background-color: black;
-    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/77/25/U8ETq4.jpg) !important;
-    padding: 25px 35px 30px 35px;
-    margin: 0 auto;
+.fondo{
+	background-color: black;
+	background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/77/25/U8ETq4.jpg) !important;
+	padding: 25px 35px 30px 35px;
+	margin: 0 auto;
 }
 
-.infoUsuario {
-    padding: 0px 15px 15px 40px;
-    width: 40%;
-    height: auto;
-    margin: 2%;
-    margin-left: 18% !important;
-    margin-top: 3.5% !important;
+.infoUsuario{
+padding: 0px 15px 15px 15px;
+width: 40%;
+height: auto;
+margin:2%;
+margin-left: 18% !important;
+margin-top: 3.5% !important;
 }
 
-.fotoUsuario {
-    padding: 5px 10px 5px 10px;
-    width: 20%;
-    height: auto;
-    margin: 2%;
-    margin-top: 3.5% !important;
-    margin-left: 7% !important;
+.fotoUsuario{
+	padding: 5px 10px 5px 10px;
+	width:20%;
+	height: auto;
+	margin:2%;
+	margin-top: 3.5% !important;
+	margin-left: 7% !important;
 }
 
-.marginLeft {
-    margin-left: 13% !important;
-    font-size: 18px;
+.marginLeft{
+	margin-left:13% !important;
+	font-size: 18px;
 }
 
-.marginBottom {
-    margin-bottom: 1%;
-    margin-top: 1%;
-    font-size: 20px;
+.marginBottom{
+	margin-bottom:1%;
+	margin-top: 1%;
+	font-size: 20px;
 }
 
-.textGrande {
-    font-size: 18px;
+.textGrande{
+	font-size: 18px;
 }
 
-.arriba {
-    margin-bottom: 1%;
-    margin-top: 2% !important;
-    font-size: 20px;
+.arriba{
+	margin-bottom:1%;
+	margin-top: 2% !important;
+	font-size: 20px;
 }
-.modButt {
-    padding: 16px 20px 20px 20px;
-    width: 25%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 4%;
-    margin-bottom: 3%;
-    background-color: #3385ff;
-    border-radius: 27px;
-    transition: all 0.3s ease 0s;
-}
-
-.modButt:hover {
-    background-color: #33ff81;
+.modButt{
+padding: 16px 20px 20px 20px;
+width:30%;
+height: auto;
+margin:0 auto;
+margin-top: 4%;
+margin-bottom: 3%;
+background-color:  #3385ff;
+border-radius: 27px;
+transition: all 0.3s ease 0s;
 }
 
-.modButt:active {
-    background-color: #36b165;
+.modButt:hover{
+    background-color:  #33ff81;    
 }
 
-.modButt a {
+.modButt:active{
+    background-color:  #36b165;    
+}
+
+
+.modButt a{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1050px) {
-    .datos {
-        width: 90%;
-        flex-direction: column;
+@media only screen and (max-width: 650px){
+	.datos{
+		width:auto;
+	}
+	.fotoUsuario{
+	margin: 0 auto !important;
+	}
+}
 
+@media only screen and (max-width: 1000px) {
 
-    }
+	/*TIENDA*/
+	.enlace{
+		width:auto;
+	}
+	.libro{
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+	}
+	.precio{
+		width:auto;
+	}
+	.imagen{
+		width:auto;
+	}
 
+	/*USUARIO*/
+	.modButt{
+		width:auto;
+	}
 
-    .fotoUsuario {
-        padding: 0px;
-        margin: 0px;
+	.infoUsuario{
+		width:auto;
+		margin-left: auto;
+	}
 
-        width: auto;
+	.fotoUsuario{
+		width:auto;
+	}
 
-        align-self: center;
-      
-        margin-top: 0% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    .fotoUsuario img{
-        padding: 0px;
-        margin: 0px;
-        
-        height: auto;
-        
-        margin-top: 0% !important;
-        margin-left: 0% !important;
-        margin-right: 0% !important;
-    }
-
-    .infoUsuario{
-        padding: 0px;
-        margin: 0px;
-
-        width: 100%;
-        align-content: center;
-        text-align: center;
-
-        margin-top: 0% !important;
-        margin-left: 0% !important;
-
-    }
-
-    .infoUsuario ul{
-        align-content: center;
-        text-align: center;
-        margin-top: 0% !important;
-        margin-left: 0% !important;
-    }
-
- 
-    .infoUsuario li{
-        list-style: none;
-
-        margin-top: 0% !important;
-        margin-left: 0% !important;
-    }
 }

@@ -36,7 +36,7 @@
             $fechaDeCreacion = $us -> getFechaDeCreacion();
             $rol = $us -> getRol();
             echo "<div class='listaAdminlista'>";
-            echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' height='100' width='100'></div>";
+            echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' class='listaAdminFoto'></div>";
             echo "<div><li><ul>
             <li>Nombre: $nombreReal </li>
             <li>Correo: $correo </li>

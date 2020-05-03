@@ -170,10 +170,11 @@
 
     margin-left: 0.5rem;
 
-    width: 75%;
-    height: 100%;
+    width: 100%;
+    height: 32rem;
 
     overflow: hidden;
+    background-color: rgb(197, 197, 190);
 
     border: black;
     border-style: solid;
@@ -324,6 +325,7 @@
     flex-direction: row;
     border-right-width: 8px;
     border-left-width: 16px;
+   
 }
 
 .messages li:first-child {
@@ -341,7 +343,7 @@
     pointer-events: none;
 }
 
-.messages li span {
+.messages li .textspanChat{
     background: #eee;
     padding: 8px;
     position: relative;
@@ -355,7 +357,7 @@
     word-wrap: break-word;
 }
 
-.messages li span:before {
+.messages li .textspanChat:before {
     content: "";
     position: absolute;
     left: -8px;
@@ -367,7 +369,7 @@
     pointer-events: none;
 }
 
-.messages li.mine span {
+.messages li.mine .textspanChat {
     background: none;
     color: white;
 }
@@ -385,7 +387,36 @@
     background-color: black;
 }
 
-@media only screen and (max-width: 800px) {
+.chatFoto{
+    width: 25rem;
+    height: 25rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.messages li .hourspanChat{
+    font-size: 0.7rem;
+    float: right;
+    padding-top: 10px;
+    color: rgb(231, 231, 231);
+
+}
+.otherUserMessage span .hourspanChat{
+    color: rgb(136, 129, 129);
+}
+.chatCenter span{
+    border: 32rem solid white;
+    border-style: none none none solid;
+}
+
+.messages .chatCenter .textspanChat{
+    background-color: rgb(165, 184, 224);
+    color: rgb(39, 10, 71);
+}
+
+@media only screen and (max-width: 1000px) {
     .currentUserMessage,
     .otherUserMessage {
         font-size: 1rem;
@@ -398,6 +429,7 @@
 
     .mainUserCurrentChat {
         width: 100%;
+        height: 29rem;
     }
 
     .textoChat textarea {
@@ -409,4 +441,8 @@
         padding: 0.2rem;
     }
 
+    .chatFoto{
+        width: 10rem;
+        height: 10rem;
+    }
 }

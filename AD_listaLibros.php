@@ -67,7 +67,7 @@
             $unidades = $libro -> getUnidades();
             $fechaDePublicacion = $libro -> getFechaPublicacion();
             echo "<div class='listaAdminlista'>";
-            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro'  height='100' width='100'></div>";
+            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro' class='listaAdminFoto'></div>";
             echo "<li><ul>
             <li>Titulo del Libro: $titulo</li>
             <li> Autor: $autor </li>
