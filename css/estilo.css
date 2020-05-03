@@ -15,6 +15,7 @@
 @import url("discusiones.css");
 @import url("footer.css");
 @import url("chat.css");
+@import url("ofertas.css");
 
 *::selection {
     background: var(--bgScroll2);

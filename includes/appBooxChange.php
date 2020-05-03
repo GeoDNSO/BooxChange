@@ -590,5 +590,17 @@ class appBooxChange
         $bdBooxChange = DAOChat::getInstance();
         return $bdBooxChange->getChatById($id);
     }
+
+    public function contadorComentarios($id_Discusion){
+        $bdBooxChange = DAOComentarios::getInstance();
+        $listaComentariosDiscusion = $bdBooxChange->getAllComentarios($id_Discusion);
+        return count($listaComentariosDiscusion);
+    }
+
+    public function contadorDiscusiones($tema){
+        $bdBooxChange = DAODiscusion::getInstance();
+        $listaDiscusionesTema = $bdBooxChange->getAllDiscusiones($tema);
+      return count($listaDiscusionesTema);
+    }
     
 }

@@ -45,7 +45,7 @@
         </div>
 
         <div class="footerBox">
-            <a href="quienesSomos.php"> Quienes Somos </a>
+            <a href="quienesSomos.php"> Quiénes Somos </a>
         </div>
 
     </div>

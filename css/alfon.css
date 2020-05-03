@@ -252,3 +252,27 @@ textarea.line{
   outline: none;
   color: rgb(0, 0, 0);
 }
+
+
+@media only screen and (max-width: 1200px) {
+    #reg{
+        width: 75%;
+    }
+
+    .line::placeholder{
+        font-size: 1rem;
+    }
+    input[type="text"].line, input[type="file"]{
+        font-size: 1rem;
+    }
+
+    .intercambioAlfa, .intercambiOmega{
+        width: 75%;
+        font-size: 1rem;
+    }
+
+
+
+
+
+}

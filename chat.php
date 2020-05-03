@@ -92,24 +92,28 @@ function mensajesChat()
 
         $mensajes = $app->getChatTexto($idChat);
 
-
+        echo "<ol class='messages'>";
         foreach ($mensajes as $mensaje) {
             $idUserMensaje = $mensaje->getIdUsuario();
             $textoMensaje = $mensaje->getTexto();
             $fechaMensaje = $mensaje->getFecha();
 
             
-
+            
             if ($idUserMensaje == $_SESSION["id_Usuario"]) {
-                echo "<div class='currentUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div>";
+                echo "<li class='currentUserMessage mine'> <span> $textoMensaje   from $idUserMensaje   y $fechaMensaje </span> </li>";
+                // echo "<li> <div class='currentUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             } else {
-                echo "<div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div>";
+                echo "<li  class='otherUserMessage'> <span> $textoMensaje   from $idUserMensaje   y $fechaMensaje </span> </li>";
+                //echo "<li> <div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             }
+            
         }
-
+        echo "<ol>";
         if (empty($mensajes)) {
             echo "<div class='chatNoHayMensajes'> Aun no hay mensajes, empieza a chatear </div>";
         }
+       
     } else {
         echo "<div class='mainChatEmpty'> VACIO(Añadir fondo...) </div>";
     }
