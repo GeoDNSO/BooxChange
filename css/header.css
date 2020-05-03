@@ -130,8 +130,13 @@ header {
 
 /*DROP DOWN MENU*/
 
+header ul .userNameHeader{
+    margin-left: 0rem;
+}
+
 .arrowUser {
-    margin-left: 1rem;
+    margin-left: 4px;
+    margin-bottom: 1px;
     transform: rotate(0deg);
 
     fill: white; /*Color de la flecha*/

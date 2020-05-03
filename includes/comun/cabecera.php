@@ -29,7 +29,7 @@ function perfilUsuario()
         $app = appBooxChange::getInstance();
         $numNotificaciones = $app->notificacionesUsuario($_SESSION["id_Usuario"]);
         $notificacionesCab = ($numNotificaciones == 0) ? "" : " ($numNotificaciones)";
-        echo $_SESSION['nombreReal'];
+        echo "<span class='userNameHeader'>".$_SESSION['nombreReal']."</span>";
         echo '<svg class="arrowUser" width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#0BC4E2" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>';
 
         echo "<ul>";

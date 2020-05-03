@@ -15,52 +15,58 @@ function ofertas()
         $app = appBooxChange::getInstance();
         $ofertas = $app->ofertasUsuario($_SESSION["id_Usuario"]);
 
+        $arrIdOfertas = array();
+
         foreach ($ofertas as $oferta) {
             $idOferta = $oferta->getId();
             $idLibro1 = $oferta->getIdLibro1();
 
-            //DATOS LIBRO
-            $libro = $app->getLibroIntercambio($idLibro1);
+            if (!in_array($idLibro1, $arrIdOfertas)) {
+                //DATOS LIBRO
+                $arrIdOfertas[] = $idLibro1;
 
-            $idLibro = $libro->getIdLibroInter();
-            $titulo = $libro->getTitulo();
-            $idUsuario = $libro->getIdUsuario();
-            $imagen = $libro->getImagen();
-            $autor = $libro->getAutor();
-            $desc = $libro->getDescripcion();
-            $genero = $libro->getGenero();
-            $fecha = $libro->getFecha();
+                $libro = $app->getLibroIntercambio($idLibro1);
 
-            $numOfertas = $app->getNumOfertas($idLibro);
-            echo "<div class='ofertaConcreta'>";
-            $str_oferta = ($numOfertas == 1) ? "oferta" : "ofertas";
+                $idLibro = $libro->getIdLibroInter();
+                $titulo = $libro->getTitulo();
+                $idUsuario = $libro->getIdUsuario();
+                $imagen = $libro->getImagen();
+                $autor = $libro->getAutor();
+                $desc = $libro->getDescripcion();
+                $genero = $libro->getGenero();
+                $fecha = $libro->getFecha();
+
+                $numOfertas = $app->getNumOfertas($idLibro);
+                echo "<div class='ofertaConcreta'>";
+                $str_oferta = ($numOfertas == 1) ? "oferta" : "ofertas";
 
 
-            echo '<div class="imagenLibroOferta">';
-            echo "<img src='$imagen'> </img>";
-            echo '</div>';
+                echo '<div class="imagenLibroOferta">';
+                echo "<img src='$imagen'  alt='Imagen Libro'> </img>";
+                echo '</div>';
 
-            echo '<div class="contenidoLibroOferta">';
-            echo "    <h2> $titulo </h2>";
-            echo "    <h4> $genero</h3>";
-            echo "    <p>$desc</p>";
-            echo '</div>';
+                echo '<div class="contenidoLibroOferta">';
+                echo "    <h2> $titulo </h2>";
+                echo "    <h4> $genero</h3>";
+                echo "    <p>$desc</p>";
+                echo '</div>';
 
-            echo '<div class="botonVerOfertaLibro">';
-            echo "<a href='ofertasIntercambio.php?id=$idLibro1' class='notification'>";
-            echo '<span>Ver Ofertas</span>';
-            if($numOfertas > 0){
-                echo "<span class='badge'>$numOfertas</span>";
+                echo '<div class="botonVerOfertaLibro">';
+                echo "<a href='ofertasIntercambio.php?id=$idLibro1' class='notification'>";
+                echo '<span>Ver Ofertas</span>';
+                if ($numOfertas > 0) {
+                    echo "<span class='badge'>$numOfertas</span>";
+                }
+                echo '</a>';
+                echo '</div>';
+
+
+
+                //echo "Tu libro $titulo, tiene $numOfertas $str_oferta<br>";
+                //echo "<a href='ofertasIntercambio.php?id=$idLibro1'>Ver Ofertas </a> <br>";
+
+                echo " </div> ";
             }
-            echo '</a>';
-            echo '</div>';
-
-
-
-            //echo "Tu libro $titulo, tiene $numOfertas $str_oferta<br>";
-            //echo "<a href='ofertasIntercambio.php?id=$idLibro1'>Ver Ofertas </a> <br>";
-
-            echo " </div> ";
         }
     } else {
         echo "<p> No puede realizar ofertas si no está logeado </p>";

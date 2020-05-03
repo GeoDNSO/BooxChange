@@ -11,15 +11,30 @@ $app = appBooxChange::getInstance();
 $idLibroQuerido = intval($_GET["libroQuerido"]);
 
 $titulo = $_POST["titulo"];
-$fotoLibro = $_POST["fotoLibro"];
+
 $autor = $_POST["autor"];
 $genero = $_POST["genero"];
 $desc = $_POST["descripcion"];
 
-        
-        
+
+//Subir imagen al servidor
+$fotoBD = "";
+var_dump($_FILES["fotoLibro"]);
+if(isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != ""){
+    $fotoBD =  (IMG_DIRECTORY_LIBROS_INTERCAMBIO . $_FILES["fotoLibro"]["name"]);
+    $fotoBD = str_replace("\\", "/", $fotoBD);
+
+    $archivoSubida = (SERVER_DIR . $fotoBD);
+    move_uploaded_file( $_FILES["fotoLibro"]['tmp_name']  , $archivoSubida);
+}else{
+    $fotoBD .= (IMG_DIRECTORY_LIBROS_INTERCAMBIO . IMG_DEFAULT_LIBRO);
+}
+
+
+
+
 //Damos valores "Nulos" a id y fecha después se omitirán
-$libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoLibro, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
+$libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
 
 $libroQuerido = $app->getLibroIntercambio($idLibroQuerido);
 

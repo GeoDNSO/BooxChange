@@ -35,12 +35,12 @@ class DAOLibroIntercambio extends DAO
         $autor = $libroMisterioso->getAutor();
         $idUser = $libroMisterioso->getIdUsuario();
         $imagen = $libroMisterioso->getImagen();
+
         $titulo = $libroMisterioso->getTitulo();
         $desc = $libroMisterioso->getDescripcion();
         $genero = $libroMisterioso->getGenero();
         $intercambiado = $libroMisterioso->getIntercambiado();
         $esOferta = $libroMisterioso->getOfertado();
-
         //id y fecha tiene valores por defecto y automaticos
         $sql = "INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
                 VALUES ('', '$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";

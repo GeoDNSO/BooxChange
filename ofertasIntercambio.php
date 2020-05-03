@@ -35,6 +35,18 @@ function ofertas()
             $idLibro1 = $oferta->getIdLibro1();
             $idLibro2 = $oferta->getIdLibro2();
 
+
+            $libro1 = $app->getLibroIntercambio($idLibro1);
+
+            $idLibro1 = $libro1->getIdLibroInter();
+            $titulo1 = $libro1->getTitulo();
+            $idUsuario1 = $libro1->getIdUsuario();
+            $imagen1 = $libro1->getImagen();
+            $autor1 = $libro1->getAutor();
+            $desc1 = $libro1->getDescripcion();
+            $genero1 = $libro1->getGenero();
+            $fecha1 = $libro1->getFecha();
+
             //HAY QUE BUSCAR LOS DATOS DEL 2º LIBRO Y MOSTRARLO
 
             //DATOS LIBRO
@@ -54,16 +66,54 @@ function ofertas()
             $usuario = $app->getUserById($idUsuario2);
             $nombreUsuario = $usuario->getNombreReal();
 
-            echo "<div>";
-            echo "Fecha: $fecha2 ";
-            echo "Lo ofrece: $nombreUsuario";
-            echo "$titulo2 ";
-            echo "Autor: $autor2 ";
-            echo "Genero: $genero2 ";
-            echo "$desc2 ";
-            echo "<a href='./includes/procesos/procesarOferta.php?aceptado=1&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Aceptar </a> ";
-            echo "<a href='./includes/procesos/procesarOferta.php?aceptado=0&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Rechazar </a> ";
+            echo "<div class='libroOfertaConcreta'>";
+
+
+            //Libro que ofreces
+            echo "<div class='tuLibroOferta'>";
+            echo "<div class='imagenLibroOferta'><img src='$imagen1' alt='Imagen Libro'> </img></div>";
+
+            echo '<div class="contenidoLibroOferta">';
+
+            echo "<h3>$titulo1 de $autor1</h3>";
+            echo "<h4>Subido por ti el $fecha1 </h4>";
+            echo "<h5> Género: $genero1 </h5>";
+            echo " <p> $desc1 </p>";
+            echo "</div>";
+
+            echo "</div>";
+
+
+            //Libro que te ofrecen
+            echo "<div class='otroLibroOferta'>";
+
+            echo "<div class='imagenLibroOferta'><img src='$imagen2' alt='Imagen Libro'> </img>";
+            
+            echo "<div class='botonesOferta'>";
+            echo "<a class='botonAceptar' href='./includes/procesos/procesarOferta.php?aceptado=1&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Aceptar </a> ";
+            echo "<a class='botonRechazar' href='./includes/procesos/procesarOferta.php?aceptado=0&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Rechazar </a> ";
+            echo "<a class='botonChat' href='includes/procesos/crearChat.php?idUserChat=$idUsuario2'>Chat</a>";
+            echo "</div>";
+
+            echo "</div>";
+
+            echo '<div class="contenidoLibroOferta">';
+            
+            echo "<h3>$titulo2 de $autor2</h3>";
+            echo "<h4>Ofrecido por $nombreUsuario el $fecha2 </h4>";
+            echo "<h5> Género: $genero2 </h5>";
+            echo " <p> $desc2 </p>";
+           
             echo "</div> ";
+
+            echo "</div> ";
+
+
+            //FIn div libroOfertaConcreta
+            echo "</div>";
+
+
+            
         }
     } else {
         echo "<p> No puede realizar ofertas si no está logeado </p>";
@@ -89,11 +139,15 @@ include("includes/comun/cabecera.php");
 
 <body>
 
-    <?php
+    <div class="mainOfertasIntercambio">
+        <?php
 
-    ofertas();
+        ofertas();
 
-    ?>
+        ?>
+
+    </div>
+
 
 </body>
 

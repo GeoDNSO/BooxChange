@@ -16,6 +16,7 @@
 @import url("footer.css");
 @import url("chat.css");
 @import url("ofertas.css");
+@import url("ofertasIntercambio.css");
 
 *::selection {
     background: var(--bgScroll2);
