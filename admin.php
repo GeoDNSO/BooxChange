@@ -1,5 +1,5 @@
 <?php
-    require_once("./includes/config.php");
+require_once("./includes/config.php");
 ?>
 
 
@@ -15,10 +15,22 @@
 
 
 <?php
-    include("./includes/comun/cabecera.php");
-    include("./includes/comun/funcionesAdmin.php");
-    include("./includes/comun/footer.php");
+include("./includes/comun/cabecera.php");
+include("./includes/comun/funcionesAdmin.php");
 ?>
 
+<body>
+
+    <div class="helloAdmin">
+       
+
+    </div>
+
+</body>
+
+<?php
+
+include("./includes/comun/footer.php");
+?>
 
 </html>

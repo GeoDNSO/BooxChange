@@ -40,6 +40,7 @@ class DAOTema extends DAO{
             $TTema = new TTema($fila[BD_TEMA], $fila[BD_TEMA_DESC], $fila[BD_TEMA_IMAGEN]);
             $array[] = $TTema;
         }
+
         return $array;
     }
 }

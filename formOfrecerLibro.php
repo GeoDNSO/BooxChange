@@ -46,7 +46,7 @@ function formulario(){
 
     global $app, $idLibroIntercambio;
 
-    $html = "<form method='post' action='includes/procesos/procesarSubidaOferta.php?libroQuerido=$idLibroIntercambio'>";
+    $html = "<form class='formOfrecerClass' method='post' action='includes/procesos/procesarSubidaOferta.php?libroQuerido=$idLibroIntercambio'>";
 
 
 
