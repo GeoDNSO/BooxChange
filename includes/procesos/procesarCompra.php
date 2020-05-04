@@ -34,6 +34,6 @@ $idUsuario = $usuario->getIdUsuario();
 
 $app->procesarCompra($idUsuario ,$libro, $udAComprar, $numTarjeta);
 
-header("Location: ../../index.php");
+header("Location: ../../agradecimiento.php");
 
 ?>

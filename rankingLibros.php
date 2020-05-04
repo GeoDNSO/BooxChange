@@ -20,7 +20,7 @@ function ranking()
         $autor = $libro->getAutor();
         $idLibro = $libro->getIdLibro();
 
-        echo "<li><mark><a href='libroTienda.php?id=$idLibro'> $titulo</a></mark><small>$autor</small><small>$valoracion/10</small></li>";
+        echo "<li><mark><a href='libroTienda.php?id=$idLibro'> $titulo</a></mark><small>$autor</small><small>$valoracion/5</small></li>";
     }
 
     echo "</ol></div>";
