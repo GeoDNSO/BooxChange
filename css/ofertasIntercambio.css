@@ -35,6 +35,7 @@
     );
 }
 
+
 .libroOfertaConcreta h3 {
     font-size: 2rem;
 }
@@ -216,7 +217,6 @@
     }
 
     .otroLibroOferta .imagenLibroOferta {
-
         flex-direction: row;
         margin-right: 11rem;
         margin-top: 0.5rem;

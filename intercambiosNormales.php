@@ -12,7 +12,7 @@ function printBooks()
     $librosIntercambio = $app->getLibrosIntercambiosDisponibles();
 
     if (count($librosIntercambio) == 0) {
-        echo "<p> Parece que no hay libros para intercambiar, por qué no ofreces tú uno? Puedes hacerlo en con opción de Subir Libro Para Intercambiar </p> <br>";
+        echo "<p> Parece que no hay libros para intercambiar, ¿Por qué no ofreces tú uno? Puedes hacerlo con la opción de <span>Subir Libro</span> que verás en la barra de usuario, tendrás que rellenar un sencillo formulario y tu libro estará a la vista del resto de usuarios</p> <br>";
     } else {
         foreach ($librosIntercambio as $libro) {
             $idLibro = $libro->getIdLibroInter();

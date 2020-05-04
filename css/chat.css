@@ -50,7 +50,7 @@
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    align-self: center;
+    align-self: flex-start;
 
     background-color: pink;
     width: 20%;

@@ -60,7 +60,7 @@ function textoEnvioChat()
 
         echo '</form>';
     } else {
-        echo "¿Iniciar un chat?";
+        //echo "¿Iniciar un chat?";
     }
 }
 
@@ -120,7 +120,7 @@ function mensajesChat()
         }
        
     } else {
-        echo "<div class='mainChatEmpty'> <img src='./imagenes/IconoChat.png' alt='adas' class='chatFoto'> </div>";
+        echo "<div class='mainChatEmpty'> <img src='./imagenes/IconoChat.png' alt='Imagen Chat Lobby' class='chatFoto'> </div>";
     }
 }
 

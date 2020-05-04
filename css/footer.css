@@ -3,6 +3,10 @@ footer{
     width:100%;
     color: white;
 
+
+    display: block;
+    bottom: 0;
+
 }
 .footerTitle{
     margin: auto;

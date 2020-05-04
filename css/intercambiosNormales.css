@@ -59,6 +59,22 @@
     height: 10rem;
 }
 
+
+.tiendaLibrosInter p{
+    font-size: 1.5rem;
+
+    width: 50%;
+    padding: 0.3rem;
+    border-radius: 1rem;
+
+    background-color: rgb(234, 245, 187);
+}
+
+
+.tiendaLibrosInter p span{
+    font-weight: bold;
+}
+
 /*BOTONES*/
 
 .botonesLibroInter{

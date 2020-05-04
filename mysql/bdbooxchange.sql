@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2020 a las 20:58:17
+-- Tiempo de generación: 04-05-2020 a las 18:29:25
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdbooxchange`
 --
-CREATE DATABASE IF NOT EXISTS `bdbooxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bdbooxchange`;
 
 -- --------------------------------------------------------
 
@@ -40,18 +38,6 @@ CREATE TABLE `chat` (
   `fechaActividad` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `chat`
---
-
-INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`, `fechaActividad`) VALUES
-(1, 2, 5, 9, 1, 0, '2020-04-28 14:04:00'),
-(2, 2, 5, 34, 0, 0, '2020-04-28 14:04:00'),
-(3, 5, 4, 23, 0, 0, '2020-04-28 14:04:00'),
-(4, 3, 6, 15, 0, 0, '2020-04-28 14:04:00'),
-(6, 5, 4, 2, 0, 0, '2020-04-28 14:04:00'),
-(9, 5, 1, 2, 0, 4, '2020-04-28 19:46:23');
-
 -- --------------------------------------------------------
 
 --
@@ -65,19 +51,6 @@ CREATE TABLE `comentarios` (
   `Fecha` datetime NOT NULL DEFAULT current_timestamp(),
   `Id_Discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`Id_Comentario`, `Id_Usuario`, `Texto`, `Fecha`, `Id_Discusion`) VALUES
-(1, 5, 'Comentario Dummy jeje', '2020-03-08 00:00:00', 1),
-(2, 4, 'Otro mas', '2020-03-06 00:00:00', 1),
-(3, 2, 'Pues muy bien redactao el reglamento, si señor!.', '2020-03-08 00:00:00', 1),
-(4, 1, 'Las devoluciones se harán efectivas en menos de 5 días hábiles', '2020-03-08 00:00:00', 2),
-(5, 5, 'Funciona\r\n', '2020-03-26 23:18:13', 3),
-(6, 10, 'oaidosakda\r\n', '2020-03-27 12:16:52', 3),
-(7, 10, 'sfsadhfsudifhas', '2020-03-27 12:16:56', 3);
 
 -- --------------------------------------------------------
 
@@ -95,32 +68,6 @@ CREATE TABLE `compras` (
   `fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `compras`
---
-
-INSERT INTO `compras` (`id`, `idUsuario`, `idLibro`, `unidades`, `numTarjeta`, `coste`, `fecha`) VALUES
-(1, 2, 4, 3, 10342, 0, '0000-00-00 00:00:00'),
-(2, 4, 4, 1, 1, 10, '0000-00-00 00:00:00'),
-(3, 5, 1, 4, 123456, 50, '0000-00-00 00:00:00'),
-(4, 10, 1, 1, 123123, 12.5, '0000-00-00 00:00:00'),
-(5, 10, 1, 1, 121, 12.5, '0000-00-00 00:00:00'),
-(6, 10, 1, 1, 123123, 12.5, '0000-00-00 00:00:00'),
-(7, 10, 1, 1, 234234, 12.5, '0000-00-00 00:00:00'),
-(8, 10, 1, 1, 2423, 12.5, '0000-00-00 00:00:00'),
-(9, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
-(10, 10, 1, 1, 12321, 12.5, '0000-00-00 00:00:00'),
-(11, 10, 1, 3, 232, 37.5, '0000-00-00 00:00:00'),
-(12, 10, 1, 1, 42, 12.5, '0000-00-00 00:00:00'),
-(13, 10, 1, 1, 12, 12.5, '0000-00-00 00:00:00'),
-(14, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
-(15, 10, 1, 1, 123, 12.5, '0000-00-00 00:00:00'),
-(16, 10, 1, 1, 323232, 12.5, '0000-00-00 00:00:00'),
-(17, 10, 1, 1, 34, 12.5, '0000-00-00 00:00:00'),
-(18, 5, 1, 1, 52353245, 13.5, '2020-03-27 12:14:24'),
-(19, 10, 2, 3, 4532452, 60, '2020-03-27 12:28:30'),
-(20, 10, 2, 3, 456456, 60, '2020-03-27 12:29:29');
-
 -- --------------------------------------------------------
 
 --
@@ -137,15 +84,6 @@ CREATE TABLE `discusion` (
   `NumVisitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `discusion`
---
-
-INSERT INTO `discusion` (`Id_Discusion`, `Id_Usuario_Creador`, `Fecha`, `Tema`, `Titulo`, `NumComentarios`, `NumVisitas`) VALUES
-(1, 1, '2020-03-08 12:39:07', 'Reglamento', 'Cuidado de los libros', 5, 10),
-(2, 1, '2020-03-08 12:53:07', 'FAQs', 'Contacto', 20, 57),
-(3, 5, '2020-03-26 23:17:59', 'General', 'Funciona', 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -158,16 +96,6 @@ CREATE TABLE `favoritos` (
   `Id_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `favoritos`
---
-
-INSERT INTO `favoritos` (`Id_Libro`, `Id_Favorito`, `Id_Usuario`) VALUES
-(2, 1, 2),
-(2, 2, 4),
-(4, 3, 6),
-(5, 4, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -177,19 +105,6 @@ INSERT INTO `favoritos` (`Id_Libro`, `Id_Favorito`, `Id_Usuario`) VALUES
 CREATE TABLE `genero` (
   `Genero` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `genero`
---
-
-INSERT INTO `genero` (`Genero`) VALUES
-('Ciencia Ficción'),
-('Comedia'),
-('Drama'),
-('Histórico'),
-('Infantil'),
-('Romántico'),
-('Youtubers');
 
 -- --------------------------------------------------------
 
@@ -202,14 +117,6 @@ CREATE TABLE `generolibros` (
   `idLibro` int(11) NOT NULL,
   `genero` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `generolibros`
---
-
-INSERT INTO `generolibros` (`id`, `idLibro`, `genero`) VALUES
-(1, 4, 'Drama'),
-(2, 4, 'Romántico');
 
 -- --------------------------------------------------------
 
@@ -224,20 +131,6 @@ CREATE TABLE `intercambios` (
   `Id_Intercambio` int(11) NOT NULL,
   `Fecha` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `intercambios`
---
-
-INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
-(3, 2, 1, 3, '2020-03-22 01:28:28'),
-(47, 48, 1, 23, '2020-03-22 18:01:00'),
-(52, 55, 0, 25, '2020-03-23 21:57:34'),
-(53, 60, 0, 26, '2020-03-27 12:16:25'),
-(56, 57, 0, 27, '2020-03-23 22:52:17'),
-(58, NULL, 0, 28, '2020-03-24 14:01:25'),
-(61, NULL, 0, 29, '2020-04-02 16:21:40'),
-(62, NULL, 0, 30, '2020-04-27 18:27:05');
 
 -- --------------------------------------------------------
 
@@ -264,19 +157,6 @@ CREATE TABLE `libro` (
   `FechaPublicacion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `libro`
---
-
-INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(1, 'Harry Potter', 'J.K. Rowling', 13.5, 5, NULL, 'imagenes/libros/default.jpg\r\n', '       Libro de magia mu chulo              ', 'Ciencia Ficción', 1, '2020-03-08', 'Español', 'BOOKET', 10, 3, '2020-04-16'),
-(2, 'Virtual Hero', 'El rubius', 20, 4, NULL, 'imagenes/libros/default.jpg\r\n', 'Libro del famoso youtuber elrubius', 'Youtubers', 1, '2020-03-08', 'Español', 'BOOKET', NULL, 10, '0000-00-00'),
-(3, 'El mapa de los afectos', 'Ana Merino', 15, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'Valeria, una joven maestra de escuela que tiene una relación secreta con Tom, que le lleva treinta años, se enfrenta al dilema de los sentimientos y quiere entender el significado del amor.', 'Romántico', 0, '2020-03-05', 'Español', 'BOOKET', 5, 10, '0000-00-00'),
-(4, 'A corazón abierto', 'Elvira Lindo', 17.99, NULL, NULL, 'imagenes/libros/default.jpg\r\n', 'El auge y declive de una gran pasión, el amor feroz de dos personas que parecían conjurarse en contra de una vida serena.', 'Romántico', 0, '2020-03-05', 'Español', 'DIANA', NULL, 0, '0000-00-00'),
-(5, 'Crónicas Marcianas', 'Ray Bradbury', 25.45, 4, NULL, 'imagenes/libros/default.jpg\r\n', 'Recopilación de relatos que recogen la crónica de la colonización de Marte por parte de una humanidad que huye de un mundo al borde de la destrucción. Los colonos llevan consigo sus deseos más íntimos y el sueño de reproducir en el Planeta Rojo una civilización de perritos calientes, cómodos sofás y limonada en el porche al atardecer. Pero su equipaje incluye también los miedos ancestrales, que se traducen en odio a lo diferente, y las enfermedades que diezmarán a los marcianos.', 'Ciencia Ficción', 1, '2020-03-06', 'Español', 'DIANA', 25, 0, '0000-00-00'),
-(6, 'Prueba', 'Autor', 345, NULL, NULL, 'imagenes/libros/default.jpg', ' ewrwer', 'Ciencia Ficción', 1, '2020-04-02', 'werw', 'werwre', 3, 6, '2020-04-01'),
-(11, 'Alicia en el Pais', 'No se', 3, NULL, NULL, 'imagenes/libros/default.jpg', ' hola que tal', 'Ciencia Ficción', 1, '2020-04-09', 'Español', 'No', 1, 5, '2020-04-10');
-
 -- --------------------------------------------------------
 
 --
@@ -296,27 +176,6 @@ CREATE TABLE `librointercambio` (
   `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `librointercambio`
---
-
-INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) VALUES
-(1, 'autor', 'a', 'a', 'Romántico', 5, 'Libro Intercambio', 0, 0, '0000-00-00 00:00:00'),
-(2, 'El rubius', 'imgportada/img.jpg', 'Libro de youtuber', 'Youtubers', 4, 'Virtual Hero', 1, 0, '2020-03-08 00:00:00'),
-(3, 'Ana Merino', 'imgportada/img2.jpg', 'No me acuerdo de que va jajasalu2', 'Romántico', 6, 'El mapa de los afectos', 0, 0, '2020-03-05 00:00:00'),
-(47, 'DROSS', 'nada', 'Libro Misterioso', 'Ciencia Ficción', 5, 'No es un libro', 1, 0, '2020-03-22 18:00:27'),
-(48, 'Autor', 'NO HAY', 'Libro Misterioso', 'Ciencia Ficción', 10, 'MI LIBRO', 1, 0, '2020-03-22 18:01:00'),
-(52, 'Sanderson', 'No', 'Muy bien', 'Ciencia Ficción', 5, 'Archivo de las Tormentas', 1, 0, '2020-03-23 00:07:31'),
-(53, 'Sanderson', 'nada', 'Increíble libro de Sanderson', 'Ciencia Ficción', 10, 'El Camino De Los Reyes', 1, 0, '2020-03-23 15:43:23'),
-(55, 'fdsafasdf', 'asdfdsfas', 'asdfasdfsafdsa', 'Ciencia Ficción', 10, 'fdsfsadf', 1, 0, '2020-03-23 21:27:59'),
-(56, 'Sanderson', 'nada', 'Es muy difícil de leer quiero un libro infantil', 'Ciencia Ficción', 5, 'El Imperio Final', 1, 0, '2020-03-23 22:50:10'),
-(57, 'Jerry Pinkney', 'nada', 'Toma libro, este seguro que lo entiendes, pls dame ese libro', 'Infantil', 10, 'Caperucita Roja', 1, 0, '2020-03-23 22:51:23'),
-(58, 'Desc', 'asda', 'Cambiamelo por lo que sea anda', 'Ciencia Ficción', 5, 'CSS para dummies', 0, 0, '2020-03-24 14:01:25'),
-(59, 'sdasda', 'asdasda', 'Pedazo de libro', 'Ciencia Ficción', 10, 'sdasd', 0, 0, '2020-03-24 14:02:14'),
-(60, 'Desconocido', 'no hay', 'Igual te encanta este libro, cambiamelo', 'Infantil', 5, 'Caperutcita Roja', 1, 0, '2020-03-27 12:15:55'),
-(61, 'asdasdasdad', 'imagenes/libros/default.jpg\r\n', 'asdasdasdas', 'Ciencia Ficción', 5, 'sadasdasd', 0, 0, '2020-04-02 16:21:40'),
-(62, 'asdadasdas', 'imagenes/librosIntercambio/default.jpg', 'asdasdasdasdasdasda', 'Ciencia Ficción', 1, 'asdasdasdasd', 0, 0, '2020-04-27 18:27:05');
-
 -- --------------------------------------------------------
 
 --
@@ -330,35 +189,6 @@ CREATE TABLE `mensajechat` (
   `Texto` varchar(1000) NOT NULL,
   `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `mensajechat`
---
-
-INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, `Fecha`) VALUES
-(1, 1, 2, 'Hola!', '2020-03-08 00:00:00'),
-(1, 2, 2, 'Estaba interesado en uno', '2020-03-08 00:00:00'),
-(1, 3, 2, 'De tus libros para intercambiar', '2020-03-08 00:00:00'),
-(1, 4, 5, 'Cual de todos?', '2020-03-08 00:00:00'),
-(1, 5, 2, 'El de harry potter', '2020-03-08 00:00:00'),
-(6, 6, 5, 'Hola', '2020-04-27 19:48:41'),
-(1, 10, 5, 'hola que tal', '2020-04-28 19:35:00'),
-(3, 11, 5, 'asdasda', '2020-04-28 19:38:26'),
-(3, 12, 5, 'asdasdasda', '2020-04-28 19:38:28'),
-(6, 13, 5, 'adasdad', '2020-04-28 19:40:03'),
-(6, 14, 5, 'asdadasd', '2020-04-28 19:40:05'),
-(2, 15, 5, 'dasdasdasd', '2020-04-28 19:40:08'),
-(9, 16, 5, 'asdasd', '2020-04-28 19:47:11'),
-(9, 17, 5, 'asdasd', '2020-04-28 19:47:13'),
-(9, 18, 5, 'asdfdsfasfa', '2020-04-28 19:47:48'),
-(9, 19, 5, 'hola\r\n', '2020-04-28 19:47:51'),
-(2, 20, 5, 'hola que tal', '2020-04-28 19:47:56'),
-(6, 21, 5, 'hola', '2020-04-28 19:48:02'),
-(6, 22, 5, 'hollllllllllllllllllllllllllll', '2020-04-28 19:48:08'),
-(6, 23, 5, 'holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2020-04-28 19:48:14'),
-(2, 24, 5, 'jajajajaja', '2020-04-28 19:48:22'),
-(9, 27, 5, 'asdasda', '2020-04-28 20:57:33'),
-(9, 28, 5, 'sdfsdfsfd', '2020-04-28 20:57:43');
 
 --
 -- Disparadores `mensajechat`
@@ -384,20 +214,6 @@ CREATE TABLE `notificaciones` (
   `fecha` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `notificaciones`
---
-
-INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES
-(1, 5, 'Notificación de prueba', 1, '2020-03-22 14:24:22'),
-(8, 5, 'Ya se ha completado su intercambio misterioso con el usuario user5, ha recibido el libro MI LIBRO a cambio de su libro No es un libro. Que suerte!!!', 1, '2020-03-22 18:01:00'),
-(9, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros fdsfsadf y Archivo de las Tormentas', 1, '2020-03-23 21:59:04'),
-(10, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros Archivo de las Tormentas y fdsfsadf', 1, '2020-03-23 21:59:04'),
-(11, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros Caperucita Roja y El Imperio Final', 1, '2020-03-23 22:52:17'),
-(12, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros El Imperio Final y Caperucita Roja', 1, '2020-03-23 22:52:17'),
-(13, 10, 'Ya se ha completado el intercambio entre usted y Geo, se han intercambiado los libros Caperutcita Roja y El Camino De Los Reyes', 1, '2020-03-27 12:16:25'),
-(14, 5, 'Ya se ha completado el intercambio entre usted y user5, se han intercambiado los libros El Camino De Los Reyes y Caperutcita Roja', 1, '2020-03-27 12:16:25');
-
 -- --------------------------------------------------------
 
 --
@@ -411,17 +227,6 @@ CREATE TABLE `ofertasintercambio` (
   `ofertaAceptada` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `ofertasintercambio`
---
-
-INSERT INTO `ofertasintercambio` (`id`, `idLibroIntercambio`, `idLibroOferta`, `ofertaAceptada`) VALUES
-(2, 3, 48, 1),
-(4, 52, 55, 1),
-(5, 56, 57, 1),
-(6, 58, 59, 2),
-(7, 53, 60, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -433,18 +238,6 @@ CREATE TABLE `tema` (
   `Descripcion` varchar(350) NOT NULL,
   `Imagen` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tema`
---
-
-INSERT INTO `tema` (`Tema`, `Descripcion`, `Imagen`) VALUES
-('Club de Lectura', '', ''),
-('Críticas', '', ''),
-('Devoluciones', '', ''),
-('FAQs', '', ''),
-('General', '', ''),
-('Reglamento', '', '');
 
 -- --------------------------------------------------------
 
@@ -471,17 +264,17 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Correo`, `Foto`, `Direccion`, `Nacimiento`, `Ciudad`, `FechaDeCreacion`, `Rol`) VALUES
-(1, 'admin', 'Administrador', '$2y$12$IgSk5wgr4BPD0PiSzHqGdeQau3iwvAAlSuFSA3eJNM28zKTzTlbSi', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
-(2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
-(3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
-(4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
+(1, 'admin', 'Administrador', '$2y$12$IgSk5wgr4BPD0PiSzHqGdeQau3iwvAAlSuFSA3eJNM28zKTzTlbSi', 'hola@sad.com', 'imagenes/usuarios/default.png', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
+(2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', 'imagenes/usuarios/default.png', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
+(3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', 'imagenes/usuarios/default.png', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
+(4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', 'imagenes/usuarios/default.png', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
 (5, 'Geo', 'Daniel', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', 'imagenes/usuarios/xion.gif', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
-(6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', '/fotos/fotos/img6.jpg', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
-(10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'hola', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1),
-(11, 'dani12', 'dfsdfs', '$2y$10$.HltE6BcGJWI2etJUl5PFOkkZh60tNvvtpnZIcoOEKdmxtW0VTZu.', 'asdaxdasdas', 'imagenes/usuarios/', 'asdad', '2020-04-30', 'sda', '2020-04-02 16:12:50', 1),
-(12, 'dani13', '43342', '$2y$10$RiSL6Uv3Ji5dOntxmsG3geu83lBVH8GVqqacYqs4K6kycOeOXD5yu', 'aaaaaaaaaaaaaa', 'imagenes/usuarios/librosinter.PNG', 'asdasdsadas', '2020-04-01', 'adsasdasd', '2020-04-02 16:17:32', 1),
-(13, 'user', 'Usuario', '$2y$12$ALf/uwh6wYQubFn3761HWOnzWyR6fZ6p.yEwCRCKYxK2x4exBYRNe', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 1),
-(14, 'mod', 'Moderador', '$2y$12$5UGSb62o/BgY/bto0aXMqO4pt4obvflUx8Ss3eDfw6X3RJyTCipWq', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 2);
+(6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', 'imagenes/usuarios/default.png', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
+(10, 'user5', 'pablo', '$2y$10$Ae6ouAPUoc54K5jOHozvgO2Or/8m/NpFIhkUUYYgNvwjubS/juDFy', 'asda', 'imagenes/usuarios/default.png', 'hola', '2020-02-02', 'hola', '0000-00-00 00:00:00', 1),
+(11, 'dani12', 'dfsdfs', '$2y$10$.HltE6BcGJWI2etJUl5PFOkkZh60tNvvtpnZIcoOEKdmxtW0VTZu.', 'asdaxdasdas', 'imagenes/usuarios/default.png', 'asdad', '2020-04-30', 'sda', '2020-04-02 16:12:50', 1),
+(12, 'dani13', '43342', '$2y$10$RiSL6Uv3Ji5dOntxmsG3geu83lBVH8GVqqacYqs4K6kycOeOXD5yu', 'aaaaaaaaaaaaaa', 'imagenes/usuarios/default.png', 'asdasdsadas', '2020-04-01', 'adsasdasd', '2020-04-02 16:17:32', 1),
+(13, 'user', 'Usuario', '$2y$12$ALf/uwh6wYQubFn3761HWOnzWyR6fZ6p.yEwCRCKYxK2x4exBYRNe', 'a', 'imagenes/usuarios/default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 1),
+(14, 'mod', 'Moderador', '$2y$12$5UGSb62o/BgY/bto0aXMqO4pt4obvflUx8Ss3eDfw6X3RJyTCipWq', 'a', 'imagenes/usuarios/default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 2);
 
 -- --------------------------------------------------------
 
@@ -496,18 +289,6 @@ CREATE TABLE `valoracionlibro` (
   `Comentario` varchar(100) DEFAULT NULL,
   `Id_Valoracion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `valoracionlibro`
---
-
-INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentario`, `Id_Valoracion`) VALUES
-(1, 2, 5, 'Muy buen libro, 100% recomendado', 1),
-(1, 5, 1, '', 2),
-(2, 4, 3, 'No hay derecho a que tenga que pagar ese dinero por este libro, si se puede llamar asi. Nos salen lo', 3),
-(5, 3, 5, 'No me esperaba que fuera así, lectura recomendada! Fascinante!', 4),
-(4, 2, 2, 'Buen libro para pasar las horas en el metro.', 5),
-(2, 6, 5, 'Codigo Rubiuh en la tienda del fortnite', 6);
 
 --
 -- Disparadores `valoracionlibro`
@@ -656,73 +437,73 @@ ALTER TABLE `valoracionlibro`
 -- AUTO_INCREMENT de la tabla `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `Id_Favorito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Favorito` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `generolibros`
 --
 ALTER TABLE `generolibros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id_Libro` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
 --
 ALTER TABLE `mensajechat`
-  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
 --
 ALTER TABLE `ofertasintercambio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -734,7 +515,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
 --
 ALTER TABLE `valoracionlibro`
-  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
