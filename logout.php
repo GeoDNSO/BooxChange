@@ -6,5 +6,8 @@
     $_SESSION['rol'] = -1;
     session_unset();
     session_destroy();
-    header("Location: index.php");
+
+    header("Location: despedida.php");
+
+
 ?>

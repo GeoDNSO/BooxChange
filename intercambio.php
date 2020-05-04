@@ -36,7 +36,7 @@ include("includes/comun/cabecera.php");
 
             <div class="imagenIcono">
                 <a href="intercambiosNormales.php">
-                    <img src="imagenes/IconoInterNormal.png" alt="">
+                    <img src="\imagenes\media\camion.gif" alt="">
                 </a>
             </div>
 
