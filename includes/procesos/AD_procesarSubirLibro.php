@@ -13,7 +13,7 @@ $titulolibro = $_POST["titulolibro"];
 $autor = $_POST["autor"];
 //no van los decimales, nose porque
 $precio = $_POST["precio"];
-$imagen = $_POST["imagen"];
+
 $descripcion = $_POST["descripcion"];
 $genero = $_POST['generos'];
 

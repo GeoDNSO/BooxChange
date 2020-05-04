@@ -196,12 +196,12 @@ class DAOLibro extends DAO
     public function subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
         $sql = "SELECT * FROM libro WHERE Titulo='$titulolibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-
+ 
         if (mysqli_num_rows($consulta) == 0) {
             $sql = "INSERT INTO libro (Titulo, Autor, Precio, Imagen, Descripcion, Genero, EnTienda, Fecha, Idioma, Editorial, Descuento, Unidades, FechaPublicacion) VALUES 
                                         ('$titulolibro', '$autor', '$precio', '$imagen',  '$descripcion', '$genero', '$enTienda', current_timestamp(), '$idioma', '$editorial', '$descuento', '$unidades', '$fechaDePublicacion')";
 
-            mysqli_query(self::$instance->bdBooxChange, $sql);
+            $rst = mysqli_query(self::$instance->bdBooxChange, $sql);
 
             return true;
         } else {
