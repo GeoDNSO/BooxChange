@@ -35,13 +35,26 @@ class FormularioModificarPerfil extends Form
                                     "direccion"=>$_SESSION['direccion']);
         }
 
-        $html = '<p> Nombre Real: <input type="text" name="userRealName" id= "userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
-        $html .= '<p> Correo: <input type="text" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
-        $html .= '<p> Foto: <input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/> </p>';
-        $html .= '<p> Ciudad: <input type="text" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
-        $html .= '<p> Direccion: <input type="text" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
-        $html .= '<p><input type="submit" name="accept" value="Cambiar" /></p>';
+        
 
+
+        $html= "<div class='modifPerfil'>";
+        $html .= "<p class=tituloMod>Modificar perfil</p>";
+
+        $html .= '<p>Nombre real: <input type="text" class="inputDatos" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
+
+        $html .= '<p> Correo: <input type="text" class="inputDatos" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
+
+        $html .= '<p> Ciudad: <input type="text" class="inputDatos" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
+
+        $html .= '<p> Direccion: <input type="text" class="inputDatos" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
+
+        $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/></p>';  
+
+        $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" /></p>';
+
+         
+        $html .= "</div>";
         return $html;
     }
 
