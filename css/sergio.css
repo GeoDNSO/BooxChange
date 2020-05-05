@@ -194,6 +194,7 @@
 }
 
 .estrellas {
+    width: 90%;
     direction: rtl;
     unicode-bidi: bidi-override;
     margin-top: 1rem;

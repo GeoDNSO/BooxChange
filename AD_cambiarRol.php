@@ -17,7 +17,7 @@
     include("includes/comun/cabecera.php");
 
     include("./includes/comun/funcionesAdmin.php");
-
+    echo '<div class="border">';
     use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     if (!isset($_GET['id'])) {
@@ -34,6 +34,7 @@
         $nombreReal = $user -> getNombreReal();
         $rol = $user -> getRol();
     }
+
     echo "<h3>Nombre Real: $nombreReal</h3>";
 ?>
 
@@ -43,33 +44,39 @@
         <?php
         if($rol == 0){
             echo '<input type="radio" id="0" name="rol" value="0" checked>';
-            echo '<label for="0">Admin</label>';
+            echo '<label for="0">Admin<br></label>';
             echo '<input type="radio" id="1" name="rol" value="1">';
-            echo '<label for="1">Normal User</label>';
+            echo '<label for="1">Normal User<br></label>';
             echo '<input type="radio" id="2" name="rol" value="2">';
-            echo '<label for="2">Moderator</label><br><br>';
+            echo '<label for="2">Moderator<br></label><br>';
         }else if($rol == 2){
             echo '<input type="radio" id="0" name="rol" value="0">';
-            echo '<label for="0">Admin</label>';
+            echo '<label for="0">Admin<br></label>';
             echo '<input type="radio" id="1" name="rol" value="1">';
-            echo '<label for="1">Normal User</label>';
+            echo '<label for="1">Normal User<br></label>';
             echo '<input type="radio" id="2" name="rol" value="2" checked>';
-            echo '<label for="2">Moderator</label><br><br>';
+            echo '<label for="2">Moderator<br></label><br>';
         }else{
             echo '<input type="radio" id="0" name="rol" value="0">';
-            echo '<label for="0">Admin</label>';
+            echo '<label for="0">Admin<br></label>';
             echo '<input type="radio" id="1" name="rol" value="1" checked>';
-            echo '<label for="1">Normal User</label>';
+            echo '<label for="1">Normal User<br></label>';
             echo '<input type="radio" id="2" name="rol" value="2">';
-            echo '<label for="2">Moderator</label><br><br>';
+            echo '<label for="2">Moderator<br></label><br>';
+
         }
         ?>
-        <input type="submit">
-
+        <input class="warning" type="submit" value="Cambiar">
+  
     </form>
-    <a href="AD_listaUsuarios.php"> Cancelar </a>
 
+
+    <a  href="AD_listaUsuarios.php"> Cancelar </a>
+
+</div>
 <?php 
+
+
 include("./includes/comun/footer.php");
 ?>
 </html>

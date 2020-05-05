@@ -88,7 +88,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
     <input class="line" type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
 
-    <input type="submit" value="Subir Libro">
+    <input class="send-button" type="submit" value="Subir Libro">
 
 </form>
 </div>
