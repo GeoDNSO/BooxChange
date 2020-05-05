@@ -39,9 +39,9 @@
         $precio = $libro->getPrecio();
         echo "<h3> Precio: <span>$precio </span></h3>";
         $unidades = $libro->getUnidades();
-        echo "<h3> Unidades: <span>$unidades disponibles</span></h3>";
+        echo "<h3 id='lastH3'> Unidades: <span>$unidades disponibles</span></h3>";
         if($unidades > 0){
-            echo "<a href='paginaCompra.php?id=$id'> Comprar </a>";
+            echo "<a class='libroTiendaBoton' href='paginaCompra.php?id=$id'> Comprar </a>";
         }
         else{
             echo "Existencias Agotadass";

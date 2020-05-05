@@ -33,7 +33,9 @@
     width: 90%;
     /*height: 11rem;*/
     height: auto;
+    max-height: max-content;
 
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,10 +43,13 @@
     align-items: center;
 
     margin: 0.6rem;
+    margin-top: 1.3rem;
     padding: 0.5rem;
 
     background-color: rgb(157, 222, 248);
     border-radius: 1rem;
+
+    box-shadow: 0rem 0.3rem 0.6rem grey;
 }
 
 
@@ -56,11 +61,38 @@
 .libroInter img{
 
     width: 10rem;
-    height: 10rem;
+    height: 11rem;
 }
 
+.libroInterFecha{
+    background-color: khaki;
+    position: absolute;
+    left: -1rem;
+    top: -1.3rem;
+    z-index: 2;
 
-.tiendaLibrosInter p{
+    padding: 0.2rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.2rem 0.6rem grey;
+}
+
+.libroInterUserName, .libroInterTitulo{
+    font-weight: bold;
+}
+
+.libroInterTitulo{
+    color: rgb(74, 111, 233);
+}
+
+.libroInterUserName{
+    color: rgb(47, 94, 95);
+}
+
+.libroInterAutor{
+    color: rgb(58, 184, 95);
+}
+
+p.noHayLibrosIntercambio{
     font-size: 1.5rem;
 
     width: 50%;
@@ -68,11 +100,18 @@
     border-radius: 1rem;
 
     background-color: rgb(234, 245, 187);
+    padding: 0.3rem;
+    padding-left: 0.5rem;
 }
 
 
 .tiendaLibrosInter p span{
     font-weight: bold;
+}
+
+.tiendaLibrosInter p{
+    margin-top: 0.3rem;
+    padding: 0.3rem;
 }
 
 /*BOTONES*/
@@ -95,7 +134,13 @@
 
 .botonesLibroInter .descLibroInter{
     width: 100%;
+   
 }
+
+.descLibroInter{
+    align-self: flex-start;
+}
+
 
 /*BOTONES INTERCAMBIO*/
 

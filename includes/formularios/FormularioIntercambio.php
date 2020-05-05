@@ -52,7 +52,7 @@ class FormularioIntercambio extends Form
 
 
        
-        $html .= '    <button class="send-button">Intercambiar</button>';
+        $html .= '    <button class="send-button">Subir Libro para Intercambiar</button>';
         
 
 

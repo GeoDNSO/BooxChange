@@ -12,7 +12,7 @@ function printBooks()
     $librosIntercambio = $app->getLibrosIntercambiosDisponibles();
 
     if (count($librosIntercambio) == 0) {
-        echo "<p> Parece que no hay libros para intercambiar, ¿Por qué no ofreces tú uno? Puedes hacerlo con la opción de <span>Subir Libro</span> que verás en la barra de usuario, tendrás que rellenar un sencillo formulario y tu libro estará a la vista del resto de usuarios</p> <br>";
+        echo "<p class='noHayLibrosIntercambio'> Parece que no hay libros para intercambiar, ¿Por qué no ofreces tú uno? Puedes hacerlo con la opción de <span>Subir Libro</span> que verás en la barra de usuario, tendrás que rellenar un sencillo formulario y tu libro estará a la vista del resto de usuarios</p> <br>";
     } else {
         foreach ($librosIntercambio as $libro) {
             $idLibro = $libro->getIdLibroInter();
@@ -23,25 +23,28 @@ function printBooks()
             $desc = $libro->getDescripcion();
             $genero = $libro->getGenero();
             $fecha = $libro->getFecha();
+            $dt = DateTime::createFromFormat("Y-m-d H:i:s", $fecha);
+            $horaDelMensaje = $dt->format('H:i');
+            $fechaDelMensaje = $dt->format('Y-m-d');
+           
 
             $usuario = $app->getUserById($idUsuario);
             $nombreUsuario = $usuario->getNombreReal();
 
             echo "<div class='libroInter'>";
+            echo "<span class='libroInterFecha'> Fecha: $fechaDelMensaje </span>";
 
             echo "<div class='imagenLibroInter'> <img src='$imagen' alt='Imagen de Libro'> </div>";
 
             echo "<div class='descLibroInter'>";
+           
             echo "<p>";
 
-            echo "Fecha: $fecha <br>";
-            echo "Lo ofrece: $nombreUsuario <br>";
-            echo "$titulo <br>";
-            echo "Autor: $autor <br>";
-            echo "Genero: $genero <br>";
-            echo "$desc <br>";
+            echo "<h2><span class='libroInterTitulo'>$titulo</span> de <span class='libroInterAutor'>$autor</span>, lo ofrece <span class='libroInterUserName'>$nombreUsuario</span> <h2>";
+            
+            echo "<h3>Género: $genero </h3>";
+            echo "<p> $desc </p>";
 
-            echo "</p>";
             echo "</div>";
 
             //Zona de Botones 

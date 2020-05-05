@@ -253,3 +253,28 @@
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+
+h3#lastH3{
+    margin-bottom: 1rem;
+}
+
+
+a.libroTiendaBoton{
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+    
+    transition: all 0.3s ease 0s;
+    
+    border-radius: 1.5rem;
+    background: rgb(42, 180, 235);
+}
+
+
+.libroTiendaBoton:hover{
+    background: rgb(122, 192, 219);
+}
+
+.libroTiendaBoton:active{
+    background: rgb(101, 119, 197);
+}
