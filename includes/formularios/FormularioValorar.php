@@ -27,7 +27,8 @@ class FormularioValorar extends Form
     {
         $libroId = $this->formOptions['libroId'];
 
-        $html = "<input type='hidden' name='libro' value='$libroId'>";
+        $html = "<div class='border-bigform'>";
+        $html .= "<input class='line' type='hidden' name='libro' value='$libroId'>";
         $html .= '<p class="estrellas">';
         $html .= '<input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">★</label>
         <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">★</label>
@@ -36,11 +37,11 @@ class FormularioValorar extends Form
         <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">★</label>';
         $html .= '</p>';
 
-        $html .= '<textarea placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
+        $html .= '<textarea class="line" placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
         
 
         $html .= '    <input type="submit" value="Valorar" />';
-
+        $html .= "</div>";
         return $html;
     }
 

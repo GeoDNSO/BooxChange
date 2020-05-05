@@ -125,7 +125,6 @@
         }
         echo "</ul></div>";
 
-
         $form = new FormularioValorar("valorarForm", array("action" =>"./includes/procesos/procesarValorar.php", "libroId" => $id));
         $form->gestiona();
         echo "</div>";
