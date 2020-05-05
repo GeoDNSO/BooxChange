@@ -76,7 +76,7 @@ foreach ($librosTienda as $libro) {
         //ARREGLAR el TAMAÑO cuando la imagen sea visible
         echo "<div class=imagen>";
         echo "<a href='libroTienda.php?id=$id'>";
-        echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
+        echo "<img src='$imagen' alt='Imagen del Libro' width=100%>";
         //cho "<img src='imagenes/usuarios/gon.jpg' alt='Imagen del Libro' height=100% width=100%>";
         echo "</a>";
         echo "</div>";
@@ -149,7 +149,7 @@ foreach ($librosTienda as $libro) {
         //ARREGLAR el TAMAÑO cuando la imagen sea visible
         echo "<div class=imagen>";
         echo "<a href='libroTienda.php?id=$id'>";
-        echo "<img src='$imagen' alt='Imagen del Libro' height=100% width=100%>";
+        echo "<img src='$imagen' alt='Imagen del Libro'width=100%>";
         echo "</a>";
         echo "</div>";
 
@@ -186,11 +186,13 @@ foreach ($librosTienda as $libro) {
         echo "</div>";
 
         echo "<div class=nologin>";
-        echo "<div class=info>";
-        echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Más información</a></p>";
+        echo "<div class=enlace>";
+        echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Mas información</a>";
+		echo "</p>";
         echo "</div>";
-        echo "<div class=compra>";
-        echo "<p class='blanco centrado'><a class=blanco href='login.php'>Comprar</a>*</p>";
+        echo "<div class=enlace>";
+        echo "<p class='blanco centrado'><a class=blanco href='login.php'>Comprar</a>";
+		echo "</p>";
         echo "</div>";
         echo "</div>";
         echo "</div>";

@@ -2,16 +2,16 @@
 /*Tienda*/
 
 .box{
-width: 80%;
+width: 90%;
 margin: 0 auto;
-margin-left:12%;
+margin-left:7%;
 display: flex;
 flex-wrap: wrap;
 }
 
 .libro{
 padding: 15px 10px 20px 10px;
-width:38%;
+width:42%;
 min-width:350px;
 height: auto;
 margin:2%;
@@ -100,13 +100,13 @@ border-radius: 27px;
 
 .imagen{
 padding: 5px 10px 5px 10px;
-width:25%;
+width:30%;
 margin:2%;
 }
 
 .atributos{
 padding: 10px 15px 15px 15px;
-width:51%;
+width:45%;
 margin:2%;
 }
 
@@ -156,7 +156,7 @@ margin:2%;
 	margin-top: 1% !important;
 	margin-bottom: 2.5% !important;
 	padding: 18px 20px 20px 38px;
-	width:69%;
+	width:78%;
 	height: auto;
 	background-color:  #3385ff;
 	box-shadow: 3px 3px 8px #808080,
@@ -284,14 +284,28 @@ transition: all 0.3s ease 0s;
 	.atributos{
 		margin: 0 auto;
 	}
+	.aviso{
+		margin: 0 auto;
+		width:auto;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+		margin-top: 5% !important;
+		max-width: 495px;
+	}
 	.fila{
 		width:auto;
 		padding: 0;
+	}
+	.box{
+		width:auto;
+		margin: 0 auto;
 	}
 	.libro{
 		width:auto;
 		margin: 0 auto;
 		margin-top: 5% !important;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
 		max-width: 530px;
 		padding-top: 15px;
 		padding-left: 10px;
