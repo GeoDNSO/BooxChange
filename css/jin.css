@@ -12,7 +12,8 @@
     overflow-wrap: break-word;
     width: 50%;
     border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
-
+    display: flex;
+    flex-direction: row;
     /*Transiciones*/
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
@@ -46,7 +47,9 @@
 }
 
 .listaAdminlistacenter {
-    text-align: center;
+    margin-right: 2rem;
+    align-self: center;
+    align-content: center;
 }
 
 .adminboton a:link,
@@ -94,6 +97,6 @@
 }
 
 .listaAdminFoto{
-    height:100px;
+    height:150px;
     width:100px;
 }
