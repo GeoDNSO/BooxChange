@@ -86,7 +86,7 @@ $idDiscusion = ($_GET["Discusion"]);
   if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
       //echo '<br>';
       echo '<fieldset id="cajaformcomment">';
-      echo '<legend id="anadircomment">Añadir comentario:</legend>';
+      echo '<legend id="anadircomment">Añadir comentario</legend>';
 
       echo '<form method="post" action="includes/procesos/procesarComentario.php?id='. $idDiscusion. '">';
 

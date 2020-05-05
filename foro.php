@@ -16,13 +16,14 @@ function foro()
     echo '<tbody class= "table_header">';
     echo '<tr>';
     echo '<td colspan="3">';
-    echo '<div class=temas>';
-    echo '<h1 class=titema>Temas del Foro</h1>';
-    echo '</td></tr></tbody>';
-    echo '<tbody class= content>';
+
 
     if ($temasForo != NULL) {
-        echo '<tr class=colu>';
+      echo '<div class=temas>';
+      echo '<h1 class=titema>Temas del Foro</h1>';
+      echo '</td></tr></tbody>';
+      echo '<tbody class= content>';
+      echo '<tr class=colu>';
         foreach ($temasForo as $tema) {
             $nombretema = $tema->getTema();
             $descripciontema = $tema->getDesc();
@@ -42,6 +43,7 @@ function foro()
         if ($_SESSION["rol"] == 0 || $_SESSION["rol"] == 2) {
 
             echo '<fieldset id="cajaformTema">';
+            echo '<legend id="anadirTema">Añadir Tema</legend>';
 
             echo '<form method="post" action="includes/procesos/procesarTema.php" enctype="multipart/form-data"> ';
 

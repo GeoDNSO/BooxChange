@@ -45,7 +45,10 @@ if ($listaDiscusionesTema != NULL) {
         $discusionFecha = $discusion->getFecha();
         $discusionTitulo = $discusion->getTitulo();
         $contCom = $app->contadorComentarios($discusionId);
-        echo "<td class=tituloDiscusion><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br> <small>Discusion creada por usuario";
+        $usuarionom = $app->getUserById($discusionIdusuario);
+        $nombreusu = $usuarionom->getNombreUsuario();
+
+        echo "<td class=tituloDiscusion><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br> <small>Discusion creada por $nombreusu";
         echo "<td class=respuestas> Numero de respuestas: $contCom</td>";
         echo "<td class=creacion >Fecha de creación<br> <small>$discusionFecha</small></td>";
         echo '</tr>';
