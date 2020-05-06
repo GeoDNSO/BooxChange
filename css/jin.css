@@ -10,7 +10,7 @@
     border-style: solid;
     border: solid transparent;
     overflow-wrap: break-word;
-    width: 50%;
+    width: 70%;
     border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
     display: flex;
     flex-direction: row;
@@ -95,16 +95,24 @@
     align-items: center;
 }
 
+.listaAdminFotoLibro{
+    height:300px;
+    width:200px;
+}
+
 @media only screen and (max-width: 1000px) {
     .listaAdminlista {
         width: 100%;
     }
+
+    .listaAdminFotoLibro{
+        height:200px;
+        width:auto;
+    }
+    
 }
 
-.listaAdminFotoLibro{
-    height:150px;
-    width:100px;
-}
+
 
 .listaAdminFotoUsuario{
     border-radius: 50%;
