@@ -312,7 +312,11 @@ transition: all 0.3s ease 0s;
 }
 
 .helloAdmin{
-	background-image: url(https://statics.memondo.com/p/99/vefs/2012/11/VEF_310604_8e1f41614afb407489a3924f303f5ef0_twitter_la_buena_salud_del_friki_por_jjromerocc.jpg?cb=7632848) !important;
+    flex-direction: column;
+    display: flex;
+
+    align-content: center;
+    padding: 0;
 }
 
 /*Cambiar de rol*/

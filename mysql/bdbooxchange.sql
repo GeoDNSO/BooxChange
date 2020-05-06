@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2020 a las 20:58:30
+-- Tiempo de generación: 06-05-2020 a las 12:41:53
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -37,6 +37,13 @@ CREATE TABLE `chat` (
   `mensajesSinLeer2` int(11) NOT NULL,
   `fechaActividad` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `chat`
+--
+
+INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`, `fechaActividad`) VALUES
+(2, 1, 5, 1, 0, 1, '2020-05-05 18:42:50');
 
 -- --------------------------------------------------------
 
@@ -158,6 +165,14 @@ CREATE TABLE `intercambios` (
   `Fecha` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `intercambios`
+--
+
+INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
+(1, NULL, 0, 1, '2020-05-05 16:26:00'),
+(2, NULL, 0, 2, '2020-05-05 17:30:45');
+
 -- --------------------------------------------------------
 
 --
@@ -188,7 +203,7 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(2, 'La Rueda Del Tiempo, El Ojo De', 'Robert Jordan', 19, NULL, NULL, 'imagenes/libros/portada_el-ojo-del-mundo-n-0114_robert-jordan_201910151031.jpg', 'Moraine, una maga capaz de encauzar el Poder Único, anuncia el despertar de una terrible amenaza. Esa misma noche, el pueblo se ve atacado por espantosos trollocs sedientos de sangre, unas bestias semihumanas que hasta entonces se habían considerado una leyenda.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1990-01-15'),
+(2, 'La Rueda Del Tiempo, El Ojo Del Mundo', 'Robert Jordan', 19, 4, NULL, 'imagenes/libros/portada_el-ojo-del-mundo-n-0114_robert-jordan_201910151031.jpg', 'Moraine, una maga capaz de encauzar el Poder Único, anuncia el despertar de una terrible amenaza. Esa misma noche, el pueblo se ve atacado por espantosos trollocs sedientos de sangre, unas bestias semihumanas que hasta entonces se habían considerado una leyenda.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1990-01-15'),
 (10, 'La Rueda Del Tiempo, El Despertar De Los Héroes', 'Robert Jordan', 20, NULL, NULL, 'imagenes/libros/descargar-libro-el-despertar-de-los-heroes-en-pdf-epub-mobi-o-leer-online.jpg', 'Las fuerzas del mal se agitan y tienden sus garras sobre el mundo, al mismo tiempo que surgen señales que auguran la proximidad de la Ultima Batalla, donde ha de decidirse la suerte de la humanidad. ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Tor Books', 0, 100, '1990-10-15'),
 (11, 'La Rueda Del Tiempo, El Dragón Renacido', 'Robert Jordan', 19, NULL, NULL, 'imagenes/libros/portada_el-dragon-renacido-n-0314_robert-jordan_201912090923.jpg', 'Rand, acosado por inquietantes sueños sobre una espada de cristal, decide abandonar a sus compañeros tras un ataque de Engendros de la Sombra y se encamina hacia Tear para descubrir quién es realmente. Mientras tanto, las tres jóvenes aspirantes a Aes Sedai viajan con Mat hacia Tar Valon para ingresar como novicias en la Torre Blanca, donde esperan que las hermanas sanen a Mat de la extraña enfermedad que padece. Poco tiempo después, la Amyrlin les encomienda una peligrosa misión. . . ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1991-10-15'),
 (12, 'La Rueda Del Tiempo, El Ascenso De La Sombra', 'Robert Jordan', 20, NULL, NULL, 'imagenes/libros/ascenso de las sombras.jpg', 'Los sellos de Shayol Ghul se han debilitado y la presencia del Oscuro se hace cada vez más evidente. En Tar Valon, Min es testigo de hechos portentosos que vaticinan un horrible futuro. Los Capas Blancas buscan en Dos Ríos a un hombre con los ojos dorados y siguen el rastro del Dragón Renacido. Perrin, acompañado de Fraile, Loial y algunos Aiel llegan allí después de atravesar los Portales de Piedra.\r\n\r\nSe encontrarán con los Trollocs, que sirven al Oscuro, y con los Capas Blancas y su peculiar manera de entender la defensa de la Luz. Mientras Elayne y Nynaeve parten hacia Tanchico siguiendo el rastro de las Aes Sedai del Ajah Negro que se llevaron los numerosos angreal, Rand trata de reunir a todos los clanes de los Aiel. Con ello cumplirá parte de la profecía de Rhuidean.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1992-09-15'),
@@ -211,7 +226,7 @@ CREATE TABLE `librointercambio` (
   `Id_Libro_Inter` int(11) NOT NULL,
   `AutorLibInter` varchar(30) NOT NULL,
   `Imagen` varchar(300) NOT NULL,
-  `Descripcion` varchar(200) NOT NULL,
+  `Descripcion` varchar(500) NOT NULL,
   `Genero` varchar(20) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Titulo` varchar(30) NOT NULL,
@@ -219,6 +234,14 @@ CREATE TABLE `librointercambio` (
   `esOferta` tinyint(4) NOT NULL,
   `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `librointercambio`
+--
+
+INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) VALUES
+(1, 'Charles Perrault', 'imagenes/librosIntercambio/caperucita roja.jpg', 'La clásica historia de la Caperucita Roja, el libro está prácticamente nuevo y es de la editorial SM, me gustaría algún otro libro infantil para tener un intercambio justo aunque estoy abierto a cualquier otra oferta', 'Infantil', 5, 'Caperucita Roja', 0, 0, '2020-05-05 16:26:00'),
+(2, 'Jordi Sierra i Fabra', 'imagenes/librosIntercambio/campoDeFresas.jpg', 'Un libro que leí hace tiempo y que no crea que vuelva a leer, sin duda una historia a tener en cuenta que nos enseña que la vida puede cambiar en cualquier momento, el transcurso de la trama es muy interesante y profundo. A cambio me gustaría algún libro de fantasía o drama', 'Juvenil', 5, 'Campo de Fresas', 0, 0, '2020-05-05 17:30:45');
 
 -- --------------------------------------------------------
 
@@ -233,6 +256,13 @@ CREATE TABLE `mensajechat` (
   `Texto` varchar(1000) NOT NULL,
   `Fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mensajechat`
+--
+
+INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, `Fecha`) VALUES
+(2, 14, 1, 'Buenas, me interesaría el libro de Caperucita, que te parece Pinocho a cambio del tuyo?\r\n ', '2020-05-05 18:43:56');
 
 --
 -- Disparadores `mensajechat`
@@ -308,7 +338,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Correo`, `Foto`, `Direccion`, `Nacimiento`, `Ciudad`, `FechaDeCreacion`, `Rol`) VALUES
-(1, 'admin', 'Administrador', '$2y$12$IgSk5wgr4BPD0PiSzHqGdeQau3iwvAAlSuFSA3eJNM28zKTzTlbSi', 'hola@sad.com', '/fotos/fotos/img1.jpg', 'Mi casa', '2020-03-07', 'sadas', '2020-03-16 20:07:18', 0),
+(1, 'admin', 'Administrador', '$2y$12$IgSk5wgr4BPD0PiSzHqGdeQau3iwvAAlSuFSA3eJNM28zKTzTlbSi', 'admin@mail.com', 'imagenes/usuarios/p5.gif', 'Mi casa', '2020-03-07', 'Madrid', '2020-03-16 20:07:18', 0),
 (2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', '/fotos/fotos/img2.jpg', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
 (3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', '/fotos/fotos/img3.jpg', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
 (4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', '/fotos/fotos/img4.jpg', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
@@ -333,6 +363,13 @@ CREATE TABLE `valoracionlibro` (
   `Comentario` varchar(100) DEFAULT NULL,
   `Id_Valoracion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `valoracionlibro`
+--
+
+INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentario`, `Id_Valoracion`) VALUES
+(2, 1, 4, 'Increible', 1);
 
 --
 -- Disparadores `valoracionlibro`
@@ -480,7 +517,7 @@ ALTER TABLE `valoracionlibro`
 -- AUTO_INCREMENT de la tabla `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
@@ -498,7 +535,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
@@ -516,7 +553,7 @@ ALTER TABLE `generolibros`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
@@ -528,13 +565,13 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
 --
 ALTER TABLE `mensajechat`
-  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
@@ -558,7 +595,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
 --
 ALTER TABLE `valoracionlibro`
-  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

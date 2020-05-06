@@ -22,7 +22,7 @@ include("./includes/comun/funcionesAdmin.php");
 <body>
 
     <div class="helloAdmin">
-       
+       <img src="imagenes/media/imagenLibroLuces.jpg" alt="Imagen Libro">
 
     </div>
 
