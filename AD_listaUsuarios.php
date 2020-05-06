@@ -38,13 +38,13 @@
             echo "<div class='listaAdminlista'>";
             echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' class='listaAdminFotoUsuario'></div>";
             echo "<div class='listaAdminlistatext'><li><ul>
-            <li>Nombre: $nombreReal </li>
-            <li>Correo: $correo </li>
-            <li>Direccion: $direccion </li>
-            <li>Fecha de Nacimiento: $nacimiento </li>
-            <li>Ciudad: $ciudad </li>
-            <li>Fecha de Creacion: $fechaDeCreacion </li>
-            <li>Rol: $rol </li>
+            <li><span class='textoNegrita'>Nombre</span>: $nombreReal </li>
+            <li><span class='textoNegrita'>Correo</span>: $correo </li>
+            <li><span class='textoNegrita'>Direccion</span>: $direccion </li>
+            <li><span class='textoNegrita'>Fecha de Nacimiento</span>: $nacimiento </li>
+            <li><span class='textoNegrita'>Ciudad</span>: $ciudad </li>
+            <li><span class='textoNegrita'>Fecha de Creacion</span>: $fechaDeCreacion </li>
+            <li><span class='textoNegrita'>Rol</span>: $rol </li>
             </ul>
             </li>"; 
             echo "<div class='adminboton'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
