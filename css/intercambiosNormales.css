@@ -30,7 +30,7 @@
 
 .libroInter{
 
-    width: 90%;
+    width: auto;
     /*height: 11rem;*/
     height: auto;
     max-height: max-content;
@@ -54,14 +54,14 @@
 
 
 .imagenLibroInter{
-    margin-right: auto;
-    margin-left: 2rem;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-left: 1%;
+     margin-bottom: 1%;
 }
 
 .libroInter img{
-
-    width: 10rem;
-    height: 11rem;
+    width: 9rem;
 }
 
 .libroInterFecha{
@@ -124,8 +124,8 @@ p.noHayLibrosIntercambio{
     align-content: center;
     align-items: center;
 
-    height: 5rem;
-    width: 30%;
+    height: auto;
+    width: auto;
 
 
     margin-left: 1rem;
@@ -139,6 +139,7 @@ p.noHayLibrosIntercambio{
 
 .descLibroInter{
     align-self: flex-start;
+    width: 55%;
 }
 
 
