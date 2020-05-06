@@ -24,7 +24,6 @@
     margin: auto;
 }
 
-
 .border-bigform {
     width: 45%;
     height: auto;
@@ -101,8 +100,6 @@
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
 
-
-
 .send-button {
     outline: none;
     border: none;
@@ -114,15 +111,15 @@
     font-weight: 700;
     color: #fff;
     text-align: center;
-    background: #00cc66;
+    background: #24cfaa;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     transition: 0.5s;
 }
 .send-button:hover {
-    background: #008040;
+    background: #2fdbb6;
 }
 .send-button:active {
-    background: #008040;
+    background: #367bfc;
 }
 
 

@@ -37,7 +37,7 @@
         echo "<img src='$imagen' alt='Imagen del Libro' height='450' width='300'>  <br>";
 
         $precio = $libro->getPrecio();
-        echo "<h3> Precio: <span>$precio €</span></h3>";
+        echo "<h3> Precio: <span>$precio </span></h3>";
         $unidades = $libro->getUnidades();
         echo "<h3 id='lastH3'> Unidades: <span>$unidades disponibles</span></h3>";
         if($unidades > 0){
