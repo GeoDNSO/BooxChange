@@ -103,22 +103,22 @@ function cicloMisterio($genero){
         <div class="showcase">
         
             <div class="thing">
-                <h1>Ciclo de Ciencia Ficción</h1>
-                <p>Los libros de Ciencia ficción para viajar a otras realidades</p>
-
+                <h1>Ciclo Fantasía</h1>
+                <p>Si quieres viajar a nuevos mundos y embarcarte en épicas sagas, este es tu lugar</p>
+                <br>
                 <?php
-                    cicloMisterio("Ciencia Ficción");
+                    cicloMisterio("Fantasía");
                 ?>
 
 
             </div>
 
             <div class="thing">
-                <h1>Oye el BOOM de mi corazón</h1>
-                <p>Para los que se vuelven locos por leer y no tenerte</p>
-
+                <h1>Alma jóven</h1>
+                <p>Para los que creen que "El Club de los cinco" es para críos...</p>
+                <br>
                 <?php
-                    cicloMisterio("Romántico");
+                    cicloMisterio("Juvenil");
                 ?>
 
 
