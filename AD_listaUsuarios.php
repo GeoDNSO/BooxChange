@@ -36,8 +36,8 @@
             $fechaDeCreacion = $us -> getFechaDeCreacion();
             $rol = $us -> getRol();
             echo "<div class='listaAdminlista'>";
-            echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' class='listaAdminFoto'></div>";
-            echo "<div><li><ul>
+            echo "<div class='listaAdminlistacenter'><img src='$foto' alt='Imagen de Perfil' class='listaAdminFotoUsuario'></div>";
+            echo "<div class='listaAdminlistatext'><li><ul>
             <li>Nombre: $nombreReal </li>
             <li>Correo: $correo </li>
             <li>Direccion: $direccion </li>
@@ -46,10 +46,10 @@
             <li>Fecha de Creacion: $fechaDeCreacion </li>
             <li>Rol: $rol </li>
             </ul>
-            </li></div>"; 
-            echo "<div class='adminboton listaAdminlistacenter'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
+            </li>"; 
+            echo "<div class='adminboton'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
             <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a></div>";    
-            echo "</div>";
+            echo "</div></div>";
         }
     }
     else{

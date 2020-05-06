@@ -67,8 +67,8 @@
             $unidades = $libro -> getUnidades();
             $fechaDePublicacion = $libro -> getFechaPublicacion();
             echo "<div class='listaAdminlista'>";
-            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro' class='listaAdminFoto'></div>";
-            echo "<li><ul>
+            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro' class='listaAdminFotoLibro'></div>";
+            echo "<div class='listaAdminlistatext'><li><ul>
             <li>Titulo del Libro: $titulo</li>
             <li> Autor: $autor </li>
             <li> Precio: $precio </li>
@@ -82,9 +82,9 @@
             <li> Descuento: $descuento </li>
             <li> Unidades: $unidades </li></ul>";
             echo "</li>";
-            echo "<div class='adminboton listaAdminlistacenter'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
+            echo "<div class='adminboton'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
             <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a></div>"; 
-            echo "</div>";
+            echo "</div></div>";
         }
     }
     else{
