@@ -238,12 +238,6 @@ header ul .userNameHeader{
     background-color: rgb(40, 165, 61);
 }
 
-
-.notHeader{
-    position: relative;
-}
-
-
 @media only screen and (max-width: 800px) {
     .userInfo img,
     .userImg {
@@ -258,7 +252,6 @@ header ul .userNameHeader{
 
 
 }
-
 
 @media only screen and (max-width: 500px) {
     .userInfo img,
@@ -277,8 +270,6 @@ header ul .userNameHeader{
     }
 
 }
-
-
 
 /*
 
