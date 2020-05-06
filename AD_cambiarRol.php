@@ -17,7 +17,7 @@
     include("includes/comun/cabecera.php");
 
     include("./includes/comun/funcionesAdmin.php");
-    echo '<div class="border">';
+
     use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     if (!isset($_GET['id'])) {
@@ -35,48 +35,49 @@
         $rol = $user -> getRol();
     }
 
-    echo "<h3>Nombre Real: $nombreReal</h3>";
+    echo "<div class='modifPerfil'>";
+    echo "<h3 class=nombreReal>Nombre Real: $nombreReal</h3>";
 ?>
 
     <form method="post" action="includes/procesos/AD_procesarCambiarRol.php" enctype="multipart/form-data">
 
-        <label for="rol"><b>Rol</b></label><br>
+        <label for="rol"><b>Seleccionar rol</b></label><br>
         <?php
-        if($rol == 0){
-            echo '<input type="radio" id="0" name="rol" value="0" checked>';
-            echo '<label for="0">Admin<br></label>';
-            echo '<input type="radio" id="1" name="rol" value="1">';
-            echo '<label for="1">Normal User<br></label>';
-            echo '<input type="radio" id="2" name="rol" value="2">';
-            echo '<label for="2">Moderator<br></label><br>';
-        }else if($rol == 2){
-            echo '<input type="radio" id="0" name="rol" value="0">';
-            echo '<label for="0">Admin<br></label>';
-            echo '<input type="radio" id="1" name="rol" value="1">';
-            echo '<label for="1">Normal User<br></label>';
-            echo '<input type="radio" id="2" name="rol" value="2" checked>';
-            echo '<label for="2">Moderator<br></label><br>';
-        }else{
-            echo '<input type="radio" id="0" name="rol" value="0">';
-            echo '<label for="0">Admin<br></label>';
-            echo '<input type="radio" id="1" name="rol" value="1" checked>';
-            echo '<label for="1">Normal User<br></label>';
-            echo '<input type="radio" id="2" name="rol" value="2">';
-            echo '<label for="2">Moderator<br></label><br>';
 
+        if($rol == 0){
+            echo '<input type="radio" class=marginTopRol id="0" name="rol" value="0" checked>';
+            echo '&nbsp<label for="0">Administrador</label><br>';
+            echo '<input type="radio" class=marginTopRol id="1" name="rol" value="1">';
+            echo '&nbsp<label for="1">Usuario registrado</label><br>';
+            echo '<input type="radio" class=marginTopRol id="2" name="rol" value="2">';
+            echo '&nbsp<label for="2">Moderador</label><br><br>';
+        }
+
+        else if($rol == 2){
+            echo '<input type="radio" class=marginTopRol id="0" name="rol" value="0">';
+            echo '&nbsp<label for="0">Administrador</label><br>';
+            echo '<input type="radio" class=marginTopRol id="1" name="rol" value="1">';
+            echo '&nbsp<label for="1">Usuario registrado</label><br>';
+            echo '<input type="radio" class=marginTopRol id="2" name="rol" value="2" checked>';
+            echo '&nbsp<label for="2">Moderador</label><br><br>';
+        }
+
+        else{
+            echo '<input type="radio" class=marginTopRol id="0" name="rol" value="0">';
+            echo '&nbsp<label for="0">Administrador</label><br>';
+            echo '<input type="radio" class=marginTopRol id="1" name="rol" value="1" checked>';
+            echo '&nbsp<label for="1">Usuario registrado</label><br>';
+            echo '<input type="radio" class=marginTopRol id="2" name="rol" value="2">';
+            echo '&nbsp<label for="2">Moderador</label><br><br>';
         }
         ?>
-        <input class="warning" type="submit" value="Cambiar">
-  
+        <input type="submit" class="send-button noEnorme">
+
     </form>
+    <a class="send-button cancelar" href="AD_listaUsuarios.php"> Cancelar </a>
+    </div>
 
-
-    <a  href="AD_listaUsuarios.php"> Cancelar </a>
-
-</div>
 <?php 
-
-
 include("./includes/comun/footer.php");
 ?>
 </html>

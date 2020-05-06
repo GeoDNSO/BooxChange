@@ -47,7 +47,7 @@
             <li>Rol: $rol </li>
             </ul>
             </li></div>"; 
-            echo "<div class='adminboton listaAdminlistacenter'><a class='warning' href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
+            echo "<div class='adminboton listaAdminlistacenter'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
             <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a></div>";    
             echo "</div>";
         }

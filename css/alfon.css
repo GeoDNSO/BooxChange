@@ -24,6 +24,7 @@
     margin: auto;
 }
 
+
 .border-bigform {
     width: 45%;
     height: auto;
@@ -100,6 +101,8 @@
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
 
+
+
 .send-button {
     outline: none;
     border: none;
@@ -111,17 +114,16 @@
     font-weight: 700;
     color: #fff;
     text-align: center;
-    background: #24cfaa;
+    background: #00cc66;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     transition: 0.5s;
 }
 .send-button:hover {
-    background: #2fdbb6;
+    background: #008040;
 }
 .send-button:active {
-    background: #367bfc;
+    background: #008040;
 }
-
 
 /*Otro tipo de imput text*/
 input.login {
@@ -316,27 +318,3 @@ textarea.line {
     text-decoration:none;
 
 }
-
-.warning {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    height: 60px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 700;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background: #ddda33;
-    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
-    transition: 0.5s;
-}
-.warning:hover {
-    background: #f0940b;
-}
-.warning:active {
-    background: #c52121;
-    color: rgb(0, 0, 0);
-}
-

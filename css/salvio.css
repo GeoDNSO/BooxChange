@@ -1,5 +1,15 @@
 
 /*Tienda*/
+.buscarTienda {
+    width: 55%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    margin: auto;
+    margin-bottom: 2% !important;
+}
 
 .box{
 width: 90%;
@@ -254,6 +264,87 @@ transition: all 0.3s ease 0s;
     text-decoration: none;
 }
 
+/*Modificar perfil*/
+.modifPerfil {
+	min-width: 460px;
+    width: 50%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    margin: auto;
+    margin-bottom: 2.5% !important;
+}
+.tituloMod{
+	width: auto;
+	font-size: 18px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+.inputDatos{
+	margin-left: 1%;
+	width: 75%;
+	margin-bottom: 1%;
+    border: none;
+    font-size: 16px;
+    border-bottom: solid 1px #1abc9c;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        #1abc9c 4%
+    );
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: darken(#1abc9c, 20%);
+}
+
+.fotoMod{
+	margin-bottom: 3.5%;
+	margin-top: 1%;
+}
+.noEnorme{
+	width: 60%;
+	margin: 0 auto;
+	display: block;
+}
+
+.helloAdmin{
+	background-image: url(https://statics.memondo.com/p/99/vefs/2012/11/VEF_310604_8e1f41614afb407489a3924f303f5ef0_twitter_la_buena_salud_del_friki_por_jjromerocc.jpg?cb=7632848) !important;
+}
+
+/*Cambiar de rol*/
+.nombreReal{
+	width: auto;
+	font-size: 18px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+.marginTopRol{
+	margin-top: 1%;
+}
+
+.cancelar{
+	width: 60%;
+	height: 45px;
+	margin: 0 auto;
+	margin-top: 2% !important;
+	display: block;
+	padding-top: 15px;
+	text-decoration: none !important;
+	background-color: #ff3333 !important;
+}
+
+.cancelar:hover {
+    background: #cc0000 !important;
+}
+.cancekar:active {
+    background: #cc0000 !important;
+}
+
 /*USUARIO*/
 @media only screen and (max-width: 650px){
 	.datos{
@@ -281,6 +372,18 @@ transition: all 0.3s ease 0s;
 
 /*TIENDA*/
 @media only screen and (max-width: 1000px) {
+	.buscarTienda {
+	   width:auto;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+		max-width: 483px;
+	    padding: 20px 35px 35px 35px;
+	    border-radius: 40px;
+	    background: #ecf0f3;
+	    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+	    margin: 0 auto;
+	    margin-bottom: 2% !important;
+}
 	.atributos{
 		margin: 0 auto;
 	}
