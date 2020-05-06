@@ -67,24 +67,24 @@
             $unidades = $libro -> getUnidades();
             $fechaDePublicacion = $libro -> getFechaPublicacion();
             echo "<div class='listaAdminlista'>";
-            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro' class='listaAdminFoto'></div>";
-            echo "<li><ul>
-            <li>Titulo del Libro: $titulo</li>
-            <li> Autor: $autor </li>
-            <li> Precio: $precio </li>
-            <li> Descripcion: $descripcion </li>
-            <li> Genero: $genero </li>
-            <li> En Tienda: $enTienda </li>
-            <li> Fecha de subida de libro: $fecha </li>
-            <li> Fecha de publicacion del libro: $fechaDePublicacion </li>
-            <li> Idioma: $idioma </li>
-            <li> Editorial: $editorial </li>
-            <li> Descuento: $descuento </li>
-            <li> Unidades: $unidades </li></ul>";
+            echo "<div class='listaAdminlistacenter'><img src='$imagen' alt='Portada del Libro' class='listaAdminFotoLibro'></div>";
+            echo "<div class='listaAdminlistatext'><li><ul>
+            <li> <span class='textoNegrita'>Titulo del Libro</span>: $titulo</li>
+            <li> <span class='textoNegrita'>Autor</span>: $autor </li>
+            <li> <span class='textoNegrita'>Precio</span>: $precio </li>
+            <li> <span class='textoNegrita'>Descripcion</span>: $descripcion </li>
+            <li> <span class='textoNegrita'>Genero</span>: $genero </li>
+            <li> <span class='textoNegrita'>En Tienda</span>: $enTienda </li>
+            <li> <span class='textoNegrita'>Fecha de subida de libro</span>: $fecha </li>
+            <li> <span class='textoNegrita'>Fecha de publicacion del libro</span>: $fechaDePublicacion </li>
+            <li> <span class='textoNegrita'>Idioma</span>: $idioma </li>
+            <li> <span class='textoNegrita'>Editorial</span>: $editorial </li>
+            <li> <span class='textoNegrita'>Descuento</span>: $descuento </li>
+            <li> <span class='textoNegrita'>Unidades</span>: $unidades </li></ul>";
             echo "</li>";
-            echo "<div class='adminboton listaAdminlistacenter'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
+            echo "<div class='adminboton'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
             <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a></div>"; 
-            echo "</div>";
+            echo "</div></div>";
         }
     }
     else{

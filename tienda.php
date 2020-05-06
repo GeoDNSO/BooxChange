@@ -87,7 +87,7 @@ foreach ($librosTienda as $libro) {
         	 echo "<p>Valoracion: libro no valorado aún.</p>";
         }
         else{
-        	echo "<p>Valoracion: $valoracion/10</p>";
+        	echo "<p>Valoracion: $valoracion/5</p>";
         }
         echo "<p class=genero>Género: $genero</p>";
       	echo "<p> Descripcion: ";

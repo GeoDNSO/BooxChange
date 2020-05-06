@@ -10,7 +10,7 @@
     border-style: solid;
     border: solid transparent;
     overflow-wrap: break-word;
-    width: 50%;
+    width: 70%;
     border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
     display: flex;
     flex-direction: row;
@@ -37,7 +37,6 @@
 .listaTotalAdmin {
     margin: 2rem;
     padding: 10px;
-    text-align: left;
 }
 
 .listaTotalAdmin ol {
@@ -47,9 +46,15 @@
 }
 
 .listaAdminlistacenter {
+    margin-left: 2rem;
     margin-right: 2rem;
     align-self: center;
     align-content: center;
+}
+
+.listaAdminlistatext{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .adminboton a:link,
@@ -90,13 +95,27 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 800px) {
+.listaAdminFotoLibro{
+    height:300px;
+    width:200px;
+}
+
+@media only screen and (max-width: 1000px) {
     .listaAdminlista {
         width: 100%;
     }
+
+    .listaAdminFotoLibro{
+        height:200px;
+        width:auto;
+    }
+    
 }
 
-.listaAdminFoto{
+
+
+.listaAdminFotoUsuario{
+    border-radius: 50%;
     height:150px;
-    width:100px;
+    width:150px;
 }

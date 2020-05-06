@@ -279,3 +279,8 @@ body::-webkit-scrollbar-thumb {
     }
 
 }
+
+/*texto en negrita*/
+.textoNegrita {
+    font-weight: bold;
+}
