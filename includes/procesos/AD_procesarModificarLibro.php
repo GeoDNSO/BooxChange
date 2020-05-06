@@ -38,11 +38,13 @@ if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
 
     move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $archivoSubida);
 }else{
-    $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);
+    $fotoBD = ($_SESSION["imagenLibro"]);
 }
 
 
 $app = appBooxChange::getInstance();
+
+unset($_SESSION["imagenLibro"]);
 
 if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
     header("Location: ../../admin.php");

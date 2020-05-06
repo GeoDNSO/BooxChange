@@ -30,6 +30,7 @@
         $app = appBooxChange::getInstance();
         $libro = $app->getLibroById($_GET['id']);
         $_SESSION["idLibro"] = serialize($_GET['id']);
+
         $titulo = $libro -> getTitulo();
         $autor = $libro -> getAutor();
         $precio = $libro -> getPrecio();
@@ -42,6 +43,8 @@
         $descuento = $libro -> getDescuento();
         $unidades = $libro -> getUnidades();
         $fechaPublicacion = $libro -> getFechaPublicacion();
+
+        $_SESSION["imagenLibro"] = $imagen;
     }
 ?>
     
@@ -62,8 +65,9 @@
         <label for="descripcion"><b>Descripcion</b></label><br>
         <textarea rows="4" cols="50" name="descripcion" id="descripcion"> <?php echo $descripcion; ?>  </textarea><br><br>
 
-        <label for="genero"><b>Genero</b></label><br>
+        <label for="genero"><b>Género</b></label><br>
         <select name="genero">
+        
         <option value="<?php echo $genero; ?>"> <?php echo $genero; ?> </option>
         <option value="Ciencia Ficción">Ciencia Ficción</option>
         <option value="Comedia">Comedia</option>

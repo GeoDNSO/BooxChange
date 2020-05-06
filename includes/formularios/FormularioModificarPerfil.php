@@ -36,7 +36,7 @@ class FormularioModificarPerfil extends Form
         }
 
         
-
+         
 
         $html= "<div class='modifPerfil'>";
         $html .= "<p class=tituloMod>Modificar perfil</p>";
@@ -53,7 +53,8 @@ class FormularioModificarPerfil extends Form
 
         $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" /></p>';
 
-         
+        echo  $_SESSION['fotoPerfil'];
+
         $html .= "</div>";
         return $html;
     }
@@ -87,9 +88,10 @@ class FormularioModificarPerfil extends Form
         $fotoPerfil = make_safe($fotoPerfil);
 
         
+        
         //Subir imagen al servidor
         $fotoBD = "";
-        if(isset($_FILES["foto"])){
+        if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
             $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["foto"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
 
@@ -98,10 +100,9 @@ class FormularioModificarPerfil extends Form
             move_uploaded_file( $_FILES["foto"]['tmp_name']  , $archivoSubida);
 
         }else{
-            $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_USER);
+            $fotoBD = $_SESSION['fotoPerfil'];
         }
         
-       
 
         //Ciudad
         $ciudad = isset($datos['ciudad']) ? $datos['ciudad'] : null;
