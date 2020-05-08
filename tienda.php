@@ -30,14 +30,15 @@ $librosTienda = $app->librosTienda();
 
 $html = '<div id="buscaLibro" class = "buscarTienda">';
 $html .= '<form method="post">';
-$html .= '<div class="fields">';
-$html .= '    <label for="titulo"><b>Buscar Libro por título:</b><br></label><br>';
-$html .= '     <div class="text"> <input placeholder="" name="titulo" id="titulo" /></div><br><br>';
-$html .= '    <label for="genero"><b>Buscar Libro por género:</b><br></label><br>';
-$html .= '    <select id="genero" name="genero"><br><br>';
+$html .= '<div class="fields noWrapBuscar">';
+//$html .= '    <label for="titulo"><b>Buscar Libro por título:</b><br></label><br>';
+$html .= '     <div class="text ancho"> <input class="login" placeholder="   Introduzca título del libro..." type=text name="titulo" id="titulo" /></div>';
+
+$html .= '    <div class= selectCentrado><select id="genero" class=marginGenero name="genero">';
+
 $html .=      $app->construirSeleccionDeCategorias();
-$html .= '    </select><br><br><br>';
-$html .= '    <button class="send-button noEnorme">Buscar</button>';
+$html .= '    </select></div>';
+$html .= '    <button class="send-button noEnorme marginTop">Buscar</button>';
 $html .= '</div>';
 $html .= '</form>';
 $html .= '</div>';
