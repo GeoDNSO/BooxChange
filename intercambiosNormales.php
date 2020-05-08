@@ -40,7 +40,8 @@ function printBooks()
            
             echo "<p>";
 
-            echo "<h2><span class='libroInterTitulo'>$titulo</span> de <span class='libroInterAutor'>$autor</span>, lo ofrece <span class='libroInterUserName'>$nombreUsuario</span> <h2>";
+            echo "<h2><span class='libroInterTitulo'>$titulo</span> de <span class='libroInterAutor'>$autor</span></h2>";
+            echo "<h2>Lo ofrece <span class='libroInterUserName'>$nombreUsuario</span> </h2>";
             
             echo "<h3>Género: $genero </h3>";
             echo "<p> $desc </p>";

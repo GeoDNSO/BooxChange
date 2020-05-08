@@ -419,6 +419,13 @@ transition: all 0.3s ease 0s;
 	    margin: 0 auto;
 	    margin-bottom: 2% !important;
 }
+
+.marginTop{
+	margin-top: 2%;
+	margin-left: 4% !important;
+	width: 100% !important;
+}
+
 	.atributos{
 		margin: 0 auto;
 	}
