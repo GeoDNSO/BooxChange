@@ -38,16 +38,16 @@
     --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
-    --botonActionLetra:
+    --botonActionLetra:;
 
     /*Variables Boton Claro*/
 
-    --botonClaro:
-    --botonHoverClaro:
-    --botonActionClaro:
-    --botonLetraClaro:
-    --botonHoverLetraClaro:
-    --botonActionLetraClaro:
+    --botonClaro:;
+    --botonHoverClaro:;
+    --botonActionClaro:;
+    --botonLetraClaro:;
+    --botonHoverLetraClaro:;
+    --botonActionLetraClaro:;
 
     --colClaro1: white;
     --colClaro2: ;
@@ -69,6 +69,30 @@
     --botonMainButton: #17b2b8;
     --letraDesplega: #000000;
     /*Fin Alfonso*/
+    --colClaro2:; 
+
+    --colOscuro1: #2c7862;
+    --colOscuro2:;
+    
+    /*Salvio*/
+   	--cabecera: #222831;
+   	--footer: #222831;
+   	--fondoSalvio: #30475e;
+   	--barraNavegacion:#233343;
+   	--botonBarraNavegacion:;
+   	--cuadroClaro:#ececec;
+   	--cuadroOscuro:#ceb997;
+   	--botonClaro: #c1a57b;
+   	--botonOscuro:#ad8a52;
+   	--letraClaraSalvio: white;
+   	--letraOscuraSalvio: black;
+   	--botonCancelar:#ff3333;
+   	--cancelarHover:#cc0000;
+   	--precioBorder:#fbb750;
+   	--precioBackground:#ebe4e0;
+   	--blancoSalvio: #ffffff;
+   	--grisClaroSalvio: #d9d9d9;
+   	--grisSalvio:#1a1a1a;
 
 
     /*Scroll Bar para Mozilla*/
