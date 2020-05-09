@@ -1,0 +1,121 @@
+@import url("root.css");
+
+.listaAdminlista {
+    background-color: rgba(0, 0, 0, 0.068);
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-style: solid;
+    border: solid transparent;
+    overflow-wrap: break-word;
+    width: 70%;
+    border-radius: 40px 20px 5px 30px; /*Mejora las esquinas*/
+    display: flex;
+    flex-direction: row;
+    /*Transiciones*/
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 0.75s ease-in-out;
+
+    /*Sombras*/
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+.listaAdminlista:hover {
+    border-color: #6edebd;
+}
+
+.listaAdminlista li {
+    display: block;
+}
+
+.listaTotalAdmin {
+    margin: 2rem;
+    padding: 10px;
+}
+
+.listaTotalAdmin ol {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.listaAdminlistacenter {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    align-self: center;
+    align-content: center;
+}
+
+.listaAdminlistatext{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminboton a:link,
+.adminboton a:visited {
+    background-color: #11999e;
+    color: white;
+    margin-top: 20px;
+    padding: 2% 4%; /*tamaño de el recuadro*/
+    text-align: center;
+    text-decoration: none; /*quitar la raya del href*/
+    display: inline-block;
+}
+
+.adminboton a:hover {
+    color: #6edebd;
+}
+
+.helloAdmin {
+    width: auto;
+    height: 30rem;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+
+    padding-top: 4rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.helloAdmin .greet {
+    width: auto;
+    font-size: 400%;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.listaAdminFotoLibro{
+    height:300px;
+    width:200px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .listaAdminlista {
+        width: 100%;
+    }
+
+    .listaAdminFotoLibro{
+        height:200px;
+        width:auto;
+    }
+    
+}
+
+
+
+.listaAdminFotoUsuario{
+    border-radius: 50%;
+    height:150px;
+    width:150px;
+}

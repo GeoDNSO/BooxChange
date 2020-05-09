@@ -1,0 +1,295 @@
+@import url("root.css");
+
+header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 3%;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #e4f9f5;
+}
+
+/*NAV BAR*/
+
+.headerMainBottom {
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    list-style: none;
+
+    margin-top: -1rem;
+
+    background-color: 11999e;
+}
+
+.headerMainBottom ul {
+    display: inline-block;
+}
+
+.headerMainBottom ul li {
+    display: inline-block;
+
+    /*border: 0.05rem solid rgb(0, 0, 0);*/
+    background-color: #e4f9f5;
+
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.headerMainBottom ul li:hover {
+    background-color: var(--colorTextNavHover);
+}
+
+.headerMainBottom ul li a {
+    text-decoration: none;
+    font-weight: bold;
+
+    color: var(--colorTextNav);
+
+    transition: all 0.3s ease 0s;
+}
+
+.headerMainBottom ul li a:hover {
+    color: #e4f9f5;
+}
+
+/*PRIMERA PARTE DEL HEADER*/
+
+.headerMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+
+    background-color: black;
+    color: #e4f9f5;
+
+    /*overflow: hidden;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 100;
+}
+
+.headerMain div:last-child {
+    text-decoration: none;
+    margin-left: auto;
+    color: rgb(107, 94, 226);
+}
+
+.headerMain .logo {
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+/*Parte de la Info de Usuario*/
+
+.userInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+    align-self: center;
+
+    margin: 0.25rem;
+    margin-right: 1.2rem;
+}
+
+.imagenPerfilHeader{
+    align-self: center;
+}
+
+.userInfo img,
+.userImg {
+    height: 4rem;
+    width: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 1rem;
+    /*margin-right: -1.5rem;*/
+    align-self: center;
+    /*margin-top: 0.5rem;*/
+}
+
+.userInfo img:hover {
+    box-shadow: 0rem 0rem 0.6rem #40514e;
+}
+
+/*DROP DOWN MENU*/
+
+header ul .userNameHeader{
+    margin-left: 0rem;
+}
+
+.arrowUser {
+    margin-left: 4px;
+    margin-bottom: 1px;
+    transform: rotate(0deg);
+
+    fill: #e4f9f5; /*Color de la flecha*/
+    transition: all 0.3s ease 0s;
+}
+
+.userInfo ul li:hover .arrowUser {
+    transform: rotate(-180deg);
+}
+
+.arrowUser:hover {
+    transform: rotate(-180deg);
+}
+
+/**/
+
+.userInfo ul {
+    list-style: none;
+    align-self: center;
+    margin-left: 1.6rem;
+}
+
+.userInfo ul li {
+    float: right;
+    opacity: 0.8;
+    background-color: #40514e;
+    color: #e4f9f5;
+    text-align: center;
+    font-size: 1rem;
+
+    align-content: center;
+
+    line-height: 3rem;
+    width: 7.5rem;
+    height: 3rem;
+}
+
+.userInfo ul li a {
+    text-decoration: none;
+    display: block;
+    align-self: center;
+    color: #e4f9f5;
+}
+
+.userInfo ul li:hover {
+    background-color: rgb(113, 212, 188);
+}
+
+.userInfo ul li ul li {
+    display: none;
+    transition: all 0.3s ease 0.05s;
+}
+
+.userInfo ul li a:hover ul li {
+    display: block;
+}
+.userInfo ul li:hover ul li {
+    display: block;
+}
+
+.botonesLibroInter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+}
+
+/*BOTONES HEADER*/
+.hButton {
+    /*display: block;*/
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+    height: 30%;
+
+    width: auto;
+
+    background: #ffe277;
+
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+
+    text-align: center;
+
+    color: #e4f9f5;
+    font-weight: bold;
+
+    transition: all 0.3s ease 0s;
+}
+
+.hButton:hover {
+    background-color: rgb(106, 218, 124);
+}
+
+.hButton:active {
+    background-color: rgb(40, 165, 61);
+}
+
+
+.notHeader{
+    position: relative;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .userInfo img,
+    .userImg {
+        height: 3.5rem;
+        width: 3.5rem;
+        margin-right: -1.3rem;  
+    }
+
+    .hButton {
+        font-size: 0.7rem;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 500px) {
+    .userInfo img,
+    .userImg {
+       display: none;
+    }
+
+    .hButton {
+        font-size: 0.7rem;
+        width: 4.3rem;
+
+    }
+
+    .hButton:last-of-type {
+        margin-right: -1rem;
+    }
+
+}
+
+
+
+/*
+
+.hButton:last-of-type{
+    width: 8rem;
+    margin-right: 2rem;
+}
+
+.hButton:first-of-type{
+    width: 80%;
+    margin-right: 2rem;
+}
+
+*/

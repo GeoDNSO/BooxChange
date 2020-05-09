@@ -1,0 +1,322 @@
+
+.pdcp {
+    color: #4c4a37;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+.pdch3 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+.border {
+    width: 30%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
+    margin: auto;
+}
+
+
+.border-bigform {
+    width: 45%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
+    margin: auto;
+}
+
+.big-border {
+    width: 70%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
+    margin: auto;
+}
+
+.intercambioAlfa {
+    width: 45%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+
+    background: #3ce2a3;
+
+    margin: auto;
+}
+
+.intercambiOmega {
+    width: 45%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+
+    background: #6fc7fa7e;
+    box-shadow: 13px 13px 20px #9db7d1;
+
+    margin: auto;
+}
+
+.title {
+    text-decoration: none;
+    text-align: center;
+    font-size: 28px;
+    padding-top: 3%;
+    letter-spacing: 0.5px;
+}
+
+.sub-title {
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 7px;
+}
+
+.fields {
+    width: 100%;
+    padding: 20px 5px 5px 5px;
+}
+.fields input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+}
+
+.text,
+.password {
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #b9b9b9, inset -8px -8px 8px #ffffff;
+}
+
+
+
+.send-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var( --botonLetra);
+    text-align: center;
+    background: var( --boton);
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: 0.5s;
+}
+.send-button:hover {
+    background: var( --botonHover);
+    color: var( --botonHoverLetra);
+}
+.send-button:active {
+    background: var( --botonAction);
+}
+
+/*Otro tipo de imput text*/
+input.login {
+    width: 95%;
+    display: block;
+    text-align: center;
+}
+
+input.line {
+    width: 95%;
+    margin: auto;
+    display: block;
+    border: none;
+    font-size: 20px;
+    border-bottom: solid 1px #1abc9c;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        #11999e 4%
+    );
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: darken(#11999e, 20%);
+}
+
+textarea.line {
+    width: 95%;
+    margin: auto;
+    display: block;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    border: none;
+    border-bottom: solid 1px #1abc9c;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        #30e3ca 4%
+    );
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: darken(#1abc9c, 20%);
+    text-align: center;
+}
+
+.thing {
+    padding: 1rem;
+    margin: 2%;
+    width: 90%;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+        0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+
+    border-left: 0 solid #30e3ca;
+    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.thing:hover {
+    padding-left: 0.5rem;
+    border-left: 0.5rem solid #11999e;
+}
+
+/*Quienes somos*/
+
+.our-team {
+    width: 100%;
+    display: flexbox;
+
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.our-team .pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid #11999e;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.our-team img {
+    width: 100%;
+    height: auto;
+}
+
+.our-team .team-content {
+    padding: 15px 15px 20px;
+    background: #11999e;
+
+    margin-top: -20px;
+    color: #fff;
+}
+.our-team .title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+.our-team .post {
+    display: block;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+.our-team .description {
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #40514e;
+    line-height: 30px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.pin-input {
+    display: block;
+    border: none;
+    align-items: center;
+    width: 150px;
+    background: repeating-linear-gradient(
+            90deg,
+            dimgrey 0,
+            dimgrey 1ch,
+            transparent 0,
+            transparent 1.5ch
+        )
+        0 100%/ 10ch 2px no-repeat;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+}
+.pin-input:focus {
+    outline: none;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 1200px) {
+    #reg {
+        width: 75%;
+    }
+
+    .line::placeholder {
+        font-size: 1rem;
+    }
+    input[type="text"].line,
+    input[type="file"] {
+        font-size: 1rem;
+    }
+
+    .intercambioAlfa,
+    .intercambiOmega {
+        width: 75%;
+        font-size: 1rem;
+    }
+
+}
+
+.showcase {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.media {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.whiteBorder {
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+        0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0 solid #40514e;
+    transition: border 300ms ease-in-out, padding 300ms ease-in-out;
+
+}
+
+.noDeco{
+    text-decoration:none;
+
+}

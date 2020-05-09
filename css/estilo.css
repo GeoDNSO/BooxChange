@@ -1,0 +1,286 @@
+/*CSS BooxChange*/
+/*rem is love, rem is life*/
+@import url("root.css");
+@import url("header.css");
+@import url("funcionesAdmin.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("intercambio.css");
+@import url("intercambiosNormales.css");
+@import url("alfon.css");
+@import url("jin.css");
+@import url("salvio.css");
+@import url("notificaciones.css");
+@import url("sergio.css");
+@import url("alex.css");
+@import url("comentarios.css");
+@import url("discusiones.css");
+@import url("footer.css");
+@import url("chat.css");
+@import url("ofertas.css");
+@import url("ofertasIntercambio.css");
+
+*::selection {
+    background: var(--bgScroll2);
+    color: #40514e;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    color: black;
+    background-color: var(--fondo);
+    /*top: 6rem;*/
+    margin-top: 6rem;
+}
+
+/*SCROLL BAR Personalizado*/
+body::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bgScroll1);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--bgScroll2);
+}
+
+/*CHECKBOX CATEGORIA*/
+
+.listaCategorias {
+    columns: 3;
+}
+
+/* The checkbox container */
+.checkBoxContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkBoxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* On mouse-over, add a grey background color */
+.checkBoxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkBoxContainer input:checked ~ .checkmark {
+    background-color: #11999e;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkBoxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkBoxContainer .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffe2bc;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*FIN CHECKBOX CATEGORIA*/
+
+/*INICIO*/
+
+
+
+.main{
+    width: 90%;
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    margin-top: 5%;
+    align-content: center;
+    text-align: center;
+
+    background-color: 30e3ca;
+}
+
+.mejoresLibros {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    
+
+
+    background: #11999e;
+
+}
+
+.mejoresLibros img{
+    height: 12rem;
+    width: 10rem;
+
+    position: static;
+    display: block;
+
+}
+
+
+.libroPresentacion1{
+    background: #ffb367;
+
+    display: flex;
+    flex-direction: row;
+
+    box-sizing: border-box;
+    height: 10rem;
+
+    margin-right: 0.5rem;
+
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.libroPresentacion2{
+    background: #ffe277;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    box-sizing: border-box;
+    height: 10rem;
+    margin-left: 0.5rem;
+
+    /*Para que ocupen el mismo espacio*/
+    flex-grow: 1;
+    flex-basis: 0;
+
+    justify-content: flex-end;
+}
+
+.descLibroPresentacion{
+    color: #40514e;
+
+    word-wrap: break-word;
+    text-size-adjust: auto;
+/*
+    font-size: 1.5vw;
+    font-size: 1.5vh;*/
+    padding: 10px;
+
+    height: 100%;
+
+}
+
+.descLibroPresentacion p{
+    word-wrap: break-word;
+    text-size-adjust: auto;
+
+    font-size: 0.5rem;
+    
+
+    height: 100%;
+
+}
+
+.libroPresentacion2 .imgPresentacion{
+    margin-left: auto;
+}
+
+.libroPresentacion2 .descLibroPresentacion{
+    margin-left: auto;
+    text-align: right;
+    /*margin-left: 12rem*/;
+}
+
+.imgPresentacion{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+/*Parte explicativa de Booxchange**/
+
+.presentacion{
+    margin-top: 3rem;
+    padding: 1.4rem;
+    
+    background-color: #58b4ae;
+}
+
+
+@media only screen and (max-width: 800px) {
+  
+
+    .mejoresLibros {
+
+        width: 100%;
+    
+        flex-direction: column;
+    }
+    
+    .libroPresentacion1{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+}
+
+/*texto en negrita*/
+.textoNegrita {
+    font-weight: bold;
+}
