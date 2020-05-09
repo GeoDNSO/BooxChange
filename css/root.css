@@ -17,17 +17,16 @@
 
     --fondo: #fff4c1;
     --letraClara: white;
-    --letraOscura: 40514e;
+    --letraOscura: #40514e;
 
     --cajaFondo:   #cae7df;
     --cajaSombra1: #a0b9b4;
     --cajaSombra2: #00000000; 
-    --sombraInput1:;
-    --sombraInput2:;
 
     --caja1: #ffb367;
     --caja2: #ffe277;
     --caja3: #58b4ae;
+    --caja4: #2abec4;
 
     --cajaIntercambio: white;
 
@@ -38,22 +37,16 @@
     --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
-    --botonActionLetra:;
+
 
     /*Variables Boton Claro*/
 
-    --botonClaro:;
-    --botonHoverClaro:;
-    --botonActionClaro:;
-    --botonLetraClaro:;
-    --botonHoverLetraClaro:;
-    --botonActionLetraClaro:;
 
     --colClaro1: white;
     --colClaro2: ;
 
     --colOscuro1: #2c7862;
-    --colOscuro2:;
+
 
     /*Alfonso
     var(--);
@@ -68,11 +61,22 @@
 
     --botonMainButton: #17b2b8;
     --letraDesplega: #000000;
-    /*Fin Alfonso*/
-    --colClaro2:; 
 
+    --fecha: #30c0c5;
+    --userChat: #30c0c5;
+
+    --tituloIN: #1a7581;
+    --autorIN: #3b78b4;
+    --UserIN: #7098da;
     --colOscuro1: #2c7862;
-    --colOscuro2:;
+
+    /*Ranking par*/
+
+    --rankingPar: #1a7581;
+    --rankingInpar: #1a3e81;
+
+    /*Fin Alfonso*/
+ 
     
     /*Salvio*/
    	--cabecera: #222831;

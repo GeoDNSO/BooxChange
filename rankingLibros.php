@@ -13,8 +13,12 @@ function ranking()
     echo "<div class='leaderboard'>";
 
     echo "<h1>Libros mejor valorados</h1><ol>";
-
+    $i=0;
+    
     foreach ($librosValoracion as $libro) {
+
+        if($i++ > 9)break;
+
         $titulo = $libro->getTitulo();
         $valoracion = $libro->getValoracion();
         $autor = $libro->getAutor();

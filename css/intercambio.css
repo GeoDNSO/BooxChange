@@ -2,14 +2,14 @@
 
 .mainIntercambio {
     text-align: center;
-    background-color: violet;
+    background-color: var(--caja2);
 
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
 
-    --cInterNor: rgb(235, 201, 235);
-    --cInterMist: rgb(221, 185, 226);
+    --cInterNor: var(--caja1);
+    --cInterMist: var(--caja3);
 }
 
 .mainIntercambio p{

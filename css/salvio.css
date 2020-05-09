@@ -361,7 +361,7 @@ transition: all 0.3s ease 0s;
 }
 
 .cancelar{
-	width: 60%;
+	width: 100%;
 	height: 45px;
 	margin: 0 auto;
 	margin-top: 2% !important;
@@ -372,10 +372,12 @@ transition: all 0.3s ease 0s;
 }
 
 .cancelar:hover {
-    background: var(--cancelarHover) !important;
+	background: var(--cancelarHover) !important;
+	color: var(--botonLetra) !important;
 }
 .cancekar:active {
-    background: var(--cancelarHover) !important;
+	background: var(--cancelarHover) !important;
+	color: var(--botonLetra) !important;
 }
 
 /*USUARIO*/
