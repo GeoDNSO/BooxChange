@@ -29,6 +29,7 @@ class DAOGeneroLibro extends DAO{
     //INSERT INTO `generolibros` (`id`, `idLibro`, `genero`) VALUES (NULL, '4', 'Drama');
 
     public function subirGeneroLibro($idLibro, $genero){
+        $genero = self::$instance->bdBooxChange->real_escape_string($genero);
         $sql = "INSERT INTO `generolibros` (`id`, `idLibro`, `genero`) VALUES (NULL, '$idLibro', '$genero');";
         return mysqli_query(self::$instance->bdBooxChange, $sql);
     }

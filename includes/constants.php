@@ -18,7 +18,6 @@ define("BD_PASS", "");
 $parentDir = dirname(__DIR__, 1);
 $imgDirectory = "imagenes/";
 
-//echo $_SERVER["DOCUMENT_ROOT"];
 define("SERVER_DIR", $_SERVER["DOCUMENT_ROOT"] . "/Booxchange/");
 
 //Fichero donde se guardan las imagenes

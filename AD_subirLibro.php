@@ -46,8 +46,6 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 
     <label for="genero"><b>Géneros del Libro</b></label><br>
 
-    
-    
     <?php
 
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;

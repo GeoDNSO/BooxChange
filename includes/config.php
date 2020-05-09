@@ -37,6 +37,8 @@ spl_autoload_register(function ($class) {
     // if the file exists, require it
     if (file_exists($file)) {
         require $file;
+    }else{
+        exit("Fichero de carga de clase no existe");
     }
 });
 

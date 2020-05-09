@@ -27,6 +27,8 @@ class DAOValoracionLibro extends DAO
 
     public function valorarLibro($id, $valoracion, $idUsuario, $comentario){
 
+        $comentario = self::$instance->bdBooxChange->real_escape_string($comentario);
+
         $sql = "SELECT * FROM valoracionlibro WHERE Id_Libro = $id AND Id_Usuario = $idUsuario";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 

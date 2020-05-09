@@ -117,7 +117,8 @@ class DAOLibro extends DAO
     public function findBookTitulo($libro, $genero){
 
         $sql = "";
-
+        $genero = self::$instance->bdBooxChange->real_escape_string($genero);
+        $libro = self::$instance->bdBooxChange->real_escape_string($libro);
         if($genero == ""){
             $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%')";
         }
@@ -194,6 +195,16 @@ class DAOLibro extends DAO
     }
 
     public function subirLibro($titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion){
+
+        $titulolibro = self::$instance->bdBooxChange->real_escape_string($titulolibro);
+        $autor = self::$instance->bdBooxChange->real_escape_string($autor);
+        $imagen = self::$instance->bdBooxChange->real_escape_string($imagen);
+        $descripcion = self::$instance->bdBooxChange->real_escape_string($descripcion);
+        $genero = self::$instance->bdBooxChange->real_escape_string($genero);
+        $idioma = self::$instance->bdBooxChange->real_escape_string($idioma);
+        $editorial = self::$instance->bdBooxChange->real_escape_string($editorial);
+
+
         $sql = "SELECT * FROM libro WHERE Titulo='$titulolibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
  
@@ -210,6 +221,17 @@ class DAOLibro extends DAO
     }
 
     public function modificarLibro($idLibro, $titulolibro ,$autor, $precio, $imagen, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion) {
+
+
+        $titulolibro = self::$instance->bdBooxChange->real_escape_string($titulolibro);
+        $autor = self::$instance->bdBooxChange->real_escape_string($autor);
+        $imagen = self::$instance->bdBooxChange->real_escape_string($imagen);
+        $descripcion = self::$instance->bdBooxChange->real_escape_string($descripcion);
+        $genero = self::$instance->bdBooxChange->real_escape_string($genero);
+        $idioma = self::$instance->bdBooxChange->real_escape_string($idioma);
+        $editorial = self::$instance->bdBooxChange->real_escape_string($editorial);
+        
+
         $sql = "SELECT * FROM libro WHERE Id_Libro='$idLibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 

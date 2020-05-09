@@ -31,16 +31,18 @@ class DAOLibroIntercambio extends DAO
      * @return int o nulo si hubo algun problema con la consulta
      */
     public function subirLibro($libroMisterioso)
-    {
-        $autor = $libroMisterioso->getAutor();
+    { 
         $idUser = $libroMisterioso->getIdUsuario();
-        $imagen = $libroMisterioso->getImagen();
 
-        $titulo = $libroMisterioso->getTitulo();
-        $desc = $libroMisterioso->getDescripcion();
-        $genero = $libroMisterioso->getGenero();
+        $autor =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getAutor());
+        $imagen =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getImagen());
+        $titulo =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getTitulo());
+        $desc =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getDescripcion());
+        $genero =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getGenero());
+        
         $intercambiado = $libroMisterioso->getIntercambiado();
         $esOferta = $libroMisterioso->getOfertado();
+
         //id y fecha tiene valores por defecto y automaticos
         $sql = "INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
                 VALUES ('', '$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";

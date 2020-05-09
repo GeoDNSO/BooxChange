@@ -11,14 +11,14 @@ if(!isset($_SESSION['nombre'])){
 
 $titulolibro = $_POST["titulolibro"];
 $autor = $_POST["autor"];
-//no van los decimales, nose porque
+//no van los decimales, no sé porque
 $precio = $_POST["precio"];
-$imagen = $_POST["imagen"];
 $descripcion = $_POST["descripcion"];
 $genero = $_POST['genero'];
-if(empty($genero)){
-    exit("No se ha seleccionado ningun genero");
-}
+
+$genero = $_SESSION["generoLibroTemp"];
+unset($_SESSION["generoLibroTemp"]);
+
 $enTienda = $_POST["enTienda"];
 $idioma = $_POST["idioma"];
 $editorial = $_POST["editorial"];

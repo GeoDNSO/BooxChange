@@ -33,6 +33,7 @@ class DAOChat extends DAO
         if ($consulta == false) {
             return $consulta;
         }
+        
         return self::$instance->bdBooxChange->insert_id;
     }
 

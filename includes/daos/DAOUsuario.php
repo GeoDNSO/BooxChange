@@ -33,6 +33,9 @@ class DAOUsuario extends DAO
     function verificarInicioSesion($usuario, $password)
     {
 
+        $usuario = self::$instance->bdBooxChange->real_escape_string($usuario);
+        $password = self::$instance->bdBooxChange->real_escape_string($password);
+
         $sql = "SELECT * FROM usuario WHERE Nombre='$usuario'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
@@ -67,6 +70,14 @@ class DAOUsuario extends DAO
     function registrarUsuario($nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil, $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion)
     {
 
+
+        $nombreUsuario = self::$instance->bdBooxChange->real_escape_string($nombreUsuario);
+        $nombreReal = self::$instance->bdBooxChange->real_escape_string($nombreReal);
+        $correo = self::$instance->bdBooxChange->real_escape_string($correo);
+        $password = self::$instance->bdBooxChange->real_escape_string($password);
+        $fotoPerfil = self::$instance->bdBooxChange->real_escape_string($fotoPerfil);
+        $ciudad = self::$instance->bdBooxChange->real_escape_string($ciudad);
+        $direccion = self::$instance->bdBooxChange->real_escape_string($direccion);
 
         $sql = "SELECT * FROM usuario WHERE Nombre='$nombreUsuario'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
@@ -195,6 +206,15 @@ class DAOUsuario extends DAO
 
     function actualizarPerfil($nombreUsuario, $nombreReal, $correo, $fotoPerfil, $ciudad, $direccion)
     {
+        
+        $nombreUsuario = self::$instance->bdBooxChange->real_escape_string($nombreUsuario);
+        $nombreReal = self::$instance->bdBooxChange->real_escape_string($nombreReal);
+        $correo = self::$instance->bdBooxChange->real_escape_string($correo);
+        //$password = self::$instance->bdBooxChange->real_escape_string($password);
+        $fotoPerfil = self::$instance->bdBooxChange->real_escape_string($fotoPerfil);
+        $ciudad = self::$instance->bdBooxChange->real_escape_string($ciudad);
+        $direccion = self::$instance->bdBooxChange->real_escape_string($direccion);
+
         $sql = "SELECT * FROM usuario WHERE Nombre='$nombreUsuario'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
