@@ -1,8 +1,10 @@
 @import url("root.css");
 
 .barraAdmin{
+    margin-top: -2%;
+    padding: 1%;
     width: 100%;
-
+    margin-bottom: 2%;
     display: flex;
     
     flex-direction: row;
@@ -11,12 +13,22 @@
     align-items: center;
 
     list-style: none;
-    padding-bottom: 2rem; /*Para solucionar el margen con los form*/
 
-    --colorNav: #000000;
-    --colorNavHover: #2ead54;
-    --colorTextNav: #000000;
-    --colorTextNavHover: #46cfad;
+    background-color: var(--naranja3);
+
+    --colorNav: var(--naranja3);
+    --colorNavHover: var(--naranja1);
+    --colorTextNav: var(--letraClaraSalvio);
+    --colorTextNavHover: var(--naranja3);
+}
+
+.botonAdmin{
+    padding: 1%;
+    background-color: var(--naranja2);
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 100%;
+    border-radius: 15px;
 }
 
 .botonAdmin a{

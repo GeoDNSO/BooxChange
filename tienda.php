@@ -114,7 +114,7 @@ foreach ($librosTienda as $libro) {
 
         //echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Ver Libro</a></p>";
 
-        echo "<p class='euros centrado'>$precio";
+        echo "<p class='euros centrado blanco'>$precio";
         echo "€</p>";
 
         echo "</div>";

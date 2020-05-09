@@ -29,8 +29,8 @@ $idDiscusion = ($_GET["Discusion"]);
 
   else{
       echo "<div class='generalCom'>";
-      echo "<div class='tituloCom'>";
-      echo "<h1 class='titCom'>Comentarios de $tituloDiscusion</h1>";
+      echo "<div class='tituloCom noDiscusion'>";
+      echo "<h1 class=' titCom'>Comentarios de $tituloDiscusion</h1>";
       echo " </div>";
       foreach($listaComentariosDiscusion as $comentario){
           $comentarioIdUsuario = $comentario->getIdUsuario();
@@ -78,7 +78,7 @@ echo "</div>";
   if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
       //echo '<br>';
       echo '<div id=boardindex_table>';
-      echo '<fieldset id="cajaformTema">';
+      echo '<fieldset id="cajaformTema" class=formCom>';
       echo '<legend id="anadirTema">Añadir comentario</legend>';
 
       echo '<form method="post" class=foroForm action="includes/procesos/procesarComentario.php?id='. $idDiscusion. '">';

@@ -5,7 +5,7 @@
     /*height: auto;*/
     padding: 20px 35px 26px 35px;
     border-radius: 40px;
-    background: var(--cuadroClaro);
+    background: var(--cajaFondo);
     box-shadow: 
 	    13px 13px 20px var(--cajaSombra1),
 	    -13px -13px 20px var(--cajaSombra2);
@@ -57,7 +57,7 @@ width:42%;
 min-width:350px;
 height: auto;
 margin:2%;
-background-color:  var(--cuadroClaro);
+background-color:  var(--caja1);
 box-shadow: 3px 3px 8px  var(--cajaSombra1),
             -3px -3px 8px var(--cajaSombra2);
 border-radius: 15px;
@@ -219,7 +219,7 @@ margin:2%;
 	margin: 0 auto;
 	margin-top: 3% !important;
 	height: auto;
-	background-color:  var(--cuadroClaro);
+	background-color:  var(--caja1);
 	border-radius: 15px;
 	display: flex;
 	flex-wrap: wrap;
@@ -303,7 +303,7 @@ transition: all 0.3s ease 0s;
     height: auto;
     padding: 20px 35px 35px 35px;
     border-radius: 40px;
-    background: var(--cuadroClaro);
+    background: var(--cajaFondo);
     box-shadow: 
 	    13px 13px 20px var(--cajaSombra1),
 	    -13px -13px 20px var(--cajaSombra2);
@@ -361,7 +361,7 @@ transition: all 0.3s ease 0s;
 }
 
 .cancelar{
-	width: 100%;
+	width: 60%;
 	height: 45px;
 	margin: 0 auto;
 	margin-top: 2% !important;
