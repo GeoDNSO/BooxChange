@@ -1,0 +1,237 @@
+.mainOfertasIntercambio {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 2rem;
+}
+.mainOfertasIntercambio h1 {
+    margin-bottom: 1rem;
+}
+
+.libroOfertaConcreta {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    width: 80%;
+    height: 18rem;
+    margin: 1rem;
+
+    padding: 1rem;
+    border-radius: 2rem;
+
+    background: rgb(68, 109, 240);
+    background: linear-gradient(
+        90deg,
+        rgba(68, 109, 240, 1) 0%,
+        rgba(109, 210, 226, 1) 30%,
+        rgba(119, 222, 207, 1) 46%,
+        rgba(128, 233, 134, 1) 60%,
+        rgba(146, 254, 139, 1) 80%,
+        rgba(147, 255, 201, 1) 100%
+    );
+}
+
+
+.libroOfertaConcreta h3 {
+    font-size: 2rem;
+}
+.libroOfertaConcreta h4 {
+    font-size: 1rem;
+}
+.libroOfertaConcreta h5 {
+    font-size: 1rem;
+}
+.libroOfertaConcreta p {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.tuLibroOferta,
+.otroLibroOferta {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.5rem;
+
+    height: 90%;
+
+    flex: 1;
+}
+
+.otroLibroOferta {
+    flex-direction: row-reverse;
+}
+.tuLibroOferta .contenidoLibroOferta {
+    margin-left: auto;
+}
+.otroLibroOferta .contenidoLibroOferta {
+    margin-right: auto;
+}
+
+.imagenLibroOferta img {
+    width: 8rem;
+    height: 9.5rem;
+}
+
+.otroLibroOferta .imagenLibroOferta {
+    margin-right: 2.5rem;
+}
+
+.tuLibroOferta .imagenLibroOferta {
+    margin-left: 2.5rem;
+}
+
+.contenidoLibroOferta {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.imagenLibroOferta {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    align-self: flex-start;
+}
+
+.botonesOferta {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 0.5rem;
+}
+.botonesOferta a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    width: 6rem;
+    text-align: center;
+    font-weight: bold;
+
+    padding: 0.2rem;
+    border-radius: 1rem;
+
+    margin: 0.3rem;
+    box-shadow: 0rem 0rem 0.3rem gray;
+}
+
+.botonAceptar a,
+.botonRechazar a {
+    padding: 0.3rem;
+    width: 6rem;
+    font-weight: bold;
+}
+
+.botonAceptar {
+    transition: all 0.3s ease 0s;
+    background: rgb(67, 228, 67);
+}
+
+.botonAceptar:hover {
+    background: rgb(139, 224, 139);
+}
+.botonAceptar:active {
+    background: rgb(41, 182, 41);
+}
+
+.botonRechazar {
+    transition: all 0.3s ease 0s;
+    background: red;
+}
+.botonRechazar:hover {
+    background: rgb(238, 85, 85);
+}
+.botonRechazar:active {
+    background: rgb(143, 32, 32);
+}
+
+.botonChat {
+    transition: all 0.3s ease 0s;
+    background: rgb(73, 125, 173);
+}
+
+.botonChat:hover {
+    background: rgb(157, 202, 243);
+}
+
+.botonChat:active {
+    background: rgb(53, 99, 226);
+}
+
+@media only screen and (max-width: 1000px) {
+    .libroOfertaConcreta {
+        flex-direction: column;
+
+        width: 80%;
+        height: 25rem;
+        margin: 1rem;
+
+        background: rgb(68, 109, 240);
+        background: linear-gradient(
+            180deg,
+            rgba(68, 109, 240, 1) 0%,
+            rgba(109, 210, 226, 1) 30%,
+            rgba(119, 222, 207, 1) 46%,
+            rgba(128, 233, 134, 1) 60%,
+            rgba(146, 254, 139, 1) 80%,
+            rgba(147, 255, 201, 1) 100%
+        );
+    }
+
+    
+    .libroOfertaConcreta h3 {
+        font-size: 1.5rem;
+    }
+    .libroOfertaConcreta h4 {
+        font-size: 0.9rem;
+    }
+    .libroOfertaConcreta h5 {
+        font-size: 0.9rem;
+    }
+    .libroOfertaConcreta p {
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+    
+
+    .otroLibroOferta .imagenLibroOferta {
+        margin-right: 2rem;
+    }
+
+    .tuLibroOferta .imagenLibroOferta {
+        margin-left: 2rem;
+    }
+
+    .tuLibroOferta, .otroLibroOferta{
+        width: 100%;
+    }
+
+    .otroLibroOferta .imagenLibroOferta {
+        flex-direction: row;
+        margin-right: 11rem;
+        margin-top: 0.5rem;
+    }
+
+    
+    .tuLibroOferta .imagenLibroOferta {
+
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.8git rem;
+    }
+
+    .botonesOferta{
+        margin-left: 0.3rem;
+    }
+}

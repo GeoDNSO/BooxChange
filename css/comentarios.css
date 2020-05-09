@@ -1,0 +1,40 @@
+.generalCom{
+  width: 80%;
+  margin: 0 auto;
+  margin-left:12%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titCom{
+  font-size: 35px;
+
+}
+.comentarioCom{
+  padding: 5px 5px 5px 5px;
+  width:80%;
+  height: auto;
+  margin:2%;
+  background-color:  #8BF39B;
+  box-shadow: 3px 3px 8px #808080,
+              -3px -3px 8px #ffffff;
+  border-radius: 15px;
+}
+.fechaCom{
+  padding-left: 35px;
+  width:80%;
+
+}
+.usuCom{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.usuComVert{
+  padding: 0px 0px 15px 40px;
+  width: 28.5%;
+  height: auto;
+
+}

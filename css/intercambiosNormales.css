@@ -1,0 +1,246 @@
+
+/*CONTENIDO PRINCIPAL*/
+
+.interNormMain{
+    
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    text-align: center;
+}
+
+
+
+/*TIENDA LIBROS INTERCAMBIO BASE*/
+.tiendaLibrosInter{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+
+}
+
+.libroInter{
+
+    width: auto;
+    /*height: 11rem;*/
+    height: auto;
+    max-height: max-content;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    margin: 0.6rem;
+    margin-top: 1.3rem;
+    padding: 0.5rem;
+
+    background-color: rgb(157, 222, 248);
+    border-radius: 1rem;
+
+    box-shadow: 0rem 0.3rem 0.6rem grey;
+}
+
+
+.imagenLibroInter{
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-left: 1%;
+     margin-bottom: 1%;
+}
+
+.libroInter img{
+    width: 9rem;
+}
+
+.libroInterFecha{
+    background-color: khaki;
+    position: absolute;
+    left: -1rem;
+    top: -1.3rem;
+    z-index: 2;
+
+    padding: 0.2rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.2rem 0.6rem grey;
+}
+
+.libroInterUserName, .libroInterTitulo{
+    font-weight: bold;
+}
+
+.libroInterTitulo{
+    color: rgb(74, 111, 233);
+}
+
+.libroInterUserName{
+    color: rgb(47, 94, 95);
+}
+
+.libroInterAutor{
+    color: rgb(58, 184, 95);
+}
+
+p.noHayLibrosIntercambio{
+    font-size: 1.5rem;
+
+    width: 50%;
+    padding: 0.3rem;
+    border-radius: 1rem;
+
+    background-color: rgb(234, 245, 187);
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+
+.tiendaLibrosInter p span{
+    font-weight: bold;
+}
+
+.tiendaLibrosInter p{
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+}
+
+/*BOTONES*/
+
+.botonesLibroInter{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    height: auto;
+    width: auto;
+
+
+    margin-left: 1rem;
+
+}
+
+.botonesLibroInter .descLibroInter{
+    width: 100%;
+   
+}
+
+.descLibroInter{
+    align-self: flex-start;
+    width: 55%;
+}
+
+
+/*BOTONES INTERCAMBIO*/
+
+.botonEnvio img{
+    height: 4rem;
+    width: 4rem;
+    filter: grayscale(0%);
+    transition: all 0.3s ease 0s;
+    margin-bottom: 2rem;
+}
+
+.botonEnvio img:hover{
+    filter: grayscale(0%);
+}
+
+
+.interButton {
+    /*display: block;*/
+    align-self: center;
+    text-decoration: none;
+
+    width: auto;
+    height: auto;
+
+    background: #4E9CAF;
+
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+
+    text-align: center;
+    
+    color: white;
+    font-weight: bold;
+
+    transition: all 0.3s ease 0s;
+}
+
+.interButton:hover {
+    background-color: rgb(106, 218, 124);
+    color: white;
+}
+
+.interButton:active{
+    background-color: rgb(40, 165, 61);
+}
+
+
+.interButton a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1rem;
+}
+
+
+/*TOOL TIP**/
+
+
+.botonChat .tooltiptext, .botonEnvio .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .botonChat:hover .tooltiptext,   .botonEnvio:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .botonChat .tooltiptext::after, .botonEnvio .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(161, 161, 161, 0.363) transparent transparent;
+  }
+
+
+
+  @media only screen and (max-width: 800px) {
+  
+    .libroInter{
+        width: 110%;
+    }
+
+    .libroInter img{ 
+        height: 9rem;
+        width: 7rem;
+        margin-right: 1rem;
+    }
+    
+}

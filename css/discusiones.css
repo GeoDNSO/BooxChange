@@ -1,0 +1,44 @@
+
+table.discusiones {
+    
+    margin: auto;
+    width: 95%;
+    empty-cells: show;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 3px;
+    border-color: black;
+    background-color: #119658;
+
+
+}
+
+tbody.discontent{
+    font-family: arial, sans-serif;
+    background: #8BF39B;
+    background-attachment: fixed;
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 15px 0%;
+    border-radius: 10px 10px 10px 10px
+
+
+
+}
+
+h1.tiDisc{
+  font-size: 35px;
+  color: white;
+  background-color: #110427;
+  text-align: center;
+
+}
+td.respuestas{
+  background-color: #94F38B;
+}
+td{
+  height: 60px;
+  text-align: center;
+  border-radius: 10px 10px 10px 10px;
+}

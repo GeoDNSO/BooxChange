@@ -1,0 +1,95 @@
+@import url("root.css");
+
+.mainIntercambio {
+    text-align: center;
+    background-color: violet;
+
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+
+    --cInterNor: rgb(235, 201, 235);
+    --cInterMist: rgb(221, 185, 226);
+}
+
+.mainIntercambio p{
+    margin-bottom: 1rem;
+}
+
+.opcionesIntercambio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+
+    text-align: center;
+}
+
+.intercambioNormal,
+.intercambioMisterioso {
+    display: flex; /*Para poder desplazar el boton*/
+    flex-direction: column;
+
+    margin: 1rem;
+    margin-top: 2rem;
+    padding: 2rem;
+
+    color: white;
+
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+
+    flex: 1 1 0px;
+}
+
+
+.intercambioNormal {
+    background-color: var(--cInterNor);
+}
+
+.intercambioMisterioso {
+    background-color: var(--cInterMist);
+}
+
+.imagenIcono {
+    margin: 1rem;
+    padding: 0.5rem;
+
+    margin-top: auto;
+    z-index: 0;
+}
+
+.mainIntercambio .imagenIcono img {
+    /*
+    width: 20rem;
+    height: 20rem;
+    */
+    width: 70%;
+    height: 18rem;
+    padding: 0.5rem;
+    /*background-color: white;*/
+
+    border-radius: 1rem;
+  
+    filter: grayscale(100%);
+
+    transition: all 0.3s ease 0s;
+}
+
+.mainIntercambio .imagenIcono img:hover{
+
+    box-shadow: 0rem 0rem 0.5rem rgb(223, 215, 215), 0rem 0rem 3rem rgb(152, 228, 211);
+    opacity: 1;
+    transition: all 0.3s ease 0.01s;
+    filter: grayscale(0%);
+}
+
+@media only screen and (max-width: 800px) {
+  
+    .opcionesIntercambio {
+        flex-direction: column;
+    }
+
+}

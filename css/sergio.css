@@ -1,0 +1,294 @@
+/* Leaderboard de los libros */
+
+.leaderboard {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: flex;
+
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+}
+
+.leaderboard h1{
+    font-size: 18px;
+    color: #e1e1e1;
+    padding: 12px 13px 18px;
+}
+
+.leaderboard ol {
+    counter-reset: leaderboard;
+}
+
+.leaderboard ol li {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    counter-increment: leaderboard;
+    padding: 18px 10px 18px 50px;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+    list-style-type: none;
+}
+
+.leaderboard ol li::before {
+    content: counter(leaderboard);
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #000000;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.leaderboard ol li mark {
+    position: relative;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: none;
+    color: #fff;
+}
+
+.leaderboard ol li mark a:link{
+    color: #fff;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+.leaderboard ol li mark a:active{
+    color: #000000;
+    text-decoration: none;
+}
+
+.leaderboard ol li mark::before, mark::after {
+    content: "";
+    position: relative;
+    z-index: 1;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #c24448;
+    border-left: 10px solid transparent;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+
+.leaderboard ol li mark::after{
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 10px solid transparent;
+}
+
+.leaderboard ol li small {
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: right;
+    color: #fff;
+}
+
+.leaderboard ol li::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fa6855;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.leaderboard ol li:nth-child(odd){
+    background: #060061;
+}
+.leaderboard ol li:nth-child(even){
+    background: #0058a0;
+}
+.leaderboard ol li:nth-child(1){
+    background: #b99e00;
+}
+.leaderboard ol li:nth-child(2){
+    background: #747474;
+}
+.leaderboard ol li:nth-child(3){
+    background: #866300;
+}
+
+/* Sección de comentarios */
+#valoraciones {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5rem;
+    height: auto;
+    border-top: solid;
+    border-width: 1px;
+}
+
+#comentarios {
+    width:67%;
+    margin-right: 5%;
+    height: auto;
+}
+
+#comentarios h1 {
+    height: 4rem;
+    margin-top: 2%;
+    text-align: center;
+}
+#comentarios ul li {
+    height: auto;
+    list-style-type: none;
+}
+
+#comentarios ul li div.todaValoracion {
+    border-top: double;
+    padding-top: 1%;
+}
+
+#comentarios ul li div.todaValoracion span.valoracion {
+    color: gray;
+    font-size: 2rem;
+}
+
+#comentarios ul li div.todaValoracion span.coloreada {
+    color: orange;
+}
+
+/*Añadido por Salvio*/
+.nuevoComentario {
+    width: 100%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    margin: auto;
+    margin-top: 10% !important;
+    margin-bottom: 2% !important;
+}
+
+/* Formulario valorar */
+#valorarForm {
+    width: 20%
+}
+
+#valorarForm p {
+    text-align: left;
+}
+
+/* Estrellas de valoración */
+#valorarForm label {
+    font-size: 2rem;
+    color: gray;
+}
+
+#valorarForm input[type="radio"]{
+    display: none;
+}
+
+.estrellas {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    margin-top: 1rem;
+    text-align: center !important;
+    margin-bottom: 1rem;
+}
+
+#valorarForm label:hover, #valorarForm label:hover ~ label{
+    color: orange;
+}
+
+#valorarForm input[type="radio"]:checked ~ label {
+    color: orange;
+}
+
+#valorarForm textarea {
+    width: 100%;
+}
+
+/* Libro en la tienda */
+#libro {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#libro {
+    width: 100%;
+    height: auto;
+}
+
+#libro h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1%;
+    color: #000000;
+}
+
+#libro h3 span{
+    font-size: 1rem;
+    color: #5f5f5f;
+}
+
+#libro #datos {
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+#libro #datos h3 span.valoracion {
+    color: grey;
+    font-size: 1.5rem;
+}
+#libro #datos h3 span.coloreada {
+    color: orange;
+}
+
+#libro #datos h2#titulo {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3#lastH3{
+    margin-bottom: 1rem;
+}
+
+
+a.libroTiendaBoton{
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+    
+    transition: all 0.3s ease 0s;
+    
+    border-radius: 1.5rem;
+    background: rgb(42, 180, 235);
+}
+
+
+.libroTiendaBoton:hover{
+    background: rgb(122, 192, 219);
+}
+
+.libroTiendaBoton:active{
+    background: rgb(101, 119, 197);
+}

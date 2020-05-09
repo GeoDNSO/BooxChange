@@ -1,0 +1,48 @@
+.notificacionesTotal {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 2px;
+    border-style: none none solid none;
+    border-color: #7aceff;
+    width: 50%;
+}
+
+.notificacionesTitulo {
+    text-align: center;
+    box-sizing: border-box;
+    margin: auto;
+    border: 2px;
+    border-style: none none solid none;
+    border-color: #83ff73;
+}
+
+.notificacionesCenter {
+    color: #fd0000;
+    width: 75%;
+}
+
+.notificacionesCenter:hover {
+    color: #0026fd;
+}
+
+.notificacionesCenterHora {
+    text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #fd0000;
+    width: 30%;
+    border-radius: 10px 10px 10px 10px; /*Mejora las esquinas*/
+}
+
+@media only screen and (max-width: 950px) {
+    .notificacionesTotal {
+        width: 80%;
+    }
+
+    .notificacionesCenter {
+        width: 90%;
+    }
+}

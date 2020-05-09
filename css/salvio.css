@@ -1,0 +1,544 @@
+
+/*Tienda*/
+.buscarTienda {
+    width: 77%;
+    /*height: auto;*/
+    padding: 20px 35px 26px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    margin: auto;
+    margin-bottom: 2% !important;
+}
+
+.marginTop{
+	width: 20% !important;
+	margin-right: 4.5% !important;
+	margin-left: 0% !important;
+
+}
+
+.marginGenero{
+	margin-left: 1%;
+    padding: 1%;
+    margin-top: 4.7%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 60%;
+    font-size: 15px;
+ }
+
+.selectCentrado{
+	margin: 0 auto;
+}
+
+.ancho{
+	width: 40%;
+	margin-left: 4% !important;
+}
+.noWrapBuscar{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box{
+width: 90%;
+margin: 0 auto;
+margin-left:7%;
+display: flex;
+flex-wrap: wrap;
+}
+
+.libro{
+padding: 15px 10px 20px 10px;
+width:42%;
+min-width:350px;
+height: auto;
+margin:2%;
+background-color:  #e6e6e6;
+box-shadow: 3px 3px 8px #808080,
+            -3px -3px 8px #ffffff;
+border-radius: 15px;
+}
+
+.botones{
+width: auto;
+display: flex;
+align-items: center;
+margin: 0 auto;
+margin-top: 2.5% !important;
+
+/*
+flex-direction: row;
+align-content: center;
+*/
+}
+
+.fila{
+width: auto;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+}
+
+
+.enlace{
+padding: 16px 20px 20px 20px;
+width:30%;
+background-color:  #3385ff;
+border-radius: 27px;
+	margin: 0 auto;
+	margin-left: 3% !important;
+}
+
+.enlace a{
+    text-decoration: none;
+}
+
+.enlace:hover{
+    background-color: rgb(114, 157, 236);
+}
+
+.enlace:active{
+    background-color: rgb(82, 119, 185);
+}
+
+.agotado{
+	padding: 16px 20px 20px 20px;
+	background-color:  rgb(114, 157, 236);
+	border-radius: 27px;
+	width:30%;
+	margin: 0 auto;
+	margin-left: 3% ! important;
+}
+
+.nologin{
+width: 100%;
+padding: 5px 0px 0px 0px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.info{
+	padding: 16px 20px 20px 20px;
+width:auto;
+background-color:  #4d94ff;
+border-radius: 27px;
+}
+
+.compra{
+width:auto;
+background-color:  #4d94ff;
+border-radius: 27px;
+}
+
+.euros{	
+	font-size: 100%;
+}
+
+.imagen{
+padding: 5px 10px 5px 10px;
+width:30%;
+margin:2%;
+}
+
+.atributos{
+padding: 10px 15px 15px 15px;
+width:45%;
+margin:2%;
+}
+
+.blanco{
+	color: #ffffff !important;
+}
+
+.grisClaro{
+	color: #d9d9d9 !important;
+}
+
+.gris{
+	color: #1a1a1a !important;
+}
+
+.titulo{
+	margin-top:2%;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.genero{
+	margin-top: 1.25%;
+	margin-bottom: 1.25%;
+}
+
+.precio{
+	padding: 11.5px 17px 15.5px 17px;
+	width:30%;
+	margin: 0 auto;
+	margin-right: 3% !important;
+	background-color:  #ebe4e0;
+	border-radius: 150px;
+	border-style: solid;
+	border-color: #fbb750;
+ 	border-width: 5.5px;
+
+
+}
+
+.centrado{
+	text-align: center;
+}
+
+.aviso{
+	margin: 0 auto;
+	margin-top: 1% !important;
+	margin-bottom: 2.5% !important;
+	padding: 18px 20px 20px 38px;
+	width:78%;
+	height: auto;
+	background-color:  #3385ff;
+	box-shadow: 3px 3px 8px #808080,
+	            -3px -3px 8px #ffffff;
+	border-radius: 15px;
+}
+
+.autor{
+	margin-top: 1%;
+	margin-bottom: 3%;
+}
+
+/*Usuario*/
+
+.datos{
+	padding: 20px 20px 30px 25px;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 3% !important;
+	height: auto;
+	background-color:  #e6e6e6;
+	border-radius: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 4% !important;
+}
+
+.fondo{
+	background-color: black;
+	background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/77/25/U8ETq4.jpg) !important;
+	padding: 25px 35px 30px 35px;
+	margin: 0 auto;
+}
+
+.infoUsuario{
+padding: 0px 15px 15px 15px;
+width: 40%;
+height: auto;
+margin:2%;
+margin-left: 18% !important;
+margin-top: 3.5% !important;
+}
+
+.fotoUsuario{
+	padding: 5px 10px 5px 10px;
+	width:20%;
+	height: auto;
+	margin:2%;
+	margin-top: 3.5% !important;
+	margin-left: 7% !important;
+}
+
+.marginLeft{
+	margin-left:13% !important;
+	font-size: 18px;
+}
+
+.marginBottom{
+	margin-bottom:1%;
+	margin-top: 1%;
+	font-size: 20px;
+}
+
+.textGrande{
+	font-size: 18px;
+}
+
+.arriba{
+	margin-bottom:1%;
+	margin-top: 2% !important;
+	font-size: 20px;
+}
+.modButt{
+padding: 16px 20px 20px 20px;
+width:30%;
+height: auto;
+margin:0 auto;
+margin-top: 4%;
+margin-bottom: 3%;
+background-color:  #3385ff;
+border-radius: 27px;
+transition: all 0.3s ease 0s;
+}
+
+.modButt:hover{
+    background-color:  #33ff81;    
+}
+
+.modButt:active{
+    background-color:  #36b165;    
+}
+
+
+.modButt a{
+    text-decoration: none;
+}
+
+/*Modificar perfil*/
+.modifPerfil {
+	min-width: 460px;
+    width: 50%;
+    height: auto;
+    padding: 20px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    margin: auto;
+    margin-bottom: 2.5% !important;
+}
+.tituloMod{
+	width: auto;
+	font-size: 18px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+.inputDatos{
+	margin-left: 1%;
+	width: 75%;
+	margin-bottom: 1%;
+    border: none;
+    font-size: 16px;
+    border-bottom: solid 1px #1abc9c;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 96%,
+        #1abc9c 4%
+    );
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: darken(#1abc9c, 20%);
+}
+
+.fotoMod{
+	margin-bottom: 3.5%;
+	margin-top: 1%;
+}
+.noEnorme{
+	width: 60%;
+	margin: 0 auto;
+	display: block;
+}
+
+.helloAdmin{
+    flex-direction: column;
+    display: flex;
+
+    align-content: center;
+    padding: 0;
+}
+
+/*Cambiar de rol*/
+.nombreReal{
+	width: auto;
+	font-size: 18px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+.marginTopRol{
+	margin-top: 1%;
+}
+
+.cancelar{
+	width: 60%;
+	height: 45px;
+	margin: 0 auto;
+	margin-top: 2% !important;
+	display: block;
+	padding-top: 15px;
+	text-decoration: none !important;
+	background-color: #ff3333 !important;
+}
+
+.cancelar:hover {
+    background: #cc0000 !important;
+}
+.cancekar:active {
+    background: #cc0000 !important;
+}
+
+/*USUARIO*/
+@media only screen and (max-width: 650px){
+	.datos{
+		width:auto;
+	}
+	.fotoUsuario{
+	margin: 0 auto !important;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.modButt{
+		width:auto;
+	}
+
+	.infoUsuario{
+		width:auto;
+		margin-left: auto;
+	}
+
+	.fotoUsuario{
+		width:auto;
+	}
+}
+
+/*TIENDA*/
+@media only screen and (max-width: 1000px) {
+	.buscarTienda {
+	   width:auto;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+		max-width: 483px;
+	    padding: 20px 35px 35px 35px;
+	    border-radius: 40px;
+	    background: #ecf0f3;
+	    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+	    margin: 0 auto;
+	    margin-bottom: 2% !important;
+}
+
+.marginTop{
+	margin-top: 2%;
+	margin-left: 4% !important;
+	width: 100% !important;
+}
+	.atributos{
+		margin: 0 auto;
+	}
+	.aviso{
+		margin: 0 auto;
+		width:auto;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+		margin-top: 5% !important;
+		max-width: 495px;
+	}
+	.fila{
+		width:auto;
+		padding: 0;
+	}
+	.box{
+		width:auto;
+		margin: 0 auto;
+	}
+	.libro{
+		width:auto;
+		margin: 0 auto;
+		margin-top: 5% !important;
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+		max-width: 530px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 15px;
+	}
+	.botones{
+		margin: 0 auto;
+		margin-top: 2% !important;
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+		margin: 0 auto;
+	}
+	/*
+	.precio{
+		width:30%;
+		margin: 0 auto;
+		margin-right:3% !important;
+	}
+	.enlace{
+		width:30%;
+		margin: 0 auto;
+		margin-left: 3% ! important;
+	}
+	.agotado{
+		width:30%;
+		margin: 0 auto;
+		margin-left: 3% ! important;
+	}
+	*/
+	.imagen{
+		min-width: 120px;
+		margin: 0 auto;
+	}
+}
+/*
+@media only screen and (max-width: 500px) {
+
+	.box{
+		
+	}
+	.enlace{
+		width:auto;
+		margin: 0 auto;
+	}
+	.atributos{
+		margin: 0 auto;
+	}
+	.fila{
+		width:auto;
+		padding: 0;
+	}
+	.libro{
+		min-width:220px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 15px;
+		margin-top: 6%;
+
+	}
+	.botones{
+		margin: 0 auto;
+		margin-top: 2% !important;
+		padding: 0;
+		width:auto;
+	}
+	.info{
+		width:auto;
+	}
+	.compra{
+		width:auto;
+		margin: 0 auto !important;
+	}
+	.precio{
+		width:auto;
+		margin: 0 auto !important;
+	}
+	.agotado{
+		margin: 0 auto !important;
+		margin-top: 3.5% !important;
+	}
+	.imagen{
+		min-width: 120px;
+		margin: 0 auto;
+	}
+}
+*/

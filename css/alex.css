@@ -1,0 +1,262 @@
+table.table_list {
+    margin: auto;
+    width: 85%;
+    empty-cells: show;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 3px;
+    border-color: black;
+    background-color: #119658;
+    border-radius: 10px 10px 10px 10px;
+}
+
+tbody.content {
+    font-family: arial, sans-serif;
+    background: #8bf39b;
+    background-attachment: fixed;
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 15px 0%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+h1.titema {
+    font-size: 35px;
+    color: white;
+    background-color: #110427;
+    text-align: center;
+}
+td.info {
+    background-color: #94f38b;
+}
+td {
+    height: 60px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+}
+#anadircomment {
+  font: 78%/130% verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left: 10px;
+  color: green;	color: #000000;
+  border-top: 1px solid #119658;
+  border-left: 1px solid #119658;
+  border-right: 1px solid #119658;
+  border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  background: #8BF39B;
+  padding: 0px 8px 3px 8px;
+  box-shadow: -0px -1px 2px #2C4C36;
+  -moz-box-shadow:-0px -1px 2px #2C4C36;
+  -webkit-box-shadow:-0px -1px 2px #2C4C36;
+  font-weight: normal;
+  font-size: 12px;
+}
+#cajaformcomment {
+    margin-left: 5rem;
+    width: 80%;
+    color: green;
+    background-color: #8bf39b;
+    border-radius: 10px 10px 10px 10px;
+    border-color: #94f38b;
+}
+#textoComentario {
+    background-color: #6db667;
+    border-radius: 10px 10px 10px 10px;
+    resize:none;
+}
+#desc{
+  resize: none;
+}
+#botontema {
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 15px;
+    border: 3px double #006505;
+}
+
+#botontema:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+#anadirDisc {
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    color: green;	color: #000000;
+    border-top: 1px solid #119658;
+    border-left: 1px solid #119658;
+    border-right: 1px solid #119658;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #8BF39B;
+    padding: 0px 8px 3px 8px;
+    box-shadow: -0px -1px 2px #2C4C36;
+    -moz-box-shadow:-0px -1px 2px #2C4C36;
+    -webkit-box-shadow:-0px -1px 2px #2C4C36;
+    font-weight: normal;
+    font-size: 12px;
+
+}
+#cajaformDisc {
+    width: 80%;
+    margin-left: 5rem;
+    color: green;
+    background-color: #8bf39b;
+    border-color: #94f38b;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border: 1px solid #119658;
+    padding: 20px;
+    background: #8BF39B;
+    box-shadow: inset 0px 0px 15px #2C4C36;
+    -moz-box-shadow: inset 0px 0px 15px #2C4C36;
+    -webkit-box-shadow: inset 0px 0px 15px #2C4C36;
+
+}
+
+#tituloDiscusion {
+    background-color: #baedc2;
+    border-radius: 10px 10px 10px 10px;
+    border-color: #6db667;
+}
+#botondisc {
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 15px;
+    border: 3px double #006505;
+}
+
+#botondisc:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+#anadirTema {
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    color: green;
+    background-color: #8bf39b;
+}
+#inputTema {
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    color: green;
+    background-color: #8bf39b;
+}
+
+/*FORMULARIO BIEN*/
+#anadirTema {
+    font: 78%/130% verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    color: green;	color: #000000;
+    border-top: 1px solid #119658;
+    border-left: 1px solid #119658;
+    border-right: 1px solid #119658;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #8BF39B;
+    padding: 0px 8px 3px 8px;
+    box-shadow: -0px -1px 2px #2C4C36;
+    -moz-box-shadow:-0px -1px 2px #2C4C36;
+    -webkit-box-shadow:-0px -1px 2px #2C4C36;
+    font-weight: normal;
+    font-size: 12px;
+  }
+#cajaformTema{
+  width: 70%;
+  color: green;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin: 15px 0px 10px 0px;
+  border: 1px solid #119658;
+  padding: 20px;
+  background: #8BF39B;
+  box-shadow: inset 0px 0px 15px #2C4C36;
+  -moz-box-shadow: inset 0px 0px 15px #2C4C36;
+  -webkit-box-shadow: inset 0px 0px 15px #2C4C36;
+}
+
+#cajaformTema form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items:flex-start;
+
+}
+
+#cajaformTema form input {
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    margin: 0.3rem;
+}
+
+#cajaformTema form textarea {
+    height: 5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+#cajaformTema form button[type="submit"] {
+    padding: 0.5rem;
+
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
+
+    border-radius: 1rem;
+
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+
+#cajaformTema form button[type="submit"]:hover {
+    background-color: greenyellow;
+}
+
+#cajaformTema form button[type="submit"]:active {
+    background-color: rgb(85, 209, 54);
+}
+
+
+#boardindex_table{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+#board_index_table p{
+    font-size: 1.5rem;
+    background-color: yellowgreen;
+    width: 80%;
+    border-radius: 2rem;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
