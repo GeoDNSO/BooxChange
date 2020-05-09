@@ -83,11 +83,15 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
     <input class="line" type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
 
-    <input type="submit" value="Subir Libro">
+    <button class='send-button type="submit" value="Subir Libro'>Subir Libro</button>
+
+    <a class="send-button cancelar" href="admin.php"> Cancelar </a>
+
 
 </form>
+
 </div>
-<a href="admin.php"> Cancelar </a>
+
 
 <?php
     include("./includes/comun/footer.php");
