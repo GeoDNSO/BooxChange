@@ -23,15 +23,16 @@ $idDiscusion = ($_GET["Discusion"]);
   $discusion = $app->getDiscusionById($idDiscusion);
   $tituloDiscusion = $discusion->getTitulo();
 
+  echo "<div class='generalCom'>";
+  echo "<div class='tituloCom'>";
+  echo "<h1 class='titCom'>Comentarios de $tituloDiscusion:</h1>";
+  echo " </div>";
   if ($listaComentariosDiscusion == NULL){
-    echo "<p class=noDiscusion>Vaya, parece que esta discusión no tiene comentarios.  Prueba a añadir uno.</p>";
+    echo "Vaya, parece que esta discusión no tiene comentarios. Prueba a añadir uno.<br>";
   }
 
   else{
-      echo "<div class='generalCom'>";
-      echo "<div class='tituloCom'>";
-      echo "<h1 class='titCom'>Comentarios de $tituloDiscusion</h1>";
-      echo " </div>";
+
       foreach($listaComentariosDiscusion as $comentario){
           $comentarioIdUsuario = $comentario->getIdUsuario();
           $comentarioTexto = $comentario->getTexto();
@@ -43,12 +44,12 @@ $idDiscusion = ($_GET["Discusion"]);
           $fotoUsu = $usuario->getFotoPerfil();
           $nombreUsuario = $usuario->getNombreUsuario();
           echo "<div class='comentarioCom'>";
-          echo "<div class='fechaCom gris'>";
+          echo "<div class='fechaCom'>";
           echo $comentarioFecha;
           echo "</div>";
           echo "<div class='usuCom'>";
           echo "<div class='usuComVert'>";
-          echo "<p class=usuariocomvert><b>" . $nombreUsuario . "</b></p>";
+          echo "<p class=usuariocomvert>" . $nombreUsuario . "</p>";
           echo "<p class=rolusuariocomvert>";
           switch ($rolUsuario){
             case 0:
@@ -71,29 +72,32 @@ $idDiscusion = ($_GET["Discusion"]);
           echo "<p class='titComVert'><b>$tituloDiscusion</b></p>";
           echo "<p class='cuerpoComVert'>$comentarioTexto</p>";
           echo "</div></div></div>";
-      }
-}
-echo "</div>";
 
+
+
+      }
+
+
+}
+      echo "</div>";
   if (isset($_SESSION["login"]) && $_SESSION["login"] == true){
       //echo '<br>';
-      echo '<div id=boardindex_table>';
-      echo '<fieldset id="cajaformTema">';
-      echo '<legend id="anadirTema">Añadir comentario</legend>';
+      echo '<fieldset id="cajaformcomment">';
+      echo '<legend id="anadircomment">Añadir comentario</legend>';
 
-      echo '<form method="post" class=foroForm action="includes/procesos/procesarComentario.php?id='. $idDiscusion. '">';
+      echo '<form method="post" action="includes/procesos/procesarComentario.php?id='. $idDiscusion. '">';
 
-      echo '<label for="textoComentario"><b>Comentario</b></label>';
-      echo '<textarea id="desc" class="blancoForo" name="textoComentario" rows="5" cols="50" placeholder="Escribe aquí tu comentario..."></textarea> <br>';
+      echo '<label for="textoComentario"><b>Comentario</b></label><br>';
+      echo '<textarea id="textoComentario" name="textoComentario" rows="5" cols="50" placeholder="Escribe aquí tu comentario..."></textarea> <br>';
 
-      echo '<button class=botonAnTema type="submit">Subir comentario</button>';
+      echo '<button id="botontema" type="submit">Subir comentario</button>';
 
       echo '</form>';
       echo '</fieldset>';
-      echo "</div>";
   }
   else {
-    echo '<p class=noDiscusion>Añadir comentario: debes haber iniciado sesión para añadir un comentario</p>';
+    echo 'Añadir comentario: debes haber iniciado sesión para añadir un comentario';
   }
+
   include_once(__DIR__."/includes/comun/footer.php");
 ?></html>

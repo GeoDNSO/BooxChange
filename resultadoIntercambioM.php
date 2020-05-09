@@ -14,7 +14,7 @@ require_once(__DIR__ . "/includes/config.php");
 
 include("includes/comun/cabecera.php");
 
-?>
+?><h1>Resultado del Intercambio Misterioso</h1>
 
 
 <?php
@@ -22,24 +22,12 @@ include("includes/comun/cabecera.php");
 $rst = intval($_GET["resultado"]);
 
 if ($rst == 0) {
-    echo '    <div class="whiteBorder">
-    <a href="index.php" class="noDeco">
-        <div class="title">¡Tu libro se ha registrado!</div>
-        <div class="sub-title">en cuanto encontremos a alguien buscando un libro misterioso se te notificará por la página web</div>
-        <img class="media" src="imagenes\media\sabrinaCat.gif" alt="">
-    </a>
-</div>';
-}
-
-else {
-
-    echo '    <div class="whiteBorder">
-                <a href="index.php" class="noDeco">
-                    <div class="title">¡Intercambio con exito!</div>
-                    <div class="sub-title">Revisa tus notificaciones</div>
-                    <img class="media" src="imagenes\media\surprise.gif" alt="">
-                </a>
-            </div>';
+    echo '<p>';
+    echo '    No hay libros disponibles para el intercambio misterioso, pero tranquilo tu libro se ha registrado';
+    echo '    en cuanto encontremos a alguien buscando un libro misterioso se te notificará por la página web';
+    echo '</p>';
+} else {
+    echo '<p>Intercambio con exito</p>';
 }
 
 include("./includes/comun/footer.php");

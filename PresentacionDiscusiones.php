@@ -21,18 +21,19 @@ $vacio = "";
 
 $app = appBooxChange::getInstance();
 $listaDiscusionesTema = $app->discusionesTema($tema);
-echo '<div id=boardindex_table>';
+echo '<div id=board_index_table>';
+echo "<table class='discusiones'";
+echo "<tbody class= table_header_disc>";
+echo "<tr>";
+echo "<td colspan='3'>";
+echo "<div class='divdiscusiones'>";
+echo "<h1 class='tiDisc'>Lista de discusiones de $tema:</h1><br>";
+echo "</div></td></tr></tbody>";
+echo "<tbody class= 'discontent'>";
+
 
 
 if ($listaDiscusionesTema != NULL) {
-    echo "<table class='table_list'";
-    echo "<tbody class= table_header>";
-    echo "<tr>";
-    echo "<td colspan='3'>";
-    echo "<div class='temas'>";
-    echo "<h1 class='titema'>Lista de discusiones de $tema</h1>";
-    echo "</div></td></tr></tbody>";
-    echo "<tbody class= 'content'>";
     echo '<tr>';
     foreach ($listaDiscusionesTema as $discusion) {
         $discusionTema = $discusion->getIdTema();
@@ -44,39 +45,41 @@ if ($listaDiscusionesTema != NULL) {
         $usuarionom = $app->getUserById($discusionIdusuario);
         $nombreusu = $usuarionom->getNombreUsuario();
 
-        echo "<td class=imagen><a href='PresentacionComentarios.php?Discusion=$discusionId'><b>$discusionTitulo</b></a><br> Discusion creada por $nombreusu";
-        echo "<td class=info>Respuestas totales: $contCom</td>";
-        echo "<td class=stats >$discusionFecha</small></td>";
+        echo "<td class=tituloDiscusion><a href='PresentacionComentarios.php?Discusion=$discusionId'>$discusionTitulo</a><br> <small>Discusion creada por $nombreusu";
+        echo "<td class=respuestas> Numero de respuestas: $contCom</td>";
+        echo "<td class=creacion >Fecha de creación<br> <small>$discusionFecha</small></td>";
         echo '</tr>';
-
     }
-
-    echo "</table></tbody>";
+} else {
+    $vacio = "Vaya, parece que este tema no tiene discusiones. Prueba a añadir una.<br>";
 }
+echo "</table></tbody>";
 
-else {
-    echo "<p class=noDiscusion>Vaya, parece que este tema no tiene discusiones. Prueba a añadir una.</p><br>";
+
+if ($vacio != "") {
+    echo "<p> $vacio </p>";
 }
-
-
 
 if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
     // echo '<br>';
-    echo '<fieldset id="cajaformTema">';
-    echo '<legend id="anadirTema">Crear discusion</legend>';
+    echo '<fieldset id="cajaformDisc">';
+    echo '<legend id="anadirDisc">Crear discusion:</legend>';
 
-    echo '<form method="post" class=foroForm action="includes/procesos/procesarDiscusion.php?tema=' . $tema . '">';
+    echo '<form method="post" action="includes/procesos/procesarDiscusion.php?tema=' . $tema . '">';
 
-    echo '<label for="tituloDiscusion"><b>Discusion</b></label>';
-    echo '<textarea id="desc" class="blancoForo" name="tituloDiscusion" rows="5" cols="50" placeholder="Escribe aquí el título de la discusión..."></textarea> <br>';
+    echo '<label for="tituloDiscusion"><b>Discusion</b></label><br>';
+    echo '<textarea id="tituloDiscusion" name="tituloDiscusion" rows="5" cols="50" placeholder="Escribe aquí el título de la discusión..."></textarea> <br>';
 
-    echo '<button class=botonAnTema type="submit">Crear discusión</button>';
+    echo '<button id="botondisc" type="submit">Crear discusión</button>';
 
     echo '</form>';
     echo '</fieldset>';
 } else {
-    echo '<p class=noDiscusion>Crear discusión: debes haber iniciado sesión para crear una discusión</p>';
+    echo 'Crear discusión: debes haber iniciado sesión para crear una discusión';
 }
+
+
+
 
 echo "</div>";
 include_once(__DIR__ . "/includes/comun/footer.php");

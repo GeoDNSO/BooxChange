@@ -71,10 +71,7 @@ function cicloMisterio($genero){
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 
-<body>
-
-
-    <?php
+<?php
     include("includes/comun/cabecera.php");
     ?><div class="main">
 
@@ -116,11 +113,6 @@ function cicloMisterio($genero){
 
 
     </div>
-
-
-
-
-</body>
-    <?php
-        include("./includes/comun/footer.php");
+<?php
+    include("./includes/comun/footer.php");
 ?></html>
