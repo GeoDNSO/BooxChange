@@ -27,7 +27,7 @@
     } else {
         $app = appBooxChange::getInstance();
         $libro = $app->getLibroById($_GET['id']);
-        $_SESSION["idLibro"] = $_GET['id'];
+        $_SESSION["idLibro"] = serialize($_GET['id']);
 
         $titulo = $libro -> getTitulo();
         $autor = $libro -> getAutor();
@@ -44,22 +44,28 @@
 
         $_SESSION["imagenLibro"] = $imagen;
     }
-?><form method="post" action="includes/procesos/AD_procesarModificarLibro.php" enctype="multipart/form-data">
+
+
+
+?>
+
+<div class="border-bigform">
+<form method="post" action="includes/procesos/AD_procesarModificarLibro.php" enctype="multipart/form-data">
 
         <label for="titulolibro"><b>Titulo del Libro</b></label><br>
-        <input type="text" name="titulolibro" id="titulolibro" value="<?php echo $titulo; ?>" /><br><br>
+        <input class="line" type="text" name="titulolibro" id="titulolibro" value="<?php echo $titulo; ?>" /><br><br>
 
         <label for="autor"><b>Autor</b></label><br>
-        <input type="text" name="autor" id="autor" value="<?php echo $autor; ?>" /><br><br>
+        <input class="line" type="text" name="autor" id="autor" value="<?php echo $autor; ?>" /><br><br>
 
         <label for="precio"><b>Precio</b></label><br>
-        <input type="text" name="precio" id="precio" value="<?php echo $precio; ?>" /><br><br>
+        <input class="line" type="number" name="precio" id="precio" value="<?php echo $precio; ?>" /><br><br>
 
         <label for="imagen"><b>Imagen</b></label><br>
         <input type="file" name="imagen" id="imagen" accept="image/*" /><br><br>
 
         <label for="descripcion"><b>Descripcion</b></label><br>
-        <textarea rows="4" cols="50" name="descripcion" id="descripcion"> <?php echo $descripcion; ?>  </textarea><br><br>
+        <textarea class="line" rows="7" cols="50" name="descripcion" id="descripcion"> <?php echo $descripcion; ?>  </textarea><br><br>
 
         <label for="genero"><b>Género</b></label><br>
         <select name="genero">
@@ -92,23 +98,23 @@
         <input type="text" name="idioma" id="idioma" value="<?php echo $idioma; ?>" /><br><br>
 
         <label for="editorial"><b>Editorial</b></label><br>
-        <input type="text" name="editorial" id="editorial" value="<?php echo $editorial; ?>" /><br><br>
+        <input class="line" type="text" name="editorial" id="editorial" value="<?php echo $editorial; ?>" /><br><br>
 
         <label for="descuento"><b>Descuento</b></label><br>
-        <input type="number" name="descuento" id="descuento" min="0" max="100" value="<?php echo $descuento; ?>" /><br><br>
+        <input class="line" type="number" name="descuento" id="descuento" min="0" max="100" value="<?php echo $descuento; ?>" /><br><br>
 
         <label for="unidades"><b>Unidades</b></label><br>
-        <input type="number" name="unidades" id="unidades" min="0" value="<?php echo $unidades; ?>" /><br><br>
+        <input class="line" type="number" name="unidades" id="unidades" min="0" value="<?php echo $unidades; ?>" /><br><br>
 
         <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
         <input type="date" name="fechaPublicacion" id="fechaPublicacion" value="<?php echo $fechaPublicacion; ?>"/><br><br>
 
-        <input type="submit" value="Modificar Libro">
+        <button class='send-button type="submit" value="Subir Libro'>Modificar Libro</button>
+
+        <a class="send-button cancelar" href="AD_listaLibros.php"> Cancelar </a>
 
     </form>
-
-    <a href="AD_listaLibros.php"> Cancelar </a>
-
+    </div>
 <?php
     include("./includes/comun/footer.php");
 ?></html>
