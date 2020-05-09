@@ -134,7 +134,7 @@ class FormularioIntercambio extends Form
             $result = $app->subirLibroIntercambio($libro);
 
             if ($result == true) {
-                return "intercambiosNormales.php";
+                return "./intercambiosNormales.php";
             } else {
                 exit("Error inesperado, no se ha podido subir el libro a la BD");
             }

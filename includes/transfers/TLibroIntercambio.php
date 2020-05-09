@@ -29,7 +29,6 @@ class TLibroIntercambio{
         $this->fecha = $fecha;
     }
 
-
     /**
      * Get the value of idLibroInter
      */ 

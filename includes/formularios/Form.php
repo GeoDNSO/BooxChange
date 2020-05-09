@@ -93,7 +93,6 @@ S SERVER URI
             if ( is_array($result) ) {
                 echo $this->generaFormulario($result, $_POST);
             } else {
-		echo "$result";
 		echo "<script type='text/javascript'>document.location = '$result' </script>";
 //                header('Location: '.$result);
                 exit();
