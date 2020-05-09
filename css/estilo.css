@@ -38,7 +38,7 @@ body {
 
 /*SCROLL BAR Personalizado*/
 body::-webkit-scrollbar {
-    width: 0.35rem;
+    width: 1rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -95,7 +95,7 @@ body::-webkit-scrollbar-thumb {
 
 /* When the checkbox is checked, add a blue background */
 .checkBoxContainer input:checked ~ .checkmark {
-    background-color: #11999e;
+    background-color: var(--colOscuro1);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -176,7 +176,7 @@ body::-webkit-scrollbar-thumb {
 
 
 .libroPresentacion1{
-    background: #ffb367;
+    background: var(--caja1);
 
     display: flex;
     flex-direction: row;
@@ -191,7 +191,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .libroPresentacion2{
-    background: #ffe277;
+    background: var(--caja2);
 
     display: flex;
     flex-direction: row-reverse;
@@ -208,7 +208,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .descLibroPresentacion{
-    color: #40514e;
+    color: var(--letraOscura);
 
     word-wrap: break-word;
     text-size-adjust: auto;
@@ -259,7 +259,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 3rem;
     padding: 1.4rem;
     
-    background-color: #58b4ae;
+    background: var(--caja3);
 }
 
 

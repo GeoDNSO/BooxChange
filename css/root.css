@@ -6,7 +6,7 @@
     --bg1: #000000;
     --bg2: #000000;
     --bgScroll1: #000000;
-    --bgScroll2: #95e8d0;
+    --bgScroll2: #11999e;
 
     --colorNav: #000000;
     --colorNavHover: #2c7862;
@@ -15,27 +15,27 @@
 
     /*Variables*/
 
-    --fondo: #ffce93;
+    --fondo: #fff4c1;
     --letraClara: white;
-    --letraOscura: black;
+    --letraOscura: 40514e;
 
     --cajaFondo:   #cae7df;
     --cajaSombra1: #a0b9b4;
-    --cajaSombra2: #ffce93; 
-    --sombraInput1:
-    --sombraInput2:
+    --cajaSombra2: #00000000; 
+    --sombraInput1:;
+    --sombraInput2:;
 
-    --caja1:
-    --caja2:
-    --caja3:
+    --caja1: #ffb367;
+    --caja2: #ffe277;
+    --caja3: #58b4ae;
 
     --cajaIntercambio: white;
 
     /*Variables Boton Oscuro*/
 
     --boton: #11999e;
-    --botonHover: #119e47;
-    --botonAction: #ffb367;
+    --botonHover: #30c0c5;
+    --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
     --botonActionLetra:
@@ -50,11 +50,25 @@
     --botonActionLetraClaro:
 
     --colClaro1: white;
-    --colClaro2: 
+    --colClaro2: ;
 
     --colOscuro1: #2c7862;
-    --colOscuro2:
-    
+    --colOscuro2:;
+
+    /*Alfonso
+    var(--);
+    */
+    --linea: #11999e;
+    --marco: #11999e;
+
+    /*Color cabecera*/
+    --botonCabec: #11999e;
+    --botonCabecHov: #30c0c5;
+    --botonCabecAct: #c9823a;
+
+    --botonMainButton: #17b2b8;
+    --letraDesplega: #000000;
+    /*Fin Alfonso*/
 
 
     /*Scroll Bar para Mozilla*/

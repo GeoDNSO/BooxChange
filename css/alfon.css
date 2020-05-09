@@ -133,46 +133,26 @@ input.login {
     display: block;
     text-align: center;
 }
-
+textarea,
 input.line {
     width: 95%;
     margin: auto;
     display: block;
     border: none;
     font-size: 20px;
-    border-bottom: solid 1px #1abc9c;
+    border-bottom: solid 1px var(--linea);
     transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0) 96%,
-        #11999e 4%
+        var(--linea) 4%
     );
     background-position: -200px 0;
     background-size: 200px 100%;
     background-repeat: no-repeat;
-    color: darken(#11999e, 20%);
+    color: darken(var(--linea), 20%);
 }
 
-textarea.line {
-    width: 95%;
-    margin: auto;
-    display: block;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    border: none;
-    border-bottom: solid 1px #1abc9c;
-    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 96%,
-        #30e3ca 4%
-    );
-    background-position: -200px 0;
-    background-size: 200px 100%;
-    background-repeat: no-repeat;
-    color: darken(#1abc9c, 20%);
-    text-align: center;
-}
 
 .thing {
     padding: 1rem;
@@ -189,7 +169,7 @@ textarea.line {
 
 .thing:hover {
     padding-left: 0.5rem;
-    border-left: 0.5rem solid #11999e;
+    border-left: 0.5rem solid var(--linea);
 }
 
 /*Quienes somos*/
@@ -205,7 +185,7 @@ textarea.line {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 8px solid #11999e;
+    border: 8px solid var(--linea);
     margin: 0 auto;
     overflow: hidden;
 }
@@ -216,7 +196,7 @@ textarea.line {
 
 .our-team .team-content {
     padding: 15px 15px 20px;
-    background: #11999e;
+    background: var(--linea);
 
     margin-top: -20px;
     color: #fff;
@@ -239,7 +219,7 @@ textarea.line {
     background: #fff;
     border-radius: 20px;
     font-size: 16px;
-    color: #40514e;
+    color: var(--letraOscura);
     line-height: 30px;
     margin-bottom: 0;
     text-align: center;
