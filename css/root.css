@@ -72,8 +72,8 @@
 
     /*Ranking par*/
 
-    --rankingPar: #1a7581;
-    --rankingInpar: #1a3e81;
+    --rankingPar: #30826b;
+    --rankingInpar: #45ba99;
 
     /*Fin Alfonso*/
  
@@ -92,16 +92,21 @@
    	--letraOscuraSalvio: black;
    	--botonCancelar:#ff3333;
    	--cancelarHover:#cc0000;
-   	--precioBorder:#fbb750;
-   	--precioBackground:#ebe4e0;
+   	--precioBorder:#8d928e;
+   	--precioBackground:#ba9945;
    	--blancoSalvio: #ffffff;
    	--grisClaroSalvio: #d9d9d9;
    	--grisSalvio:#1a1a1a;
    	--foroClaro: #57c1a3;
    	--foroOscuro: #29705c;
    	--foroClaro2:#45ba99;
+   	--botonAdmin: #37957a;
    	--foroForm: #6ac8ad;
    	--foroComentario: #7eceb7;
+   	--naranja1:#00bfff;
+   	--naranja2:#0099cc;
+   	--naranja3:#007399;
+
 
 
     /*Scroll Bar para Mozilla*/
