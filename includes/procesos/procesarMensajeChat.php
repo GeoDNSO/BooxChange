@@ -22,5 +22,3 @@ $app->aumentarMensajesSinLeer($idChat, $idUser);
 
 
 header('Location: ../../chat.php?idchat='.$idChat);
-
-?>

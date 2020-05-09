@@ -9,13 +9,16 @@ ini_set('default_charset', 'UTF-8');
 setLocale(LC_ALL, 'es_ES.UTF.8');
 date_default_timezone_set('Europe/Madrid');
 
+error_reporting(E_ALL);
+ini_set('display_errors',TRUE);
+
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
     $prefix = 'fdi\\ucm\\aw\\booxchange\\';
 
     // base directory for the namespace prefix
-    $base_dir = __DIR__."\\";
+    $base_dir = __DIR__."/";
 
     // does the class use the namespace prefix?
     $len = strlen($prefix);
@@ -84,10 +87,8 @@ use fdi\ucm\aw\booxchange\formularios\FormularioIntercambio as FormularioInterca
 use fdi\ucm\aw\booxchange\formularios\FormularioIntercambioMisterioso as FormularioIntercambioMisterioso;
 
 
-function make_safe($variable) 
+function make_safe($variable)
 {
    $variable = htmlspecialchars(trim(strip_tags($variable)));;
-   return $variable; 
+   return $variable;
 }
-
-?>

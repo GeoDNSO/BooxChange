@@ -67,10 +67,7 @@ function foro()
 }
 
 
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -82,17 +79,12 @@ function foro()
 
 <?php
 include_once(__DIR__ . "/includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <?php
     foro();
-    ?>
-
-
-</body>
+    ?></body>
 
 <?php
 include_once(__DIR__ . "/includes/comun/footer.php");
-?>
+?></html>

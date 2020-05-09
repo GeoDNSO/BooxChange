@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -17,12 +15,7 @@ require_once(__DIR__ . "/includes/config.php");
 
 include("includes/comun/cabecera.php");
 
-?>
-
-
-
-
-<div class="mainIntercambio">
+?><div class="mainIntercambio">
 
     <h1>Intercambios</h1>
 
@@ -67,6 +60,4 @@ include("includes/comun/cabecera.php");
 
 <?php
   include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

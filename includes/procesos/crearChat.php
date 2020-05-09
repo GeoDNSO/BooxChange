@@ -21,20 +21,15 @@ if(!$chat){
 
     $idChat = $app->crearChat($idUser, $idUser2);
 
-    
+
     if($idChat == false){
         exit("Error");
     }
-    
-    header('Location: ../../chat.php?idchat='.$idChat);    
+
+    header('Location: ../../chat.php?idchat='.$idChat);
 
 
 }else{
     header('Location: ../../chat.php?idchat='.$chat->getIdChat());
-    
+
 }
-
-
-
-
-?>

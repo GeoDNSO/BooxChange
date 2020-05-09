@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
     <head>
         <title>BooxChange</title>
@@ -13,8 +11,7 @@ require_once(__DIR__ . "/includes/config.php");
 
     <?php
         include("includes/comun/cabecera.php");
-    ?>
-<div id="reg" class="border">
+    ?><div id="reg" class="border">
     <div class="title">Registro</div>
     <div class="sub-title">Aquí comienza tu aventura en Booxchange</div> <br>
     <?php
@@ -23,10 +20,8 @@ require_once(__DIR__ . "/includes/config.php");
         $form = new FormularioRegistro("registroForm", array("action"=>null));
 
         $form->gestiona();
-    ?>
-</div>    
+    ?></div>
 
 <?php
   include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

@@ -1,9 +1,7 @@
 <?php
     require_once(__DIR__."/includes/config.php");
     use fdi\ucm\aw\booxchange\formularios\FormularioIntercambioMisterioso;
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -18,9 +16,7 @@
 
 include("includes/comun/cabecera.php");
 
-?>
-
-<div id="reg" class="border-bigform">
+?><div id="reg" class="border-bigform">
     <div class="title">Intercambiar libro</div>
     <div class="sub-title">Introduzca los datos del libro que quieras intercambiar</div>
 
@@ -41,11 +37,8 @@ include("includes/comun/cabecera.php");
         $form->gestiona();
     }
 
-?>
-
-</div>
+?></div>
 
 <?php
   include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

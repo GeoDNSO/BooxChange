@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -37,7 +35,7 @@
         $imagen = $libro -> getImagen();
         $descripcion = $libro -> getDescripcion();
         $genero = $libro -> getGenero();
-        $enTienda = $libro -> getEnTienda(); 
+        $enTienda = $libro -> getEnTienda();
         $idioma = $libro -> getIdioma();
         $editorial = $libro -> getEditorial();
         $descuento = $libro -> getDescuento();
@@ -46,10 +44,8 @@
 
         $_SESSION["imagenLibro"] = $imagen;
     }
-?>
-    
-    <form method="post" action="includes/procesos/AD_procesarModificarLibro.php" enctype="multipart/form-data">
-    
+?><form method="post" action="includes/procesos/AD_procesarModificarLibro.php" enctype="multipart/form-data">
+
         <label for="titulolibro"><b>Titulo del Libro</b></label><br>
         <input type="text" name="titulolibro" id="titulolibro" value="<?php echo $titulo; ?>" /><br><br>
 
@@ -67,7 +63,7 @@
 
         <label for="genero"><b>Género</b></label><br>
         <select name="genero">
-        
+
         <option value="<?php echo $genero; ?>"> <?php echo $genero; ?> </option>
         <option value="Ciencia Ficción">Ciencia Ficción</option>
         <option value="Comedia">Comedia</option>
@@ -77,7 +73,7 @@
         <option value="Romántico">Romántico</option>
         <option value="Youtubers">Youtubers</option>
         </select> <br><br>
-        
+
         <label for="enTienda"><b>En Tienda</b></label><br>
         <?php
         if($enTienda == 0){
@@ -92,9 +88,7 @@
             echo '<input type="radio" id="no" name="enTienda" value="0">';
             echo '<label for="0">No</label><br><br>';
         }
-        ?>
-
-        <label for="idioma"><b>Idioma</b></label><br>
+        ?><label for="idioma"><b>Idioma</b></label><br>
         <input type="text" name="idioma" id="idioma" value="<?php echo $idioma; ?>" /><br><br>
 
         <label for="editorial"><b>Editorial</b></label><br>
@@ -108,15 +102,13 @@
 
         <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
         <input type="date" name="fechaPublicacion" id="fechaPublicacion" value="<?php echo $fechaPublicacion; ?>"/><br><br>
-    
+
         <input type="submit" value="Modificar Libro">
-    
+
     </form>
 
     <a href="AD_listaLibros.php"> Cancelar </a>
 
 <?php
     include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

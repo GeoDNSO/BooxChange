@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -25,18 +23,18 @@
     $html .= '<div class="fields">';
     $html .= '    <label for="titulo"><b>Buscar Libro por título:</b></label><br>';
     $html .= '     <div class="text"> <input type="text" placeholder="" name="titulo" id="titulo" /></div><br><br>';
-    
+
     $html .= '    <select id="genero" name="genero"><br><br>';
     $html .=      $app->construirSeleccionDeCategorias();
     $html .= '    </select><br><br>';
-    
+
     $html .= '    <button class="send-button">Buscar</button>';
     $html .= '</div>';
     $html .= '</form>';
     $html .= '</div>';
-    
+
     echo $html;
-    
+
 
 
     $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
@@ -48,7 +46,7 @@
     else{
         $librosTienda = $app->librosTienda();
     }
-    
+
     echo "<div class='listaTotalAdmin'><ol>";
     if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['rol'] == BD_TYPE_ADMIN){
         foreach($librosTienda as $libro){
@@ -59,7 +57,7 @@
             $imagen = $libro -> getImagen();
             $descripcion = $libro -> getDescripcion();
             $genero = $libro -> getGenero();
-            $enTienda = $libro -> getEnTienda(); 
+            $enTienda = $libro -> getEnTienda();
             $fecha = $libro -> getFecha();
             $idioma = $libro -> getIdioma();
             $editorial = $libro -> getEditorial();
@@ -82,8 +80,8 @@
             <li> <span class='textoNegrita'>Descuento</span>: $descuento </li>
             <li> <span class='textoNegrita'>Unidades</span>: $unidades </li></ul>";
             echo "</li>";
-            echo "<div class='adminboton'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a> 
-            <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a></div>"; 
+            echo "<div class='adminboton'> <a href='./includes/procesos/AD_procesarBorrarLibro.php?id=$id'>Borrar Libro</a>
+            <a href='AD_modificarLibro.php?id=$id'>Modificar Libro</a></div>";
             echo "</div></div>";
         }
     }
@@ -91,9 +89,6 @@
         echo "No tienes permisos para ver lo que hay aqui";
     }
     echo "</ol></div>";
-?>
-
-<?php
+    
     include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

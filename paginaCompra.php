@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -39,9 +37,7 @@ if (!isset($_GET['id'])) {
     echo "<h1> Comprar: $titulo </h1>";
     $unidades = $libro->getUnidades();
 }
-?>
-
-<form method="post" action="includes/procesos/procesarCompra.php">
+?><form method="post" action="includes/procesos/procesarCompra.php">
 
     <label for="unidades"><b>Unidades</b></label><br>
     <input type="number" name="unidades" id="unidades" min="1" max="<?php echo $unidades; ?>" value="1" /><br><br>
@@ -61,5 +57,4 @@ if (!isset($_GET['id'])) {
 
 <?php
   include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

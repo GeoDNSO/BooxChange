@@ -8,7 +8,7 @@ use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
 $app = appBooxChange::getInstance();
 
-//Obtener y limpiar los datos 
+//Obtener y limpiar los datos
 $idUsuario = $_SESSION['id_Usuario'];
 $nombreUsuario =$_SESSION['nombre'];
 $nombreReal =  $_SESSION['nombreReal_reg'];
@@ -29,6 +29,3 @@ if($app->actualizarPerfil($idUsuario, $nombreReal, $correo, $password, $fotoPerf
 else{
     header("Location: ../../index.php");
 }
-
-
-?>

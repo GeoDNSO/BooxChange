@@ -46,5 +46,3 @@ if($result == true){
 }else{
     exit("Error inesperado, no se ha podido subir el libro a la BD");
 }
-
-?>

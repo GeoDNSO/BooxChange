@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 
 <html lang="es">
     <head>
@@ -14,13 +12,11 @@ require_once(__DIR__ . "/includes/config.php");
     </head>
 
 <body>
-   
-    <?php
-        include("includes/comun/cabecera.php"); 
-        //include("includes/transfers/TUsuario.php");
-    ?>
 
-    <div class=fondo>
+    <?php
+        include("includes/comun/cabecera.php");
+        //include("includes/transfers/TUsuario.php");
+    ?><div class=fondo>
     <div class=datos>
         <?php
             //echo 'Foto : <img src="'.$_SESSION['fotoPerfil'] .'" alt="Imagen de Perfil" height="100" width="100">  <br>';
@@ -54,32 +50,29 @@ require_once(__DIR__ . "/includes/config.php");
 
        		$fechaDeCreacion = $_SESSION['fechaDeCreacion'];
        		$i = 0;
-       		
+
        		//Evitar sacar la hora, no es un dato relevante
        		while($fechaDeCreacion[$i] != " " && $i < strlen ($fechaDeCreacion)){
 				echo $fechaDeCreacion[$i];
 				$i++;
        		}
             echo "</li></ul>";
-       		
+
 			    echo "<p class=arriba>Información personal</p>";
        		echo "<ul>";
        		echo "<li class=marginLeft>Nombre real: " . $_SESSION['nombre'] . "</li>";
           echo "<li class=marginLeft>Domicilio: " . $_SESSION['direccion'] . " (" . $_SESSION['ciudad'] . ")</li>";
           echo "</ul>";
           echo "</div>";
-        ?>
-        <div class=modButt>
+        ?><div class=modButt>
           <p class='centrado textGrande'><a class=blanco href=modificarUsuario.php> Modificar Perfil </a>
       	  </p>
         </div>
     </div>
-    
+
 	</div>
-	
+
 <?php
   include("./includes/comun/footer.php");
-?>
-</body>
+?></body>
 </html>
-

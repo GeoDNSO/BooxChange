@@ -1,9 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -30,12 +27,11 @@ $librosTienda = $app->librosTienda();
 
 $html = '<div id="buscaLibro" class = "buscarTienda">';
 $html .= '<form method="post">';
-$html .= '<div class="fields noWrapBuscar">';
-//$html .= '    <label for="titulo"><b>Buscar Libro por título:</b><br></label><br>';
-$html .= '     <div class="text ancho"> <input class="login" placeholder="   Introduzca título del libro..." type=text name="titulo" id="titulo" /></div>';
-
-$html .= '    <div class= selectCentrado><select id="genero" class=marginGenero name="genero">';
-
++$html .= '<div class="fields noWrapBuscar">';
++//$html .= '    <label for="titulo"><b>Buscar Libro por título:</b><br></label><br>';
++$html .= '     <div class="text ancho"> <input class="login" placeholder="   Introduzca título del libro..." type=text name="titulo" id="titulo" /></div>';
++
++$html .= '    <div class= selectCentrado><select id="genero" class=marginGenero name="genero">';
 $html .=      $app->construirSeleccionDeCategorias();
 $html .= '    </select></div>';
 $html .= '    <button class="send-button noEnorme marginTop">Buscar</button>';
@@ -139,7 +135,7 @@ foreach ($librosTienda as $libro) {
         echo "</div>"; //libro
 
         //echo "</li>";
-        //echo "</div>"; 
+        //echo "</div>";
     } else {
 
         //echo "<li>";
@@ -211,9 +207,4 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 // echo "</div>";
 include("./includes/comun/footer.php");
 
-?>
-
-
-
-
-</html>
+?></html>

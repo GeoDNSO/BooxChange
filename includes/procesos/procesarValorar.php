@@ -16,5 +16,3 @@ $comentario = make_safe($comentario);
 $app->valorarLibro($idLibro, $valoracion, $idUsuario, $comentario);
 
 header("Location: ../../libroTienda.php?id=$idLibro");
-
-?>

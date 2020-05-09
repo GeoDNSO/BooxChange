@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,23 +14,21 @@ require_once(__DIR__ . "/includes/config.php");
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<div class="big-border">
+?><div class="big-border">
     <div class="title">¿Quénes somos?</div>
     <div class="sub-title">Conoce al equipo de BooxChange</div>
 
     <div class ="thing">
         <h2>Separados al nacer, unidos por la lectura</h2>
         Somos un grupo de estudiante de ingeniería Informática con la pasión de leer e intercambiar libros.
-        Algunos preferimos, la ficción, otros un buen crímen o incluso cómics chinos de esos que se leen al revés, pero sin duda nos une la lectura.    
+        Algunos preferimos, la ficción, otros un buen crímen o incluso cómics chinos de esos que se leen al revés, pero sin duda nos une la lectura.
     </div>
 
     <br>
 
     <div class="container">
         <div class="contenedor">
-           
+
                 <div class="our-team">
                     <div class="pic">
                         <img src="imagenes\usuarios\alfon.jpg" alt="">
@@ -45,7 +41,7 @@ include("includes/comun/cabecera.php");
                         Amante de los libros de Agatha Christie y resolver misterios con Hércules Poirot. En su tiempo libre disfruta acbando con las  hordas del infierno en DOOM.
                     </p>
                 </div>
-                
+
                  <div class="our-team">
                     <div class="pic">
                         <img src="imagenes\usuarios\dani.jpg" alt="">
@@ -72,7 +68,7 @@ include("includes/comun/cabecera.php");
                    	Amante de los gatos y de la cultura Hip-Hop.
                     <br>
                     Gran aficcionado del Shōnen.</p>
-                    
+
                 </div>
                 <div class="our-team">
                     <div class="pic">
@@ -118,5 +114,4 @@ include("includes/comun/cabecera.php");
 
 <?php
 include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

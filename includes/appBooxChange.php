@@ -310,12 +310,11 @@ class appBooxChange
 
         //$selectGeneros = "<option value=''>---</option>\n";
         $selectGeneros = '    <option disabled selected>Seleccione un género</option>';
-        
+
         foreach ($generos as $genero) {
             $generoTexto = $genero->getGenero();
             $selectGeneros .= "<option value='$generoTexto'>$generoTexto</option>\n";
         }
-
         $bdBooxChange->closeBD();
         return $selectGeneros;
     }

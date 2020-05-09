@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,9 +14,7 @@ require_once(__DIR__ . "/includes/config.php");
 
 include("includes/comun/cabecera.php");
 
-?>
-
-<h1>Resultado del Intercambio Misterioso</h1>
+?><h1>Resultado del Intercambio Misterioso</h1>
 
 
 <?php
@@ -36,7 +32,4 @@ if ($rst == 0) {
 
 include("./includes/comun/footer.php");
 
-?>
-
-
-</html>
+?></html>

@@ -1,7 +1,6 @@
 
 /*Tienda*/
 .buscarTienda {
-
     width: 77%;
     /*height: auto;*/
     padding: 20px 35px 26px 35px;
@@ -425,7 +424,6 @@ transition: all 0.3s ease 0s;
 	margin-left: 4% !important;
 	width: 100% !important;
 }
-
 	.atributos{
 		margin: 0 auto;
 	}

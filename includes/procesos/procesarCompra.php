@@ -13,7 +13,7 @@ if(!isset($_SESSION['nombre'])){
 
 $parentDir = dirname(__DIR__, 1);
 
-include_once($parentDir."./constants.php");
+include_once($parentDir."/constants.php");
 include_once($parentDir."/appBooxChange.php");
 include_once($parentDir."/transfers/TLibro.php");
 
@@ -35,5 +35,3 @@ $idUsuario = $usuario->getIdUsuario();
 $app->procesarCompra($idUsuario ,$libro, $udAComprar, $numTarjeta);
 
 header("Location: ../../agradecimiento.php");
-
-?>

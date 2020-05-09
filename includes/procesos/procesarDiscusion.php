@@ -22,5 +22,3 @@ exit();
 
 $app->anadirDiscusion($_SESSION["id_Usuario"], $tema, $discusion);
 header("Location: ../../presentacionDiscusiones.php?Tema=$tema");
-
-?>

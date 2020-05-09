@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -23,8 +21,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 } else if ($_SESSION['rol'] != BD_TYPE_ADMIN) {
     exit("No tienes permisos de admin");
 }
-?>
-<div class="border-bigform">
+?><div class="border-bigform">
 <form method="post" action="includes/procesos/AD_procesarSubirLibro.php" enctype="multipart/form-data">
 
 
@@ -46,21 +43,19 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 
     <label for="genero"><b>Géneros del Libro</b></label><br>
 
-    
-    
+
+
     <?php
 
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     $app = appBooxChange::getInstance();
-    
+
     $generosCheckBox = $app->construirCheckBoxCategoria();
 
     echo "$generosCheckBox";
-    
-    ?>
 
-    <br><br>
+    ?><br><br>
 
     <label for="enTienda"><b>Disponible en la Tienda</b></label><br>
 
@@ -96,6 +91,4 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 
 <?php
     include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

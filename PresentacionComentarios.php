@@ -1,10 +1,7 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
 $idDiscusion = ($_GET["Discusion"]);
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
     <head>
         <title>BooxChange Foro</title>
@@ -103,4 +100,4 @@ $idDiscusion = ($_GET["Discusion"]);
   }
 
   include_once(__DIR__."/includes/comun/footer.php");
-?>
+?></html>

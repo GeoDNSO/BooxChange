@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,14 +10,12 @@
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
 
 
     <div class="whiteBorder">
-        <a href="index.php" class="noDeco">    
+        <a href="index.php" class="noDeco">
             <div class="title">¡Gracias por su compra!</div>
             <div class="sub-title">Su pedido llegará en los próximos días</div>
             <img class="media" src="imagenes\media\camion.gif" alt="">
@@ -32,7 +29,4 @@ include("includes/comun/cabecera.php");
 
 <?php
     include("./includes/comun/footer.php");
-?>
-
-
-</html>
+?></html>

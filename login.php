@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,23 +14,13 @@ require_once(__DIR__ . "/includes/config.php");
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<div id="login" class="border">
+?><div id="login" class="border">
     <div class="title">Inicio de sesión</div>
     <div class="sub-title">Introduzca sus credenciales por favor</div>
     <?php
-        
         use fdi\ucm\aw\booxchange\formularios\FormularioLogin;
-
-        
 
         $form = new FormularioLogin("loginForm", array("action"=>null));
 
         $form->gestiona();
-    ?>
-
-</div>
-
-
-</html>
+    ?></div></html>

@@ -1,28 +1,20 @@
 <?php
-
 use \fdi\ucm\aw\booxchange\appBooxChange;
-
 function perfilUsuario()
 {
-
     if(basename($_SERVER['PHP_SELF']) == "intercambiosNormales.php"){
         echo "<a  class='hButton' href='formIntercambio.php'> Subir Libro </a>";
-
         if (isset($_SESSION['login']) && $_SESSION['login']){
             echo "<a class='hButton' href='ofertas.php'>Ver Ofertas</a>";
         }
-        
     }
 
     if (isset($_SESSION['login']) && $_SESSION['login']) {
         //echo "Hola de nuevo: ".$_SESSION['nombre']. " con rol: ".$_SESSION['rol'];
 
-       
-
         echo '<div class="imagenPerfilHeader"><a href="usuario.php" ><img src="' . $_SESSION['fotoPerfil'] . '" alt="Imagen de Perfil">  </a> </div>';
 
         echo "<ul>";
-        
 
         echo "<li>";
 
@@ -46,9 +38,7 @@ function perfilUsuario()
             echo '</li>';
         }
 
-       
         echo "<li> <a href='logout.php'>Logout</a> </li>";
-        
 
         echo "</ul>";
 
@@ -61,10 +51,7 @@ function perfilUsuario()
         echo "<a class='hButton' href='login.php'> Iniciar Sesión </a>";
     }
 }
-
-
 ?>
-
 <header>
     <div class="headerMain">
 

@@ -1,10 +1,7 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
 $tema = ($_GET["Tema"]); //Titulo del tema, su tabla nada más olo tiene una columna
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -87,4 +84,4 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
 echo "</div>";
 include_once(__DIR__ . "/includes/comun/footer.php");
 
-?>
+?></html>

@@ -61,9 +61,7 @@ function cicloMisterio($genero){
 
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -78,9 +76,7 @@ function cicloMisterio($genero){
 
     <?php
     include("includes/comun/cabecera.php");
-    ?>
-
-    <div class="main">
+    ?><div class="main">
 
 
 
@@ -90,28 +86,24 @@ function cicloMisterio($genero){
             <?php
                 mejoresLibros();
 
-            ?>
-        </div>
+            ?></div>
 
         <div class="presentacion">
             <h1>De que trata Booxchange</h1>
             <p>BooxChange es una web centrada en el intercambio y compraventa de libros, para así promover y divertirse con lectura ya sea intercambiando títulos con otras personas en las mismas condiciones, debatiendo en el foro o descubriendo nuevos libros.</p>
-        
+
 
         </div>
 
         <div class="showcase">
-        
+
             <div class="thing">
                 <h1>Ciclo Fantasía</h1>
                 <p>Si quieres viajar a nuevos mundos y embarcarte en épicas sagas, este es tu lugar</p>
                 <br>
                 <?php
                     cicloMisterio("Fantasía");
-                ?>
-
-
-            </div>
+                ?></div>
 
             <div class="thing">
                 <h1>Alma jóven</h1>
@@ -119,21 +111,16 @@ function cicloMisterio($genero){
                 <br>
                 <?php
                     cicloMisterio("Juvenil");
-                ?>
-
-
-            </div>
+                ?></div>
         </div>
 
 
     </div>
 
-    
+
 
 
 </body>
     <?php
         include("./includes/comun/footer.php");
-    ?>
-
-</html>
+?></html>

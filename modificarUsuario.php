@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
     <head>
         <title>BooxChange</title>
@@ -13,9 +11,7 @@ require_once(__DIR__ . "/includes/config.php");
 
     <?php
         include("includes/comun/cabecera.php");
-    ?>
 
-    <?php
         use \fdi\ucm\aw\booxchange\formularios\FormularioModificarPerfil;
 
         $form = new FormularioModificarPerfil("formModPerfil", array("action"=>null));
@@ -24,6 +20,4 @@ require_once(__DIR__ . "/includes/config.php");
 
         include("./includes/comun/footer.php");
 
-    ?>
-
-</html>
+    ?></html>

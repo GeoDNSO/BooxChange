@@ -26,7 +26,7 @@ function printBooks()
             $dt = DateTime::createFromFormat("Y-m-d H:i:s", $fecha);
             $horaDelMensaje = $dt->format('H:i');
             $fechaDelMensaje = $dt->format('Y-m-d');
-           
+
 
             $usuario = $app->getUserById($idUsuario);
             $nombreUsuario = $usuario->getNombreReal();
@@ -37,28 +37,28 @@ function printBooks()
             echo "<div class='imagenLibroInter'> <img src='$imagen' alt='Imagen de Libro'> </div>";
 
             echo "<div class='descLibroInter'>";
-           
+
             echo "<p>";
 
             echo "<h2><span class='libroInterTitulo'>$titulo</span> de <span class='libroInterAutor'>$autor</span></h2>";
             echo "<h2>Lo ofrece <span class='libroInterUserName'>$nombreUsuario</span> </h2>";
-            
+
             echo "<h3>Género: $genero </h3>";
             echo "<p> $desc </p>";
 
             echo "</div>";
 
-            //Zona de Botones 
+            //Zona de Botones
             echo "<div class='botonesLibroInter'>";
 
             //Boton Envio/Ver Ofertas
             echo "<div class='botonEnvio interButton'>";
 
             if (isset($_SESSION["id_Usuario"]) && $_SESSION["id_Usuario"] == $idUsuario) {
- 
+
                 echo "<a  href='ofertasIntercambio.php?id=$idLibro'> Ver Ofertas"; //Este libro lo has ofrecido tú
                 //echo "<span class='tooltiptext'>Este libro lo has subido tú, puedes ver sus ofertas disponibles pulsando en el botón</span>";
-        
+
             } else {
                 echo "<a  href='formOfrecerLibro.php?id=$idLibro'> Ofrecer Libro";
                 //echo "<span class='tooltiptext'>¿Te interesa la oferta? Pulsa sobre el botón para ofrecer un libro</span>";
@@ -71,7 +71,7 @@ function printBooks()
             if (isset($_SESSION["id_Usuario"]) && $_SESSION["id_Usuario"] != $idUsuario) {
                 //Boton Chat
                 echo "<div class='botonChat interButton' >";
-               
+
                 echo "<a  href='includes/procesos/crearChat.php?idUserChat=$idUsuario'>Chat</a>";
                 //echo "<span class='tooltiptext'> Inicia un chat con el usuario para negociar la transacción</span>";
                 echo "</div>";
@@ -80,7 +80,7 @@ function printBooks()
 
 
             echo "</div>";
-            //Fin Zona de Botones 
+            //Fin Zona de Botones
 
 
 
@@ -90,9 +90,7 @@ function printBooks()
 }
 
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -107,9 +105,7 @@ function printBooks()
 
 include("includes/comun/cabecera.php");
 
-?>
-
-<body>
+?><body>
     <!--<li> <a href="formIntercambio.php">Subir Libro Para Intercambiar</a> </li>-->
 
 
@@ -119,15 +115,13 @@ include("includes/comun/cabecera.php");
         <div class="tiendaLibrosInter">
             <?php
             printBooks();
-            ?>
-        </div>
+            ?></div>
 
     </div>
 
 <?php
     include("./includes/comun/footer.php");
-?>
-</body>
+?></body>
 
 
 </html>

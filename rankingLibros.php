@@ -26,9 +26,7 @@ function ranking()
     echo "</ol></div>";
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -40,19 +38,9 @@ function ranking()
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <?php
     ranking();
     include("./includes/comun/footer.php");
-    ?>
-
-</body>
-
-
-
-
-
-</html>
+    ?></body></html>
