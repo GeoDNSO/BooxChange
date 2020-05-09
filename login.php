@@ -13,6 +13,7 @@ require_once(__DIR__ . "/includes/config.php");
 
 
 <?php
+/**/
 include("includes/comun/cabecera.php");
 ?><div id="login" class="border">
     <div class="title">Inicio de sesión</div>
