@@ -11,22 +11,17 @@ if(!isset($_SESSION['nombre'])){
 
 $titulolibro = $_POST["titulolibro"];
 $autor = $_POST["autor"];
-//no van los decimales, no sé porque
+//no van los decimales, nose porque
 $precio = $_POST["precio"];
 $descripcion = $_POST["descripcion"];
 $genero = $_POST['genero'];
-
-$genero = $_SESSION["generoLibroTemp"];
-unset($_SESSION["generoLibroTemp"]);
-
 $enTienda = $_POST["enTienda"];
 $idioma = $_POST["idioma"];
 $editorial = $_POST["editorial"];
 $descuento = $_POST["descuento"];
 $unidades = $_POST["unidades"];
 $fechaDePublicacion = $_POST["fechaPublicacion"];
-$idLibro = unserialize($_SESSION['idLibro']);
-
+$idLibro = $_SESSION['idLibro'];
 
 
 //Subir imagen al servidor
@@ -47,8 +42,9 @@ $app = appBooxChange::getInstance();
 unset($_SESSION["imagenLibro"]);
 
 if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
-    header("Location: ../../admin.php");
+    header("Location: ../../AD_listaLibros.php");
 }
 else{
     header("Location: ../../index.php");
 }
+

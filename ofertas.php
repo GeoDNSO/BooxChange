@@ -17,7 +17,7 @@ function ofertas()
 
         $arrIdOfertas = array();
 
-        if (count($arrIdOfertas) == 0) {
+        if (count($ofertas) == 0) {
             echo "<div class='ofertasVacia'><p>Parece que no tienes ofertas disponibles...</p>";
             echo "<img src='imagenes/media/gatotriste.jpg' alt='Imagen Gato Triste'> </img>";
             echo "</div>";

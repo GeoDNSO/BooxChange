@@ -119,7 +119,7 @@ class FormularioIntercambio extends Form
         }
         */
 
-        $desc = isset($datos['descripcion']) ? $datos['descripcion'] : null;
+        $desc = isset($datos['descripcion']) ? $datos['descripcion'] : NULL;
         $desc = make_safe($desc);
         if (empty($desc) || mb_strlen($desc) < 10) {
             $erroresFormulario[] = "Especifique la descripción u argumento del libro, mínimo 10 caracteres";
@@ -129,7 +129,7 @@ class FormularioIntercambio extends Form
             $app = appBooxChange::getInstance();
 
             //Damos valores "Nulos" a id y fecha después se omitirán
-            $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
+            $libro = new TLibroIntercambio(NULL, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  NULL);
 
             $result = $app->subirLibroIntercambio($libro);
 

@@ -31,7 +31,7 @@ class DAOLibroIntercambio extends DAO
      * @return int o nulo si hubo algun problema con la consulta
      */
     public function subirLibro($libroMisterioso)
-    { 
+    {
         $idUser = $libroMisterioso->getIdUsuario();
 
         $autor =  self::$instance->bdBooxChange->real_escape_string($libroMisterioso->getAutor());
@@ -42,7 +42,6 @@ class DAOLibroIntercambio extends DAO
         
         $intercambiado = $libroMisterioso->getIntercambiado();
         $esOferta = $libroMisterioso->getOfertado();
-
         //id y fecha tiene valores por defecto y automaticos
         $sql = "INSERT INTO `librointercambio` (`AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
                 VALUES ('$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";

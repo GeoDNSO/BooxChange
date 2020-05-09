@@ -117,8 +117,7 @@ class DAOLibro extends DAO
     public function findBookTitulo($libro, $genero){
 
         $sql = "";
-        $genero = self::$instance->bdBooxChange->real_escape_string($genero);
-        $libro = self::$instance->bdBooxChange->real_escape_string($libro);
+
         if($genero == ""){
             $sql = "SELECT * FROM libro WHERE libro.Titulo LIKE CONCAT('%', '$libro', '%')";
         }
@@ -234,12 +233,11 @@ class DAOLibro extends DAO
 
         $sql = "SELECT * FROM libro WHERE Id_Libro='$idLibro'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
-
         if (mysqli_num_rows($consulta) == 1) {
             $sql = "UPDATE libro
             SET Titulo = '$titulolibro', Autor = '$autor', Precio = '$precio', Imagen = '$imagen', Descripcion = '$descripcion',
             Genero = '$genero', EnTienda = '$enTienda', Idioma = '$idioma', Editorial = '$editorial',
-            Descuento = '$descuento', Unidades = '$unidades', FechaPublicacion = '$fechaDePublicacion'
+            Descuento = '$descuento', unidades = '$unidades', FechaPublicacion = '$fechaDePublicacion'
             WHERE Id_Libro = $idLibro";
             mysqli_query(self::$instance->bdBooxChange, $sql);
             return true;
@@ -299,4 +297,4 @@ class DAOLibro extends DAO
 
 }
 
-?>
+?>?>

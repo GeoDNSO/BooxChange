@@ -14,11 +14,11 @@ $app = appBooxChange::getInstance();
 //Id se puede dejar nulo
 
 $discusion = $_POST["tituloDiscusion"];
-/*
-echo $tema;
-echo $discusion;
-exit();
-*/
 
-$app->anadirDiscusion($_SESSION["id_Usuario"], $tema, $discusion);
-header("Location: ../../presentacionDiscusiones.php?Tema=$tema");
+/*echo $tema;
+echo $discusion;
+exit();*/
+
+
+$ok = $app->anadirDiscusion($_SESSION["id_Usuario"], $tema, $discusion);
+header("Location: ../../PresentacionDiscusiones.php?Tema=$tema");

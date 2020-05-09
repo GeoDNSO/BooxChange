@@ -52,7 +52,7 @@ $fecha = date_default_timezone_get();
 $app = appBooxChange::getInstance();
 
 if($app->procesarSubirLibro($titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
-    header("Location: ../../admin.php");
+    header("Location: ../../AD_listaLibros.php");
 }
 else{
     header("Location: ../../index.php");

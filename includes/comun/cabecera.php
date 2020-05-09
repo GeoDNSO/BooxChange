@@ -51,8 +51,7 @@ function perfilUsuario()
         echo "<a class='hButton' href='login.php'> Iniciar Sesión </a>";
     }
 }
-?>
-<header>
+?><header>
     <div class="headerMain">
 
         <div class="logo">
@@ -61,7 +60,7 @@ function perfilUsuario()
 
         <div class="userInfo">
             <?php
-            perfilUsuario()
+            perfilUsuario();
             ?>
         </div>
 

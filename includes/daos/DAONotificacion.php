@@ -10,7 +10,6 @@ use fdi\ucm\aw\booxchange\transfers\TLibroIntercambio;
 use fdi\ucm\aw\booxchange\transfers\TNotificacion as TNotificacion;
 use fdi\ucm\aw\booxchange\transfers\TUsuario;
 
-
 class DAONotificacion extends DAO
 {
     private static $instance;
@@ -74,9 +73,9 @@ class DAONotificacion extends DAO
     {
         $idUsuario = $usuarioLO->getIdUsuario();
         $idLibroQuerido = $libroQuerido->getIdLibroInter();
-        $nombreUsuario =  self::$instance->bdBooxChange->real_escape_string($usuarioLO->getNombreUsuario());
-        $tituloQuerido =  self::$instance->bdBooxChange->real_escape_string($libroQuerido->getTitulo());
-        $tituloOfertado =  self::$instance->bdBooxChange->real_escape_string($libroOfertado->getTitulo());
+        $nombreUsuario = $usuarioLO->getNombreUsuario();
+        $tituloQuerido = $libroQuerido->getTitulo();
+        $tituloOfertado = $libroOfertado->getTitulo();
 
         $mensaje = "El usuario $nombreUsuario te ha ofrecido el libro $tituloOfertado por tu libro $tituloQuerido, puedes ver esta oferta ;y otras más, en detalle <a href='ofertasIntercambio.php?id=$idLibroQuerido'>aquí</a>.";
         $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', '$mensaje', '0', current_timestamp());";
@@ -87,7 +86,7 @@ class DAONotificacion extends DAO
 
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'asd', '1', current_timestamp());
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'errwerw', '0', current_timestamp());
-
+    
     public function getNumNotificacionesNoLeidas($id)
     {
         $sql = "SELECT COUNT(notificaciones.idUsuario) FROM notificaciones WHERE notificaciones.leido=0 AND idUsuario=$id";
@@ -112,9 +111,9 @@ class DAONotificacion extends DAO
         return $array;
     }
 
-    public function actualizarNotificacionesALeido($id)
-    {
+    public function actualizarNotificacionesALeido($id){
         $sql = "UPDATE notificaciones SET notificaciones.leido=1 WHERE notificaciones.idUsuario=$id AND notificaciones.leido=0";
         return mysqli_query(self::$instance->bdBooxChange, $sql);
     }
+    
 }

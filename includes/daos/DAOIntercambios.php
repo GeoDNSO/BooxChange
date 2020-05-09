@@ -71,8 +71,8 @@ class DAOIntercambios extends DAO
     public function crearIntercambioNormal($libro)
     {
         $idLibro = $libro->getIdLibroInter();
-        $sql = "INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) 
-                VALUES ('$idLibro', NULL, '0', NULL, current_timestamp());";
+        $sql = "INSERT INTO `intercambios` (`Id_Libro_Inter1`, `EsMisterioso`, `Fecha`) 
+                VALUES ('$idLibro', '0', current_timestamp());";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         return $consulta;
     }
