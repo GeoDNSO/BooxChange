@@ -112,13 +112,13 @@ function mensajesChat()
                 echo "<li  class='otherUserMessage'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
                 //echo "<li> <div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             }
-            
+
         }
         echo "<ol>";
         if (empty($mensajes)) {
             echo "<div class='chatNoHayMensajes'> Aun no hay mensajes, empieza a chatear </div>";
         }
-       
+
     } else {
         echo "<div class='mainChatEmpty'> <img src='./imagenes/IconoChat.png' alt='Imagen Chat Lobby' class='chatFoto'> </div>";
     }
@@ -167,7 +167,7 @@ function otherCurrentUser(){
 
         echo "<div class='otherUserProfileImg' > <img src='$imagenUser2' alt='Imagen de $nombreUser2'/> </div>";
         echo "<div class='otherUserProfileName'> $nombreUser2 </div>";
-    
+
         echo "</div>";
 
     }
@@ -177,11 +177,7 @@ function otherCurrentUser(){
 
 
 chatLegal();
-?>
-
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -196,9 +192,7 @@ chatLegal();
 <?php
 require_once(__DIR__ . "/includes/comun/cabecera.php");
 //idchat  --> id get
-?>
-
-<body>
+?><body>
 
     <div class="mainChatContent">
 
@@ -206,13 +200,10 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
 
             <?php
             userProfile();
-            ?>
-
-            <div class="otherChatsMain">
+            ?><div class="otherChatsMain">
                 <?php
                 chatsDelUsuario();
-                ?>
-            </div>
+                ?></div>
         </div>
 
 
@@ -222,22 +213,18 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
             <div class="otherCurrentUser">
                 <?php
                 otherCurrentUser();
-                ?>
-            </div>
+                ?></div>
 
             <div class="chatActual">
                 <?php
                 mensajesChat();
-                ?>
-            </div>
+                ?></div>
 
             <div class="textoChat">
 
                 <?php
                 textoEnvioChat();
-                ?>
-
-            </div>
+                ?></div>
 
         </div>
 
@@ -256,5 +243,4 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
 
 <?php
     include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

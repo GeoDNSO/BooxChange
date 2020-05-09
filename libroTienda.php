@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__."/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
     <head>
         <title>BooxChange Tienda</title>
@@ -18,7 +16,7 @@
     //include_once(__DIR__."/includes/appBooxChange.php");
     //include_once(__DIR__."/includes/transfers/TLibro.php");
 
-    
+
 
     use \fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
     use fdi\ucm\aw\booxchange\formularios\FormularioValorar;
@@ -67,14 +65,14 @@
         }
         echo "<span> $valoracion de 5</span>";
 
-        
+
         echo "</h3>";
 
         /*
         $ranking = $libro->getRanking();
         echo "<h3> Ranking: $ranking </h3>";
 */
-        
+
         $genero = $libro->getGenero();
         echo "<h3> Genero: <span>$genero </span></h3>";
 
@@ -89,12 +87,12 @@
 
         $descripcion = $libro->getDescripcion();
         echo "<h3> Descripcion: <span>$descripcion</span> </h3>";
-        
+
         echo "</div></div>";
 
         echo "<div id='valoraciones'>";
         echo "<div id='comentarios'>";
-        
+
         $valoracionesLibro = $app->valoracionesLibro($id);
         $numValoraciones = count($valoracionesLibro);
 
@@ -134,6 +132,4 @@
     echo "</body>";
     include("./includes/comun/footer.php");
 
-?>
-
-</html>
+?></html>

@@ -6,12 +6,103 @@
     --bg1: #000000;
     --bg2: #000000;
     --bgScroll1: #000000;
-    --bgScroll2: #4bc09d;
+    --bgScroll2: #11999e;
 
     --colorNav: #000000;
-    --colorNavHover: #2ead54;
+    --colorNavHover: #2c7862;
     --colorTextNav: #000000;
-    --colorTextNavHover: #46cfad; /*46cfad*/
+    --colorTextNavHover: #6edebd; /*46cfad*/
+
+    /*Variables*/
+
+    --fondo: #fff4c1;
+    --letraClara: white;
+    --letraOscura: #40514e;
+
+    --cajaFondo:   #cae7df;
+    --cajaSombra1: #a0b9b4;
+    --cajaSombra2: #00000000; 
+
+    --caja1: #ffb367;
+    --caja2: #ffe277;
+    --caja3: #58b4ae;
+    --caja4: #2abec4;
+
+    --cajaIntercambio: white;
+
+    /*Variables Boton Oscuro*/
+
+    --boton: #11999e;
+    --botonHover: #30c0c5;
+    --botonAction: #c9823a;
+    --botonLetra: #e4f9f5;
+    --botonHoverLetra: #40514e;
+
+
+    /*Variables Boton Claro*/
+
+
+    --colClaro1: white;
+    --colClaro2: ;
+
+    --colOscuro1: #2c7862;
+
+
+    /*Alfonso
+    var(--);
+    */
+    --linea: #11999e;
+    --marco: #11999e;
+
+    /*Color cabecera*/
+    --botonCabec: #11999e;
+    --botonCabecHov: #30c0c5;
+    --botonCabecAct: #c9823a;
+
+    --botonMainButton: #17b2b8;
+    --letraDesplega: #000000;
+
+    --fecha: #30c0c5;
+    --userChat: #30c0c5;
+
+    --tituloIN: #1a7581;
+    --autorIN: #3b78b4;
+    --UserIN: #7098da;
+    --colOscuro1: #2c7862;
+
+    /*Ranking par*/
+
+    --rankingPar: #1a7581;
+    --rankingInpar: #1a3e81;
+
+    /*Fin Alfonso*/
+ 
+    
+    /*Salvio*/
+   	--cabecera: #222831;
+   	--footer: #222831;
+   	--fondoSalvio: #30475e;
+   	--barraNavegacion:#233343;
+   	--botonBarraNavegacion:;
+   	--cuadroClaro:#ececec;
+   	--cuadroOscuro:#ceb997;
+   	--botonClaro: #30c0c5;
+   	--botonOscuro:#11999e;
+   	--letraClaraSalvio: white;
+   	--letraOscuraSalvio: black;
+   	--botonCancelar:#ff3333;
+   	--cancelarHover:#cc0000;
+   	--precioBorder:#fbb750;
+   	--precioBackground:#ebe4e0;
+   	--blancoSalvio: #ffffff;
+   	--grisClaroSalvio: #d9d9d9;
+   	--grisSalvio:#1a1a1a;
+   	--foroClaro: #57c1a3;
+   	--foroOscuro: #29705c;
+   	--foroClaro2:#45ba99;
+   	--foroForm: #6ac8ad;
+   	--foroComentario: #7eceb7;
+
 
     /*Scroll Bar para Mozilla*/
     scrollbar-color: var(--bgScroll2) var(--bgScroll1) !important;

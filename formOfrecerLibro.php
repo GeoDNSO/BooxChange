@@ -21,10 +21,10 @@ function mostrarDatosLibroQuerido(){
     $desc = $libro->getDescripcion();
     $genero = $libro->getGenero();
     $fecha = $libro->getFecha();
-    
+
     $usuario = $app->getUserById($idUsuario);
     $nombreUsuario = $usuario->getNombreUsuario();
-    
+
 
     echo '<div class="intercambioAlfa"><div class="title">';
     echo $titulo;
@@ -57,8 +57,8 @@ function formulario(){
 
     $html .= '<label for="titulo"><b>Titulo</b></label><br>';
     $html .= '<input class="line" type="text" placeholder="Título que propones" name="titulo" id="titulo" value="" /><br><br>';
-    
-    
+
+
     $html .= '<label for="autor"><b>Autor</b></label>';
     $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br>';
 
@@ -81,9 +81,7 @@ function formulario(){
     return $html;
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -96,9 +94,7 @@ function formulario(){
 
 <?php
 include("includes/comun/cabecera.php");
-?>
 
-<?php
 
 $libro = $app->getLibroIntercambio($idLibroIntercambio);
 
@@ -114,6 +110,4 @@ else if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
 
   include("./includes/comun/footer.php");
 
-?>
-
-</html>
+?></html>

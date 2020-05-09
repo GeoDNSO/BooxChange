@@ -30,13 +30,13 @@ function foro()
             $imagentema = $tema->getImagen();
             $contDisc = $app->contadorDiscusiones($nombretema);
 
-            echo "<td class=imagen><img src='$imagentema' alt='Imagen del Tema' height='100' width='100'>  <br></td>";
-            echo "<td class=info><a href='PresentacionDiscusiones.php?Tema=$nombretema'>$nombretema</a><br>$descripciontema</td>";
+            echo "<td class=imagen><img src='$imagentema' alt='Imagen del Tema' height='100' width='100'></td>";
+            echo "<td class=info><a href='PresentacionDiscusiones.php?Tema=$nombretema'><b>$nombretema</b></a><br>$descripciontema</td>";
             echo "<td class=stats> Número de Discusiones: $contDisc </td>";
             echo '</tr>';
         }
     } else {
-        echo "Vaya, parece que no existen temas en el foro. Deberás esperar a que esto sea solucionado por un administrador/moderador.<br>";
+        echo "<p class=noDiscusion> Vaya, parece que no existen temas en el foro.<br>Deberás esperar a que esto sea solucionado por un administrador o moderador.<p>";
     }
     echo "</table></tbody>";
     if (isset($_SESSION["login"]) && $_SESSION["login"] == true && isset($_SESSION["rol"])) {
@@ -45,19 +45,20 @@ function foro()
             echo '<fieldset id="cajaformTema">';
             echo '<legend id="anadirTema">Añadir Tema</legend>';
 
-            echo '<form method="post" action="includes/procesos/procesarTema.php" enctype="multipart/form-data"> ';
+            echo '<form method="post" class=foroForm action="includes/procesos/procesarTema.php" enctype="multipart/form-data"> ';
 
+            
             echo '<label for="foto"><b>Icono del Tema</b></label>';
-            echo '<input type="file" name="foto" id="foto" accept="image/*" />';
+            echo '<input type="file" class=login name="foto" id="foto" accept="image/*" />';
 
             echo '<label for="tema"><b>Tema</b></label>';
-            echo '<input type="text" id="imputtema" name="tema"  placeholder="Nombre del tema a añadir..." /> ';
+            echo '<input type="text" class=login id="temaForoEstrecho" name="tema"  placeholder="Introduzca el nombre del tema..." />';
 
-            echo '<label for="desc"><b>Descripcion</b></label>';
-            echo '<textarea id="desc" name="desc" rows="5" cols="50" placeholder="Escribe aquí sobre que va a tratar el tema..."></textarea> ';
+            echo '<label class=marginDescForo for="desc"><b>Descripcion</b></label>';
+            echo '<textarea id="desc" class="blancoForo" name="desc" rows="5" cols="50" placeholder="Escriba una pequeña descripción del tema que desea añadir..."></textarea> ';
 
-
-            echo '<button type="submit">Añadir tema</button>';
+            echo '<br>';
+            echo '<button type="submit" class=botonAnTema>Añadir tema</button>';
 
             echo '</form>';
             echo '</fieldset>';
@@ -67,10 +68,7 @@ function foro()
 }
 
 
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -82,17 +80,12 @@ function foro()
 
 <?php
 include_once(__DIR__ . "/includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <?php
     foro();
-    ?>
-
-
-</body>
+    ?></body>
 
 <?php
 include_once(__DIR__ . "/includes/comun/footer.php");
-?>
+?></html>

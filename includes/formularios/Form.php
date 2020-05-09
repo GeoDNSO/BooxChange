@@ -1,5 +1,4 @@
 <?php
-
 namespace fdi\ucm\aw\booxchange\formularios;
 
 use ArrayObject;
@@ -13,13 +12,13 @@ abstract class Form
 {
 
     /**
-     * @var string Cadena utilizada como valor del atributo "id" de la etiqueta &lt;form&gt; asociada al formulario y 
+     * @var string Cadena utilizada como valor del atributo "id" de la etiqueta &lt;form&gt; asociada al formulario y
      * como parámetro a comprobar para verificar que el usuario ha enviado el formulario.
      */
     private $formId;
 
     /**
-     * @var string URL asociada al atributo "action" de la etiqueta &lt;form&gt; del fomrulario y que procesará el 
+     * @var string URL asociada al atributo "action" de la etiqueta &lt;form&gt; del fomrulario y que procesará el
      * envío del formulario.
      */
     private $action;
@@ -44,7 +43,7 @@ abstract class Form
      *   <tbody>
      *     <tr>
      *       <td>action</td>
-     *       <td><code>$_SERVER['PHP_SELF']</code></td>       
+     *       <td><code>$_SERVER['PHP_SELF']</code></td>
      *       <td>URL asociada al atributo "action" de la etiqueta &lt;form&gt; del fomrulario y que procesará
      *           el envío del formulario.</td>
      *     </tr>
@@ -69,13 +68,13 @@ abstract class Form
         $opciones = array_merge($opcionesPorDefecto, $opciones);
 
         $this->action   = $opciones['action'];
-        
+
         if ( !$this->action ) {
             $this->action = htmlentities($_SERVER['PHP_SELF']);
             //$this->action = htmlentities($_SERVER['REQUEST_URI']);
         }
     }
-  
+
 
 /*
 S SERVER URI
@@ -86,7 +85,7 @@ S SERVER URI
      * Se encarga de orquestar todo el proceso de gestión de un formulario.
      */
     public function gestiona()
-    {   
+    {
         if ( ! $this->formularioEnviado($_POST) ) {
             echo $this->generaFormulario();
         } else {
@@ -94,17 +93,18 @@ S SERVER URI
             if ( is_array($result) ) {
                 echo $this->generaFormulario($result, $_POST);
             } else {
-                header('Location: '.$result);
+		echo "<script type='text/javascript'>document.location = '$result' </script>";
+//                header('Location: '.$result);
                 exit();
             }
-        }  
+        }
     }
 
     /**
      * Genera el HTML necesario para presentar los campos del formulario.
      *
      * @param string[] $datosIniciales Datos iniciales para los campos del formulario (normalmente <code>$_POST</code>).
-     * 
+     *
      * @return string HTML asociado a los campos del formulario.
      */
     protected function generaCamposFormulario($datosIniciales)
@@ -124,7 +124,7 @@ S SERVER URI
     {
         return array();
     }
-  
+
     /**
      * Función que verifica si el usuario ha enviado el formulario.
      * Comprueba si existe el parámetro <code>$formId</code> en <code>$params</code>.
@@ -136,7 +136,7 @@ S SERVER URI
     private function formularioEnviado(&$params)
     {
         return isset($params['action']) && $params['action'] == $this->formId;
-    } 
+    }
 
     /**
      * Función que genera el HTML necesario para el formulario.
@@ -182,3 +182,4 @@ S SERVER URI
     }
 
 }
+?>

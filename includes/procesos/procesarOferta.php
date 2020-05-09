@@ -24,5 +24,3 @@ $libroOfertado = $app->getLibroIntercambio($idLibroOfertado);
 $app->procesarResultadoOferta($aceptado, $idOferta, $libroQuerido, $libroOfertado);
 
 header("Location: ../../intercambiosNormales.php");
-
-?>

@@ -19,5 +19,3 @@ if($app->procesarBorrarLibro($idLibro)){
 else{
     header("Location: ../../index.php");
 }
-
-?>

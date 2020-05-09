@@ -1,9 +1,6 @@
 <?php
 require_once("./includes/config.php");
-?>
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -17,9 +14,7 @@ require_once("./includes/config.php");
 <?php
 include("./includes/comun/cabecera.php");
 include("./includes/comun/funcionesAdmin.php");
-?>
-
-<body>
+?><body>
 
     <div class="helloAdmin">
        <img src="imagenes/media/imagenLibroLuces.jpg" alt="Imagen Libro">
@@ -29,8 +24,5 @@ include("./includes/comun/funcionesAdmin.php");
 </body>
 
 <?php
-
 include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

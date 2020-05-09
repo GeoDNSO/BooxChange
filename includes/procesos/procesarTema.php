@@ -28,5 +28,3 @@ if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
 
 $app->anadirTema($tema, $desc, $fotoBD);
 header("Location: ../../foro.php");
-
-?>

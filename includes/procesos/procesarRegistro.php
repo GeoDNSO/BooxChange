@@ -19,7 +19,7 @@ if(!$_SESSION[REG_DATA_NO_SET] && $_SESSION[REG_PASS_EQ]){
 
     $password = password_hash($password, PASSWORD_BCRYPT);
     //El id se ignorará, se asignara automáticamente
-  
+
     if( $app->registrarUsuario($nombreUsuario, $nombreReal, $correo, $password, $fotoPerfil,
      $fechaNacimiento, $rol, $ciudad, $direccion, $fechaDeCreacion)){
         //echo "Ha sido registrado correctamente";
@@ -33,5 +33,3 @@ if(!$_SESSION[REG_DATA_NO_SET] && $_SESSION[REG_PASS_EQ]){
     }
 
 }
-
-?>

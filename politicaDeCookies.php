@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,9 +14,7 @@ require_once(__DIR__ . "/includes/config.php");
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<div class="big-border">
+?><div class="big-border">
     <div class="title">Política de cookies</div>
     <div class="sub-title">Conoce tus derechos</div>
 
@@ -47,7 +43,7 @@ Según los términos incluidos en el artículo 22.2 de la Ley 34/2002 de Servici
             <p class="pdcp">Las cookies utilizadas en nuestro sitio web, son de sesión y de terceros, y nos permiten almacenar y acceder a información relativa al idioma, el tipo de navegador utilizado, y otras características generales predefinidas por el usuario, así como, seguir y analizar la actividad que lleva a cabo, con el objeto de introducir mejoras y prestar nuestros servicios de una manera más eficiente y personalizada. <br><br>
 
              </p><p class="ng-binding pdcp">Las cookies, en función de su permanencia, pueden dividirse en cookies de sesión o permanentes. Las que expiran cuando el usuario cierra el navegador. Las que expiran en función de cuando se cumpla el objetivo para el que sirven (por ejemplo, para que el usuario se mantenga identificado en los servicios de
-              El Equipo BooxChange) o bien cuando se borran manualmente. </p>  
+              El Equipo BooxChange) o bien cuando se borran manualmente. </p>
 <p></p>
 
             <table border="0" width="100%" cellpadding="15">
@@ -180,5 +176,4 @@ Según los términos incluidos en el artículo 22.2 de la Ley 34/2002 de Servici
 
 <?php
 include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

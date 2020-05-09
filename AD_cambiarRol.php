@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,7 +9,6 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
-
 
 <?php
     include("includes/comun/cabecera.php");
@@ -30,16 +27,14 @@
         $app = appBooxChange::getInstance();
         $user = $app->getUserById($_GET['id']);
         $_SESSION["modificarRol"] = serialize($_GET['id']);
-  
+
         $nombreReal = $user -> getNombreReal();
         $rol = $user -> getRol();
     }
 
     echo "<div class='modifPerfil'>";
     echo "<h3 class=nombreReal>Nombre Real: $nombreReal</h3>";
-?>
-
-    <form method="post" action="includes/procesos/AD_procesarCambiarRol.php" enctype="multipart/form-data">
+?><form method="post" action="includes/procesos/AD_procesarCambiarRol.php" enctype="multipart/form-data">
 
         <label for="rol"><b>Seleccionar rol</b></label><br>
         <?php
@@ -70,14 +65,12 @@
             echo '<input type="radio" class=marginTopRol id="2" name="rol" value="2">';
             echo '&nbsp<label for="2">Moderador</label><br><br>';
         }
-        ?>
-        <input type="submit" class="send-button noEnorme">
+        ?><input type="submit" class="send-button noEnorme">
 
     </form>
     <a class="send-button cancelar" href="AD_listaUsuarios.php"> Cancelar </a>
     </div>
 
-<?php 
+<?php
 include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

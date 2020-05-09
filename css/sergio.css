@@ -118,19 +118,19 @@
 }
 
 .leaderboard ol li:nth-child(odd){
-    background: #060061;
+    background: var(--rankingInpar);
 }
 .leaderboard ol li:nth-child(even){
-    background: #0058a0;
+    background:  var(--rankingPar);
 }
 .leaderboard ol li:nth-child(1){
-    background: #b99e00;
+    background: #dba911;
 }
 .leaderboard ol li:nth-child(2){
-    background: #747474;
+    background: rgb(153, 153, 153);
 }
 .leaderboard ol li:nth-child(3){
-    background: #866300;
+    background: #CD7F32;
 }
 
 /* Sección de comentarios */

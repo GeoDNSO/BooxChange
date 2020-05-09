@@ -21,7 +21,7 @@
 
 *::selection {
     background: var(--bgScroll2);
-    color: white;
+    color: #40514e;
 }
 
 * {
@@ -31,14 +31,14 @@
 
 body {
     color: black;
-    background-color: white;
+    background-color: var(--fondo);
     /*top: 6rem;*/
     margin-top: 6rem;
 }
 
 /*SCROLL BAR Personalizado*/
 body::-webkit-scrollbar {
-    width: 0.35rem;
+    width: 1rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -95,7 +95,7 @@ body::-webkit-scrollbar-thumb {
 
 /* When the checkbox is checked, add a blue background */
 .checkBoxContainer input:checked ~ .checkmark {
-    background-color: #2196f3;
+    background-color: var(--colOscuro1);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -116,7 +116,7 @@ body::-webkit-scrollbar-thumb {
     top: 5px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid #ffe2bc;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -145,7 +145,7 @@ body::-webkit-scrollbar-thumb {
     align-content: center;
     text-align: center;
 
-    background-color: aqua;
+    background-color: 30e3ca;
 }
 
 .mejoresLibros {
@@ -161,7 +161,7 @@ body::-webkit-scrollbar-thumb {
     
 
 
-    background: chocolate;
+    background: #11999e;
 
 }
 
@@ -176,7 +176,7 @@ body::-webkit-scrollbar-thumb {
 
 
 .libroPresentacion1{
-    background: crimson;
+    background: var(--caja1);
 
     display: flex;
     flex-direction: row;
@@ -191,7 +191,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .libroPresentacion2{
-    background: rgb(154, 154, 187);
+    background: var(--caja2);
 
     display: flex;
     flex-direction: row-reverse;
@@ -208,7 +208,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .descLibroPresentacion{
-    color: white;
+    color: var(--letraOscura);
 
     word-wrap: break-word;
     text-size-adjust: auto;
@@ -259,7 +259,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 3rem;
     padding: 1.4rem;
     
-    background-color: lightcoral;
+    background: var(--caja3);
 }
 
 

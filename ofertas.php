@@ -26,13 +26,13 @@ function ofertas()
             foreach ($ofertas as $oferta) {
                 $idOferta = $oferta->getId();
                 $idLibro1 = $oferta->getIdLibro1();
-    
+
                 if (!in_array($idLibro1, $arrIdOfertas)) {
                     //DATOS LIBRO
                     $arrIdOfertas[] = $idLibro1;
-    
+
                     $libro = $app->getLibroIntercambio($idLibro1);
-    
+
                     $idLibro = $libro->getIdLibroInter();
                     $titulo = $libro->getTitulo();
                     $idUsuario = $libro->getIdUsuario();
@@ -41,22 +41,22 @@ function ofertas()
                     $desc = $libro->getDescripcion();
                     $genero = $libro->getGenero();
                     $fecha = $libro->getFecha();
-    
+
                     $numOfertas = $app->getNumOfertas($idLibro);
                     echo "<div class='ofertaConcreta'>";
                     $str_oferta = ($numOfertas == 1) ? "oferta" : "ofertas";
-    
-    
+
+
                     echo '<div class="imagenLibroOferta">';
                     echo "<img src='$imagen'  alt='Imagen Libro'> </img>";
                     echo '</div>';
-    
+
                     echo '<div class="contenidoLibroOferta">';
                     echo "    <h2> $titulo </h2>";
                     echo "    <h4> $genero</h3>";
                     echo "    <p>$desc</p>";
                     echo '</div>';
-    
+
                     echo '<div class="botonVerOfertaLibro">';
                     echo "<a href='ofertasIntercambio.php?id=$idLibro1' class='notification'>";
                     echo '<span>Ver Ofertas</span>';
@@ -65,25 +65,23 @@ function ofertas()
                     }
                     echo '</a>';
                     echo '</div>';
-    
-    
-    
+
+
+
                     //echo "Tu libro $titulo, tiene $numOfertas $str_oferta<br>";
                     //echo "<a href='ofertasIntercambio.php?id=$idLibro1'>Ver Ofertas </a> <br>";
-    
+
                     echo " </div> ";
                 }
             }
         }
 
-     
+
     } else {
         echo "<p> No puede realizar ofertas si no está logeado </p>";
     }
 }
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -96,9 +94,7 @@ function ofertas()
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <h1 class='titleOfertas'>Tus Ofertas para Intercambios</h1>
 
@@ -117,6 +113,4 @@ include("includes/comun/cabecera.php");
 
 <?php
 include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

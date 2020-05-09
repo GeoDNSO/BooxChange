@@ -9,7 +9,7 @@ header {
 
 .logo a {
     text-decoration: none;
-    color: white;
+    color: #e4f9f5;
 }
 
 /*NAV BAR*/
@@ -27,7 +27,7 @@ header {
 
     margin-top: -1rem;
 
-    background-color: cadetblue;
+    background-color: 11999e;
 }
 
 .headerMainBottom ul {
@@ -38,8 +38,9 @@ header {
     display: inline-block;
 
     /*border: 0.05rem solid rgb(0, 0, 0);*/
-    background-color: white;
-
+    background-color: var(--botonMainButton);
+    color: var(--letraClara);
+    border-radius: 5px;
     padding: 0.5rem;
     margin: 0.5rem;
 }
@@ -54,11 +55,11 @@ header {
 
     color: var(--colorTextNav);
 
-    transition: all 0.3s ease 0s;
+    transition: all 0.1s ease 0s;
 }
 
 .headerMainBottom ul li a:hover {
-    color: white;
+    color: var(--letraClara);
 }
 
 /*PRIMERA PARTE DEL HEADER*/
@@ -74,7 +75,7 @@ header {
     width: 100%;
 
     background-color: black;
-    color: white;
+    color: #e4f9f5;
 
     /*overflow: hidden;*/
     position: fixed;
@@ -125,7 +126,8 @@ header {
 }
 
 .userInfo img:hover {
-    box-shadow: 0rem 0rem 0.6rem gray;
+    box-shadow: 0rem 0rem 0.6rem #40514e;
+    color: var( --botonHoverLetra);
 }
 
 /*DROP DOWN MENU*/
@@ -139,8 +141,8 @@ header ul .userNameHeader{
     margin-bottom: 1px;
     transform: rotate(0deg);
 
-    fill: white; /*Color de la flecha*/
-    transition: all 0.3s ease 0s;
+    fill: #e4f9f5; /*Color de la flecha*/
+    transition: all 0.15s ease 0s;
 }
 
 .userInfo ul li:hover .arrowUser {
@@ -162,8 +164,8 @@ header ul .userNameHeader{
 .userInfo ul li {
     float: right;
     opacity: 0.8;
-    background-color: black;
-    color: white;
+    background-color: #323f3d;
+    color: #ffffff;
     text-align: center;
     font-size: 1rem;
 
@@ -178,11 +180,13 @@ header ul .userNameHeader{
     text-decoration: none;
     display: block;
     align-self: center;
-    color: white;
+    color: #e4f9f5;
 }
 
-.userInfo ul li:hover {
-    background-color: rgb(113, 212, 188);
+.userInfo ul li a:hover {
+    background-color: var(--botonCabecHov);
+    color: var( --letraDesplega);
+
 }
 
 .userInfo ul li ul li {
@@ -216,7 +220,7 @@ header ul .userNameHeader{
 
     width: auto;
 
-    background: #4e9caf;
+    background: var(--botonCabec);
 
     padding: 0.8rem;
     border-radius: 0.7rem;
@@ -224,18 +228,18 @@ header ul .userNameHeader{
 
     text-align: center;
 
-    color: white;
+    color: var(--botonLetra);
     font-weight: bold;
 
     transition: all 0.3s ease 0s;
 }
 
 .hButton:hover {
-    background-color: rgb(106, 218, 124);
+    background-color: var(--botonCabecHov);
 }
 
 .hButton:active {
-    background-color: rgb(40, 165, 61);
+    background-color: var(--botonCabecAct);
 }
 
 

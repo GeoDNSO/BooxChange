@@ -88,7 +88,7 @@ function ofertas()
             echo "<div class='otroLibroOferta'>";
 
             echo "<div class='imagenLibroOferta'><img src='$imagen2' alt='Imagen Libro'> </img>";
-            
+
             echo "<div class='botonesOferta'>";
             echo "<a class='botonAceptar' href='./includes/procesos/procesarOferta.php?aceptado=1&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Aceptar </a> ";
             echo "<a class='botonRechazar' href='./includes/procesos/procesarOferta.php?aceptado=0&id=$idOferta&idLibro1=$idLibro1&idLibro2=$idLibro2'>Rechazar </a> ";
@@ -98,12 +98,12 @@ function ofertas()
             echo "</div>";
 
             echo '<div class="contenidoLibroOferta">';
-            
+
             echo "<h3>$titulo2 de $autor2</h3>";
             echo "<h4>Ofrecido por $nombreUsuario el $fecha2 </h4>";
             echo "<h5> Género: $genero2 </h5>";
             echo " <p> $desc2 </p>";
-           
+
             echo "</div> ";
 
             echo "</div> ";
@@ -113,16 +113,14 @@ function ofertas()
             echo "</div>";
 
 
-            
+
         }
     } else {
         echo "<p> No puede realizar ofertas si no está logeado </p>";
     }
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -135,18 +133,14 @@ function ofertas()
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <div class="mainOfertasIntercambio">
         <?php
 
         ofertas();
 
-        ?>
-
-    </div>
+        ?></div>
 
 
 </body>
@@ -155,6 +149,4 @@ include("includes/comun/cabecera.php");
 
 <?php
 include("./includes/comun/footer.php");
-?>
-
-</html>
+?></html>

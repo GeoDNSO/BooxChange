@@ -1,8 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,22 +14,20 @@ require_once(__DIR__ . "/includes/config.php");
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<div class="big-border">
+?><div class="big-border">
     <div class="title">Política de privacidad</div>
     <div class="sub-title">Conoce tus derechos</div>
 
     <div class ="thing">
         <h2>POLÍTICA DE PRIVACIDAD </h2></br>
         <p>
-            El presente Política de Privacidad establece los términos en que Booxchange usa y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.    
+            El presente Política de Privacidad establece los términos en que Booxchange usa y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
         </p>
     </div>
 
     <div class ="thing">
         <h2>1. Información que es recogida </h2></br>
-            Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,  información de contacto como  su dirección de correo electrónica e información demográfica. Así mismo cuando sea necesario podrá ser requerida información específica para procesar algún pedido o realizar una entrega o facturación.    
+            Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,  información de contacto como  su dirección de correo electrónica e información demográfica. Así mismo cuando sea necesario podrá ser requerida información específica para procesar algún pedido o realizar una entrega o facturación.
         </p>
     </div>
 
@@ -59,7 +55,7 @@ include("includes/comun/cabecera.php");
         </p>
     </div>
 
-    
+
     <div class ="thing">
         <h2>5. Control de su información personal </h2></br>
         <p>
@@ -76,5 +72,4 @@ include("includes/comun/cabecera.php");
 
 <?php
 include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

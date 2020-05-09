@@ -22,5 +22,3 @@ exit();
 
 $app->anadirComentario($_SESSION["id_Usuario"], $comentario, $idDiscusion);
 header("Location: ../../presentacionComentarios.php?Discusion=$idDiscusion");
-
-?>

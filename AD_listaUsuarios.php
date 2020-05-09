@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__ . "/includes/config.php");
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -17,7 +15,7 @@
     include("includes/comun/cabecera.php");
 
     include("./includes/comun/funcionesAdmin.php");
-    
+
     use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
     $app = appBooxChange::getInstance();
@@ -46,9 +44,9 @@
             <li><span class='textoNegrita'>Fecha de Creacion</span>: $fechaDeCreacion </li>
             <li><span class='textoNegrita'>Rol</span>: $rol </li>
             </ul>
-            </li>"; 
-            echo "<div class='adminboton'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>   
-            <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a></div>";    
+            </li>";
+            echo "<div class='adminboton'><a href='./includes/procesos/AD_procesarBorrarUsuario.php?id=$id'>Borrar Usuario</a>
+            <a href='AD_cambiarRol.php?id=$id'>Cambiar Rol</a></div>";
             echo "</div></div>";
         }
     }
@@ -56,9 +54,6 @@
         echo "No tienes permisos para ver lo que hay aqui";
     }
     echo "</ol></div>";
-?>
 
-<?php
     include("./includes/comun/footer.php");
-?>
-</html>
+?></html>

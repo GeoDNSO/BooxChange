@@ -5,10 +5,8 @@ use fdi\ucm\aw\booxchange\formularios\FormularioIntercambio;
 
 
 require_once(__DIR__."/includes/config.php");
-    
-?>
 
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -23,8 +21,7 @@ require_once(__DIR__."/includes/config.php");
 
     include("includes/comun/cabecera.php");
 
-?>
-<div id="reg" class="border-bigform">
+?><div id="reg" class="border-bigform">
     <div class="title">Intercambiar libro</div>
     <div class="sub-title">Introduzca los datos del libro que quieras intercambiar</div>
 
@@ -38,12 +35,9 @@ require_once(__DIR__."/includes/config.php");
     else{
         $form = new FormularioIntercambio("registroForm", array("action"=>null));
 
-        $form->gestiona();   
+        $form->gestiona();
     }
     echo '</div></div>';
   include("./includes/comun/footer.php");
 
-?>
-
-
-</html>
+?></html>

@@ -52,4 +52,3 @@ if($app->procesarModificarLibro($idLibro, $titulolibro ,$autor, $precio, $fotoBD
 else{
     header("Location: ../../index.php");
 }
-?>

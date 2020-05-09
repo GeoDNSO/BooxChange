@@ -21,7 +21,7 @@ class FormularioLogin extends Form
      * Genera el HTML necesario para presentar los campos del formulario.
      *
      * @param string[] $datosIniciales Datos iniciales para los campos del formulario (normalmente <code>$_POST</code>).
-     * 
+     *
      * @return string HTML asociado a los campos del formulario.
      */
     protected function generaCamposFormulario($datosIniciales)
@@ -79,6 +79,7 @@ class FormularioLogin extends Form
         $app->logInUsuario($username, $password);
 
         if(isset( $_SESSION['login']) &&  $_SESSION['login']){
+            $parentDir = dirname(__DIR__, 2);
             return "./index.php";
         }
         else{

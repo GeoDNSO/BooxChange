@@ -13,8 +13,12 @@ function ranking()
     echo "<div class='leaderboard'>";
 
     echo "<h1>Libros mejor valorados</h1><ol>";
-
+    $i=0;
+    
     foreach ($librosValoracion as $libro) {
+
+        if($i++ > 9)break;
+
         $titulo = $libro->getTitulo();
         $valoracion = $libro->getValoracion();
         $autor = $libro->getAutor();
@@ -26,9 +30,7 @@ function ranking()
     echo "</ol></div>";
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -40,19 +42,9 @@ function ranking()
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<body>
+?><body>
 
     <?php
     ranking();
     include("./includes/comun/footer.php");
-    ?>
-
-</body>
-
-
-
-
-
-</html>
+    ?></body></html>

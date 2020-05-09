@@ -53,8 +53,6 @@ class FormularioModificarPerfil extends Form
 
         $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" /></p>';
 
-        echo  $_SESSION['fotoPerfil'];
-
         $html .= "</div>";
         return $html;
     }

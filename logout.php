@@ -8,6 +8,3 @@
     session_destroy();
 
     header("Location: despedida.php");
-
-
-?>

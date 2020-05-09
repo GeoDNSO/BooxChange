@@ -38,7 +38,7 @@
 }
 
 .otherChatsMain::-webkit-scrollbar-track {
-    background-color: greenyellow;
+    background-color: var(--caja3);
 }
 
 .otherChatsMain::-webkit-scrollbar-thumb {
@@ -52,7 +52,7 @@
     align-content: center;
     align-self: flex-start;
 
-    background-color: pink;
+    background-color: var(--caja2);
     width: 20%;
 }
 
@@ -67,16 +67,16 @@
     height: 5rem;
     width: 100%;
 
-    background-color: rgb(199, 72, 182);
+    background-color: var(--caja1);
     margin: 0.1rem;
 }
 
 .otherUserChat:hover {
-    background-color: hotpink;
+    background-color: var(--caja3);
 }
 
 .otherUserChat:active {
-    background-color: rgb(245, 69, 157);
+    background-color: var(--botonHover);
 }
 
 .userProfile {
@@ -86,7 +86,7 @@
     border-color: black;
 
     width: 100%;
-    background-color: red;
+    background-color: var(--userChat);
 }
 
 .otherUserChatName,
@@ -157,7 +157,7 @@
     align-content: center;
     align-self: center;
 
-    background-color: burlywood;
+    background-color: var(--caja1);
 }
 
 /*CHAT*/
@@ -380,7 +380,7 @@
 }
 
 .messages::-webkit-scrollbar-track {
-    background-color: greenyellow;
+    background-color: var(--botonCabecAct);
 }
 
 .messages::-webkit-scrollbar-thumb {
@@ -409,10 +409,13 @@
 .chatCenter span{
     border: 32rem solid white;
     border-style: none none none solid;
+    margin: 0 auto;
+    padding: 50%;
 }
 
 .messages .chatCenter .textspanChat{
-    background-color: rgb(165, 184, 224);
+    background-color: var(--fecha);
+    margin: 0 auto;
     color: rgb(39, 10, 71);
 }
 

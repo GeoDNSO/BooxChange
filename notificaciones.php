@@ -4,9 +4,7 @@ use fdi\ucm\aw\booxchange\appBooxChange;
 
 require_once(__DIR__."/includes/config.php");
 use \fdi\ucm\aw\booxchange\transfers\TNotificacion;
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -19,9 +17,7 @@ use \fdi\ucm\aw\booxchange\transfers\TNotificacion;
 
 <?php
 include("includes/comun/cabecera.php");
-?>
-
-<h1 class="notificacionesTitulo">Tus notificaciones</h1>
+?><h1 class="notificacionesTitulo">Tus notificaciones</h1>
 
 <?php
 
@@ -46,7 +42,4 @@ $app->notificacionesLeidas($_SESSION["id_Usuario"]);
 
 include("./includes/comun/footer.php");
 
-?>
-
-
-</html>
+?></html>

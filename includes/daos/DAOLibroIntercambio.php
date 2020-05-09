@@ -44,8 +44,8 @@ class DAOLibroIntercambio extends DAO
         $esOferta = $libroMisterioso->getOfertado();
 
         //id y fecha tiene valores por defecto y automaticos
-        $sql = "INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
-                VALUES ('', '$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";
+        $sql = "INSERT INTO `librointercambio` (`AutorLibInter`, `Imagen`, `Descripcion`, `Genero`, `Id_Usuario`, `Titulo`, `Intercambiado`, `esOferta`, `Fecha`) 
+                VALUES ('$autor', '$imagen', '$desc', '$genero', '$idUser', '$titulo', '$intercambiado', '$esOferta', current_timestamp());";
 
         if (mysqli_query(self::$instance->bdBooxChange, $sql) == true) {
             $id = self::$instance->bdBooxChange->insert_id;

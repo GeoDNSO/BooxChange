@@ -1,52 +1,55 @@
 table.table_list {
     margin: auto;
-    width: 85%;
+    width: 73%;
     empty-cells: show;
     display: table;
     border-collapse: separate;
     box-sizing: border-box;
     border-spacing: 3px;
     border-color: black;
-    background-color: #119658;
+    background-color: var(--foroOscuro) !important;
     border-radius: 10px 10px 10px 10px;
+    padding: 10px;
 }
 
 tbody.content {
     font-family: arial, sans-serif;
-    background: #8bf39b;
+    background: var(--foroClaro2);
     background-attachment: fixed;
     font: 78%/130% verdana, Helvetica, sans-serif;
     margin: 0 auto;
-    padding: 15px 0%;
+    font-size: 16px;
+    color: var(--grisSalvio);
     border-radius: 10px 10px 10px 10px;
 }
 
 h1.titema {
     font-size: 35px;
     color: white;
-    background-color: #110427;
+    background-color: var(--foroOscuro);
     text-align: center;
 }
 td.info {
-    background-color: #94f38b;
+    background-color: var(--foroClaro);
 }
 td {
     height: 60px;
     text-align: center;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px !important;
 }
 #anadircomment {
   font: 78%/130% verdana, Helvetica, sans-serif;
   font-size: 20px;
   margin-left: 10px;
-  color: green;	color: #000000;
-  border-top: 1px solid #119658;
-  border-left: 1px solid #119658;
-  border-right: 1px solid #119658;
+  color: var(--foroClaro);	
+  color: var(--letraOscuraSalvio);
+  border-top: 1px solid var(--foroOscuro);
+  border-left: 1px solid var(--foroOscuro);
+  border-right: 1px solid var(--foroOscuro);
   border-radius: 5px 5px 0px 0px;
   -webkit-border-radius: 5px 5px 0px 0px;
   -moz-border-radius: 5px 5px 0px 0px;
-  background: #8BF39B;
+  background: var(--foroOscuro);
   padding: 0px 8px 3px 8px;
   box-shadow: -0px -1px 2px #2C4C36;
   -moz-box-shadow:-0px -1px 2px #2C4C36;
@@ -67,9 +70,51 @@ td {
     border-radius: 10px 10px 10px 10px;
     resize:none;
 }
+
 #desc{
   resize: none;
+  width: 92%;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding-left: 2% !important;
+  background: var(--blancoSalvio) !important;
 }
+#temaForoEstrecho{
+  resize: none;
+  width: 92%;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding-left: 2% !important;
+  font-size: 20px !important;
+  background: var(--blancoSalvio) !important;
+  text-align: left !important;
+}
+
+.noDiscusion{
+    margin: 0 auto !important;
+    width: 70.5% !important;
+    color: var(--letraClaraSalvio);
+    padding: 25px 15px !important;
+    background-color: var(--foroOscuro) !important;
+    text-align: center;
+    font-size: 18px !important;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#foto{
+ margin: 0 auto;
+  resize: none;
+  width: 92%;
+  margin-top: 2%;
+  font-size: 18px !important;
+}
+
+.botonAnTema{
+    font-size: 16px;
+    padding: 15px 20px !important;
+    margin: 0 auto;
+}
+
 #botontema {
     text-decoration: none;
     padding: 3px;
@@ -161,41 +206,47 @@ td {
     font: 78%/130% verdana, Helvetica, sans-serif;
     font-size: 20px;
     color: green;
+    width: 40% !important;
     background-color: #8bf39b;
 }
 
 /*FORMULARIO BIEN*/
 #anadirTema {
     font: 78%/130% verdana, Helvetica, sans-serif;
-    font-size: 20px;
-    color: green;	color: #000000;
+    font-size: 18px !important;
+    color: green;
+    color: var(--letraClaraSalvio);
     border-top: 1px solid #119658;
     border-left: 1px solid #119658;
     border-right: 1px solid #119658;
     border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
-    background: #8BF39B;
+    background:var(--foroOscuro);
     padding: 0px 8px 3px 8px;
-    box-shadow: -0px -1px 2px #2C4C36;
-    -moz-box-shadow:-0px -1px 2px #2C4C36;
-    -webkit-box-shadow:-0px -1px 2px #2C4C36;
     font-weight: normal;
     font-size: 12px;
   }
+
+.foroForm{
+    margin-left: 3%;
+}
+
 #cajaformTema{
-  width: 70%;
-  color: green;
+
+  width: 70.5%;
+  color: var(--letraOscuraSalvio);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  margin: 15px 0px 10px 0px;
-  border: 1px solid #119658;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  border: 1px solid var(--foroOscuro);
   padding: 20px;
-  background: #8BF39B;
-  box-shadow: inset 0px 0px 15px #2C4C36;
-  -moz-box-shadow: inset 0px 0px 15px #2C4C36;
-  -webkit-box-shadow: inset 0px 0px 15px #2C4C36;
+  background: var(--foroForm);
+  box-shadow: inset 0px 0px 15px var(--foroOscuro);
+  -moz-box-shadow: inset 0px 0px 15px var(--foroOscuro);
+  -webkit-box-shadow: inset 0px 0px 15px var(--foroOscuro);
 }
 
 #cajaformTema form {
@@ -232,11 +283,11 @@ td {
 }
 
 #cajaformTema form button[type="submit"]:hover {
-    background-color: greenyellow;
+    background-color: var(--foroClaro2);
 }
 
 #cajaformTema form button[type="submit"]:active {
-    background-color: rgb(85, 209, 54);
+    background-color: var(--foroOscuro);
 }
 
 
@@ -247,10 +298,13 @@ td {
     flex-direction: column;
 }
 
+.marginDescForo{
+    margin-top: 1%;
+}
 
 #board_index_table p{
     font-size: 1.5rem;
-    background-color: yellowgreen;
+    background-color: var(--foroOscuro);
     width: 80%;
     border-radius: 2rem;
     margin-right: 10%;

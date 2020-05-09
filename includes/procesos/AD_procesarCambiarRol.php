@@ -21,5 +21,3 @@ if($app->procesarCambiarRol($idUsuario ,$rol)){
 else{
     header("Location: ../../index.php");
 }
-
-?>

@@ -57,4 +57,3 @@ if($app->procesarSubirLibro($titulolibro ,$autor, $precio, $fotoBD, $descripcion
 else{
     header("Location: ../../index.php");
 }
-?>
