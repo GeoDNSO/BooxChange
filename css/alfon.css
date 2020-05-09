@@ -1,5 +1,6 @@
+
 .pdcp {
-    color: #4c4a37;
+    color: var(--letraOscura);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
     line-height: 32px;
@@ -7,7 +8,7 @@
 }
 
 .pdch3 {
-    color: #ffffff;
+    color: var(--letraOscura);
     font-size: 28px;
     font-weight: 400;
     line-height: 32px;
@@ -19,8 +20,8 @@
     height: auto;
     padding: 20px 35px 35px 35px;
     border-radius: 40px;
-    background: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
     margin: auto;
 }
 
@@ -30,8 +31,8 @@
     height: auto;
     padding: 20px 35px 35px 35px;
     border-radius: 40px;
-    background: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
     margin: auto;
 }
 
@@ -40,8 +41,8 @@
     height: auto;
     padding: 20px 35px 35px 35px;
     border-radius: 40px;
-    background: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    background: var(--cajaFondo);
+    box-shadow: 13px 13px 20px var(--cajaSombra1), -13px -13px 20px var(--cajaSombra2);
     margin: auto;
 }
 
@@ -98,7 +99,7 @@
 .password {
     margin-bottom: 10px;
     border-radius: 25px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+    box-shadow: inset 8px 8px 8px #b9b9b9, inset -8px -8px 8px #ffffff;
 }
 
 
@@ -112,17 +113,18 @@
     border-radius: 30px;
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var( --botonLetra);
     text-align: center;
-    background: #00cc66;
+    background: var( --boton);
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     transition: 0.5s;
 }
 .send-button:hover {
-    background: #008040;
+    background: var( --botonHover);
+    color: var( --botonHoverLetra);
 }
 .send-button:active {
-    background: #008040;
+    background: var( --botonAction);
 }
 
 /*Otro tipo de imput text*/
@@ -131,46 +133,26 @@ input.login {
     display: block;
     text-align: center;
 }
-
+textarea,
 input.line {
     width: 95%;
     margin: auto;
     display: block;
     border: none;
     font-size: 20px;
-    border-bottom: solid 1px #1abc9c;
+    border-bottom: solid 1px var(--linea);
     transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0) 96%,
-        #1abc9c 4%
+        var(--linea) 4%
     );
     background-position: -200px 0;
     background-size: 200px 100%;
     background-repeat: no-repeat;
-    color: darken(#1abc9c, 20%);
+    color: darken(var(--linea), 20%);
 }
 
-textarea.line {
-    width: 95%;
-    margin: auto;
-    display: block;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    border: none;
-    border-bottom: solid 1px #1abc9c;
-    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 96%,
-        #1abc9c 4%
-    );
-    background-position: -200px 0;
-    background-size: 200px 100%;
-    background-repeat: no-repeat;
-    color: darken(#1abc9c, 20%);
-    text-align: center;
-}
 
 .thing {
     padding: 1rem;
@@ -181,13 +163,13 @@ textarea.line {
     background-color: #ffffff;
     border-radius: 0.5rem;
 
-    border-left: 0 solid #00ff99;
+    border-left: 0 solid #30e3ca;
     transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
 .thing:hover {
     padding-left: 0.5rem;
-    border-left: 0.5rem solid #00ff99;
+    border-left: 0.5rem solid var(--linea);
 }
 
 /*Quienes somos*/
@@ -203,7 +185,7 @@ textarea.line {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 8px solid #3da5b3;
+    border: 8px solid var(--linea);
     margin: 0 auto;
     overflow: hidden;
 }
@@ -214,7 +196,7 @@ textarea.line {
 
 .our-team .team-content {
     padding: 15px 15px 20px;
-    background: #3da5b3;
+    background: var(--linea);
 
     margin-top: -20px;
     color: #fff;
@@ -237,7 +219,7 @@ textarea.line {
     background: #fff;
     border-radius: 20px;
     font-size: 16px;
-    color: #666;
+    color: var(--letraOscura);
     line-height: 30px;
     margin-bottom: 0;
     text-align: center;
@@ -309,7 +291,7 @@ textarea.line {
         0 5px 15px 0 rgba(0, 0, 0, 0.08);
     background-color: #ffffff;
     border-radius: 0.5rem;
-    border: 0 solid #45e9ff86;
+    border: 0 solid #40514e;
     transition: border 300ms ease-in-out, padding 300ms ease-in-out;
 
 }

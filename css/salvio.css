@@ -5,8 +5,10 @@
     /*height: auto;*/
     padding: 20px 35px 26px 35px;
     border-radius: 40px;
-    background: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    background: var(--cuadroClaro);
+    box-shadow: 
+	    13px 13px 20px var(--cajaSombra1),
+	    -13px -13px 20px var(--cajaSombra2);
     margin: auto;
     margin-bottom: 2% !important;
 }
@@ -55,9 +57,9 @@ width:42%;
 min-width:350px;
 height: auto;
 margin:2%;
-background-color:  #e6e6e6;
-box-shadow: 3px 3px 8px #808080,
-            -3px -3px 8px #ffffff;
+background-color:  var(--cuadroClaro);
+box-shadow: 3px 3px 8px  var(--cajaSombra1),
+            -3px -3px 8px var(--cajaSombra2);
 border-radius: 15px;
 }
 
@@ -85,7 +87,7 @@ flex-wrap: wrap;
 .enlace{
 padding: 16px 20px 20px 20px;
 width:30%;
-background-color:  #3385ff;
+background-color:  var(--botonOscuro);
 border-radius: 27px;
 	margin: 0 auto;
 	margin-left: 3% !important;
@@ -96,16 +98,16 @@ border-radius: 27px;
 }
 
 .enlace:hover{
-    background-color: rgb(114, 157, 236);
+    background-color: var(--botonClaro);
 }
 
 .enlace:active{
-    background-color: rgb(82, 119, 185);
+    background-color: var(--botonClaro);
 }
 
 .agotado{
 	padding: 16px 20px 20px 20px;
-	background-color:  rgb(114, 157, 236);
+	background-color:  var(--botonClaro);
 	border-radius: 27px;
 	width:30%;
 	margin: 0 auto;
@@ -124,13 +126,13 @@ align-items: center;
 .info{
 	padding: 16px 20px 20px 20px;
 width:auto;
-background-color:  #4d94ff;
+background-color:  var(--textoOscuro);
 border-radius: 27px;
 }
 
 .compra{
 width:auto;
-background-color:  #4d94ff;
+background-color:  var(--botonOscuro);
 border-radius: 27px;
 }
 
@@ -151,15 +153,15 @@ margin:2%;
 }
 
 .blanco{
-	color: #ffffff !important;
+	color: var(--blancoSalvio) !important;
 }
 
 .grisClaro{
-	color: #d9d9d9 !important;
+	color: var(--grisClaroSalvio) !important;
 }
 
 .gris{
-	color: #1a1a1a !important;
+	color: var(--grisSalvio) !important;
 }
 
 .titulo{
@@ -178,10 +180,10 @@ margin:2%;
 	width:30%;
 	margin: 0 auto;
 	margin-right: 3% !important;
-	background-color:  #ebe4e0;
+	background-color:  var(--precioBackground);
 	border-radius: 150px;
 	border-style: solid;
-	border-color: #fbb750;
+	border-color: var(--precioBorder);
  	border-width: 5.5px;
 
 
@@ -198,9 +200,9 @@ margin:2%;
 	padding: 18px 20px 20px 38px;
 	width:78%;
 	height: auto;
-	background-color:  #3385ff;
-	box-shadow: 3px 3px 8px #808080,
-	            -3px -3px 8px #ffffff;
+	background-color:  var(--botonOscuro);
+	box-shadow: 3px 3px 8px var(--cajaSombra1),
+	            -3px -3px 8px var(--cajaSombra2);
 	border-radius: 15px;
 }
 
@@ -217,7 +219,7 @@ margin:2%;
 	margin: 0 auto;
 	margin-top: 3% !important;
 	height: auto;
-	background-color:  #e6e6e6;
+	background-color:  var(--cuadroClaro);
 	border-radius: 15px;
 	display: flex;
 	flex-wrap: wrap;
@@ -232,12 +234,12 @@ margin:2%;
 }
 
 .infoUsuario{
-padding: 0px 15px 15px 15px;
-width: 40%;
-height: auto;
-margin:2%;
-margin-left: 18% !important;
-margin-top: 3.5% !important;
+	padding: 0px 15px 15px 15px;
+	width: 40%;
+	height: auto;
+	margin:2%;
+	margin-left: 18% !important;
+	margin-top: 3.5% !important;
 }
 
 .fotoUsuario{
@@ -276,17 +278,17 @@ height: auto;
 margin:0 auto;
 margin-top: 4%;
 margin-bottom: 3%;
-background-color:  #3385ff;
+background-color:  var(--botonOscuro);
 border-radius: 27px;
 transition: all 0.3s ease 0s;
 }
 
 .modButt:hover{
-    background-color:  #33ff81;    
+    background-color:  var(--botonClaro);  
 }
 
 .modButt:active{
-    background-color:  #36b165;    
+    background-color:  var(--botonClaro);   
 }
 
 
@@ -301,8 +303,10 @@ transition: all 0.3s ease 0s;
     height: auto;
     padding: 20px 35px 35px 35px;
     border-radius: 40px;
-    background: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    background: var(--cuadroClaro);
+    box-shadow: 
+	    13px 13px 20px var(--cajaSombra1),
+	    -13px -13px 20px var(--cajaSombra2);
     margin: auto;
     margin-bottom: 2.5% !important;
 }
@@ -318,17 +322,12 @@ transition: all 0.3s ease 0s;
 	margin-bottom: 1%;
     border: none;
     font-size: 16px;
-    border-bottom: solid 1px #1abc9c;
+    border-bottom: solid 1px var(--botonOscuro);
     transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 96%,
-        #1abc9c 4%
-    );
+    background: none;
     background-position: -200px 0;
     background-size: 200px 100%;
     background-repeat: no-repeat;
-    color: darken(#1abc9c, 20%);
 }
 
 .fotoMod{
@@ -362,21 +361,23 @@ transition: all 0.3s ease 0s;
 }
 
 .cancelar{
-	width: 60%;
+	width: 100%;
 	height: 45px;
 	margin: 0 auto;
 	margin-top: 2% !important;
 	display: block;
 	padding-top: 15px;
 	text-decoration: none !important;
-	background-color: #ff3333 !important;
+	background-color: var(--botonCancelar) !important;
 }
 
 .cancelar:hover {
-    background: #cc0000 !important;
+	background: var(--cancelarHover) !important;
+	color: var(--botonLetra) !important;
 }
 .cancekar:active {
-    background: #cc0000 !important;
+	background: var(--cancelarHover) !important;
+	color: var(--botonLetra) !important;
 }
 
 /*USUARIO*/
