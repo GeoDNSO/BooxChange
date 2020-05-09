@@ -184,7 +184,7 @@ class DAOUsuario extends DAO
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) == 1) {
-            $sql = "DELETE FROM Usuario
+            $sql = "DELETE FROM usuario
             WHERE Id_Usuario= $idUsuario";
             mysqli_query(self::$instance->bdBooxChange, $sql);
             return true;
