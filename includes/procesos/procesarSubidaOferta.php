@@ -19,7 +19,6 @@ $desc = $_POST["descripcion"];
 
 //Subir imagen al servidor
 $fotoBD = "";
-var_dump($_FILES["fotoLibro"]);
 if(isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != ""){
     $fotoBD =  (IMG_DIRECTORY_LIBROS_INTERCAMBIO . $_FILES["fotoLibro"]["name"]);
     $fotoBD = str_replace("\\", "/", $fotoBD);
