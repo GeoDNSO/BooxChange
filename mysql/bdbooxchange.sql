@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2020 a las 12:07:49
+-- Tiempo de generación: 09-05-2020 a las 10:37:03
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -421,6 +421,12 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 --
 DELIMITER $$
 CREATE TRIGGER `mediaValoracion` AFTER INSERT ON `valoracionlibro` FOR EACH ROW UPDATE libro
+    SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
+                      WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `mediaValoracionUPD` AFTER UPDATE ON `valoracionlibro` FOR EACH ROW UPDATE libro
     SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
                       WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
 $$
