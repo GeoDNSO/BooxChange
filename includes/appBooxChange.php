@@ -202,14 +202,15 @@ class appBooxChange
         //Procesar la compra en libros
         $bdBooxChange = DAOLibro::getInstance();
         $bdBooxChange->procesarCompra($libro, $ud);
-        $bdBooxChange->closeBD();
 
         $idLibro = $libro->getIdLibro();
         $coste = $libro->getPrecio() * $ud;
 
+        $bdBooxChange = DAONotificacion::getInstance();
+        $bdBooxChange->notificarCompra($libro, $ud, $coste, $idUsuario);
+
         $bdBooxChange = DAOCompras::getInstance();
         $bdBooxChange->registrarCompra($idLibro, $idUsuario, $ud, $numTarjeta, $coste);
-        $bdBooxChange->closeBD();
 
         return $libro;
     }
@@ -571,8 +572,20 @@ class appBooxChange
 
     public function crearChat($idUser1, $idUser2)
     {
+        $bdBooxChange = DAOUsuario::getInstance();
+        $usuario1 = $bdBooxChange->getUserById($idUser1);
+        $usuario2 = $bdBooxChange->getUserById($idUser2);
+
+       
+
         $bdBooxChange = DAOChat::getInstance();
-        return $bdBooxChange->crearChat($idUser1, $idUser2);
+        $rst = $bdBooxChange->crearChat($idUser1, $idUser2);
+        $lastId = $bdBooxChange->lastId();
+
+        $bdBooxChange = DAONotificacion::getInstance();
+        $bdBooxChange->notificarChatCreado($usuario1, $usuario2, $lastId, true);
+        $bdBooxChange->notificarChatCreado($usuario2, $usuario1,$lastId, false);
+        return $rst;
     }
 
     public function existeChatWithUsers($idUser1, $idUser2)

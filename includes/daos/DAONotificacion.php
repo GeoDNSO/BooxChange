@@ -78,15 +78,58 @@ class DAONotificacion extends DAO
         $tituloOfertado = $libroOfertado->getTitulo();
 
         $mensaje = "El usuario $nombreUsuario te ha ofrecido el libro $tituloOfertado por tu libro $tituloQuerido, puedes ver esta oferta ;y otras más, en detalle <a href='ofertasIntercambio.php?id=$idLibroQuerido'>aquí</a>.";
-        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', '$mensaje', '0', current_timestamp());";
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         return  $consulta;
     }
 
+
+    public function notificarCompra($libro, $ud, $coste, $idUsuario)
+    {
+        $titulo = $libro->getTitulo();
+        $idTitulo = $libro->getIdLibro();
+
+        $mensaje = "";
+        if ($ud == 1) {
+            $mensaje = "Has comprado el libro <a href='libroTienda.php?id=$idTitulo'>$titulo</a> por $coste €, muchas gracias por su compra";
+        } else {
+            $mensaje = "Has comprado $ud unidades del libro <a href='libroTienda.php?id=$idTitulo'>$titulo</a> por $coste €, muchas gracias por su compra";
+        }
+
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        return  $consulta;
+    }
+
+    public function notificarChatCreado($usuario1, $usuario2, $idchat, $iniciador)
+    {
+        $nombreUser1 = $usuario1->getNombreUsuario();
+        $nombreUser2 = $usuario2->getNombreUsuario();
+
+        $mensaje = "";
+        $sql = "";
+        if ($iniciador) {
+            $idUsuario = $nombreUser1->getIdUsuario();
+            $mensaje = "Has iniciado un chat con el usuario $nombreUser2, puedes hablar con él a través de este <a href='chat.php?idchat=$idchat'>enlace</a>";
+            $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
+        } else {
+            $idUsuario = $nombreUser2->getIdUsuario();
+            $mensaje = "El usuario $nombreUser1 ha iniciado un chat contigo, puedes hablar con él a través de este <a href='chat.php?idchat=$idchat'>enlace</a>";
+            $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
+        }
+
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        return  $consulta;
+    }
+
+
+
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'asd', '1', current_timestamp());
     //INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES (NULL, '5', 'errwerw', '0', current_timestamp());
-    
+
     public function getNumNotificacionesNoLeidas($id)
     {
         $sql = "SELECT COUNT(notificaciones.idUsuario) FROM notificaciones WHERE notificaciones.leido=0 AND idUsuario=$id";
@@ -111,9 +154,9 @@ class DAONotificacion extends DAO
         return $array;
     }
 
-    public function actualizarNotificacionesALeido($id){
+    public function actualizarNotificacionesALeido($id)
+    {
         $sql = "UPDATE notificaciones SET notificaciones.leido=1 WHERE notificaciones.idUsuario=$id AND notificaciones.leido=0";
         return mysqli_query(self::$instance->bdBooxChange, $sql);
     }
-    
 }

@@ -151,5 +151,10 @@ class DAOChat extends DAO
 
         return mysqli_query(self::$instance->bdBooxChange, $sql);
     }
+
+
+    public function lastId(){
+        return $this->bdBooxChange->insert_id;
+    }
     
 }

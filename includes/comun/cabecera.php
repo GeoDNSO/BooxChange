@@ -13,7 +13,7 @@ function perfilUsuario()
 
         $app = appBooxChange::getInstance();
         $numNotificaciones = $app->notificacionesUsuario($_SESSION["id_Usuario"]);
-        $notificacionesCab = ($numNotificaciones == 0) ? "" : " ($numNotificaciones)";
+        $notificacionesCab = ($numNotificaciones == 0) ? "" : "$numNotificaciones";
 
 
         $campanaNotificacion = '

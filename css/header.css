@@ -195,6 +195,9 @@ header ul .userNameHeader{
 
 /**/
 
+
+
+
 .userInfo ul {
     list-style: none;
     align-self: center;
@@ -214,6 +217,11 @@ header ul .userNameHeader{
     line-height: 3rem;
     width: 7.5rem;
     height: 3rem;
+}
+
+
+.userInfo ul li:first-child{
+    background-color: black;
 }
 
 .userInfo ul li a {
