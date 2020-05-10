@@ -40,7 +40,7 @@ class FormularioValorar extends Form
         $html .= '<textarea height=100% class="line" style="resize: none;" placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
         
 
-        $html .= '<input type="submit" class="send-button" value="Valorar" />';
+        $html .= '<input type="submit" class="send-button" value="Valorar" onclick="setTimeout(timer, 1500)"/>';
         $html .= "</div>";
         return $html;
     }

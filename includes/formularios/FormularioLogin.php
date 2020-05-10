@@ -38,7 +38,7 @@ class FormularioLogin extends Form
         $html .= '    <label for="password"><b>Contraseña:</b></label><br><div class="password">';
         $html .= '    <input class="login" type="password" placeholder="" name="password" id="password" /></div>';
 
-        $html .= '    <button class="send-button">Iniciar sesión</button>';
+        $html .= '    <button class="send-button" onclick="setTimeout(timer, 1500)">Iniciar sesión</button>';
         $html .= '</div>';
         $html .= '</form>';
         $html .= '</div>';
