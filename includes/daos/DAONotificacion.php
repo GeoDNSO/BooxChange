@@ -69,16 +69,16 @@ class DAONotificacion extends DAO
 
 
 
-    public function notificarOferta($libroQuerido, $libroOfertado, $usuarioLO)
+    public function notificarOferta($libroQuerido, $libroOfertado, $usuarioQuerido, $usuarioOfertado)
     {
-        $idUsuario = $usuarioLO->getIdUsuario();
+        $idUsuarioQuerido = $usuarioOfertado->getIdUsuario();
         $idLibroQuerido = $libroQuerido->getIdLibroInter();
-        $nombreUsuario = $usuarioLO->getNombreUsuario();
+        $nombreUsuarioOfertado = $usuarioQuerido->getNombreUsuario();
         $tituloQuerido = $libroQuerido->getTitulo();
         $tituloOfertado = $libroOfertado->getTitulo();
 
-        $mensaje = "El usuario $nombreUsuario te ha ofrecido el libro $tituloOfertado por tu libro $tituloQuerido, puedes ver esta oferta ;y otras más, en detalle <a href='ofertasIntercambio.php?id=$idLibroQuerido'>aquí</a>.";
-        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
+        $mensaje = "El usuario $nombreUsuarioOfertado te ha ofrecido el libro $tituloOfertado por tu libro $tituloQuerido, puedes ver esta oferta ;y otras más, en detalle <a href='ofertasIntercambio.php?id=$idLibroQuerido'>aquí</a>.";
+        $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuarioQuerido', \"$mensaje\", '0', current_timestamp());";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         return  $consulta;
