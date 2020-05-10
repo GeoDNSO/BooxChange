@@ -48,10 +48,10 @@ include("includes/comun/cabecera.php");
                     </div>
                     <div class="team-content">
                         <h3 class="title">Dani</h3>
-                        <span class="post">Master Chief</span>
+                        <span class="post">Best Team Owner and CEO</span>
                     </div>
                     <p class="description">
-                       Jafe de proyecto, mantiene a su equipo unido y animado. Le gusta el anime y el LoL, no es muy bueno pero lo intenta.
+                       Jafe de proyecto, mantiene a su equipo unido y animado.
                     </p>
                 </div>
                 <div class="our-team">

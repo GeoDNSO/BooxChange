@@ -38,7 +38,7 @@ body {
 
 /*SCROLL BAR Personalizado*/
 body::-webkit-scrollbar {
-    width: 1rem;
+    width: 0.4rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -157,11 +157,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     align-content: center;
-
-    
-
-
-    background: #11999e;
 
 }
 
