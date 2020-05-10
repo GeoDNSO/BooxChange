@@ -152,9 +152,11 @@ margin:2%;
 }
 
 .atributos{
-padding: 10px 15px 15px 15px;
 width:45%;
-margin:2%;
+margin:3%;
+background-color: var(--fondoUsuario);
+border-radius: 15px;
+padding: 2% 4%;
 }
 
 .blanco{
