@@ -263,7 +263,7 @@ class DAOLibro extends DAO
     public function librosValoracion()
     {
 
-        $sql = "SELECT * FROM libro WHERE libro.EnTienda = 1 ORDER BY libro.valoracion DESC";
+        $sql = "SELECT * FROM libro WHERE libro.EnTienda = 1 ORDER BY libro.valoracion DESC LIMIT 10";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         $librosValoracion = array();
