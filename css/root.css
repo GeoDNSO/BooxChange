@@ -110,9 +110,9 @@
    	--botonNaranjaClaro:#ff8000;
    	--botonNaranjaSombra: #804000;
     --fondoLibro:#ffbf80;
-    --fondoValoracion:;
-    --estrellaVal:;
-
+    --fondoValoracion:#ffd9b3;
+    --estrellaVal: #e67300;
+    --libroSombra: #b35900;
 
 
     /*Scroll Bar para Mozilla*/
