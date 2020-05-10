@@ -71,9 +71,9 @@ class DAONotificacion extends DAO
 
     public function notificarOferta($libroQuerido, $libroOfertado, $usuarioQuerido, $usuarioOfertado)
     {
-        $idUsuarioQuerido = $usuarioOfertado->getIdUsuario();
+        $idUsuarioQuerido = $usuarioQuerido->getIdUsuario();
         $idLibroQuerido = $libroQuerido->getIdLibroInter();
-        $nombreUsuarioOfertado = $usuarioQuerido->getNombreUsuario();
+        $nombreUsuarioOfertado = $usuarioOfertado->getNombreUsuario();
         $tituloQuerido = $libroQuerido->getTitulo();
         $tituloOfertado = $libroOfertado->getTitulo();
 

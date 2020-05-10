@@ -27,7 +27,7 @@
     } else {
         $app = appBooxChange::getInstance();
         $libro = $app->getLibroById($_GET['id']);
-        $_SESSION["idLibro"] = serialize($_GET['id']);
+        $_SESSION["idLibro"] = $_GET['id'];
 
         $titulo = $libro -> getTitulo();
         $autor = $libro -> getAutor();

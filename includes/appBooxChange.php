@@ -484,7 +484,7 @@ class appBooxChange
 
         $bdBooxChange = DAOUsuario::getInstance();
         $usuarioOfertado = $bdBooxChange->getUserById($libroOfertado->getIdUsuario());
-        $usuarioQuerido = $bdBooxChange->getUserById($libroOfertado->getIdUsuario());
+        $usuarioQuerido = $bdBooxChange->getUserById($libroQuerido->getIdUsuario());
 
         //Notificamos al usuario del libro querido
         $bdBooxChange = DAONotificacion::getInstance();
