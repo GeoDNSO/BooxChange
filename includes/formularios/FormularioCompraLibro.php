@@ -42,7 +42,7 @@ class FormularioCompraLibro extends Form
         $html .= '<label for="clave"><b>Clave</b></label><br>';
         $html .= '<input type="password" placeholder="" name="clave" id="clave" /><br><br>';
 
-        $html .= '<input type="submit">';
+        $html .= '<input type="submit" onclick="setTimeout(timer, 1500)">';
 
         return $html;
     }

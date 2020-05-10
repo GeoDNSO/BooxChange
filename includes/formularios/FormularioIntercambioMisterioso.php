@@ -44,7 +44,7 @@ class FormularioIntercambioMisterioso extends Form
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
-        $html .= '    <button class="send-button" type="submit">Subir Libro</button>';
+        $html .= '    <button class="send-button" type="submit" onclick="setTimeout(timer, 1500)">Subir Libro</button>';
         $html .= '</fieldset>';
 
         return $html;

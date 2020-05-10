@@ -12,7 +12,7 @@ h1.titleOfertas{
 
     margin-top: 2rem;
 
-    
+
 }
 
 .ofertaConcreta .imagenLibroOferta{
@@ -26,11 +26,12 @@ h1.titleOfertas{
 
 
 .ofertaConcreta{
+    width: 75%;
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: row;
-   
+
 
     height: 12rem;
     width: 60%;
@@ -41,6 +42,7 @@ h1.titleOfertas{
 }
 
 .ofertaConcreta .contenidoLibroOferta{
+    width:70%;
     display: flex;
     align-content: center;
     align-items: center;
@@ -49,15 +51,15 @@ h1.titleOfertas{
     align-self: flex-start;
 
 
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 3rem;
+    margin-right:3rem;
     margin-top: 0.7rem;
 
 }
 
 .contenidoLibroOferta p{
     margin-top: 0.2rem;
-    
+
 }
 
 .botonVerOfertaLibro{
@@ -73,7 +75,7 @@ h1.titleOfertas{
     display: inline-block;
     border-radius: 2px;
   }
-  
+
   .notification:hover {
     background: rgb(155, 153, 153);
   }
@@ -81,7 +83,7 @@ h1.titleOfertas{
   .notification:active {
     background: rgb(75, 73, 73);
   }
-  
+
   .notification .badge {
     position: absolute;
     top: -10px;
@@ -109,7 +111,7 @@ h1.titleOfertas{
     width: 80%;
   }
 
-  
+
 @media only screen and (max-width: 1000px) {
     .ofertaConcreta{
         width: 80%;

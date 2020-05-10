@@ -67,7 +67,7 @@ class FormularioRegistro extends Form
         $html .= '<label for="direccion"><b>Dirección</b></label><br><div class="password">';
         $html .= '<input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="'.$datosIniciales["direccion"].'" /></div>';
 
-        $html .= '<button class="send-button">Registrarse</button>';
+        $html .= '<button class="send-button" onclick="setTimeout(timer, 1500)">Registrarse</button>';
         $html .='</div></div>';
 
         return $html;

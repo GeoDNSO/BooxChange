@@ -51,7 +51,7 @@ class FormularioModificarPerfil extends Form
 
         $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/></p>';  
 
-        $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" /></p>';
+        $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" onclick="setTimeout(timer, 1500)"/></p>';
 
         $html .= "</div>";
         return $html;

@@ -16,7 +16,7 @@
     align-items: center;
     flex-direction: row;
 
-    width: 80%;
+    width: 90%;
     height: 18rem;
     margin: 1rem;
 
@@ -53,8 +53,7 @@
 .tuLibroOferta,
 .otroLibroOferta {
     display: flex;
-    align-content: center;
-    align-items: center;
+    vertical-align: top;
     flex-direction: row;
     margin: 0.5rem;
 
@@ -67,10 +66,12 @@
     flex-direction: row-reverse;
 }
 .tuLibroOferta .contenidoLibroOferta {
-    margin-left: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 .otroLibroOferta .contenidoLibroOferta {
-    margin-right: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .imagenLibroOferta img {
@@ -92,7 +93,9 @@
     align-items: center;
     flex-direction: column;
     margin: 1rem;
+    width: 70%;
 }
+
 
 .imagenLibroOferta {
     display: flex;
@@ -188,7 +191,7 @@
         );
     }
 
-    
+
     .libroOfertaConcreta h3 {
         font-size: 1.5rem;
     }
@@ -202,7 +205,7 @@
         padding: 0.3rem;
         font-size: 1rem;
     }
-    
+
 
     .otroLibroOferta .imagenLibroOferta {
         margin-right: 2rem;
@@ -222,7 +225,7 @@
         margin-top: 0.5rem;
     }
 
-    
+
     .tuLibroOferta .imagenLibroOferta {
 
         flex-direction: row;
