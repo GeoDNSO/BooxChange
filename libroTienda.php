@@ -25,6 +25,7 @@
         exit("No se ha proporcionado el id del producto");
     }
     else{
+    	echo "<div class=contenidoLibroTienda>";
         echo "<div id='libro'>";
         $id = $_GET['id'];
         $app = appBooxChange::getInstance();
@@ -125,6 +126,7 @@
 
         $form = new FormularioValorar("valorarForm", array("action" =>"./includes/procesos/procesarValorar.php", "libroId" => $id));
         $form->gestiona();
+        echo "</div>";
         echo "</div>";
 
     }

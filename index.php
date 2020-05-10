@@ -22,7 +22,9 @@ function mejoresLibros()
 
         echo "<div class='libroPresentacion" . $i . "'>";
         echo "        <div class='imgPresentacion'>";
+        echo "<a class=gris href='libroTienda.php?id=$id'>";
         echo "            <img src='$imagen' alt='adas'>";
+        echo "</a>";
         echo "        </div>";
         echo "        <div class='descLibroPresentacion'>";
         echo "            <h2>$titulo de $autor </h2>";
