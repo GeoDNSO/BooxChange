@@ -36,11 +36,11 @@
         echo "<img src='$imagen' alt='Imagen del Libro' height='450' width='300'>  <br>";
 
         $precio = $libro->getPrecio();
-        echo "<h3> Precio: <span>$precio €</span></h3>";
+        echo "<h3 class=marginTopPrecio> Precio: <span>$precio €</span></h3>";
         $unidades = $libro->getUnidades();
         echo "<h3 id='lastH3'> Unidades: <span>$unidades disponibles</span></h3>";
         if($unidades > 0){
-            echo "<a class='libroTiendaBoton' href='paginaCompra.php?id=$id'> Comprar </a>";
+            echo "<p class=botonCentrado><a class='libroTiendaBoton' href='paginaCompra.php?id=$id'> Comprar </a></p>";
         }
         else{
             echo "Existencias Agotadass";

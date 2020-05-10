@@ -20,6 +20,7 @@
     --letraOscura: #40514e;
 
     --cajaFondo:   #cae7df;
+    --cajaFondoClaro:#dcefe9;
     --cajaSombra1: #a0b9b4;
     --cajaSombra2: #00000000; 
 
@@ -110,9 +111,10 @@
    	--botonNaranjaClaro:#ff8000;
    	--botonNaranjaSombra: #804000;
     --fondoLibro:#ffbf80;
-    --fondoValoracion:;
-    --estrellaVal:;
-
+    --fondoValoracion:#ffd9b3;
+    --estrellaVal: #e67300;
+    --libroSombra: #b35900;
+    --fondoUsuario:#ffcc99;
 
 
     /*Scroll Bar para Mozilla*/

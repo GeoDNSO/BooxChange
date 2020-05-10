@@ -31,7 +31,7 @@ function mostrarDatosLibroQuerido(){
     echo '</div><div class="sub-title">';
     echo    "Ofrecido por $nombreUsuario </div><br>
 
-        <p>
+        <p class=descIntercambioAlfa>
             Autor: $autor <br>
             Genero: $genero <br><br>
             $desc <br>
