@@ -9,19 +9,19 @@ INICIALES SEGÚN EL PROCESO O PARTE DEL PROYECTO
 
 */
 
+//Información de la base de datos
 
 //---COMENTAR PARA CUANDO SE USE LOCALHOST ---
-//Información de la base de datos
 /*
 define("BD_HOST", "vm13.db.swarm.test");
 define("BD_NAME", "booxchange");
 define("BD_USER", "booxchange");
 define("BD_PASS", "booxchange");
 */
-//---COMENTAR PARA CUANDO SE USE SERVIDOR ---
 
+//---COMENTAR PARA CUANDO SE USE SERVIDOR ---
 define("BD_HOST", "localhost");
-define("BD_NAME", "bdbooxchange");
+define("BD_NAME", "booxchange");
 define("BD_USER", "root");
 define("BD_PASS", "");
 

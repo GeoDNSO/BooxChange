@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2020 a las 14:07:06
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Servidor: vm13.db.swarm.test
+-- Tiempo de generación: 10-05-2020 a las 21:26:48
+-- Versión del servidor: 10.4.12-MariaDB-1:10.4.12+maria~bionic
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bdbooxchange`
+-- Base de datos: `booxchange`
 --
 CREATE DATABASE IF NOT EXISTS `booxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `booxchange`;
@@ -45,7 +45,7 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`, `fechaActividad`) VALUES
-(2, 1, 5, 2, 1, 0, '2020-05-05 18:42:50');
+(2, 1, 5, 4, 1, 0, '2020-05-05 18:42:50');
 
 -- --------------------------------------------------------
 
@@ -56,10 +56,27 @@ INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `men
 CREATE TABLE `comentarios` (
   `Id_Comentario` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
-  `Texto` varchar(2000) DEFAULT NULL,
+  `Texto` varchar(5000) DEFAULT NULL,
   `Fecha` datetime NOT NULL DEFAULT current_timestamp(),
   `Id_Discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`Id_Comentario`, `Id_Usuario`, `Texto`, `Fecha`, `Id_Discusion`) VALUES
+(2, 5, 'Pues eso, que solo me he visto las películas y aun así no me convence mucho, merece la pena leerse el libro?', '2020-05-10 20:42:32', 3),
+(3, 17, 'Desde mi punto de vista es una gran saga para retomar el mundo de la lectura. Aunque ya sepas cómo acaba la historia, en el libro hay matices que la película pierde. Espero si empiezas la saga coméntanso que tal ha parecido.\r\n\r\nSaluditos Muggle', '2020-05-10 20:46:30', 3),
+(5, 18, '', '2020-05-10 20:53:56', 5),
+(6, 18, '', '2020-05-10 20:53:56', 5),
+(7, 18, '', '2020-05-10 20:53:57', 5),
+(8, 18, '', '2020-05-10 20:53:57', 5),
+(9, 18, 'Bernardo tiene Razón, es una gran sala', '2020-05-10 20:55:19', 3),
+(10, 5, '<ol>\r\n<li><strong> Comportamiento general</strong></li>\r\n</ol>\r\n<ul>\r\n<li>Respeto mutuo No se permiten los insultos, los menosprecio, la falta al respeto ajeno, las calumnias ni la arrogancia excesiva, ya sea en temas p&uacute;blicos, mensajes privados o firmas y avatares.</li>\r\n<li>Discusiones personales Toda discusi&oacute;n personal debe tomar lugar en otro medio; el moderador puede borrar los posts o separar/cerrar el thread seg&uacute;n el caso.</li>\r\n<li>Temas prohibidos No se permite hablar de Sexo ni Religi&oacute;n en el foro. Esto incluye mensajes, firmas, im&aacute;genes y v&iacute;deos (especialmente si incluyen contenido desagradable como violencia gr&aacute;fica o gore).</li>\r\n<li>Prohibici&oacute;n de multicuenta Cada usuario solo puede disponer de una cuenta; si se quiere acceder a varias cuentas desde el mismo dispositivo (por ejemplo, de hermanos), debe notificar a un administrador. En caso contrario, se bloquear&aacute;n todas las cuentas.</li>\r\n<li>Cambios de Nick Se debe hacer la solicitud en este thread, cumpliendo sus normas.</li>\r\n</ul>\r\n<ol start=\"2\">\r\n<li><strong> Reglas sobre Mensajes</strong></li>\r\n</ol>\r\n<ul>\r\n<li>Temas repetidos Se recomienda visitar el foro antes de hacer una pregunta, por si esta ya ha sido respondida en otro tema o en el FAQ del subforo.</li>\r\n<li>Prohibici&oacute;n de Spam y Flood</li>\r\n<li>Flood Postear mensajes cortos y sin contenido, sin sentido o sin esperar a que otros usuarios respondan. El moderador puede borrar estos mensajes. El Flood se permite en el subforo de El Manicomio.</li>\r\n<li>Spam Publicitar un producto o servicio sin que tenga que ver con el tema, no le aporte nada o que ya se pueda encontrar en BooxChange, sea en un tema, por mensaje privado o en firmas y avatares. La publicaci&oacute;n sin permiso de spam ser&aacute; inmediatamente removida.</li>\r\n<li>Usuarios con menos de 300 mensajes Pueden pedir permiso al staff si es para publicar contenido relevante y no abusivo.</li>\r\n<li>Usuarios con m&aacute;s de 300 mensajes Pueden publicar contenido si es relevante y el &uacute;nico objetivo es la autopromoci&oacute;n.</li>\r\n<li>Escritura y Ortograf&iacute;a El texto deber&iacute;a tener un tama&ntilde;o razonable, sin escribir en may&uacute;sculas. La ortograf&iacute;a no deber&iacute;a impedir que se entienda tu mensaje. Tampoco es recomendable usar un lenguaje demasiado abreviado ni confuso.</li>\r\n<li>Emoticonos Evita el uso de emoticonos de forma abusiva, puesto que puede confundir al resto de usuarios.</li>\r\n<li>Citas injustificadas Intenta citar solo la parte del mensaje a la que vas a responder.</li>\r\n</ul>\r\n<ol start=\"3\">\r\n<li><strong> Adecuaci&oacute;n al Tema</strong></li>\r\n</ol>\r\n<ul>\r\n<li>Se deben seguir las Reglas Particulares del Tema</li>\r\n<li>Adecuaci&oacute;n del tema al subforo El moderador puede mover el tema a donde deba estar, y tiene la &uacute;ltima palabra en caso de discrepar con el autor. En caso de discrepar con un moderador, puedes escribir a un administrador.</li>\r\n<li>Claridad del t&iacute;tulo del tema Si no expresa, dentro de lo posible, el contenido el mensaje, el moderador podr&aacute; cambiarlo.</li>\r\n<li>Desv&iacute;os y Divisi&oacute;n de Threads El moderador puede redirigir los desv&iacute;os en una conversaci&oacute;n, o bien separarlo en un tema aparte o eliminarlo si no es de inter&eacute;s.</li>\r\n<li>Spoilers Si un tema contiene spoilers, debe indicarse en el t&iacute;tulo con una etiqueta. Se recomienda tambi&eacute;n esconder este contenido con el comando \"spoiler\", que solo los usuarios registrados pueden abrir.</li>\r\n</ul>\r\n<ol start=\"4\">\r\n<li><strong> Reglas sobre Copyright</strong></li>\r\n</ol>\r\n<ul>\r\n<li>Prohibiciones</li>\r\n<li>Pedir o publicar libros sin licencia.</li>\r\n<li>Pedir o publicar obras con copyright (excepto im&aacute;genes y v&iacute;deos).</li>\r\n<li>P&aacute;ginas con contenido ilegal No se permiten links a descargas ni a p&aacute;ginas destinadas &uacute;nicamente a esto</li>\r\n</ul>\r\n<ol start=\"5\">\r\n<li><strong> Moderaci&oacute;n</strong></li>\r\n</ol>\r\n<ul>\r\n<li>Selecci&oacute;n La hace el administrador. Lo m&aacute;s importante para llegar a ser moderador es no querer serlo.</li>\r\n<li>Solicitudes Es el staff el que decide qui&eacute;n pasar&aacute; a ser moderador, as&iacute; que hacer una solicitud ser&aacute; in&uacute;til.</li>\r\n<li>Autoridad Se debe respetar el criterio del moderador y ayudarle, pero nunca es un ser superior a nadie. Est&aacute; prohibida la impersonaci&oacute;n de cualquier miembro del staff.</li>\r\n<li>Poderes Los moderadores pueden mover y cerrar temas, modificar mensajes, dar karma... Siempre para aquello que se les haya encomendado.</li>\r\n</ul>\r\n<p><strong>&nbsp; &nbsp; &nbsp; </strong>6.<strong> Sistema de Sanciones</strong></p>\r\n<ul>\r\n<li>Ban Definitivo o temporal, ir&aacute; con un email que explicar&aacute; sus motivos.</li>\r\n<li>P&eacute;rdida de la posibilidad de cambiarse Avatar y Firma</li>\r\n</ul>', '2020-05-10 20:57:44', 4),
+(11, 20, 'Joer Cañi, no son ni las 9 y no sabemos distinguir las sagas de las salas\r\n\r\njajajaja', '2020-05-10 21:02:06', 3),
+(12, 20, 'La que estás liando con el foro Cañi, espero qeu un administrador arregle esto pronto.', '2020-05-10 21:03:37', 5),
+(13, 20, 'Las reglas están para romperlas', '2020-05-10 21:04:00', 4);
 
 -- --------------------------------------------------------
 
@@ -100,6 +117,15 @@ CREATE TABLE `discusion` (
   `NumVisitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `discusion`
+--
+
+INSERT INTO `discusion` (`Id_Discusion`, `Id_Usuario_Creador`, `Fecha`, `Tema`, `Titulo`, `NumComentarios`, `NumVisitas`) VALUES
+(3, 5, '2020-05-10 20:42:02', 'Discusión', '¿Debería empezar a leer Harry Potter?', 0, 0),
+(4, 5, '2020-05-10 20:43:41', 'Reglas', 'Reglas del Foro', 0, 0),
+(5, 18, '2020-05-10 20:48:14', 'Debates', '¿Es la saga Crepúsculo la peor saga de vampiros?', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -129,6 +155,7 @@ CREATE TABLE `genero` (
 INSERT INTO `genero` (`Genero`) VALUES
 ('Biografía'),
 ('Ciencia Ficción'),
+('Científico'),
 ('Comedia'),
 ('Drama'),
 ('Epopeya'),
@@ -137,6 +164,7 @@ INSERT INTO `genero` (`Genero`) VALUES
 ('Infantil'),
 ('Juvenil'),
 ('Manga'),
+('Otros'),
 ('Romántico'),
 ('Youtubers');
 
@@ -192,7 +220,8 @@ CREATE TABLE `intercambios` (
 
 INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
 (1, NULL, 0, 1, '2020-05-05 16:26:00'),
-(2, NULL, 0, 2, '2020-05-05 17:30:45');
+(2, NULL, 0, 2, '2020-05-05 17:30:45'),
+(13, NULL, 0, 4, '2020-05-10 21:11:25');
 
 -- --------------------------------------------------------
 
@@ -224,13 +253,13 @@ CREATE TABLE `libro` (
 --
 
 INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ranking`, `Imagen`, `Descripcion`, `Genero`, `EnTienda`, `Fecha`, `Idioma`, `Editorial`, `Descuento`, `unidades`, `FechaPublicacion`) VALUES
-(2, 'La Rueda Del Tiempo, El Ojo Del Mundo', 'Robert Jordan', 19, 4, NULL, 'imagenes/libros/portada_el-ojo-del-mundo-n-0114_robert-jordan_201910151031.jpg', 'Moraine, una maga capaz de encauzar el Poder Único, anuncia el despertar de una terrible amenaza. Esa misma noche, el pueblo se ve atacado por espantosos trollocs sedientos de sangre, unas bestias semihumanas que hasta entonces se habían considerado una leyenda.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1990-01-15'),
+(2, 'La Rueda Del Tiempo, El Ojo Del Mundo', 'Robert Jordan', 19, 4.5, NULL, 'imagenes/libros/portada_el-ojo-del-mundo-n-0114_robert-jordan_201910151031.jpg', 'Moraine, una maga capaz de encauzar el Poder Único, anuncia el despertar de una terrible amenaza. Esa misma noche, el pueblo se ve atacado por espantosos trollocs sedientos de sangre, unas bestias semihumanas que hasta entonces se habían considerado una leyenda.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 97, '1990-01-15'),
 (10, 'La Rueda Del Tiempo, El Despertar De Los Héroes', 'Robert Jordan', 20, NULL, NULL, 'imagenes/libros/descargar-libro-el-despertar-de-los-heroes-en-pdf-epub-mobi-o-leer-online.jpg', 'Las fuerzas del mal se agitan y tienden sus garras sobre el mundo, al mismo tiempo que surgen señales que auguran la proximidad de la Ultima Batalla, donde ha de decidirse la suerte de la humanidad. ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Tor Books', 0, 100, '1990-10-15'),
-(11, 'La Rueda Del Tiempo, El Dragón Renacido', 'Robert Jordan', 19, NULL, NULL, 'imagenes/libros/portada_el-dragon-renacido-n-0314_robert-jordan_201912090923.jpg', 'Rand, acosado por inquietantes sueños sobre una espada de cristal, decide abandonar a sus compañeros tras un ataque de Engendros de la Sombra y se encamina hacia Tear para descubrir quién es realmente. Mientras tanto, las tres jóvenes aspirantes a Aes Sedai viajan con Mat hacia Tar Valon para ingresar como novicias en la Torre Blanca, donde esperan que las hermanas sanen a Mat de la extraña enfermedad que padece. Poco tiempo después, la Amyrlin les encomienda una peligrosa misión. . . ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1991-10-15'),
+(11, 'La Rueda Del Tiempo, El Dragón Renacido', 'Robert Jordan', 19, NULL, NULL, 'imagenes/libros/portada_el-dragon-renacido-n-0314_robert-jordan_201912090923.jpg', 'Rand, acosado por inquietantes sueños sobre una espada de cristal, decide abandonar a sus compañeros tras un ataque de Engendros de la Sombra y se encamina hacia Tear para descubrir quién es realmente. Mientras tanto, las tres jóvenes aspirantes a Aes Sedai viajan con Mat hacia Tar Valon para ingresar como novicias en la Torre Blanca, donde esperan que las hermanas sanen a Mat de la extraña enfermedad que padece. Poco tiempo después, la Amyrlin les encomienda una peligrosa misión. . . ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 99, '1991-10-15'),
 (12, 'La Rueda Del Tiempo, El Ascenso De La Sombra', 'Robert Jordan', 20, NULL, NULL, 'imagenes/libros/ascenso de las sombras.jpg', 'Los sellos de Shayol Ghul se han debilitado y la presencia del Oscuro se hace cada vez más evidente. En Tar Valon, Min es testigo de hechos portentosos que vaticinan un horrible futuro. Los Capas Blancas buscan en Dos Ríos a un hombre con los ojos dorados y siguen el rastro del Dragón Renacido. Perrin, acompañado de Fraile, Loial y algunos Aiel llegan allí después de atravesar los Portales de Piedra.\r\n\r\nSe encontrarán con los Trollocs, que sirven al Oscuro, y con los Capas Blancas y su peculiar manera de entender la defensa de la Luz. Mientras Elayne y Nynaeve parten hacia Tanchico siguiendo el rastro de las Aes Sedai del Ajah Negro que se llevaron los numerosos angreal, Rand trata de reunir a todos los clanes de los Aiel. Con ello cumplirá parte de la profecía de Rhuidean.  ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1992-09-15'),
 (13, 'La Rueda Del Tiempo, Cielo En Llamas', 'Robert Jordan', 19, NULL, NULL, 'imagenes/libros/cielo en llamas.jpg', 'Rand aguarda en Rhuidean a que se unan todos los clanes de los Aiel, pero la actitud del jefe de los Shaido puede obligar a Rand a cambiar de planes. En la corte de Caemlyn, Morgase tiene que enfrentarse a una traición inesperada, mientras la Torre Blanca se convierte en un nido de intrigas. Elaida, ascendida a Sede Amyrlin, pretende capturar al Dragón Renacido para mantenerlo a salvo hasta el momento del Tarmon Gaidon, aunque algunos creen que no es eso lo que pretende. ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1993-10-15'),
 (14, 'La Rueda Del Tiempo, El Señor Del Caos', 'Robert Jordan', 20, NULL, NULL, 'imagenes/libros/libro-la-rueda-del-tiempo-6-el-senor-del-caos-portada-pdf.jpg', 'Rand se esfuerza por unir a las naciones para combatir al Oscuro al tiempo que sortea las trampas que los Renegados tienden a la desprevenida raza humana. Pero además tiene que enfrentarse a los Hijos de la Luz, cuyo capitán general se propone desprestigiarlo y dirigir la batalla contra la Sombra.\r\nPor su parte, las Aes Sedai buscan a Rand para ofrecerle su apoyo, aunque ése sospecha que su verdadera intención es usarlo para sus propios fines. ', 'Fantasía', 1, '2020-05-04', 'Castellano', 'Minotauro', 0, 100, '1994-10-15'),
-(27, 'El Príncipe De La Niebla', 'Carlos Ruiz Zafón', 9, NULL, NULL, 'imagenes/libros/principeDeLaNiebla.jpg', '  Un diabólico príncipe que concede cualquier deseo... a un alto precio.\r\n\r\nEl nuevo hogar de los Carver está rodeado de misterio. En él aún se respira el espíritu de Jacob, el hijo de los antiguos propietarios, que murió ahogado. Las extrañas circunstancias de esa muerte sólo empiezan a aclararse con la aparición de un diabólico personaje: el Príncipe de la Niebla.     ', 'Juvenil', 1, '2020-05-04', 'Castellano', 'Planeta', 0, 47, '1993-05-23'),
+(27, 'El Príncipe De La Niebla', 'Carlos Ruiz Zafón', 9, 3, NULL, 'imagenes/libros/principeDeLaNiebla.jpg', '  Un diabólico príncipe que concede cualquier deseo... a un alto precio.\r\n\r\nEl nuevo hogar de los Carver está rodeado de misterio. En él aún se respira el espíritu de Jacob, el hijo de los antiguos propietarios, que murió ahogado. Las extrañas circunstancias de esa muerte sólo empiezan a aclararse con la aparición de un diabólico personaje: el Príncipe de la Niebla.     ', 'Juvenil', 1, '2020-05-04', 'Castellano', 'Planeta', 0, 47, '1993-05-23'),
 (28, 'La Sombra Del Viento (Serie 1 El Cementerio De Los Libros Olvidados )', 'Carlos Ruiz Zafón', 10, NULL, NULL, 'imagenes/libros/laSombraDelViento.jpg', ' «Todavía recuerdo aquel amanecer en que mi padre me llevó por primera vez a visitar el Cementerio de los Libros Olvidados.»\r\n\r\nUn amanecer de 1945, un muchacho es conducido por su padre a un misterioso lugar oculto en el corazón de la ciudad vieja: el Cementerio de los Libros Olvidados. Allí, Daniel Sempere encuentra un libro maldito que cambia el rumbo de su vida y le arrastra a un laberinto de intrigas y secretos enterrados en el alma oscura de la ciudad.La Sombra del Vientoes un misterio literario ambientado en la Barcelona de la primera mitad del siglo xx, desde los últimos esplendores del Modernismo hasta las tinieblas de la posguerra.\r\n\r\nAunando las técnicas del relato de intriga y suspense, la novela histórica y la comedia de costumbres,La Sombra del Vientoes sobre todo una trágica', 'Juvenil', 1, '2020-05-04', 'Castellano', 'Planeta', 0, 53, '2001-08-30'),
 (29, 'El Juego Del Ángel (Serie 2 El Cementerio De Los Libros Olvidados)', 'Carlos Ruiz Zafón', 11, NULL, NULL, 'imagenes/libros/elJuegoDelAngel.jpg', '  La próxima vez que quieras salvar un libro, no te juegues la vida... Te llevaré a un lugar secreto donde los libros nunca mueren.\r\nEn la turbulenta Barcelona de los años 20 un joven escritor obsesionado con un amor imposible recibe la oferta de un misterioso editor para escribir un libro como no ha existido nunca, a cambio de una fortuna y, tal vez, mucho más.\r\nCon estilo deslumbrante e impecable precisión narrativa, el autor de La Sombra del Viento nos transporta de nuevo a la Barcelona del Cementerio de los Libros Olvidados para ofrecernos una gran aventura de intriga, romance y tragedia, a través de un laberinto de secretos donde el embrujo de los libros, la pasión y la amistad se conjugan en un relato magistral.     ', 'Juvenil', 1, '2020-05-04', 'Castellano', 'Planeta', 0, 27, '2008-09-14'),
 (30, 'El Prisionero Del Cielo (Serie 3 El Cementerio De Los Libros Olvidados)', 'Carlos Ruiz Zafón', 10, NULL, NULL, 'imagenes/libros/elPrisioneroDelCielo.jpg', ' Escribo estas palabras en la esperanza y el convencimiento de que algún día descubrirás este lugar…un lugar que cambió mi vida como estoy seguro de que cambiará la tuya.\r\nBarcelona, 1957. Daniel Sempere y su amigo Fermín, los héroes de La Sombra del Viento, regresan de nuevo a la aventura para afrontar el mayor desafío de sus vidas.\r\nJusto cuando todo empezaba a sonreírles, un inquietante personaje visita la librería de Sempere y amenaza con desvelar un terrible secreto que lleva enterrado dos décadas en la oscura memoria de la ciudad. Al conocer la verdad, Daniel comprenderá que su destino le arrastra inexorablemente a enfrentarse con la mayor de las sombras: la que está creciendo en su interior.\r\nRebosante de intriga y emoción,El Prisionero del Cielo es una novela magistral donde los hi', 'Juvenil', 1, '2020-05-04', 'Castellano', 'Planeta', 0, 26, '2011-11-23'),
@@ -239,7 +268,7 @@ INSERT INTO `libro` (`Id_Libro`, `Titulo`, `Autor`, `Precio`, `Valoracion`, `Ran
 (33, 'Divina Comedia', 'Dante Alighieri', 13, 4, NULL, 'imagenes/libros/divinacomedia.jpg', 'La Divina Comedia es un poema donde se mezcla la vida real con la sobrenatural, muestra la lucha entre la nada y la inmortalidad, una lucha donde se superponen tres reinos, tres mundos, logrando una suma de múltiples visuales que nunca se contradicen o se anulan. Los tres mundos infierno, purgatorio y paraíso reflejan tres modos de ser de la humanidad, en ellos se reflejan el vicio, el pasaje del vicio a la virtud y la condición de los hombres perfectos. Es entonces a través de los viciosos, penitentes y buenos que se revela la vida en todas sus formas, sus miserias y hazañas, pero también se muestra la vida que no es, la muerte, que tiene su propia vida, todo como una mezcla agraciada planteada por Dante, que se vuelve arquitecto de lo universal y de lo sublime. ', 'Comedia', 1, '2020-05-06', 'Castellano', 'Plutón Ediciones', 0, 99, '2019-01-10'),
 (34, 'La escala de Mohs', 'Gata Cattana', 13, 5, NULL, 'imagenes/libros/cattana.jpg', 'El único poemario de una artista polifacética que es todo un referente para varias generaciones: feminista, música y poeta; comprometida y talentosa. Gata Cattana. ', 'Poesía', 1, '2020-05-06', 'Español', 'Aguilar', 0, 10, '2019-01-01'),
 (35, 'Búnker: memorias de un encierro, rimas y tiburones blancos', 'Toteking', 20, 4, NULL, 'imagenes/libros/toteking.jpg', 'Toteking, leyenda viva del rap español, pero sobre todo lector incansable, escribe: «Viajar a tus recuerdos es buscar pelea». Y lo hace. Sin miedo.  ', 'Biografía', 1, '2020-05-06', 'Español', 'Aguilar', 5, 5, '2019-01-01'),
-(36, 'After: 1 (The After Series)', 'Anna Todd', 11, NULL, NULL, 'imagenes/libros/after1.jpg', '        Un libro de amor bastante moñas, hay 3 más pero nos duele la vida de solo pensarlo.        ', 'Romántico', 1, '2020-05-06', 'Español', 'Wattpad', 0, 20, '2017-07-11'),
+(36, 'After: 1 (The After Series)', 'Anna Todd', 11, 5, NULL, 'imagenes/libros/after1.jpg', '        Un libro de amor bastante moñas, hay 3 más pero nos duele la vida de solo pensarlo.        ', 'Romántico', 1, '2020-05-06', 'Español', 'Wattpad', 0, 20, '2017-07-11'),
 (37, 'After. En mil pedazos', 'Anna Topp', 13, NULL, NULL, 'imagenes/libros/after2.jpg', '  Una historia que nadie quiere que acabe y todo el mundo quiere vivir.\r\nTessa se acaba de despertar de un sueño. Es consciente de que era todo demasiado bonito para ser cierto… \r\n\r\n¿Es posible volver a sonreír cuando todo se rompe en pedazos? Ella y Hardin parecían hechos el uno para el otro, como dos almas gemelas, pero él lo ha roto todo, se ha acabado el sueño para siempre. ¿Cómo ha podido ser tan ingenua? Si quiere recuperarla, Hardin deberá luchar como nunca por lo que ha hecho. ¿Estará preparado? ¿Se puede perdonar todo?    ', 'Romántico', 1, '2020-05-06', '', 'Wattpad', 0, 30, '2015-07-15'),
 (38, 'After. Almas perdidas', '', 7, NULL, NULL, 'imagenes/libros/after3.jpg', '   El amor de Tessa y Hardin ya ha sido complicado en otras ocasiones, pero ahora lo es más que nunca. Su vida no volverá a ser como antes…\r\nJusto cuando Tessa toma la decisión más importante de su vida, todo cambia. Los secretos que salen a la luz sobre su familia, y también sobre la de Hardin ponen en duda su relación y su futuro juntos.    ', 'Romántico', 1, '2020-05-06', 'España', 'Wattpad', 12, 36, '2016-06-22'),
 (39, 'After. Amor infinito', 'Anna Todd', 7, NULL, NULL, 'imagenes/libros/after4.jpg', 'La historia de dos almas gemelas que no pueden estar separadas, pero que no saben cómo estar juntas. El amor es pasión y complicidad, pero también es aprender a conocer al otro y hacer juntos un proyecto común.\r\n\r\n ', 'Romántico', 1, '2020-05-06', 'Español', 'Wattpad', 0, 20, '2020-04-30');
@@ -278,7 +307,10 @@ INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `De
 (8, 'Stephenie Meyer', 'imagenes/librosIntercambio/crepusculo.jpg', 'Me lo compré pensando que iba a ser un libro sobre el estudio astronómico pero resultó una novela adolescente. Casi que lo regalo, pero si me ofrecéis un libro de astronomía mejor.', 'Juvenil', 18, 'Crepúsculo', 0, 0, '2020-05-06 13:17:14'),
 (9, 'Christophe Galfard', 'imagenes/librosIntercambio/universoenm.jpg', 'Este libro es brutal, me cambió la vida.', 'Histórico', 19, 'El universo en tu mano', 0, 0, '2020-05-06 13:24:42'),
 (10, 'Ella Valentine', 'imagenes/librosIntercambio/milibroJQ.jpg', 'Es un poco como mi biografía, la verdad es que te sientes muy identificado con el protagonista. Como ya me lo he acabado, quizá te interese saber cómo se siente ser como yo.', 'Drama', 20, 'Multimillonario &amp; Canalla', 0, 0, '2020-05-06 13:31:47'),
-(11, 'Pepe', 'imagenes/librosIntercambio/pepe.jpg', 'ME he sentido maaazo identificado con el dichoso pollo', 'Infantil', 20, 'El pollo pepe', 0, 0, '2020-05-06 13:34:44');
+(11, 'Pepe', 'imagenes/librosIntercambio/pepe.jpg', 'ME he sentido maaazo identificado con el dichoso pollo', 'Infantil', 20, 'El pollo pepe', 0, 0, '2020-05-06 13:34:44'),
+(13, 'Janet Valade', 'imagenes/librosIntercambio/phpdummies.jpg', 'Un libro para aprender PHP, super útil me ha servido para mucho. Me interesaría otro libro de aspecto tecnológico', 'Científico', 1, 'PHP para dummies', 0, 0, '2020-05-10 21:11:25'),
+(14, 'Jon Scieszka y Lane Smith', 'imagenes/librosIntercambio/3cerditos.jpg', 'Creo que este libro cumple las condiciones, me lo cambias?', 'Infantil', 1, 'Los 3 Cerditos', 2, 0, '2020-05-10 21:13:58'),
+(15, 'Stephen Randy Davis', 'imagenes/librosIntercambio/510pJu3ssFL.jpg', 'Te parece bien?', 'Científico', 5, 'C++ para dummies', 0, 0, '2020-05-10 21:24:38');
 
 -- --------------------------------------------------------
 
@@ -300,7 +332,9 @@ CREATE TABLE `mensajechat` (
 
 INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, `Fecha`) VALUES
 (2, 14, 1, 'Buenas, me interesaría el libro de Caperucita, que te parece Pinocho a cambio del tuyo?\r\n ', '2020-05-05 18:43:56'),
-(2, 15, 5, 'Sí, me parece un buen cambio', '2020-05-06 13:12:09');
+(2, 15, 5, 'Sí, me parece un buen cambio', '2020-05-06 13:12:09'),
+(2, 16, 1, 'Te he enviado otra oferta para ese libro dime que te parece', '2020-05-10 21:14:20'),
+(2, 17, 5, 'No me interesa, prefiero el de Pinocho', '2020-05-10 21:22:19');
 
 --
 -- Disparadores `mensajechat`
@@ -326,6 +360,16 @@ CREATE TABLE `notificaciones` (
   `fecha` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `notificaciones`
+--
+
+INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VALUES
+(1, 1, 'Has comprado 3 unidades del libro <a href=\'libroTienda.php?id=2\'>La Rueda Del Tiempo, El Ojo Del Mundo</a> por 57 €, muchas gracias por su compra', 0, '2020-05-10 21:03:02'),
+(2, 1, 'Has comprado el libro <a href=\'libroTienda.php?id=11\'>La Rueda Del Tiempo, El Dragón Renacido</a> por 19 €, muchas gracias por su compra', 0, '2020-05-10 21:03:14'),
+(3, 5, 'El usuario Administrador te ha ofrecido el libro Los 3 Cerditos por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-10 21:13:58'),
+(4, 5, 'El usuario Geo te ha ofrecido el libro C++ para dummies por tu libro PHP para dummies, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=13\'>aquí</a>.', 0, '2020-05-10 21:24:39');
+
 -- --------------------------------------------------------
 
 --
@@ -338,6 +382,14 @@ CREATE TABLE `ofertasintercambio` (
   `idLibroOferta` int(11) NOT NULL,
   `ofertaAceptada` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ofertasintercambio`
+--
+
+INSERT INTO `ofertasintercambio` (`id`, `idLibroIntercambio`, `idLibroOferta`, `ofertaAceptada`) VALUES
+(1, 1, 14, 0),
+(2, 13, 15, 2);
 
 -- --------------------------------------------------------
 
@@ -402,8 +454,8 @@ INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Cor
 (15, 'Emank', 'Emanuel', '$2y$10$7oIpcxcPqgRjgaJ8JYpQouxZkYLe3FP26XsgJ4UH964UNAsJf3aBS', 'emank@gmail.com', 'imagenes/usuarios/23.jpg', 'Mikasa Ackerman', '2000-01-30', 'Madrid', '2020-05-06 13:24:01', 1),
 (16, 'LuciDemonio', 'Luci Demonio', '$2y$10$FLFSAsYgJq0UKoFCPj/v8eiIr/jQTXUGFSOYmpPPDvtridR1/bguu', 'luci@demonio.des', 'imagenes/usuarios/luci.jpg', 'Callejon del elfo, 3', '1963-02-20', 'Dreamland', '2020-05-06 13:12:59', 1),
 (17, 'Bernard64', 'Bernardo Marín', '$2y$10$ZroKl1Fho96WLot9xhsF2u6TY5.CvfVVLGrX3GCKxac2s2Aw6SOoa', 'bernardo@cc.es', 'imagenes/usuarios/Bernardo.jpg', 'Vivo con mi madre', '1956-04-23', 'Madrid', '2020-05-06 13:04:10', 1),
-(18, 'Cañizares', 'Cañizares', '$2y$10$jkiBUD2koRimnAG1fRAtYeRH4GMh9w4b7J.OLvgjvMC.ikaneUcvy', 'cañizares@cc.es', 'imagenes/usuarios/cañizares.jpg', 'Madrid', '1996-05-16', 'Madrid', '2020-05-06 13:12:49', 1),
-(19, 'JuliPachacho', 'Julián Palacios', '$2y$10$h5.Rxhmxwica.FzA5nfOWu3OgZolNMZkv4VygtUzxfANUQah3dTpW', 'julipala@cc.es', 'imagenes/usuarios/julián.jpg', 'Villa de Murcia 45 3', '1975-07-31', 'Murcia', '2020-05-06 13:21:13', 1),
+(18, 'Cañizares', 'Canizares', '$2y$10$jkiBUD2koRimnAG1fRAtYeRH4GMh9w4b7J.OLvgjvMC.ikaneUcvy', 'canizares@cc.es', 'imagenes/usuarios/canizares.jpg', 'Madrid', '1996-05-16', 'Madrid', '2020-05-06 13:12:49', 1),
+(19, 'JuliPachacho', 'Julian Palacios', '$2y$10$h5.Rxhmxwica.FzA5nfOWu3OgZolNMZkv4VygtUzxfANUQah3dTpW', 'julipala@cc.es', 'imagenes/usuarios/julian.jpg', 'Villa de Murcia 45 3', '1975-07-31', 'Murcia', '2020-05-06 13:21:13', 1),
 (20, 'Roncolo69', 'Jesús Quesada', '$2y$10$IX7aL/lfo5JmYMjazcbzWu1aDkTPoTSXcDs3xBtjoAq703xmrWiNW', 'jesques@cc.es', 'imagenes/usuarios/jesus.jpg', 'Avenida de la Paz Nº34', '1969-04-18', 'Ciudad Real', '2020-05-06 13:28:19', 1);
 
 -- --------------------------------------------------------
@@ -428,7 +480,10 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 (2, 1, 4, 'Increible', 1),
 (33, 15, 4, 'No le doy más porque nada es perfecto', 2),
 (34, 16, 5, 'Mi rapera favorita. Denscasa en paz', 3),
-(35, 16, 4, 'Buen libro aunque me gustan más sus canciones', 4);
+(35, 16, 4, 'Buen libro aunque me gustan más sus canciones', 4),
+(2, 17, 5, 'Actualmente es mi saga de ficción favorita. Un 10 si pudiese', 5),
+(27, 17, 3, 'El final un poco mustio, pero pone unas buenas bases para la saga de la niebla.', 6),
+(36, 20, 5, 'Será una saga para niñas de 14 años pero tiene unas escenas bestiales', 7);
 
 --
 -- Disparadores `valoracionlibro`
@@ -582,7 +637,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -594,7 +649,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
@@ -612,7 +667,7 @@ ALTER TABLE `generolibros`
 -- AUTO_INCREMENT de la tabla `intercambios`
 --
 ALTER TABLE `intercambios`
-  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Intercambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
@@ -624,25 +679,25 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
 --
 ALTER TABLE `mensajechat`
-  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id_Mensaje_Chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
 --
 ALTER TABLE `ofertasintercambio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -654,7 +709,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `valoracionlibro`
 --
 ALTER TABLE `valoracionlibro`
-  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
