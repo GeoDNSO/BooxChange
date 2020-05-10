@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 10:37:03
+-- Tiempo de generación: 10-05-2020 a las 14:07:06
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.1
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdbooxchange`
 --
+CREATE DATABASE IF NOT EXISTS `booxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `booxchange`;
 
 -- --------------------------------------------------------
 
@@ -349,6 +351,18 @@ CREATE TABLE `tema` (
   `Imagen` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tema`
+--
+
+INSERT INTO `tema` (`Tema`, `Descripcion`, `Imagen`) VALUES
+('Club de lectura', 'Disfruta agradables charlas con amantes de la lectura', 'imagenes/tema/club.png'),
+('Debates', 'Debatid sobre vuestras obras favoritas', 'imagenes/tema/critic.png'),
+('Devoluciones', 'Ayuda sobre devoluciones', 'imagenes/tema/return.png'),
+('Discusión', 'Discute sobre los temas más candentes de la actualidad litearia', 'imagenes/tema/discussion.png'),
+('FaQ', 'Preguntas frecuentes', 'imagenes/tema/faq.png'),
+('Reglas', 'Las reglas del foro ¡Importante!', 'imagenes/tema/rules.png');
+
 -- --------------------------------------------------------
 
 --
@@ -421,12 +435,6 @@ INSERT INTO `valoracionlibro` (`Id_Libro`, `Id_Usuario`, `Valoracion`, `Comentar
 --
 DELIMITER $$
 CREATE TRIGGER `mediaValoracion` AFTER INSERT ON `valoracionlibro` FOR EACH ROW UPDATE libro
-    SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
-                      WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `mediaValoracionUPD` AFTER UPDATE ON `valoracionlibro` FOR EACH ROW UPDATE libro
     SET valoracion = (SELECT AVG(valoracion) FROM valoracionlibro
                       WHERE libro.Id_Libro = valoracionlibro.Id_Libro)
 $$
@@ -574,7 +582,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -586,7 +594,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
