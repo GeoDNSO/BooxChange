@@ -350,11 +350,19 @@
 
     width: auto;
     max-width: 60%;
+
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+}
+
+.chatCentrado{
+     margin: 0 auto !important;
+     text-align: center !important;
+     width: 100%;
+     background: none !important;
 }
 
 .messages li .textspanChat:before {
@@ -407,16 +415,15 @@
     color: rgb(136, 129, 129);
 }
 .chatCenter span{
-    border: 32rem solid white;
+    /*border: 32rem solid white;
     border-style: none none none solid;
-    margin: 0 auto;
-    padding: 50%;
+    */
+    margin: 0 auto !important;
 }
 
 .messages .chatCenter .textspanChat{
     background-color: var(--fecha);
-    margin: 0 auto;
-    color: rgb(39, 10, 71);
+    color:var(--letraClaraSalvio);
 }
 
 @media only screen and (max-width: 1000px) {

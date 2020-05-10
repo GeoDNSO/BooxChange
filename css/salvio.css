@@ -63,6 +63,10 @@ box-shadow: 3px 3px 8px  var(--cajaSombra1),
 border-radius: 15px;
 }
 
+.chatCenter{
+	background-color: white !important;
+}
+
 .botones{
 width: auto;
 display: flex;
@@ -87,10 +91,11 @@ flex-wrap: wrap;
 .enlace{
 padding: 16px 20px 20px 20px;
 width:30%;
-background-color:  var(--botonOscuro);
+background-color:  var(--botonNaranja);
 border-radius: 27px;
 	margin: 0 auto;
 	margin-left: 3% !important;
+box-shadow: 3px 3px 8px var(--botonNaranjaSombra);
 }
 
 .enlace a{
@@ -98,11 +103,11 @@ border-radius: 27px;
 }
 
 .enlace:hover{
-    background-color: var(--botonClaro);
+    background-color: var(--botonNaranjaClaro);
 }
 
 .enlace:active{
-    background-color: var(--botonClaro);
+    background-color: var(--botonNaranjaClaro);
 }
 
 .agotado{

@@ -102,7 +102,7 @@ function mensajesChat()
             $horaDelMensaje = $dt->format('H:i');
             $fechaDelMensaje = $dt->format('Y-m-d');
             if($mensajeAnterior !== $fechaDelMensaje)
-                echo "<li class='chatCenter'><span class='textspanChat'>$fechaDelMensaje</span></li>";
+                echo "<li class='chatCenter'><p class=chatCentrado><span class='textspanChat'>$fechaDelMensaje</span></p></li>";
 
             $mensajeAnterior = $fechaDelMensaje;
             if ($idUserMensaje == $_SESSION["id_Usuario"]) {
