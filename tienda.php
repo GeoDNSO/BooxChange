@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . "/includes/config.php");
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -27,15 +28,15 @@ $librosTienda = $app->librosTienda();
 
 $html = '<div id="buscaLibro" class = "buscarTienda">';
 $html .= '<form method="post">';
-$html .= '<div class="fields noWrapBuscar">';
+//$html .= '<div class="fields noWrapBuscar">';
 //$html .= '    <label for="titulo"><b>Buscar Libro por título:</b><br></label><br>';
-$html .= '     <div class="text ancho"> <input class="login" placeholder="   Introduzca título del libro..." type=text name="titulo" id="titulo" /></div>';
+$html .= '<input class="" placeholder="Introduzca título del libro..." type=text name="titulo" id="titulo" />';
 
 $html .= '    <div class= selectCentrado><select id="genero" class=marginGenero name="genero">';
 $html .=      $app->construirSeleccionDeCategorias();
 $html .= '    </select></div>';
-$html .= '    <button class="send-button noEnorme marginTop">Buscar</button>';
-$html .= '</div>';
+$html .= '    <button class="send-buttonBuscar">Buscar</button>';
+//$html .= '</div>';
 $html .= '</form>';
 $html .= '</div>';
 
@@ -45,8 +46,7 @@ $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : null;
 $genero = isset($_POST["genero"]) ? $_POST["genero"] : null;
 if (!empty($titulo) || !empty($genero)) {
     $librosTienda = $app->buscarPorTitulo($titulo, $genero);
-}
-else{
+} else {
     $librosTienda = $app->librosTienda();
 }
 
@@ -80,14 +80,13 @@ foreach ($librosTienda as $libro) {
         echo "<div class=atributos>";
         echo "<p class=titulo> $titulo </p>";
         echo "<p class='autor gris'>$autor</p>";
-        if ($valoracion == null){
-        	 echo "<p>Valoracion: libro no valorado aún.</p>";
-        }
-        else{
-        	echo "<p>Valoracion: $valoracion/5</p>";
+        if ($valoracion == null) {
+            echo "<p>Valoracion: libro no valorado aún.</p>";
+        } else {
+            echo "<p>Valoracion: $valoracion/5</p>";
         }
         echo "<p class=genero>Género: $genero</p>";
-      	echo "<p> Descripcion: ";
+        echo "<p> Descripcion: ";
         //$valoracion;
 
         if (strlen($descripcion) < 100) {
@@ -152,14 +151,13 @@ foreach ($librosTienda as $libro) {
         echo "<div class=atributos>";
         echo "<p class=titulo> $titulo </p>";
         echo "<p class='autor gris'>$autor</p>";
-        if ($valoracion == null){
-        	 echo "<p>Valoracion: libro no valorado aún.</p>";
-        }
-        else{
-        	echo "<p>Valoracion: $valoracion/10</p>";
+        if ($valoracion == null) {
+            echo "<p>Valoracion: libro no valorado aún.</p>";
+        } else {
+            echo "<p>Valoracion: $valoracion/10</p>";
         }
         echo "<p class=genero>Género: $genero</p>";
-      	echo "<p> Descripcion: ";
+        echo "<p> Descripcion: ";
         //$valoracion;
 
         if (strlen($descripcion) < 100) {
@@ -184,11 +182,11 @@ foreach ($librosTienda as $libro) {
         echo "<div class=nologin>";
         echo "<div class=enlace>";
         echo "<p class='blanco centrado'><a class=blanco href='libroTienda.php?id=$id'>Mas información</a>";
-		echo "</p>";
+        echo "</p>";
         echo "</div>";
         echo "<div class=enlace>";
         echo "<p class='blanco centrado'><a class=blanco href='login.php'>Comprar</a>";
-		echo "</p>";
+        echo "</p>";
         echo "</div>";
         echo "</div>";
         echo "</div>";
@@ -207,4 +205,6 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 // echo "</div>";
 include("./includes/comun/footer.php");
 
-?></html>
+?>
+
+</html>
