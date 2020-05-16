@@ -1,0 +1,141 @@
+:root {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    --text-primaty: #000000;
+    --text-secondary: #000000;
+    --bg1: #000000;
+    --bg2: #000000;
+    --bgScroll1: #000000;
+    --bgScroll2: #11999e;
+
+    --colorNav: #000000;
+    --colorNavHover: #2c7862;
+    --colorTextNav: #000000;
+    --colorTextNavHover: #6edebd; /*46cfad*/
+
+    /*Variables*/
+
+    --fondo: #fff4c1;
+    --letraClara: white;
+    --letraOscura: #40514e;
+
+    --cajaFondo:   #cae7df;
+    --cajaFondoClaro:#dcefe9;
+    --cajaSombra1: #a0b9b4;
+    --cajaSombra2: #00000000; 
+
+    --caja1: #ffb367;
+    --caja2: #ffe277;
+    --caja3: #58b4ae;
+    --caja4: #2abec4;
+
+    --cajaIntercambio: white;
+
+    /*Variables Boton Oscuro*/
+
+    --boton: #11999e;
+    --botonHover: #30c0c5;
+    --botonAction: #c9823a;
+    --botonLetra: #e4f9f5;
+    --botonHoverLetra: #40514e;
+
+
+    /*Variables Boton Claro*/
+
+
+    --colClaro1: white;
+    --colClaro2: ;
+
+    --colOscuro1: #2c7862;
+
+
+    /*Alfonso
+    var(--);
+    */
+    --linea: #11999e;
+    --marco: #11999e;
+
+    /*Color cabecera*/
+    --botonCabec: #11999e;
+    --botonCabecHov: #30c0c5;
+    --botonCabecAct: #c9823a;
+
+    --botonMainButton: #17b2b8;
+    --letraDesplega: #000000;
+
+    --fecha: #30c0c5;
+    --userChat: #30c0c5;
+
+    --tituloIN: #1a7581;
+    --autorIN: #3b78b4;
+    --UserIN: #7098da;
+    --colOscuro1: #2c7862;
+    --colOscuro2: #064432;
+
+    /*Ranking par*/
+
+    --rankingPar: #30826b;
+    --rankingInpar: #45ba99;
+
+    /*Fin Alfonso*/
+ 
+    
+    /*Salvio*/
+   	--cabecera: #222831;
+   	--footer: #222831;
+   	--fondoSalvio: #30475e;
+   	--barraNavegacion:#233343;
+   	--botonBarraNavegacion:;
+   	--cuadroClaro:#ececec;
+   	--cuadroOscuro:#ceb997;
+   	--botonClaro: #30c0c5;
+   	--botonOscuro:#11999e;
+   	--letraClaraSalvio: white;
+   	--letraOscuraSalvio: black;
+   	--botonCancelar:#ff3333;
+   	--cancelarHover:#cc0000;
+   	--precioBorder:#8d928e;
+   	--precioBackground:#ba9945;
+   	--blancoSalvio: #ffffff;
+   	--grisClaroSalvio: #d9d9d9;
+   	--grisSalvio:#1a1a1a;
+   	--foroClaro: #57c1a3;
+   	--foroOscuro: #29705c;
+   	--foroClaro2:#45ba99;
+   	--botonAdmin: #37957a;
+   	--foroForm: #6ac8ad;
+   	--foroComentario: #7eceb7;
+   	--naranja1:#00bfff;
+   	--naranja2:#0099cc;
+   	--naranja3:#007399;
+   	--botonNaranja:#cc6600;
+   	--botonNaranjaClaro:#ff8000;
+   	--botonNaranjaSombra: #804000;
+    --fondoLibro:#ffbf80;
+    --fondoValoracion:#ffd9b3;
+    --estrellaVal: #e67300;
+    --libroSombra: #b35900;
+    --fondoUsuario:#ffcc99;
+
+
+    /*Scroll Bar para Mozilla*/
+    scrollbar-color: var(--bgScroll2) var(--bgScroll1) !important;
+    scrollbar-width: thin !important;
+}
+
+/*Fuente para mozilla*/
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFWJ0bbck.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+  @-moz-document url-prefix() {
+    *{
+        font-family: "Gill Sans Extrabold", Helvetica, sans-serif
+      }
+  }
+ 

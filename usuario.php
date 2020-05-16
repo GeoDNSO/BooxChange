@@ -23,7 +23,16 @@ require_once(__DIR__ . "/includes/config.php");
         	echo "<div class=fotoUsuario>";
 
        		echo '<img src="' . $_SESSION['fotoPerfil'] . '"alt="Imagen de Perfil" height="170" width="170">';
-       		//echo '<img src="imagenes/usuarios/salvio.jpg"alt="Imagen de Perfil" height="170" width="170">';
+               
+            //Switch para Dark Mode               
+            echo "<div class='switchContainer'>";
+            echo '<label class="switch">';
+            echo '<input checked type="checkbox">';
+            echo '<input type="checkbox">';
+            echo '<span class="slider round"></span>';
+            echo '</label>';
+            echo "</div>";
+
        		echo "</div>";
        		echo "<div class= infoUsuario>";
        		echo "<p class=marginBottom>Información de la cuenta</p>";

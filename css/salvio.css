@@ -291,6 +291,10 @@ padding: 2% 4%;
 }
 
 .fotoUsuario{
+    display: flex;
+    flex-direction: column;
+
+
 	padding: 5px 10px 5px 10px;
 	width:20%;
 	height: auto;
