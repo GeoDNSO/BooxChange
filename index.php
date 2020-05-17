@@ -77,6 +77,7 @@ function cicloMisterio($genero)
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+
 </head>
 
 <body>
@@ -124,11 +125,44 @@ function cicloMisterio($genero)
             </div>
         </div>
 
+        <div class="wrapper">
+            <ul class="list-reset">
+                <li class="active">
+                    <a>EL EQUIPO BOOXCHANGE</a>
+                    <span>Meet the team</span>
+                    <a href='quienesSomos.php'>
+                        <img src="imagenes/slideshow/team.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a>TOP 10 LIBROS</a>
+                    <span>Basados en vuestras puntuaciones</span>
+                    
+                    <a href='rankingLibros.php'>
+                    <img src="imagenes/slideshow/ranking.png">
+                    </a>
+                </li>
+                <li>
+                    <a>NUEVO FORO</a>
+                    <span>Comparte tu opinión con otros usuarios</span>
+                    
+                    <a href='foro.php'>
+                        <img src="imagenes/slideshow/foro.PNG" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="featured-image"></div>
+        </div>
 
     </div>
 
 
-
+<script>
+    $('.list-reset li').on('click', function(){
+	$('.list-reset li').removeClass('active')
+	$(this).addClass('active')
+})
+</script>
 
 </body>
 <?php
