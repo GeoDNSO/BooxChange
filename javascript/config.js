@@ -6,19 +6,23 @@ $(document).ready(function () {
         var expiresdate = new Date(2020, 20, 07, 12, 01);
         if (document.getElementById("styleMode").checked === true) {//Pasar a modo oscuro
             //cookie ya existe
-            if(checkCookie("estiloWeb") == true){
+            if (checkCookie("estiloWeb") == true) {
                 document.cookie = "estiloWeb=oscuro";
-                return ;
+            }else{
+                document.cookie = "estiloWeb=oscuro" + "; expires=" + expiresdate.toUTCString();
             }
-            document.cookie = "estiloWeb=oscuro" + "; expires=" + expiresdate.toUTCString();
         } else {//Pasar a modo claro
             //cookie ya existe
-            if(checkCookie("estiloWeb") == true){
+            if (checkCookie("estiloWeb") == true) {
                 document.cookie = "estiloWeb=claro";
-                return ;
             }
-            document.cookie = "estiloWeb=claro" + "; expires=" + expiresdate.toUTCString();
+            else{
+                document.cookie = "estiloWeb=claro" + "; expires=" + expiresdate.toUTCString();
+            }
+            
         }
+         //Poner estilo web correspondiente
+         setWebStyle()
 
     })
 
@@ -28,12 +32,12 @@ $(document).ready(function () {
     setWebStyle()
 });
 
-function setWebStyle(){
+function setWebStyle() {
     let style = getCookie("estiloWeb");
-    
-    if(style == "claro"){
+
+    if (style == "claro") {
         document.getElementById('estiloRoot').setAttribute('href', "css/root.css");
-    }else if(style == "oscuro"){
+    } else if (style == "oscuro") {
         document.getElementById('estiloRoot').setAttribute('href', "css/root_dark_mode.css");
     }
 
