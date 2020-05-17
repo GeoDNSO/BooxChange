@@ -5,7 +5,7 @@
     --text-secondary: #ffffff;
     --bg1: #000000;
     --bg2: #000000;
-    --bgScroll1: #444242;
+    --bgScroll1: #9e62a0;
     --bgScroll2: #9c9c9c;
 
     --colorNav: #000000;
@@ -19,6 +19,7 @@
     --fondo: #1d1c1c;
     --letraClara: rgba(255, 255, 255, 0.637);
     --letraOscura: rgba(255, 255, 255, 0.637);
+    --letraClara2: white;
 
     --cajaFondo:   #361f49;
     --cajaFondoClaro:#2a112b;
