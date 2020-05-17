@@ -9,27 +9,35 @@
     --bgScroll2: #9c9c9c;
 
     --colorNav: #000000;
-    --colorNavHover: #2c7862;
+    --colorNavHover: #ffffff;
     --colorTextNav: #000000;
-    --colorTextNavHover: #6edebd; /*46cfad*/
+    --colorTextNavHover: #b56ede; /*46cfad*/
 
     /*Variables*/
+    /*Purple rgb(96,60,186)*/
 
-    --fondo: #fff4c1;
-    --letraClara: white;
-    --letraOscura: #40514e;
+    --fondo: #1d1c1c;
+    --letraClara: rgba(255, 255, 255, 0.637);
+    --letraOscura: rgba(255, 255, 255, 0.637);
 
-    --cajaFondo:   #cae7df;
-    --cajaFondoClaro:#dcefe9;
-    --cajaSombra1: #a0b9b4;
-    --cajaSombra2: #00000000; 
+    --cajaFondo:   #361f49;
+    --cajaFondoClaro:#2a112b;
+    --cajaSombra1: #492958;
+    --cajaSombra2: #ae84e6; 
 
-    --caja1: #b65a5a;
-    --caja2: #2fa3c0;
-    --caja3: #58b4ae;
+    --caja1: rgba(96, 60, 186, 0.651);
+    --caja2: rgba(141, 51, 168, 0.356);
+    --caja3: #343238fd;
     --caja4: #2abec4;
 
+    --cajaTienda:  #343238fd;
+
+    --cajasThing: rgba(141, 51, 168, 0.356);
+    --brilloCajaThing:  rgba(206, 208, 219, 0.685);
+
     --cajaIntercambio: white;
+
+    --cajaIntercambioTienda: var(--cajaTienda);
 
     /*Variables Boton Oscuro*/
 
@@ -38,6 +46,17 @@
     --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
+
+
+    --botonTiendaIntercambio: var(--botonNaranja);
+    --botonTiendaIntercambioHover: var(--botonNaranjaClaro);
+    --botonTiendaIntercambioActive: rgb(84, 50, 104);
+
+
+    --cInterNor:  #3a3b3b;
+    --cInterMist: #2b273a;
+
+    --cajaPresentacionInter: var(--fondo);
 
 
     /*Variables Boton Claro*/
@@ -52,16 +71,16 @@
     /*Alfonso
     var(--);
     */
-    --linea: #11999e;
+    --linea: #99a1a1;
     --marco: #11999e;
 
     /*Color cabecera*/
-    --botonCabec: #11999e;
-    --botonCabecHov: #30c0c5;
+    --botonCabec: var(--botonAdmin);
+    --botonCabecHov: var(--foroOscuro);;
     --botonCabecAct: #3ab8c9;
 
     --botonMainButton: #17b2b8;
-    --letraDesplega: #000000;
+    --letraDesplega: #ffffff;
 
     --fecha: #30c0c5;
     --userChat: #30c0c5;
@@ -74,8 +93,8 @@
 
     /*Ranking par*/
 
-    --rankingPar: #30826b;
-    --rankingInpar: #45ba99;
+    --rankingPar: #4b2669;
+    --rankingInpar: #633081;
 
     /*Fin Alfonso*/
  
@@ -94,28 +113,28 @@
    	--letraOscuraSalvio: black;
    	--botonCancelar:#ff3333;
    	--cancelarHover:#cc0000;
-   	--precioBorder:#8d928e;
-   	--precioBackground:#ba9945;
+   	--precioBorder:#453949;
+   	--precioBackground:#5f5f5f;
    	--blancoSalvio: #ffffff;
    	--grisClaroSalvio: #d9d9d9;
-   	--grisSalvio:#1a1a1a;
-   	--foroClaro: #57c1a3;
-   	--foroOscuro: #29705c;
-   	--foroClaro2:#45ba99;
-   	--botonAdmin: #37957a;
-   	--foroForm: #6ac8ad;
-   	--foroComentario: #7eceb7;
+   	--grisSalvio:#fdfdfd;
+   	--foroClaro: #232426;
+   	--foroOscuro: #92799b;
+   	--foroClaro2:#434746;
+   	--botonAdmin: #44384e;
+   	--foroForm: #434746;
+   	--foroComentario: #434746;
    	--naranja1:#00bfff;
    	--naranja2:#0099cc;
    	--naranja3:#007399;
-   	--botonNaranja:#cc6600;
-   	--botonNaranjaClaro:#ff8000;
-   	--botonNaranjaSombra: #804000;
+   	--botonNaranja:#632666;
+   	--botonNaranjaClaro:#8a3686;
+   	--botonNaranjaSombra: #c69de7;
     --fondoLibro:#ffbf80;
     --fondoValoracion:#ffd9b3;
     --estrellaVal: #e67300;
     --libroSombra: #b35900;
-    --fondoUsuario:#ffcc99;
+    --fondoUsuario:#3a3a3a;
 
 
     /*Scroll Bar para Mozilla*/

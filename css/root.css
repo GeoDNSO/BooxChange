@@ -16,8 +16,8 @@
     /*Variables*/
 
     --fondo: #fff4c1;
-    --letraClara: white;
-    --letraOscura: #40514e;
+    --letraClara: rgb(34, 34, 34);
+    --letraOscura: #303534;
 
     --cajaFondo:   #cae7df;
     --cajaFondoClaro:#dcefe9;
@@ -29,7 +29,17 @@
     --caja3: #58b4ae;
     --caja4: #2abec4;
 
+    --cInterNor: var(--caja1);
+    --cInterMist: var(--caja3);
+
+    --cajaTienda: #ffb367;
+
+    --cajasThing: rgb(255, 255, 255);
+    --brilloCajaThing: #30e3ca;
+
+
     --cajaIntercambio: white;
+    --cajaPresentacionInter: var(--caja2);
 
     /*Variables Boton Oscuro*/
 
@@ -39,12 +49,16 @@
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
 
+    --botonTiendaIntercambio: #4E9CAF;
+    --botonTiendaIntercambioHover: rgb(106, 218, 124);
+    --botonTiendaIntercambioActive: rgb(40, 165, 61);
+
 
     /*Variables Boton Claro*/
 
 
     --colClaro1: white;
-    --colClaro2: ;
+    --colClaro2: white;
 
     --colOscuro1: #2c7862;
 
@@ -78,6 +92,8 @@
     --rankingInpar: #45ba99;
 
     /*Fin Alfonso*/
+
+    --cajaIntercambioTienda: var(--cajaTienda);
  
     
     /*Salvio*/

@@ -316,3 +316,12 @@ td {
     margin-bottom: 1rem;
 
 }
+
+.info a:link, td.imagen a:link{
+    color: var(--letraClaraSalvio);
+}
+
+.info a:visited, td.imagen a:visited{
+    color: var(--grisSalvio);
+}
+

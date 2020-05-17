@@ -96,7 +96,7 @@ width:42%;
 min-width:350px;
 height: auto;
 margin:2%;
-background-color:  var(--caja1);
+background-color:  var(--cajaTienda);
 box-shadow: 3px 3px 8px  var(--cajaSombra1),
             -3px -3px 8px var(--cajaSombra2);
 border-radius: 15px;
