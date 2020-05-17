@@ -1,12 +1,12 @@
 :root {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
-    --text-primaty: #000000;
-    --text-secondary: #000000;
+    --text-primaty: #ffffff;
+    --text-secondary: #ffffff;
     --bg1: #000000;
     --bg2: #000000;
-    --bgScroll1: #000000;
-    --bgScroll2: #11999e;
+    --bgScroll1: #444242;
+    --bgScroll2: #9c9c9c;
 
     --colorNav: #000000;
     --colorNavHover: #2c7862;
@@ -24,8 +24,8 @@
     --cajaSombra1: #a0b9b4;
     --cajaSombra2: #00000000; 
 
-    --caja1: #ffb367;
-    --caja2: #ffe277;
+    --caja1: #b65a5a;
+    --caja2: #2fa3c0;
     --caja3: #58b4ae;
     --caja4: #2abec4;
 
@@ -58,7 +58,7 @@
     /*Color cabecera*/
     --botonCabec: #11999e;
     --botonCabecHov: #30c0c5;
-    --botonCabecAct: #c9823a;
+    --botonCabecAct: #3ab8c9;
 
     --botonMainButton: #17b2b8;
     --letraDesplega: #000000;

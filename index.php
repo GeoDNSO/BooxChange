@@ -30,19 +30,19 @@ function mejoresLibros()
         echo "            <h2>$titulo de $autor </h2>";
         echo "        </div>";
         echo "    </div>";
-        $i+=1;
+        $i += 1;
     }
 }
 
-function cicloMisterio($genero){
+function cicloMisterio($genero)
+{
     $app = appBooxChange::getInstance();
     $librosTienda = $app->librosTienda();
 
 
     if (!empty($titulo) || !empty($genero)) {
-        $librosTienda = $app->buscarPorTitulo("",$genero);
-    }
-    else{
+        $librosTienda = $app->buscarPorTitulo("", $genero);
+    } else {
         $librosTienda = $app->librosTienda();
     }
 
@@ -51,7 +51,7 @@ function cicloMisterio($genero){
     $MAX = 3; // El máximo de lobros que vamos a enseñar
     foreach ($librosTienda as $libro) {
 
-        if($i == 3){
+        if ($i == 3) {
             return;
         }
         $titulo = $libro->getTitulo();
@@ -60,17 +60,23 @@ function cicloMisterio($genero){
         echo "<a class=gris href='libroTienda.php?id=$id'>$titulo</a><br>";
         $i++;
     }
-
 }
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <title>BooxChange</title>
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/config.js"></script>
 </head>
 
 <body>
@@ -86,7 +92,7 @@ function cicloMisterio($genero){
 
 
             <?php
-                mejoresLibros();
+            mejoresLibros();
 
             ?></div>
 
@@ -104,16 +110,18 @@ function cicloMisterio($genero){
                 <p>Si quieres viajar a nuevos mundos y embarcarte en épicas sagas, este es tu lugar</p>
                 <br>
                 <?php
-                    cicloMisterio("Fantasía");
-                ?></div>
+                cicloMisterio("Fantasía");
+                ?>
+            </div>
 
             <div class="thing">
                 <h1>Alma jóven</h1>
                 <p>Para los que creen que "El Club de los cinco" es para críos...</p>
                 <br>
                 <?php
-                    cicloMisterio("Juvenil");
-                ?></div>
+                cicloMisterio("Juvenil");
+                ?>
+            </div>
         </div>
 
 
@@ -123,6 +131,8 @@ function cicloMisterio($genero){
 
 
 </body>
-    <?php
-        include("./includes/comun/footer.php");
-?></html>
+<?php
+include("./includes/comun/footer.php");
+?>
+
+</html>

@@ -9,6 +9,8 @@ require_once(__DIR__ . "/includes/config.php");
         <link rel="icon" href="./favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="css/estilo.css" />
         <link rel="stylesheet" type="text/css" href="css/salvio.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript/config.js"></script>
     </head>
 
 <body>
@@ -27,8 +29,15 @@ require_once(__DIR__ . "/includes/config.php");
             //Switch para Dark Mode               
             echo "<div class='switchContainer'>";
             echo '<label class="switch">';
-            echo '<input checked type="checkbox">';
-            echo '<input type="checkbox">';
+            
+
+            if(!isset($_COOKIE["estiloWeb"]) || $_COOKIE["estiloWeb"] == "claro"){
+                echo '<input id="styleMode" type="checkbox">';
+            }
+            else if(isset($_COOKIE["estiloWeb"]) && $_COOKIE["estiloWeb"] == "oscuro"){
+                echo '<input id="styleMode" checked type="checkbox">';
+            }
+            
             echo '<span class="slider round"></span>';
             echo '</label>';
             echo "</div>";
