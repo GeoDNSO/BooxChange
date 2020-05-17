@@ -40,6 +40,9 @@
 
     --cajaIntercambioTienda: var(--cajaTienda);
 
+
+    --colorChatOther: rgb(46, 45, 45);
+
     /*Variables Boton Oscuro*/
 
     --boton: #11999e;
@@ -83,7 +86,7 @@
     --botonMainButton: #17b2b8;
     --letraDesplega: #ffffff;
 
-    --fecha: #30c0c5;
+    --fecha: #a990b3;
     --userChat: #30c0c5;
 
     --tituloIN: #1a7581;
