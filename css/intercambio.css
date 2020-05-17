@@ -2,14 +2,11 @@
 
 .mainIntercambio {
     text-align: center;
-    background-color: var(--caja2);
+    background-color: var(--cajaPresentacionInter);
 
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
-
-    --cInterNor: var(--caja1);
-    --cInterMist: var(--caja3);
 }
 
 .mainIntercambio p{

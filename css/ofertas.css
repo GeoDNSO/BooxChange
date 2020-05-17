@@ -36,7 +36,7 @@ h1.titleOfertas{
     height: 12rem;
     width: 60%;
 
-    background-color: lightcoral;
+    background-color: var(--caja3);
     border-radius: 1.5rem;
     margin: 1rem;
 }

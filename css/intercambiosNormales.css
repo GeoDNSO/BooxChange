@@ -46,7 +46,7 @@
     margin-top: 1.3rem;
     padding: 0.5rem;
 
-    background-color: var(--caja1);
+    background-color: var(--cajaIntercambioTienda);
     border-radius: 1rem;
 
     box-shadow: 0rem 0.3rem 0.6rem grey;
@@ -166,7 +166,7 @@ p.noHayLibrosIntercambio{
     width: auto;
     height: auto;
 
-    background: #4E9CAF;
+    background: var(--botonTiendaIntercambio);
 
     padding: 0.8rem;
     border-radius: 0.7rem;
@@ -181,12 +181,12 @@ p.noHayLibrosIntercambio{
 }
 
 .interButton:hover {
-    background-color: rgb(106, 218, 124);
+    background: var(--botonTiendaIntercambioHover);
     color: white;
 }
 
 .interButton:active{
-    background-color: rgb(40, 165, 61);
+    background: var(--botonTiendaIntercambioActive);
 }
 
 

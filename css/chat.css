@@ -200,45 +200,6 @@
     position: relative;
 }
 
-/*
-
-.currentUserMessage,
-.otherUserMessage {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    width: 70%;
-    font-size: 1rem;
-
-    padding: 0.5rem;
-    border-radius: 1rem;
-
-    display: block;
-    position: relative;
-    list-style: none;
-    
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap; 
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap; 
-    word-wrap: break-word; 
-    
-
-
-}
-
-.currentUserMessage {
-    background-color: rgb(159, 206, 152);
-    margin-left: auto;
-}
-
-.otherUserMessage {
-    background-color: rgb(198, 199, 194);
-    margin-right: auto;
-}
-
-*/
 
 /*Para enviar mensajes*/
 .textoChat {
@@ -345,6 +306,7 @@
 
 .messages li .textspanChat{
     background: #eee;
+    background: var(--colorChatOther);
     padding: 8px;
     position: relative;
 
