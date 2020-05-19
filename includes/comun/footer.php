@@ -1,6 +1,22 @@
+<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+<link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/config.js"></script>
 
 <footer>
 
+    <label>
+    <div class="fab"> <img src='imagenes\Iconos\bulb.png' alt=''> 
+    <?php
+        if (!isset($_COOKIE["estiloWeb"]) || $_COOKIE["estiloWeb"] == "claro") {
+                    echo '<input id="styleMode" type="checkbox">';
+                } else if (isset($_COOKIE["estiloWeb"]) && $_COOKIE["estiloWeb"] == "oscuro") {
+                    echo '<input id="styleMode" checked type="checkbox">';
+                }
+    ?>
+    </div>
+    </label>
     <h2 class="footerTitle"> Llevate BooxChange a todas partes </h2>
 
     <div class="footerTotal">
