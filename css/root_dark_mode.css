@@ -5,8 +5,8 @@
     --text-secondary: #ffffff;
     --bg1: #000000;
     --bg2: #000000;
-    --bgScroll1: #9e62a0;
-    --bgScroll2: #9c9c9c;
+    --bgScroll2: #9e62a0;
+    --bgScroll1: #9c9c9c;
 
     --colorNav: #000000;
     --colorNavHover: #ffffff;
@@ -108,7 +108,7 @@
    	--footer: #222831;
    	--fondoSalvio: #30475e;
    	--barraNavegacion:#233343;
-   	--botonBarraNavegacion:;
+   	--botonBarraNavegacion: #233343;
    	--cuadroClaro:#ececec;
    	--cuadroOscuro:#ceb997;
    	--botonClaro: #30c0c5;
