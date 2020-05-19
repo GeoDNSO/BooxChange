@@ -99,17 +99,23 @@
 .fields input {
     border: none;
     outline: none;
-    background: none;
+    width:90%;
+    background: var(--cajaFondoClaro);
     font-size: 18px;
     color: #555;
+    border-radius: 15px;
     padding: 20px 10px 20px 5px;
 }
+.fields:focus {
+    outline: none;
+    border-color: var(--colOscuro1);
+  }
 
 .text,
 .password {
     margin-bottom: 10px;
-    border-radius: 25px;
-    box-shadow: inset 8px 8px 8px #b9b9b9, inset -8px -8px 8px #ffffff;
+    border-radius: 20px;
+    /*box-shadow: inset 8px 8px 8px #b9b9b9, inset -8px -8px 8px #ffffff;*/
 }
 
 

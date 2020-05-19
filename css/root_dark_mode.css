@@ -23,8 +23,8 @@
 
     --cajaFondo:   #361f49;
     --cajaFondoClaro:#2a112b;
-    --cajaSombra1: #492958;
-    --cajaSombra2: #ae84e6; 
+    --cajaSombra1: #49295800;
+    --cajaSombra2: #ae84e600; 
 
     --caja1: rgba(96, 60, 186, 0.651);
     --caja2: rgba(141, 51, 168, 0.356);
@@ -134,8 +134,8 @@
    	--botonNaranja:#632666;
    	--botonNaranjaClaro:#8a3686;
    	--botonNaranjaSombra: #c69de7;
-    --fondoLibro:#ffbf80;
-    --fondoValoracion:#ffd9b3;
+    --fondoLibro:#492958;
+    --fondoValoracion:#92799b;
     --estrellaVal: #e67300;
     --libroSombra: #b35900;
     --fondoUsuario:#3a3a3a;
