@@ -3,34 +3,41 @@
 $(document).ready(function () {
 
     $("#styleMode").change(function () {
-        var expiresdate = new Date(2020, 20, 07, 12, 01);
-        if (document.getElementById("styleMode").checked === true) {//Pasar a modo oscuro
-            //cookie ya existe
-            if (checkCookie("estiloWeb") == true) {
-                document.cookie = "estiloWeb=oscuro";
-            }else{
-                document.cookie = "estiloWeb=oscuro" + "; expires=" + expiresdate.toUTCString();
-            }
-        } else {//Pasar a modo claro
-            //cookie ya existe
-            if (checkCookie("estiloWeb") == true) {
-                document.cookie = "estiloWeb=claro";
-            }
-            else{
-                document.cookie = "estiloWeb=claro" + "; expires=" + expiresdate.toUTCString();
-            }
-            
-        }
-         //Poner estilo web correspondiente
-         setWebStyle()
+        listenerStyleChanged("styleMode")
+    });
 
-    })
-
-
+    //Para la bombilla
+    $("#styleModeBulb").change(function () {
+        listenerStyleChanged("styleModeBulb")
+    });
 
     //Poner estilo web correspondiente
     setWebStyle()
 });
+
+
+function listenerStyleChanged(elementID) {
+    var expiresdate = new Date(2020, 20, 07, 12, 01);
+    if (document.getElementById(elementID).checked === true) {//Pasar a modo oscuro
+        //cookie ya existe
+        if (checkCookie("estiloWeb") == true) {
+            document.cookie = "estiloWeb=oscuro";
+        } else {
+            document.cookie = "estiloWeb=oscuro" + "; expires=" + expiresdate.toUTCString();
+        }
+    } else {//Pasar a modo claro
+        //cookie ya existe
+        if (checkCookie("estiloWeb") == true) {
+            document.cookie = "estiloWeb=claro";
+        }
+        else {
+            document.cookie = "estiloWeb=claro" + "; expires=" + expiresdate.toUTCString();
+        }
+
+    }
+    //Poner estilo web correspondiente
+    setWebStyle()
+}
 
 function setWebStyle() {
     let style = getCookie("estiloWeb");
