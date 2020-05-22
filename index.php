@@ -195,17 +195,21 @@ function cicloMisterio($genero)
 
 /* QUOTES */
 var listQuotes = [
-    {quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.", author: "Buddha"},
-    {quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein"},
-    {quote: "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.", author: "Bernard M. Baruch"},
-    {quote: "A room without books is like a body without a soul.", author: "Marcus Tullius Cicero"},
-    {quote: "You only live once, but if you do it right, once is enough.", author: "Mae West"},
-    {quote: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi"},
-    {quote: "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.", author: "J.K. Rowling, Harry Potter and the Goblet of Fire"},
-    {quote: "No one can make you feel inferior without your consent.", author: "Eleanor Roosevelt, This is My Story"},
-    {quote: "If you tell the truth, you don't have to remember anything.", author: "Mark Twain"},
-    {quote: "You've gotta dance like there's nobody watching, Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.", author: "William W. Purkey"},
-    {quote: "Be yourself; everyone else is already taken.", author: "Oscar Wilde"}
+    {quote: "Mientras el corazón late, mientras el cuerpo y el alma siguen juntos, no puedo admitir que cualquier criatura dotada de voluntad tiene necesidad de perder la esperanza en la vida.", author: "Julio Verne, Viaje al centro de la tierra"},
+    {quote: "Hay libros cuyas partes traseras y cubiertas son de lejos la mejor parte.", author: "Charles Dickens, Oliver Twist"},
+    {quote: "Las personas mayores nunca puede comprender algo por sí solas y es muy aburrido para los niños tener que darles una y otra vez explicaciones.", author: "Antoine de Saint-Exupéry, El principito"},
+    {quote: "Hay que tener cuidado con los libros y lo que hay dentro de ellos, ya que las palabras tienen el poder de cambiarnos.", author: "Cassandra Clare, El Ángel mecánico"},
+    {quote: "Por honor, cuando cuando un hombre moría, si su viuda no era reclamada por el jefe del clan, se esperaba de ella que se lanzara a la pira funeraria de su marido.", author: "Brent Weeks, Más allá de las sombras"},
+    {quote: "Lo peor de la tarea eran los cuerpos. Algunos parecían filetes chamuscadis, con una costra negra por fuera, pero agrietada y rezumando por dentro. ¡Y esa peste a carne asada y pelo quemado!.", author: "Mahatma Gandhi"},
+    {quote: "El mundo estaba muriendo. Sus dioses tenían que morir con él.", author: "Brandon Sanderson, El héroe de las eras"},
+    {quote: "Un cuchillo de dolor le rajó la espalda; sintió que se le abría la piel; le llegó el hedor de la sangre al arder, y vio la sombra de las alas.", author: "George R.R. Martin, Juego de tronos"},
+    {quote: "Los soñadores [...] serán quienes reconstruyan y salven el mundo.", author: "Sarah J. Maas, Imperio de tormentas"},
+    {quote: "Eres como una patata en un campo de minas", author: "Brandom Sanderson, Steelheart"},
+    {quote: "¿Acaso la lealtad es encomieble cuando va en la dirección errónea?.", author: "Cassandra Clare, La princesa mecánica"},
+    {quote: "Estamos cinco personas en esta habitación. Uno de nosotros es el asesino.", author: "Agatha Christie , Diez Negritos"},
+    {quote: "Aquí termina tu caza, aquí comienza la mía", author: "Eva García Sáenz de Urturi, El silencio de la ciudad Blanca"},
+    {quote: "Ya no tengo fuerza ni voluntad para mantenerme alejado de ti", author: "Stephenie Meyer, Crepúsculo"},
+    {quote: "No era el hombre más honesto ni el más piadoso, pero era un hombre valiente", author: "Arturo Pérez Reverte, El capitán Alatriste"}
 ];
 
 var currentQuote = 0;
