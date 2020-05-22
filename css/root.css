@@ -138,6 +138,11 @@
     --libroSombra: #b35900;
     --fondoUsuario:#ffcc99;
 
+        /*Quotes index*/
+
+        --cajaQuote: #e4f9f5;
+        --letraQuote: #343238fd;
+
 
     /*Scroll Bar para Mozilla*/
     scrollbar-color: var(--bgScroll2) var(--bgScroll1) !important;

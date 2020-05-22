@@ -323,13 +323,13 @@ a.libroTiendaBoton{
     position: relative;
     margin: auto;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--cajaQuote);
 }
 
 .quote-progress{
     width: 0;
     height: 3px;
-    background-color: #333;
+    background-color:  var(--letraQuote);
 }
 
 blockquote{
@@ -342,6 +342,7 @@ blockquote{
     font-style: italic;
     margin: 2%;
     margin-bottom: 3%;
+
 }
 
 .author {
@@ -349,6 +350,7 @@ blockquote{
     font-weight: lighter;
     text-align: right;
     margin: 2%;
+
 }
 
 .quote-nav {
@@ -368,7 +370,7 @@ blockquote{
 
 .bQuote{
     background-color: inherit;
-    color: #333;
+    color: var(--letraQuote);
     border: none;
     opacity: .3;
 }

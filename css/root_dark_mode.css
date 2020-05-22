@@ -121,7 +121,7 @@
    	--precioBackground:#5f5f5f;
    	--blancoSalvio: #ffffff;
    	--grisClaroSalvio: #d9d9d9;
-   	--grisSalvio:#fdfdfd;
+   	--grisSalvio:#181616;
    	--foroClaro: #232426;
    	--foroOscuro: #92799b;
    	--foroClaro2:#434746;
@@ -139,6 +139,11 @@
     --estrellaVal: #e67300;
     --libroSombra: #b35900;
     --fondoUsuario:#3a3a3a;
+
+    /*Quotes index*/
+
+    --cajaQuote: #343238fd;
+    --letraQuote: #e4f9f5;
 
 
     /*Scroll Bar para Mozilla*/
