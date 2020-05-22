@@ -312,3 +312,67 @@ a.libroTiendaBoton{
 .libroTiendaBoton:active{
     background: rgb(101, 119, 197);
 }
+
+.quote-container{
+    margin-bottom: 2%;
+    width: 60%;
+    height: 20%;
+}
+
+.quote-panel{
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.quote-progress{
+    width: 0;
+    height: 3px;
+    background-color: #333;
+}
+
+blockquote{
+    padding: 30px;
+    font-size: 1.4em;
+}
+
+.quote {
+    font-family: "Crimson Text", serif;
+    font-style: italic;
+    margin: 2%;
+    margin-bottom: 3%;
+}
+
+.author {
+    font-size: 0.6em;
+    font-weight: lighter;
+    text-align: right;
+    margin: 2%;
+}
+
+.quote-nav {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.previous {
+    margin: auto;
+}
+  
+.next {
+    margin: auto;
+}
+
+.bQuote{
+    background-color: inherit;
+    color: #333;
+    border: none;
+    opacity: .3;
+}
+
+.bQuote:hover {
+    opacity: 1;
+}

@@ -71,7 +71,7 @@ function cicloMisterio($genero)
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
     
@@ -125,6 +125,34 @@ function cicloMisterio($genero)
             </div>
         </div>
 
+
+        <!-- QUOTES -->
+        <div class = "quote-container">
+            <div class = "quote-panel">
+                <div class = "quote-progress"></div>
+                <div>
+                    <blockquote>
+                        <p class="quote"></p>
+                        <p class="author">- <span class="author-name"></span></p>
+                    </blockquote>
+
+                    <div class="quote-nav">
+                        <button class="previous bQuote">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </button>
+                        </button>
+                        <button class="random bQuote">
+                            <i class="fa fa-random" aria-hidden="true"></i>
+                        </button>
+                        <button class="next bQuote">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
         <div class="wrapper">
             <ul class="list-reset">
                 <li class="active">
@@ -154,6 +182,8 @@ function cicloMisterio($genero)
             <div class="featured-image"></div>
         </div>
 
+        
+
     </div>
 
 
@@ -162,6 +192,77 @@ function cicloMisterio($genero)
 	$('.list-reset li').removeClass('active')
 	$(this).addClass('active')
 })
+
+/* QUOTES */
+var listQuotes = [
+    {quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.", author: "Buddha"},
+    {quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein"},
+    {quote: "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.", author: "Bernard M. Baruch"},
+    {quote: "A room without books is like a body without a soul.", author: "Marcus Tullius Cicero"},
+    {quote: "You only live once, but if you do it right, once is enough.", author: "Mae West"},
+    {quote: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi"},
+    {quote: "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.", author: "J.K. Rowling, Harry Potter and the Goblet of Fire"},
+    {quote: "No one can make you feel inferior without your consent.", author: "Eleanor Roosevelt, This is My Story"},
+    {quote: "If you tell the truth, you don't have to remember anything.", author: "Mark Twain"},
+    {quote: "You've gotta dance like there's nobody watching, Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.", author: "William W. Purkey"},
+    {quote: "Be yourself; everyone else is already taken.", author: "Oscar Wilde"}
+];
+
+var currentQuote = 0;
+var progress = setInterval(timerProgress, 10);
+var progressWidth = 0;
+
+function timerProgress() {
+  $(".quote-progress").width(progressWidth + "%");
+  if(progressWidth < 100) {
+    progressWidth += 0.1;
+  } else {
+    changeQuote();
+    progressWidth = 0;
+  }
+}
+
+function setQuote() {
+  $(".quote").html('"' + listQuotes[currentQuote].quote + '"');
+  $(".author-name").html(listQuotes[currentQuote].author);
+}
+
+function getRandomQuote() {
+  currentQuote = Math.round(Math.random() * (listQuotes.length));
+  setQuote();
+}
+
+function changeQuote() {
+  // $("blockquote").fadeToggle( "slow", "linear" );
+  if(currentQuote < listQuotes.length - 1){
+    currentQuote++;
+  } else {
+    currentQuote = 0;
+  }
+  setQuote();
+}
+
+$(".previous").click(function() {
+  if(currentQuote > 0){
+    currentQuote--;
+  } else {
+    currentQuote = listQuotes.length - 1;
+  }
+  setQuote();
+  progressWidth = 0;
+});
+
+$(".next").click(function() {
+  changeQuote();
+  progressWidth = 0;
+});
+
+$(".random").click(function() {
+  getRandomQuote();
+  progressWidth = 0;
+});
+
+setQuote();
 </script>
 
 </body>
