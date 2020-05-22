@@ -1,7 +1,8 @@
 <footer>
 
     <label>
-    <div class="fab"> <img src='imagenes\Iconos\bulb.png' alt=''> 
+    <div class="fab"> 
+        <img class="iconoBoton"  src='imagenes\Iconos\bulb.png'> 
     <?php
         if (!isset($_COOKIE["estiloWeb"]) || $_COOKIE["estiloWeb"] == "claro") {
                     echo '<input id="styleModeBulb" type="checkbox">';
