@@ -33,88 +33,73 @@ include("includes/comun/cabecera.php");
     <div class="container">
         <div class="contenedor">
 
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\alfon.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Alfon</h3>
-                        <span class="post">Crack de Cracks</span>
-                    </div>
-                    <p class="description">
-                        Amante de los libros de Agatha Christie y resolver misterios con Hércules Poirot. En su tiempo libre disfruta acbando con las  hordas del infierno en DOOM.
-                    </p>
-                </div>
+            <div class="panels">
 
-                 <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\dani.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Dani</h3>
-                        <span class="post">Best Team Owner and CEO</span>
-                    </div>
-                    <p class="description">
-                       Jafe de proyecto, mantiene a su equipo unido y animado.
-                    </p>
-                </div>
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\salvio.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Salvio</h3>
-                        <span class="post">猫が好き</span>
-                    </div>
-                    <p class="description">
-                    	Segundo encargado de diseño y especialista en tablas.
-                    <br>
-                   	Amante de los gatos y de la cultura Hip-Hop.
-                    <br>
-                    Gran aficcionado del Shōnen.</p>
+                <div class="panel panelAlfon">
+                    <div class="quote">Amante de los libros de Agatha Christie y resolver misterios con Hércules Poirot. </div>
+                    <div class="person">Alfonso III</div>
 
                 </div>
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\alex.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Alex</h3>
-                        <span class="post">Streamer de éxito</span>
-                    </div>
-                    <p class="description">
-                       Videojugador profesinal de Valorant, platino en TFT y main Aphelios desde que salió en el PBE, cerebro galáctico.
-                    </p>
+                <div class="panel panelDani">
+                    <div class="quote">Jafe de proyecto, mantiene a su equipo unido y animado.</div>
+                    <div class="person">Dani<br>Best Team Owner and CEO</div>
+
                 </div>
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\sergio.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Sergio</h3>
-                        <span class="post">Brumoso zaragozano</span>
-                    </div>
-                    <p class="description">
-                       Mayor fan de Sanderson en toda la península, a veces juega al stardew valley.
-                    </p>
+                <div class="panel panelJin">
+                    <div class="quote">Le gusta leer manga online e imaginar épicos combates.</div>
+                    <div class="person">Jin</div>
+
                 </div>
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="imagenes\usuarios\jin.jpg" alt="">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Jin Tao</h3>
-                        <span class="post">El broncas</span>
-                    </div>
-                    <p class="description">
-                        Le gusta leer manga online, no es muy bueno para los ojos pero se hace lo que se puede.
-                    </p>
+
                 </div>
+
+                <div class="panels">
+
+                <div class="panel panelSergio">
+                    <div class="quote">Mayor fan de Sanderson en toda la península, a veces juega al stardew valley.</div>
+                    <div class="person">Sergio<br>Brumoso zaragozano</div>
+
+                </div>
+                <div class="panel panelSalvio">
+                    <div class="quote">
+                        Segundo encargado de diseño y especialista en tablas. <br> 
+                        Amante de los gatos y de la cultura Hip-Hop.<br>
+                        Gran aficcionado del Shōnen.
+                    </div>
+                    <div class="person">Salvio<br>猫が好き</div>
+
+                </div>
+                <div class="panel panelAlex">
+                    <div class="quote">Videojugador profesinal de Valorant, platino en TFT y main Aphelios desde que salió en el PBE, cerebro galáctico.</div>
+                    <div class="person">Alex<br>Streamer de éxito</div>
+
+            </div>
+
+
         </div>
     </div>
 
 
 </div>
+
+<!--LOS PANAS-->
+
+    
+</div>
+
+
+
+<script>
+
+    const panels = document.querySelectorAll('.panel');
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+
+    function toggleOpen() {
+        this.classList.toggle('open');
+    }
+
+</script>
 
 <?php
 include("./includes/comun/footer.php");

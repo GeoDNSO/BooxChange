@@ -116,7 +116,7 @@ function cicloMisterio($genero)
             </div>
 
             <div class="thing">
-                <h1>Alma jóven</h1>
+                <h1>Alma joven</h1>
                 <p>Para los que creen que "El Club de los cinco" es para críos...</p>
                 <br>
                 <?php

@@ -389,9 +389,11 @@ input.line {
     background: var(--caja2);
   }
   .list-reset .active a {
+
     color: var(--colorNavHover);
   }
   .list-reset .active img {
+    z-index: 2;
     opacity: 1;
     -webkit-transform: translatey(0);
             transform: translatey(0);
@@ -399,8 +401,16 @@ input.line {
   
 
   /*Boton luces flotantes*/
-  .fab {
 
+  .iconoBoton{
+
+    width: 90%;
+    height: 90%;
+    margin-bottom: 7%;
+  }
+
+  .fab {
+    z-index: 3;
     width: 40px     !important;
     height: 40px     !important;
     background-color: var(--botonClaro);
@@ -408,9 +418,11 @@ input.line {
 
     transition: all 0.1s ease-in-out;
   
-    font-size: 50px;
+
     color: white;
     text-align: center;
+    align-self: center;
+    align-content: center;
     line-height: 70px;
   
     position: fixed;
@@ -421,10 +433,95 @@ input.line {
  }
   
  .fab:hover {
-
+    text-align: center;
     transform: scale(1.05);
  }
   
  #styleMode{
-     display: none;
+    text-align: center;
+    display: none;
  }
+
+ /*PANELES CON LOS PANAS*/
+
+ @import url("https://fonts.googleapis.com/css?family=Antic+Slab");
+
+.panels {
+	display: flex;
+	min-height: 100%;
+	min-height: 50vh;
+	overflow: hidden;
+}
+.panel {
+	flex: 1;
+	position: relative;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+	background-position: center;
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: all 0.7s ease-in;
+	overflow: hidden;
+}
+.panel .person {
+	font-size: 30px;
+	text-transform: uppercase;
+	position: absolute;
+	top: 45%;
+	color: #fff;
+	transition: all 2s ease-out;
+}
+.panel .quote {
+	font-size: 20px;
+	position: relative;
+	color: #fff;
+	opacity: 0;
+	transition: all 2s ease-out;
+	transform: translatey(200px);
+	transition-delay: 0s;
+}
+.panel .copy {
+	position: absolute;
+	bottom: 10px;
+}
+.panel .copy a {
+	font-size: 11px;
+	color: #fff;
+	text-decoration: none;
+	opacity: 0.6;
+}
+
+.panelAlfon {
+	background-image: url("../imagenes/usuariosBYN/alfon.jpg");
+}
+.panelSalvio {
+	background-image: url("../imagenes/usuariosBYN/salvio.jpg");
+}
+.panelDani {
+	background-image: url("../imagenes/usuariosBYN/dani.jpg");
+}.panelAlex {
+	background-image: url("../imagenes/usuariosBYN/alex.jpg");
+}
+.panelJin {
+	background-image: url("../imagenes/usuariosBYN/jin.jpg");
+}
+.panelSergio {
+	background-image: url("../imagenes/usuariosBYN/sergio.jpg");
+}
+
+.panel.open {
+	flex: 3;
+}
+.panel.open .quote {
+	opacity: 1;
+	transform: translatey(0);
+    transition-delay: 0.5s;
+    margin: 10%;
+}
+.panel.open .person {
+	top: 5%;
+}
