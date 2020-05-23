@@ -230,7 +230,7 @@
     width: 25rem;
 }
 
-.textoChat input {
+.textoChat input, #botonEnviar {
     cursor: pointer;
     border: solid 0.05rem;
     border-radius: 2rem;
@@ -239,12 +239,18 @@
     width: 6rem;
     height: 2rem;
 
+    background-color: rgb(109, 216, 154);
     align-self: center;
 }
 
-.textoChat input:hover {
-    background-color: rgb(109, 216, 154);
+.textoChat input:hover, #botonEnviar:hover {
+    background-color: rgb(186, 243, 210);
 }
+
+.textoChat input:active, #botonEnviar:active {
+    background-color: rgb(98, 165, 109);
+}
+
 
 /*CSS MENSAJES CHAT*/
 

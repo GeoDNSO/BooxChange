@@ -8,7 +8,6 @@ use fdi\ucm\aw\booxchange\transfers\TMensajeChat as TMensajeChat;
 require_once(__DIR__ . "/includes/config.php");
 
 
-
 function chatsDelUsuario()
 {
     $app = appBooxChange::getInstance();
@@ -47,18 +46,19 @@ function chatsDelUsuario()
     }
 }
 
-
-
 function textoEnvioChat()
 {
     if (isset($_GET["idchat"])) {
-        echo '<form class="textoChat"  method="post" action="includes/procesos/procesarMensajeChat.php?idchat=' . $_GET["idchat"] . '">';
+        //echo '<form class="textoChat"  method="post" >'; //action="includes/procesos/procesarMensajeChat.php?idchat=' . $_GET["idchat"] . '"
+        echo '<div class="textoChat">';
 
-        echo '<textarea placeholder="Escribe un mensaje aquí..." name="mensajeChatTexto" id="" cols="40" rows="5"></textarea>';
+        echo '<textarea placeholder="Escribe un mensaje aquí..." name="mensajeChatTexto" id="mensajeChatTextoEnviar" cols="40" rows="5"></textarea>';
 
-        echo '<input type="submit" value="Enviar">';
+        //echo '<input type="submit" id="botonEnviar" value="Enviar">';
+        echo '<button type="button" id="botonEnviar" value="Enviar">Enviar</button>';
 
-        echo '</form>';
+        //echo '</form>';
+        echo '</div>';
     } else {
         //echo "¿Iniciar un chat?";
     }
@@ -74,7 +74,6 @@ function chatLegal()
         }
     }
 }
-
 
 function mensajesChat()
 {
@@ -93,7 +92,7 @@ function mensajesChat()
         $mensajes = $app->getChatTexto($idChat);
         $mensajeAnterior = "";
 
-        echo "<ol class='messages'>";
+        echo "<ol class='messages' id='messages'>";
         foreach ($mensajes as $mensaje) {
             $idUserMensaje = $mensaje->getIdUsuario();
             $textoMensaje = $mensaje->getTexto();
@@ -101,7 +100,7 @@ function mensajesChat()
             $dt = DateTime::createFromFormat("Y-m-d H:i:s", $fechaMensaje);
             $horaDelMensaje = $dt->format('H:i');
             $fechaDelMensaje = $dt->format('Y-m-d');
-            if($mensajeAnterior !== $fechaDelMensaje)
+            if ($mensajeAnterior !== $fechaDelMensaje)
                 echo "<li class='chatCenter'><p class=chatCentrado><span class='textspanChat'>$fechaDelMensaje</span></p></li>";
 
             $mensajeAnterior = $fechaDelMensaje;
@@ -112,23 +111,18 @@ function mensajesChat()
                 echo "<li  class='otherUserMessage'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
                 //echo "<li> <div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
             }
-
         }
         echo "<ol>";
         if (empty($mensajes)) {
             echo "<div class='chatNoHayMensajes'> Aun no hay mensajes, empieza a chatear </div>";
         }
-
     } else {
         echo "<div class='mainChatEmpty'> <img src='./imagenes/IconoChat.png' alt='Imagen Chat Lobby' class='chatFoto'> </div>";
     }
 }
 
-
 function userProfile()
 {
-    //$app = appBooxChange::getInstance();
-    //$user = $app->getUserById($_SESSION["id_Usuario"]);
 
     $userImg = $_SESSION['fotoPerfil'];
     $userName = $_SESSION['nombreReal'];
@@ -141,8 +135,8 @@ function userProfile()
     echo "</div>";
 }
 
-
-function otherCurrentUser(){
+function otherCurrentUser()
+{
 
     if (isset($_GET["idchat"])) {
 
@@ -154,9 +148,9 @@ function otherCurrentUser(){
         $chat = $app->getChatById($_GET["idchat"]);
 
         $otherUser = "";
-        if($chat->getIdUsuario1() != $idUserSes){
+        if ($chat->getIdUsuario1() != $idUserSes) {
             $otherUser = $app->getUserById($chat->getIdUsuario1());
-        }else{
+        } else {
             $otherUser = $app->getUserById($chat->getIdUsuario2());
         }
 
@@ -169,35 +163,35 @@ function otherCurrentUser(){
         echo "<div class='otherUserProfileName'> $nombreUser2 </div>";
 
         echo "</div>";
-
     }
-
-
 }
 
-
 chatLegal();
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <title>Chat</title>
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    
+
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/chat.js"></script>
+
 </head>
 
 
 
 <?php
 require_once(__DIR__ . "/includes/comun/cabecera.php");
-//idchat  --> id get
-?><body>
+?>
+
+<body>
 
     <div class="mainChatContent">
 
@@ -220,7 +214,7 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
                 otherCurrentUser();
                 ?></div>
 
-            <div class="chatActual">
+            <div class="chatActual" id="chatActual">
                 <?php
                 mensajesChat();
                 ?></div>
@@ -233,19 +227,12 @@ require_once(__DIR__ . "/includes/comun/cabecera.php");
 
         </div>
 
-
-
-
-
     </div>
-
-
-
-
-
 
 </body>
 
 <?php
-    include("./includes/comun/footer.php");
-?></html>
+include("./includes/comun/footer.php");
+?>
+
+</html>
