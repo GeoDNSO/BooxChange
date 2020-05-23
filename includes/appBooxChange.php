@@ -619,4 +619,14 @@ class appBooxChange
       return count($listaDiscusionesTema);
     }
     
+    public function obtenerCorreo($email){
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->checkEmail($email);
+
+    }
+
+    public function usuarioExiste($nombreUsuario){
+        $bdBooxChange = DAOUsuario::getInstance();
+        return $bdBooxChange->usuarioExiste($nombreUsuario);
+    }
 }
