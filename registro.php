@@ -33,4 +33,5 @@ require_once(__DIR__ . "/includes/config.php");
 
 <script type="text/javascript" src="javascript/registro.js"></script>
 
+
 </html>

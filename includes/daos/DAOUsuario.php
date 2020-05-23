@@ -98,6 +98,10 @@ class DAOUsuario extends DAO
 
     function usuarioExiste($nombreUsuario)
     {
+        $sql = "SELECT * FROM usuario WHERE usuario.Nombre = '$nombreUsuario'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+        if (mysqli_num_rows($consulta) == 1) { return true;}
+        return false;
     }
 
     //Buscar usuarios
@@ -187,6 +191,15 @@ class DAOUsuario extends DAO
     {
     }
 
+    function checkEmail($email){
+        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$email'";
+        $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
+
+        if (mysqli_num_rows($consulta) > 0) {
+            return true;
+        }
+        return false;
+    }
 
     //Actualizar Datos
 
