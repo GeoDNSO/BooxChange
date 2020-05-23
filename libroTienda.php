@@ -61,7 +61,7 @@
         $valoracion = $libro->getValoracion();
         $valoracion = round($valoracion, 2);
         $valoracionEstrellas = round($valoracion);
-        echo "<h3> Valoracion: ";
+        echo "<h3> Valoración: ";
         for ($i = 0; $i < $valoracionEstrellas; $i++){
             echo "<span class='valoracion coloreada'>★</span>";
         }
@@ -80,10 +80,10 @@
 */
 
         $genero = $libro->getGenero();
-        echo "<h3> Genero: <span>$genero </span></h3>";
+        echo "<h3> Género: <span>$genero </span></h3>";
 
         $fechaPublicacion = $libro->getFechaPublicacion();
-        echo "<h3> Fecha de publicacion: <span>$fechaPublicacion </span></h3>";
+        echo "<h3> Fecha de publicación: <span>$fechaPublicacion </span></h3>";
 
         $idioma = $libro->getIdioma();
         echo "<h3> Idioma: <span>$idioma </span></h3>";
@@ -92,7 +92,7 @@
         echo "<h3> Editorial: <span>$editorial </span></h3>";
 
         $descripcion = $libro->getDescripcion();
-        echo "<h3> Descripcion: <span>$descripcion</span> </h3>";
+        echo "<h3> Descripción: <span>$descripcion</span> </h3>";
 
         echo "</div></div>";
 

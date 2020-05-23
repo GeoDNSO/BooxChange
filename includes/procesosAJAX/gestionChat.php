@@ -6,54 +6,6 @@ require_once($parentDir . "/config.php");
 use fdi\ucm\aw\booxchange\appBooxChange as appBooxChange;
 
 
-/*
-function mensajesChat()
-{
-
-    $messages = array();
-
-    $idUserSes = $_SESSION["id_Usuario"];
-    $idChat = intval($_POST["idchat"]);
-
-    $iniMensajes = $_POST["iniMensajes"];
-
-    $app = appBooxChange::getInstance();
-
-    //Mostrar Mensajes
-
-    $app->disminuirMensajesSinLeer($idChat, $idUserSes);
-
-    $mensajes = $app->getChatTexto($idChat);
-    $mensajeAnterior = "";
-
-    $messages[] =  "<ol class='messages'>";
-    foreach ($mensajes as $mensaje) {
-        $idUserMensaje = $mensaje->getIdUsuario();
-        $textoMensaje = $mensaje->getTexto();
-        $fechaMensaje = $mensaje->getFecha();
-        $dt = DateTime::createFromFormat("Y-m-d H:i:s", $fechaMensaje);
-        $horaDelMensaje = $dt->format('H:i');
-        $fechaDelMensaje = $dt->format('Y-m-d');
-        if ($mensajeAnterior !== $fechaDelMensaje)
-            $messages[] =  "<li class='chatCenter'><p class=chatCentrado><span class='textspanChat'>$fechaDelMensaje</span></p></li>";
-
-        $mensajeAnterior = $fechaDelMensaje;
-        if ($idUserMensaje == $_SESSION["id_Usuario"]) {
-            $messages[] =  "<li class='currentUserMessage mine'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
-            // messages[] =  "<li> <div class='currentUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
-        } else {
-            $messages[] =  "<li  class='otherUserMessage'> <span class='textspanChat'>$textoMensaje <span class='hourspanChat'> $horaDelMensaje </span></span> </li>";
-            //messages[] =  "<li> <div class='otherUserMessage'> $textoMensaje   from $idUserMensaje   y $fechaMensaje </div> </li>";
-        }
-    }
-    $messages[] =  "<ol>";
-    if (empty($mensajes)) {
-        $messages[] =  "<div class='chatNoHayMensajes'> Aun no hay mensajes, empieza a chatear </div>";
-    }
-    return $messages;
-}
-*/
-
 function mensajesChat()
 {
     $messages = array();
