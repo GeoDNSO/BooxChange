@@ -192,7 +192,7 @@ class DAOUsuario extends DAO
     }
 
     function checkEmail($email){
-        $sql = "SELECT * FROM usuario WHERE Id_Usuario='$email'";
+        $sql = "SELECT * FROM usuario WHERE Correo='$email'";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
 
         if (mysqli_num_rows($consulta) > 0) {

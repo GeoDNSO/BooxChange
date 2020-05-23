@@ -156,10 +156,8 @@ function usuarioExiste(data, status){
 }
 
 function correoValido(email){
-    if(email.indexOf('@') > -1 && email.indexOf('.') > email.indexOf('@') && email.length >= 8){
-        return true;
-    }
-    return false;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 function correoValidacion(data, status){
