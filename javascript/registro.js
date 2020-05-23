@@ -26,7 +26,7 @@ $(document).ready(function() {
     $("#username").change(function(){
 
         if (usuarioValido($("#username").val() ) ){
-            var url="includes/comproAJAX/comprobarUsuario.php?user=" + $("#username").val();
+            var url="includes/procesosAJAX/comprobarUsuario.php?user=" + $("#username").val();
             $.get(url,usuarioExiste);
         }
         else {
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
         if ( correoValido($("#email").val() ) ) {
 
-            var url="includes/comproAJAX/comprobarCorreo.php?correo=" + $("#email").val();
+            var url="includes/procesosAJAX/comprobarCorreo.php?correo=" + $("#email").val();
             $.get(url,correoValidacion);
             
         } else {
