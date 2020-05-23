@@ -40,7 +40,7 @@ class FormularioIntercambioMisterioso extends Form
         $html .= '    <label for="genero"><b>Género</b></label><br>';
 
         //Seleccion de Generos
-        $html .= '    <select id="genero" name="genero"><br><br>';
+        $html .= '    <select id="genero" name="genero" required><br><br>';
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
@@ -69,8 +69,8 @@ class FormularioIntercambioMisterioso extends Form
             $erroresFormulario[] = "El título ha de tener una longitud de al menos 3 caracteres";
         }
 
-        $fotoLibro = $datos["fotoLibro"];
-        $fotoLibro = make_safe($fotoLibro);
+        //$fotoLibro = $datos["fotoLibro"];
+        //$fotoLibro = make_safe($fotoLibro);
 
         //Subir imagen al servidor
         $fotoBD = "";

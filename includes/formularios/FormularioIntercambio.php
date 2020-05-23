@@ -42,7 +42,7 @@ class FormularioIntercambio extends Form
 
         $html .= '    <label for="genero"><b>Género</b></label><br>';
         //Seleccion de Generos
-        $html .= '    <select class id="genero" name="genero"><br><br>';
+        $html .= '    <select class id="genero" name="genero" required><br><br>';
         $html .= $app->construirSeleccionDeCategorias();
         $html .= '    </select><br><br>';
 
