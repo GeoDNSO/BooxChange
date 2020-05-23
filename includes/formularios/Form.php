@@ -172,7 +172,7 @@ S SERVER URI
      */
     private function generaListaErrores($errores)
     {
-        $html='';
+        $html='<div id="errores">';
         $numErrores = count($errores);
         if (  $numErrores == 1 ) {
             $html .= "<ul><li>".$errores[0]."</li></ul>";
@@ -181,6 +181,7 @@ S SERVER URI
             $html .= implode("</li><li>", $errores);
             $html .= "</li></ul>";
         }
+        $html .= '</div>';
         return $html;
     }
 

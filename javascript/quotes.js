@@ -4,7 +4,7 @@ var listQuotes = [
     {quote: "Las personas mayores nunca puede comprender algo por sí solas y es muy aburrido para los niños tener que darles una y otra vez explicaciones.", author: "Antoine de Saint-Exupéry, El principito"},
     {quote: "Hay que tener cuidado con los libros y lo que hay dentro de ellos, ya que las palabras tienen el poder de cambiarnos.", author: "Cassandra Clare, El Ángel mecánico"},
     {quote: "Por honor, cuando cuando un hombre moría, si su viuda no era reclamada por el jefe del clan, se esperaba de ella que se lanzara a la pira funeraria de su marido.", author: "Brent Weeks, Más allá de las sombras"},
-    {quote: "Lo peor de la tarea eran los cuerpos. Algunos parecían filetes chamuscadis, con una costra negra por fuera, pero agrietada y rezumando por dentro. ¡Y esa peste a carne asada y pelo quemado!.", author: "Mahatma Gandhi"},
+    {quote: "Lo peor de la tarea eran los cuerpos. Algunos parecían filetes chamuscadis, con una costra negra por fuera, pero agrietada y rezumando por dentro. ¡Y esa peste a carne asada y pelo quemado!.", author: "Brent Weeks, Al filo de las sombras"},
     {quote: "El mundo estaba muriendo. Sus dioses tenían que morir con él.", author: "Brandon Sanderson, El héroe de las eras"},
     {quote: "Un cuchillo de dolor le rajó la espalda; sintió que se le abría la piel; le llegó el hedor de la sangre al arder, y vio la sombra de las alas.", author: "George R.R. Martin, Juego de tronos"},
     {quote: "Los soñadores [...] serán quienes reconstruyan y salven el mundo.", author: "Sarah J. Maas, Imperio de tormentas"},
