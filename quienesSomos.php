@@ -37,17 +37,17 @@ include("includes/comun/cabecera.php");
 
                 <div class="panel panelAlfon">
                     <div class="quote">Amante de los libros de Agatha Christie y resolver misterios con Hércules Poirot. </div>
-                    <div class="person">Alfonso III</div>
+                    <div class="person">Alfon<div class="sub-title">Trabaja por un futuro mejor</div></div>
 
                 </div>
                 <div class="panel panelDani">
                     <div class="quote">Jafe de proyecto, mantiene a su equipo unido y animado.</div>
-                    <div class="person">Dani<br>Best Team Owner and CEO</div>
+                    <div class="person">Dani<br><div class="sub-title">Best Team Owner and CEO</div></div>
 
                 </div>
                 <div class="panel panelJin">
                     <div class="quote">Le gusta leer manga online e imaginar épicos combates.</div>
-                    <div class="person">Jin</div>
+                    <div class="person">Jin<div class="sub-title">Manga Master</div></div>
 
                 </div>
 
@@ -57,7 +57,7 @@ include("includes/comun/cabecera.php");
 
                 <div class="panel panelSergio">
                     <div class="quote">Mayor fan de Sanderson en toda la península, a veces juega al stardew valley.</div>
-                    <div class="person">Sergio<br>Brumoso zaragozano</div>
+                    <div class="person">Sergio<br><div class="sub-title">Brumoso zaragozano</div></div>
 
                 </div>
                 <div class="panel panelSalvio">
@@ -66,12 +66,12 @@ include("includes/comun/cabecera.php");
                         Amante de los gatos y de la cultura Hip-Hop.<br>
                         Gran aficcionado del Shōnen.
                     </div>
-                    <div class="person">Salvio<br>猫が好き</div>
+                    <div class="person">Salvio<br><div class="sub-title">猫が好き</div></div>
 
                 </div>
                 <div class="panel panelAlex">
                     <div class="quote">Videojugador profesinal de Valorant, platino en TFT y main Aphelios desde que salió en el PBE, cerebro galáctico.</div>
-                    <div class="person">Alex<br>Streamer de éxito</div>
+                    <div class="person">Alex<br><div class="sub-title">Streamer de éxito</div></div>
 
             </div>
 

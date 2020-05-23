@@ -471,7 +471,7 @@ input.line {
 	font-size: 30px;
 	text-transform: uppercase;
 	position: absolute;
-	top: 45%;
+	top: 80%;
 	color: #fff;
 	transition: all 2s ease-out;
 }
@@ -514,13 +514,17 @@ input.line {
 }
 
 .panel.open {
-	flex: 3;
+    flex: 3;
+    background-color: #20202070;
 }
 .panel.open .quote {
 	opacity: 1;
 	transform: translatey(0);
     transition-delay: 0.5s;
     margin: 10%;
+   
+    border-radius: 15px;
+
 }
 .panel.open .person {
 	top: 5%;
