@@ -48,10 +48,10 @@ if (!isset($_GET['id'])) {
     <input type="number" name="unidades" id="unidades" min="1" max="<?php echo $unidades; ?>" value="1" /><br><br>
 
     <label for="numtarjeta"><b>Número de Tarjeta</b></label><br>
-    <input  class="line" type="number" maxlength="12" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>
+    <input  class="line" type="number" maxlength="12" placeholder="" name="numtarjeta" id="numtarjeta" required/><br><br>
 
     <label for="clave"><b>Clave</b></label><br>
-    <input class="pin-input" type="password" maxlength="4" placeholder="" name="clave" id="clave" /><br><br>
+    <input class="pin-input" type="password" maxlength="4" placeholder="" name="clave" id="clave" required/><br><br>
 
     <button class="send-button">Comprar</button>
 

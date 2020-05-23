@@ -153,13 +153,14 @@ S SERVER URI
     private function generaFormulario($errores = array(), &$datos = array())
     {
 
-        $html= $this->generaListaErrores($errores);
+        
 
-        $html .= '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" enctype="multipart/form-data" >';
+        $html = '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" enctype="multipart/form-data" >';
         $html .= '<input type="hidden" name="action" value="'.$this->formId.'" />';
 
         $html .= $this->generaCamposFormulario($datos);
         $html .= '</form>';
+        $html.= $this->generaListaErrores($errores);
         return $html;
     }
 
@@ -175,11 +176,11 @@ S SERVER URI
         $html='<div id="errores">';
         $numErrores = count($errores);
         if (  $numErrores == 1 ) {
-            $html .= "<ul><li>".$errores[0]."</li></ul>";
+            $html .= '<ul><li><i class="fa fa-exclamation-triangle"></i> '.$errores[0].'</li></ul>';
         } else if ( $numErrores > 1 ) {
-            $html .= "<ul><li>";
-            $html .= implode("</li><li>", $errores);
-            $html .= "</li></ul>";
+            $html .= '<ul><li><i class="fa fa-exclamation-triangle"></i> ';
+            $html .= implode('</li><li><i class="fa fa-exclamation-triangle"></i> ', $errores);
+            $html .= '</li></ul>';
         }
         $html .= '</div>';
         return $html;
