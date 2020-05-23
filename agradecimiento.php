@@ -23,9 +23,9 @@ include("includes/comun/cabecera.php");
 
 
     <div class="whiteBorder">
+        <div class="title">¡Gracias por su compra!</div>
+        <div class="sub-title">Su pedido llegará en los próximos días</div>
         <a href="index.php" class="noDeco">
-            <div class="title">¡Gracias por su compra!</div>
-            <div class="sub-title">Su pedido llegará en los próximos días</div>
             <img class="media" src="imagenes\media\camion.gif" alt="">
         </a>
     </div>

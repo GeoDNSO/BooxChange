@@ -298,7 +298,7 @@ a.libroTiendaBoton{
     transition: all 0.3s ease 0s;
     border-radius: 1.5rem;
 
-    background: rgb(42, 180, 235);
+    background-color: var(--botonOscuro);
 }
 .botonCentrado{
     text-align: center;
@@ -306,7 +306,7 @@ a.libroTiendaBoton{
 }
 
 .libroTiendaBoton:hover{
-    background: rgb(122, 192, 219);
+    background-color: var(--botonHover);
 }
 
 .libroTiendaBoton:active{
