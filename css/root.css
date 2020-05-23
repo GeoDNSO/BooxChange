@@ -43,6 +43,12 @@
     --cajaIntercambio: white;
     --cajaPresentacionInter: var(--caja2);
 
+    --fondoBlanco: white;
+    --colorNotificaciones2: #fd0000;
+    --colorNotificaciones: #0026fd;
+    --colorNotificaciones3: #37b42b;
+    --colorNotificaciones4: #3c92b4;
+
     /*Variables Boton Oscuro*/
 
     --boton: #11999e;

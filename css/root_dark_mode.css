@@ -45,8 +45,8 @@
 
     /*Variables Boton Oscuro*/
 
-    --boton: #11999e;
-    --botonHover: #30c0c5;
+    --boton: #752e9e;
+    --botonHover: #b56ede;
     --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
@@ -62,6 +62,11 @@
 
     --cajaPresentacionInter: var(--fondo);
 
+    --fondoBlanco: rgb(71, 71, 71);
+    --colorNotificaciones2: #777272;
+    --colorNotificaciones: #aaacb9;
+    --colorNotificaciones3: #686868;
+    --colorNotificaciones4: #e0e0e0;
 
     /*Variables Boton Claro*/
 
@@ -76,7 +81,7 @@
     var(--);
     */
     --linea: #99a1a1;
-    --marco: #11999e;
+    --marco: #a990b3;
 
     /*Color cabecera*/
     --botonCabec: var(--botonAdmin);
@@ -112,11 +117,11 @@
    	--cuadroClaro:#ececec;
    	--cuadroOscuro:#ceb997;
    	--botonClaro: #30c0c5;
-   	--botonOscuro:#11999e;
+   	--botonOscuro:#8a3686;
    	--letraClaraSalvio: white;
    	--letraOscuraSalvio: black;
-   	--botonCancelar:#ff3333;
-   	--cancelarHover:#cc0000;
+   	--botonCancelar:#691732;
+   	--cancelarHover:#8d2c49;
    	--precioBorder:#453949;
    	--precioBackground:#5f5f5f;
    	--blancoSalvio: #ffffff;
@@ -128,14 +133,14 @@
    	--botonAdmin: #44384e;
    	--foroForm: #434746;
    	--foroComentario: #434746;
-   	--naranja1:#00bfff;
-   	--naranja2:#0099cc;
-   	--naranja3:#007399;
+   	--naranja1:#868b8d;
+   	--naranja2:#666f75;
+   	--naranja3:#4a5255;
    	--botonNaranja:#632666;
    	--botonNaranjaClaro:#8a3686;
    	--botonNaranjaSombra: #c69de7;
     --fondoLibro:#492958;
-    --fondoValoracion:#92799b;
+    --fondoValoracion:#875699;
     --estrellaVal: #e67300;
     --libroSombra: #b35900;
     --fondoUsuario:#3a3a3a;
