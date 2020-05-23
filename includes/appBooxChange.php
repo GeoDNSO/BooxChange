@@ -619,7 +619,7 @@ class appBooxChange
       return count($listaDiscusionesTema);
     }
     
-    public function obtenerCorreo($email){
+    public function comprobarCorreo($email){
         $bdBooxChange = DAOUsuario::getInstance();
         return $bdBooxChange->checkEmail($email);
 

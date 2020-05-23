@@ -57,12 +57,24 @@ $(document).ready(function() {
 
     $("#passwd").change(function(){
 
+        var pass = $("#passwd").val();
+        var passR = $("#passwdR").val();
+
         if ( contraValida($("#passwd").val() ) ) {
             $("#siPass").show();
             $("#noPass").hide();
+            if ( pass == passR) {
+                $("#siPassR").show();
+                $("#noPassR").hide();
+            } else {
+                $("#siPassR").hide();
+                $("#noPassR").show();
+            }
         } else {
             $("#siPass").hide();
             $("#noPass").show();
+            $("#siPassR").hide();
+            $("#noPassR").show();
 
             alert ("La contraseña ha de ser de mínimo 5 caracteres");
         }
@@ -70,8 +82,9 @@ $(document).ready(function() {
     });
 
     $("#passwdR").change(function(){
-
-        if ( contraRValida($("#passwdR").val() ) , $("#passwd").val()) {
+        var pass = $("#passwd").val();
+        var passR = $("#passwdR").val();
+        if ( pass == passR) {
             $("#siPassR").show();
             $("#noPassR").hide();
         } else {
@@ -156,10 +169,8 @@ function usuarioExiste(data, status){
 }
 
 function correoValido(email){
-    if(email.indexOf('@') > -1 && email.indexOf('.') > email.indexOf('@') && email.length >= 8){
-        return true;
-    }
-    return false;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 function correoValidacion(data, status){
@@ -183,8 +194,8 @@ function contraValida(pass){
 }
 
 function contraRValida(passR, pass){
-    if(passR === pass){
-        return true;
+    if(passR != pass){
+        return false;
     }
     return false;
 }

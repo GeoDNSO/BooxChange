@@ -59,7 +59,7 @@
 
 .adminboton a:link,
 .adminboton a:visited {
-    background-color: #11999e;
+    background-color: var(--botonOscuro);
     color: white;
     margin-top: 20px;
     padding: 2% 4%; /*tamaño de el recuadro*/
@@ -69,7 +69,7 @@
 }
 
 .adminboton a:hover {
-    color: #6edebd;
+    background-color: var(--botonHover);
 }
 
 .helloAdmin {

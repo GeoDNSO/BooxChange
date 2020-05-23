@@ -85,7 +85,7 @@ class FormularioLogin extends Form
         else{
             $erroresFormulario[] = "No se pudo iniciar sesión, usuario o contraseña incorrecta";
         }
-        echo "<h2>Error:</h2>";
+
         return $erroresFormulario;
 
     }
