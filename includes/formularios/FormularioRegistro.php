@@ -49,9 +49,13 @@ class FormularioRegistro extends Form
         $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
         $html .= '<input type="file" name="foto" id="foto" accept="image/*" /> ';
 
-        $html .= '<label for="email"><b>Correo Electrónico</b></label><br><div class="text">';
-        $html .= '<input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /></div>';
+        $html .= '<label for="email"><b>Correo Electrónico</b></label>';
+        /* Validacion por jQuery */
+        $html .= '<img id="siMail" src="imagenes/si.png"/>';
+        $html .= '<img id="noMail" src="imagenes/no.png"/><br>';
+        $html .= '<div class="text"><input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /></div>';
 
+        
         $html .= '<label for="passwd"><b>Contraseña</b></label><br><div class="password">';
         $html .= '<input type="password" placeholder="Escribe una contraseña..." name="passwd"  id="passwd" /></div>';
 

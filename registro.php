@@ -29,4 +29,8 @@ require_once(__DIR__ . "/includes/config.php");
 
 <?php
   include("./includes/comun/footer.php");
-?></html>
+?>
+
+<script type="text/javascript" src="javascript/registro.js"></script>
+
+</html>
