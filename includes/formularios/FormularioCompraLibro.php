@@ -37,10 +37,10 @@ class FormularioCompraLibro extends Form
         $html .= '<input type="number" name="unidades" id="unidades" min="1" max="' . $ud . '" value="1" /><br><br>';
 
         $html .= '<label for="numtarjeta"><b>Número de Tarjeta</b></label><br>';
-        $html .= '<input type="text" placeholder="" name="numtarjeta" id="numtarjeta" /><br><br>';
+        $html .= '<input type="text" placeholder="" name="numtarjeta" id="numtarjeta" required/><br><br>';
 
         $html .= '<label for="clave"><b>Clave</b></label><br>';
-        $html .= '<input type="password" placeholder="" name="clave" id="clave" /><br><br>';
+        $html .= '<input type="password" placeholder="" name="clave" id="clave" required/><br><br>';
 
         $html .= '<input type="submit" onclick="setTimeout(timer, 1500)">';
 
