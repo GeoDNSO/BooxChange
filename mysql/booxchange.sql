@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: vm13.db.swarm.test
--- Tiempo de generación: 10-05-2020 a las 21:26:48
--- Versión del servidor: 10.4.12-MariaDB-1:10.4.12+maria~bionic
--- Versión de PHP: 7.4.1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-05-2020 a las 17:56:13
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `booxchange`
 --
-CREATE DATABASE IF NOT EXISTS `booxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `booxchange`;
 
 -- --------------------------------------------------------
 
@@ -198,7 +196,14 @@ INSERT INTO `generolibros` (`id`, `idLibro`, `genero`) VALUES
 (15, 36, 'Romántico'),
 (16, 37, 'Romántico'),
 (17, 38, 'Romántico'),
-(18, 39, 'Romántico');
+(18, 39, 'Romántico'),
+(19, 10, 'Fantasía'),
+(20, 27, 'Juvenil'),
+(21, 28, 'Juvenil'),
+(22, 29, 'Juvenil'),
+(23, 30, 'Juvenil'),
+(24, 31, 'Juvenil'),
+(25, 32, 'Juvenil');
 
 -- --------------------------------------------------------
 
@@ -661,7 +666,7 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `generolibros`
 --
 ALTER TABLE `generolibros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `intercambios`
@@ -749,6 +754,12 @@ ALTER TABLE `discusion`
 ALTER TABLE `favoritos`
   ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`Id_Libro`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `generolibros`
+--
+ALTER TABLE `generolibros`
+  ADD CONSTRAINT `generolibros_ibfk_1` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`Id_Libro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `intercambios`
