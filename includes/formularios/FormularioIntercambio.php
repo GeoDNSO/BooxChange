@@ -30,14 +30,20 @@ class FormularioIntercambio extends Form
         $app = appBooxChange::getInstance();
 
         $html = '<div class="fields">';
-        $html .= '<label for="titulo"><b>Titulo</b></label><br>';
-        $html .= '<input class="line" type="text" placeholder="Titulo a intercambiar" name="titulo" id="titulo" value="" /><br>';
+        $html .= '<label for="titulolibro"><b>Titulo</b></label>';
+        $html .= '<i id ="siTitulo" class="fa fa-check"></i>
+        <i id ="noTitulo" class="fa fa-times"></i><br>';
+        $html .= '<input class="line" type="text" placeholder="Titulo a intercambiar" name="titulo" id="titulolibro" value="" required/><br>';
 
         $html .= '<label for="autor"><b>Autor</b></label>';
-        $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br>';
+        $html .= '<i id ="siAutor" class="fa fa-check"></i>
+        <i id ="noAutor" class="fa fa-times"></i><br>';
+        $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" required/><br>';
 
-        $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-        $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..."></textarea> <br>';
+        $html .= '<label for="descripcion"><b>Descripcion</b></label>';
+        $html .= '<i id ="siDesc" class="fa fa-check"></i>
+        <i id ="noDesc" class="fa fa-times"></i><br>';
+        $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo a otros usuarios e indica que tipo de libro buscas..." required></textarea> <br>';
         
 
         $html .= '    <label for="genero"><b>Género</b></label><br>';

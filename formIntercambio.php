@@ -20,6 +20,7 @@ require_once(__DIR__."/includes/config.php");
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/preValidacion.js"></script>
 </head>
 
 

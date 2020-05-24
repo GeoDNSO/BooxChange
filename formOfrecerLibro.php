@@ -55,24 +55,30 @@ function formulario(){
     $html .= ' <div class="title">Propuesta de intercambio</div>
     <div class="sub-title">Describe el libro que quieres dar a cambio</div><br>';
 
-    $html .= '<label for="titulo"><b>Titulo</b></label><br>';
-    $html .= '<input class="line" type="text" placeholder="Título que propones" name="titulo" id="titulo" value="" /><br><br>';
+    $html .= '<label for="titulolibro"><b>Titulo</b></label>';
+    $html .= '<i id ="siTitulo" class="fa fa-check"></i>
+    <i id ="noTitulo" class="fa fa-times"></i><br>';
+    $html .= '<input class="line" type="text" placeholder="Título que propones" name="titulo" id="titulolibro" value="" required/><br><br>';
 
 
     $html .= '<label for="autor"><b>Autor</b></label>';
-    $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br>';
+    $html .= '<i id ="siAutor" class="fa fa-check"></i>
+    <i id ="noAutor" class="fa fa-times"></i><br>';
+    $html .= '<input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" required/><br>';
 
     $html .= '<label for="fotoLibro"><b>Foto del Libro</b></label><br>';
     $html .= '<input type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
 
     $html .= '    <label for="genero"><b>Género</b></label><br>';
     //Seleccion de Generos
-    $html .= '    <select id="genero" name="genero"><br><br>';
+    $html .= '    <select id="genero" name="genero" required><br><br>';
     $html .= $app->construirSeleccionDeCategorias();
     $html .= '    </select><br><br>';
 
-    $html .= '<label for="descripcion"><b>Descripcion</b></label><br>';
-    $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo para el usuario al que se lo ofreces..."></textarea> <br>';
+    $html .= '<label for="descripcion"><b>Descripcion</b></label>';
+    $html .= '<i id ="siDesc" class="fa fa-check"></i>
+    <i id ="noDesc" class="fa fa-times"></i><br>';
+    $html .= '<textarea class="line" id="descripcion" name="descripcion" rows="5" cols="50" placeholder="Escribe aquí algo interesante que pueda hacer que tu libro sea más atractivo para el usuario al que se lo ofreces..." required></textarea> <br>';
     $html .= '    <button class="send-button">Proponer intercambio</button>';
 
     $html .= '</div></div>';
@@ -89,11 +95,13 @@ function formulario(){
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/preValidacion.js"></script>
 </head>
 
 

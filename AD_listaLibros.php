@@ -61,7 +61,10 @@
             $precio = $libro -> getPrecio();
             $imagen = $libro -> getImagen();
             $descripcion = $libro -> getDescripcion();
-            $genero = $libro -> getGenero();
+
+            $genero = $app->getGenerosLibro($id);
+
+            //$genero = $libro -> getGenero();
             $enTienda = $libro -> getEnTienda();
             $fecha = $libro -> getFecha();
             $idioma = $libro -> getIdioma();
@@ -75,8 +78,20 @@
             <li> <span class='textoNegrita'>Titulo del Libro</span>: $titulo</li>
             <li> <span class='textoNegrita'>Autor</span>: $autor </li>
             <li> <span class='textoNegrita'>Precio</span>: $precio </li>
-            <li> <span class='textoNegrita'>Descripcion</span>: $descripcion </li>
-            <li> <span class='textoNegrita'>Genero</span>: $genero </li>
+            <li> <span class='textoNegrita'>Descripcion</span>: $descripcion </li>        
+            <li> <span class='textoNegrita'>Genero</span>: ";
+
+            $i = 0;
+            $len = count($genero);
+            foreach ($genero as $generos){
+                if ($i != $len - 1)
+                    echo $generos->getGenero().", ";
+                else
+                    echo $generos->getGenero();
+                $i++;
+            }
+
+            echo "</li>
             <li> <span class='textoNegrita'>En Tienda</span>: $enTienda </li>
             <li> <span class='textoNegrita'>Fecha de subida de libro</span>: $fecha </li>
             <li> <span class='textoNegrita'>Fecha de publicacion del libro</span>: $fechaDePublicacion </li>
