@@ -30,13 +30,17 @@ class FormularioIntercambioMisterioso extends Form
         $app = appBooxChange::getInstance();
 
 
-        $html = '    <label for="titulo"><b>Titulo</b></label><br>';
-        $html .= '    <input class="line" type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulo" value="" /><br><br>';
+        $html = '    <label for="titulo"><b>Titulo</b></label>';
+        $html .= '<i id ="siTitulo" class="fa fa-check"></i>
+        <i id ="noTitulo" class="fa fa-times"></i><br>';
+        $html .= '    <input class="line" type="text" placeholder="Titulo del libro que vas a intercambiar" name="titulo" id="titulolibro" value="" required/><br><br>';
         $html .= '    <label for="fotoLibro"><b>Foto del Libro</b></label><br>';
         //$html .= '    <input type="text" placeholder="" name="fotoLibro" id="fotoLibro" value="" /><br><br>';
         $html .= '    <input  type="file" name="fotoLibro" id="fotoLibro" accept="image/*"/> <br><br>';
-        $html .= '    <label for="autor"><b>Autor</b></label><br>';
-        $html .= '    <input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" /><br><br>';
+        $html .= '    <label for="autor"><b>Autor</b></label>';
+        $html .= '<i id ="siAutor" class="fa fa-check"></i>
+        <i id ="noAutor" class="fa fa-times"></i><br>';
+        $html .= '    <input class="line" type="text" placeholder="Autor del libro" name="autor"  id="autor"  value="" required/><br><br>';
         $html .= '    <label for="genero"><b>Género</b></label><br>';
 
         //Seleccion de Generos

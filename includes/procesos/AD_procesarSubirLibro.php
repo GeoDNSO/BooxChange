@@ -30,30 +30,54 @@ $fechaDePublicacion = $_POST["fechaPublicacion"];
 
 $fotoBD = "";
 
+$hayErrores = false;
 
-//Subir imagen al servidor
-if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
-
-    $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
-    $fotoBD = str_replace("\\", "/", $fotoBD);
-
-    $archivoSubida = (SERVER_DIR . $fotoBD);
-
-    move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $archivoSubida);
-
-}else{
-    $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);
+if (empty($titulolibro) || mb_strlen($titulolibro) < 3) {
+    $hayErrores = true;
 }
 
+if (empty($autor) || mb_strlen($autor) < 3) {
+    $hayErrores = true;
+}
 
-//falla la fecha tambien
-date_default_timezone_set("Europe/Madrid");
-$fecha = date_default_timezone_get();
-$app = appBooxChange::getInstance();
+if (empty($descripcion) || mb_strlen($descripcion) < 10) {
+    $hayErrores = true;
+}
+if (empty($idioma) || mb_strlen($idioma) < 3) {
+    $hayErrores = true;
+}
+if (empty($editorial) || mb_strlen($editorial) < 3) {
+    $hayErrores = true;
+}
 
-if($app->procesarSubirLibro($titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
-    header("Location: ../../AD_listaLibros.php");
+if($hayErrores){
+    header("Location: ../../AD_subirLibro.php");
 }
 else{
-    header("Location: ../../index.php");
+    //Subir imagen al servidor
+    if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
+
+        $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
+        $fotoBD = str_replace("\\", "/", $fotoBD);
+
+        $archivoSubida = (SERVER_DIR . $fotoBD);
+
+        move_uploaded_file( $_FILES["imagen"]['tmp_name']  , $archivoSubida);
+
+    }else{
+        $fotoBD = (IMG_DIRECTORY_LIBROS . IMG_DEFAULT_LIBRO);
+    }
+
+
+    //falla la fecha tambien
+    date_default_timezone_set("Europe/Madrid");
+    $fecha = date_default_timezone_get();
+    $app = appBooxChange::getInstance();
+
+    if($app->procesarSubirLibro($titulolibro ,$autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)){
+        header("Location: ../../AD_listaLibros.php");
+    }
+    else{
+        header("Location: ../../index.php");
+    }
 }
