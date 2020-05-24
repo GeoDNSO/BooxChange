@@ -629,4 +629,9 @@ class appBooxChange
         $bdBooxChange = DAOUsuario::getInstance();
         return $bdBooxChange->usuarioExiste($nombreUsuario);
     }
+
+    public function getGenerosLibro($idLibro){
+        $bdBooxChange = DAOGeneroLibro::getInstance();
+        return $bdBooxChange->getGenerosLibro($idLibro);
+    }
 }
