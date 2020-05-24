@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2020 a las 17:56:13
+-- Tiempo de generación: 24-05-2020 a las 18:21:42
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `booxchange`
 --
+CREATE DATABASE IF NOT EXISTS `booxchange` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `booxchange`;
 
 -- --------------------------------------------------------
 
@@ -347,6 +349,12 @@ INSERT INTO `mensajechat` (`Id_Chat`, `Id_Mensaje_Chat`, `Id_Usuario`, `Texto`, 
 DELIMITER $$
 CREATE TRIGGER `aumentoMensajesChat` AFTER INSERT ON `mensajechat` FOR EACH ROW UPDATE chat
 	SET chat.NumMensajes = chat.NumMensajes+1
+    WHERE chat.Id_Chat=Id_Chat
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `disminuirMensajesChat` AFTER DELETE ON `mensajechat` FOR EACH ROW UPDATE chat
+	SET chat.NumMensajes = chat.NumMensajes-1
     WHERE chat.Id_Chat=Id_Chat
 $$
 DELIMITER ;
