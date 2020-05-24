@@ -8,6 +8,8 @@ $(document).ready(function() {
     $("#siCiudad").hide();
     $("#siDir").hide();
 
+    $(".modificar").hide();
+
 
     $("#userRealName").change(function(){
 
@@ -138,6 +140,10 @@ $(document).ready(function() {
 
     });
 
+    $(".undo-button").click(function(){
+        undo();
+    });
+
 });
 
 function nombreValido(nombre){
@@ -219,4 +225,8 @@ function ciudadValida(dir){
         return true;
     }
     return false;
+}
+
+function undo(){
+    $(".modificar").hide();
 }

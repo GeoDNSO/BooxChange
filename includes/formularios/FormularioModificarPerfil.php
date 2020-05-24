@@ -42,16 +42,31 @@ class FormularioModificarPerfil extends Form
         $html .= "<p class=tituloMod>Modificar perfil</p>";
 
         $html .= '<p>Nombre real: <input type="text" class="inputDatos" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
+        /* Prevalidacion */
+        $html .= '<img id="siNombre" class="modificar" src="imagenes/si.png"/>';
+        $html .= '<img id="noNombre" class="modificar"class="modificar" src="imagenes/no.png"/><br>';
 
         $html .= '<p> Correo: <input type="text" class="inputDatos" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
+        /* Prevalidacion */
+        $html .= '<img id="siMail" class="modificar" src="imagenes/si.png"/>';
+        $html .= '<img id="noMail" class="modificar" src="imagenes/no.png"/><br>';
 
         $html .= '<p> Ciudad: <input type="text" class="inputDatos" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
+        /* Prevalidacion */
+        $html .= '<img id="siCiudad" class="modificar" src="imagenes/si.png"/>';
+        $html .= '<img id="noCiudad" class="modificar" src="imagenes/no.png"/><br>';
 
         $html .= '<p> Direccion: <input type="text" class="inputDatos" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
+        /* Prevalidacion */
+        $html .= '<img id="siDir" class="modificar" rc="imagenes/si.png"/>';
+        $html .= '<img id="noDir" class="modificar" src="imagenes/no.png"/><br>';
 
-        $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$datosIniciales["foto"].'"/></p>';  
+        $fotoInicial = isset($datosIniciales['foto']) ? $datosIniciales['foto'] : null;
+        $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$fotoInicial.'"/></p>';  
 
+        
         $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" onclick="setTimeout(timer, 1500)"/></p>';
+        $html .= '<p><input type="reset" class="send-button noEnorme undo-button" value="Deshacer cambios"></p>';
 
         $html .= "</div>";
         return $html;

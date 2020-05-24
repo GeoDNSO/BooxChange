@@ -81,7 +81,7 @@ require_once(__DIR__ . "/includes/config.php");
 
             echo "<p class=arriba>Información personal</p>";
             echo "<ul>";
-            echo "<li class=marginLeft>Nombre real: " . $_SESSION['nombre'] . "</li>";
+            echo "<li class=marginLeft>Nombre real: " . $_SESSION['nombreReal'] . "</li>";
             echo "<li class=marginLeft>Domicilio: " . $_SESSION['direccion'] . " (" . $_SESSION['ciudad'] . ")</li>";
             echo "</ul>";
             echo "</div>";
