@@ -541,7 +541,12 @@ class appBooxChange
 
     public function getTwoBooks() {
         $bdBooxChange = DAOLibro::getInstance();
-        return $bdBooxChange->getTwoBooks();
+        return $bdBooxChange->getNBooks(2);
+    }
+
+    public function getNBooks($numberOfBooks) {
+        $bdBooxChange = DAOLibro::getInstance();
+        return $bdBooxChange->getNBooks($numberOfBooks);
     }
 
     public function getChatsFromUser($idUser)

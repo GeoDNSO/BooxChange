@@ -128,9 +128,7 @@ body::-webkit-scrollbar-thumb {
 
 /*INICIO*/
 
-
-
-.main{
+.main {
     width: 90%;
 
     margin-left: 5%;
@@ -150,7 +148,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mejoresLibros {
-
     width: 100%;
 
     display: flex;
@@ -158,20 +155,17 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     align-content: center;
-
 }
 
-.mejoresLibros img{
+.mejoresLibros img {
     height: 12rem;
     width: 10rem;
 
     position: static;
     display: block;
-
 }
 
-
-.libroPresentacion1{
+.libroPresentacion1 {
     background: var(--caja1);
 
     display: flex;
@@ -186,7 +180,7 @@ body::-webkit-scrollbar-thumb {
     flex-basis: 0;
 }
 
-.libroPresentacion2{
+.libroPresentacion2 {
     background: var(--caja2);
 
     display: flex;
@@ -203,42 +197,39 @@ body::-webkit-scrollbar-thumb {
     justify-content: flex-end;
 }
 
-.descLibroPresentacion{
+.descLibroPresentacion {
     color: var(--letraOscura);
 
     word-wrap: break-word;
     text-size-adjust: auto;
-/*
+    /*
     font-size: 1.5vw;
     font-size: 1.5vh;*/
     padding: 10px;
 
     height: 100%;
-
 }
 
-.descLibroPresentacion p{
+.descLibroPresentacion p {
     word-wrap: break-word;
     text-size-adjust: auto;
 
     font-size: 0.5rem;
-    
 
     height: 100%;
-
 }
 
-.libroPresentacion2 .imgPresentacion{
+.libroPresentacion2 .imgPresentacion {
     margin-left: auto;
 }
 
-.libroPresentacion2 .descLibroPresentacion{
+.libroPresentacion2 .descLibroPresentacion {
     margin-left: auto;
     text-align: right;
-    /*margin-left: 12rem*/;
+    /*margin-left: 12rem*/
 }
 
-.imgPresentacion{
+.imgPresentacion {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -246,37 +237,67 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
-    
 }
 
 /*Parte explicativa de Booxchange**/
 
-.presentacion{
+.presentacion {
     margin-top: 3rem;
     padding: 1.4rem;
-    
+
     background: var(--caja3);
 }
 
-
 @media only screen and (max-width: 800px) {
-  
-
     .mejoresLibros {
-
         width: 100%;
-    
+
         flex-direction: column;
     }
-    
-    .libroPresentacion1{
+
+    .libroPresentacion1 {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
-
 }
 
 /*texto en negrita*/
 .textoNegrita {
     font-weight: bold;
+}
+
+/*Error 404*/
+
+.mainError {
+    background: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+}
+
+.mini {
+    font-size: 1em;
+    color: #000;
+    line-height: 9em;
+    text-indent: 2.5em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.mega,
+.bola {
+    line-height: 1.65em;
+    font-weight: bold;
+    font-size: 11em;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.boom {
+    color: #f5f5f5;
 }
