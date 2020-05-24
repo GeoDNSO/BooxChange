@@ -80,11 +80,6 @@ function updateChat(mensajeEnviado = false) {
                     return -1;
                 },
                 success: function (data) {
-                    $("#messages").append(data);
-
-                    var element = document.getElementById("messages");
-                    element.scrollTop = element.scrollHeight;
-
                     if(mensajeEnviado){
                         let newAudio = new Audio("audio/whatsappNotiSend.mp3");
                         newAudio.play();
@@ -92,6 +87,13 @@ function updateChat(mensajeEnviado = false) {
                         let newAudio = new Audio("audio/whatsappNoti.mp3");
                         newAudio.play();
                     }
+                    
+                    $("#messages").append(data);
+
+                    var element = document.getElementById("messages");
+                    element.scrollTop = element.scrollHeight;
+
+
 
                     stateChanged = false;
                 }
