@@ -383,11 +383,36 @@ blockquote{
 
 /* Errores formularios */
 #errores {
-    background-color: rgb(255, 223, 42);
+    background-color: var(--cajaFondo);
     border-radius: 20px;
+    max-width: auto;
+    margin: auto;
+    text-align: center;
 }
 
 #errores ul {
     padding: 20px;
     list-style-type: none;
+}
+
+.undo-button {
+    margin-top:2%;
+    background-color: var(--botonCancelar);
+}
+
+.undo-button:hover {
+    background-color: var(--cancelarHover);
+    color: var(--botonLetra);
+}
+
+form i {
+    margin:2%;
+}
+
+.fa-check {
+    color: var(--tick);
+}
+
+.fa-times {
+    color: var(--cross);
 }

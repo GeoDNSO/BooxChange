@@ -32,7 +32,7 @@ require_once(__DIR__ . "/includes/config.php");
   include("./includes/comun/footer.php");
 ?>
 
-<script type="text/javascript" src="javascript/registro.js"></script>
+<script type="text/javascript" src="javascript/preValidacion.js"></script>
 
 
 </html>

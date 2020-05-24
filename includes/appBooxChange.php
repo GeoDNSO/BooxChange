@@ -331,7 +331,7 @@ class appBooxChange
         foreach ($generos as $genero) {
             $generoTexto = $genero->getGenero();
             $checkBoxesGenero .= "<label class='checkBoxContainer'>$generoTexto";
-            $checkBoxesGenero .= "<input type='checkbox' name='generos[]' value='$generoTexto'>";
+            $checkBoxesGenero .= "<input type='checkbox' name='generos[]' value='$generoTexto' required>";
             $checkBoxesGenero .= "<span class='checkmark'></span>";
             $checkBoxesGenero .= "</label>";
         }

@@ -7,6 +7,10 @@
     margin: 0 0 24px;
 }
 
+.pdcp a{
+    color: var(--linea);
+}
+
 .pdch3 {
     color: var(--letraOscura);
     font-size: 28px;
