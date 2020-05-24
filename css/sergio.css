@@ -397,7 +397,12 @@ blockquote{
 
 .undo-button {
     margin-top:2%;
-    background-color: brown;
+    background-color: var(--botonCancelar);
+}
+
+.undo-button:hover {
+    background-color: var(--cancelarHover);
+    color: var(--botonLetra);
 }
 
 form i {

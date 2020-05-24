@@ -43,23 +43,23 @@ class FormularioModificarPerfil extends Form
 
         $html .= '<p>Nombre real: <input type="text" class="inputDatos" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'"/>';
         /* Prevalidacion */
-        $html .= '<i id ="siNombre" class="fa fa-check"></i>';
-        $html .= '<i id ="noNombre" class="fa fa-times"></i></p>';
+        $html .= '<i id ="siNombre" class="fa fa-check modificar"></i>';
+        $html .= '<i id ="noNombre" class="fa fa-times modificar"></i></p>';
 
         $html .= '<p> Correo: <input type="text" class="inputDatos" name="email" id= "email" value="'.$datosIniciales["email"].'"/>';
         /* Prevalidacion */
-        $html .= '<i id ="siMail" class="fa fa-check"></i>';
-        $html .= '<i id ="noMail" class="fa fa-times"></i></p>';
+        $html .= '<i id ="siMail" class="fa fa-check modificar"></i>';
+        $html .= '<i id ="noMail" class="fa fa-times modificar"></i></p>';
 
         $html .= '<p> Ciudad: <input type="text" class="inputDatos" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/>';
         /* Prevalidacion */
-        $html .= '<i id ="siCiudad" class="fa fa-check"></i>';
-        $html .= '<i id ="noCiudad" class="fa fa-times"></i></p>';
+        $html .= '<i id ="siCiudad" class="fa fa-check modificar"></i>';
+        $html .= '<i id ="noCiudad" class="fa fa-times modificar"></i></p>';
 
         $html .= '<p> Direccion: <input type="text" class="inputDatos" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/>';
         /* Prevalidacion */
-        $html .= '<i id ="siDir" class="fa fa-check"></i>';
-        $html .= '<i id ="noDir" class="fa fa-times"></i></p>';
+        $html .= '<i id ="siDir" class="fa fa-check modificar"></i>';
+        $html .= '<i id ="noDir" class="fa fa-times modificar"></i></p>';
 
         $fotoInicial = isset($datosIniciales['foto']) ? $datosIniciales['foto'] : null;
         $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$fotoInicial.'"/></p>';  

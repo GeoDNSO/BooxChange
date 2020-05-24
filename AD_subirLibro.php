@@ -8,11 +8,13 @@ require_once(__DIR__ . "/includes/config.php");
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/preValidacion.js"></script>
 </head>
 
 
@@ -31,11 +33,15 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 
 
 
-    <label for="titulolibro"><b>Titulo del Libro</b></label><br>
-    <input class="line" type="text" name="titulolibro" id="titulolibro" value="" /><br><br>
+    <label for="titulolibro"><b>Titulo del Libro</b></label>
+    <i id ="siTitulo" class="fa fa-check"></i>
+    <i id ="noTitulo" class="fa fa-times"></i><br>
+    <input class="line" type="text" name="titulolibro" id="titulolibro" value="" required/><br><br>
 
-    <label for="autor"><b>Autor</b></label><br>
-    <input class="line" type="text" name="autor" id="autor" value="" /><br><br>
+    <label for="autor"><b>Autor</b></label>
+    <i id ="siAutor" class="fa fa-check"></i>
+    <i id ="noAutor" class="fa fa-times"></i><br>
+    <input class="line" type="text" name="autor" id="autor" value="" required/><br><br>
 
     <label for="precio"><b>Precio</b></label><br>
     <input type="number" name="precio" id="precio" min="0" value="0" /><br><br>
@@ -43,10 +49,14 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <label for="imagen"><b>Imagen</b></label><br>
     <input type="file" name="imagen" id="imagen" accept="image/*" /><br><br>
 
-    <label for="descripcion"><b>Descripcion</b></label><br>
-    <textarea class="line" name="descripcion" rows="4" cols="50" id="descripcion" value=""> </textarea><br><br>
+    <label for="descripcion"><b>Descripcion</b></label>
+    <i id ="siDesc" class="fa fa-check"></i>
+    <i id ="noDesc" class="fa fa-times"></i><br>
+    <textarea class="line" name="descripcion" rows="4" cols="50" id="descripcion" value="" required> </textarea><br><br>
 
-    <label for="genero"><b>Géneros del Libro</b></label><br>
+    <label for="genero"><b>Géneros del Libro</b></label>
+    <i id ="siGen" class="fa fa-check"></i>
+    <i id ="noGen" class="fa fa-times"></i><br>
 
 
 
@@ -73,11 +83,17 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
 
     <br><br>
 
-    <label for="idioma"><b>Idioma</b></label><br>
-    <input class="line" type="text" name="idioma" id="idioma" value="" /><br><br>
+    <label for="idioma"><b>Idioma</b></label>
+    <i id ="siIdioma" class="fa fa-check"></i>
+    <i id ="noIdioma" class="fa fa-times"></i><br>
 
-    <label for="editorial"><b>Editorial</b></label><br>
-    <input class="line" type="text" name="editorial" id="editorial" value="" /><br><br>
+    <input class="line" type="text" name="idioma" id="idioma" value="" required/><br><br>
+
+    <label for="editorial"><b>Editorial</b></label>
+    <i id ="siEditorial" class="fa fa-check"></i>
+    <i id ="noEditorial" class="fa fa-times"></i><br>
+
+    <input class="line" type="text" name="editorial" id="editorial" value="" required/><br><br>
 
     <label for="descuento"><b>Descuento</b></label><br>
     <input type="number" name="descuento" id="descuento" min="0" max="100" value="0" /><br><br>
@@ -85,7 +101,9 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false) {
     <label for="unidades"><b>Unidades</b></label><br>
     <input type="number" name="unidades" id="unidades" min="0" value="0" /><br><br>
 
-    <label for="fechaPublicacion"><b>Fecha de publicacion</b></label><br>
+    <label for="fechaPublicacion"><b>Fecha de publicacion</b></label>
+    <i id ="siFecha" class="fa fa-check"></i>
+    <i id ="noFecha" class="fa fa-times"></i><br>
     <input class="line" type="date" name="fechaPublicacion" id="fechaPublicacion" /><br><br>
 
     <button class='send-button type="submit" value="Subir Libro'>Subir Libro</button>

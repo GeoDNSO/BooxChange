@@ -7,13 +7,19 @@ $(document).ready(function() {
     $("#siFecha").hide();
     $("#siCiudad").hide();
     $("#siDir").hide();
+    $("#siTitulo").hide();
+    $("#siAutor").hide();
+    $("#siDesc").hide();
+    $("#siGen").hide();
+    $("#siIdioma").hide();
+    $("#siEditorial").hide();
 
     $(".modificar").hide();
 
 
     $("#userRealName").change(function(){
 
-        if ( nombreValido($("#userRealName").val() ) ) {
+        if ( validarMedio($("#userRealName").val() ) ) {
             $("#siNombre").show();
             $("#noNombre").hide();
         } else {
@@ -27,7 +33,7 @@ $(document).ready(function() {
 
     $("#username").change(function(){
 
-        if (usuarioValido($("#username").val() ) ){
+        if (validarMedio($("#username").val() ) ){
             var url="includes/procesosAJAX/comprobarUsuario.php?user=" + $("#username").val();
             $.get(url,usuarioExiste);
         }
@@ -62,7 +68,7 @@ $(document).ready(function() {
         var pass = $("#passwd").val();
         var passR = $("#passwdR").val();
 
-        if ( contraValida($("#passwd").val() ) ) {
+        if ( validarMedio($("#passwd").val() ) ) {
             $("#siPass").show();
             $("#noPass").hide();
             if ( pass == passR) {
@@ -114,7 +120,7 @@ $(document).ready(function() {
 
     $("#ciudad").change(function(){
 
-        if ( ciudadValida($("#ciudad").val() ) ) {
+        if ( validarCorto($("#ciudad").val() ) ) {
             $("#siCiudad").show();
             $("#noCiudad").hide();
         } else {
@@ -128,7 +134,7 @@ $(document).ready(function() {
 
     $("#direccion").change(function(){
 
-        if ( nombreValido($("#direccion").val() ) ) {
+        if ( validarMedio($("#direccion").val() ) ) {
             $("#siDir").show();
             $("#noDir").hide();
         } else {
@@ -140,21 +146,118 @@ $(document).ready(function() {
 
     });
 
+    $("#titulolibro").change(function(){
+        if ( validarCorto($("#titulolibro").val() ) ) {
+            $("#siTitulo").show();
+            $("#noTitulo").hide();
+        } else {
+            $("#siTitulo").hide();
+            $("#noTitulo").show();
+
+            alert ("El título ha de ser de mínimo 3 caracteres");
+        }
+    });
+
+    $("#autor").change(function(){
+        if ( validarCorto($("#autor").val() ) ) {
+            $("#siAutor").show();
+            $("#noAutor").hide();
+        } else {
+            $("#siAutor").hide();
+            $("#noAutor").show();
+
+            alert ("El autor ha de ser de mínimo 3 caracteres");
+        }
+    });
+
+    $("#descripcion").change(function(){
+        if ( validarLargo($("#descripcion").val() ) ) {
+            $("#siDesc").show();
+            $("#noDesc").hide();
+        } else {
+            $("#siDesc").hide();
+            $("#noDesc").show();
+
+            alert ("La descripción ha de ser de mínimo 10 caracteres");
+        }
+    });
+
+    $("#idioma").change(function(){
+        if ( validarCorto($("#idioma").val() ) ) {
+            $("#siIdioma").show();
+            $("#noIdioma").hide();
+        } else {
+            $("#siIdioma").hide();
+            $("#noIdioma").show();
+
+            alert ("El idioma ha de ser de mínimo 3 caracteres");
+        }
+    });
+
+    $("#editorial").change(function(){
+        if ( validarCorto($("#editorial").val() ) ) {
+            $("#siEditorial").show();
+            $("#noEditorial").hide();
+        } else {
+            $("#siEditorial").hide();
+            $("#noEditorial").show();
+
+            alert ("La editorial ha de ser de mínimo 3 caracteres");
+        }
+    });
+
+    $("#fechaPublicacion").change(function(){
+        if ( fechaValida($("#fechaPublicacion").val() ) ) {
+            $("#siFecha").show();
+            $("#noFecha").hide();
+        } else {
+            $("#siFecha").hide();
+            $("#noFecha").show();
+
+            alert ("La fecha ha de ser válida");
+        }
+    });
+
+    
+
     $(".undo-button").click(function(){
         undo();
     });
 
 });
 
-function nombreValido(nombre){
-    if(nombre.length >= 5){
+$(function(){
+    var requiredCheckboxes = $('.listaCategorias :checkbox[required]');
+    requiredCheckboxes.change(function(){
+        if(requiredCheckboxes.is(':checked')) {
+            requiredCheckboxes.removeAttr('required');
+            $("#siGen").show();
+            $("#noGen").hide();
+        } else {
+            requiredCheckboxes.attr('required', 'required');
+            $("#siGen").hide();
+            $("#noGen").show();
+            alert("Mínimo un género ha de ser seleccionado");
+        }
+    });
+});
+
+function validarLargo(texto){
+    if(texto.length >= 10){
         return true;
     }
     return false;
 }
 
-function usuarioValido(usuario){
-    if(usuario.length >= 5){
+function validarMedio(texto){
+    if(texto.length >= 5){
+        return true;
+    }
+    return false;
+}
+
+function validarCorto(texto){
+    if(texto.length >= 3){
         return true;
     }
     return false;
@@ -192,13 +295,6 @@ function correoValidacion(data, status){
     }
 }
 
-function contraValida(pass){
-    if(pass.length >= 5){
-        return true;
-    }
-    return false;
-}
-
 function contraRValida(passR, pass){
     if(passR != pass){
         return false;
@@ -211,20 +307,6 @@ function fechaValida(fecha){
         return false;
     }
     return true;
-}
-
-function ciudadValida(ciudad){
-    if(ciudad.length >= 3){
-        return true;
-    }
-    return false;
-}
-
-function ciudadValida(dir){
-    if(dir.length >= 5){
-        return true;
-    }
-    return false;
 }
 
 function undo(){
