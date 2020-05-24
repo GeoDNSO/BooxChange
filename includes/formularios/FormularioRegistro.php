@@ -49,7 +49,7 @@ class FormularioRegistro extends Form
         $html .= '<label for="username"><b>Nombre de Usuario</b></label>';
         /* Prevalidacion */
         $html .= '<i id ="siUser" class="fa fa-check"></i>';
-        $html .= '<i id ="nouser" class="fa fa-times"></i>';
+        $html .= '<i id ="noUser" class="fa fa-times"></i>';
         $html .= '<div class="text"><input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="'.$datosIniciales["username"].'" /></div>';
 
         $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
