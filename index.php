@@ -185,7 +185,70 @@ function cicloMisterio($genero)
         
 
     </div>
+    <div class="vweb"> 
+    <div class="valoracionesWeb"> 
+        <div class="valWeb"> 
+            <div class="imgValWeb active" data-id="content1">
+                <img src="imagenes/valoracionesWeb/val1.png"> 
+            </div> 
+        </div> 
+        <div class="valWeb"> 
+            <div class="imgValWeb" data-id="content2">
+                <img src="imagenes/valoracionesWeb/val2.png"> 
+            </div> 
+        </div> 
+        <div class="valWeb"> 
+            <div class="imgValWeb" data-id="content3">
+                <img src="imagenes/valoracionesWeb/val3.jpg">
+            </div> 
+        </div> 
+    </div>
+    <div class="valoracionesWebText"> 
+        <div class="valWebText active" id="content1">
+            <div>
+                <div class="valorText">
+                    <h2>Joan Foster<br></h2> 
+                    <p>Todo genial</p>
+                </div>
+            </div>
+        </div>
+        <div class="valWebText" id="content2">
+            <div>
+                <div class="valorText">
+                    <h2>Davie Wilson<br></h2>
+                    <p>Lo que más me gusta son los intercambios que hay, es perfecto!</p>
+                </div>
+            </div>
+        </div>
+        <div class="valWebText" id="content3">
+            <div>
+                <div class="valorText">
+                    <h2>Alison Willow<br></h2>
+                    <p>Muy buena página web para comprar libros, me encanta</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
+    <script type="text/javascript">
+        var imgValWeb = document.querySelectorAll('.imgValWeb');
+        var valWebText = document.querySelectorAll('.valWebText');
+
+        for (var i = 0; i < imgValWeb.length; ++i){
+            imgValWeb[i].addEventListener('mouseover', function(){
+                for (var i = 0; i < valWebText.length; ++i) {
+                    valWebText[i].className='valWebText';
+                }
+                document.getElementById(this.dataset.id).className = 'valWebText active';
+
+                for (var i = 0; i < imgValWeb.length; ++i) {
+                    imgValWeb[i].className='imgValWeb';
+                }
+                this.className = 'imgValWeb active';
+            })
+        }
+    </script>
 
 <script>
     $('.list-reset li').on('click', function(){
