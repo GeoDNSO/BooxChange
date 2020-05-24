@@ -41,16 +41,15 @@ class FormularioRegistro extends Form
         $html .= '<label for="userRealName"><b>Nombre y Apellidos</b></label>';
         
         /* Prevalidacion */
-        $html .= '<img id="siNombre" src="imagenes/si.png"/>';
-        $html .= '<img id="noNombre" src="imagenes/no.png"/><br>';
-    
+        $html .= '<i id ="siNombre" class="fa fa-check"></i>';
+        $html .= '<i id ="noNombre" class="fa fa-times"></i>';
         $html .= '   <div class="text">   <input type="text" placeholder="" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'" />
                     </div><br>';
 
         $html .= '<label for="username"><b>Nombre de Usuario</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siUser" src="imagenes/si.png"/>';
-        $html .= '<img id="noUser" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siUser" class="fa fa-check"></i>';
+        $html .= '<i id ="nouser" class="fa fa-times"></i>';
         $html .= '<div class="text"><input type="text" placeholder="Nick o nombre único" name="username"  id="username"  value="'.$datosIniciales["username"].'" /></div>';
 
         $html .= '<label for="foto"><b>Foto de Perfil</b></label><br>';
@@ -58,39 +57,39 @@ class FormularioRegistro extends Form
 
         $html .= '<label for="email"><b>Correo Electrónico</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siMail" src="imagenes/si.png"/>';
-        $html .= '<img id="noMail" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siMail" class="fa fa-check"></i>';
+        $html .= '<i id ="noMail" class="fa fa-times"></i>';
         $html .= '<div class="text"><input type="text" placeholder="user@mail.com" name="email" id="email"  value="'.$datosIniciales["email"].'" /></div>';
 
         
         $html .= '<label for="passwd"><b>Contraseña</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siPass" src="imagenes/si.png"/>';
-        $html .= '<img id="noPass" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siPass" class="fa fa-check"></i>';
+        $html .= '<i id ="noPass" class="fa fa-times"></i>';
         $html .= '<div class="password"><input type="password" placeholder="Escribe una contraseña..." name="passwd"  id="passwd" /></div>';
 
         $html .= '<label for="passwdR"><b>Repite Contraseña</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siPassR" src="imagenes/si.png"/>';
-        $html .= '<img id="noPassR" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siPassR" class="fa fa-check"></i>';
+        $html .= '<i id ="noPassR" class="fa fa-times"></i>';
         $html .= '<div class="password"><input type="password" placeholder="Repite la contraseña..." name="passwdR" id="passwdR" /></div>';
 
         $html .= '<label for="fechaNac"><b>Fecha de Nacimiento</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siFecha" src="imagenes/si.png"/>';
-        $html .= '<img id="noFecha" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siFecha" class="fa fa-check"></i>';
+        $html .= '<i id ="noFecha" class="fa fa-times"></i>';
         $html .= '<input type="date" name="fechaNac" id="fechaNac" value="'.$datosIniciales["fechaNac"].'"/><br>';
 
         $html .= '<label for="ciudad"><b>Ciudad</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siCiudad" src="imagenes/si.png"/>';
-        $html .= '<img id="noCiudad" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siCiudad" class="fa fa-check"></i>';
+        $html .= '<i id ="noCiudad" class="fa fa-times"></i>';
         $html .= '<div class="text"><input type="text" placeholder="Ciudad en la que resides" name="ciudad" id="ciudad" value="'.$datosIniciales["ciudad"].'" /></div>';
 
         $html .= '<label for="direccion"><b>Dirección</b></label>';
         /* Prevalidacion */
-        $html .= '<img id="siDir" src="imagenes/si.png"/>';
-        $html .= '<img id="noDir" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siDir" class="fa fa-check"></i>';
+        $html .= '<i id ="noDir" class="fa fa-times"></i>';
         $html .= '<div class="password"><input type="text" placeholder="Calle, Nº y piso" name="direccion" id="direccion" value="'.$datosIniciales["direccion"].'" /></div>';
 
         $html .= '<button class="send-button" onclick="setTimeout(timer, 1500)">Registrarse</button>';

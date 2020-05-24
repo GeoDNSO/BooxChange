@@ -38,28 +38,28 @@ class FormularioModificarPerfil extends Form
         
          
 
-        $html= "<div class='modifPerfil'>";
-        $html .= "<p class=tituloMod>Modificar perfil</p>";
+        
+        $html = "<p class=tituloMod>Modificar perfil</p>";
 
-        $html .= '<p>Nombre real: <input type="text" class="inputDatos" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'"/></p>';
+        $html .= '<p>Nombre real: <input type="text" class="inputDatos" name="userRealName" id="userRealName" value="'.$datosIniciales["userRealName"].'"/>';
         /* Prevalidacion */
-        $html .= '<img id="siNombre" class="modificar" src="imagenes/si.png"/>';
-        $html .= '<img id="noNombre" class="modificar"class="modificar" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siNombre" class="fa fa-check"></i>';
+        $html .= '<i id ="noNombre" class="fa fa-times"></i></p>';
 
-        $html .= '<p> Correo: <input type="text" class="inputDatos" name="email" id= "email" value="'.$datosIniciales["email"].'"/></p>';
+        $html .= '<p> Correo: <input type="text" class="inputDatos" name="email" id= "email" value="'.$datosIniciales["email"].'"/>';
         /* Prevalidacion */
-        $html .= '<img id="siMail" class="modificar" src="imagenes/si.png"/>';
-        $html .= '<img id="noMail" class="modificar" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siMail" class="fa fa-check"></i>';
+        $html .= '<i id ="noMail" class="fa fa-times"></i></p>';
 
-        $html .= '<p> Ciudad: <input type="text" class="inputDatos" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/></p>';
+        $html .= '<p> Ciudad: <input type="text" class="inputDatos" name="ciudad" id= "ciudad" value="'.$datosIniciales["ciudad"].'"/>';
         /* Prevalidacion */
-        $html .= '<img id="siCiudad" class="modificar" src="imagenes/si.png"/>';
-        $html .= '<img id="noCiudad" class="modificar" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siCiudad" class="fa fa-check"></i>';
+        $html .= '<i id ="noCiudad" class="fa fa-times"></i></p>';
 
-        $html .= '<p> Direccion: <input type="text" class="inputDatos" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/></p>';
+        $html .= '<p> Direccion: <input type="text" class="inputDatos" name="direccion" id= "direccion" value="'.$datosIniciales["direccion"].'"/>';
         /* Prevalidacion */
-        $html .= '<img id="siDir" class="modificar" rc="imagenes/si.png"/>';
-        $html .= '<img id="noDir" class="modificar" src="imagenes/no.png"/><br>';
+        $html .= '<i id ="siDir" class="fa fa-check"></i>';
+        $html .= '<i id ="noDir" class="fa fa-times"></i></p>';
 
         $fotoInicial = isset($datosIniciales['foto']) ? $datosIniciales['foto'] : null;
         $html .= '<p class=fotoMod> Foto: &nbsp <input type="file" name="foto" id="foto" accept="image/*" value="'.$fotoInicial.'"/></p>';  
@@ -68,7 +68,6 @@ class FormularioModificarPerfil extends Form
         $html .= '<p><input type="submit" class="send-button noEnorme" name="accept" value="Cambiar" onclick="setTimeout(timer, 1500)"/></p>';
         $html .= '<p><input type="reset" class="send-button noEnorme undo-button" value="Deshacer cambios"></p>';
 
-        $html .= "</div>";
         return $html;
     }
 

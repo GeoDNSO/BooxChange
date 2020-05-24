@@ -17,13 +17,17 @@ require_once(__DIR__ . "/includes/config.php");
 
     <?php
         include("includes/comun/cabecera.php");
-
+    ?>
+        <div class='modifPerfil'>
+    <?php
         use \fdi\ucm\aw\booxchange\formularios\FormularioModificarPerfil;
 
         $form = new FormularioModificarPerfil("formModPerfil", array("action"=>null));
 
         $form->gestiona();
-
+    ?>
+        </div>
+    <?php
         include("./includes/comun/footer.php");
 
     ?>

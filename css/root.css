@@ -144,10 +144,13 @@
     --libroSombra: #b35900;
     --fondoUsuario:#ffcc99;
 
-        /*Quotes index*/
+    /*Quotes index*/
+    --cajaQuote: #e4f9f5;
+    --letraQuote: #343238fd;
 
-        --cajaQuote: #e4f9f5;
-        --letraQuote: #343238fd;
+    /*Tick y cross formularios*/
+    --tick: #4488008a;
+    --cross: #dc143c;
 
 
     /*Scroll Bar para Mozilla*/
