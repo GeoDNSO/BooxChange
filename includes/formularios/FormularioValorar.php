@@ -30,11 +30,11 @@ class FormularioValorar extends Form
         $html = "<div class='nuevoComentario'>";
         $html .= "<input class='line' type='hidden' name='libro' value='$libroId'>";
         $html .= '<p class="estrellas">';
-        $html .= '<input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">★</label>
-        <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">★</label>
-        <input id="radio3" type="radio" name="estrellas" value="3"><label for="radio3">★</label>
-        <input id="radio4" type="radio" name="estrellas" value="2"><label for="radio4">★</label>
-        <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">★</label>';
+        $html .= '<input id="radio1" type="radio" name="estrellas" value="5" required><label for="radio1">★</label>
+        <input id="radio2" type="radio" name="estrellas" value="4" required><label for="radio2">★</label>
+        <input id="radio3" type="radio" name="estrellas" value="3" required><label for="radio3">★</label>
+        <input id="radio4" type="radio" name="estrellas" value="2" required><label for="radio4">★</label>
+        <input id="radio5" type="radio" name="estrellas" value="1" required><label for="radio5">★</label>';
         $html .= '</p>';
 
         $html .= '<textarea height=100% class="line" style="resize: none;" placeholder="Escriba aquí su comentario..." name="comentario"></textarea> <br>';
