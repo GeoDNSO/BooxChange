@@ -16,6 +16,9 @@ $desc = $_POST["desc"];
 //Subir imagen al servidor
 $fotoBD = "";
 if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
+
+    $_FILES["foto"]["name"] = time() . '_' . rand(100, 999) . '.' . end(explode(".",$_FILES["foto"]['name']));
+
     $fotoBD =  (IMG_DIRECTORY_TEMAS . $_FILES["foto"]["name"]);
     $fotoBD = str_replace("\\", "/", $fotoBD);
 

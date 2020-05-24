@@ -34,6 +34,8 @@ $fotoBD = "";
 //Subir imagen al servidor
 if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"] != ""){
 
+    $_FILES["imagen"]["name"] = time() . '_' . rand(100, 999) . '.' . end(explode(".",$_FILES["imagen"]['name']));
+
     $fotoBD =  (IMG_DIRECTORY_LIBROS . $_FILES["imagen"]["name"]);
     $fotoBD = str_replace("\\", "/", $fotoBD);
 

@@ -104,6 +104,9 @@ class FormularioModificarPerfil extends Form
         //Subir imagen al servidor
         $fotoBD = "";
         if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
+
+            $_FILES["foto"]["name"] = time() . '_' . rand(100, 999) . '.' . end(explode(".",$_FILES["foto"]['name']));
+
             $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["foto"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
 

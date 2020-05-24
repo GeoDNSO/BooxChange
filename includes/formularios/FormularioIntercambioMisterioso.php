@@ -75,6 +75,9 @@ class FormularioIntercambioMisterioso extends Form
         //Subir imagen al servidor
         $fotoBD = "";
         if(isset($_FILES["fotoLibro"]) && $_FILES["fotoLibro"]["name"] != ""){
+
+            $_FILES["fotoLibro"]["name"] = time() . '_' . rand(100, 999) . '.' . end(explode(".",$_FILES["fotoLibro"]['name']));
+
             $fotoBD =  (IMG_DIRECTORY_USER . $_FILES["fotoLibro"]["name"]);
             $fotoBD = str_replace("\\", "/", $fotoBD);
 
