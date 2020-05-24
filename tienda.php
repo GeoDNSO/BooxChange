@@ -65,7 +65,9 @@ foreach ($librosTienda as $libro) {
     $autor = $libro->getAutor();
     $valoracion = $libro->getValoracion();
     $descripcion = $libro->getDescripcion();
-    $genero = $libro->getGenero();
+
+    //$genero = $libro->getGenero();
+    $genero = $app->getGenerosLibro($id);
 
     if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
@@ -89,7 +91,17 @@ foreach ($librosTienda as $libro) {
         } else {
             echo "<p>Valoracion: $valoracion/5</p>";
         }
-        echo "<p class=genero>Género: $genero</p>";
+        echo "<p class=genero>Género: ";
+        $i = 0;
+        $len = count($genero);
+        foreach ($genero as $generos){
+            if ($i != $len - 1)
+                echo $generos->getGenero().", ";
+            else
+                echo $generos->getGenero();
+            $i++;
+        }
+        echo "</p>";
         echo "<p> Descripcion: ";
         //$valoracion;
 
