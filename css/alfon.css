@@ -538,3 +538,8 @@ input.line {
 #styleModeBulb{
     display: none;
 }
+
+
+.whiteBorder a{
+    color: var(--letraEnlace);
+}
