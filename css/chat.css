@@ -82,9 +82,10 @@
 .userProfile {
     margin-bottom: 1rem;
 
+    /*
     border-style: solid;
     border-color: black;
-
+*/
     width: 100%;
     background-color: var(--userChat);
 }
@@ -176,7 +177,6 @@
     overflow: hidden;
     background-color: rgb(197, 197, 190);
 
-    border: black;
     border-style: solid;
 }
 
@@ -188,7 +188,7 @@
     align-self: center;
 
     width: 100%;
-    height: 20rem;
+    height: 24.6rem;
 
     /*
     overflow: hidden;
@@ -200,7 +200,6 @@
     position: relative;
 }
 
-
 /*Para enviar mensajes*/
 .textoChat {
     display: flex;
@@ -211,7 +210,8 @@
 
     padding: 0.4rem;
 
-    margin-left: auto;
+    background: var(--colorCajaChat);
+    width: 100%;
 }
 
 .mainChatEmpty {
@@ -223,34 +223,52 @@
 }
 
 .textoChat textarea {
-    border: solid 0.05rem rgb(0, 0, 0);
-    border-radius: 2rem;
-    padding: 1rem;
+    background-color: var(--fondoMensajes);
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+ 
+    font-size: 1rem;
 
-    width: 25rem;
+    height: 3rem;
+
+    flex: 1;
+    margin-left: 2rem;
 }
 
-.textoChat input, #botonEnviar {
-    cursor: pointer;
-    border: solid 0.05rem;
-    border-radius: 2rem;
-    margin-left: 1rem;
-    transition: all 0.3s ease 0s;
-    width: 6rem;
-    height: 2rem;
+.textoChat textarea:hover{
+    box-shadow: 0rem 0rem 1rem rgb(152, 187, 233);
+}
 
-    background-color: rgb(109, 216, 154);
+.textoChat textarea {
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+}
+
+.textoChat input,
+#botonEnviar {
+    cursor: pointer;
+    border: solid 0.05rem var(--colorCajaChat);
+    border-radius: 50%;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease 0s;
+    width: 4rem;
+    height: 3.6rem;
+
+    background-color: var(--colorCajaChat);
     align-self: center;
 }
 
-.textoChat input:hover, #botonEnviar:hover {
+.textoChat input:hover,
+#botonEnviar:hover {
     background-color: rgb(186, 243, 210);
 }
 
-.textoChat input:active, #botonEnviar:active {
+.textoChat input:active,
+#botonEnviar:active {
     background-color: rgb(98, 165, 109);
 }
-
 
 /*CSS MENSAJES CHAT*/
 
@@ -268,11 +286,18 @@
         rgb(167, 151, 255) 50%,
         rgb(0, 229, 255) 100%
     );
+
+    background: linear-gradient(
+        var(--chatGradient1),
+        var(--chatGradient2),
+        var(--chatGradient3)
+    );
 }
 
 .messages:after {
     content: "";
     background: white;
+    background: var(--fondoMensajes);
     flex: 1;
     pointer-events: none;
 }
@@ -284,6 +309,7 @@
     overflow: hidden;
     border-style: solid;
     border-color: white;
+    border-color: var(--fondoMensajes);
     border-width: 2px 16px 2px 8px;
     flex: 0 0 auto;
 }
@@ -292,7 +318,6 @@
     flex-direction: row;
     border-right-width: 8px;
     border-left-width: 16px;
-   
 }
 
 .messages li:first-child {
@@ -307,10 +332,11 @@
     content: "";
     flex: 1;
     background: white;
+    background: var(--fondoMensajes);
     pointer-events: none;
 }
 
-.messages li .textspanChat{
+.messages li .textspanChat {
     background: #eee;
     background: var(--colorChatOther);
     padding: 8px;
@@ -326,11 +352,11 @@
     word-wrap: break-word;
 }
 
-.chatCentrado{
-     margin: 0 auto !important;
-     text-align: center !important;
-     width: 100%;
-     background: none !important;
+.chatCentrado {
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100%;
+    background: var(--fondoMensajes) !important;
 }
 
 .messages li .textspanChat:before {
@@ -340,7 +366,7 @@
     top: -8px;
     bottom: -8px;
     right: -8px;
-    border: 8px solid white;
+    border: 8px solid var(--fondoMensajes);
     border-radius: 16px;
     pointer-events: none;
 }
@@ -363,7 +389,7 @@
     background-color: black;
 }
 
-.chatFoto{
+.chatFoto {
     width: 25rem;
     height: 25rem;
     display: block;
@@ -372,33 +398,31 @@
     text-align: center;
 }
 
-.messages li .hourspanChat{
+.messages li .hourspanChat {
     font-size: 0.7rem;
     float: right;
     padding-top: 10px;
     color: rgb(231, 231, 231);
-
 }
-.otherUserMessage span .hourspanChat{
+.otherUserMessage span .hourspanChat {
     color: rgb(136, 129, 129);
 }
-.chatCenter span{
+.chatCenter span {
     /*border: 32rem solid white;
     border-style: none none none solid;
     */
     margin: 0 auto !important;
 }
 
-.messages .chatCenter .textspanChat{
+.messages .chatCenter .textspanChat {
     background-color: var(--fecha);
-    color:var(--letraClaraSalvio);
+    color: var(--letraClaraSalvio);
 }
 
 @media only screen and (max-width: 1000px) {
     .currentUserMessage,
     .otherUserMessage {
         font-size: 1rem;
-        
     }
 
     .mainUserChats {
@@ -419,7 +443,7 @@
         padding: 0.2rem;
     }
 
-    .chatFoto{
+    .chatFoto {
         width: 10rem;
         height: 10rem;
     }
