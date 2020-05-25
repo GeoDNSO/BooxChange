@@ -64,6 +64,11 @@
 
 
     --colorChatOther: #eee;
+    --fondoMensajes: white;
+
+    --chatGradient1:rgb(255, 143, 178) 0%;
+    --chatGradient2:rgb(167, 151, 255) 50%;
+    --chatGradient3:rgb(0, 229, 255) 100%;
 
     /*Variables Boton Claro*/
 
@@ -74,6 +79,9 @@
     --colOscuro1: #2c7862;
 
     --letraEnlace: rgb(196, 142, 221);
+
+
+    --colorCajaChat: rgb(241, 239, 239);
 
     /*Alfonso
     var(--);

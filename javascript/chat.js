@@ -7,17 +7,38 @@ let stateChanged = false;
 $(document).ready(function () {
 
     getStateOfChat();
-    
 
-    $("#botonEnviar").click(function () { 
-        console.log($("#mensajeChatTextoEnviar").val())
-        sendChat($("#mensajeChatTextoEnviar").val());
-        $("#mensajeChatTextoEnviar").val("");
+
+    $("#botonEnviar").click(function () {
+        enviarMensaje();
     });
+
+
+    $("#mensajeChatTextoEnviar").on('keypress',function(e) {
+        if(e.which == 13) {
+            enviarMensaje();
+        }
+    });
+
+
+    // Applied globally on all textareas with the "autoExpand" class
+    $(document)
+        .one('focus.autoExpand', 'textarea.autoExpand', function () {
+            var savedValue = this.value;
+            this.value = '';
+            this.baseScrollHeight = this.scrollHeight;
+            this.value = savedValue;
+        })
+        .on('input.autoExpand', 'textarea.autoExpand', function () {
+            var minRows = this.getAttribute('data-min-rows') | 0, rows;
+            this.rows = minRows;
+            rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
+            this.rows = minRows + rows;
+        });
 
     stateChanged = false; //Reinicio del estado...
 
-
+    //Colocar el Chat en el punto más reciente
     var element = document.getElementById("messages");
     element.scrollTop = element.scrollHeight;
     setInterval(updateChat, 1500);
@@ -35,6 +56,11 @@ function sendChat(chatMessage) {
             updateChat(true);
         }
     })
+}
+
+function enviarMensaje() {
+    sendChat($("#mensajeChatTextoEnviar").val());
+    $("#mensajeChatTextoEnviar").val("");
 }
 
 
@@ -80,14 +106,14 @@ function updateChat(mensajeEnviado = false) {
                     return -1;
                 },
                 success: function (data) {
-                    if(mensajeEnviado){
+                    if (mensajeEnviado) {
                         let newAudio = new Audio("audio/whatsappNotiSend.mp3");
                         newAudio.play();
-                    }else{
+                    } else {
                         let newAudio = new Audio("audio/whatsappNoti.mp3");
                         newAudio.play();
                     }
-                    
+
                     $("#messages").append(data);
 
                     var element = document.getElementById("messages");
@@ -101,6 +127,16 @@ function updateChat(mensajeEnviado = false) {
         }
     });
 
+}
+
+function autosize() {
+    var el = this;
+    setTimeout(function () {
+        el.style.cssText = 'height:auto; padding:0';
+        // for box-sizing other than "content-box" use:
+        // el.style.cssText = '-moz-box-sizing:content-box';
+        el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    }, 0);
 }
 
 

@@ -41,7 +41,7 @@
     --cajaIntercambioTienda: var(--cajaTienda);
 
 
-    --colorChatOther: rgb(46, 45, 45);
+    --colorChatOther: rgb(54, 33, 59);
 
     /*Variables Boton Oscuro*/
 
@@ -50,6 +50,9 @@
     --botonAction: #c9823a;
     --botonLetra: #e4f9f5;
     --botonHoverLetra: #40514e;
+
+
+    --fondoMensajes: rgb(24, 23, 23);
 
 
     --botonTiendaIntercambio: var(--botonNaranja);
@@ -68,7 +71,17 @@
     --colorNotificaciones3: #686868;
     --colorNotificaciones4: #e0e0e0;
 
+    
+    --chatGradient1: #29539b 0%;
+    --chatGradient3:#1e3b70;
+    --chatGradient2:#594e8d 50%;
+
+
+
     /*Variables Boton Claro*/
+
+    --colorCajaChat: rgb(46, 45, 45);
+
 
 
     --colClaro1: white;
@@ -78,6 +91,8 @@
 
     --colOscuro1: #2c7862;
 
+
+    
 
     /*Alfonso
     var(--);
