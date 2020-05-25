@@ -72,11 +72,14 @@
     --colorNotificaciones4: #e0e0e0;
 
     
+    --colorBarraChat: rgb(111, 179, 235);
+    --fondoBarraChat: black;
+
     --chatGradient1: #29539b 0%;
     --chatGradient3:#1e3b70;
     --chatGradient2:#594e8d 50%;
 
-
+    
 
     /*Variables Boton Claro*/
 

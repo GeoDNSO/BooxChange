@@ -49,17 +49,9 @@ function chatsDelUsuario()
 function textoEnvioChat()
 {
     if (isset($_GET["idchat"])) {
-        //echo '<form class="textoChat"  method="post" >'; //action="includes/procesos/procesarMensajeChat.php?idchat=' . $_GET["idchat"] . '"
-
 
         echo '<textarea placeholder="Escribe un mensaje aquí..." name="mensajeChatTexto" id="mensajeChatTextoEnviar" class="autoExpand" cols="40" rows="5"></textarea>';
-
-        //echo '<input type="submit" id="botonEnviar" value="Enviar">';
-        //echo '<button type="button" id="botonEnviar" value="Enviar">Enviar</button>';
-
         echo '<button type="button" id="botonEnviar" value="Enviar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span> </button>';
-        /***/
-        //echo '</form>';
 
     } else {
         //echo "¿Iniciar un chat?";

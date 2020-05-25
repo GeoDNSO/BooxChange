@@ -189,7 +189,7 @@
 
     width: 100%;
     height: 24.6rem;
-
+    flex: 1;
     /*
     overflow: hidden;
     overflow-y: scroll;
@@ -382,11 +382,11 @@
 }
 
 .messages::-webkit-scrollbar-track {
-    background-color: var(--botonCabecAct);
+    background-color: var(--fondoBarraChat);
 }
 
 .messages::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: var(--colorBarraChat);
 }
 
 .chatFoto {
