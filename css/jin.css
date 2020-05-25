@@ -124,10 +124,10 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .valoracionesWeb {
-    margin-top: 3rem;
     position: relative;
     display: flex;
     flex-wrap: wrap;

@@ -152,39 +152,6 @@ function cicloMisterio($genero)
             </div>
         </div>
 
-        
-        <div class="wrapper">
-            <ul class="list-reset">
-                <li class="active">
-                    <a>EL EQUIPO BOOXCHANGE</a>
-                    <span>Meet the team</span>
-                    <a href='quienesSomos.php'>
-                        <img src="imagenes/slideshow/team.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a>TOP 10 LIBROS</a>
-                    <span>Basados en vuestras puntuaciones</span>
-                    
-                    <a href='rankingLibros.php'>
-                    <img src="imagenes/slideshow/ranking.png">
-                    </a>
-                </li>
-                <li>
-                    <a>NUEVO FORO</a>
-                    <span>Comparte tu opinión con otros usuarios</span>
-                    
-                    <a href='foro.php'>
-                        <img src="imagenes/slideshow/foro.PNG" alt="">
-                    </a>
-                </li>
-            </ul>
-            <div class="featured-image"></div>
-        </div>
-
-        
-
-    </div>
     <div class="vweb"> 
     <div class="valoracionesWeb"> 
         <div class="valWeb"> 
@@ -231,24 +198,41 @@ function cicloMisterio($genero)
         </div>
     </div>
 
-    <script type="text/javascript">
-        var imgValWeb = document.querySelectorAll('.imgValWeb');
-        var valWebText = document.querySelectorAll('.valWebText');
+    <script type="text/javascript" src="javascript/valWeb.js"></script>
+        
+        <div class="wrapper">
+            <ul class="list-reset">
+                <li class="active">
+                    <a>EL EQUIPO BOOXCHANGE</a>
+                    <span>Meet the team</span>
+                    <a href='quienesSomos.php'>
+                        <img src="imagenes/slideshow/team.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a>TOP 10 LIBROS</a>
+                    <span>Basados en vuestras puntuaciones</span>
+                    
+                    <a href='rankingLibros.php'>
+                    <img src="imagenes/slideshow/ranking.png">
+                    </a>
+                </li>
+                <li>
+                    <a>NUEVO FORO</a>
+                    <span>Comparte tu opinión con otros usuarios</span>
+                    
+                    <a href='foro.php'>
+                        <img src="imagenes/slideshow/foro.PNG" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="featured-image"></div>
+        </div>
 
-        for (var i = 0; i < imgValWeb.length; ++i){
-            imgValWeb[i].addEventListener('mouseover', function(){
-                for (var i = 0; i < valWebText.length; ++i) {
-                    valWebText[i].className='valWebText';
-                }
-                document.getElementById(this.dataset.id).className = 'valWebText active';
+        
 
-                for (var i = 0; i < imgValWeb.length; ++i) {
-                    imgValWeb[i].className='imgValWeb';
-                }
-                this.className = 'imgValWeb active';
-            })
-        }
-    </script>
+    </div>
+
 
 <script>
     $('.list-reset li').on('click', function(){
