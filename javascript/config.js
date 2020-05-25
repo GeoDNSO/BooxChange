@@ -13,6 +13,25 @@ $(document).ready(function () {
 
     //Poner estilo web correspondiente
     setWebStyle()
+
+    var imgValWeb = document.querySelectorAll('.imgValWeb');
+    var valWebText = document.querySelectorAll('.valWebText');
+
+    for (var i = 0; i < imgValWeb.length; ++i){
+        //pasar por encimade las fotos
+        imgValWeb[i].addEventListener('mouseover', function(){
+            for (var i = 0; i < valWebText.length; ++i) {
+                //pone los que no sin el active
+                valWebText[i].className='valWebText';
+            }
+            document.getElementById(this.dataset.id).className = 'valWebText active';
+
+            for (var i = 0; i < imgValWeb.length; ++i) {
+                imgValWeb[i].className='imgValWeb';
+            }
+            this.className = 'imgValWeb active';
+        })
+    }
 });
 
 
