@@ -124,19 +124,20 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
+    margin: 3% 0%;
 }
 
 .valoracionesWeb {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    width: 45%;
+    width: auto;
     text-align: center;
-    justify-content: center;
     align-content: center;
     align-self: center;
     align-items: center;
+    justify-content: center;
 }
 
 .valoracionesWeb .valWeb {
@@ -168,10 +169,12 @@
     border-radius: 4px;
     transition: 0.5s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
 }
 
 .valoracionesWeb .valWeb .imgValWeb.active {
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    background-color: var(--caja2);
 }
 
 .valoracionesWeb .valWeb .imgValWeb img{
@@ -192,7 +195,8 @@
 
 .valoracionesWebText{
     position: relative;
-    width: 40%;
+    justify-content: center;
+    width: 65%;
 }
 
 .valoracionesWebText .valWebText{
@@ -211,6 +215,9 @@
     transform: scale(1);
     opacity: 1;
     transition-delay: 0.5s;
+     background-color: var(--caja1);
+     border-radius: 15px;
+     padding: 0% 2%;
 }
 
 .valoracionesWebText .valWebText h2{
