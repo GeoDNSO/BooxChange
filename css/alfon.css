@@ -533,3 +533,8 @@ input.line {
 .panel.open .person {
 	top: 5%;
 }
+
+
+#styleModeBulb{
+    display: none;
+}
