@@ -111,11 +111,11 @@ class DAONotificacion extends DAO
         $mensaje = "";
         $sql = "";
         if ($iniciador) {
-            $idUsuario = $nombreUser1->getIdUsuario();
+            $idUsuario = $usuario1->getIdUsuario();
             $mensaje = "Has iniciado un chat con el usuario $nombreUser2, puedes hablar con él a través de este <a href='chat.php?idchat=$idchat'>enlace</a>";
             $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
         } else {
-            $idUsuario = $nombreUser2->getIdUsuario();
+            $idUsuario = $usuario2->getIdUsuario();
             $mensaje = "El usuario $nombreUser1 ha iniciado un chat contigo, puedes hablar con él a través de este <a href='chat.php?idchat=$idchat'>enlace</a>";
             $sql = "INSERT INTO `notificaciones` (`idUsuario`, `mensaje`, `leido`, `fecha`) VALUES ('$idUsuario', \"$mensaje\", '0', current_timestamp());";
         }

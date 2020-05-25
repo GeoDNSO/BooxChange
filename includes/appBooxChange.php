@@ -590,8 +590,8 @@ class appBooxChange
 
         $bdBooxChange = DAONotificacion::getInstance();
         $bdBooxChange->notificarChatCreado($usuario1, $usuario2, $lastId, true);
-        $bdBooxChange->notificarChatCreado($usuario2, $usuario1,$lastId, false);
-        return $rst;
+        $bdBooxChange->notificarChatCreado($usuario1, $usuario2,$lastId, false);
+        return $lastId;
     }
 
     public function existeChatWithUsers($idUser1, $idUser2)

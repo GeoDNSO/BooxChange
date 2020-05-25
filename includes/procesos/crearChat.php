@@ -23,7 +23,7 @@ if(!$chat){
 
 
     if($idChat == false){
-        exit("Error");
+        exit("Algo fue mal al crear el usuario");
     }
 
     header('Location: ../../chat.php?idchat='.$idChat);

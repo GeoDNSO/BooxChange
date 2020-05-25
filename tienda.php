@@ -168,12 +168,23 @@ foreach ($librosTienda as $libro) {
         echo "<p class=titulo> $titulo </p>";
         echo "<p class='autor gris'>$autor</p>";
         if ($valoracion == null) {
-            echo "<p>Valoracion: libro no valorado aún.</p>";
+            echo "<p>Valoración: Libro no valorado aún.</p>";
         } else {
-            echo "<p>Valoracion: $valoracion/10</p>";
+            echo "<p>Valoración: $valoracion/10</p>";
         }
-        echo "<p class=genero>Género: $genero</p>";
-        echo "<p> Descripcion: ";
+        echo "<p class=genero>Género: ";
+        $i = 0;
+        $len = count($genero);
+        foreach ($genero as $generos){
+            if ($i != $len - 1)
+                echo $generos->getGenero().", ";
+            else
+                echo $generos->getGenero();
+            $i++;
+        }
+
+
+        echo "</p><p> Descripción: ";
         //$valoracion;
 
         if (strlen($descripcion) < 100) {
@@ -190,8 +201,6 @@ foreach ($librosTienda as $libro) {
         }
 
 
-        //echo "<p>$desc100</p>";
-        //echo "<p class=precio>Precio: $precio</p>";
         echo "</div>"; //fila
         echo "</div>";
 

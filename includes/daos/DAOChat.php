@@ -28,7 +28,7 @@ class DAOChat extends DAO
     //INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`) VALUES (NULL, '5', '4', '0', '0');
     public function crearChat($idUser1, $idUser2)
     {
-        $sql = "INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`) VALUES (NULL, '$idUser1', '$idUser2', '0', '0');";
+        $sql = "INSERT INTO `chat` (`Id_Chat`, `Id_Usuario1`, `Id_Usuario2`, `NumMensajes`, `mensajesSinLeer`, `mensajesSinLeer2`) VALUES (NULL, '$idUser1', '$idUser2', '0', '0', '0');";
         $consulta = mysqli_query(self::$instance->bdBooxChange, $sql);
         if ($consulta == false) {
             return $consulta;
