@@ -62,6 +62,8 @@
     --botonTiendaIntercambioActive: rgb(40, 165, 61);
 
 
+    --colorBarraChat: rgb(181, 241, 178);
+    --fondoBarraChat: rgb(240, 192, 152);
 
     --colorChatOther: #eee;
     --fondoMensajes: white;
@@ -69,6 +71,8 @@
     --chatGradient1:rgb(255, 143, 178) 0%;
     --chatGradient2:rgb(167, 151, 255) 50%;
     --chatGradient3:rgb(0, 229, 255) 100%;
+
+    
 
     /*Variables Boton Claro*/
 
