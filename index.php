@@ -84,6 +84,7 @@ function cicloMisterio($genero)
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/slideShow.js"></script>
 
 </head>
 
@@ -105,9 +106,62 @@ function cicloMisterio($genero)
             ?></div>
 
         <div class="presentacion">
-            <h1>De que trata Booxchange</h1>
-            <p>BooxChange es una web centrada en el intercambio y compraventa de libros, para así promover y divertirse con lectura ya sea intercambiando títulos con otras personas en las mismas condiciones, debatiendo en el foro o descubriendo nuevos libros.</p>
+            <h1 class="blanco">De que trata Booxchange</h1>
+            <p class="blanco compacto">BooxChange es una web centrada en el intercambio y compraventa de libros, para así promover y divertirse con lectura ya sea intercambiando títulos con otras personas en las mismas condiciones, debatiendo en el foro o descubriendo nuevos libros.</p>
 
+            <div class=fondoSH>
+			<div class="slideshow-containerSH">
+
+
+			<?php
+			$booksSlide = 5;
+			$app = appBooxChange::getInstance();	
+			$librosSlide = $app->getNBooks($booksSlide);
+
+			$primero = true;
+			$valorSlide= 1;
+
+			foreach ($librosSlide as $libro) {
+
+				if ($primero){
+					echo "<div class='mySlidesSH fadeSH' id='primerSlide'>";
+					$primero = false;
+				}
+
+				else{
+					echo "<div class='mySlidesSH fadeSH'>";
+				}
+
+				echo "<div class='numbertextSH'>$valorSlide / $booksSlide</div>";
+
+				$valorSlide++;
+				$portadaSlide = $libro->getImagen();
+				$idSlide = $libro->getIdLibro();
+
+				/*$tituloPrimero = $librosSlide[0]->getTitulo();*/
+				echo "<a href='libroTienda.php?id=$idSlide'><img src='$portadaSlide' class=imagenSlide></a>";
+				/*echo "<div class='textSH'>" . $tituloPrimero . "</div>";*/
+				echo "</div>";
+			}	
+
+			
+			?>
+
+			<a class="prevSH" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="nextSH" onclick="plusSlides(1)">&#10095;</a>
+
+			</div>
+			<br>
+
+			<div class=botonesSH style="text-align:center">
+			  <span class="dotSH" onclick="currentSlide(1)"></span> 
+			  <span class="dotSH" onclick="currentSlide(2)"></span> 
+			  <span class="dotSH" onclick="currentSlide(3)"></span>
+			  <span class="dotSH" onclick="currentSlide(4)"></span> 
+			  <span class="dotSH" onclick="currentSlide(5)"></span>  
+			</div>
+			
+		</div>
 
         </div>
 
