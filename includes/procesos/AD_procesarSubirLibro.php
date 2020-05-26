@@ -75,7 +75,8 @@ if ($hayErrores) {
     $app = appBooxChange::getInstance();
 
     if ($app->procesarSubirLibro($titulolibro, $autor, $precio, $fotoBD, $descripcion, $genero, $enTienda, $idioma, $editorial, $descuento, $unidades, $fechaDePublicacion)) {
-        header("Location: ../../AD_listaLibros.php");
+        echo "<script type='text/javascript'>document.location = '../../AD_listaLibros.php' </script>";
+        //header("Location: ../../AD_listaLibros.php");
     } else {
         header("Location: ../../index.php");
     }
