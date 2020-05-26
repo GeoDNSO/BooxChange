@@ -207,6 +207,14 @@
     font-size: 2rem;
 }
 
+.testCli{
+    width: 100%;
+    background-color: var(--caja3);
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+
+}
+
 @media only screen and (max-width: 1000px) {
     .listaAdminlista {
         width: 100%;

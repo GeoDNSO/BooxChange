@@ -212,7 +212,8 @@ function cicloMisterio($genero)
                 </div>
             </div>
         </div>
-
+    <div class="testCli">
+    <h1>Testimonios de clientes</h1>
     <div class="vweb"> 
     <div class="valoracionesWeb"> 
         <div class="valWeb"> 
@@ -257,7 +258,7 @@ function cicloMisterio($genero)
             </div>
         </div>
         </div>
-    </div>
+    </div></div>
 
     <script type="text/javascript" src="javascript/valWeb.js"></script>
         
