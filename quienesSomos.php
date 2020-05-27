@@ -19,6 +19,7 @@ require_once(__DIR__ . "/includes/config.php");
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    
 </head>
 
 
@@ -93,19 +94,7 @@ include("includes/comun/cabecera.php");
     
 </div>
 
-
-
-<script>
-
-    const panels = document.querySelectorAll('.panel');
-
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-
-    function toggleOpen() {
-        this.classList.toggle('open');
-    }
-
-</script>
+<script type="text/javascript" src="javascript/alfon.js"></script>
 
 <?php
 include("./includes/comun/footer.php");
