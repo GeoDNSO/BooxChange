@@ -23,16 +23,7 @@
     padding: 1rem;
     border-radius: 2rem;
 
-    background: rgb(68, 109, 240);
-    background: linear-gradient(
-        90deg,
-        rgba(68, 109, 240, 1) 0%,
-        rgba(109, 210, 226, 1) 30%,
-        rgba(119, 222, 207, 1) 46%,
-        rgba(128, 233, 134, 1) 60%,
-        rgba(146, 254, 139, 1) 80%,
-        rgba(147, 255, 201, 1) 100%
-    );
+    background: var(--caja2);
 }
 
 
@@ -137,25 +128,25 @@
 
 .botonAceptar {
     transition: all 0.3s ease 0s;
-    background: rgb(67, 228, 67);
+    background: #30826b
 }
 
 .botonAceptar:hover {
-    background: rgb(139, 224, 139);
+    background: var(--botonHover);
 }
 .botonAceptar:active {
-    background: rgb(41, 182, 41);
+    background: var(--Action);;
 }
 
 .botonRechazar {
     transition: all 0.3s ease 0s;
-    background: red;
+    background: #cf3b3b
 }
 .botonRechazar:hover {
-    background: rgb(238, 85, 85);
+    background: #ff7777
 }
 .botonRechazar:active {
-    background: rgb(143, 32, 32);
+    background: var(--botonNaranjaSombra);
 }
 
 .botonChat {
@@ -179,16 +170,7 @@
         height: 25rem;
         margin: 1rem;
 
-        background: rgb(68, 109, 240);
-        background: linear-gradient(
-            180deg,
-            rgba(68, 109, 240, 1) 0%,
-            rgba(109, 210, 226, 1) 30%,
-            rgba(119, 222, 207, 1) 46%,
-            rgba(128, 233, 134, 1) 60%,
-            rgba(146, 254, 139, 1) 80%,
-            rgba(147, 255, 201, 1) 100%
-        );
+        background: var(--caja2);
     }
 
 
