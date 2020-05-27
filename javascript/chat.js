@@ -4,19 +4,23 @@ var preMessageInChat = 0;
 var messagesInChat = 0;
 let stateChanged = false;
 
+
 $(document).ready(function () {
 
     getStateOfChat();
 
 
     $("#botonEnviar").click(function () {
-        enviarMensaje();
+        let str = $("#mensajeChatTextoEnviar").val();
+        if(str != ""){
+            enviarMensaje();
+        }
+        
     });
 
 
     $("#mensajeChatTextoEnviar").on('keypress', function (e) {
         let str = $("#mensajeChatTextoEnviar").val();
-
         if (e.which == 13 && str.replace(/\s/g, '').length && str != "") { //Si se pulsa el enter y contiene algo que no sea espacios
             e.preventDefault();
             enviarMensaje();
@@ -25,8 +29,6 @@ $(document).ready(function () {
             e.preventDefault(); //Evitamos que salte de linea
         }
     });
-
-
 
 
 
@@ -51,10 +53,17 @@ $(document).ready(function () {
     var element = document.getElementById("messages");
     element.scrollTop = element.scrollHeight;
     setInterval(updateChat, 1500);
+
+
+    //Reiniciar contador de comentarios al cambiar de chat...
+    $(window).bind('beforeunload', function () {
+
+
+    });
 });
 
 function enviarMensaje() {
-    sendChat($("#mensajeChatTextoEnviar").val().replace(/\s/g,'')); //Para evitar los primeros espacios
+    sendChat($("#mensajeChatTextoEnviar").val().replace(/^\s*\s*$/, '')); //Para evitar los primeros espacios
     $("#mensajeChatTextoEnviar").val("");
 }
 
@@ -65,6 +74,7 @@ function sendChat(chatMessage) {
         url: "includes/procesosAJAX/gestionChat.php",
         data: { 'function': 'send', 'idchat': idchat, 'mensaje': chatMessage },
         success: function (data) {
+            
             updateChat(true);
         }
     })
@@ -96,8 +106,7 @@ function updateChat(mensajeEnviado = false) {
                         let newAudio = new Audio("audio/whatsappNoti.mp3");
                         newAudio.play();
                     }
-
-                    $("#messages").append(data);                   
+                    $("#messages").append(data);
 
                     var element = document.getElementById("messages");
                     element.scrollTop = element.scrollHeight;
