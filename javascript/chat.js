@@ -17,7 +17,8 @@ $(document).ready(function () {
     $("#mensajeChatTextoEnviar").on('keypress', function (e) {
         let str = $("#mensajeChatTextoEnviar").val();
 
-        if (e.which == 13 && str.replace(/\s/g, '').length) { //Si se pulsa el enter y contiene algo que no sea espacios
+        if (e.which == 13 && str.replace(/\s/g, '').length && str != "") { //Si se pulsa el enter y contiene algo que no sea espacios
+            e.preventDefault();
             enviarMensaje();
         }
         else if (e.which == 13 && !str.replace(/\s/g, '').length) { //Mantenemos el estado por defecto
@@ -52,7 +53,10 @@ $(document).ready(function () {
     setInterval(updateChat, 1500);
 });
 
-
+function enviarMensaje() {
+    sendChat($("#mensajeChatTextoEnviar").val().replace(/\s/g,'')); //Para evitar los primeros espacios
+    $("#mensajeChatTextoEnviar").val("");
+}
 
 function sendChat(chatMessage) {
     let idchat = Url.get.idchat;
@@ -64,35 +68,6 @@ function sendChat(chatMessage) {
             updateChat(true);
         }
     })
-}
-
-function enviarMensaje() {
-    sendChat($("#mensajeChatTextoEnviar").val().replace(/\s/g,'')); //Para evitar los primeros espacios
-    $("#mensajeChatTextoEnviar").val("");
-}
-
-
-//gets the state of the chat
-function getStateOfChat() {
-    let idchat = Url.get.idchat;
-    let rst = $.ajax({
-        type: "POST",
-        url: "includes/procesosAJAX/gestionChat.php",
-        data: { 'function': 'getNumberOfMessages', 'idchat': idchat },
-        dataType: "json",
-        success: function (data) {
-            if (messagesInChat != data) {
-                stateChanged = true;
-                preMessageInChat = messagesInChat;
-                messagesInChat = data;
-            } else {
-                stateChanged = false;
-            }
-            return stateChanged;
-        }
-    });
-
-    return rst;
 }
 
 
@@ -122,7 +97,7 @@ function updateChat(mensajeEnviado = false) {
                         newAudio.play();
                     }
 
-                    $("#messages").append(data);
+                    $("#messages").append(data);                   
 
                     var element = document.getElementById("messages");
                     element.scrollTop = element.scrollHeight;
@@ -133,6 +108,31 @@ function updateChat(mensajeEnviado = false) {
     });
 
 }
+
+//gets the state of the chat
+function getStateOfChat() {
+    let idchat = Url.get.idchat;
+    let rst = $.ajax({
+        type: "POST",
+        url: "includes/procesosAJAX/gestionChat.php",
+        data: { 'function': 'getNumberOfMessages', 'idchat': idchat },
+        dataType: "json",
+        success: function (data) {
+            if (messagesInChat != data) {
+                stateChanged = true;
+                preMessageInChat = messagesInChat;
+                messagesInChat = data;
+            } else {
+                stateChanged = false;
+            }
+            return stateChanged;
+        }
+    });
+
+    return rst;
+}
+
+
 
 function autosize() {
     var el = this;

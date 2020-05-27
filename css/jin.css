@@ -100,26 +100,6 @@
     width:200px;
 }
 
-@media only screen and (max-width: 1000px) {
-    .listaAdminlista {
-        width: 100%;
-    }
-
-    .listaAdminFotoLibro{
-        height:200px;
-        width:auto;
-    }
-    
-}
-
-
-
-.listaAdminFotoUsuario{
-    border-radius: 50%;
-    height:150px;
-    width:150px;
-}
-
 .vweb {
     position: relative;
     display: flex;
@@ -192,7 +172,6 @@
     transform: scale(1);
 }
 
-
 .valoracionesWebText{
     position: relative;
     justify-content: center;
@@ -227,3 +206,49 @@
 .valoracionesWebText .valWebText p{
     font-size: 2rem;
 }
+
+.testCli{
+    width: 100%;
+    background-color: var(--caja3);
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .listaAdminlista {
+        width: 100%;
+    }
+
+    .listaAdminFotoLibro{
+        height:200px;
+        width:auto;
+    }
+
+    .valoracionesWeb .valWeb .imgValWeb img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .valoracionesWebText .valWebText h2{
+        font-size: 2rem;
+    }
+    
+    .valoracionesWebText .valWebText p{
+        font-size: 1rem;
+    }
+
+    .valoracionesWeb .valWeb .imgValWeb {
+        height: 100px;
+    }
+    
+}
+
+
+
+.listaAdminFotoUsuario{
+    border-radius: 50%;
+    height:150px;
+    width:150px;
+}
+
