@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2020 a las 17:47:59
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Servidor: vm13.db.swarm.test
+-- Tiempo de generación: 31-05-2020 a las 13:44:37
+-- Versión del servidor: 10.4.12-MariaDB-1:10.4.12+maria~bionic
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -229,8 +229,7 @@ CREATE TABLE `intercambios` (
 INSERT INTO `intercambios` (`Id_Libro_Inter1`, `Id_Libro_Inter2`, `EsMisterioso`, `Id_Intercambio`, `Fecha`) VALUES
 (1, NULL, 0, 1, '2020-05-05 16:26:00'),
 (2, NULL, 0, 2, '2020-05-05 17:30:45'),
-(13, NULL, 0, 4, '2020-05-10 21:11:25'),
-(22, NULL, 0, 11, '2020-05-27 20:55:04');
+(13, NULL, 0, 4, '2020-05-10 21:11:25');
 
 -- --------------------------------------------------------
 
@@ -320,7 +319,6 @@ INSERT INTO `librointercambio` (`Id_Libro_Inter`, `AutorLibInter`, `Imagen`, `De
 (13, 'Janet Valade', 'imagenes/librosIntercambio/phpdummies.jpg', 'Un libro para aprender PHP, super útil me ha servido para mucho. Me interesaría otro libro de aspecto tecnológico', 'Científico', 1, 'PHP para dummies', 0, 0, '2020-05-10 21:11:25'),
 (14, 'Jon Scieszka y Lane Smith', 'imagenes/librosIntercambio/3cerditos.jpg', 'Creo que este libro cumple las condiciones, me lo cambias?', 'Infantil', 1, 'Los 3 Cerditos', 2, 0, '2020-05-10 21:13:58'),
 (15, 'Stephen Randy Davis', 'imagenes/librosIntercambio/510pJu3ssFL.jpg', 'Te parece bien?', 'Científico', 5, 'C++ para dummies', 0, 0, '2020-05-10 21:24:38'),
-(22, 'J.K. Rowling', 'imagenes/librosIntercambio/1590612904_130.jpg', 'El final de la saga del niño que vivió', 'Fantasía', 1, 'Harry Potter y las Reliquias de la Muerte', 0, 0, '2020-05-27 20:55:04'),
 (23, 'J.K. Rowling', 'imagenes/librosIntercambio/1590775893_938.jpg', 'El libro en el que nuestro señor tenebroso al fin resucita.', 'Juvenil', 23, 'Harry Potter y el Cáliz de Fuego', 0, 0, '2020-05-29 18:11:33'),
 (24, 'Brandon Sanderson', 'imagenes/librosIntercambio/1590776068_634.jpg', 'Magia a través de metales ingeridos. Es lo más', 'Fantasía', 23, 'Nacidos de la bruma. El imperio final', 0, 0, '2020-05-29 18:14:28'),
 (25, 'Brandon Sanderson', 'imagenes/librosIntercambio/default.jpg', 'Magia mediante metales', 'Fantasía', 23, 'Nacidos de la bruma 1', 0, 0, '2020-05-29 18:15:42');
@@ -420,7 +418,10 @@ INSERT INTO `notificaciones` (`id`, `idUsuario`, `mensaje`, `leido`, `fecha`) VA
 (14, 5, 'El usuario dani13 te ha ofrecido el libro Masda por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-29 18:26:10'),
 (15, 5, 'El usuario dani13 te ha ofrecido el libro alksjdlakjsdklsa por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-29 18:27:18'),
 (16, 5, 'El usuario dani13 te ha ofrecido el libro alksjdlakjsdklsa por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-29 18:29:43'),
-(17, 5, 'El usuario Voldy te ha ofrecido el libro Nacidos de la bruma 1 por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-29 18:30:06');
+(17, 5, 'El usuario Voldy te ha ofrecido el libro Nacidos de la bruma 1 por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 1, '2020-05-29 18:30:06'),
+(18, 5, 'El usuario dani13 te ha ofrecido el libro Mi casa por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 0, '2020-05-29 19:14:19'),
+(19, 5, 'El usuario dani13 te ha ofrecido el libro ashdankld por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 0, '2020-05-29 19:15:59'),
+(20, 5, 'El usuario dani13 te ha ofrecido el libro jaslkdjaklsjdlkasjdkla por tu libro Caperucita Roja, puedes ver esta oferta ;y otras más, en detalle <a href=\'ofertasIntercambio.php?id=1\'>aquí</a>.', 0, '2020-05-29 19:17:36');
 
 -- --------------------------------------------------------
 
@@ -498,21 +499,21 @@ INSERT INTO `usuario` (`Id_Usuario`, `Nombre`, `NombreReal`, `Contraseña`, `Cor
 (2, 'xAlex', 'Alex', '$2y$10$PRkJe1JoBxw4QUNpueSB2.QBGeQuBSDU.EUokxw9e.u3FSy8dBI7q', 'alro12@ucm.es', 'imagenes\\usuarios\\default.png', 'Calle Madrid', '1996-04-19', 'Barcelona', '2020-03-16 20:08:20', 1),
 (3, 'Javier ', 'User3', '$2y$10$WzsGXsEBnrzNWpQe983aVuV.DvLh.qU4I1pZsKoVX8Q5eeoCuE47e', 'dani@gmail.com', 'imagenes\\usuarios\\default.png', 'Calle la casa', '1996-08-12', 'Madrid', '2020-03-16 20:08:42', 1),
 (4, 'Sergiox', 'Sergio García', '$2y$10$0/IMnYZrpuJlfMJ4PXgHCO9C0VYt0K576pfRJjirbtmQbvwpnWxJe\r\n', 'Serg@gmail.com', 'imagenes\\usuarios\\default.png', 'Calle Los angeles', '1997-08-19', 'Valencia', '2020-03-16 20:09:37', 2),
-(5, 'Geo', 'Daniel', '$2y$12$YnvgZwS4gju5WQJKRjftiOCgfFVqQqtcl0GBhnZ5yV2ux5nCd4EtW', 'dsanto07@ucm.es', 'imagenes/usuarios/xion.gif', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
+(5, 'Geo', 'Daniel', '$2y$12$wPowOEwxnlUIUDEz47xjIektzEYV8Vdf/JGo.wC1401x5Mgc63yn6', 'dsanto07@ucm.es', 'imagenes/usuarios/xion.gif', 'Mi Casa', '1999-12-22', 'Madrid', '2020-03-20 17:56:46', 0),
 (6, 'LuiSHer', 'Luis Hernández', '$2y$10$hOhrx2qQo6r04DG9aVOJE.6G.WJd3X3u9tQQY9qwWJ1nZLizsufhW', 'Serg@gmail.com', 'imagenes\\usuarios\\default.png', 'Calle Los angeles', '1997-08-19', 'Salamanca', '2020-03-16 20:10:04', 2),
 (10, 'user5', 'pablo', '$2y$12$KMq235V//OdjKlBQ1Eh6U.NztyLz/KuCHnKfCfp45r15X7c8hXb3.', 'pablo43521@gmail.es', 'imagenes\\usuarios\\default.png', 'Mi casa', '2020-02-02', 'Madrid', '0000-00-00 00:00:00', 1),
-(11, 'dani12', 'dfsdfs', '$2y$12$tz/uv/Szi4a87JrfPRgYo.GsY6defb0HAsj.2/F8cDO3pWyu0JTLa', 'asdaxdasdas', 'imagenes\\usuarios\\default.png', 'asdad', '2020-04-30', 'sda', '2020-04-02 16:12:50', 1),
+(11, 'dani12', 'DANI DIOR', '$2y$12$tz/uv/Szi4a87JrfPRgYo.GsY6defb0HAsj.2/F8cDO3pWyu0JTLa', 'pepega@gmail.es', 'imagenes\\usuarios\\default.png', 'Españita', '2020-04-30', 'Murcia', '2020-04-02 16:12:50', 1),
 (12, 'dani13', 'Daniel Duran', '$2y$12$63EAs32Mo521JFn3WGD3NekkH7Gk1fAkKJCEbw8JVWSjzo5BxZUQu', 'daniel@gmail.es', 'imagenes\\usuarios\\default.png', 'Mi casa', '2020-04-01', 'Zaragoza', '2020-04-02 16:17:32', 1),
-(13, 'user', 'Usuario', '$2y$12$ALf/uwh6wYQubFn3761HWOnzWyR6fZ6p.yEwCRCKYxK2x4exBYRNe', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 1),
-(14, 'mod', 'Moderador', '$2y$12$5UGSb62o/BgY/bto0aXMqO4pt4obvflUx8Ss3eDfw6X3RJyTCipWq', 'a', 'imagenes\\usuarios\\default.png', 'a', '2020-04-01', 'a', '2020-04-02 18:47:19', 2),
+(13, 'user', 'Usuario', '$2y$12$ALf/uwh6wYQubFn3761HWOnzWyR6fZ6p.yEwCRCKYxK2x4exBYRNe', 'usuario@user.com', 'imagenes\\usuarios\\default.png', 'usuario', '2020-04-01', 'usuario', '2020-04-02 18:47:19', 1),
+(14, 'mod', 'Moderador', '$2y$12$5UGSb62o/BgY/bto0aXMqO4pt4obvflUx8Ss3eDfw6X3RJyTCipWq', 'moderador@mod.com', 'imagenes\\usuarios\\default.png', 'moderador', '2020-04-01', 'moderador', '2020-04-02 18:47:19', 2),
 (15, 'Emank', 'Emanuel', '$2y$10$7oIpcxcPqgRjgaJ8JYpQouxZkYLe3FP26XsgJ4UH964UNAsJf3aBS', 'emank@gmail.com', 'imagenes/usuarios/23.jpg', 'Mikasa Ackerman', '2000-01-30', 'Madrid', '2020-05-06 13:24:01', 1),
 (16, 'LuciDemonio', 'Luci Demonio', '$2y$10$FLFSAsYgJq0UKoFCPj/v8eiIr/jQTXUGFSOYmpPPDvtridR1/bguu', 'luci@demonio.des', 'imagenes/usuarios/luci.jpg', 'Callejon del elfo, 3', '1963-02-20', 'Dreamland', '2020-05-06 13:12:59', 1),
 (17, 'Bernard64', 'Bernardo Marín', '$2y$10$ZroKl1Fho96WLot9xhsF2u6TY5.CvfVVLGrX3GCKxac2s2Aw6SOoa', 'bernardo@cc.es', 'imagenes/usuarios/Bernardo.jpg', 'Vivo con mi madre', '1956-04-23', 'Madrid', '2020-05-06 13:04:10', 1),
 (18, 'Cañizares', 'Canizares', '$2y$10$jkiBUD2koRimnAG1fRAtYeRH4GMh9w4b7J.OLvgjvMC.ikaneUcvy', 'canizares@cc.es', 'imagenes/usuarios/canizares.jpg', 'Madrid', '1996-05-16', 'Madrid', '2020-05-06 13:12:49', 1),
-(19, 'JuliPachacho', 'Julian Palacios', '$2y$10$h5.Rxhmxwica.FzA5nfOWu3OgZolNMZkv4VygtUzxfANUQah3dTpW', 'julipala@cc.es', 'imagenes/usuarios/julian.jpg', 'Villa de Murcia 45 3', '1975-07-31', 'Murcia', '2020-05-06 13:21:13', 1),
+(19, 'JuliPachacho', 'Julian Palacios', '$2y$12$a1.FZG5G6B.WnK/hQ38cJOcTAPMCu1es7hNYq3Z4nuJz7ty7Ne1W2', 'julipala@cc.es', 'imagenes/usuarios/1590931939_332.jpg', 'Villa de Murcia 45 3', '1975-07-31', 'Murcia', '2020-05-06 13:21:13', 1),
 (20, 'Roncolo69', 'Jesús Quesada', '$2y$10$IX7aL/lfo5JmYMjazcbzWu1aDkTPoTSXcDs3xBtjoAq703xmrWiNW', 'jesques@cc.es', 'imagenes/usuarios/jesus.jpg', 'Avenida de la Paz Nº34', '1969-04-18', 'Ciudad Real', '2020-05-06 13:28:19', 1),
-(22, 'Mi_pana_Miguel', 'Miguel Pana', '$2y$10$l1BnESoOhbreKJzW/uN8quQ6GihKWunabw5hOoiCwNneFLGyBLp2e', 'mipanamiguel@ucm.es', 'imagenes/usuarios/1590775794_672.png', 'Bien fresco se le ve', '2019-10-15', 'Villa Frescura', '2020-05-27 20:25:40', 2),
-(23, 'Voldy', 'Voldy', '$2y$10$ot.reXy4FV5gDoqypx.sq.dH5jE506nMhE.DD6xGVK8v9JSJqpeaS', 'voldy@gmail.com', 'imagenes/usuarios/1590775776_404.png', 'Mansión Malfoy', '1926-12-31', 'Wiltshire', '2020-05-27 20:27:25', 1);
+(22, 'Mi_pana_Miguel', 'Miguel Pana', '$2y$12$iqKxmBVvA3KE3TliobOrCeWSf8j0P0f5ym4wcT7/m2JzLOBswRvqq', 'mipanamiguel@ucm.es', 'imagenes/usuarios/1590932426_898.jpg', 'Bien fresco se le ve', '2019-10-15', 'Villa Frescura', '2020-05-27 20:25:40', 2),
+(23, 'Voldy', 'Voldy', '$2y$10$ot.reXy4FV5gDoqypx.sq.dH5jE506nMhE.DD6xGVK8v9JSJqpeaS', 'voldy@gmail.com', 'imagenes/usuarios/1590932239_252.png', 'Mansión Malfoy', '1926-12-31', 'Wiltshire', '2020-05-27 20:27:25', 1);
 
 -- --------------------------------------------------------
 
@@ -728,7 +729,7 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `librointercambio`
 --
 ALTER TABLE `librointercambio`
-  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `Id_Libro_Inter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajechat`
@@ -740,13 +741,13 @@ ALTER TABLE `mensajechat`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `ofertasintercambio`
 --
 ALTER TABLE `ofertasintercambio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
