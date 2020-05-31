@@ -46,9 +46,6 @@ else{
         $fotoBD .= (IMG_DIRECTORY_LIBROS_INTERCAMBIO . IMG_DEFAULT_LIBRO);
     }
 
-
-
-
     //Damos valores "Nulos" a id y fecha después se omitirán
     $libro = new TLibroIntercambio(null, $_SESSION['id_Usuario'], $titulo, $fotoBD, $autor, $desc, $genero, NO_INTERCAMBIADO, NO_ES_OFERTA,  null);
 
@@ -58,7 +55,8 @@ else{
     $result = $app->subirOfertaLibro($libroQuerido, $libro);
 
     if($result == true){
-        header("Location: ../../intercambiosNormales.php");
+        echo "<script type='text/javascript'>document.location = '../../intercambiosNormales.php' </script>";
+        //header("Location: ../../intercambiosNormales.php");
     }else{
         exit("Error inesperado, no se ha podido subir el libro a la BD");
     }
