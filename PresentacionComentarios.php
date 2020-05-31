@@ -11,16 +11,11 @@ $idDiscusion = ($_GET["Discusion"]);
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-    <?php
-    if (!isset($_COOKIE["estiloWeb"]) || $_COOKIE["estiloWeb"] == "claro") {
-        echo '<link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />';
-    } else {
-        echo '<link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root_dark_mode.css" />';
-    }
-    ?>
+    <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/popups_Foro.js"></script>
 </head>
 
 <?php
@@ -96,8 +91,11 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
 
     echo '<label for="textoComentario"><b>Comentario</b></label>';
     echo '<textarea id="desc" class="blancoForo" name="textoComentario" rows="5" cols="50" placeholder="Escribe aquí tu comentario..."></textarea> <br>';
+    echo '<div class="popup" onmouseover="myBotonCom()">';
+    echo '<span class="popuptext" id="myPopupCom">¿Seguro que quieres enviar el comentario?</span>';
+    echo '<button class=botonAnTema type="submit" onclick="alertaComentario()" >Subir comentario</button>';
+    echo '</div>';
 
-    echo '<button class=botonAnTema type="submit">Subir comentario</button>';
 
     echo '</form>';
     echo '</fieldset>';

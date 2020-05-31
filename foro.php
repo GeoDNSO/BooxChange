@@ -38,7 +38,8 @@ function foro()
     } else {
         echo "<p class=noDiscusion> Vaya, parece que no existen temas en el foro.<br>Deberás esperar a que esto sea solucionado por un administrador o moderador.<p>";
     }
-    echo "</table></tbody>";
+  echo "</table></tbody>";
+
     if (isset($_SESSION["login"]) && $_SESSION["login"] == true && isset($_SESSION["rol"])) {
         if ($_SESSION["rol"] == 0 || $_SESSION["rol"] == 2) {
 
@@ -47,18 +48,22 @@ function foro()
 
             echo '<form method="post" class=foroForm action="includes/procesos/procesarTema.php" enctype="multipart/form-data"> ';
 
-            
+
             echo '<label for="foto"><b>Icono del Tema</b></label>';
             echo '<input type="file" class=login name="foto" id="foto" accept="image/*" />';
 
             echo '<label for="tema"><b>Tema</b></label>';
-            echo '<input type="text" class=login id="temaForoEstrecho" name="tema"  placeholder="Introduzca el nombre del tema..." />';
+            echo '<input type="text" class=login id="temaForoEstrecho" name="tema"  placeholder="Introduzca el nombre del tema..."  />';
 
             echo '<label class=marginDescForo for="desc"><b>Descripcion</b></label>';
             echo '<textarea id="desc" class="blancoForo" name="desc" rows="5" cols="50" placeholder="Escriba una pequeña descripción del tema que desea añadir..."></textarea> ';
 
             echo '<br>';
-            echo '<button type="submit" class=botonAnTema>Añadir tema</button>';
+            echo '<div class="popup" onmouseover="myBotonForo()">';
+            echo '<span class="popuptext" id="myPopupTema">¿Seguro que quieres crear este tema?</span>';
+            echo '<button type="submit" class=botonAnTema onclick="alertaTema()">Añadir tema</button>';
+            echo '</div>';
+
 
             echo '</form>';
             echo '</fieldset>';
@@ -75,18 +80,13 @@ function foro()
     <title>BooxChange Foro</title>
     <meta charset="UTF-8" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    
+
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-    <?php
-    if (!isset($_COOKIE["estiloWeb"]) || $_COOKIE["estiloWeb"] == "claro") {
-        echo '<link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />';
-    } else {
-        echo '<link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root_dark_mode.css" />';
-    }
-    ?>
-    
+    <link rel="stylesheet" id="estiloRoot" type="text/css" href="css/root.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/config.js"></script>
+    <script type="text/javascript" src="javascript/popups_Foro.js"></script>
 </head>
 
 <?php

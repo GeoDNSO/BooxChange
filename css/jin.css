@@ -103,16 +103,15 @@
 .vweb {
     position: relative;
     display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 3% 0%;
+    flex-direction: column;
+    height: 360px;
+    margin: 2% 0%;
 }
 
 .valoracionesWeb {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    width: auto;
+    width: 100%;
     text-align: center;
     align-content: center;
     align-self: center;
@@ -121,15 +120,15 @@
 }
 
 .valoracionesWeb .valWeb {
+    margin-left: 2%;
     position: relative;
-    width: 60%;
+    width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-content: center;
     align-self: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .valoracionesWeb .valWeb .imgValWeb {
@@ -146,7 +145,6 @@
     align-self: center;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: 4px;
     transition: 0.5s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-radius: 15px;
@@ -175,13 +173,17 @@
 .valoracionesWebText{
     position: relative;
     justify-content: center;
-    width: 65%;
+    margin-left: auto;
+    width: 70%;
+    margin-left: 14%;
+    margin-right: 16%;
 }
 
 .valoracionesWebText .valWebText{
+
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,11 +202,11 @@
 }
 
 .valoracionesWebText .valWebText h2{
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .valoracionesWebText .valWebText p{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .testCli{
@@ -225,13 +227,22 @@
         width:auto;
     }
 
+    .vweb {
+        height:320px;
+    }
+
+    .valoracionesWeb .valWeb {
+        margin-left: 6%;
+        width: 100%;
+    }
+
     .valoracionesWeb .valWeb .imgValWeb img{
         width: 50px;
         height: 50px;
     }
 
     .valoracionesWebText .valWebText h2{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .valoracionesWebText .valWebText p{
@@ -251,4 +262,3 @@
     height:150px;
     width:150px;
 }
-
