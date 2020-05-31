@@ -26,7 +26,7 @@ if(isset($_FILES["foto"]) && $_FILES["foto"]["name"] != ""){
 
     move_uploaded_file( $_FILES["foto"]['tmp_name']  , $archivoSubida);
 }else{
-    $fotoBD = (IMG_DIRECTORY_TEMAS . IMG_DEFAULT_USER);
+    $fotoBD = (IMG_DIRECTORY_TEMAS . IMG_DEFAULT_TEMA);
 }
 
 $app->anadirTema($tema, $desc, $fotoBD);
